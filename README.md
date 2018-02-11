@@ -18,7 +18,7 @@ _Do note the screenshot showcased is the version before rewrite. There are a few
 
 To use this style you have to install [Stylus](https://add0n.com/stylus.html) and then click on the button below.
 
-[![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-285959.svg)](https://rawgit.com/vednoc/whatsapp-userstyle/master/WhatsApp.user.css)
+[![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-285959.svg)](https://rawgit.com/vednoc/onyx/master/WhatsApp.user.css)
 
 **NOTE:** _Stylish_ might not work; but it's obsolete and you should replace it with Stylus.
 

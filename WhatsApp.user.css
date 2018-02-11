@@ -1,39 +1,39 @@
 /* ==UserStyle==
-@name           WhatsApp by Mew
-@description    A customizable theme for WhatsApp.
-@namespace      github.com/vednoc/onyx
-@homepageURL		https://github.com/vednoc/onyx
-@updateURL			https://raw.githubusercontent.com/vednoc/onyx/master/WhatsApp.user.css
-@version        1.0.0
-@author         vednoc
-@license				MIT
-@preprocessor		uso
+@name WhatsApp by Mew
+@description A customizable theme for WhatsApp.
+@namespace github.com/vednoc/onyx
+@homepageURL https://github.com/vednoc/onyx
+@updateURL https://raw.githubusercontent.com/vednoc/onyx/master/WhatsApp.user.css
+@version 1.0.0
+@author vednoc
+@license MIT
+@preprocessor uso
 
-@var color dark 		"Dark"       #272c35
-@var color darker 	"Darker"     #1f232a
-@var color light 		"Light"      #d1d1d1
-@var color lighter	"Lighter"    #e9e9e9
-@var color accent 	"Accent"     #7289da
-@var color icon 		"Icons"      #e1e1e1
-@var color shadow		"Shadow"     rgba(0,0,0,0.2)
-@var color mred			"Red-ish"    #A3525B
-@var color mgreen		"Green-ish"  #70A352
-@var color mblue		"Blue-ish"   #527AA3
+@var color dark "Dark" #272c35
+@var color darker "Darker" #1f232a
+@var color light "Light" #d1d1d1
+@var color lighter "Lighter" #e9e9e9
+@var color accent "Accent" #7289da
+@var color icon "Icons" #e1e1e1
+@var color shadow "Shadow" rgba(0,0,0,0.2)
+@var color mred "Red-ish" #A3525B
+@var color mgreen "Green-ish" #70A352
+@var color mblue "Blue-ish" #527AA3
 ==/UserStyle== */
 
 
 @-moz-document domain("web.whatsapp.com") {
   :root {
-    --dark: 		/*[[dark]]*/;
-    --darker: 	/*[[darker]]*/;
-    --light: 		/*[[light]]*/;
-    --lighter:	/*[[lighter]]*/;
-    --accent:		/*[[accent]]*/;
-    --icon:			/*[[icon]]*/;
-    --shadow:		/*[[shadow]]*/;
-    --mred:			/*[[mred]]*/;
-    --mgreen:		/*[[mgreen]]*/;
-    --mblue:		/*[[mblue]]*/;
+    --dark: /*[[dark]]*/;
+    --darker: /*[[darker]]*/;
+    --light: /*[[light]]*/;
+    --lighter: /*[[lighter]]*/;
+    --accent: /*[[accent]]*/;
+    --icon: /*[[icon]]*/;
+    --shadow: /*[[shadow]]*/;
+    --mred: /*[[mred]]*/;
+    --mgreen: /*[[mgreen]]*/;
+    --mblue: /*[[mblue]]*/;
   }
 
   /* Body reset. */
