@@ -20,7 +20,7 @@ To use this style you have to install [Stylus](https://add0n.com/stylus.html) an
 
 [![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-285959.svg)](https://rawgit.com/vednoc/onyx/master/WhatsApp.user.css)
 
-**NOTE:** _Stylish_ might not work; but it's obsolete and you should replace it with Stylus.
+**NOTE:** _Stylish_ isn't supported ([install from here you're still using *Stylish*](https://userstyles.org/styles/142096)); it's obsolete and you should replace it with Stylus.
 
 
 # Contribute
