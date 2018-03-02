@@ -4,7 +4,7 @@
 @namespace github.com/vednoc/onyx
 @homepageURL https://github.com/vednoc/onyx
 @updateURL https://raw.githubusercontent.com/vednoc/onyx/master/WhatsApp.user.css
-@version 1.0.1
+@version 1.0.2
 @author vednoc
 @license MIT
 @preprocessor uso
@@ -19,6 +19,68 @@
 @var color mred "Red-ish" #A3525B
 @var color mgreen "Green-ish" #70A352
 @var color mblue "Blue-ish" #527AA3
+
+@advanced dropdown background "App background" {
+  bg1 "Custom image" <<<EOT
+  .app-wrapper::after {
+    top: 0px; right: 0px;
+    bottom: 0px; left: 0px;
+    height: auto; width: auto;
+    background: var(--image) no-repeat center/cover !important; } EOT;
+  bg2 "No image" <<<EOT
+	.app-wrapper::after {
+    display: none !important; } EOT;
+  bg3 "Default image" <<<EOT
+  .app-wrapper::after {
+    opacity: 0.8;
+    background-color: var(--accent) !important; } EOT;
+}
+@advanced image image "Only /w custom app background" {
+  bg1 "Blurred" "https://media.discordapp.net/attachments/310799529161129984/417408747812552715/zilesanamin.jpg"
+  bg2 "Original" " https://images.discordapp.net/attachments/310799529161129984/320568157142122496/zilesana.jpg?width=1280&height=720"
+  bg3 "Empty" "https://web.whatsapp.com/nobg.jpg"
+}
+@advanced dropdown doodles "Chat doodles" {
+  doodle1 "Light doodles" <<<EOT
+	.app ._1Iexl ._1GX8_ .pane-chat-tile {
+    filter: invert(100%) opacity(0.45) !important; } EOT;
+  doodle2 "Dark doodles" <<<EOT
+	.app ._1Iexl ._1GX8_ .pane-chat-tile {
+    filter: opacity(0.45) !important; } EOT;
+  doodle3 "No doodles" <<<EOT
+	.app ._1Iexl ._1GX8_ .pane-chat-tile {
+    display: none !important; } EOT;
+}
+@advanced dropdown blurcontacts "Blur contacts and images" {
+  noblur "Not blurred" <<<EOT
+  EOT;
+  blur "Blurred" <<<EOT
+  /* Blurry mode for contacts. *\/
+  ._2EXPL {
+    filter: blur(10px); }
+    /* On event. *\/
+    ._2EXPL._1f1zm, ._2EXPL:hover {
+      filter: blur(0px); }
+  /* Blurry mode for pictures. *\/
+  #main ._1JVSX, ._2Ry6_ ._1iCCh {
+    transition: 500ms ease-in-out;
+    transition-delay: 0ms;
+    filter: blur(10px) grayscale(100%); }
+    /* On event. *\/
+    #main ._1JVSX:hover, ._2Ry6_ ._1iCCh:hover {
+      transition-delay: 500ms;
+      filter: blur(0px) grayscale(0%); } EOT;
+}
+@advanced dropdown fullscreen "Fullscreen" {
+  notfullscreen "Not fullscreen" <<<EOT
+  EOT;
+  fullscreen "Fullscreen" <<<EOT
+  /* Fullscreen. *\/
+  .app-wrapper-web ._3dqpi {
+    height: calc(100% - 0px);
+    top: 0px;
+    width: 100%; } EOT;
+}
 ==/UserStyle== */
 
 
@@ -34,6 +96,7 @@
     --mred: /*[[mred]]*/;
     --mgreen: /*[[mgreen]]*/;
     --mblue: /*[[mblue]]*/;
+    --image: url(/*[[image]]*/);
   }
 
   /* Body reset. */
@@ -48,13 +111,11 @@
     /* Scrollbar thumb. */
     *::-webkit-scrollbar-thumb {
       border-radius: 3px;
-      background-color: var(--accent); }
+      background-color: var(--shadow); }
 
 
   /* App wrapper. */
   #app .app {
-    border: 2px solid var(--darker);
-    box-shadow: 0 0 8px 1px var(--darker);
     background: none;
     background-color: var(--darker); }
 
@@ -106,6 +167,9 @@
     /* Text color. */
 		.app ._1Iexl ._3qlW9 ._2MnNk * {
       color: var(--light); }
+    /* Accent bar. */
+    .app ._1Iexl ._3qlW9:after {
+      border-top-color: var(--accent); }
 
 
 
@@ -132,7 +196,8 @@
       background-color: var(--darker) !important;
   		background-color: transparent !important; }
       /* Label background. */
-      #side ._3CPl4 .gQzdc label, .gQzdc._3sdhb {
+      #side ._3CPl4 .gQzdc label, .gQzdc._3sdhb,
+      ._2dA13 ._15JHr .gQzdc /* TODO: Fix for the modal input. */ {
         border: 0px solid var(--dark);
         background-color: var(--dark) !important; }
         /* Input element. */
@@ -143,6 +208,9 @@
         #side ._3CPl4 .gQzdc._3sdhb {
           background-color: var(--dark) !important;
   				background-color: transparent !important; }
+        /* New group button. */
+        ._2EXPL .dIyEr ._1jJLh {
+          background-color: var(--accent); }
 
        	/* Search results. */
 				#side ._1AKfk {
@@ -168,7 +236,7 @@
           color: var(--light); }
         /* Avatar wrapper background. */
 				._1WliW {
-          box-shadow: 0 0 0px 2px var(--shadow);
+          box-shadow: 0 0 0px 2px var(--dark) !important;
           background-color: transparent !important; }
 
 
@@ -188,6 +256,8 @@
       /* Profile picture height. */
 			._2fq0t ._12fSF {
         min-height: 200px; }
+      /* Change profile picture. */
+      ._2fq0t .WX_XW { background-color: rgba(0,0,0,0.5) !important; }
       /* Text color. */
       ._2fq0t * {
         color: var(--light); }
@@ -201,8 +271,9 @@
  		._2fq0t ._2sNbV ._2EXPL {
       background-color: transparent; }
       /* On event. TODO: Fixed, but it might still overlap somewhere. */
-      .k1feT ._2sNbV > ._1CkkN:hover {
-        background-color: var(--dark); }/**/
+      .k1feT ._2sNbV > ._1CkkN:hover,
+      ._2fq0t ._2sNbV ._1CkkN:hover {
+        background-color: var(--dark); }
 
   	/* New chat section. */
   	._2fq0t .gQzdc label {
@@ -244,9 +315,7 @@
 	.app ._1Iexl ._1GX8_ {
     background-color: var(--dark); }
     /* Doodle background. TODO: Plans for the future. */
-		.app ._1Iexl ._1GX8_ .pane-chat-tile {
-      /*display: none /**/
-      filter: invert(100%) opacity(0.4); }
+    /*[[doodles]]*/
 
     /* Header. */
 		._1Iexl #main header {
@@ -258,7 +327,7 @@
 
     /* Footer. */
 		._1Iexl #main footer {
-      /*box-shadow: 0 0 8px 0 shadow /**/
+      box-shadow: 0 0 8px 0 var(--shadow);
       background-color: var(--darker); }
       /* Input wrapper. */
       ._1Iexl #main footer ._3oju3 {
@@ -272,7 +341,7 @@
           background-color: var(--darker) !important; }
 
       /* Hide 'Type a message' once focused. */
-      .pluggable-input-compose.focused > div:first-child {
+      ._3F6QL._2WovP.focused ._39LWd {
         color: transparent; }
         /* On event smoothness. */
         .pluggable-input.pluggable-input-compose > div:first-child {
@@ -370,11 +439,11 @@
 
 
   /* Message info. */
-  .pane-preview {
+  ._3FAwT {
     background-color: var(--dark) !important; }
   	/* Doodle image. */
-  	.pane-preview .pane-chat-tile {
-      filter: invert(100%) opacity(0.6); }
+  	._3FAwT .pane-chat-tile {
+      filter: invert(100%) opacity(0.8); }
   	/* Read by. */
   	._2yeJ5 ._2sNbV ._2HDl5 ._2wP_Y > div {
       background-color: var(--dark) !important; }
@@ -456,8 +525,9 @@
 
     /* System messages. */
     .message-system {
-      box-shadow: 0 0 8px 0 var(--shadow);
-      background-color: var(--accent) !important; }
+      box-shadow: 0 0 8px 1px var(--shadow);
+      border-bottom: 3px solid var(--shadow);
+      background-color: var(--dark) !important; }
   		/* Text color and shadows. */
       .message-system * {
         text-shadow: none !important;
@@ -498,7 +568,8 @@
       box-shadow: 0 0px 4px 0 var(--darker);
       background-color: var(--darker) !important; }
       /* Reply wrapper. */
-      #main ._2EYZY ._3RNTQ {
+      #main ._2EYZY ._3RNTQ,
+      #main ._2EYZY ._1KD7C {
         padding-bottom: 5px;
         margin: 0 50px !important; }
         /* Reply content. */
@@ -509,13 +580,17 @@
   			#main ._2EYZY .Bmrty {
           color: var(--light) !important; }
         /* Close button. */
-        #main ._2EYZY ._3PiNI {
+        #main ._2EYZY ._3PiNI,
+        #main ._2EYZY ._28ZV1 {
+          justify-content: center;
+          padding: 0;
           margin-left: 5px;
           border-radius: 5px;
           transition: 150ms ease-in-out;
           background-color: var(--dark); }
   				/* On event. */
-  				#main ._2EYZY ._3PiNI:hover {
+  				#main ._2EYZY ._3PiNI:hover,
+          #main ._2EYZY ._28ZV1:hover {
             background-color: var(--darker); }
 
 
@@ -621,12 +696,13 @@
 
   /* Emoji-wanna-be-round. */
   .emojik {
+    opacity: 0.6;
     transition: 200ms ease-in-out;
     clip-path: circle(48%) !important; }
     /* Selected emoji. */
     .emojik:focus, .emojik:hover, .emojik.selected {
       box-shadow: none !important;
-      opacity: 0.3; }
+      opacity: 1; }
 
     /* Emoji quick selection. */
     ._1k6Uw {
@@ -704,7 +780,7 @@
   		._3sacU .bZ3B9 {
         background-color: var(--darker) !important; }
   		/* Right hand side. */
-  		._3sacU .Le35d {
+  		._3sacU ._1abwg {
         background-color: var(--dark) !important; }
 
 
@@ -718,14 +794,18 @@
     /* Remove ONLY borders. */
     ._1CkkN ._10xEB, ._14oqx .DcItJ,
     html[dir] ._2EXPL:after, ._3j7s9,
- 		._1fkhx {
+ 		._1fkhx, .chat-body {
       border: none !important; }
 
 
 
   /* Global icon color. */
   span:not([data-icon="image"]) > svg > path {
+    transition: 200ms ease;
     fill: var(--icon) !important; }
+    /* On event. */
+    span:not([data-icon="image"]):hover > svg > path {
+      fill: var(--accent) !important; }
 
   /* Default profile picture background. */
   span[data-icon="default-user"] svg > path:first-child,
@@ -789,4 +869,35 @@
   /* Audio message. */
   span[data-icon="audio-file"] svg path {
     fill: rgba(255, 173, 31, 0.8) !important; }
+    /* Audio length bar. */
+    ._22cMG.fS1bA .nDKsM {
+      background-color: var(--accent) !important; }
+      /* Slider thumb. */
+    input[type=range]::-webkit-slider-thumb {
+      cursor: pointer;
+      background: var(--accent) !important; }
+
+
+  @media screen and (min-width: 1441px) {
+    /* Animation. */
+    html[dir=ltr] ._3dqpi {
+      /* display: none !important; */
+      animation: _104Un 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.38); }
+
+    /* App wrapper. */
+    #app .app {
+      border-radius: 6px;
+      box-shadow: 0 0 0 2px var(--darker), 0 0 8px 0px var(--shadow); }
+
+    /* Fullscreen. */
+    /*[[fullscreen]]*/
+
+    /* App background. */
+    /*[[background]]*/
+  }
+
+  /* "Privacy mode." */
+  /*[[blurcontacts]]*/
+
+
 }
