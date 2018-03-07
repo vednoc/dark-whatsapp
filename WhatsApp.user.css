@@ -4,7 +4,7 @@
 @namespace github.com/vednoc/onyx
 @homepageURL https://github.com/vednoc/onyx
 @updateURL https://raw.githubusercontent.com/vednoc/onyx/master/WhatsApp.user.css
-@version 1.0.2
+@version 1.0.3
 @author vednoc
 @license MIT
 @preprocessor uso
@@ -22,17 +22,19 @@
 
 @advanced dropdown background "App background" {
   bg1 "Custom image" <<<EOT
-  .app-wrapper::after {
+	html[dir] ._1FKgS::after {
     top: 0px; right: 0px;
     bottom: 0px; left: 0px;
     height: auto; width: auto;
-    background: var(--image) no-repeat center/cover !important; } EOT;
+    background: var(--image);
+    background-repeat: no-repeat;
+    background-size: cover; } EOT;
   bg2 "No image" <<<EOT
-	.app-wrapper::after {
+	html[dir] ._1FKgS::after {
     display: none !important; } EOT;
   bg3 "Default image" <<<EOT
-  .app-wrapper::after {
-    opacity: 0.8;
+	html[dir] ._1FKgS::after {
+    opacity: 0.8 !important;
     background-color: var(--accent) !important; } EOT;
 }
 @advanced image image "Only /w custom app background" {
@@ -56,10 +58,10 @@
   EOT;
   blur "Blurred" <<<EOT
   /* Blurry mode for contacts. *\/
-  ._2EXPL {
+  ._1NrpZ ._2EXPL {
     filter: blur(10px); }
     /* On event. *\/
-    ._2EXPL._1f1zm, ._2EXPL:hover {
+    ._1NrpZ ._2EXPL._1f1zm, ._1NrpZ ._2EXPL:hover {
       filter: blur(0px); }
   /* Blurry mode for pictures. *\/
   #main ._1JVSX, ._2Ry6_ ._1iCCh {
@@ -476,12 +478,15 @@
   	/* Active indicator. */
   	._2yeJ5 ._3b2Cf:before {
       background-color: var(--accent) !important; }
+    /* Selected links. */
+    .D6ZWG {
+      background-color: var(--accent) !important; }
 
 
 
 
   /* Media viewer. */
-	#app ._1zcz2, ._3_R6X{
+	#app ._1zcz2, ._3_R6X {
     background-color: rgba(0,0,0,0.85) !important; }
     /* Chevron background. */
 		._3_R6X ._39uZ2, ._298R6 {
@@ -495,7 +500,7 @@
       background-color: var(--dark) !important; }
       /* Inner element. */
       #app ._1zcz2 ._2EXPL {
-        background-color: transparent; }
+        background-color: transparent !important; }
         /* Text color. */
 				#app ._1zcz2 ._2EXPL ._3j7s9 *,
         ._3_R6X ._1XwnX * {
@@ -521,23 +526,28 @@
     /* Message text color. */
 		.message-in .selectable-text,
 		.message-out .selectable-text,
-		.message .quoted-mention,
-  	.message ._1upWv {
+		.quoted-mention,
+  	._1upWv {
       color: var(--light) !important; }
       /* Message meta text color. */
 			[class*="message-"] ._2f-RV *, [class*="message-"] ._2f-RV *,
       [class*="message-"] ._1_Gu6 *, [class*="message-"] ._27K_5 *,
  			[class*="message-"] ._1DZAH *, [class*="message-"] ._3cMIj * {
         color: var(--light); }
+
     /* Image/gif/video meta wrapper. */
-    .message-gif ._2Pjvv, .message-image ._2TvOE {
+    .KYpDv ._1DZAH {
       bottom: 8px;
       padding: 2px 5px;
       border-radius: 4px;
       background-color: var(--shadow); }
+      /* Text color. */
+      .KYpDv ._1DZAH ._3EFt_ {
+        margin-top: 0px;
+        color: var(--lighter); }
 
     /* Message options. */
-    .message ._1i1U7 {
+    ._1i1U7 {
       /*transition: 200ms ease-in-out;/**/
       background: linear-gradient(to right, transparent 0%, var(--darker) 40%) !important; }
       /* Smooth transition. */
@@ -545,14 +555,14 @@
         transition: 50ms ease-in-out !important; }
 
     /* System messages. */
-    .message-system {
-      box-shadow: 0 1px 8px 0px var(--shadow);
-      border-bottom: 3px solid var(--shadow);
-      background-color: var(--dark) !important; }
+    .Zq3Mc {
+      box-shadow: 0 2px 8px 1px var(--shadow) !important;
+      border-bottom: 3px solid var(--shadow) !important;
+      background-color: var(--darker) !important; }
   		/* Text color and shadows. */
-      .message-system * {
+      .Zq3Mc * {
         text-shadow: none !important;
-        color: var(--lighter); }
+        color: var(--lighter) !important; }
   		/* New message. */
   		#main ._1mq8g {
         border: none !important;
@@ -565,13 +575,13 @@
 
 
     /* Document embeds. */
-		.message ._1vKRe {
+		._1vKRe {
       border-color: var(--darker) !important; }
       /* Embed background. */
-      .message ._2CORf ._12xX7 {
+      ._2CORf ._12xX7 {
         background-color: var(--dark) !important; }
         /* Embed text color. */
-				.message ._2CORf ._12xX7 * {
+				._2CORf ._12xX7 * {
           color: var(--light); }
 
     /* Link embeds. */
@@ -581,38 +591,39 @@
       ._1sGGp._2nFG1 *, ._2lwig._2nFG1 * {
         color: var(--light); }
       /* Link options. */
-      .message ._2DNgV._2Cju4, .jZ4tp._2Cju4 {
+      ._2DNgV._2Cju4, .jZ4tp._2Cju4 {
         background: none !important; }
 
   	/* Reply. (= */
-  	#main ._2EYZY {
-      box-shadow: 0 0px 4px 0 var(--darker);
+  	._1fkhx ._2EYZY {
+      box-shadow: 0 0px 4px 0 var(--darker) !important;
       background-color: var(--darker) !important; }
       /* Reply wrapper. */
-      #main ._2EYZY ._3RNTQ,
-      #main ._2EYZY ._1KD7C {
+      ._1fkhx ._2EYZY ._1VeYA,
+      ._1fkhx ._2EYZY ._1KD7C {
         padding-bottom: 5px;
         margin: 0 50px !important; }
         /* Reply content. */
-        #main ._2EYZY ._27BA_ {
-          border-radius: 5px;
-          background-color: var(--dark); }
+        ._1fkhx ._2EYZY ._3PmkG,
+        ._1rWJz._8k43T {
+          border-radius: 5px !important;
+          background-color: var(--dark) !important; }
   			/* Text color. */
-  			#main ._2EYZY .Bmrty {
+  			._1fkhx ._2EYZY .Y9G3K {
           color: var(--light) !important; }
         /* Close button. */
-        #main ._2EYZY ._3PiNI,
-        #main ._2EYZY ._28ZV1 {
+        ._1fkhx ._2EYZY ._1j_Ub,
+        ._1fkhx ._2EYZY ._28ZV1 {
           justify-content: center;
           padding: 0;
           margin-left: 5px;
           border-radius: 5px;
           transition: 150ms ease-in-out;
-          background-color: var(--dark); }
+          background-color: var(--dark) !important; }
   				/* On event. */
-  				#main ._2EYZY ._3PiNI:hover,
+  				#main ._2EYZY ._1j_Ub:hover,
           #main ._2EYZY ._28ZV1:hover {
-            background-color: var(--darker); }
+            background-color: var(--darker) !important; }
 
 
   /* Select messages. */
@@ -773,14 +784,25 @@
 
 
   /* Drop items. (-: */
-  .drag-drop {
+  .drag-drop, ._2n-96 {
     background-color: var(--dark) !important; }
+    /* Footer. */
+    ._3nuGo {
+      background-color: var(--darker) !important; }
     /* Border. */
-    .drag-drop .stitching {
+    ._2n-96 ._3L-be {
       border: 5px dashed var(--accent) !important;
       color: var(--light) !important; }
+
+    /* Add file icon. */
+    .GpvML, ._1ypOz {
+      background-color: var(--dark) !important; }
+      /* Border. */
+      ._2gZno::after {
+        background-color: var(--accent) !important; }
+
     /* Accent border. */
-    .CzI8E {
+    .CzI8E, ._31WRs ._1DTd4 {
       border-bottom-color: var(--accent) !important; }
     /* Text color. */
     ._7HWvs {
