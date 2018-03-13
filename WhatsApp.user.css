@@ -48,15 +48,15 @@
     filter: invert(100%) opacity(0.45) !important; } EOT;
   doodle2 "Dark doodles" <<<EOT
 	.app ._1Iexl ._1GX8_ .pane-chat-tile {
-    filter: opacity(0.45) !important; } EOT;
+    filter: opacity(0.5) !important; } EOT;
   doodle3 "No doodles" <<<EOT
 	.app ._1Iexl ._1GX8_ .pane-chat-tile {
     display: none !important; } EOT;
 }
 @advanced dropdown blurcontacts "Blur contacts and images" {
-  noblur "Not blurred" <<<EOT
+  noblur "Hide" <<<EOT
   EOT;
-  blur "Blurred" <<<EOT
+  blur "Show" <<<EOT
   /* Blurry mode for contacts. *\/
   ._1NrpZ ._2EXPL {
     filter: blur(10px); }
@@ -84,11 +84,13 @@
     width: 100%; } EOT;
 }
 @advanced dropdown tails "Message tails" {
-  on "On" <<<EOT
+  on "Show" <<<EOT
   EOT;
-  off "Off" <<<EOT
-  .tail {
-    display: none !important; } EOT;
+  off "Hide" <<<EOT
+  .tail-container {
+    display: none !important; }
+  ._3_7SH.tail {
+    border-radius: 7.5px !important; } EOT;
 }
 ==/UserStyle== */
 
@@ -145,12 +147,17 @@
     /* Text color. */
     ._2NbD3 * {
       color: var(--light); }
-      /* Fix QR code. */
+    /* Fix QR code. */
 		._2NbD3 .XSdna {
-      border: 3px solid var(--light); }
+      border: 3px solid white !important; }
+
   /* Disable background. */
 	._2U_Zc:before {
     display: none !important; }
+
+  /* Icon color. */
+  span[class="ySrGA"] > svg > g > rect {
+    fill: var(--dark) !important; }
 
 
   /* Landing page. */
@@ -253,7 +260,7 @@
           color: var(--light); }
         /* Avatar wrapper background. */
 				._1WliW {
-          box-shadow: 0 0 0px 2px var(--dark) !important;
+          box-shadow: 0 0 8px -1px var(--shadow) !important;
           background-color: transparent !important; }
 
 
@@ -350,7 +357,7 @@
 
     /* Footer. */
 		._1Iexl #main footer {
-      box-shadow: 0 0 8px 0 var(--shadow);
+      box-shadow: 0 0 8px -1px var(--shadow);
       background-color: var(--darker); }
       /* Input wrapper. */
       ._1Iexl #main footer ._3oju3 {
@@ -554,9 +561,17 @@
       .message span:last-child div {
         transition: 50ms ease-in-out !important; }
 
+    /* Typing... */
+    .vdXUe {
+      color: var(--accent) !important; }
+
+    /* New message indicator. */
+    .OUeyt {
+      background-color: var(--accent) !important; }
+
     /* System messages. */
     .Zq3Mc {
-      box-shadow: 0 2px 8px 1px var(--shadow) !important;
+      box-shadow: 0 2px 8px 0px var(--shadow) !important;
       border-bottom: 3px solid var(--shadow) !important;
       background-color: var(--darker) !important; }
   		/* Text color and shadows. */
@@ -813,6 +828,14 @@
   /* Status area! */
   .app-wrapper-web ._3sacU {
     background-color: rgba(0,0,0,0.6) !important; }
+
+    /* Normal icon. */
+    span[data-icon="status-v3"] > svg > path:first-child {
+      opacity: 0.55 !important; }
+      /* Unread status. */
+      span[data-icon="status-v3-unread"] > svg > path:first-child {
+        opacity: 1 !important; }
+
     /* Status modal! */
     /*.app-wrapper-web ._1abwg {
       max-width: 1396px;
@@ -820,12 +843,31 @@
       margin-left: auto;
       margin-right: auto;
       top: 20px; }/**/
-  		/* Left hand side. */
-  		._3sacU .bZ3B9 {
-        background-color: var(--darker) !important; }
-  		/* Right hand side. */
-  		._3sacU ._1abwg {
-        background-color: var(--dark) !important; }
+
+		/* Left hand side. */
+		._3sacU .bZ3B9 {
+      background-color: var(--darker) !important; }
+      /* Text color. */
+      ._3sacU .bZ3B9 ._35Ai0,
+      ._3sacU .bZ3B9 ._1wjpf {
+        color: var(--lighter) !important; }
+      /* Dimmed text. */
+      ._3sacU .bZ3B9 ._3_-c_,
+      ._3sacU .bZ3B9 ._1Ou9Y,
+      ._3sacU .bZ3B9 ._itDl {
+        color: var(--light) !important; }
+
+		/* Right hand side. */
+		._3sacU ._1abwg {
+      background-color: var(--dark) !important; }
+      /* Text color. */
+      ._3sacU ._1abwg ._2LuDL {
+        color: var(--light); }
+
+    /* Reply to status. */
+    .C534L ._3PmkG {
+      border-radius: 5px !important;
+      background-color: var(--dark) !important; }
 
 
 
@@ -867,7 +909,8 @@
   /* Sent AND seen message. */
   span[data-icon="msg-dblcheck-ack"] svg path,
   span[data-icon="status-dblcheck-ack"] svg path,
-  span[data-icon="msg-dblcheck-ack-light"] svg path {
+  span[data-icon="msg-dblcheck-ack-light"] svg path,
+  span[data-icon="status-v3-unread"] > svg > path:last-child {
     fill: var(--accent) !important;
     opacity: 1 !important; }
 
