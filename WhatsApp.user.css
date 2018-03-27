@@ -4,7 +4,7 @@
 @namespace github.com/vednoc/onyx
 @homepageURL https://github.com/vednoc/onyx
 @updateURL https://raw.githubusercontent.com/vednoc/onyx/master/WhatsApp.user.css
-@version 1.0.4
+@version 1.0.5
 @author vednoc
 @license MIT
 @preprocessor uso
@@ -22,7 +22,7 @@
 
 @advanced dropdown background "App background" {
   bg1 "Custom image" <<<EOT
-	html[dir] ._1FKgS::after {
+  html[dir] ._1FKgS::after {
     top: 0px; right: 0px;
     bottom: 0px; left: 0px;
     height: auto; width: auto;
@@ -30,10 +30,10 @@
     background-repeat: no-repeat;
     background-size: cover; } EOT;
   bg2 "No image" <<<EOT
-	html[dir] ._1FKgS::after {
+  html[dir] ._1FKgS::after {
     display: none !important; } EOT;
   bg3 "Default image" <<<EOT
-	html[dir] ._1FKgS::after {
+  html[dir] ._1FKgS::after {
     opacity: 0.8 !important;
     background-color: var(--accent) !important; } EOT;
 }
@@ -44,13 +44,13 @@
 }
 @advanced dropdown doodles "Chat doodles" {
   doodle1 "Light doodles" <<<EOT
-	.app ._1Iexl ._1GX8_ .pane-chat-tile {
+  .app .YUoyu {
     filter: invert(100%) opacity(0.45) !important; } EOT;
   doodle2 "Dark doodles" <<<EOT
-	.app ._1Iexl ._1GX8_ .pane-chat-tile {
+  .app .YUoyu {
     filter: opacity(0.5) !important; } EOT;
   doodle3 "No doodles" <<<EOT
-	.app ._1Iexl ._1GX8_ .pane-chat-tile {
+  .app .YUoyu {
     display: none !important; } EOT;
 }
 @advanced dropdown blurcontacts "Blur contacts and images" {
@@ -92,6 +92,7 @@
   ._3_7SH.tail {
     border-radius: 7.5px !important; } EOT;
 }
+@var text emoji_opacity "Emoji opacity" 0.6
 ==/UserStyle== */
 
 
@@ -142,17 +143,17 @@
 
 
   /* Log-in page. */
-	._2NbD3 {
+  ._2NbD3 {
     background-color: var(--darker) !important; }
     /* Text color. */
     ._2NbD3 * {
       color: var(--light); }
     /* Fix QR code. */
-		._2NbD3 .XSdna {
+    ._2NbD3 .XSdna {
       border: 3px solid white !important; }
 
   /* Disable background. */
-	._2U_Zc:before {
+  ._2U_Zc:before {
     display: none !important; }
 
   /* Icon color. */
@@ -161,7 +162,7 @@
 
 
   /* Landing page. */
-	.app ._1Iexl ._3qlW9 {
+  .app ._1Iexl ._3qlW9 {
     /*box-shadow: 1px -3px 2px 0 shadow inset/**/
     border: none;
     background-color: var(--dark) }
@@ -183,12 +184,12 @@
       background: var(--dark); } /**/
     /* Image. */
     .app ._1Iexl ._3qlW9 ._3BqNZ ._2Uo0Z {
-      width: 250px;
-      height: 250px;
+      max-width: 250px;
+      max-height: 250px;
       border-radius: 50%;
       opacity: 0.66 !important; }
     /* Text color. */
-		.app ._1Iexl ._3qlW9 ._2MnNk * {
+    .app ._1Iexl ._3qlW9 ._2MnNk * {
       color: var(--light); }
     /* Accent bar. */
     .app ._1Iexl ._3qlW9:after {
@@ -196,29 +197,29 @@
 
 
 
-	/* Left drawer. */
+  /* Left drawer. */
   #app .app #side {
     /* TODO borders. */
     border-right: 2px solid var(--darker);
     background-color: var(--darker); }
 
     /* Chat list. */
-		#side > header {
+    #side > header {
       background-color: var(--darker) !important; }
 
     /* Notifications && more!! */
-		#side ._3YewW {
+    #side ._3YewW {
       box-shadow: inset 0 0 4px 0 var(--shadow);
       background-color: var(--accent) !important; }
       /* Text color. */
-			#side ._3YewW .l2BEH * {
+      #side ._3YewW .l2BEH * {
         color: var(--lighter); }
 
     /* Search or start new chat. */
- 		#side ._3CPl4 {
+    #side ._3CPl4 {
       border-bottom: 0px solid var(--dark);
       background-color: var(--darker) !important;
-  		background-color: transparent !important; }
+      background-color: transparent !important; }
       /* Label background. */
       #side ._3CPl4 .gQzdc label, .gQzdc._3sdhb,
       ._2dA13 ._15JHr .gQzdc /* TODO: Fix for the modal input. */ {
@@ -231,35 +232,35 @@
         /* Active. */
         #side ._3CPl4 .gQzdc._3sdhb {
           background-color: var(--dark) !important;
-  				background-color: transparent !important; }
+          background-color: transparent !important; }
         /* New group button. */
         ._2EXPL .dIyEr ._1jJLh {
           background-color: var(--accent); }
 
-       	/* Search results. */
-				#side ._1AKfk {
+        /* Search results. */
+        #side ._1AKfk {
           color: var(--accent);
           background-color: var(--dark); }
           /* Matching results. */
-					#side .matched-text {
+          #side .matched-text {
             color: var(--accent) !important; }
 
     /* Contacts wrapper. */
-		#side ._1NrpZ, ._2fq0t ._1lIXT {
+    #side ._1NrpZ, ._2fq0t ._1lIXT {
       background-color: transparent !important; }
       /* Contacts. */
-			#side ._1NrpZ ._2EXPL, ._2fq0t ._66JgU {
+      #side ._1NrpZ ._2EXPL, ._2fq0t ._66JgU {
         transition: 200ms ease-in-out;
         background-color: transparent !important; }
         /* On event. */
-				#side ._1NrpZ ._2EXPL._1f1zm,
- 				#side ._1NrpZ ._2EXPL:hover {
+        #side ._1NrpZ ._2EXPL._1f1zm,
+        #side ._1NrpZ ._2EXPL:hover {
           background-color: var(--dark) !important; }
         /* Text color. */
-				#side ._1NrpZ [class*="_3j7s9"] * {
+        #side ._1NrpZ [class*="_3j7s9"] * {
           color: var(--light); }
         /* Avatar wrapper background. */
-				._1WliW {
+        ._1WliW {
           box-shadow: 0 0 8px -1px var(--shadow) !important;
           background-color: transparent !important; }
 
@@ -271,14 +272,14 @@
     ._2fq0t header {
       background-color: var(--darker) !important; }
     /* Transparent sections. */
-		._2fq0t ._1CRb5 {
+    ._2fq0t ._1CRb5 {
       box-shadow: none !important;
       background-color: transparent !important; }
-  		/* Highlighted sections. */
-  		._2fq0t ._3hhmj ._1CkkN {
+      /* Highlighted sections. */
+      ._2fq0t ._3hhmj ._1CkkN {
         background-color: var(--dark) !important; }
       /* Profile picture height. */
-			._2fq0t ._12fSF {
+      ._2fq0t ._12fSF {
         min-height: 200px; }
       /* Change profile picture. */
       ._2fq0t .WX_XW { background-color: rgba(0,0,0,0.5) !important; }
@@ -293,62 +294,62 @@
         background-color: var(--dark); }
 
     /* Archived chat image. */
-  	._2fq0t ._2Lev2 {
+    ._2fq0t ._2Lev2 {
       background-color: var(--dark) !important; }
 
     /* Body. */
     ._2fq0t ._2sNbV ._1CkkN,
- 		._2fq0t ._2sNbV ._2EXPL {
+    ._2fq0t ._2sNbV ._2EXPL {
       background-color: transparent; }
       /* On event. TODO: Fixed, but it might still overlap somewhere. */
       .k1feT ._2sNbV > ._1CkkN:hover,
       ._2fq0t ._2sNbV ._1CkkN:hover {
         background-color: var(--dark); }
 
-  	/* New chat section. */
-  	._2fq0t .gQzdc label {
+    /* New chat section. */
+    ._2fq0t .gQzdc label {
       border: none;
       background-color: var(--dark); }
-  		/* Input element. */
-  		._2fq0t .gQzdc label input {
+    /* Input element. */
+    ._2fq0t .gQzdc label input {
         background-color: transparent; }
 
-  	/* New group. */
-  	._2fq0t ._39pS- {
+    /* New group. */
+    ._2fq0t ._39pS- {
       background-color: transparent !important; }
-  		/* Header. */
-  		._2fq0t ._1AKfk {
+      /* Header. */
+      ._2fq0t ._1AKfk {
         background-color: var(--dark) !important; }
-  			/* On event. */
-				._2EXPL:hover {
+        /* On event. */
+        ._2EXPL:hover {
           background-color: var(--dark) !important; }
       /* Search element */
       ._66JgU ._3_3Rs {
         border-bottom: none !important; }
-  		._66JgU ._3_3Rs input, ._66JgU ._3_3Rs ::placeholder {
+      ._66JgU ._3_3Rs input, ._66JgU ._3_3Rs ::placeholder {
         color: var(--lighter) !important; }
 
 
-	/* Dropdown menu. */
-	._2uLFU, ._1ArIP {
+  /* Dropdown menu. */
+  ._2uLFU, ._1ArIP {
     background-color: var(--darker) !important; }
     /* On event. */
-		._2uLFU li:hover, ._2ULFU li._28zBA {
+    ._2uLFU li:hover, ._2ULFU li._28zBA {
       background-color: var(--dark) !important; }
     /* Text color. */
-		._2uLFU div, _1ArIP div {
+    ._2uLFU div, _1ArIP div {
       color: var(--light); }
 
 
 
   /* Middle drawer. */
-	.app ._1Iexl ._1GX8_ {
+  .app ._1Iexl ._1GX8_ {
     background-color: var(--dark); }
     /* Doodle background. TODO: Plans for the future. */
     /*[[doodles]]*/
 
     /* Header. */
-		._1Iexl #main header {
+    ._1Iexl #main header {
       border: none;
       background-color: var(--dark); }
       /* Text color. */
@@ -356,19 +357,22 @@
         color: var(--light); }
 
     /* Footer. */
-		._1Iexl #main footer {
+    ._1Iexl #main footer {
       box-shadow: 0 0 8px -1px var(--shadow);
       background-color: var(--darker); }
       /* Input wrapper. */
       ._1Iexl #main footer ._3oju3 {
         border: none;
         border-bottom: 2px solid var(--dark);
-      	background-color: var(--dark); }
+        background-color: var(--dark); }
         /* Input element. */
         ._1Iexl #main footer ._3oju3 ._2bXVy {
           border: none !important;
           color: var(--light);
           background-color: var(--darker) !important; }
+      /* Voice message duration. */
+      ._30ie- {
+        color: var(--light) !important; }
 
       /* Hide 'Type a message' once focused. */
       ._3F6QL._2WovP.focused ._39LWd {
@@ -379,11 +383,11 @@
 
 
 
-	/* Right drawer. */
-	.app ._2yeJ5 ._2fq0t {
+  /* Right drawer. */
+  .app ._2yeJ5 ._2fq0t {
     background-color: var(--darker); }
-  	/* Border-color. */
-  	.app ._2yeJ5 {
+    /* Border-color. */
+    .app ._2yeJ5 {
       border-left-color: var(--darker) !important; }
     /* Header. */
     .app ._2yeJ5 ._2fq0t header {
@@ -398,15 +402,15 @@
       box-shadow: none;
       background-color: transparent; }
       /* Group name. */
-			.app ._2yeJ5 ._1CRb5 ._1DTd4, .media-body .CzI8E {
+      .app ._2yeJ5 ._1CRb5 ._1DTd4, .media-body .CzI8E {
         margin-bottom: 10px;
         color: var(--light);
         border-bottom: 2px solid var(--accent) !important; }
       /* User's name. */
-			.app ._2yeJ5 .copyable-text {
+      .app ._2yeJ5 .copyable-text {
         color: var(--light); }
       /* Accent color text. */
-			.app ._2yeJ5 ._1CRb5 ._1sYdX {
+      .app ._2yeJ5 ._1CRb5 ._1sYdX {
         font-weight: 400;
         color: var(--accent) !important; }
       /* Mute/Starred Messages. */
@@ -414,8 +418,8 @@
         color: var(--light); }
 
       /* Group options. */
-			.app ._2yeJ5 ._1CRb5 ._2EXPL,
- 			.app ._2yeJ5 ._1CRb5 ._1CkkN {
+      .app ._2yeJ5 ._1CRb5 ._2EXPL,
+      .app ._2yeJ5 ._1CRb5 ._1CkkN {
         transition: 200ms ease-in-out;
         background-color: transparent; }
         /* On event. */
@@ -426,41 +430,41 @@
         .app ._2yeJ5 ._1CRb5 ._2EXPL * {
           color: var(--light); }
         /* Admin color. */
-				.app ._2yeJ5 ._1CRb5 ._2e8Mu {
+        .app ._2yeJ5 ._1CRb5 ._2e8Mu {
           border: 2px solid var(--accent); }
         /* Button background. */
-				.app ._2yeJ5 ._1CRb5 ._1jJLh {
+        .app ._2yeJ5 ._1CRb5 ._1jJLh {
           background-color: var(--accent) !important; }
 
 
   /* Search messages. TODO: Apply this to all search elements. */
-  ._2yeJ5 ._1iMEz/*, ._2yeJ5 ._1iMEz._3sdhb*/ {
+  ._2yeJ5 ._1iMEz, ._1iopp /*, ._2yeJ5 ._1iMEz._3sdhb*/ {
     background-color: var(--darker) !important; }
-  	/* Input wrapper. */
-  	._1iMEz label {
+    /* Input wrapper. */
+    ._1iMEz label {
       border: 0px solid var(--dark) !important;
       background-color: var(--dark) !important; }
-  		._1iMEz ._3sdhb label {
+      ._1iMEz ._3sdhb label {
         background-color: transparent !important; }
-  		/* Input element. */
-  		._1iMEz label input {
+      /* Input element. */
+      ._1iMEz label input {
         background-color: transparent !important; }
 
   /* Search messages body. */
-  ._2yeJ5 .OMzAb {
+  .YAPQk {
     background-color: var(--darker) !important; }
-  	/* Matching results. */
-  	._2yeJ5 .matched-text {
+    /* Matching results. */
+    ._2yeJ5 .matched-text {
       color: var(--accent) !important; }
-  	/* On event. */
-  	._2yeJ5 ._2EXPL:hover {
+    /* On event. */
+    ._2yeJ5 ._2EXPL:hover {
       background-color: var(--dark) !important; }
 
 
   /* Starred messages. */
   ._2yeJ5 .ZwkQK, .ZwkQK {
     background-color: var(--darker) !important; }
-  	/* On event. */
+    /* On event. */
     .starred-msg-wrapper, .MS-DH {
       transition: 200ms ease-in-out !important; }
     /* On event. */
@@ -471,35 +475,33 @@
   /* Message info. */
   ._3FAwT {
     background-color: var(--dark) !important; }
-  	/* Doodle image. */
-  	._3FAwT .pane-chat-tile {
+    /* Doodle image. */
+    ._3FAwT .pane-chat-tile {
       filter: invert(100%) opacity(0.8); }
-  	/* Read by. */
-  	._2yeJ5 ._2sNbV ._2HDl5 ._2wP_Y > div {
+    /* Read by. */
+    ._2yeJ5 ._2sNbV ._2HDl5 ._2wP_Y > div {
       background-color: var(--dark) !important; }
 
 
   /* Media/docs/links section. */
   ._2yeJ5 ._3b2Cf {
     background-color: var(--darker) !important; }
-  	/* Active indicator. */
-  	._2yeJ5 ._3b2Cf:before {
+    /* Active indicator. */
+    ._2yeJ5 ._3b2Cf:before {
       background-color: var(--accent) !important; }
     /* Selected links. */
     .D6ZWG {
       background-color: var(--accent) !important; }
 
 
-
-
   /* Media viewer. */
-	#app ._1zcz2, ._3_R6X {
+  #app ._1zcz2, ._3_R6X {
     background-color: rgba(0,0,0,0.85) !important; }
     /* Chevron background. */
-		._3_R6X ._39uZ2, ._298R6 {
+    ._3_R6X ._39uZ2, ._298R6 {
       background-color: var(--darker) !important; }
-  	/* Preloader. */
-  	._3dGYA {
+    /* Preloader. */
+    ._3dGYA {
       background-color: var(--darker) !important; }
 
     /* Header. */
@@ -509,7 +511,7 @@
       #app ._1zcz2 ._2EXPL {
         background-color: transparent !important; }
         /* Text color. */
-				#app ._1zcz2 ._2EXPL ._3j7s9 *,
+        #app ._1zcz2 ._2EXPL ._3j7s9 *,
         ._3_R6X ._1XwnX * {
           color: var(--light); }
 
@@ -518,7 +520,7 @@
       border: none !important;
       background-color: var(--darker) !important; }
       /* Selected image. */
-			._3Qh77 ._1xQmx {
+      ._3Qh77 ._1xQmx {
         transform: scale(1) !important;
         border: 3px solid var(--accent) !important }
         html[dir=ltr] .UPNDG:hover:not(._1xQmx) {
@@ -527,19 +529,19 @@
 
 
 
-	/* Message bubbles. */
+  /* Message bubbles. */
   .message-in, .message-out, .message {
     background-color: var(--darker) !important; }
     /* Message text color. */
-		.message-in .selectable-text,
-		.message-out .selectable-text,
-		.quoted-mention,
-  	._1upWv {
+    .message-in .selectable-text,
+    .message-out .selectable-text,
+    .quoted-mention,
+    ._1upWv {
       color: var(--light) !important; }
       /* Message meta text color. */
-			[class*="message-"] ._2f-RV *, [class*="message-"] ._2f-RV *,
+      [class*="message-"] ._2f-RV *, [class*="message-"] ._2f-RV *,
       [class*="message-"] ._1_Gu6 *, [class*="message-"] ._27K_5 *,
- 			[class*="message-"] ._1DZAH *, [class*="message-"] ._3cMIj * {
+      [class*="message-"] ._1DZAH *, [class*="message-"] ._3cMIj * {
         color: var(--light); }
 
     /* Image/gif/video meta wrapper. */
@@ -574,29 +576,29 @@
       box-shadow: 0 2px 8px 0px var(--shadow) !important;
       border-bottom: 3px solid var(--shadow) !important;
       background-color: var(--darker) !important; }
-  		/* Text color and shadows. */
+      /* Text color and shadows. */
       .Zq3Mc * {
         text-shadow: none !important;
         color: var(--lighter) !important; }
-  		/* New message. */
-  		#main ._1mq8g {
+      /* New message. */
+      #main ._1mq8g {
         border: none !important;
         background-color: transparent !important; }
-  			/* X unread messages. */
-  			#main ._1mq8g .L89LI {
+        /* X unread messages. */
+        #main ._1mq8g .L89LI {
           box-shadow: 0 0 8px 0 var(--shadow) !important;
           color: var(--light) !important;
           background-color: var(--darker) !important; }
 
 
     /* Document embeds. */
-		._1vKRe {
+    ._1vKRe {
       border-color: var(--darker) !important; }
       /* Embed background. */
       ._2CORf ._12xX7 {
         background-color: var(--dark) !important; }
         /* Embed text color. */
-				._2CORf ._12xX7 * {
+        ._2CORf ._12xX7 * {
           color: var(--light); }
 
     /* Link embeds. */
@@ -609,8 +611,8 @@
       ._2DNgV._2Cju4, .jZ4tp._2Cju4 {
         background: none !important; }
 
-  	/* Reply. (= */
-  	._1fkhx ._2EYZY {
+    /* Reply. (= */
+    ._1fkhx ._2EYZY {
       box-shadow: 0 0px 4px 0 var(--darker) !important;
       background-color: var(--darker) !important; }
       /* Reply wrapper. */
@@ -623,8 +625,8 @@
         ._1rWJz._8k43T {
           border-radius: 5px !important;
           background-color: var(--dark) !important; }
-  			/* Text color. */
-  			._1fkhx ._2EYZY .Y9G3K {
+        /* Text color. */
+        ._1fkhx ._2EYZY .Y9G3K {
           color: var(--light) !important; }
         /* Close button. */
         ._1fkhx ._2EYZY ._1j_Ub,
@@ -635,8 +637,8 @@
           border-radius: 5px;
           transition: 150ms ease-in-out;
           background-color: var(--dark) !important; }
-  				/* On event. */
-  				#main ._2EYZY ._1j_Ub:hover,
+          /* On event. */
+          #main ._2EYZY ._1j_Ub:hover,
           #main ._2EYZY ._28ZV1:hover {
             background-color: var(--darker) !important; }
 
@@ -663,14 +665,14 @@
     /* Footer/control/options. */
     #main ._2FsQ8, #main ._3PWNn, #main ._3XpR2 {
       background-color: var(--darker); }
-  		/* Text color. */
-  		#main ._2FsQ8 span, #main ._3XpR2 {
+      /* Text color. */
+      #main ._2FsQ8 span, #main ._3XpR2 {
         color: var(--light); }
 
 
 
   /* Bubble tails -- experimental. */
-	.tail .tail-container {
+  .tail .tail-container {
     width: 0px !important;
     height: 12px !important;
     z-index: 0 !important;
@@ -689,9 +691,9 @@
     /*[[tails]]*/
 
     /* Disable tails everywhere except in chat. */
-  	.starred-msg-wrapper .tail-container,
-		.message-gallery .tail-container,
-		.MS-DH .tail-container {
+    .starred-msg-wrapper .tail-container,
+    .message-gallery .tail-container,
+    .MS-DH .tail-container {
       display: none !important; }
       /* Rounded corners. */
       .message-gallery.tail-override-left,
@@ -700,57 +702,57 @@
 
 
   /* Emoji menu. */
-	footer ._14wwJ ._1qdni,
-  footer ._14wwJ ._3ETD3,
-  footer ._14wwJ ._3ETD3 .R0lQ6,
- 	._3ETD3, .R0lQ6 {
+  ._3ZkhL .Sbkt2,
+  ._3ZkhL .Sbkt2 > span > div,
+  ._3ETD3, .R0lQ6 {
     background-color: var(--dark) !important; }
     /* Emoji tabs. */
-    footer ._14wwJ ._1qdni, ._1qdni {
+    ._3ZkhL ._16pld {
       background: var(--darker) !important; }
       /* Tab indicator. */
-      footer ._14wwJ ._1qdni ._1qXED, ._1qdni ._1qXED {
+    ._3ZkhL ._16pld ._3xr1I, ._1qdni ._1qXED {
         background-color: var(--accent) !important; }
 
     /* Search emojis. */
-    footer ._14wwJ .R0lQ6 label, .R0lQ6 .mnt6B {
+    ._3ZkhL .QQnvT label {
       background-color: var(--darker) !important; }
       /* Text color. */
-			footer ._14wwJ .R0lQ6 label input {
-        color: var(--light); }
+      ._3ZkhL .QQnvT label input {
+        color: var(--light) !important; }
 
     /* Gif preloader background. */
-    footer ._14wwJ ._2s3PU {
+    ._3ZkhL ._15Q1E {
       border: 2px dashed var(--darker);
-      background-color: transparent; }
+      background-color: transparent !important; }
 
       /* Preview. */
-			._1drQ- {
+      ._1drQ- {
         background-color: var(--dark) !important; }
         /* Header. */
-				._1drQ- header {
+        ._1drQ- header {
           background-color: var(--accent) !important; }
           /* Text color. */
-					._1drQ- header *, ._1drQ- .media-body * {
+          ._1drQ- header *, ._1drQ- .media-body * {
             color: var(--lighter) !important; }
         /* Footer. */
-				._1drQ- .media-collection {
+        ._1drQ- .media-collection {
           background-color: var(--darker); }
           /* Button. */
-					._1drQ- .media-collection .btn-fill, ._1drQ- ._3hV1n {
+          ._1drQ- .media-collection .btn-fill, ._1drQ- ._3hV1n {
             color: var(--lighter);
             background-color: var(--accent) !important; }
 
 
   /* Emoji-wanna-be-round. */
   .emojik {
-    opacity: 0.6;
+    opacity: /*[[emoji_opacity]]*/;
     transition: 200ms ease-in-out;
     clip-path: circle(48%) !important; }
     /* Selected emoji. */
     .emojik:focus, .emojik:hover, .emojik.selected {
       box-shadow: none !important;
-      opacity: 1; }
+      opacity: 1;
+      transform: rotateZ(10deg); }
 
     /* Emoji quick selection. */
     ._1k6Uw {
@@ -773,27 +775,30 @@
   ._3gUiM, #startup, #initial_startup {
     background-color: var(--dark) !important; }
     /* Modal. */
-  	._3gUiM ._2dA13 ._1CnF3,
-		._2dA13 ._18wuJ, ._2dA13 .IuYNx {
+    ._3gUiM ._2dA13 ._1CnF3,
+    ._2dA13 ._18wuJ, ._2dA13 .IuYNx {
       background-color: var(--darker) !important; }
       /* Text color. */
-			._3gUiM ._1CnF3 * {
+      ._3gUiM ._1CnF3 * {
         color: var(--light); }
       /* Header. */
-			._2dA13 header {
+      ._2dA13 header {
         background-color: var(--accent) !important; }
+      /* Footer. */
+      ._2dA13 .iHLo1 {
+        background-color: var(--darker) !important; }
 
 
   /* Buttons. */
-	.PNlAR, ._3hV1n, ._2Gki6 {
+  .PNlAR, ._3hV1n, ._2Gki6 {
     color: var(--lighter) !important;
     background-color: var(--accent) !important; }
-  	/* Muted checkbox color. */
-  	._1VD7W {
+    /* Muted checkbox color. */
+    ._1VD7W {
       border-color: var(--accent);
       background-color: var(--accent); }
-  	/* New message indicator. */
-  	#side .OUeyt {
+    /* New message indicator. */
+    #side .OUeyt {
       background-color: var(--accent) !important; }
 
 
@@ -844,8 +849,8 @@
       margin-right: auto;
       top: 20px; }/**/
 
-		/* Left hand side. */
-		._3sacU .bZ3B9 {
+    /* Left hand side. */
+    ._3sacU .bZ3B9 {
       background-color: var(--darker) !important; }
       /* Text color. */
       ._3sacU .bZ3B9 ._35Ai0,
@@ -857,8 +862,8 @@
       ._3sacU .bZ3B9 ._itDl {
         color: var(--light) !important; }
 
-		/* Right hand side. */
-		._3sacU ._1abwg {
+    /* Right hand side. */
+    ._3sacU ._1abwg {
       background-color: var(--dark) !important; }
       /* Text color. */
       ._3sacU ._1abwg ._2LuDL {
@@ -871,16 +876,16 @@
 
 
 
-	/* REMOVE STUFF. */
+  /* REMOVE STUFF. */
     /* Remove pseudo elements. */
     [class*="chat"]:before, [class*="chat"]:after,
     .gQzdc:after, ._1CkkN:before, ._3AwwN:after,
-  	.MS-DH:before, .MS-DH:after, ._3YwRO {
+    .MS-DH:before, .MS-DH:after, ._3YwRO {
       display: none !important; }
     /* Remove ONLY borders. */
     ._1CkkN ._10xEB, ._14oqx .DcItJ,
     html[dir] ._2EXPL:after, ._3j7s9,
- 		._1fkhx, .chat-body, ._3hhmj {
+    ._1fkhx, .chat-body, ._3hhmj {
       border: none !important; }
 
 
@@ -891,7 +896,8 @@
     fill: var(--icon) !important; }
     /* On event. */
     span:not([data-icon="image"]):hover > svg > path {
-      fill: var(--accent) !important; }
+      /* fill: var(--accent) !important; */
+      opacity: 0.3 !important; }
 
   /* Default profile picture background. */
   span[data-icon="default-user"] svg > path:first-child,
