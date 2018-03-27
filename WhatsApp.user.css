@@ -4,7 +4,7 @@
 @namespace github.com/vednoc/onyx
 @homepageURL https://github.com/vednoc/onyx
 @updateURL https://raw.githubusercontent.com/vednoc/onyx/master/WhatsApp.user.css
-@version 1.0.4
+@version 1.0.5
 @author vednoc
 @license MIT
 @preprocessor uso
@@ -44,13 +44,13 @@
 }
 @advanced dropdown doodles "Chat doodles" {
   doodle1 "Light doodles" <<<EOT
-  .app ._1Iexl ._1GX8_ .pane-chat-tile {
+  .app .YUoyu {
     filter: invert(100%) opacity(0.45) !important; } EOT;
   doodle2 "Dark doodles" <<<EOT
-  .app ._1Iexl ._1GX8_ .pane-chat-tile {
+  .app .YUoyu {
     filter: opacity(0.5) !important; } EOT;
   doodle3 "No doodles" <<<EOT
-  .app ._1Iexl ._1GX8_ .pane-chat-tile {
+  .app .YUoyu {
     display: none !important; } EOT;
 }
 @advanced dropdown blurcontacts "Blur contacts and images" {
@@ -92,6 +92,7 @@
   ._3_7SH.tail {
     border-radius: 7.5px !important; } EOT;
 }
+@var text emoji_opacity "Emoji opacity" 0.6
 ==/UserStyle== */
 
 
@@ -369,6 +370,9 @@
           border: none !important;
           color: var(--light);
           background-color: var(--darker) !important; }
+      /* Voice message duration. */
+      ._30ie- {
+        color: var(--light) !important; }
 
       /* Hide 'Type a message' once focused. */
       ._3F6QL._2WovP.focused ._39LWd {
@@ -434,7 +438,7 @@
 
 
   /* Search messages. TODO: Apply this to all search elements. */
-  ._2yeJ5 ._1iMEz/*, ._2yeJ5 ._1iMEz._3sdhb*/ {
+  ._2yeJ5 ._1iMEz, ._1iopp /*, ._2yeJ5 ._1iMEz._3sdhb*/ {
     background-color: var(--darker) !important; }
     /* Input wrapper. */
     ._1iMEz label {
@@ -447,7 +451,7 @@
         background-color: transparent !important; }
 
   /* Search messages body. */
-  ._2yeJ5 .OMzAb {
+  .YAPQk {
     background-color: var(--darker) !important; }
     /* Matching results. */
     ._2yeJ5 .matched-text {
@@ -698,29 +702,28 @@
 
 
   /* Emoji menu. */
-  footer ._14wwJ ._1qdni,
-  footer ._14wwJ ._3ETD3,
-  footer ._14wwJ ._3ETD3 .R0lQ6,
+  ._3ZkhL .Sbkt2,
+  ._3ZkhL .Sbkt2 > span > div,
   ._3ETD3, .R0lQ6 {
     background-color: var(--dark) !important; }
     /* Emoji tabs. */
-    footer ._14wwJ ._1qdni, ._1qdni {
+    ._3ZkhL ._16pld {
       background: var(--darker) !important; }
       /* Tab indicator. */
-      footer ._14wwJ ._1qdni ._1qXED, ._1qdni ._1qXED {
+    ._3ZkhL ._16pld ._3xr1I, ._1qdni ._1qXED {
         background-color: var(--accent) !important; }
 
     /* Search emojis. */
-    footer ._14wwJ .R0lQ6 label, .R0lQ6 .mnt6B {
+    ._3ZkhL .QQnvT label {
       background-color: var(--darker) !important; }
       /* Text color. */
-      footer ._14wwJ .R0lQ6 label input {
-        color: var(--light); }
+      ._3ZkhL .QQnvT label input {
+        color: var(--light) !important; }
 
     /* Gif preloader background. */
-    footer ._14wwJ ._2s3PU {
+    ._3ZkhL ._15Q1E {
       border: 2px dashed var(--darker);
-      background-color: transparent; }
+      background-color: transparent !important; }
 
       /* Preview. */
       ._1drQ- {
@@ -742,13 +745,14 @@
 
   /* Emoji-wanna-be-round. */
   .emojik {
-    opacity: 0.6;
+    opacity: /*[[emoji_opacity]]*/;
     transition: 200ms ease-in-out;
     clip-path: circle(48%) !important; }
     /* Selected emoji. */
     .emojik:focus, .emojik:hover, .emojik.selected {
       box-shadow: none !important;
-      opacity: 1; }
+      opacity: 1;
+      transform: rotateZ(10deg); }
 
     /* Emoji quick selection. */
     ._1k6Uw {
@@ -780,6 +784,9 @@
       /* Header. */
       ._2dA13 header {
         background-color: var(--accent) !important; }
+      /* Footer. */
+      ._2dA13 .iHLo1 {
+        background-color: var(--darker) !important; }
 
 
   /* Buttons. */
@@ -889,7 +896,8 @@
     fill: var(--icon) !important; }
     /* On event. */
     span:not([data-icon="image"]):hover > svg > path {
-      fill: var(--accent) !important; }
+      /* fill: var(--accent) !important; */
+      opacity: 0.3 !important; }
 
   /* Default profile picture background. */
   span[data-icon="default-user"] svg > path:first-child,
