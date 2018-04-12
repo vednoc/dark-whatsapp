@@ -3,8 +3,8 @@
 @description A customizable theme for WhatsApp.
 @namespace github.com/vednoc/onyx
 @homepageURL https://github.com/vednoc/onyx
-@updateURL https://raw.githubusercontent.com/vednoc/onyx/master/WhatsApp.user.css
-@version 1.0.5
+@updateURL https://rawgit.com/vednoc/onyx/master/WhatsApp.user.css
+@version 1.0.6
 @author vednoc
 @license MIT
 @preprocessor uso
@@ -19,6 +19,7 @@
 @var color mred "Red-ish" #A3525B
 @var color mgreen "Green-ish" #70A352
 @var color mblue "Blue-ish" #527AA3
+@var text emoji_opacity "Emoji opacity" 0.6
 
 @advanced dropdown background "App background" {
   bg1 "Custom image" <<<EOT
@@ -92,7 +93,6 @@
   ._3_7SH.tail {
     border-radius: 7.5px !important; } EOT;
 }
-@var text emoji_opacity "Emoji opacity" 0.6
 ==/UserStyle== */
 
 
@@ -270,7 +270,13 @@
     background-color: var(--darker) !important; }
     /* Header color. */
     ._2fq0t header {
+      min-height: 50px;
+      height: auto;
       background-color: var(--darker) !important; }
+      /* Reset header height. */
+      ._2fq0t header > div:first-child {
+        padding: 12px 0 !important;
+        height: auto; }
     /* Transparent sections. */
     ._2fq0t ._1CRb5 {
       box-shadow: none !important;
@@ -278,11 +284,9 @@
       /* Highlighted sections. */
       ._2fq0t ._3hhmj ._1CkkN {
         background-color: var(--dark) !important; }
-      /* Profile picture height. */
-      ._2fq0t ._12fSF {
-        min-height: 200px; }
       /* Change profile picture. */
-      ._2fq0t .WX_XW { background-color: rgba(0,0,0,0.5) !important; }
+      ._2fq0t .WX_XW {
+        background-color: rgba(0,0,0,0.5) !important; }
       /* Text color. */
       ._2fq0t * {
         color: var(--light); }
@@ -707,23 +711,23 @@
   ._3ETD3, .R0lQ6 {
     background-color: var(--dark) !important; }
     /* Emoji tabs. */
-    ._3ZkhL ._16pld {
+    ._3ZkhL ._2ByZq {
       background: var(--darker) !important; }
       /* Tab indicator. */
-    ._3ZkhL ._16pld ._3xr1I, ._1qdni ._1qXED {
+    ._2NQtS  {
         background-color: var(--accent) !important; }
 
     /* Search emojis. */
-    ._3ZkhL .QQnvT label {
+    ._3ZkhL label {
       background-color: var(--darker) !important; }
       /* Text color. */
-      ._3ZkhL .QQnvT label input {
+      ._3ZkhL label input {
         color: var(--light) !important; }
 
     /* Gif preloader background. */
-    ._3ZkhL ._15Q1E {
-      border: 2px dashed var(--darker);
-      background-color: transparent !important; }
+    .zl5TR {
+      /* border: 2px dashed ; */
+      background-color: var(--darker) !important; }
 
       /* Preview. */
       ._1drQ- {
@@ -746,7 +750,7 @@
   /* Emoji-wanna-be-round. */
   .emojik {
     opacity: /*[[emoji_opacity]]*/;
-    transition: 200ms ease-in-out;
+    /* transition: 200ms ease-in-out; */
     clip-path: circle(48%) !important; }
     /* Selected emoji. */
     .emojik:focus, .emojik:hover, .emojik.selected {
