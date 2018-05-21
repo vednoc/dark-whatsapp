@@ -27,7 +27,8 @@
     top: 0px; right: 0px;
     bottom: 0px; left: 0px;
     height: auto; width: auto;
-    background: var(--image);
+    background-color: var(--dark);
+    background-image: var(--image);
     background-repeat: no-repeat;
     background-size: cover; } EOT;
   bg2 "No image" <<<EOT
@@ -40,7 +41,7 @@
 }
 @advanced image image "Only /w custom app background" {
   bg1 "Blurred" "https://media.discordapp.net/attachments/310799529161129984/417408747812552715/zilesanamin.jpg"
-  bg2 "Original" " https://images.discordapp.net/attachments/310799529161129984/320568157142122496/zilesana.jpg?width=1280&height=720"
+  bg2 "Original" "https://images.discordapp.net/attachments/310799529161129984/320568157142122496/zilesana.jpg?width=1280&height=720"
   bg3 "Empty" "https://web.whatsapp.com/nobg.jpg"
 }
 @advanced dropdown doodles "Chat doodles" {
@@ -62,15 +63,18 @@
   ._1NrpZ ._2EXPL {
     filter: blur(10px); }
     /* On event. *\/
-    ._1NrpZ ._2EXPL._1f1zm, ._1NrpZ ._2EXPL:hover {
+    ._1NrpZ ._2EXPL._1f1zm,
+    ._1NrpZ ._2EXPL:hover {
       filter: blur(0px); }
   /* Blurry mode for pictures. *\/
-  #main ._1JVSX, ._2Ry6_ ._1iCCh {
+  #main ._1JVSX,
+  ._2Ry6_ ._1iCCh {
     transition: 500ms ease-in-out;
     transition-delay: 0ms;
     filter: blur(10px) grayscale(100%); }
     /* On event. *\/
-    #main ._1JVSX:hover, ._2Ry6_ ._1iCCh:hover {
+    #main ._1JVSX:hover,
+    ._2Ry6_ ._1iCCh:hover {
       transition-delay: 500ms;
       filter: blur(0px) grayscale(0%); } EOT;
 }
@@ -82,7 +86,11 @@
   .app-wrapper-web ._3dqpi {
     height: calc(100% - 0px);
     top: 0px;
-    width: 100%; } EOT;
+    width: 100%; }
+  /* Outline and round edges. *\/
+  #app .app {
+    box-shadow: none !important;
+    border-radius: 0px; } EOT;
 }
 @advanced dropdown tails "Message tails" {
   on "Show" <<<EOT
