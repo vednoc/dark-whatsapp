@@ -101,6 +101,70 @@
   ._3_7SH.tail {
     border-radius: 7.5px !important; } EOT;
 }
+@advanced dropdown mobile "Compact mode for small resolutions" {
+  on "Enable" <<<EOT
+  @media screen and (max-height: 500px) {
+    ._3dqpi {
+      min-height: auto; }
+  }
+  @media screen and (max-width: 720px) {
+    /* .app > div { box-shadow: inset 0 0 0 4px var(--accent); } *\/
+
+    /* Width overflow fix. *\/
+    ._3dqpi {
+      min-width: 100%; }
+
+    /* Header fix. *\/
+    ._3auIg {
+      min-width: 220px; }
+
+    /* Contacts flexbox. *\/
+    .app.two > .k1feT,
+    .three .k1feT {
+      transition: 250ms ease-in-out;
+      flex: 0 0 075px !important; }
+
+    /* On hover or active sub-menus. *\/
+    .app.two > .k1feT:hover,
+    .MZIyP .k1feT {
+      transition-delay: 1s !important;
+      flex: 0 0 50% !important; }
+
+    /* Info flexbox. *\/
+    .three ._2yeJ5 {
+      width: calc(100% - 75px) !important;
+      left: 75px !important; }
+
+    /* Chat flexbox. *\/
+    .two > ._1Iexl {
+      box-shadow: 0 0 16px -4px var(--shadow) !important;
+      margin: 0 !important;
+      flex: 0 0 calc(100% - 75px) !important; }
+
+    /* Search contacts. *\/
+    .two .k1feT:not(:hover) ._2MSJr { 
+      padding: 0;
+      margin-left: 14px; }
+
+    /* On hover. *\/
+    .two .k1feT:hover ._2MSJr { 
+      transition-delay: 1s !important; }
+
+    /* Attach icons to avatars. *\/
+    .two .k1feT ._3j7s9:not(:hover) ._1AwDx ._3Bxar {
+      z-index: 999 !important;
+      position: absolute !important;
+      top: 45px !important;
+      right: 5px !important; }
+
+    /* Hide all icons except new messages. *\/
+    .two .k1feT ._15G96 span:not(.OUeyt),
+    .two .k1feT .ZR5SB {
+      display: none !important; }
+  } EOT;
+  off "Disable" <<<EOT
+  EOT;
+}
 ==/UserStyle== */
 
 
@@ -1016,61 +1080,6 @@
   /* "Privacy mode." */
   /*[[blurcontacts]]*/
 
-  @media screen and (max-height: 500px) {
-    ._3dqpi {
-      min-height: auto; }
-  }
-
-  @media screen and (max-width: 720px) {
-    /* .app > div { box-shadow: inset 0 0 0 4px var(--accent); } */
-
-    /* Width overflow fix. */
-    ._3dqpi {
-      min-width: 100%; }
-
-    /* Header fix. */
-    ._3auIg {
-      min-width: 220px; }
-
-    /* Contacts flexbox. */
-    .app.two > .k1feT,
-    .three .k1feT {
-      transition: 250ms ease-in-out;
-      flex: 0 0 075px !important; }
-
-    /* On hover or active sub-menus. */
-    .app.two > .k1feT:hover,
-    .MZIyP .k1feT {
-      transition-delay: 1s !important;
-      flex: 0 0 50% !important; }
-
-    /* Info flexbox. */
-    .three ._2yeJ5 {
-      width: calc(100% - 75px) !important;
-      left: 75px !important; }
-
-    /* Chat flexbox. */
-    .two > ._1Iexl {
-      box-shadow: 0 0 16px -4px var(--shadow) !important;
-      margin: 0 !important;
-      flex: 0 0 calc(100% - 75px) !important; }
-
-    /* Search contacts. */
-    .two .k1feT:not(:hover) ._2MSJr { 
-      background-color: crimson !important;
-      padding: 0;
-      margin-left: 14px; }
-
-    /* Attach icons to avatars. */
-    .two .k1feT ._3j7s9:not(:hover) ._1AwDx ._3Bxar {
-      z-index: 99 !important;
-      position: absolute !important;
-      top: 45px !important;
-      right: 5px !important; }
-
-    /* Hide all icons except new messages. */
-    .two .k1feT ._15G96 span:not(.OUeyt),
-    .two .k1feT .ZR5SB {
-      display: none !important; }
-  }
+  /* Mobile mode. */
+  /*[[mobile]]*/
 }
