@@ -153,10 +153,15 @@
 
   /* Log-in page. */
   ._2NbD3 {
+    border: 1px solid var(--shadow);
+    box-shadow: 0 8px 32px 0 var(--shadow) !important;
     background-color: var(--darker) !important; }
     /* Text color. */
     ._2NbD3 * {
       color: var(--light); }
+    /* Reload QR code. */
+    .HnNfm {
+      background-color: var(--darker) !important; }
     /* Fix QR code. */
     ._2NbD3 .XSdna {
       border: 3px solid white !important; }
@@ -172,9 +177,9 @@
 
   /* Landing page. */
   .app ._1Iexl ._3qlW9 {
-    /*box-shadow: 1px -3px 2px 0 shadow inset/**/
+    /* box-shadow: 1px -3px 2px 0 var(--shadow) inset; */
     border: none;
-    background-color: var(--dark) }
+    background-color: var(--dark); }
     /* Status update. */
     /* .app ._3q4NP ._3qlW9::before {
       content: 'Rewrite is done! A few old and a few new features coming up. Let me know if something is still broken. ^-^';
@@ -230,8 +235,9 @@
       background-color: var(--darker) !important;
       background-color: transparent !important; }
       /* Label background. */
-      #side ._3CPl4 .gQzdc label, .gQzdc._3sdhb,
-      ._2dA13 ._15JHr .gQzdc /* TODO: Fix for the modal input. */ {
+    #side ._3CPl4 .gQzdc label,
+    .gQzdc._3sdhb,
+    ._2dA13 ._15JHr .gQzdc {
         border: 0px solid var(--dark);
         background-color: var(--dark) !important; }
         /* Input element. */
@@ -240,11 +246,13 @@
           background-color: transparent; }
         /* Active. */
         #side ._3CPl4 .gQzdc._3sdhb {
-          background-color: var(--dark) !important;
-          background-color: transparent !important; }
-        /* New group button. */
-        ._2EXPL .dIyEr ._1jJLh {
-          background-color: var(--accent); }
+      background-color: var(--dark) !important; }
+
+  /* New group and group info buttons. */
+  ._2EXPL .dIyEr ._1jJLh,
+  ._2EXPL .dIyEr ._1WliW {
+    box-shadow: 0 0 8px -1px var(--shadow) !important;
+    background-color: var(--dark) !important; }
 
         /* Search results. */
         #side ._1AKfk {
@@ -272,6 +280,12 @@
         ._1WliW {
           box-shadow: 0 0 8px -1px var(--shadow) !important;
           background-color: transparent !important; }
+
+  /* New message indicator. */
+  #side .OUeyt {
+    color: var(--lighter) !important;
+    background-color: var(--darker) !important;
+    box-shadow: inset 0 0 0 2px var(--accent); }
 
 
   /* Settings. */
@@ -444,9 +458,6 @@
         /* Admin color. */
         .app ._2yeJ5 ._1CRb5 ._2e8Mu {
           border: 2px solid var(--accent); }
-        /* Button background. */
-        .app ._2yeJ5 ._1CRb5 ._1jJLh {
-          background-color: var(--accent) !important; }
 
 
   /* Search messages. TODO: Apply this to all search elements. */
@@ -579,10 +590,6 @@
     .vdXUe {
       color: var(--accent) !important; }
 
-    /* New message indicator. */
-    .OUeyt {
-      background-color: var(--accent) !important; }
-
     /* System messages. */
     .Zq3Mc {
       box-shadow: 0 2px 8px 0px var(--shadow) !important;
@@ -643,8 +650,9 @@
         ._1fkhx ._1qYlt._1vWM8 {
           background-color: var(--dark) !important; }
         /* Close button. */
-        ._1fkhx ._2t-jH {
-          padding: 0 !important;
+        ._1fkhx ._2t-jH,
+        ._1fkhx ._28ZV1 {
+          /* padding: 0 !important; */
           margin-left: 5px;
           border-radius: 5px;
           transition: 150ms ease-in-out;
@@ -812,10 +820,6 @@
     ._1VD7W {
       border-color: var(--accent);
       background-color: var(--accent); }
-    /* New message indicator. */
-    #side .OUeyt {
-      background-color: var(--accent) !important; }
-
 
 
   /* Drop items. (-: */
@@ -1000,7 +1004,7 @@
     /* App wrapper. */
     #app .app {
       border-radius: 6px;
-      box-shadow: 0 0 0 2px var(--darker), 0 0 8px 0px var(--shadow); }
+      box-shadow: 0 0 0 1px var(--darker), 0 0 8px 0px var(--shadow); }
 
     /* Fullscreen. */
     /*[[fullscreen]]*/
