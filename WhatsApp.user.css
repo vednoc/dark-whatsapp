@@ -20,29 +20,34 @@
 @var color mgreen "Green-ish" #70A352
 @var color mblue "Blue-ish" #527AA3
 @var text emoji_opacity "Emoji opacity" 0.6
+@var text customImage "Custom image" url(replace-with-image-address)
 
 @advanced dropdown background "App background" {
-  bg1 "Custom image" <<<EOT
-  html[dir] ._1FKgS::after {
+  bg1 "Default theme image" <<<EOT
+  ._1FKgS::after {
     top: 0px; right: 0px;
     bottom: 0px; left: 0px;
     height: auto; width: auto;
-    background-color: var(--dark);
-    background-image: var(--image);
+    background-color: var(--dark) !important;
+    background-image: var(--image) !important;
     background-repeat: no-repeat;
     background-size: cover; } EOT;
-  bg2 "No image" <<<EOT
-  html[dir] ._1FKgS::after {
-    display: none !important; } EOT;
-  bg3 "Default image" <<<EOT
-  html[dir] ._1FKgS::after {
+  bg2 "Your custom image" <<<EOT
+  ._1FKgS::after {
+    top: 0px; right: 0px;
+    bottom: 0px; left: 0px;
+    height: auto; width: auto;
+    background-color: var(--dark) !important;
+    background-image: /*[[customImage]]*\/ !important;
+    background-repeat: no-repeat;
+    background-size: cover; } EOT;
+  bg3 "Default WA image" <<<EOT
+  ._1FKgS::after {
     opacity: 0.8 !important;
     background-color: var(--accent) !important; } EOT;
-}
-@advanced image image "Only /w custom app background" {
-  bg1 "Blurred" "https://media.discordapp.net/attachments/310799529161129984/417408747812552715/zilesanamin.jpg"
-  bg2 "Original" "https://images.discordapp.net/attachments/310799529161129984/320568157142122496/zilesana.jpg?width=1280&height=720"
-  bg3 "Empty" "https://web.whatsapp.com/nobg.jpg"
+  bg4 "No image" <<<EOT
+  ._1FKgS::after {
+    display: none !important; } EOT;
 }
 @advanced dropdown doodles "Chat doodles" {
   doodle1 "Light doodles" <<<EOT
@@ -180,8 +185,7 @@
     --mred: /*[[mred]]*/;
     --mgreen: /*[[mgreen]]*/;
     --mblue: /*[[mblue]]*/;
-    --image: url(/*[[image]]*/);
-    --emoji-opacity: /*[[emoji_opacity]]*/;
+    --image: url(https://media.discordapp.net/attachments/310799529161129984/417408747812552715/zilesanamin.jpg);
   }
 
   /* Body reset. */
@@ -1058,6 +1062,12 @@
       cursor: pointer;
       background: var(--accent) !important; }
 
+  /* Disable background on small resolutions. */
+  @media screen and (max-width: 1441px) {
+    ._1FKgS::after {
+      display: none !important;
+    }
+  }
 
   @media screen and (min-width: 1441px) {
     /* Animation. */
