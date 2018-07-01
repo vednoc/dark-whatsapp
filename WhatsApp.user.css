@@ -429,6 +429,7 @@
 
   /* Dropdown menu. */
   ._2uLFU, ._1ArIP {
+    box-shadow: 0 2px 8px 0 var(--shadow), 0 2px 16px 0 var(--shadow) !important;
     background-color: var(--darker) !important; }
     /* On event. */
     ._2uLFU li:hover, ._2ULFU li._28zBA {
@@ -444,6 +445,10 @@
     background-color: var(--dark); }
     /* Doodle background. TODO: Plans for the future. */
     /*[[doodles]]*/
+
+    /* Jump to present button. */
+    ._298R6 {
+      background-color: var(--darker) !important; }
 
     /* Header. */
     ._1Iexl #main header {
@@ -866,20 +871,23 @@
     /* Modal. */
     ._3gUiM ._2dA13 ._1CnF3,
     ._2dA13 ._18wuJ, ._2dA13 .IuYNx {
+      box-shadow: 0 0 0 1px var(--darker), 0 8px 16px 0px var(--shadow) !important;
       background-color: var(--darker) !important; }
       /* Selected contact. */
       ._3gUiM ._2EXPL._1f1zm,
-      ._3gUiM ._2EXPL:hover {
+      ._3gUiM ._2EXPL:hover,
+      ._2EXPL._3ntaf:hover {
         background-color: var(--dark) !important; }
       /* Text color. */
       ._3gUiM ._1CnF3 * {
         color: var(--light); }
-      /* Header. */
-      ._2dA13 header {
-        background-color: var(--accent) !important; }
-      /* Footer. */
+      /* Header/footer. */
+      ._2dA13 header,
       ._2dA13 .iHLo1 {
         background-color: var(--darker) !important; }
+      /* Buttons. */
+      ._2Lbqu {
+        background-color: var(--dark) !important; }
 
 
   /* Buttons. */
@@ -1081,7 +1089,6 @@
 
     /* App wrapper. */
     #app .app {
-      border-radius: 6px;
       box-shadow: 0 0 0 1px var(--darker), 0 0 8px 0px var(--shadow); }
 
     /* Fullscreen. */
