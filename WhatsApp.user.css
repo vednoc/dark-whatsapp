@@ -19,7 +19,7 @@
 @var color mred "Red-ish" #A3525B
 @var color mgreen "Green-ish" #70A352
 @var color mblue "Blue-ish" #527AA3
-@var text emoji_opacity "Emoji opacity" 0.6
+@var text emojiOpacity "Emoji opacity" 0.6
 @var text customImage "Custom image" url(replace-with-image-address)
 
 @advanced dropdown background "App background" {
@@ -186,6 +186,7 @@
     --mgreen: /*[[mgreen]]*/;
     --mblue: /*[[mblue]]*/;
     --image: url(https://media.discordapp.net/attachments/310799529161129984/417408747812552715/zilesanamin.jpg);
+    --emojiOpacity: /*[[emojiOpacity]]*/;
   }
 
   /* Body reset. */
@@ -239,7 +240,7 @@
     display: none !important; }
 
   /* Icon color. */
-  span[class="ySrGA"] > svg > g > rect {
+  span[class="_3CSsZ"] > svg > rect {
     fill: var(--dark) !important; }
 
 
@@ -269,7 +270,8 @@
       max-width: 200px;
       max-height: 200px;
       border-radius: 50%;
-      opacity: 0.66 !important; }
+      filter: opacity(/*[[emojiOpacity]]*/);
+      transition: opacity 1s ease !important; }
     /* Text color. */
     .app ._1Iexl ._3qlW9 ._2MnNk * {
       color: var(--light); }
@@ -589,7 +591,7 @@
   #app ._1zcz2, ._3_R6X {
     background-color: rgba(0,0,0,0.85) !important; }
     /* Chevron background. */
-    ._3_R6X ._39uZ2, ._298R6 {
+    ._2-IeP {
       background-color: var(--darker) !important; }
     /* Preloader. */
     ._3dGYA {
@@ -832,7 +834,7 @@
 
   /* Emoji-wanna-be-round. */
   .emojik {
-    opacity: var(--emoji-opacity);
+    opacity: var(--emojiOpacity);
     transition: transform 200ms cubic-bezier(0.59, 0.57, 0.39, 1.04);
     clip-path: circle(47%) !important; }
     /* Selected emoji. */
@@ -1033,6 +1035,8 @@
     fill: transparent !important; }
 
   /* Logo. */
+  ._3CSsZ > svg > path:first-child {
+    fill: var(--accent) !important; }
   span[data-icon="logo"] svg path:nth-child(1) {
     fill: white !important; }
   span[data-icon="alert-phone"] svg path:first-child,
