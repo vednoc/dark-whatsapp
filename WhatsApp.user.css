@@ -458,30 +458,29 @@
       ._1Iexl #main header ._1WBXd * {
         color: var(--light); }
 
-    /* Footer. */
-    ._1Iexl #main footer {
-      background-color: var(--darker); }
-      /* Input wrapper. */
-      ._1Iexl #main footer ._3oju3 {
-        border: none;
-        border-bottom: 2px solid var(--dark);
-        background-color: var(--dark); }
-        /* Input element. */
-        ._1Iexl #main footer ._3oju3 ._2bXVy {
-          border: none !important;
-          color: var(--light);
-          background-color: var(--darker) !important; }
-      /* Voice message duration. */
-      ._30ie- {
-        color: var(--light) !important; }
+  /* Footer. */
+  ._1Iexl #main footer {
+    background-color: var(--darker); }
+    /* Input wrapper. */
+    #main footer > div {
+      border: none;
+      /* border-bottom: 2px solid var(--dark); */
+      background-color: var(--dark); }
+      /* Input element. */
+      #main footer > div:nth-child(1) > div:nth-child(2) {
+        border: none !important;
+        color: var(--light);
+        background-color: var(--darker) !important; }
+    /* Voice message duration. */
+    ._30ie- {
+      color: var(--light) !important; }
 
-      /* Hide 'Type a message' once focused. */
-      ._3F6QL._2WovP.focused ._39LWd {
-        color: transparent; }
-        /* On event smoothness. */
-        .pluggable-input.pluggable-input-compose > div:first-child {
-          transition: 150ms ease-in-out !important; }
-
+  /* Hide 'Type a message' once focused. */
+  ._3F6QL._2WovP.focused ._39LWd {
+    color: transparent; }
+    /* On event smoothness. */
+    .pluggable-input.pluggable-input-compose > div:first-child {
+      transition: 150ms ease-in-out !important; }
 
 
   /* Right drawer. */
@@ -795,21 +794,31 @@
         border-radius: 7.5px !important; }
 
 
+  /* Temporary fix for emoji container. */
+  #main footer > div:nth-child(2) > div {
+    border: 0; }
+  /* Emoji/gif background. */
+  ._1UbeR, ._2HBs4 {
+    background-color: var(--dark) !important; }
+
   /* Emoji menu. */
   ._3ZkhL .Sbkt2,
   ._3ZkhL .Sbkt2 > span > div,
   ._3ETD3, .R0lQ6 {
     background-color: var(--dark) !important; }
     /* Emoji tabs. */
-    ._3ZkhL ._2ByZq {
+    ._3ZkhL ._2ByZq,
+    .YbzIC {
       background: var(--darker) !important; }
       /* Tab indicator. */
-    ._2NQtS  {
+    ._2NQtS,
+    .YbzIC .YGHyX {
         background-color: var(--accent) !important; }
 
     /* Search emojis. */
-    ._3ZkhL label {
-      background-color: var(--darker) !important; }
+    ._3ZkhL label,
+    ._2rR_l {
+      background-color: var(--dark) !important; }
       /* Text color. */
       ._3ZkhL label input {
         color: var(--light) !important; }
