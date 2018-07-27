@@ -705,34 +705,31 @@
         background: none !important; }
 
     /* Reply. (= */
-    ._1fkhx ._2EYZY {
+    footer ._3kAJH {
       box-shadow: 0 0px 4px 0 var(--darker) !important;
       background-color: var(--darker) !important; }
       /* Reply wrapper. */
-      ._1fkhx ._2EYZY ._1VeYA,
-      ._1fkhx ._2EYZY ._1KD7C {
+      footer ._3kAJH ._1VeYA,
+      footer ._3kAJH ._1KD7C {
         padding-bottom: 5px;
         margin: 0 50px !important; }
         /* Reply content. */
-        ._1fkhx ._2EYZY ._3PmkG,
+        footer ._3kAJH ._3PmkG,
         ._1rWJz._8k43T {
           background-color: var(--dark) !important; }
-        /* Text color. */
-        ._1fkhx ._2EYZY .Y9G3K {
-          color: var(--light) !important; }
         /* Empty container. */
-        ._1fkhx ._1qYlt._1vWM8 {
+        footer ._1qYlt._1vWM8 {
           background-color: var(--dark) !important; }
         /* Close button. */
-        ._1fkhx ._2t-jH,
-        ._1fkhx ._28ZV1 {
-          /* padding: 0 !important; */
+        footer ._2t-jH,
+        footer ._28ZV1 {
+          padding: 0 !important;
           margin-left: 5px;
           border-radius: 5px;
           transition: 150ms ease-in-out;
           background-color: var(--dark) !important; }
           /* On event. */
-          #main ._2EYZY ._2t-jH:hover {
+          footer ._2t-jH:hover {
             background-color: var(--darker) !important; }
 
 
