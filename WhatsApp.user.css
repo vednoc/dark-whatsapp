@@ -629,12 +629,20 @@
   /* Message bubbles. */
   .message-in, .message-out, .message {
     background-color: var(--darker) !important; }
+
     /* Message text color. */
     .message-in .selectable-text,
     .message-out .selectable-text,
     .quoted-mention,
     ._1upWv {
       color: var(--light) !important; }
+
+    /* Mentions. */
+    .message-in .matched-mention,
+    .message-out .matched-mention,
+    .message-out .matched-mention .at-symbol {
+      color: var(--accent) !important; }
+
       /* Message meta text color. */
       [class*="message-"] ._2f-RV *, [class*="message-"] ._2f-RV *,
       [class*="message-"] ._1_Gu6 *, [class*="message-"] ._27K_5 *,
