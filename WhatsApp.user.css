@@ -1,12 +1,12 @@
 /* ==UserStyle==
-@name WhatsApp by Mew
-@description A customizable theme for WhatsApp.
-@namespace github.com/vednoc/onyx
-@homepageURL https://github.com/vednoc/onyx
-@updateURL https://rawgit.com/vednoc/onyx/master/WhatsApp.user.css
-@version 1.0.10
-@author vednoc
-@license MIT
+@name         WhatsApp by Mew
+@description  A customizable theme for WhatsApp.
+@namespace    github.com/vednoc/onyx
+@homepageURL  https://github.com/vednoc/onyx
+@updateURL    https://rawgit.com/vednoc/onyx/master/WhatsApp.user.css
+@version      1.1.0
+@author       vednoc
+@license      MIT
 @preprocessor uso
 
 @var color dark "Dark" #272c35
@@ -19,8 +19,10 @@
 @var color mred "Red-ish" #A3525B
 @var color mgreen "Green-ish" #70A352
 @var color mblue "Blue-ish" #527AA3
-@var text emojiOpacity "Emoji opacity" 0.6
+@var text emojiOpacity "Emoji opacity" 0.75
 @var text customImage "Custom image" url(replace-with-image-address)
+@var text customRules "Custom CSS rules" #test::after { content: "paste all your custom css here!" !important; }
+@var text customCompact "Compact mode breakpoint" 720px
 
 @advanced dropdown background "App background" {
   bg1 "Default theme image" <<<EOT
@@ -31,7 +33,8 @@
     background-color: var(--dark) !important;
     background-image: var(--image) !important;
     background-repeat: no-repeat;
-    background-size: cover; } EOT;
+    background-size: cover;
+    background-position: center; } EOT;
   bg2 "Your custom image" <<<EOT
   ._1FKgS::after {
     top: 0px; right: 0px;
@@ -40,15 +43,17 @@
     background-color: var(--dark) !important;
     background-image: /*[[customImage]]*\/ !important;
     background-repeat: no-repeat;
-    background-size: cover; } EOT;
+    background-size: cover;
+    background-position: center; } EOT;
   bg3 "Default WA image" <<<EOT
   ._1FKgS::after {
-    opacity: 0.8 !important;
+    opacity: var(--emojiOpacity) !important;
     background-color: var(--accent) !important; } EOT;
   bg4 "No image" <<<EOT
   ._1FKgS::after {
     display: none !important; } EOT;
 }
+
 @advanced dropdown doodles "Chat doodles" {
   doodle1 "Light doodles" <<<EOT
   .app .YUoyu {
@@ -56,37 +61,48 @@
   doodle2 "Dark doodles" <<<EOT
   .app .YUoyu {
     filter: opacity(0.5) !important; } EOT;
-  doodle3 "No doodles" <<<EOT
+  doodle3 "Disable doodles" <<<EOT
   .app .YUoyu {
     display: none !important; } EOT;
 }
-@advanced dropdown blurcontacts "Blur contacts and images" {
-  noblur "Hide" <<<EOT
+
+@advanced dropdown blurContacts "Blur contacts" {
+  disable "Disable" <<<EOT
+  /* Disabled. *\/
   EOT;
-  blur "Show" <<<EOT
+  enable "Enable" <<<EOT
   /* Blurry mode for contacts. *\/
   ._1NrpZ ._2EXPL {
     filter: blur(10px); }
-    /* On event. *\/
-    ._1NrpZ ._2EXPL._1f1zm,
-    ._1NrpZ ._2EXPL:hover {
-      filter: blur(0px); }
-  /* Blurry mode for pictures. *\/
+  /* On event. *\/
+  ._1NrpZ ._2EXPL._1f1zm,
+  ._1NrpZ ._2EXPL:hover {
+    filter: blur(0px); } EOT;
+}
+
+@advanced dropdown blurImages "Blur images" {
+  disable "Disable" <<<EOT
+  /* Disabled. *\/
+  EOT;
+  enable "Enable" <<<EOT
+  /* Blurry mode for images. *\/
   #main ._1JVSX,
   ._2Ry6_ ._1iCCh {
     transition: 500ms ease-in-out;
     transition-delay: 0ms;
     filter: blur(10px) grayscale(100%); }
-    /* On event. *\/
-    #main ._1JVSX:hover,
-    ._2Ry6_ ._1iCCh:hover {
-      transition-delay: 500ms;
-      filter: blur(0px) grayscale(0%); } EOT;
+  /* On event. *\/
+  #main ._1JVSX:hover,
+  ._2Ry6_ ._1iCCh:hover {
+    transition-delay: 500ms;
+    filter: blur(0px) grayscale(0%); } EOT;
 }
+
 @advanced dropdown fullscreen "Fullscreen" {
-  notfullscreen "Not fullscreen" <<<EOT
+  disable "Disable" <<<EOT
+  /* Disabled. *\/
   EOT;
-  fullscreen "Fullscreen" <<<EOT
+  enable "Enable" <<<EOT
   /* Fullscreen. *\/
   .app-wrapper-web ._3dqpi {
     height: calc(100% - 0px);
@@ -95,29 +111,36 @@
   /* Outline and round edges. *\/
   #app .app {
     box-shadow: none !important;
-    border-radius: 0px; } EOT;
+    border-radius: 0px; }
+  /* Disable background image. *\/
+  body > div > div::after {
+    display: none !important; } EOT;
 }
+
 @advanced dropdown tails "Message tails" {
-  on "Show" <<<EOT
+  enable "Enable" <<<EOT
+  /* Enabled. *\/
   EOT;
-  off "Hide" <<<EOT
+  disable "Disable" <<<EOT
   .tail-container {
     display: none !important; }
   ._3_7SH.tail {
     border-radius: 7.5px !important; } EOT;
 }
-@advanced dropdown mobile "Compact mode for small resolutions" {
-  on "Enable" <<<EOT
+
+@advanced dropdown compactMode "Compact mode for small resolutions" {
+  enable "Enable" <<<EOT
   @media screen and (max-height: 500px) {
     ._3dqpi {
       min-height: auto; }
   }
   @media screen and (max-width: 720px) {
-    /* .app > div { box-shadow: inset 0 0 0 4px var(--accent); } *\/
-
     /* Width overflow fix. *\/
     ._3dqpi {
       min-width: 100%; }
+  }
+  @media screen and (max-width:/*[[customCompact]]*\/) {
+    /* .app > div { box-shadow: inset 0 0 0 4px var(--accent); } *\/
 
     /* Header fix. *\/
     ._3auIg {
@@ -133,7 +156,7 @@
     .app.two > .k1feT:hover,
     .MZIyP .k1feT {
       transition-delay: 1s !important;
-      flex: 0 0 50% !important; }
+      flex: 0 0 30% !important; }
 
     /* Info flexbox. *\/
     .three ._2yeJ5 {
@@ -142,7 +165,6 @@
 
     /* Chat flexbox. *\/
     .two > ._1Iexl {
-      box-shadow: 0 0 16px -4px var(--shadow) !important;
       margin: 0 !important;
       flex: 0 0 calc(100% - 75px) !important; }
 
@@ -167,7 +189,8 @@
     .two .k1feT .ZR5SB {
       display: none !important; }
   } EOT;
-  off "Disable" <<<EOT
+  disable "Disable" <<<EOT
+  /* Disabled. *\/
   EOT;
 }
 ==/UserStyle== */
@@ -488,7 +511,7 @@
     background-color: var(--darker); }
     /* Border-color. */
     .app ._2yeJ5 {
-      border-left-color: var(--darker) !important; }
+      border-left-color: transparent !important; }
     /* Header. */
     .app ._2yeJ5 ._2fq0t header {
       background-color: var(--darker); }
@@ -1088,7 +1111,7 @@
       cursor: pointer;
       background: var(--accent) !important; }
 
-  /* Disable background on small resolutions. */
+  /* Disable background image on small resolutions. */
   @media screen and (max-width: 1441px) {
     ._1FKgS::after {
       display: none !important;
@@ -1113,8 +1136,12 @@
   }
 
   /* "Privacy mode." */
-  /*[[blurcontacts]]*/
+  /*[[blurContacts]]*/
+  /*[[blurImages]]*/
 
-  /* Mobile mode. */
-  /*[[mobile]]*/
+  /* Compact mode. */
+  /*[[compactMode]]*/
+
+  /* Custom CSS rules. */
+  /*[[customRules]]*/
 }
