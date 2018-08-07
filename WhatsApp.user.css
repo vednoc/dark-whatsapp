@@ -21,6 +21,7 @@
 @var color mblue "Blue-ish" #527AA3
 @var text emojiOpacity "Emoji opacity" 0.75
 @var text customImage "Custom image" url(replace-with-image-address)
+@var text customRules "Custom CSS rules" #test::after { content: "paste all your custom css here!" !important; }
 
 @advanced dropdown background "App background" {
   bg1 "Default theme image" <<<EOT
@@ -1139,4 +1140,7 @@
 
   /* Compact mode. */
   /*[[compactMode]]*/
+
+  /* Custom CSS rules. */
+  /*[[customRules]]*/
 }
