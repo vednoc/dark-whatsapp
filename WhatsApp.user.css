@@ -22,6 +22,7 @@
 @var text emojiOpacity "Emoji opacity" 0.75
 @var text customImage "Custom image" url(replace-with-image-address)
 @var text customRules "Custom CSS rules" #test::after { content: "paste all your custom css here!" !important; }
+@var text customCompact "Compact mode breakpoint" 720px
 
 @advanced dropdown background "App background" {
   bg1 "Default theme image" <<<EOT
@@ -134,11 +135,12 @@
       min-height: auto; }
   }
   @media screen and (max-width: 720px) {
-    /* .app > div { box-shadow: inset 0 0 0 4px var(--accent); } *\/
-
     /* Width overflow fix. *\/
     ._3dqpi {
       min-width: 100%; }
+  }
+  @media screen and (max-width:/*[[customCompact]]*\/) {
+    /* .app > div { box-shadow: inset 0 0 0 4px var(--accent); } *\/
 
     /* Header fix. *\/
     ._3auIg {
@@ -154,7 +156,7 @@
     .app.two > .k1feT:hover,
     .MZIyP .k1feT {
       transition-delay: 1s !important;
-      flex: 0 0 50% !important; }
+      flex: 0 0 30% !important; }
 
     /* Info flexbox. *\/
     .three ._2yeJ5 {
@@ -163,7 +165,6 @@
 
     /* Chat flexbox. *\/
     .two > ._1Iexl {
-      box-shadow: 0 0 16px -4px var(--shadow) !important;
       margin: 0 !important;
       flex: 0 0 calc(100% - 75px) !important; }
 
@@ -510,7 +511,7 @@
     background-color: var(--darker); }
     /* Border-color. */
     .app ._2yeJ5 {
-      border-left-color: var(--darker) !important; }
+      border-left-color: transparent !important; }
     /* Header. */
     .app ._2yeJ5 ._2fq0t header {
       background-color: var(--darker); }
