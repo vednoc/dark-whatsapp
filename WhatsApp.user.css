@@ -134,11 +134,6 @@
     ._3dqpi {
       min-height: auto; }
   }
-  @media screen and (max-width: 720px) {
-    /* Width overflow fix. *\/
-    ._3dqpi {
-      min-width: 100%; }
-  }
   @media screen and (max-width:/*[[customCompact]]*\/) {
     /* .app > div { box-shadow: inset 0 0 0 4px var(--accent); } *\/
 
@@ -152,10 +147,15 @@
       transition: 250ms ease-in-out;
       flex: 0 0 075px !important; }
 
+    /* Chat section. *\/
+    ._1Iexl {
+      flex: 0 0 65% !important; }
+
     /* On hover or active sub-menus. *\/
     .app.two > .k1feT:hover,
     .MZIyP .k1feT {
       transition-delay: 1s !important;
+      /* TODO: Adjust panel width. *\/
       flex: 0 0 30% !important; }
 
     /* Info flexbox. *\/
@@ -188,6 +188,17 @@
     .two .k1feT ._15G96 span:not(.OUeyt),
     .two .k1feT .ZR5SB {
       display: none !important; }
+  }
+  @media screen and (max-width: 720px) {
+    /* Width overflow fix. *\/
+    ._3dqpi {
+      min-width: 100%; }
+
+    /* On hover or active sub-menus. *\/
+    .app.two > .k1feT:hover,
+    .MZIyP .k1feT {
+      transition-delay: 1s !important;
+      flex: 0 0 40% !important; }
   } EOT;
   disable "Disable" <<<EOT
   /* Disabled. *\/
