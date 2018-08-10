@@ -317,8 +317,6 @@
 
   /* Left drawer. */
   #app .app #side {
-    /* TODO borders. */
-    border-right: 2px solid var(--darker);
     background-color: var(--darker); }
 
     /* Chat list. */
@@ -837,11 +835,12 @@
     background-color: var(--dark) !important; }
     /* Emoji tabs. */
     ._3ZkhL ._2ByZq,
-    .YbzIC {
+    ._3ZkhL ._1qUma {
       background: var(--darker) !important; }
-      /* Tab indicator. */
+    /* Tab indicator. */
     ._2NQtS,
-    .YbzIC .YGHyX {
+    .YbzIC .YGHyX,
+    ._1Wbpa {
         background-color: var(--accent) !important; }
 
     /* Search emojis. */
@@ -1019,8 +1018,10 @@
     /* Remove ONLY borders. */
     ._1CkkN ._10xEB, ._14oqx .DcItJ,
     html[dir] ._2EXPL:after, ._3j7s9,
-    ._1fkhx, .chat-body, ._3hhmj {
+    ._1fkhx, .chat-body, ._3hhmj, ._2nmDZ {
       border: none !important; }
+    /* Some random iframe? */
+    object { display: none !important; }
 
 
 
