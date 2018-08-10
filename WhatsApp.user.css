@@ -735,33 +735,23 @@
       ._2DNgV._2Cju4, .jZ4tp._2Cju4 {
         background: none !important; }
 
-    /* Reply. (= */
-    footer ._3kAJH {
-      box-shadow: 0 0px 4px 0 var(--darker) !important;
-      background-color: var(--darker) !important; }
-      /* Reply wrapper. */
-      footer ._3kAJH ._1VeYA,
-      footer ._3kAJH ._1KD7C {
-        padding-bottom: 5px;
-        margin: 0 50px !important; }
-        /* Reply content. */
-        footer ._3kAJH ._3PmkG,
-        ._1rWJz._8k43T {
-          background-color: var(--dark) !important; }
-        /* Empty container. */
-        footer ._1qYlt._1vWM8 {
-          background-color: var(--dark) !important; }
-        /* Close button. */
-        footer ._2t-jH,
-        footer ._28ZV1 {
-          padding: 0 !important;
-          margin-left: 5px;
-          border-radius: 5px;
-          transition: 150ms ease-in-out;
-          background-color: var(--dark) !important; }
-          /* On event. */
-          footer ._2t-jH:hover {
-            background-color: var(--darker) !important; }
+
+  /* Reply section. (= */
+  footer .rstyJ {
+    box-shadow: 0 0px 4px 0 var(--darker) !important;
+    background-color: var(--darker) !important; }
+  /* Reply wrapper. */
+  footer .rstyJ:last-child > div:first-child {
+    margin: 0 0 5px 2rem !important;
+    background-color: transparent !important; }
+  /* Reply content. */
+  footer .rstyJ:last-child > div:first-child > div {
+    background-color: var(--dark) !important; }
+  /* Close button. */
+  footer .rstyJ:last-child > div:last-child {
+    position: relative;
+    margin: 0 2rem 0 1rem !important;
+    background-color: transparent !important; }
 
 
   /* Select messages. */
