@@ -912,20 +912,19 @@
       ._2dA13 header,
       ._2dA13 .iHLo1 {
         background-color: var(--darker) !important; }
-      /* Buttons. */
-      ._2Lbqu {
-        background-color: var(--dark) !important; }
 
 
   /* Buttons. */
-  .PNlAR, ._3hV1n, ._2Gki6 {
+  .PNlAR, ._3hV1n, ._2Gki6, ._13iu_ {
     color: var(--lighter) !important;
     background-color: var(--accent) !important; }
-    /* Muted checkbox color. */
-    ._1VD7W {
-      border-color: var(--accent);
-      background-color: var(--accent); }
-
+  /* Muted checkbox color. */
+  ._1VD7W {
+    border-color: var(--accent);
+    background-color: var(--accent); }
+  /* Buttons. */
+  [role="button"]:hover {
+    background-color: var(--dark) !important; }
 
   /* Drop items. (-: */
   .drag-drop, ._2n-96 {
