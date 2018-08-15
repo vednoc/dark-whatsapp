@@ -29,7 +29,7 @@ To use this style you have to install [Stylus](https://add0n.com/stylus.html) an
 
 # Contribute
 
-Any sort of contribution is more than welcome. If you'd like to tip me then you can buy me a [ko-fi](http://ko-fi.com).
+Any sort of contribution is more than welcome. If you'd like to tip me then you can buy me a [ko-fi](https://ko-fi.com/vednoc).
 
 If you have an idea to share, a question to ask or a problem to report then do feel free to message me or make a pull request/open an issue and we'll go from there. Also you can check out [Trello board](https://trello.com/b/2mj5oxrm/whatsapp-by-mew) to see things I'm working on and things that need to be addressed.
 
