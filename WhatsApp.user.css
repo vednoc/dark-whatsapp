@@ -407,10 +407,12 @@
       box-shadow: none !important;
       background-color: transparent !important; }
       /* Highlighted sections. */
-      ._2fq0t ._3hhmj ._1CkkN {
+      ._2fq0t ._3hhmj ._1CkkN,
+      ._3UUn3 {
         background-color: var(--dark) !important; }
       /* Change profile picture. */
-      ._2fq0t .WX_XW {
+      ._2fq0t .WX_XW,
+      ._2fq0t ._2Lbqu {
         background-color: rgba(0,0,0,0.5) !important; }
       /* Text color. */
       ._2fq0t * {
@@ -495,6 +497,7 @@
     background-color: var(--darker); }
     /* Input wrapper. */
     #main footer > div {
+      color: var(--light);
       border: none;
       /* border-bottom: 2px solid var(--dark); */
       background-color: var(--dark); }
@@ -668,6 +671,10 @@
     .quoted-mention,
     ._1upWv {
       color: var(--light) !important; }
+
+    /* Forwarded message. */
+    ._15aTv {
+      color: var(--lighter) !important; }
 
     /* Mentions. */
     .message-in .matched-mention,
@@ -933,7 +940,7 @@
     border-color: var(--accent);
     background-color: var(--accent); }
   /* Buttons. */
-  [role="button"]:hover {
+  [role="button"]:not(._1DZAH):hover {
     background-color: var(--dark) !important; }
 
   /* Drop items. (-: */
