@@ -228,21 +228,20 @@
     background: none;
     background-color: var(--dark); }
 
-
   /* Scrollbar track. */
   *::-webkit-scrollbar-track {
     background-color: var(--shadow); }
-    /* Scrollbar thumb. */
-    *::-webkit-scrollbar-thumb {
-      border-radius: 3px;
-      background-color: var(--shadow); }
+  /* Scrollbar thumb. */
+  *::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: var(--shadow); }
 
   /* Progress. */
   progress[value]::-webkit-progress-bar {
     background: var(--darker); }
-    /* Value. */
-    progress[value]::-webkit-progress-value {
-      background: var(--accent); }
+  /* Value. */
+  progress[value]::-webkit-progress-value {
+    background: var(--accent); }
 
   /* App wrapper. */
   #app .app {
@@ -336,19 +335,19 @@
       border-bottom: 0px solid var(--dark);
       background-color: var(--darker) !important;
       background-color: transparent !important; }
-      /* Label background. */
+    /* Label background. */
     #side ._3CPl4 .gQzdc label,
     .gQzdc._3sdhb,
     ._2dA13 ._15JHr .gQzdc {
-        border: 0px solid var(--dark);
-        background-color: var(--dark) !important; }
-        /* Input element. */
-        #side ._3CPl4 .gQzdc label input {
-          color: var(--light);
-          background-color: transparent; }
-        /* Active. */
-        #side ._3CPl4 .gQzdc._3sdhb {
+      border: 0px solid var(--dark);
       background-color: var(--dark) !important; }
+      /* Input element. */
+      #side ._3CPl4 .gQzdc label input {
+        color: var(--light);
+        background-color: transparent; }
+      /* Active. */
+      #side ._3CPl4 .gQzdc._3sdhb {
+        background-color: var(--dark) !important; }
 
   /* New group and group info buttons. */
   ._2EXPL .dIyEr ._1jJLh,
@@ -356,13 +355,13 @@
     box-shadow: 0 0 8px -1px var(--shadow) !important;
     background-color: var(--dark) !important; }
 
-        /* Search results. */
-        #side ._1AKfk {
-          color: var(--accent);
-          background-color: var(--dark); }
-          /* Matching results. */
-          #side .matched-text {
-            color: var(--accent) !important; }
+  /* Search results. */
+  #side ._1AKfk {
+    color: var(--accent);
+    background-color: var(--dark); }
+    /* Matching results. */
+    #side .matched-text {
+      color: var(--accent) !important; }
 
     /* Contacts wrapper. */
     #side ._1NrpZ, ._2fq0t ._1lIXT {
@@ -644,7 +643,7 @@
         background-color: transparent !important; }
         /* Text color. */
         #app ._1zcz2 ._2EXPL ._3j7s9 *,
-        ._3_R6X ._1XwnX * {
+        ._3_R6X ._12oAB {
           color: var(--light); }
 
     /* Footer. */
