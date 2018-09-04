@@ -267,6 +267,9 @@
     /* Fix QR code. */
     ._2NbD3 .XSdna {
       border: 3px solid white !important; }
+    /* Tutorial. */
+    ._2NbD3 > div:last-child {
+      background-color: var(--darker); }
 
   /* Disable background. */
   ._2U_Zc:before {
@@ -928,6 +931,9 @@
       ._2dA13 header,
       ._2dA13 .iHLo1 {
         background-color: var(--darker) !important; }
+      /* Empty element below search bar. */
+      ._2fq0t span._3fOoY {
+        display: none !important; }
 
 
   /* Buttons. */
@@ -939,7 +945,7 @@
     border-color: var(--accent);
     background-color: var(--accent); }
   /* Buttons. */
-  [role="button"]:not(._1DZAH):hover {
+  .PNlAR:hover, ._1WZqU:hover {
     background-color: var(--dark) !important; }
 
   /* Drop items. (-: */
