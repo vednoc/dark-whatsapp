@@ -771,6 +771,22 @@
     margin: 0 2rem 0 1rem !important;
     background-color: transparent !important; }
 
+  /* Mention group members. */
+  .Uukb4 {
+    color: var(--light);
+    border-left: none !important;
+    background-color: var(--dark) !important;
+  }
+  /* Wrapper. */
+  .Uukb4 ._3v_lq {
+    transition: 300ms ease-in-out !important;
+    background-color: transparent !important;
+  }
+  .Uukb4 .j5Hcb._3v_lq,
+  .Uukb4 ._3v_lq:hover {
+    background-color: var(--darker) !important;
+  }
+
 
   /* Select messages. */
   #main ._3D9Wd {
