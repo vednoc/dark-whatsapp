@@ -620,13 +620,21 @@
   /* Media/docs/links section. */
   ._2yeJ5 ._3b2Cf {
     background-color: var(--darker) !important; }
-    /* Active indicator. */
-    ._2yeJ5 ._3b2Cf:before {
-      background-color: var(--accent) !important; }
-    /* Selected links. */
-    .D6ZWG {
-      background-color: var(--accent) !important; }
-
+  /* Active indicator. */
+  ._2yeJ5 ._3b2Cf:before {
+    background-color: var(--accent) !important; }
+  /* Selected image. */
+  ._2Ry6_ ._2mlDB {
+    border-color: var(--accent) !important;
+  }
+  /* Selected links. */
+  .D6ZWG {
+    background-color: var(--darker) !important; }
+  /* Text color. */
+  .D6ZWG ._1S4i5,
+  ._2Mvo8.fyJXn {
+    color: var(--lighter);
+  }
 
   /* Media viewer. */
   #app ._1zcz2, ._3_R6X {
@@ -646,7 +654,8 @@
         background-color: transparent !important; }
         /* Text color. */
         #app ._1zcz2 ._2EXPL ._3j7s9 *,
-        ._3_R6X ._12oAB {
+        ._3_R6X ._12oAB,
+        ._1XwnX * {
           color: var(--light); }
 
     /* Footer. */
@@ -1139,6 +1148,11 @@
     input[type=range]::-webkit-slider-thumb {
       cursor: pointer;
       background: var(--accent) !important; }
+
+  /* Rounded buttons. */
+  span svg > path[fill="#00BFA5"] {
+    fill: var(--accent) !important;
+  }
 
   /* Disable background image on small resolutions. */
   @media screen and (max-width: 1441px) {
