@@ -169,12 +169,12 @@
       flex: 0 0 calc(100% - 75px) !important; }
 
     /* Search contacts. *\/
-    .two .k1feT:not(:hover) ._2MSJr { 
+    .two .k1feT:not(:hover) ._2MSJr {
       padding: 0;
       margin-left: 14px; }
 
     /* On hover. *\/
-    .two .k1feT:hover ._2MSJr { 
+    .two .k1feT:hover ._2MSJr {
       transition-delay: 1s !important; }
 
     /* Attach icons to avatars. *\/
@@ -932,7 +932,7 @@
         border-right: 2px solid var(--accent) !important; }
       /* Emoji menu triangle. */
       ._1v2rQ {
-        background-color: var(--darker) !important; }
+        background-color: var(--dark) !important; }
 
 
 
@@ -1070,6 +1070,11 @@
     span:not([data-icon="image"]):hover > svg > path {
       /* fill: var(--accent) !important; */
       opacity: 0.3 !important; }
+
+  /* Upload files. */
+  .GK4Lv::after {
+    box-shadow: 0 1px 2px var(--shadow), 0 4px 8px var(--shadow) !important;
+  }
 
   /* Default profile picture background. */
   span[data-icon="default-user"] svg > path:first-child,
