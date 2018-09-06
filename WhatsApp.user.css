@@ -736,12 +736,12 @@
     /* Document embeds. */
     ._1vKRe {
       border-color: var(--darker) !important; }
-      /* Embed background. */
-      ._2CORf ._12xX7 {
-        background-color: var(--dark) !important; }
-        /* Embed text color. */
-        ._2CORf ._12xX7 * {
-          color: var(--light); }
+    /* Embed background. */
+    ._12xX7 {
+      background-color: var(--dark) !important; }
+    /* Embed text color. */
+    ._12xX7 * {
+      color: var(--light); }
 
     /* Link embeds. */
     ._1sGGp._2nFG1, ._2lwig._2nFG1 {
