@@ -233,8 +233,7 @@
     background-color: var(--shadow); }
   /* Scrollbar thumb. */
   *::-webkit-scrollbar-thumb {
-    border-radius: 3px;
-    background-color: var(--shadow); }
+    background-color: rgba(0,0,0,0.2); }
 
   /* Progress. */
   progress[value]::-webkit-progress-bar {
@@ -452,7 +451,7 @@
       background-color: transparent !important; }
       /* Header. */
       ._2fq0t ._1AKfk {
-        background-color: var(--dark) !important; }
+        background-color: var(--darker) !important; }
         /* On event. */
         .k1feT ._2fq0t ._2EXPL:hover {
           background-color: var(--dark) !important; }
@@ -484,6 +483,7 @@
 
     /* Jump to present button. */
     ._298R6 {
+      box-shadow: 0 4px 8px 2px var(--shadow) !important;
       background-color: var(--darker) !important; }
 
     /* Header. */
