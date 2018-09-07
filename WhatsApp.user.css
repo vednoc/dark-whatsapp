@@ -765,20 +765,26 @@
 
   /* Reply section. (= */
   footer .rstyJ {
-    box-shadow: 0 0px 4px 0 var(--darker) !important;
+    box-shadow: 0 0px 8px 0 var(--darker) !important;
     background-color: var(--darker) !important; }
-  /* Reply wrapper. */
-  footer .rstyJ:last-child > div:first-child {
-    margin: 0 0 5px 2rem !important;
+  /* Fix margins. */
+  footer .rstyJ > div:first-child {
+    margin: 0 0 5px 10px !important;
     background-color: transparent !important; }
   /* Reply content. */
-  footer .rstyJ:last-child > div:first-child > div {
+  footer .rstyJ > div:first-child > div {
     background-color: var(--dark) !important; }
   /* Close button. */
-  footer .rstyJ:last-child > div:last-child {
+  footer .rstyJ > div:last-child {
     position: relative;
-    margin: 0 2rem 0 1rem !important;
+    margin: 0 18px 5px 18px !important;
     background-color: transparent !important; }
+  /* Make the button larger. */
+  footer .rstyJ > div:last-child > div svg {
+    padding: 28px;
+    border-radius: 6px;
+    background-color: var(--dark);
+  }
 
   /* Mention group members. */
   .Uukb4 {
