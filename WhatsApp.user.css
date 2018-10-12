@@ -486,6 +486,9 @@
     ._298R6 {
       box-shadow: 0 4px 8px 2px var(--shadow) !important;
       background-color: var(--darker) !important; }
+    /* Number of messages. */
+    ._298R6 .OUeyt {
+      background-color: var(--accent) !important; }
 
     /* Header. */
     ._1Iexl #main header {
