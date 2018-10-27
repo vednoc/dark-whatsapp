@@ -516,6 +516,18 @@
     ._30ie- {
       color: var(--light) !important; }
 
+  /* Unknown contact. */
+  .TYhk9 {
+    border-color: var(--darker) !important;
+    background-color: var(--dark) !important;
+    box-shadow: 0 0px 8px 2px var(--shadow) !important;
+  }
+  /* Buttons. */
+  .TYhk9 ._1sB6s {
+    color: var(--light) !important;
+    background-color: var(--darker) !important;
+  }
+
   /* Hide 'Type a message' once focused. */
   ._3F6QL._2WovP.focused ._39LWd {
     color: transparent; }
