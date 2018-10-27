@@ -245,7 +245,7 @@
   /* App wrapper. */
   #app .app {
     background: none;
-    background-color: var(--darker); }
+    background-color: var(--dark); }
 
     /* Accent background. */
     .app-wrapper::after {
@@ -642,16 +642,14 @@
     background-color: var(--accent) !important; }
   /* Selected image. */
   ._2Ry6_ ._2mlDB {
-    border-color: var(--accent) !important;
-  }
+    border-color: var(--accent) !important; }
   /* Selected links. */
   .D6ZWG {
     background-color: var(--darker) !important; }
   /* Text color. */
   .D6ZWG ._1S4i5,
   ._2Mvo8.fyJXn {
-    color: var(--lighter);
-  }
+    color: var(--lighter); }
 
   /* Media viewer. */
   #app ._1zcz2, ._3_R6X {
@@ -1099,8 +1097,7 @@
 
   /* Upload files. */
   .GK4Lv::after {
-    box-shadow: 0 1px 2px var(--shadow), 0 4px 8px var(--shadow) !important;
-  }
+    box-shadow: 0 1px 2px var(--shadow), 0 4px 8px var(--shadow) !important; }
 
   /* Default profile picture background. */
   span[data-icon="default-user"] svg > path:first-child,
@@ -1167,7 +1164,7 @@
   span[data-icon="exit"] svg path,
   span[data-icon="thumbs-down"] svg path,
   span[data-icon="delete-danger"] svg path {
-    fill: crimson !important; }
+    fill: var(--mred) !important; }
 
   /* Audio message. */
   span[data-icon="audio-file"] svg path {
@@ -1182,8 +1179,7 @@
 
   /* Rounded buttons. */
   span svg > path[fill="#00BFA5"] {
-    fill: var(--accent) !important;
-  }
+    fill: var(--accent) !important; }
 
   /* Disable background image on small resolutions. */
   @media screen and (max-width: 1441px) {
