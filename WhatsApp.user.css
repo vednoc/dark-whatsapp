@@ -889,20 +889,26 @@
     background-color: var(--dark) !important; }
     /* Emoji tabs. */
     ._3ZkhL ._2ByZq,
-    ._3ZkhL ._1qUma {
+    ._3ZkhL ._1qUma,
+    ._1qUma {
       background: var(--darker) !important; }
     /* Tab indicator. */
     ._2NQtS,
     .YbzIC .YGHyX,
     ._1Wbpa {
-        background-color: var(--accent) !important; }
+      background-color: var(--accent) !important; }
+    /* Active button. */
+    ._1x_c3.bRYFY path {
+      fill: var(--accent) !important; }
 
     /* Search emojis. */
     ._3ZkhL label,
-    ._2rR_l {
+    ._2rR_l,
+    ._2vjPO {
       background-color: var(--dark) !important; }
       /* Text color. */
-      ._3ZkhL label input {
+      ._3ZkhL label input,
+      ._2vjPO input {
         color: var(--light) !important; }
 
     /* Gif preloader background. */
