@@ -873,12 +873,26 @@
       .MS-DH .tail-override-left {
         border-radius: 7.5px !important; }
 
+  /** Stickers. */
+  .tail.message-out, .tail.message-in {
+    border-radius: 6px !important; }
+  /* Time and status. */
+  ._3JaNE ._2R8MP, ._3JaNE ._2Ll5c {
+    background-color: transparent !important;
+    box-shadow: none !important; }
+  /* Context menu. */
+  ._1qhoQ {
+    top: 0 !important;
+    right: 0 !important;
+    background: none !important; }
+  /* Icon background. */
+  .YiYMT { background-color: transparent !important; }
 
   /* Temporary fix for emoji container. */
   #main footer > div:nth-child(2) > div {
     border: 0; }
-  /* Emoji/gif background. */
-  ._1UbeR, ._2HBs4 {
+  /* Emoji/gif/stickers background. */
+  ._1UbeR, ._2HBs4, ._3Jgri, ._3Jgri > ._2z7kg {
     background-color: var(--dark) !important; }
 
   /* Emoji menu. */
