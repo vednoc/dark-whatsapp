@@ -242,6 +242,9 @@
   ::-moz-selection {
     color: var(--light) !important;
     background-color: var(--accent) !important; }
+  /* Input placeholders. */
+  ::-webkit-input-placeholder {
+    color: var(--lighter) !important; }
 
   /* Progress. */
   progress[value]::-webkit-progress-bar {
@@ -930,7 +933,9 @@
       background-color: var(--dark) !important; }
       /* Text color. */
       ._3ZkhL label input,
-      ._2vjPO input {
+      ._2vjPO input,
+      .GclUX,
+      ._3Ztfl {
         color: var(--light) !important; }
 
     /* Gif preloader background. */
