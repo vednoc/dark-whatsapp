@@ -235,6 +235,13 @@
   /* Scrollbar thumb. */
   *::-webkit-scrollbar-thumb {
     background-color: rgba(0,0,0,0.2); }
+  /* Highlight selection. */
+  ::selection {
+    color: var(--light) !important;
+    background-color: var(--accent) !important; }
+  ::-moz-selection {
+    color: var(--light) !important;
+    background-color: var(--accent) !important; }
 
   /* Progress. */
   progress[value]::-webkit-progress-bar {
