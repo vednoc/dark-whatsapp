@@ -881,13 +881,15 @@
         border-radius: 7.5px !important; }
 
   /** Stickers. */
-  .tail.message-out, .tail.message-in {
-    border-radius: 6px !important; }
-  /* Time and status. */
-  ._3JaNE ._2R8MP, ._3JaNE ._2Ll5c {
-    background-color: transparent !important;
-    box-shadow: none !important; }
-  /* Context menu. */
+  ._1rK-b {
+    background: none !important; }
+  /* Sender. */
+  ._3JaNE ._2R8MP {
+    background-color: var(--darker) !important; }
+  /* Time/status. */
+  ._3JaNE ._2Ll5c {
+    background-color: var(--darker) !important; }
+  /* Reset message menu. */
   ._1qhoQ {
     top: 0 !important;
     right: 0 !important;
