@@ -625,7 +625,7 @@
 
   /* Starred messages. */
   ._2yeJ5 .ZwkQK, .ZwkQK {
-    background-color: var(--darker) !important; }
+    background-color: var(--dark) !important; }
     /* On event. */
     .starred-msg-wrapper, .MS-DH {
       transition: 200ms ease-in-out !important; }
