@@ -1130,11 +1130,13 @@
 
   /* Default profile picture background. */
   span[data-icon="default-user"] svg > path:first-child,
-  span[data-icon="default-group"] svg > path:first-child {
+  span[data-icon="default-group"] svg > path:first-child,
+  span[data-icon="default-broadcast"] svg > path:first-child {
     fill: var(--dark) !important; }
 
   span[data-icon="default-user"] svg > g > path:last-child,
-  span[data-icon="default-group"] svg > path:last-child {
+  span[data-icon="default-group"] svg > path:last-child,
+  span[data-icon="default-broadcast"] svg > path:last-child {
     opacity: 0.7;
     fill: var(--icon) !important; }
 
