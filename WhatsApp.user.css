@@ -540,6 +540,9 @@
     /* Shared contact button colors. */
     .b332w {
       color: var(--accent) !important; }
+    /* Shared contact text. */
+    .AVd_p {
+      color: var(--lighter) !important; }
     /* View contact. */
     ._36ApL {
       background-color: transparent !important; }
