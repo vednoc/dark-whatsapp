@@ -429,6 +429,9 @@
       /* Text color. */
       ._2fq0t * {
         color: var(--light); }
+      /* Zoom in/out. */
+      ._2LALH {
+        background-color: var(--dark) !important; }
 
     /* Option/select elements. */
     .uyEaY select {
