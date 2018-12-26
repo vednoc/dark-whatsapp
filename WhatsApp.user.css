@@ -414,6 +414,10 @@
       ._2fq0t header > div:first-child {
         padding: 12px 0 !important;
         height: auto; }
+      /* Reset header title in left/right drawers. */
+      ._2fq0t ._1xGbt {
+        margin-top: 2px !important;
+        font-size: 16px; }
     /* Transparent sections. */
     ._2fq0t ._1CRb5 {
       box-shadow: none !important;
