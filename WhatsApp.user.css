@@ -724,6 +724,10 @@
     ._15aTv {
       color: var(--lighter) !important; }
 
+    /* Phone numbers of users that aren't your contacts. */
+    ._3Ye_R._1wjpf._1OmDL {
+      color: var(--lighter) !important; }
+
     /* Mentions. */
     .message-in .matched-mention,
     .message-out .matched-mention,
