@@ -327,8 +327,14 @@
     /* Accent bar. */
     .app ._1Iexl ._3qlW9:after {
       border-top-color: var(--accent); }
-
-
+    /* Version. */
+    .app ._1Iexl ._1ClcF::after {
+      display: block;
+      margin-top: 10px;
+      padding-top: 10px;
+      content: "WhatsApp by Mew v1.2.4" !important;
+      border-top: 1px solid var(--darker);
+    }
 
   /* Left drawer. */
   #app .app #side {
