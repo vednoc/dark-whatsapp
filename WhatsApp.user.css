@@ -5,7 +5,7 @@
 @homepageURL  https://github.com/vednoc/onyx
 @supportURL   https://github.com/vednoc/onyx/issues
 @updateURL    https://rawgit.com/vednoc/onyx/master/WhatsApp.user.css
-@version      1.2.4
+@version      1.2.5
 @author       vednoc
 @license      MIT
 @preprocessor uso
@@ -332,7 +332,7 @@
       display: block;
       margin-top: 10px;
       padding-top: 10px;
-      content: "WhatsApp by Mew v1.2.4" !important;
+      content: "WhatsApp by Mew v1.2.5" !important;
       border-top: 1px solid var(--darker);
     }
 
