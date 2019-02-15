@@ -234,7 +234,11 @@
     background-color: var(--shadow); }
   /* Scrollbar thumb. */
   *::-webkit-scrollbar-thumb {
-    background-color: rgba(0,0,0,0.2); }
+    background-color: var(--accent); }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--shadow); }
+
   /* Highlight selection. */
   ::selection {
     color: var(--light) !important;
