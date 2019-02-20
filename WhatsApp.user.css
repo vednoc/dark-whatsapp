@@ -5,7 +5,7 @@
 @homepageURL  https://github.com/vednoc/onyx
 @supportURL   https://github.com/vednoc/onyx/issues
 @updateURL    https://rawgit.com/vednoc/onyx/master/WhatsApp.user.css
-@version      1.2.5
+@version      1.3.0
 @author       vednoc
 @license      MIT
 @preprocessor uso
@@ -251,7 +251,7 @@
     --mblue: /*[[mblue]]*/;
     --image: url(https://media.discordapp.net/attachments/310799529161129984/417408747812552715/zilesanamin.jpg);
     --emojiOpacity: /*[[emojiOpacity]]*/;
-    --version: "WhatsApp by Mew v1.2.5";
+    --version: "WhatsApp by Mew v1.3.0";
     --message: "Updated on 20th of February. ";
     --changes: "See the changelog at: https://github.com/vednoc/onyx/releases";
   }
