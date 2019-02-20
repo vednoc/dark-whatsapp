@@ -251,6 +251,9 @@
     --mblue: /*[[mblue]]*/;
     --image: url(https://media.discordapp.net/attachments/310799529161129984/417408747812552715/zilesanamin.jpg);
     --emojiOpacity: /*[[emojiOpacity]]*/;
+    --version: "WhatsApp by Mew v1.2.5";
+    --message: "Updated on 20th of February. ";
+    --changes: "See the changelog at: https://github.com/vednoc/onyx/releases";
   }
 
   /* Body reset. */
@@ -332,25 +335,8 @@
 
   /* Landing page. */
   .app ._1Iexl ._3qlW9 {
-    /* box-shadow: 1px -3px 2px 0 var(--shadow) inset; */
     border: none;
     background-color: var(--dark); }
-    /* Status update. */
-    /* .app ._3q4NP ._3qlW9::before {
-      content: 'Rewrite is done! A few old and a few new features coming up. Let me know if something is still broken. ^-^';
-      left: 0;
-      top: 0;
-      bottom: 6px;
-      right: 0;
-      position: absolute;
-      z-index: 98;
-      width: 90%;
-      margin: 0 5%;
-      padding-top: 40vh;
-      text-align: center;
-      font-size: 20px;
-      color: var(--light);
-      background: var(--dark); } /**/
     /* Image. */
     .app ._1Iexl ._3qlW9 ._3BqNZ ._2Uo0Z {
       max-width: 200px;
@@ -364,12 +350,22 @@
     /* Accent bar. */
     .app ._1Iexl ._3qlW9:after {
       border-top-color: var(--accent); }
-    /* Version. */
+    /* Hide the text. */
+    ._1ClcF { font-size: 0px; }
+    /** Theme note. */
+    .app ._1Iexl ._1ClcF::before {
+      display: block;
+      margin-bottom: -20px;
+      font-size: 16px;
+      content: var(--message) var(--changes) !important;
+    }
+    /** Theme info. */
     .app ._1Iexl ._1ClcF::after {
       display: block;
       margin-top: 10px;
       padding-top: 10px;
-      content: "WhatsApp by Mew v1.2.5" !important;
+      font-size: 16px;
+      content: var(--version) !important;
       border-top: 1px solid var(--darker);
     }
 
