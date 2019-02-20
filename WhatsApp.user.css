@@ -743,6 +743,10 @@
     ._1upWv {
       color: var(--light) !important; }
 
+    /* Use accent color for links. #20 */
+    a[href].selectable-text {
+      color: var(--accent) !important; }
+
     /* Forwarded message. */
     ._15aTv {
       color: var(--lighter) !important; }
