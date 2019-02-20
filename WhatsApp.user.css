@@ -529,6 +529,10 @@
       ._1Iexl #main header ._1WBXd * {
         color: var(--light); }
 
+    #main > header > div span[title] {
+      color: var(--light);
+    }
+
   /* Footer. */
   ._1Iexl #main footer {
     background-color: var(--darker); }
