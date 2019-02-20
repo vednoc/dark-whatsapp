@@ -379,8 +379,8 @@
 
     /* Notifications && more!! */
     #side ._3YewW {
-      box-shadow: inset 0 0 4px 0 var(--shadow);
-      background-color: var(--accent) !important; }
+      box-shadow: inset 0 0 0 2px var(--accent);
+      background-color: var(--darker) !important; }
       /* Text color. */
       #side ._3YewW .l2BEH * {
         color: var(--lighter); }
