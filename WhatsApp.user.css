@@ -701,14 +701,17 @@
   ._2Mvo8.fyJXn {
     color: var(--lighter); }
 
-  /* Media viewer. */
+  /** Media viewer. */
   #app ._1zcz2, ._3_R6X {
-    background-color: rgba(0,0,0,0.85) !important; }
-    /* Chevron background. */
-    ._2-IeP {
-      background-color: var(--darker) !important; }
-    /* Preloader. */
-    ._3dGYA {
+    background-color: transparent !important; }
+    /* Pseudo-element background. */
+    #app ._1zcz2::before, ._3_R6X::before {
+      content: ""; position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background-color: var(--dark);
+      opacity: 0.8; z-index: -1; }
+    /* Chevron/preloader background. */
+    ._2-IeP, ._3dGYA {
       background-color: var(--darker) !important; }
 
     /* Header. */
@@ -1098,11 +1101,15 @@
     ._7HWvs {
       color: var(--light) !important; }
 
-
-
-  /* Status area! */
+  /** Status area! */
   .app-wrapper-web ._3sacU {
-    background-color: rgba(0,0,0,0.6) !important; }
+    background-color: transparent !important; }
+  /* Pseudo-element background. */
+  .app-wrapper-web ._3sacU::before {
+    content: ""; position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-color: var(--dark);
+    opacity: 0.8; z-index: -1; }
 
     /* Normal icon. */
     span[data-icon="status-v3"] > svg > path:first-child {
