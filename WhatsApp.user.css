@@ -256,6 +256,10 @@
   /* Value. */
   progress[value]::-webkit-progress-value {
     background: var(--accent); }
+  progress {
+    background: var(--darker); }
+  ::-moz-progress-bar {
+    background: var(--accent) !important; }
 
   /* App wrapper. */
   #app .app {
