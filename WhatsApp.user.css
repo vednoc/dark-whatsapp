@@ -525,12 +525,17 @@
       ._1Iexl #main header ._1WBXd * {
         color: var(--light); }
 
+    /* Header text color. #22 */
     #main > header > div span[title] {
-      color: var(--light);
-    }
+      color: var(--light); }
+    /* Header separator. */
+    #main > header::after {
+      border-bottom-color: var(--darker);
+      background-color: transparent; }
 
   /* Footer. */
   ._1Iexl #main footer {
+    border-top: 1px solid var(--darker);
     background-color: var(--darker); }
     /* Input wrapper. */
     #main footer > div {
