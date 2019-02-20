@@ -493,19 +493,15 @@
       ._66JgU ._3_3Rs input, ._66JgU ._3_3Rs ::placeholder {
         color: var(--lighter) !important; }
 
-
-  /* Dropdown menu. */
-  ._2uLFU, ._1ArIP {
-    box-shadow: 0 2px 8px 0 var(--shadow), 0 2px 16px 0 var(--shadow) !important;
-    background-color: var(--darker) !important; }
-    /* On event. */
-    ._2uLFU li:hover, ._2ULFU li._28zBA {
-      background-color: var(--dark) !important; }
-    /* Text color. */
-    ._2uLFU div, _1ArIP div {
-      color: var(--light); }
-
-
+  /** Context/dropdown menu. */
+  ._1RQfk {
+    background-color: var(--darker) !important;
+    box-shadow: 0 4px 16px 0 var(--shadow) !important; }
+  ._1RQfk li:hover, ._1RQfk li:hover div {
+    color: var(--accent) !important;
+    background-color: var(--dark) !important; }
+  ._1RQfk div, ._1ArIP div {
+    color: var(--light); }
 
   /* Middle drawer. */
   .app ._1Iexl ._1GX8_ {
