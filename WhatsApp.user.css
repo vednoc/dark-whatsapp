@@ -171,19 +171,48 @@
 
     /* Search contacts. *\/
     .two .k1feT:not(:hover) ._2MSJr {
-      padding: 0;
-      margin-left: 14px; }
+      padding: 0; }
 
     /* On hover. *\/
     .two .k1feT:hover ._2MSJr {
       transition-delay: 1s !important; }
 
-    /* Attach icons to avatars. *\/
-    .two .k1feT ._3j7s9:not(:hover) ._1AwDx ._3Bxar {
-      z-index: 999 !important;
-      position: absolute !important;
-      top: 45px !important;
-      right: 5px !important; }
+    /** Hack for positioning unread counter. *\/
+    #side:not(:hover) ._3j7s9 ._1AwDx ._3Bxar span > div {
+      z-index: 101;
+      position: absolute; }
+    /* ? Unread counter. *\/
+    #side:not(:hover) div > .OUeyt {
+      height: 18px;
+      padding: 0 5px 0 5px;
+      margin: -5px 0 0 -35px;
+      background-color: var(--dark) !important;
+      box-shadow: 0 0 0 3px var(--darker) !important; }
+    /* On event. *\/
+    /*#side:hover div > .OUeyt {
+      background-color: var(--dark) !important;
+      box-shadow: 0 0 0 3px var(--darker) !important; }*\/
+
+    /* ? Message status. *\/
+    .two .k1feT ._3j7s9 ._1VfKB {
+      z-index: 101;
+      position: absolute;
+      margin-left: -68px;
+      margin-top: 5px;
+      border-radius: 50%;
+      background-color: var(--dark);
+      box-shadow: 0 0 0 3px var(--darker); }
+    /* Background on event. *\/
+    .two .k1feT ._2EXPL:hover ._1VfKB,
+    .two .k1feT ._2EXPL._1f1zm ._1VfKB {
+      background-color: var(--darker);
+      box-shadow: 0 0 0 3px var(--dark) !important; }
+
+    /** Icon size. *\/
+    .two .k1feT ._3j7s9 ._1VfKB span > svg {
+      padding: 2px;
+      height: 14px !important;
+      width: 14px !important; }
 
     /* Hide all icons except new messages. *\/
     .two .k1feT ._15G96 span:not(.OUeyt),
