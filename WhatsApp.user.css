@@ -623,9 +623,15 @@
     /* Header. */
     .app ._3HZor header {
       background-color: var(--darker); }
+      /* Fix header text vertical position. */
+      .app ._3HZor ._1pYs5 {
+        margin-top: 4px !important; }
       /* Text color. */
       .app ._3HZor header div {
         color: var(--light); }
+      /* Mute/starred messages. */
+      ._3_-Si + ._3_-Si ._2x2XP {
+        border-color: var(--dark) !important; }
 
     /* Group info sections. */
     .app ._3HZor ._26JG5, .app ._3HZor ._2UaNq {
@@ -651,8 +657,8 @@
         .app ._3HZor ._1CRb5 ._2EXPL * {
           color: var(--light); }
         /* Admin color. */
-        .app ._3HZor ._1CRb5 ._2e8Mu {
-          border: 2px solid var(--accent); }
+        .app ._3HZor .FPZFa {
+          border-color: var(--accent); }
 
 
   /* Search messages. TODO: Apply this to all search elements. */
@@ -684,14 +690,20 @@
     background-color: transparent !important; }
 
   /* Starred messages. */
-  ._3HZor .ZwkQK, .ZwkQK {
+  ._1WMT2 .tail:not(.PJFFv) {
     background-color: var(--dark) !important; }
-    /* On event. */
-    .starred-msg-wrapper, .MS-DH {
-      transition: 200ms ease-in-out !important; }
-    /* On event. */
-    .MS-DH._2-mCk, .MS-DH._1baOM, .MS-DH.ZuHmv {
-      background-color: var(--dark) !important; }
+  /* Borders. */
+  ._1WMT2::before, ._1WMT2::after {
+    display: none !important; }
+    ._1WMT2:hover {
+      transition: 200ms ease-in-out !important;
+      background-color: var(--darker) !important; }
+    /* Remove tails. */
+    ._1WMT2 .tail-container {
+      display: none !important; }
+    /* Date text color. */
+    ._1WMT2 ._2V2qB {
+      color: var(--lighter) !important; }
 
 
   /* Message info. */
