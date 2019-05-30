@@ -379,9 +379,12 @@
     #side > header {
       background-color: var(--darker) !important; }
 
-    /* Notifications && more!! */
+    /* Enable notifications. */
     #side ._2GB6m {
       background-color: var(--accent) !important; }
+    /* Low battery. */
+    #side ._2t3oV {
+      background-color: var(--mred) !important; }
       /* Text color. */
       #side ._2GB6m * {
         color: var(--lighter); }
@@ -405,10 +408,13 @@
         background-color: var(--dark) !important; }
 
   /* New group and group info buttons. */
-  ._2EXPL .dIyEr ._1jJLh,
-  ._2EXPL .dIyEr ._1WliW {
-    box-shadow: 0 0 8px -1px var(--shadow) !important;
-    background-color: var(--dark) !important; }
+  ._11p3Q, .r7sRK, ._8-yzK {
+    /* box-shadow: 0 0 8px -1px var(--shadow) !important; */
+    color: var(--accent) !important;
+    background-color: transparent !important; }
+    /* Hide borders. */
+    ._2DxRd {
+      border-color: var(--darker) !important; }
 
   /* Search results. */
   #side ._1AKfk {
@@ -422,18 +428,17 @@
     #pane-side, ._11GZy ._2UaNq {
       background-color: transparent !important; }
       /* Contacts. */
-      #pane-side ._2UaNq, ._11GZy ._26JG5 {
+      ._2UaNq, ._11GZy ._26JG5 {
         transition: 200ms ease-in-out;
         background-color: transparent !important; }
         /* On event. */
-        #pane-side ._2UaNq._3mMX1,
-        #pane-side ._2UaNq:hover {
+        ._2UaNq._3mMX1, ._2UaNq:hover {
           background-color: var(--dark) !important; }
         /* Text color. */
-        #pane-side ._2UaNq * {
+        ._2UaNq * {
           color: var(--light); }
         /* Borders. */
-        #pane-side ._2UaNq::after, #pane-side ._2WP9Q {
+        ._2UaNq::after, ._2WP9Q {
           border-color: var(--darker) !important; }
         /* Avatar wrapper background. */
         ._3RWII {
