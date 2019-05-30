@@ -898,31 +898,25 @@
 
 
   /* Select messages. */
-  #main ._3D9Wd {
+  #main ._2AqZl {
     background-color: var(--shadow); }
     /* Hover over messages. */
-    #main ._1o1sm {
-      transition: 100ms ease-in-out !important; }
+    #main .qTFAl {
+      transition: 0.15s ease !important; }
       /* Selected message. */
-      #main ._1o1sm:hover, #main ._1o1sm._2nOMz {
+      #main .qTFAl:hover, #main .qTFAl._3Z2tD {
         background-color: var(--shadow) !important; }
-
     /* Selected icon. */
-    #main ._1VD7W {
+    #main ._15wNI {
       border-color: var(--accent) !important;
-      background-color: var(--accente) !important; }
+      background-color: var(--accent) !important; }
       /* Checkmark. */
-      #main ._1VD7W ._1KfC8 {
-        border-bottom-color: var(--accent);
-        border-right-color: var(--accent); }
-
+      #main ._15wNI ._1ygtt {
+        border-bottom-color: var(--light);
+        border-right-color: var(--light); }
     /* Footer/control/options. */
-    #main ._2FsQ8, #main ._3PWNn, #main ._3XpR2 {
+    #main ._1hhkM {
       background-color: var(--darker); }
-      /* Text color. */
-      #main ._2FsQ8 span, #main ._3XpR2 {
-        color: var(--light); }
-
 
 
   /* Bubble tails -- experimental. */
