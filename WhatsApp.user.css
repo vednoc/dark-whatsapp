@@ -544,6 +544,13 @@
     /* Doodle background. TODO: Plans for the future. */
     /*[[doodles]]*/
 
+    /* Main -> Group description. */
+    ._3jzsh {
+      background-color: var(--darker) !important; }
+    /* Text colors. */
+    ._3jzsh ._3GIEC, ._3jzsh ._6xQdq {
+      color: var(--lighter) !important; }
+
     /* Jump to present button. */
     ._3KRbU {
       box-shadow: 0 4px 8px 2px var(--shadow) !important;
@@ -857,61 +864,52 @@
       background-color: var(--darker) !important; }
 
     /* Document embeds. */
-    ._1vKRe {
-      border-color: var(--darker) !important; }
-    /* Embed background. */
-    ._12xX7 {
+    ._3RQfg ._3a29n {
       background-color: var(--dark) !important; }
-    /* Embed text color. */
-    ._12xX7 * {
-      color: var(--light); }
-
     /* Link embeds. */
-    ._1sGGp._2nFG1, ._2lwig._2nFG1 {
+    ._3qblR, ._1SsXF {
+      box-shadow: 0 0 0 1px var(--dark) !important;
       background-color: var(--dark) !important; }
-      /* Text color. */
-      ._1sGGp._2nFG1 *, ._2lwig._2nFG1 * {
-        color: var(--light); }
-      /* Link options. */
-      ._2DNgV._2Cju4, .jZ4tp._2Cju4 {
-        background: none !important; }
+      /* Thumbnail. */
+      ._3_nIn {
+        background-color: var(--darker) !important; }
 
 
   /* Reply section. (= */
-  footer .rstyJ {
+  footer ._1ebw2 {
     box-shadow: 0 0px 8px 0 var(--darker) !important;
     background-color: var(--darker) !important; }
   /* Fix margins. */
-  footer .rstyJ > div:first-child {
+  footer ._1ebw2 > div:first-child {
     margin: 0 0 5px 10px !important;
     background-color: transparent !important; }
   /* Reply content. */
-  footer .rstyJ > div:first-child > div {
+  footer ._1ebw2 > div:first-child > div {
     background-color: var(--dark) !important; }
   /* Close button. */
-  footer .rstyJ > div:last-child {
+  footer ._1ebw2 > div:last-child {
     position: relative;
     margin: 0 8px 5px 8px !important;
     background-color: transparent !important; }
   /* Make the button larger. */
-  footer .rstyJ > div:last-child > div svg {
+  footer ._1ebw2 > div:last-child > div svg {
     padding: 18px;
     border-radius: 6px;
     background-color: var(--dark); }
 
   /* Mention group members. */
-  .Uukb4 {
+  ._2j-wI, .XSeqj {
     color: var(--light);
     border-left: none !important;
-    background-color: var(--dark) !important; }
+    background-color: var(--darker) !important; }
   /* Wrapper. */
-  .Uukb4 ._3v_lq {
+  ._2j-wI .XSeqj {
     transition: 300ms ease-in-out !important;
     background-color: transparent !important; }
   /* Active. */
-  .Uukb4 .j5Hcb._3v_lq,
-  .Uukb4 ._3v_lq:hover {
-    background-color: var(--darker) !important; }
+  ._2j-wI .XSeqj._1Yz8K,
+  ._2j-wI .XSeqj:hover {
+    background-color: var(--accent) !important; }
 
 
   /* Select messages. */
