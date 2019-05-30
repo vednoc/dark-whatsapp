@@ -386,23 +386,23 @@
       #side ._2GB6m * {
         color: var(--lighter); }
 
-    /* Search or start new chat. */
-    #side ._2HS9r {
+    /* Global -> Search. */
+    ._2HS9r {
       border-bottom: 0px solid var(--dark);
       background-color: var(--darker) !important;
       background-color: transparent !important; }
-    /* Label background. */
-    #side ._2HS9r label,
-    #side ._2HS9r .ZP8RM._19OGD {
-      border: 0px solid var(--dark);
-      background-color: var(--dark) !important; }
+      /* Label background. */
+      .ZP8RM label, .ZP8RM._19OGD {
+        border: 0px solid var(--dark);
+        background-color: var(--dark) !important; }
       /* Input element. */
-      #side ._2HS9r label input {
+      .ZP8RM label input {
         color: var(--light);
         background-color: transparent; }
-      #side ._2HS9r > div::after {
-        border-color: var(--darker);
-        background-color: var(--dark); }
+      .ZP8RM::after,
+      .ZP8RM > div::after {
+        border-color: var(--darker) !important;
+        background-color: var(--dark) !important; }
 
   /* New group and group info buttons. */
   ._2EXPL .dIyEr ._1jJLh,
