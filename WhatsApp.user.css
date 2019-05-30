@@ -1076,10 +1076,17 @@
         display: none !important; }
 
 
-  /* Buttons. */
-  .PNlAR, ._3hV1n, ._2Gki6, ._13iu_ {
+  /* Accent buttons. */
+  ._3PQ7V {
     color: var(--lighter) !important;
     background-color: var(--accent) !important; }
+  ._3PQ7V:hover {
+    opacity: 0.8; }
+  /* Link buttons. */
+  ._23_1v:hover {
+    box-shadow: none !important;
+    color: var(--accent) !important;
+    background-color: transparent !important; }
   /* Muted checkbox color. */
   ._1VD7W {
     border-color: var(--accent);
