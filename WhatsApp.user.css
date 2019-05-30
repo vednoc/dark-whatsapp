@@ -650,6 +650,9 @@
       /* User's name. */
       .app ._3HZor span {
         color: var(--light); }
+      /** Username colors in group chat. */
+      .app [class*="color-"] span {
+        color: inherit !important; }
 
       /* Group options. */
       .app ._3HZor ._1CRb5 ._2EXPL,
@@ -805,7 +808,7 @@
       color: var(--lighter) !important; }
 
     /* Phone numbers of users that aren't your contacts. */
-    ._3Ye_R._1wjpf._1OmDL {
+    #main ._1F9Ap {
       color: var(--lighter) !important; }
 
     /* Mentions. */
