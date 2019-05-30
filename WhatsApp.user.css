@@ -5,7 +5,7 @@
 @homepageURL  https://github.com/vednoc/onyx
 @supportURL   https://github.com/vednoc/onyx/issues
 @updateURL    https://rawgit.com/vednoc/onyx/master/WhatsApp.user.css
-@version      1.4.0
+@version      1.4.1
 @author       vednoc
 @license      MIT
 @preprocessor uso
@@ -251,8 +251,8 @@
     --mblue: /*[[mblue]]*/;
     --image: url(https://media.discordapp.net/attachments/310799529161129984/417408747812552715/zilesanamin.jpg);
     --emojiOpacity: /*[[emojiOpacity]]*/;
-    --version: "WhatsApp by Mew v1.4.0";
-    --message: "Updated on 29th of May. Just core functionality for now, more hotfixes coming soon! ";
+    --version: "WhatsApp by Mew v1.4.1";
+    --message: "Updated on 30th of May. Second hotfix is here, more soon! ";
     --changes: "See the changelog at: https://github.com/vednoc/onyx/releases";
   }
 
