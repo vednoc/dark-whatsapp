@@ -5,7 +5,7 @@
 @homepageURL  https://github.com/vednoc/onyx
 @supportURL   https://github.com/vednoc/onyx/issues
 @updateURL    https://rawgit.com/vednoc/onyx/master/WhatsApp.user.css
-@version      1.4.1
+@version      1.4.2
 @author       vednoc
 @license      MIT
 @preprocessor uso
@@ -256,8 +256,8 @@
     --mblue: /*[[mblue]]*/;
     --image: url(https://media.discordapp.net/attachments/310799529161129984/417408747812552715/zilesanamin.jpg);
     --emojiOpacity: /*[[emojiOpacity]]*/;
-    --version: "WhatsApp by Mew v1.4.1";
-    --message: "Updated on 30th of May. Second hotfix is here, more soon! ";
+    --version: "WhatsApp by Mew v1.4.2";
+    --message: "Updated on 31st of May. All custom features except compact mode (works but not polished!) work again; more soon! ";
     --changes: "See the changelog at: https://github.com/vednoc/onyx/releases";
   }
 
