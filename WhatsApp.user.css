@@ -57,13 +57,13 @@
 
 @advanced dropdown doodles "Chat doodles" {
   doodle1 "Light doodles" <<<EOT
-  .app .fzCXy {
+  #app [data-asset-chat-background="true"] {
     filter: invert(100%) opacity(0.45) !important; } EOT;
   doodle2 "Dark doodles" <<<EOT
-  .app .fzCXy {
+  #app [data-asset-chat-background="true"] {
     filter: opacity(0.5) !important; } EOT;
   doodle3 "Disable doodles" <<<EOT
-  .app .fzCXy {
+  #app [data-asset-chat-background="true"] {
     display: none !important; } EOT;
 }
 
