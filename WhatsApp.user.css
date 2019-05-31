@@ -74,7 +74,7 @@
   enable "Enable" <<<EOT
   /* Blurry mode for contacts. *\/
   #pane-side [style*="height"] > div > div[class] {
-    filter: blur(10px); }
+    filter: blur(8px); }
   #pane-side [style*="height"] > div > div._3mMX1,
   #pane-side [style*="height"] > div > div:hover {
     filter: blur(0px); } EOT;
@@ -1004,6 +1004,9 @@
     /* Temporary fix for emoji container. */
     #main footer > div:nth-child(2) > div {
       border: 0; }
+    /* Nib. */
+    .iqJMX {
+      background-color: var(--dark) !important; }
     /* Emoji tabs. */
     ._2avTY {
       background: var(--darker) !important; }
@@ -1092,9 +1095,8 @@
       ._3gUiM ._1CnF3 * {
         color: var(--light); }
       /* Header/footer. */
-      ._2dA13 header,
-      ._2dA13 .iHLo1 {
-        background-color: var(--darker) !important; }
+      .XOIaT {
+        background-color: var(--dark) !important; }
       /* Empty element below search bar. */
       ._2fq0t span._3fOoY {
         display: none !important; }
@@ -1123,7 +1125,7 @@
   .drag-drop, ._2n-96 {
     background-color: var(--dark) !important; }
     /* Footer. */
-    ._3nuGo {
+    .NeQRT {
       background-color: var(--darker) !important; }
     /* Border. */
     ._2n-96 ._3L-be {
@@ -1131,10 +1133,10 @@
       color: var(--light) !important; }
 
     /* Add file icon. */
-    .GpvML, ._1ypOz {
+    .GpvML, ._1ypOz, ._3fktq {
       background-color: var(--dark) !important; }
       /* Border. */
-      ._2gZno::after {
+      ._1gcLL::after {
         background-color: var(--accent) !important; }
 
     /* Accent border. */
