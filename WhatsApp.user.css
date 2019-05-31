@@ -73,11 +73,10 @@
   EOT;
   enable "Enable" <<<EOT
   /* Blurry mode for contacts. *\/
-  ._1NrpZ ._2EXPL {
+  #pane-side [style*="height"] > div > div[class] {
     filter: blur(10px); }
-  /* On event. *\/
-  ._1NrpZ ._2EXPL._1f1zm,
-  ._1NrpZ ._2EXPL:hover {
+  #pane-side [style*="height"] > div > div._3mMX1,
+  #pane-side [style*="height"] > div > div:hover {
     filter: blur(0px); } EOT;
 }
 
@@ -439,7 +438,7 @@
           color: var(--light); }
         /* Borders. */
         ._2UaNq::after, ._2WP9Q {
-          border-color: var(--darker) !important; }
+          border-color: transparent !important; }
         /* Avatar wrapper background. */
         ._3RWII {
           box-shadow: 0 0 8px -1px var(--shadow) !important;
