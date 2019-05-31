@@ -726,14 +726,14 @@
 
 
   /* Message info. */
-  ._3FAwT {
+  #app .app > div:nth-child(2) ._2rGVQ {
     background-color: var(--dark) !important; }
     /* Doodle image. */
-    ._3FAwT .pane-chat-tile {
-      filter: invert(100%) opacity(0.8); }
+    #app .app > div:nth-child(2) [data-asset-chat-background="true"] {
+      filter: invert(100%) opacity(0.8) !important; }
     /* Read by. */
-    ._3HZor ._2sNbV ._2HDl5 ._2wP_Y > div {
-      background-color: var(--dark) !important; }
+    #app .app > div:nth-child(2) ._2AJf5 {
+      background-color: transparent !important; }
 
 
   /* Media/docs/links section. */
