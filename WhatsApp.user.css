@@ -94,13 +94,14 @@
     filter: blur(0px) grayscale(0%); } EOT;
 }
 
-@advanced dropdown fullscreen "Fullscreen" {
+@advanced dropdown fullscreen "Fullscreen mode" {
   disable "Disable" <<<EOT
   /* Disabled. *\/
   EOT;
   enable "Enable" <<<EOT
   /* Fullscreen. *\/
-  .app-wrapper-web ._3dqpi, body ._1abwg {
+  #app > div > .app,
+  #app > div > span [data-animate-status-v3-modal-background] > div  {
     height: calc(100% - 0px);
     top: 0px;
     width: 100%; }
@@ -109,18 +110,17 @@
     box-shadow: none !important;
     border-radius: 0px; }
   /* Disable background image. *\/
-  body > div > div::after {
+  #app > div::after {
     display: none !important; } EOT;
 }
 
 @advanced dropdown tails "Message tails" {
   enable "Enable" <<<EOT
-  /* Enabled. *\/
   EOT;
   disable "Disable" <<<EOT
   .tail-container {
     display: none !important; }
-  ._3_7SH.tail {
+  .tail {
     border-radius: 7.5px !important; } EOT;
 }
 
