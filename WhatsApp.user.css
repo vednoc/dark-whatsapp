@@ -127,21 +127,31 @@
 @advanced dropdown compactMode "Compact mode for small resolutions" {
   enable "Enable" <<<EOT
   @media screen and (max-height: 500px) {
-    ._3dqpi {
-      min-height: auto; }
+    /* App height reset. *\/
+    #app > div > .app { min-height: auto; }
   }
   @media screen and (max-width:/*[[customCompact]]*\/) {
-    /* .app > div { box-shadow: inset 0 0 0 4px var(--accent); } *\/
+    /*.app > div { box-shadow: 0 0 0 2px inset crimson !important; } /**\/
 
-    /* Header fix. *\/
-    ._3auIg {
-      min-width: 220px; }
+    /* Fix header width hiding icons. *\/
+    #side > header { min-width: 240px; }
+    /* Hide notifications. *\/
+    #side > header + span { display: none }
 
-    /* Contacts flexbox. *\/
-    .app.two > .k1feT,
-    .three .k1feT {
-      transition: 250ms ease-in-out;
-      flex: 0 0 075px !important; }
+    /* Contacts *\/
+    .app > div:nth-child(3) {
+      transition: 0;
+      flex: 0 0 75px !important; }
+    .app > div:nth-child(3):hover {
+      transition-delay: 0.99s;
+      flex: 0 0 40% !important; }
+    /* Search bar width. *\/
+    .ZP8RM:not(._19OGD) label {
+      padding: 0px; }
+    /* Contact list reset when right is active. *\/
+    .app.three > div:nth-child(3) {
+      flex: 0 0 75px !important;
+      margin-left: -75px !important; }
 
     /* Chat section. *\/
     ._1Iexl {
