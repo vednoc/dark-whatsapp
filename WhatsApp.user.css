@@ -82,18 +82,14 @@
 
 @advanced dropdown blurImages "Blur images" {
   disable "Disable" <<<EOT
-  /* Disabled. *\/
   EOT;
   enable "Enable" <<<EOT
   /* Blurry mode for images. *\/
-  #main ._1JVSX,
-  ._2Ry6_ ._1iCCh {
+  #main [style*="height"] > img {
     transition: 500ms ease-in-out;
     transition-delay: 0ms;
     filter: blur(10px) grayscale(100%); }
-  /* On event. *\/
-  #main ._1JVSX:hover,
-  ._2Ry6_ ._1iCCh:hover {
+  #main [style*="height"] > img:hover {
     transition-delay: 500ms;
     filter: blur(0px) grayscale(0%); } EOT;
 }
@@ -833,6 +829,9 @@
     ._3EQsG {
       /*transition: 200ms ease-in-out;/**/
       background: linear-gradient(to right, transparent 0%, var(--darker) 40%) !important; }
+      /* Message options for images. */
+      ._3EQsG._1eJVc {
+        background: none !important; }
       /* Smooth transition. */
       .message span:last-child div {
         transition: 50ms ease-in-out !important; }
