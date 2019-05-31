@@ -380,8 +380,12 @@
     /* Low battery. */
     #side ._2t3oV {
       background-color: var(--mred) !important; }
+    /* Phone not connected. */
+    #side ._1puWZ {
+      background-color: var(--mred) !important; }
       /* Text color. */
-      #side ._2GB6m * {
+      #side ._2GB6m *,
+      #side ._1puWZ * {
         color: var(--lighter); }
 
     /* Global -> Search. */
