@@ -492,12 +492,14 @@
       /*// Zoom in/out. */
       ._2LALH {
         background-color: var(--dark) !important; }
+    /* Input element. */
+    ._5UNoc ._3hnO5 { border-color: var(--accent) !important; }
 
-    /*// Option/select elements. */
-    .uyEaY select {
-      border-color: var(--accent); }
-      .uyEaY select option {
-        background-color: var(--dark); }
+  /* Option/select elements. */
+  select {
+    color: var(--light);
+    border-color: var(--accent); }
+  select option { background-color: var(--dark); }
 
     /* Archived chat image. */
     ._2fq0t ._2Lev2 {
@@ -511,14 +513,6 @@
       .k1feT ._2sNbV > ._1CkkN:hover,
       ._2fq0t ._2sNbV ._1CkkN:hover {
         background-color: var(--dark); }
-
-    /* New chat section. */
-    ._2fq0t .gQzdc label {
-      border: none;
-      background-color: var(--dark); }
-    /* Input element. */
-    ._2fq0t .gQzdc label input {
-        background-color: transparent; }
 
     /* New group. */
     ._2fq0t ._39pS- {
@@ -656,6 +650,10 @@
       background-color: transparent; }
       .app ._3HZor ._26JG5:hover {
         background-color: var(--dark) !important; }
+      /* Fix borders. */
+      .app ._3HZor ._27Ie2,
+      .app ._3HZor ._26JG5::before {
+        border-color: transparent !important; }
       /* User's name. */
       .app ._3HZor span {
         color: var(--light); }
