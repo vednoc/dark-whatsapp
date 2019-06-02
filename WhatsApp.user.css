@@ -496,6 +496,13 @@
         background-color: var(--dark) !important; }
     /* Input element. */
     ._5UNoc ._3hnO5 { border-color: var(--accent) !important; }
+    /* Take a new profile picture. */
+    ._2HyTU {
+      background-color: var(--darker) !important; }
+    /* Confirm button. */
+    ._2HyTU ._1g8sv {
+      box-shadow: 0 2px 4px 0 var(--shadow) !important;
+      background-color: var(--accent) !important; }
 
   /* Option/select elements. */
   select {
