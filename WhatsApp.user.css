@@ -619,13 +619,13 @@
     background-color: var(--darker) !important; }
 
     /* Shared contact button colors. */
-    .b332w {
+    .Ir_Ne {
       color: var(--accent) !important; }
     /* Shared contact text. */
     .AVd_p {
       color: var(--lighter) !important; }
     /* View contact. */
-    ._36ApL {
+    ._1VwzF {
       background-color: transparent !important; }
 
   /* Hide 'Type a message' once focused. */
@@ -891,16 +891,16 @@
     /* Document embeds. */
     ._3RQfg ._3a29n {
       background-color: var(--dark) !important; }
-  
+
     /* Embeds description */
     .HNuTV {
       background-color: var(--dark) !important; }
-  
+
     /* Link embeds. */
     ._3qblR, ._1SsXF {
       box-shadow: 0 0 0 1px var(--dark) !important;
       background-color: var(--dark) !important; }
-    
+
     /* Thumbnail. */
     ._3_nIn {
       background-color: var(--darker) !important; }
