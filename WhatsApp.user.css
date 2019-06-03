@@ -491,18 +491,21 @@
       /* Text color. */
       ._11GZy * {
         color: var(--light); }
-      /*// Zoom in/out. */
-      ._2LALH {
-        background-color: var(--dark) !important; }
     /* Input element. */
     ._5UNoc ._3hnO5 { border-color: var(--accent) !important; }
+    /* Wrapper background. */
+    ._3979j { background-color: transparent !important }
     /* Take a new profile picture. */
-    ._2HyTU {
+    ._2HyTU, ._22aOT {
       background-color: var(--darker) !important; }
     /* Confirm button. */
-    ._2HyTU ._1g8sv {
+    ._2HyTU ._1g8sv, ._22aOT ._1g8sv {
       box-shadow: 0 2px 4px 0 var(--shadow) !important;
       background-color: var(--accent) !important; }
+    /* Zoom in/out. */
+    ._1DKwn {
+      box-shadow: 0 2px 4px 0 var(--shadow) !important;
+      background-color: var(--dark) !important; }
 
   /* Option/select elements. */
   select {
