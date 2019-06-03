@@ -888,13 +888,19 @@
     /* Document embeds. */
     ._3RQfg ._3a29n {
       background-color: var(--dark) !important; }
+  
+    /* Embeds description */
+    .HNuTV {
+      background-color: var(--dark) !important; }
+  
     /* Link embeds. */
     ._3qblR, ._1SsXF {
       box-shadow: 0 0 0 1px var(--dark) !important;
       background-color: var(--dark) !important; }
-      /* Thumbnail. */
-      ._3_nIn {
-        background-color: var(--darker) !important; }
+    
+    /* Thumbnail. */
+    ._3_nIn {
+      background-color: var(--darker) !important; }
 
 
   /* Reply section. (= */
