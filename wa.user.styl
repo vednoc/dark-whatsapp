@@ -1,0 +1,70 @@
+/* ==UserStyle==
+@name         WhatsApp by Mew [Alpha]
+@description  A customizable theme for WhatsApp.
+@namespace    github.com/vednoc/onyx
+@homepageURL  https://github.com/vednoc/onyx
+@supportURL   https://github.com/vednoc/onyx/issues
+@version      1.5.0
+@author       vednoc
+@license      MIT
+@preprocessor stylus
+
+@var color dark "Dark" #272c35
+@var color darker "Darker" #1f232a
+@var color light "Light" #d1d1d1
+@var color lighter "Lighter" #e9e9e9
+@var color accent "Accent" #7289da
+@var color icon "Icons" #e1e1e1
+@var color shadow "Shadow" #00000010
+@var color red "Red" #a3525b
+@var color green "Green" #70a352
+@var color blue "Blue" #527aa3
+==/UserStyle== */
+
+@-moz-document domain('web.whatsapp.com') {
+
+    :root {
+        --dark:    dark;
+        --darker:  darker;
+        --light:   light;
+        --lighter: lighter;
+        --accent:  accent;
+        --icon:    icon;
+        --shadow:  shadow;
+        --red:     red;
+        --green:   green;
+        --blue:    blue;
+        --white:   white;
+        --radius:  6px;
+        --t:       transparent;
+    }
+
+    // * Use stylus-lang variables with CSS variables.
+    $dark    = var(--dark);
+    $darker  = var(--darker);
+    $light   = var(--light);
+    $lighter = var(--lighter);
+    $accent  = var(--accent);
+    $icon    = var(--icon);
+    $shadow  = var(--shadow);
+    $yellow  = var(--yellow);
+    $orange  = var(--orange);
+    $red     = var(--red);
+    $magenta = var(--magenta);
+    $violet  = var(--violet);
+    $blue    = var(--blue);
+    $cyan    = var(--cyan);
+    $green   = var(--green);
+    $white   = var(--white);
+    $t       = var(--t);
+    $r       = var(--radius);
+
+    c(x, y = 0, z = 0, xi = 1, yi = 1, zi = 1) {
+        if x is a 'call' {            color: xi is 0 ? x : x !important }
+        if y is a 'call' {     border-color: yi is 0 ? y : y !important }
+        if z is a 'call' { background-color: zi is 0 ? z : z !important }
+    }
+
+    radius() { border-radius: arguments }
+
+}
