@@ -852,10 +852,6 @@
         margin-top: 0px;
         color: var(--lighter); }
 
-    /* Message options. */
-    ._3EQsG {
-      /*transition: 200ms ease-in-out;/**/
-      background: linear-gradient(to right, transparent 0%, var(--darker) 40%) !important; }
       /* Message options for images. */
       ._3EQsG._1eJVc {
         background: none !important; }
@@ -1008,14 +1004,18 @@
     background-color: var(--darker) !important; }
   ._3qAvH * {
     color: var(--light) !important; }
-  /* Reset message menu. */
-  ._15CAo._2Nkc4 {
-    /* top: 0 !important;
-    right: 0 !important; */
-    background: linear-gradient(to right, transparent 0%, var(--darker) 40%) !important;
- }
-  /* Icon background. */
-  .YiYMT { background-color: transparent !important; }
+
+  /* Message options. */
+  ._15CAo {
+    background: linear-gradient(90deg, transparent, var(--darker) 40%) !important;
+  }
+  /* Reset sticker menu background. */
+  .a81-s > div + span > div { background: none !important }
+  /* Context menu buttons. */
+  [data-js-context-icon='true'] {
+    background-image: none !important;
+    background: none !important; }
+  [data-js-context-icon='true'] + div { background: var(--darker) !important }
 
   /* Emoji/gif/stickers menu. */
   .QChXd, ._20KNO, .RxbUw {
