@@ -751,21 +751,20 @@
 
 
   /* Media/docs/links section. */
-  ._3HZor ._3b2Cf {
+  ._27U_m {
     background-color: var(--darker) !important; }
   /* Active indicator. */
-  ._3HZor ._3b2Cf:before {
+  ._27U_m::before {
     background-color: var(--accent) !important; }
   /* Selected image. */
   ._2Ry6_ ._2mlDB {
     border-color: var(--accent) !important; }
-  /* Selected links. */
-  .D6ZWG {
-    background-color: var(--darker) !important; }
   /* Text color. */
-  .D6ZWG ._1S4i5,
-  ._2Mvo8.fyJXn {
-    color: var(--lighter); }
+  ._27U_m .Y1iVg {
+    color: var(--lighter) !important; }
+  /* Selected links. */
+  ._27U_m .Y1iVg._3caqI {
+    color: var(--light) !important; }
 
   /** Media viewer. */
   ._1iNsf, ._2KgjI {
