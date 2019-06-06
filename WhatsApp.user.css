@@ -609,14 +609,18 @@
       color: var(--light) !important; }
 
   /* Unknown contact. */
-  .TYhk9 {
+  ._2Pown {
+    color: var(--light) !important;
     border-color: var(--darker) !important;
     background-color: var(--dark) !important;
-    box-shadow: 0 0px 8px 2px var(--shadow) !important; }
+    box-shadow: 0 -1px 0 0 inset var(--darker) !important; }
   /* Buttons. */
-  .TYhk9 ._1sB6s {
-    color: var(--light) !important;
+  ._2ZZub {
+    color: var(--lighter) !important;
     background-color: var(--darker) !important; }
+  ._2ZZub:hover {
+    color: var(--light) !important;
+    box-shadow: 0 2px 4px 0 var(--shadow) !important; }
 
     /* Shared contact button colors. */
     .Ir_Ne {
