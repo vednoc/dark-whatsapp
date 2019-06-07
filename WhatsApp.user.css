@@ -305,11 +305,6 @@
     background: none;
     background-color: var(--dark); }
 
-    /* Accent background. */
-    .app-wrapper::after {
-      background: none !important; }
-
-
   /* Log-in page. */
   .landing-wrapper::before {
     opacity: 0.6;
@@ -811,7 +806,6 @@
           outline: 3px solid var(--accent) !important; }
 
 
-
   /* Message bubbles. */
   .message-in:not(.a81-s), .message-out:not(.a81-s), .message {
     background-color: var(--darker) !important; }
@@ -1098,7 +1092,6 @@
         background-color: var(--dark) !important; }
 
 
-
   /* Backdrop. */
   ._3Fq9Y, #startup, #initial_startup {
     background-color: var(--dark) !important; }
@@ -1216,8 +1209,8 @@
     object { display: none !important; }
 
 
-
   /* Global icon color. */
+  span[data-icon^="business-"] > svg path,
   span:not([data-icon="image"]) > svg > path {
     transition: 200ms ease;
     fill: var(--icon) !important; }
