@@ -746,9 +746,13 @@
     #app .app > div:nth-child(2) [data-asset-chat-background="true"] {
       filter: invert(100%) opacity(0.8) !important; }
     /* Read by. */
-    #app .app > div:nth-child(2) ._2AJf5 {
+    #app .app > div:nth-child(2) ._2AJf5,
+    #app .app > div:nth-child(2) ._19xqi {
+      box-shadow: none !important;
       background-color: transparent !important; }
-
+    /* Read by text color. */
+    #app .app > div:nth-child(2) ._2AJf5 span {
+      color: var(--accent) !important; }
 
   /* Media/docs/links section. */
   ._27U_m {
