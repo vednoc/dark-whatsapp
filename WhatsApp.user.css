@@ -127,115 +127,92 @@
 
 @advanced dropdown compactMode "Compact mode for small resolutions" {
   enable "Enable" <<<EOT
-  @media screen and (max-height: 500px) {
-    /* App height reset. *\/
-    #app > div > .app { min-height: auto; }
-  }
-  @media screen and (max-width:/*[[customCompact]]*\/) {
-    /*.app > div { box-shadow: 0 0 0 2px inset crimson !important; } /**\/
-
-    /* Fix header width hiding icons. *\/
-    #side > header { min-width: 240px; }
-    /* Hide notifications. *\/
-    #side > header + span { display: none }
-
-    /* Contacts *\/
-    .app > div:nth-child(3) {
-      transition: 0;
-      flex: 0 0 75px !important; }
-    .app > div:nth-child(3):hover {
-      transition-delay: 0.99s;
-      flex: 0 0 40% !important; }
-    /* Search bar width. *\/
-    .ZP8RM:not(._19OGD) label {
-      padding: 0px; }
-    /* Contact list reset when right is active. *\/
-    .app.three > div:nth-child(3) {
-      flex: 0 0 75px !important;
-      margin-left: -75px !important; }
-
-    /* Chat section. *\/
-    ._1Iexl {
-      flex: 0 0 65% !important; }
-
-    /* On hover or active sub-menus. *\/
-    .app.two > .k1feT:hover,
-    .MZIyP .k1feT {
-      transition-delay: 1s !important;
-      /* TODO: Adjust panel width. *\/
-      flex: 0 0 30% !important; }
-
-    /* Info flexbox. *\/
-    .three ._3HZor {
-      width: calc(100% - 75px) !important;
-      left: 75px !important; }
-
-    /* Chat flexbox. *\/
-    .two > ._1Iexl {
-      margin: 0 !important;
-      flex: 0 0 calc(100% - 75px) !important; }
-
-    /* Search contacts. *\/
-    .two .k1feT:not(:hover) ._2MSJr {
-      padding: 0; }
-
-    /* On hover. *\/
-    .two .k1feT:hover ._2MSJr {
-      transition-delay: 1s !important; }
-
-    /** Hack for positioning unread counter. *\/
-    #side:not(:hover) ._3j7s9 ._1AwDx ._3Bxar span > div {
-      z-index: 101;
-      position: absolute; }
-    /* ? Unread counter. *\/
-    #side:not(:hover) div > .OUeyt {
-      height: 18px;
-      padding: 0 5px 0 5px;
-      margin: -5px 0 0 -35px;
-      background-color: var(--dark) !important;
-      box-shadow: 0 0 0 3px var(--darker) !important; }
-    /* On event. *\/
-    /*#side:hover div > .OUeyt {
-      background-color: var(--dark) !important;
-      box-shadow: 0 0 0 3px var(--darker) !important; }*\/
-
-    /* ? Message status. *\/
-    .two .k1feT ._3j7s9 ._1VfKB {
-      z-index: 101;
-      position: absolute;
-      margin-left: -68px;
-      margin-top: 5px;
-      border-radius: 50%;
-      background-color: var(--dark);
-      box-shadow: 0 0 0 3px var(--darker); }
-    /* Background on event. *\/
-    .two .k1feT ._2EXPL:hover ._1VfKB,
-    .two .k1feT ._2EXPL._1f1zm ._1VfKB {
-      background-color: var(--darker);
-      box-shadow: 0 0 0 3px var(--dark) !important; }
-
-    /** Icon size. *\/
-    .two .k1feT ._3j7s9 ._1VfKB span > svg {
-      padding: 2px;
-      height: 14px !important;
-      width: 14px !important; }
-
-    /* Hide all icons except new messages. *\/
-    .two .k1feT ._15G96 span:not(.OUeyt),
-    .two .k1feT .ZR5SB {
-      display: none !important; }
-  }
-  @media screen and (max-width: 720px) {
-    /* Width overflow fix. *\/
-    ._3dqpi {
-      min-width: 100%; }
-
-    /* On hover or active sub-menus. *\/
-    .app.two > .k1feT:hover,
-    .MZIyP .k1feT {
-      transition-delay: 1s !important;
-      flex: 0 0 40% !important; }
-  } EOT;
+    /* Reset min app height/width reset. *\/
+    @media screen and (max-height: 500px) { #app > div > .app { min-height: auto; }}
+    @media screen and (max-width: 648px) { #app > div > .app { min-width: auto; }}
+    /* Custom compact mode. *\/
+    @media screen and (max-width:/*[[customCompact]]*\/) {
+      /* .app > div div:hover { box-shadow: 0 0 0 2px inset crimson !important; } /**\/
+      /* Fix header width hiding icons. *\/
+      #side > header { min-width: 240px; }
+      /* Hide notifications. *\/
+      #side > header + span { display: none }
+      /* Search bar width. *\/
+      .ZP8RM:not(._19OGD) label { padding: 0px; }
+      /* ? Reset panes. *\/
+      .three > div:nth-child(3),
+      .three > div:nth-child(2) > div:nth-child(1),
+      .two > div:nth-child(2) > div:nth-child(1),
+      .two > div:nth-child(3) {
+        flex: 0 0 75px !important; }
+      /* Settings/Starred/Etc. *\/
+      .two > div:nth-child(2) > div._3HZor {
+        min-width: 400px !important;
+        flex: 0 0 30% !important; }
+      /* Don't expand contacts if there are 3 panes. *\/
+      .three > div:nth-child(3):hover {
+        flex: 0 0 75px !important; }
+      /* Expand contacts. *\/
+      .two > div:nth-child(3) {
+        min-width: 1px !important;
+        transition: 0.3s ease-in-out !important;
+        transition-delay: 0.2s !important; }
+      .two > div:nth-child(3):hover {
+        min-width: 400px !important;
+        transition-delay: 0.8s !important;
+        flex: 0 0 30% !important; }
+      /* Pane -> Chat. *\/
+      .three ._2rI9W { flex: 1 1 auto !important; }
+      /* Pane -> Info. *\/
+      .three ._1C9rS {
+        max-width: 400px;
+        width: calc(100% - 76px); }
+      /* ? Hack for positioning unread counter. *\/
+      ._2UaNq .xD91K {
+        z-index: 199 !important;
+        display: flex !important;
+        flex-direction: row-reverse !important; }
+      /* ? Unread counter. *\/
+      ._2UaNq .xD91K ._1ZMSM .P6z4j {
+        z-index: 999 !important;
+        line-height: 23px !important;
+        margin: 7px 00px 0px -60px !important;
+        transition: 0.15s ease !important;
+        box-shadow: 0 0 0 3px var(--darker) !important; }
+      /* On event. *\/
+      #side ._2UaNq._3mMX1 .xD91K .P6z4j, #side ._2UaNq:hover .xD91K .P6z4j {
+        /* color: var(--accent) !important;
+        background-color: var(--darker) !important; *\/
+        box-shadow: 0 0 0 3px var(--dark) !important; }
+      /* Reset text position. *\/
+      ._2UaNq .xD91K span[dir] { margin-left: 10px; }
+      /* Remove icons we don't need. *\/
+      #side ._1ZMSM > span:not(.P6z4j) { display: none !important }
+      /* Remove overflow for unread messages counter. *\/
+      #side ._0LqQ {
+        margin-left: -10px !important;
+        overflow: unset !important }
+      /* Message dropdown thing; fixes ticks jumping left and right. *\/
+      #side ._0LqQ > span:last-child:not(._17TaE) { display: none !important }
+      /* ? Hack for positioning message status. *\/
+      ._3VIru {
+        z-index: 101;
+        position: absolute;
+        margin: 5px 0 0 -20px;
+        border-radius: 50%;
+        transition: 0.15s ease !important;
+        background-color: var(--dark);
+        box-shadow: 0 0 0 3px var(--darker); }
+      /* Make SVG smaller. *\/
+      ._3VIru > span > svg {
+        padding: 2px;
+        height: 14px !important;
+        width: 14px !important; }
+      /* Background on event. *\/
+      ._2UaNq:hover ._3VIru, ._2UaNq._3mMX1 ._3VIru {
+        background-color: var(--darker);
+        box-shadow: 0 0 0 3px var(--dark) !important; }
+    } EOT;
   disable "Disable" <<<EOT
   /* Disabled. *\/
   EOT;
