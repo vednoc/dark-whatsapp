@@ -286,8 +286,9 @@
     color: var(--light) !important;
     background-color: var(--accent) !important; }
   /* Input placeholders. */
-  ::-webkit-input-placeholder {
-    color: var(--lighter) !important; }
+  ::placeholder { color: var(--lighter) !important; }
+  ::-moz-placeholder { color: var(--lighter) !important; }
+  ::-webkit-input-placeholder { color: var(--lighter) !important; }
 
   /* Progress. */
   progress[value]::-webkit-progress-bar {
@@ -1038,6 +1039,7 @@
 
     /* Search emojis. */
     ._2Qm0c, ._2Qm0c label {
+      box-shadow: none !important;
       background-color: var(--dark) !important; }
       /* Text color. */
       ._2Qm0c input {
