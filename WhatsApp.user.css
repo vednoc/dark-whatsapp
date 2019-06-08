@@ -750,7 +750,8 @@
       color: var(--accent) !important; }
 
   /* Media/docs/links section. */
-  ._27U_m {
+  ._27U_m, .yrOIH {
+    border-bottom: 1px solid var(--dark);
     background-color: var(--darker) !important; }
   /* Active indicator. */
   ._27U_m::before {
@@ -886,7 +887,7 @@
       background-color: var(--darker) !important; }
 
     /* Document embeds. */
-    ._3RQfg ._3a29n {
+    ._3a29n {
       background-color: var(--dark) !important; }
 
     /* Embeds description */
@@ -950,11 +951,11 @@
       #main .qTFAl:hover, #main .qTFAl._3Z2tD {
         background-color: var(--shadow) !important; }
     /* Selected icon. */
-    #main ._15wNI {
+    ._15wNI {
       border-color: var(--accent) !important;
       background-color: var(--accent) !important; }
       /* Checkmark. */
-      #main ._15wNI ._1ygtt {
+      ._15wNI ._1ygtt {
         border-bottom-color: var(--light);
         border-right-color: var(--light); }
     /* Footer/control/options. */
