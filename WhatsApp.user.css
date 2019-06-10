@@ -21,6 +21,7 @@
 @var color mgreen "Green-ish" #70A352
 @var color mblue "Blue-ish" #527AA3
 @var text emojiOpacity "Emoji opacity" 0.75
+@var text hoverDelay "Compact mode hover delay" 0.8s
 @var text customImage "Custom image" url(replace-with-image-address)
 @var text customRules "Custom CSS rules" #test::after { content: "paste all your custom css here!" !important; }
 @var text customFonts "Custom fonts" "'custom-font', 'Segoe UI', 'Helvetica Neue', 'Helvetica', 'Lucida Grande', 'Arial', 'Ubuntu', 'Cantarell', 'Fira Sans',"
@@ -164,7 +165,7 @@
         transition-delay: 0.2s !important; }
       .two > div:nth-child(3):hover {
         min-width: 400px !important;
-        transition-delay: 0.8s !important;
+        transition-delay: var(--hover-delay) !important;
         flex: 0 0 30% !important; }
       /* Pane -> Chat. *\/
       .three ._2rI9W { flex: 1 1 auto !important; }
@@ -237,6 +238,7 @@
     --mred: /*[[mred]]*/;
     --mgreen: /*[[mgreen]]*/;
     --mblue: /*[[mblue]]*/;
+    --hover-delay: /*[[hoverDelay]]*/;
     --image: url(https://media.discordapp.net/attachments/310799529161129984/417408747812552715/zilesanamin.jpg);
     --emojiOpacity: /*[[emojiOpacity]]*/;
     --version: "WhatsApp by Mew v1.4.5";
