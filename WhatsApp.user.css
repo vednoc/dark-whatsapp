@@ -146,9 +146,14 @@
       .two > div:nth-child(3) {
         flex: 0 0 75px !important; }
       /* Settings/Starred/Etc. *\/
-      .two > div:nth-child(2) > div._3HZor {
-        min-width: 400px !important;
+      .two > div:nth-child(2) > div._3kF8H {
+        transition: 0.3s ease-in-out !important;
+        flex: 0 0 75px !important; }
+      .two > div:nth-child(2) > div._3kF8H:hover {
         flex: 0 0 30% !important; }
+      /* Upload preview. *\/
+      .two > div:nth-child(2) > div._2rI9W {
+        flex: 0 0 calc(100% - 75px) !important; }
       /* Don't expand contacts if there are 3 panes. *\/
       .three > div:nth-child(3):hover {
         flex: 0 0 75px !important; }
