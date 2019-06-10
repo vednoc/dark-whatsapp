@@ -630,7 +630,7 @@
         color: var(--light); }
       /* Mute/starred messages. */
       ._3_-Si + ._3_-Si ._2x2XP {
-        border-color: var(--dark) !important; }
+        border-color: var(--darker) !important; }
 
     /* Group info sections. */
     .app ._3HZor ._26JG5, .app ._3HZor ._2UaNq {
@@ -646,6 +646,8 @@
       /* User's name. */
       .app ._3HZor span {
         color: var(--light); }
+      .app ._3HZor ._23Un5 {
+        color: var(--mred); }
       /** Username colors in group chat. */
       .app [class*="color-"] span {
         color: inherit !important; }
@@ -734,15 +736,15 @@
   /* Active indicator. */
   ._27U_m::before {
     background-color: var(--accent) !important; }
-  /* Selected image. */
-  ._2Ry6_ ._2mlDB {
-    border-color: var(--accent) !important; }
   /* Text color. */
   ._27U_m .Y1iVg {
     color: var(--lighter) !important; }
   /* Selected links. */
   ._27U_m .Y1iVg._3caqI {
     color: var(--light) !important; }
+  /* Selected image. */
+  ._2Ji5m {
+    border-color: var(--darker) !important; }
 
   /** Media viewer. */
   ._1iNsf, ._2KgjI {
