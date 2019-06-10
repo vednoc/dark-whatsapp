@@ -86,11 +86,11 @@
   EOT;
   enable "Enable" <<<EOT
   /* Blurry mode for images. *\/
-  #main [style*="height"] > img {
+  #main .copyable-area [style*="height"] > img {
     transition: 500ms ease-in-out;
     transition-delay: 0ms;
     filter: blur(10px) grayscale(100%); }
-  #main [style*="height"] > img:hover {
+  #main .copyable-area [style*="height"] > img:hover {
     transition-delay: 500ms;
     filter: blur(0px) grayscale(0%); } EOT;
 }
