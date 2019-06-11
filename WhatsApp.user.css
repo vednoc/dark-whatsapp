@@ -312,8 +312,10 @@
     ._3PxOr rect {
       fill: var(--dark) !important; }
     /* Fix QR code. */
-    [alt="Scan me!"] {
-      border: 2px solid white !important; }
+    .landing-wrapper div[data-ref] {
+      border-radius: 0;
+      filter: contrast(150%) !important;
+      outline: 4px solid white !important; }
     /* Loader. */
     #startup svg > circle {
       stroke: var(--lighter) !important; }
