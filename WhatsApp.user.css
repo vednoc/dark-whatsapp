@@ -1162,28 +1162,22 @@
     top: 0; right: 0; bottom: 0; left: 0;
     background-color: var(--dark);
     opacity: 0.8; z-index: -1; }
-    /* Normal icon. */
-    span[data-icon="status-v3"] > svg > path:first-child {
+    /* Status icon. */
+    span[data-icon*="status-v3"] > svg > path:first-child {
       opacity: 0.55 !important; }
-      /* Unread status. */
-      span[data-icon="status-v3-unread"] > svg > path:first-child {
-        opacity: 1 !important; }
     /* Left hand side. */
-    ._2dLx9 .IMn_C {
-      background-color: var(--darker) !important; }
-      /* Text color. */
-      .IMn_C span {
-        color: var(--lighter) !important; }
+    ._2dLx9 .IMn_C { background-color: var(--darker) !important; }
+    /* Text color. */
+    .IMn_C span { color: var(--light) !important; }
+    .qlhJH hr { color: var(--dark) !important; }
     /* Right hand side. */
-    ._2dLx9 ._3MBzN {
-      background-color: var(--dark) !important; }
-      /* Text color. */
-      ._2dLx9 ._3MBzN div {
-        color: var(--lighter) !important; }
-    /*// Reply to status. */
-    .C534L ._3PmkG {
-      border-radius: 5px !important;
-      background-color: var(--dark) !important; }
+    ._2dLx9 ._3MBzN { background-color: var(--dark) !important; }
+    /* Text color. */
+    ._2dLx9 ._3MBzN div { color: var(--lighter) !important; }
+    /* Reply to status. */
+    .QRsOy { background-color: var(--dark) !important; }
+    /* Input bar. */
+    ._3FeAD._2nW8k { background-color: var(--dark) !important; }
 
   /*// REMOVE STUFF. */
     /* Remove pseudo elements. */
