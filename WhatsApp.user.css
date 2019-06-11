@@ -21,11 +21,11 @@
 @var color mgreen "Green-ish" #70A352
 @var color mblue "Blue-ish" #527AA3
 @var text emojiOpacity "Emoji opacity" 0.75
-@var text hoverDelay "Compact mode hover delay" 0.8s
 @var text customImage "Custom image" url(replace-with-image-address)
 @var text customRules "Custom CSS rules" #test::after { content: "paste all your custom css here!" !important; }
 @var text customFonts "Custom fonts" "'custom-font', 'Segoe UI', 'Helvetica Neue', 'Helvetica', 'Lucida Grande', 'Arial', 'Ubuntu', 'Cantarell', 'Fira Sans',"
 @var text customCompact "Compact mode breakpoint" 720px
+@var text hoverDelay "Compact mode hover delay" 0.8s
 
 @advanced dropdown background "App background" {
   bg1 "Default theme image" <<<EOT
@@ -1179,20 +1179,8 @@
     /* Input bar. */
     ._3FeAD._2nW8k { background-color: var(--dark) !important; }
 
-  /*// REMOVE STUFF. */
-    /* Remove pseudo elements. */
-    [class*="chat"]:before, [class*="chat"]:after,
-    .gQzdc:after, ._1CkkN:before, ._3AwwN:after,
-    .MS-DH:before, .MS-DH:after, ._3YwRO {
-      display: none !important; }
-    /* Remove ONLY borders. */
-    ._1CkkN ._10xEB, ._14oqx .DcItJ,
-    html[dir] ._2EXPL:after, ._3j7s9,
-    ._1fkhx, .chat-body, ._3hhmj, ._2nmDZ {
-      border: none !important; }
-    /* Some random iframe? */
-    object { display: none !important; }
-
+  /* Remove weird iframes. */
+  object { display: none !important; }
 
   /* Global icon color. */
   span[data-icon^="business-"] > svg path,
@@ -1205,18 +1193,13 @@
       opacity: 0.3 !important; }
 
   /* Upload files. */
-  .GK4Lv::after {
-    box-shadow: 0 1px 2px var(--shadow), 0 4px 8px var(--shadow) !important; }
+  .Ijb1Q::after { box-shadow: 0 4px 8px 2px var(--shadow) !important; }
 
   /* Default profile picture background. */
-  span[data-icon="default-user"] svg > path:first-child,
-  span[data-icon="default-group"] svg > path:first-child,
-  span[data-icon="default-broadcast"] svg > path:first-child {
+  span[data-icon^="default-"] svg > path:first-child {
     fill: var(--dark) !important; }
 
-  span[data-icon="default-user"] svg > g > path:last-child,
-  span[data-icon="default-group"] svg > path:last-child,
-  span[data-icon="default-broadcast"] svg > path:last-child {
+  span[data-icon^="default-"] svg path:last-child {
     opacity: 0.7;
     fill: var(--icon) !important; }
 
@@ -1237,8 +1220,7 @@
     opacity: 1 !important; }
 
   /* Misc icons fix. */
-  span[data-icon="chevron-left"] svg path,
-  span[data-icon="chevron-right"] svg path,
+  span[data-icon^="chevron-"] svg path,
   span[data-icon="x-viewer"] svg path,
   span[data-icon="download"] svg path,
   span[data-icon="forward"] svg path,
