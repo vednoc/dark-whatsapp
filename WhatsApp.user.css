@@ -792,6 +792,12 @@
         ._2AP3i ._1LdNS:hover:not(.cJP5q):not(#spec) {
           outline: 3px solid var(--accent) !important; }
 
+  /* Highlight message bubbles. #29 */
+  div.message-in.velocity-animating,
+  div.message-out.velocity-animating {
+    background-color: var(--accent) !important }
+  .tail.velocity-animating > .tail-container {
+    border-top-color: var(--accent) !important }
 
   /* Message bubbles. */
   .message-in:not(.a81-s), .message-out:not(.a81-s), .message {
