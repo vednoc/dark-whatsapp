@@ -709,9 +709,11 @@
   /* Borders. */
   ._1WMT2::before, ._1WMT2::after {
     display: none !important; }
+    /* Selected message. */
+    ._1WMT2._2V_Wj,
     ._1WMT2:hover {
       transition: 200ms ease-in-out !important;
-      background-color: var(--darker) !important; }
+      background-color: var(--dark) !important; }
     /* Remove tails. */
     ._1WMT2 .tail-container {
       display: none !important; }
@@ -743,6 +745,7 @@
   ._27U_m::before {
     background-color: var(--accent) !important; }
   /* Text color. */
+  ._26Nvu,
   ._27U_m .Y1iVg {
     color: var(--lighter) !important; }
   /* Selected links. */
