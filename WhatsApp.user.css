@@ -586,9 +586,6 @@
         border: none !important;
         color: var(--light);
         background-color: var(--darker) !important; }
-    /* Voice message duration. */
-    ._30ie- {
-      color: var(--light) !important; }
 
   /* Unknown contact. */
   ._2Pown {
@@ -808,6 +805,11 @@
     .quoted-mention,
     ._1upWv {
       color: var(--light) !important; }
+
+    /* Voice messages. */
+    ::-moz-range-thumb { background-color: var(--accent) !important }
+    ::-moz-range-track { background-color: var(--lighter) !important }
+    ._7sUPO { background-color: var(--accent) !important }
 
     /* Use accent color for links. #20 */
     a[href].selectable-text {
