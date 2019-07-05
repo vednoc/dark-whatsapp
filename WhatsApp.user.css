@@ -810,6 +810,7 @@
     ::-moz-range-thumb { background-color: var(--accent) !important }
     ::-moz-range-track { background-color: var(--lighter) !important }
     ._7sUPO { background-color: var(--accent) !important }
+    ._1FWQp { color: var(--light) !important }
 
     /* Use accent color for links. #20 */
     a[href].selectable-text {
