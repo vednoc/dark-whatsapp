@@ -428,7 +428,7 @@
         ._2UaNq._3mMX1, ._2UaNq:hover {
           background-color: var(--dark) !important; }
         /* Text color. */
-        ._2UaNq * {
+        ._2UaNq *:not(#z) {
           color: var(--light); }
         /* Borders. */
         ._2UaNq::after, ._2WP9Q {
@@ -832,6 +832,10 @@
     /* Read more. */
     ._2VdJh { color: var(--accent) !important }
 
+    /* Deleted message. */
+    ._3uHCS { color: var(--lighter) !important }
+    span[class][data-icon="recalled-out"] svg path { fill: red !important }
+
     /* Phone numbers of users that aren't your contacts. */
     #main ._1F9Ap {
       color: var(--lighter) !important; }
@@ -1021,7 +1025,7 @@
   [data-js-context-icon='true'] + div { background: var(--darker) !important }
 
   /* Emoji/gif/stickers menu. */
-  .QChXd, ._20KNO, .RxbUw {
+  .QChXd, ._20KNO, .RxbUw, ._2PpWQ > div {
     background-color: var(--dark) !important; }
     /* Temporary fix for emoji container. */
     #main footer > div:nth-child(2) > div {
