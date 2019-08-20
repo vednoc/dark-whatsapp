@@ -1159,17 +1159,18 @@
       color: var(--light) !important; }
 
     /* Add file icon. */
-    .GpvML, ._1ypOz, ._3fktq {
-      background-color: var(--dark) !important; }
+    .GpvML, ._1ypOz, ._3fktq, ._1g8sv {
+      background-color: var(--dark) !important;
+      box-shadow: 0 2px 4px var(--shadow) !important; }
       /* Border. */
       ._1gcLL::after {
         background-color: var(--accent) !important; }
 
     /* Accent border. */
-    .CzI8E, ._31WRs ._1DTd4 {
+    .CzI8E, ._31WRs ._1DTd4, ._2Fvnm ._3ogpF {
       border-bottom-color: var(--accent) !important; }
     /* Text color. */
-    ._7HWvs {
+    ._7HWvs, .A_Kh_ {
       color: var(--light) !important; }
 
   /** Status area! */
