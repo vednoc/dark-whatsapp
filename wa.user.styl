@@ -1,63 +1,78 @@
 /* ==UserStyle==
 @name         WhatsApp by Mew [Alpha]
-@description  A customizable theme for WhatsApp.
+@description  Dark and light, very customizable theme for WhatsApp.
 @namespace    github.com/vednoc/onyx
 @homepageURL  https://github.com/vednoc/onyx
 @supportURL   https://github.com/vednoc/onyx/issues
 @version      1.5.0
-@author       vednoc
+@author       vednoc <vednoc@pm.me> (https://gitlab.com/vednoc)
 @license      MIT
 @preprocessor stylus
 
-@var color dark "Dark" #272c35
-@var color darker "Darker" #1f232a
-@var color light "Light" #d1d1d1
-@var color lighter "Lighter" #e9e9e9
-@var color accent "Accent" #7289da
-@var color icon "Icons" #e1e1e1
-@var color shadow "Shadow" #00000010
-@var color red "Red" #a3525b
-@var color green "Green" #70a352
-@var color blue "Blue" #527aa3
+@var color dark    "Color: Primary bg   " #272c35
+@var color darken  "Color: Highlight bg " #222730
+@var color darker  "Color: Secondary bg " #1f232a
+@var color light   "Color: Primary fg   " #d1d1d1
+@var color lighter "Color: Secondary fg " #e9e9e9
+@var color accent  "Color: Accent       " #7289da
+@var color yellow  "Color: Yellow       " #f0c674
+@var color orange  "Color: Orange       " #d98245
+@var color red     "Color: Red          " #a54242
+@var color magenta "Color: Magenta      " #b294bb
+@var color violet  "Color: Violet       " #85678f
+@var color blue    "Color: Blue         " #54738c
+@var color cyan    "Color: Cyan         " #5e8d87
+@var color green   "Color: Green        " #7b823a
+@var color white   "Color: White        " #ffffff
+@var color shadow  "Color: Shadow       " #00000010
 ==/UserStyle== */
 
 @-moz-document domain('web.whatsapp.com') {
 
     :root {
-        --dark:    dark;
-        --darker:  darker;
-        --light:   light;
-        --lighter: lighter;
-        --accent:  accent;
-        --icon:    icon;
-        --shadow:  shadow;
-        --red:     red;
-        --green:   green;
-        --blue:    blue;
-        --white:   white;
-        --radius:  6px;
-        --t:       transparent;
+        --dark      : dark;
+        --darken    : darken;
+        --darker    : darker;
+        --light     : light;
+        --lighter   : lighter;
+        --accent    : accent;
+        --shadow    : shadow;
+        --yellow    : yellow;
+        --orange    : orange;
+        --red       : red;
+        --magenta   : magenta;
+        --violet    : violet;
+        --blue      : blue;
+        --cyan      : cyan;
+        --green     : green;
+        --white     : white;
+        --radius    : 6px;
+        --t         : transparent;
+        --bshadow   : 0 2px 4px var(--shadow);
     }
 
     // * Use stylus-lang variables with CSS variables.
-    $dark    = var(--dark);
-    $darker  = var(--darker);
-    $light   = var(--light);
-    $lighter = var(--lighter);
-    $accent  = var(--accent);
-    $icon    = var(--icon);
-    $shadow  = var(--shadow);
-    $yellow  = var(--yellow);
-    $orange  = var(--orange);
-    $red     = var(--red);
-    $magenta = var(--magenta);
-    $violet  = var(--violet);
-    $blue    = var(--blue);
-    $cyan    = var(--cyan);
-    $green   = var(--green);
-    $white   = var(--white);
-    $t       = var(--t);
-    $r       = var(--radius);
+    bg      = var(--dark);
+    hl      = var(--darken);
+    bd      = var(--darker);
+    fg      = var(--light);
+    cm      = var(--lighter);
+    ac      = var(--accent);
+    sh      = var(--shadow);
+    bsh     = var(--bshadow);
+    yellow  = var(--yellow);
+    orange  = var(--orange);
+    red     = var(--red);
+    magenta = var(--magenta);
+    violet  = var(--violet);
+    blue    = var(--blue);
+    cyan    = var(--cyan);
+    green   = var(--green);
+    white   = var(--white);
+    t       = var(--t);
+    r       = var(--radius);
+    outer   = 0 0 0 1px bd;
+    inner   = inset outer;
 
     c(x, y = 0, z = 0, xi = 1, yi = 1, zi = 1) {
         if x is a 'call' {            color: xi is 0 ? x : x !important }
