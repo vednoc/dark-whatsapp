@@ -112,4 +112,54 @@
             }
         }
     }
+
+    // App -> Left.
+    #side {
+        > header {
+            border-bottom: 1px solid bd;
+            c: 0 0 t;
+            /// Avatar background.
+            [style *= 'height: 40px'] { c: 0 0 t }
+        /// Search.
+        ._2HS9r {
+            border-bottom: 1px solid bd;
+            c: 0 0 t;
+            /// Active.
+            > div {
+                &._19OGD { c: 0 0 hl }
+                &::after { content: none }
+                > div { c: cm }
+                > div + label {
+                    c: 0 0 t;
+                    input { c: fg 0 t }
+                }
+            }
+        }
+        /// Contacts.
+        #pane-side {
+            c: 0 0 t;
+            /// Items.
+            [style *= 'z-index'] > div > div[class] {
+                border-top: 1px solid bd;
+                c: 0 0 t;
+                /// Active.
+                &:hover, &._3mMX1 { c: 0 0 hl }
+                &._3mMX1 { border-bottom: 1px solid bd }
+                /// Remove borders.
+                &::after, > div:last-child { border: none }
+                /// Avatar background.
+                [style *= 'height: 49px'] { c: 0 0 bd }
+                /// Text.
+                > div:last-child {
+                    /// Title/timestamp.
+                    > div:first-child {
+                        > div:first-child { c: fg }
+                        > div:last-child { c: cm }
+                    }
+                    /// Body.
+                    > div:last-child { c: cm }
+                }
+            }
+        }
+    }
 }
