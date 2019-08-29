@@ -113,6 +113,20 @@
         }
     }
 
+    // Global -> Context menu.
+    div:not(#z) {
+        &[style ^= 'transform-origin:'] {
+            border: 1px solid bd;
+            rad: r;
+            c: 0 0 bg;
+            box-shadow: bsh;
+            li > div {
+                c: cm;
+                &:hover { c: fg 0 hl }
+            }
+        }
+    }
+
     // App -> Left.
     #side {
         > header {
