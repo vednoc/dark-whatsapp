@@ -95,6 +95,14 @@
         c: fg 0 bg;
         background-image: none;
         scrollbar-color: ac #5552;
+
+        /// App -> Startup.
+        #initial_startup, #startup {
+            c: 0 0 bg;
+            progress { c: ac 0 bd }
+            ::-moz-progress-bar { c: 0 0 ac }
+            circle { stroke: fg }
+        }
     }
 
     #app > div {
