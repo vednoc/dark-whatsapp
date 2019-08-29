@@ -90,4 +90,26 @@
     }
     // Rounded corners.
     rad() { border-radius: arguments }
+
+    body {
+        c: fg 0 bg;
+        background-image: none;
+        scrollbar-color: ac #5552;
+    }
+
+    #app > div {
+        &::after {
+            c: 0 0 hl;
+        }
+
+        .app {
+            rad: r;
+            c: 0 0 bg;
+            background-image: none;
+            @media (min-width: 1441px) {
+                border: 1px solid bd;
+                box-shadow: bsh;
+            }
+        }
+    }
 }
