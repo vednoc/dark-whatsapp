@@ -103,6 +103,23 @@
             ::-moz-progress-bar { c: 0 0 ac }
             circle { stroke: fg }
         }
+
+        /// App -> Intro.
+        .iFKgT {
+            c: 0 bd bg;
+            [style] {
+                h1 { c: fg }
+                div { c: cm }
+            }
+            /// Reset default image.
+            [data-asset-intro-image] {
+                rad: 50%;
+                max-width: 200px;
+                max-height: 200px;
+                filter: opacity(0.75);
+                transition: opacity 0.6s ease;
+            }
+        }
     }
 
     #app > div {
