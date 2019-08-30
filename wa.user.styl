@@ -146,6 +146,52 @@
         &:not(:hover):not(:focus):not(.selected) { filter: opacity(0.6) }
     }
 
+    /// Global -> Modals.
+    .overlay {
+        c: 0 0 t;
+        /// Backdrop.
+        &::before {
+            content: '';
+            z-index: -1;
+            opacity: 0.96;
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            c: 0 0 bg;
+        }
+        /// Header.
+        > .cGLoy {
+            c: 0 0 bg;
+            box-shadow: 0 1px bd;
+            div { c: 0 0 t }
+            .xD91K { c: cm }
+            ._3H4MS { c: fg }
+        }
+        /// Previous/next buttons.
+        ._3yth3:not(#z) {
+            c: 0 0 bg;
+            box-shadow: inner, bsh;
+            &:hover { c: 0 0 hl }
+        }
+        /// Text.
+        .X5OiD { c: 0 0 bd }
+        .JmH7x { c: cm }
+        ._2yVvV { c: fg }
+        /// Primary buttons.
+        [role = 'button']._3PQ7V {
+            c: white 0 ac;
+            box-shadow: bsh;
+            transition: 0.15s ease;
+            &:hover { opacity: 0.8 }
+        }
+        /// Popup message.
+        [data-animate-modal-popup]:not(#z) {
+            rad: r;
+            c: 0 0 bg;
+            box-shadow: inner, 0 4px 8px 2px sh;
+            ._13HPh { c: fg }
+        }
+    }
+
     // Global -> Context menu.
     div:not(#z) {
         &[style ^= 'transform-origin:'] {
