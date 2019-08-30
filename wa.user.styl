@@ -138,6 +138,14 @@
         }
     }
 
+    /// Global -> Emojis.
+    /// TODO: Implement options for roundness and opacity.
+    .emojik {
+        clip-path: circle(49%);
+        &:focus, &.selected { box-shadow: 0 0 0 2px ac !important }
+        &:not(:hover):not(:focus):not(.selected) { filter: opacity(0.6) }
+    }
+
     // Global -> Context menu.
     div:not(#z) {
         &[style ^= 'transform-origin:'] {
