@@ -171,10 +171,10 @@
         }
 
         .app {
-            rad: r;
             c: 0 0 bg;
             background-image: none;
             @media (min-width: 1441px) {
+                rad: r;
                 border: 1px solid bd;
                 box-shadow: bsh;
             }
@@ -232,6 +232,45 @@
             c: 0 0 bg;
             box-shadow: inner, 0 4px 8px 2px sh;
             ._13HPh { c: fg }
+        }
+    }
+
+    // * Global -> Status.
+    [data-animate-status-v3-modal-background='true'] {
+        c: 0 0 t;
+        /// Backdrop.
+        &::before {
+            content: '';
+            z-index: -1;
+            opacity: 0.91;
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            c: 0 0 bg;
+        }
+        /// Content.
+        > div {
+            c: 0 0 bg;
+            @media (min-width: 1441px) {
+                rad: r;
+                box-shadow: outer;
+            }
+            /// Contacts.
+            > div[class]:nth-child(1) {
+                c: 0 0 hl;
+                box-shadow: 1px 0 bd;
+                @media (min-width: 1441px) { rad: r 0 0 r }
+                /// Text.
+                .OEFaY { c: cm }
+                ._26-u- { c: fg }
+            }
+            > div[class]:nth-child(2) {
+                .ojaNO { c: cm }
+                /// Reset the circle icon.
+                svg[width][height] path {
+                    fill: none;
+                    stroke: fg
+                }
+            }
         }
     }
 
