@@ -49,6 +49,8 @@
         --radius    : 6px;
         --t         : transparent;
         --bshadow   : 0 2px 4px var(--shadow);
+
+        --userstyle: 'Dark-WhatsApp [Alpha]';
     }
 
     // * Use stylus-lang variables with CSS variables.
@@ -95,6 +97,47 @@
         c: fg 0 bg;
         background-image: none;
         scrollbar-color: ac #5552;
+
+        /// App -> Landing page.
+        .landing {
+            &-wrapper::before { c: 0 0 hl }
+            &-header {
+                position: relative;
+                &::after {
+                    right: 0;
+                    position: absolute;
+                    content: var(--userstyle);
+                }
+                path[fill ^= '#FFF'] { fill: ac }
+                path[fill ^= '#00E'] { fill: bd }
+                div { c: fg }
+            }
+            &-window:not(#z) {
+                rad: r;
+                c: 0 0 bg;
+                box-shadow: inner, bsh;
+            }
+            &-main {
+                a[href] { c: ac }
+                ._2yUXW { c: cm }
+                .landing-title { c: fg }
+                rect[fill ^= '#f2f'], rect[fill ^= '#F2F'] { fill: bd }
+                path[fill ^= '#818'] { fill: ac }
+                /// QR code.
+                div[data-ref] {
+                    rad: 0;
+                    filter: contrast(150%);
+                    outline: 4px solid white;
+                    box-shadow: 0 0 0 4px white;
+                    [role='button'] { c: white 0 ac }
+                }
+                /// Video showcase.
+                + ._310T_ {
+                    c: 0 0 t;
+                    img { opacity: 0.3 }
+                }
+            }
+        }
 
         /// App -> Startup.
         #initial_startup, #startup {
