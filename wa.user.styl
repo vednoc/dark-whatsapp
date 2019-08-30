@@ -9,6 +9,8 @@
 @license      MIT
 @preprocessor stylus
 
+@var checkbox fullscreen "Enable fullscreen mode" 0
+
 @var color dark    "Color: Primary bg   " #272c35
 @var color darken  "Color: Highlight bg " #222730
 @var color darker  "Color: Secondary bg " #1f232a
@@ -168,15 +170,24 @@
     #app > div {
         &::after {
             c: 0 0 hl;
+            /// Remove image in fullscreen mode.
+            if ( fullscreen == 1 ) { content: none }
         }
 
         .app {
             c: 0 0 bg;
             background-image: none;
             @media (min-width: 1441px) {
-                rad: r;
                 border: 1px solid bd;
+                rad: r;
                 box-shadow: bsh;
+                /// Feat -> Fullscreen mode.
+                if ( fullscreen == 1 ) {
+                    rad: 0;
+                    top: unset;
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
     }
@@ -270,6 +281,13 @@
                     fill: none;
                     stroke: fg
                 }
+            }
+            /// Feat -> Fullscreen mode.
+            if ( fullscreen == 1 ) {
+                rad: 0;
+                top: unset;
+                width: 100%;
+                height: 100%;
             }
         }
     }
