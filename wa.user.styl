@@ -460,4 +460,32 @@
             ._1qWhd { c: cm }
         }
     }
+
+    // Main -> Chat.
+    #main {
+        c: 0 0 bg;
+        /// Chat doodle image.
+        /// TODO: Implement an option to remove the image.
+        [data-asset-chat-background] {
+            filter: invert(1);
+        }
+        /// Chat header.
+        > header {
+            border-right: none;
+            border-bottom: 1px solid bd;
+            c: 0 bd bg;
+            &::after { content: none }
+            [style *= 'height: 40px'] { c: 0 0 t }
+            [title] { c: fg }
+        }
+        /// Messages area.
+        .copyable-area > div[tabindex] {
+            c: 0 bd;
+            /// X unread messages.
+            ._3Xx0y {
+                c: fg bd hl;
+                > span { c: 0 0 bd }
+            }
+        }
+    }
 }
