@@ -9,6 +9,7 @@
 @license      MIT
 @preprocessor stylus
 
+@var text     ui_font    "Custom UI font        " 'font_name'
 @var checkbox fullscreen "Enable fullscreen mode" 0
 
 @var color dark    "Color: Primary bg   " #272c35
@@ -99,6 +100,10 @@
         c: fg 0 bg;
         background-image: none;
         scrollbar-color: ac #5552;
+
+        /// Feat -> Custom font.
+        font-family: ui_font, 'Segoe UI', 'Helvetica Neue', Helvetica,\
+            'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif;
 
         /// App -> Landing page.
         .landing {
