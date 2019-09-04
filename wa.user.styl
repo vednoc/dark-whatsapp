@@ -529,4 +529,24 @@
             }
         }
     }
+
+    // Main -> Chat input.
+    #main > footer {
+        c: 0 0 t;
+        /// Input area.
+        > div:first-child {
+            border-top: 1px solid bd;
+            c: 0 bd bg;
+            div[style] + div[tabindex] {
+                rad: r;
+                c: 0 bd hl;
+                [style *= 'visibility'] {
+                    // padding-top: 2px;
+                    c: cm;
+                    /// Hide input placeholder.
+                    ../ .focused > div[style] { c: t }
+                }
+            }
+        }
+    }
 }
