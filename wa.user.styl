@@ -522,6 +522,22 @@
         /// Messages area.
         .copyable-area > div[tabindex] {
             c: 0 bd;
+            /// Chat -> Select messages.
+            &._2AqZl {
+                c: 0 0 hl;
+                /// Selected messages.
+                .qTFAl {
+                    &:hover, &._3Z2tD {
+                        opacity: 0.9 !important;
+                        c: 0 0 bd;
+                    }
+                }
+                /// Checkboxes.
+                ._15wNI {
+                    c: 0 ac ac;
+                    div { c: 0 white }
+                }
+            }
             /// X unread messages.
             ._3Xx0y {
                 c: fg bd hl;
@@ -547,6 +563,12 @@
                     ../ .focused > div[style] { c: t }
                 }
             }
+        }
+        /// Chat -> Select messages.
+        + span:not([class]) > div {
+            border-left: 1px solid bd;
+            border-top: 1px solid bd;
+            c: 0 0 bg;
         }
     }
 }
