@@ -86,19 +86,20 @@
     outer   = 0 0 0 1px bd;
     inner   = inset outer;
 
-    // Color mixin; use the new one.
+    // Color mixin.
     // All colors: `c: fg bd bg;`
     // Only border-color: `c: 0 bd;`
     c(x, y = 0, z = 0, xi = 1, yi = 1, zi = 1) {
-        if x is a 'call' or x is a 'rgba' {            color: xi is 0 ? x : x !important }
-        if y is a 'call' or y is a 'rgba' {     border-color: yi is 0 ? y : y !important }
-        if z is a 'call' or z is a 'rgba' { background-color: zi is 0 ? z : z !important }
+        i = !important;
+        if x is a 'call' or x is a 'rgba' {            color: xi is 0? x : x i }
+        if y is a 'call' or y is a 'rgba' {     border-color: yi is 0? y : y i }
+        if z is a 'call' or z is a 'rgba' { background-color: zi is 0? z : z i }
     }
-    // SVG colors.
-    // Only fill -> `v: ac 0;`
+    // SVG mixin.
     v(x, y = 0, xi = 1, yi = 1) {
-        if x is a 'call' or x is a 'rgba' {   fill: xi is 0 ? x : x !important }
-        if y is a 'call' or y is a 'rgba' { stroke: yi is 0 ? y : y !important }
+        i = !important;
+        if x is a 'call' or x is a 'rgba' {   fill: xi is 0? x : x i }
+        if y is a 'call' or y is a 'rgba' { stroke: yi is 0? y : y i }
     }
     // Rounded corners.
     rad() { border-radius: arguments }
