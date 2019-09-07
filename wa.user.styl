@@ -10,6 +10,7 @@
 @preprocessor stylus
 
 @var text     ui_font    'Custom UI font        ' ''font_name''
+@var text     radius     'Custom rounded corners' 4px
 @var checkbox fullscreen 'Enable fullscreen mode' 0
 @var select   app_image  'Custom app background ' {
     'Custom  *': 'custom  ',
@@ -55,7 +56,7 @@
         --cyan      : cyan;
         --green     : green;
         --white     : white;
-        --radius    : 6px;
+        --radius    : radius;
         --t         : transparent;
         --bshadow   : 0 2px 4px var(--shadow);
 
