@@ -16,6 +16,7 @@
     'Default  ': 'default ',
     'None     ': 'none    ',
 }
+@var text     image_url  'Custom background link' url('https://images.unsplash.com/photo-1434569117012-ce134ee1a088?fit=crop&w=1280&h=720&q=80')
 
 @var color dark    'Color: Primary bg   ' #272c35
 @var color darken  'Color: Highlight bg ' #222730
@@ -59,7 +60,7 @@
         --bshadow   : 0 2px 4px var(--shadow);
 
         --userstyle: 'Dark-WhatsApp [Alpha]';
-        --background: url('https://images.unsplash.com/photo-1434569117012-ce134ee1a088?fit=crop&w=1280&h=720&q=80');
+        --bg-image  : image_url;
     }
 
     // * Use stylus-lang variables with CSS variables.
@@ -194,7 +195,7 @@
                 top: s; right: s; bottom: s; left: s;
                 height: unset; width: unset;
                 filter: blur((-1 * s)) invert(0);
-                background-image: var(--background);
+                background-image: var(--bg-image);
                 c: 0 0 hl;
             } else if ( app_image == default ) {
                 c: 0 0 hl;
