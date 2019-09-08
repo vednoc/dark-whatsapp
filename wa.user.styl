@@ -11,6 +11,7 @@
 
 @var text     ui_font    'Custom UI font        ' ''font_name''
 @var text     radius     'Custom rounded corners' 4px
+@var checkbox msg_tails  'Enable message tails  ' 1
 @var checkbox fullscreen 'Enable fullscreen mode' 0
 @var select   app_image  'Custom app background ' {
     'Custom  *': 'custom  ',
@@ -614,6 +615,11 @@
                 border: 6px solid t;
                 background: none !important;
             }
+            /// Feat -> Message tails.
+            if ( msg_tails != 1 ) {
+                rad: 7.5px !important;
+                &.tail > .tail-container { display: none }
+            }
             /// Date.
             [data-pre-plain-text] + div * { c: cm }
             /// Stickers.
@@ -625,6 +631,10 @@
                     c: cm 0 hl;
                     // box-shadow: inner !important;
                     div { color: inherit }
+                }
+                /// Fix bubble radius.
+                if ( msg_tails != 1 ) {
+                    ._2Hp95._1X6iJ ._3Mf7Z { rad: 7.5px }
                 }
             }
         }
