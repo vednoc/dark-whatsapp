@@ -343,12 +343,12 @@
     // Global -> Icons.
     span[class] {
         &[data-icon] {
-            path {
+            > svg > path {
                 fill: fg;
                 transition: 0.15s ease;
             }
             /// Animate-ish.
-            &:hover path {
+            &:hover > svg > path {
                 opacity: 1;
                 fill-opacity: 0.9 !important;
             }
