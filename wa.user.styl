@@ -395,30 +395,30 @@
         /// Left -> Status icon.
         &[data-icon ^= 'status-v3'] path {
             &:first-child {
-                fill: fg;
+                v: fg;
                 fill-opacity: 0.55;
             }
         }
         &[data-icon = 'status-v3-unread'] path {
-            &:last-child { fill: ac }
+            &:last-child { v: ac }
         }
         /// Search -> Back button.
-        &[data-icon = 'back-blue'] path { fill: blue }
+        &[data-icon = 'back-blue'] path { v: blue }
         /// Default user/group/broadcasts icons.
         &[data-icon ^= 'default-'] path {
             &:first-child { fill: bd }
             &:last-child { fill: cm }
         }
         /// Seen message.
-        &[data-icon $= '-dblcheck-ack'] path { fill: blue }
+        &[data-icon $= '-dblcheck-ack'] path { v: blue }
         /// Report contact.
         &[data-icon = 'thumbs-down'] {
-            path { fill: orange }
+            path { v: orange }
         }
         /// Delete chat/missed call.
         &[data-icon = 'delete-danger'],
         &[data-icon = 'miss'] {
-            path { fill: red }
+            path { v: red }
         }
     }
 
