@@ -901,7 +901,7 @@
       background-color: var(--darker) !important; }
 
     /* Document embeds. */
-    ._3a29n {
+    ._3a29n, [title *= 'Download'] > div {
       background-color: var(--dark) !important; }
 
     /* Embeds description */
