@@ -429,7 +429,7 @@
           background-color: var(--dark) !important; }
         /* Text color. */
         ._2UaNq *:not(#z) {
-          color: var(--light); }
+          color: var(--light) !important; }
         /* Borders. */
         ._2UaNq::after, ._2WP9Q {
           border-color: transparent !important; }
