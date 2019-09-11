@@ -452,6 +452,12 @@
       min-height: 50px;
       height: auto;
       background-color: var(--darker) !important; }
+      /* Send contacts. #42 */
+      .WOXAS {
+        background-color: transparent !important; }
+      /* Footer. */
+      ._21bWq, ._22oFl {
+        background-color: var(--accent) !important; }
       /* Reset header height. */
       ._11GZy header > div:first-child {
         padding: 12px 0 !important;
