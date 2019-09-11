@@ -742,6 +742,13 @@
     /* Read by text color. */
     #app .app > div:nth-child(2) ._2AJf5 span {
       color: var(--accent) !important; }
+    /* Forwarded message info. #44 */
+    ._1NZZN, ._3XHR- {
+      border-color: var(--dark) !important;
+      background-color: transparent !important;
+      box-shadow: none !important; }
+    ._1w7vp {
+      color: var(--light) !important; }
 
   /* Media/docs/links section. */
   ._27U_m, .yrOIH {
