@@ -1295,6 +1295,9 @@
     input[type=range]::-webkit-slider-thumb {
       cursor: pointer;
       background: var(--accent) !important; }
+    /* Audio length. */
+    ._3HwRC {
+      color: var(--light) !important; }
 
   /* Rounded buttons. */
   span svg > path[fill="#00BFA5"] {
