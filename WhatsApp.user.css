@@ -401,7 +401,7 @@
         background-color: var(--dark) !important; }
 
   /* New group and group info buttons. */
-  ._11p3Q, .r7sRK, ._8-yzK {
+  ._1w-mX, ._70TS5, ._11p3Q, .r7sRK, ._8-yzK {
     /* box-shadow: 0 0 8px -1px var(--shadow) !important; */
     color: var(--accent) !important;
     background-color: transparent !important; }
@@ -716,7 +716,7 @@
   ._1WMT2::before, ._1WMT2::after {
     display: none !important; }
     /* Selected message. */
-    ._1WMT2._2V_Wj,
+    ._1WMT2._2nA3s,
     ._1WMT2:hover {
       transition: 200ms ease-in-out !important;
       background-color: var(--dark) !important; }
