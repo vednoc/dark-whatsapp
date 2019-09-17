@@ -543,6 +543,10 @@
   /* Middle drawer. */
   #main {
     background-color: var(--dark); }
+    /* Fix parent-element. #43 */
+    ._1ays2 {
+      display: flex !important;
+      flex-direction: column !important; }
 
     /* Doodle background. TODO: Plans for the future. */
     /*[[doodles]]*/
