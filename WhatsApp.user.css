@@ -5,7 +5,7 @@
 @homepageURL  https://github.com/vednoc/onyx
 @supportURL   https://github.com/vednoc/onyx/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/onyx/master/WhatsApp.user.css
-@version      1.5.0
+@version      1.5.1
 @author       vednoc
 @license      MIT
 @preprocessor uso
@@ -241,8 +241,8 @@
     --hover-delay: /*[[hoverDelay]]*/;
     --image: url(https://media.discordapp.net/attachments/310799529161129984/417408747812552715/zilesanamin.jpg);
     --emojiOpacity: /*[[emojiOpacity]]*/;
-    --version: "WhatsApp by Mew v1.5.0";
-    --message: "Updated on 17th of September. Changing the updateURL because RawGit is going away soon. ";
+    --version: "WhatsApp by Mew v1.5.1";
+    --message: "Updated on 27th of September. ";
     --changes: "See the changelog at: https://github.com/vednoc/onyx/releases";
   }
 
