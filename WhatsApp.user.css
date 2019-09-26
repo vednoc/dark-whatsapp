@@ -825,6 +825,10 @@
     ._2v02G {
       color: var(--lighter) !important; }
 
+    /* Bubble colors. #49 */
+    .message-in:not(.a81-s) > div, .message-out:not(.a81-s) > div {
+      background-color: var(--darker) !important; }
+
     /* Message text color. */
     .message-in .selectable-text,
     .message-out .selectable-text,
@@ -1307,7 +1311,7 @@
       cursor: pointer;
       background: var(--accent) !important; }
     /* Audio length. */
-    ._3HwRC {
+    ._3HwRC, ._1lxsr {
       color: var(--light) !important; }
 
   /* Rounded buttons. */
