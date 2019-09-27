@@ -107,6 +107,8 @@
     }
     // Rounded corners.
     rad() { border-radius: arguments }
+    // Shorter important.
+    i = !important;
 
     body {
         c: fg 0 bg;
@@ -701,7 +703,7 @@
             /// Stickers.
             &.a81-s {
                 /// Header.
-                ._3Mf7Z { c: 0 0 bg }
+                ._3Mf7Z { c: 0 0 left }
                 /// Date.
                 ._3qAvH {
                     c: cm 0 hl;
@@ -716,6 +718,8 @@
         }
         /// Left.
         &-in {
+            border-top-left-radius: 0 i;
+            > div { c: 0 0 t }
             &:not(.a81-s) {
                 c: fg 0 left;
                 box-shadow: 0 1px sh !important;
@@ -728,6 +732,8 @@
         }
         /// Right.
         &-out {
+            border-top-right-radius: 0 i;
+            > div { c: 0 0 t }
             &:not(.a81-s) {
                 c: fg 0 right;
                 box-shadow: 0 1px sh !important;
