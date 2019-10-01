@@ -9,6 +9,7 @@
 @license      MIT
 @preprocessor stylus
 
+@var checkbox theme      'Old/new[custom] colors' 0
 @var text     ui_font    'Custom UI font        ' ''font_name''
 @var text     radius     'Custom rounded corners' 4px
 @var checkbox msg_tails  'Enable message tails  ' 1
@@ -22,11 +23,11 @@
 @var range    bg_opacity 'Custom image opacity  ' [0.5, 0.0, 1, 0.01]
 @var range    bg_blur    'Custom image opacity  ' [8, 0, 50, 1, 'px']
 
-@var color dark    'Color: Primary bg   ' #272c35
-@var color darken  'Color: Highlight bg ' #222730
-@var color darker  'Color: Secondary bg ' #1f232a
-@var color light   'Color: Primary fg   ' #d1d1d1
-@var color lighter 'Color: Secondary fg ' #e9e9e9
+@var color dark    'Color: Primary bg   ' #292929
+@var color darken  'Color: Highlight bg ' #333333
+@var color darker  'Color: Secondary bg ' #424242
+@var color light   'Color: Primary fg   ' #e6e6e6
+@var color lighter 'Color: Secondary fg ' #bababa
 @var color accent  'Color: Accent       ' #7289da
 @var color yellow  'Color: Yellow       ' #f0c674
 @var color orange  'Color: Orange       ' #d98245
@@ -43,13 +44,23 @@
 @-moz-document domain('web.whatsapp.com') {
 
     :root {
-        --dark      : dark;
-        --darken    : darken;
-        --darker    : darker;
-        --light     : light;
-        --lighter   : lighter;
-        --accent    : accent;
-        --shadow    : shadow;
+        if ( theme == 1 ) {
+            --dark      : dark;
+            --darken    : darken;
+            --darker    : darker;
+            --light     : light;
+            --lighter   : lighter;
+            --accent    : accent;
+            --shadow    : shadow;
+        } else {
+            --dark      : #272c35;
+            --darken    : #222730;
+            --darker    : #1f232a;
+            --light     : #e9e9e9;
+            --lighter   : #c1c1c1;
+            --accent    : accent;
+            --shadow    : shadow;
+        }
         --yellow    : yellow;
         --orange    : orange;
         --red       : red;
