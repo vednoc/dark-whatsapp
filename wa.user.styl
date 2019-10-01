@@ -131,6 +131,11 @@
         background-image: none;
         scrollbar-color: ac #5552;
 
+        /// Text.
+        ::placeholder { c: cm }
+        a { color: ac }
+        strong { c: fg }
+
         /// Feat -> Custom font.
         &, button, input { font-family: var(--ui-font) }
 
@@ -210,6 +215,10 @@
 
         /// Global -> Typing alert.
         span[title *= 'typing']:not(#z) { c: ac }
+
+        /// Global -> Checkboxes.
+        ._1Zo-R { c: 0 bd hl }
+        ._15wNI { c: 0 ac ac }
 
         /// Contacts -> Loader.
         svg[width = '18'][height = '18'] circle { stroke: green }
