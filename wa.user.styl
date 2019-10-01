@@ -321,12 +321,22 @@
         .X5OiD { c: 0 0 bd }
         .JmH7x { c: cm }
         ._2yVvV { c: fg }
-        /// Primary buttons.
-        [role = 'button']._3PQ7V {
-            c: white 0 ac;
-            box-shadow: bsh;
-            transition: 0.15s ease;
-            &:hover { opacity: 0.8 }
+        /// Buttons.
+        [role = 'button'] {
+            &._23_1v {
+                c: cm;
+                &:hover {
+                    c: fg 0 hl;
+                    box-shadow: none;
+                }
+            }
+            /// Primary.
+            &._3PQ7V {
+                c: white 0 ac;
+                box-shadow: bsh;
+                transition: 0.15s ease;
+                &:hover { opacity: 0.8 }
+            }
         }
         /// Popup message.
         [data-animate-modal-popup]:not(#z) {
