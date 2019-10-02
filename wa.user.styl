@@ -136,6 +136,15 @@
         a { color: ac }
         strong { c: fg }
 
+        /// Browser-specific resets.
+        ::-moz-range {
+            &-progress { c: 0 0 blue }
+            &-thumb { c: 0 0 ac }
+            &-track { c: 0 0 bg }
+            /// Progress completed.
+            ../ ._1N8Pv { c: 0 0 ac }
+        }
+
         /// Feat -> Custom font.
         &, button, input { font-family: var(--ui-font) }
 
