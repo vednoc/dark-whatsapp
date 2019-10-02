@@ -22,6 +22,7 @@
 @var text     image_url  'Custom background link' url('https://images.unsplash.com/photo-1434569117012-ce134ee1a088?fit=crop&w=1280&h=720&q=80')
 @var range    bg_opacity 'Custom image opacity  ' [0.5, 0.0, 1, 0.01]
 @var range    bg_blur    'Custom image opacity  ' [8, 0, 50, 1, 'px']
+@var checkbox chat_bg    'Chat: Show bg image   ' 1
 
 @var color dark    'Color: Primary bg   ' #292929
 @var color darken  'Color: Highlight bg ' #333333
@@ -712,9 +713,10 @@
     #main {
         c: 0 0 bg;
         /// Chat doodle image.
-        /// TODO: Implement an option to remove the image.
         [data-asset-chat-background] {
             filter: invert(1);
+            /// Feat -> Show chat image.
+            if ( chat_bg != 1 ) { display: none }
         }
         /// Chat header.
         > header {
