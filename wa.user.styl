@@ -446,6 +446,15 @@
             &:first-child { fill: bd }
             &:last-child { fill: cm }
         }
+        /// Audio files.
+        &[data-icon = 'audio-file'] path {
+            &:first-child { fill: orange }
+            &:last-child { fill: hl }
+        }
+        &[data-icon ^= 'ptt-'] path {
+            &:first-child { fill: bd }
+            &:last-child { fill: ac }
+        }
         /// Seen message.
         &[data-icon $= '-dblcheck-ack'] path { v: blue }
         /// Report contact.
@@ -770,6 +779,14 @@
                     ._2Hp95._1X6iJ ._3Mf7Z { rad: 7.5px }
                 }
             }
+            /// Audio messages.
+            ._1lxsr, ._3MYI2 { c: cm }
+            /// Avatars.
+            [style *= 'height: 55px'] {
+                c: 0 0 bg;
+                box-shadow: bsh;
+                svg path[fill = '#DFE5E7'] { v: t }
+            }
         }
         /// Left.
         &-in {
@@ -785,7 +802,7 @@
                 border-right-color: left;
             }
             /// Context menu.
-            > span:last-child > div[style] {
+            ._2Nkc4:not(#z), > span:last-child > div[style] {
                 background: linear-gradient(90deg, t, left) i;
             }
         }
