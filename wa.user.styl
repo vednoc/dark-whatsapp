@@ -24,8 +24,9 @@
 @var range    bg_blur    'Custom image opacity  ' [8, 0, 50, 1, 'px']
 
 @var checkbox chat_bg    'Chat: Show bg image   ' 1
-@var range    chat_bg_o  'Chat: Bg image opacity' [0.5, 0.0, 1, 0.01]
-@var range    chat_bg_i  'Chat: Bg image invert ' [1, 0.0, 1, 0.1]
+@var text     chat_image 'Chat: Custom image URL' url('/img/bg-chat-tile_8a055527b27b887521a9f084497d8879.png')
+@var range    chat_bg_o  'Chat: Bg image opacity' [0.1, 0.0, 1, 0.01]
+@var range    chat_bg_i  'Chat: Bg image invert ' [0.6, 0.0, 1, 0.1]
 
 @var color dark    'Color: Primary bg   ' #292929
 @var color darken  'Color: Highlight bg ' #333333
@@ -83,6 +84,7 @@
         --bg-opacity: bg_opacity;
         --bg-blur   : bg_blur;
 
+        --chat-image: chat_image;
         --chat-bg-o : chat_bg_o;
         --chat-bg-i : chat_bg_i;
 
@@ -720,7 +722,9 @@
         c: 0 0 bg;
         /// Chat doodle image.
         [data-asset-chat-background] {
+            opacity: 1;
             filter: invert(var(--chat-bg-i)) opacity(var(--chat-bg-o));
+            background: var(--chat-image);
             /// Feat -> Show chat image.
             if ( chat_bg != 1 ) { display: none }
         }
