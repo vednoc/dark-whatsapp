@@ -22,7 +22,10 @@
 @var text     image_url  'Custom background link' url('https://images.unsplash.com/photo-1434569117012-ce134ee1a088?fit=crop&w=1280&h=720&q=80')
 @var range    bg_opacity 'Custom image opacity  ' [0.5, 0.0, 1, 0.01]
 @var range    bg_blur    'Custom image opacity  ' [8, 0, 50, 1, 'px']
+
 @var checkbox chat_bg    'Chat: Show bg image   ' 1
+@var range    chat_bg_o  'Chat: Bg image opacity' [0.5, 0.0, 1, 0.01]
+@var range    chat_bg_i  'Chat: Bg image invert ' [1, 0.0, 1, 0.1]
 
 @var color dark    'Color: Primary bg   ' #292929
 @var color darken  'Color: Highlight bg ' #333333
@@ -79,6 +82,9 @@
         --bg-image  : image_url;
         --bg-opacity: bg_opacity;
         --bg-blur   : bg_blur;
+
+        --chat-bg-o : chat_bg_o;
+        --chat-bg-i : chat_bg_i;
 
         --ui-font   : ui_font, 'Segoe UI', 'Helvetica Neue', Helvetica,
             'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif;
@@ -714,7 +720,7 @@
         c: 0 0 bg;
         /// Chat doodle image.
         [data-asset-chat-background] {
-            filter: invert(1);
+            filter: invert(var(--chat-bg-i)) opacity(var(--chat-bg-o));
             /// Feat -> Show chat image.
             if ( chat_bg != 1 ) { display: none }
         }
