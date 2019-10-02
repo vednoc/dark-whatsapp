@@ -358,10 +358,27 @@
         }
         /// Popup message.
         [data-animate-modal-popup]:not(#z) {
+            border: 1px solid bd;
             rad: r;
             c: 0 0 bg;
-            box-shadow: inner, 0 4px 8px 2px sh;
+            box-shadow: 0 4px 8px 2px sh;
             ._13HPh { c: fg }
+            /// Forward message to...
+            ._1KDYa {
+                c: 0 0 t;
+                header { c: fg 0 hl }
+                /// TODO: See if search/contacts can be re-used.
+                .r7sRK { c: ac 0 t }
+                ._2UaNq { c: fg 0 t }
+                /// Footer.
+                > span > div[style] {
+                    c: fg 0 hl;
+                    [role = 'button'] {
+                        c: 0 0 ac;
+                        box-shadow: bsh;
+                    }
+                }
+            }
         }
     }
 
