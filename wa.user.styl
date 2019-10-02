@@ -472,6 +472,8 @@
             &:first-child { fill: bd }
             &:last-child { fill: cm }
         }
+        /// Business accounts.
+        &[data-icon ^= 'business-'] path { fill: cm }
         /// Audio files.
         &[data-icon = 'audio-file'] path {
             &:first-child { fill: orange }
@@ -482,6 +484,7 @@
             &:last-child { fill: ac }
         }
         /// Seen message.
+        &[data-icon $= '-dblcheck'] path { v: cm }
         &[data-icon $= '-dblcheck-ack'] path { v: blue }
         /// Report contact.
         &[data-icon = 'thumbs-down'] {
