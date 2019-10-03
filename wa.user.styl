@@ -90,6 +90,10 @@
 
         --ui-font   : ui_font, 'Segoe UI', 'Helvetica Neue', Helvetica,
             'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif;
+
+        --version: 'Dark-WhatsApp v1.9.9';
+        --message: 'WIP v2. ';
+        --changes: 'See the PR at: https://github.com/vednoc/onyx/pull/38';
     }
 
     // * Use stylus-lang variables with CSS variables.
@@ -228,6 +232,24 @@
                 max-height: 200px;
                 filter: opacity(0.75);
                 transition: opacity 0.6s ease;
+            }
+            /// Userstyle info.
+            h1 + div[class] {
+                font-size: 0;
+                &::before {
+                    display: block;
+                    font-size: 16px;
+                    margin-bottom: -16px;
+                    content: var(--message) var(--changes);
+                }
+                &::after {
+                    display: block;
+                    font-size: 16px;
+                    margin-top: 10px;
+                    padding-top: 10px;
+                    content: var(--version);
+                    border-top: 1px solid bd;
+                }
             }
         }
 
