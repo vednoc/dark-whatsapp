@@ -16,6 +16,7 @@
 @var checkbox fullscreen 'Enable fullscreen mode' 0
 
 @var range    emoji_o    'Emoji: Default opacity' [0.8, 0.0, 1, 0.01]
+@var range    emoji_r    'Emoji: Clip size      ' [49, 48, 70, 1, '%']
 
 @var select   app_image  'Custom app background ' {
     'Custom  *': 'custom  ',
@@ -86,6 +87,7 @@
         --userstyle: 'Dark-WhatsApp [Alpha]';
 
         --emoji-o   : emoji_o;
+        --emoji-r   : emoji_r;
 
         --bg-image  : image_url;
         --bg-opacity: bg_opacity;
@@ -312,9 +314,8 @@
     }
 
     /// Global -> Emojis.
-    /// TODO: Implement options for roundness and opacity.
     .emojik {
-        clip-path: circle(49%);
+        clip-path: circle(var(--emoji-r));
         &:focus, &.selected { box-shadow: 0 0 0 2px ac !important }
         &:not(:hover):not(:focus):not(.selected) {
             filter: opacity(var(--emoji-o));
