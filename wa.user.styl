@@ -20,8 +20,9 @@
     'None     ': 'none    ',
 }
 @var text     image_url  'Custom background link' url('https://images.unsplash.com/photo-1434569117012-ce134ee1a088?fit=crop&w=1280&h=720&q=80')
-@var range    bg_opacity 'Custom image opacity  ' [0.5, 0.0, 1, 0.01]
-@var range    bg_blur    'Custom image opacity  ' [8, 0, 50, 1, 'px']
+@var range    bg_opacity 'App: Image opacity    ' [0.5, 0.0, 1, 0.01]
+@var range    bg_blur    'App: Image blur size  ' [8, 0, 50, 1, 'px']
+@var range    bg_invert  'App: Image inversion  ' [0, 0.0, 1, 0.1]
 
 @var checkbox chat_bg    'Chat: Show bg image   ' 1
 @var text     chat_image 'Chat: Custom image URL' url('/img/bg-chat-tile_8a055527b27b887521a9f084497d8879.png')
@@ -83,6 +84,7 @@
         --bg-image  : image_url;
         --bg-opacity: bg_opacity;
         --bg-blur   : bg_blur;
+        --bg-invert : bg_invert;
 
         --chat-image: chat_image;
         --chat-bg-o : chat_bg_o;
@@ -266,14 +268,14 @@
 
     #app > div {
         &::after {
-            /// TODO: Implement filter option.
             if ( app_image == custom ) {
                 s = calc(-1 * var(--bg-blur));
                 b = blur(var(--bg-blur));
                 o = opacity(var(--bg-opacity));
+                i = invert(var(--bg-invert));
                 top: s; right: s; bottom: s; left: s;
                 height: unset; width: unset;
-                filter: b o;
+                filter: b o i;
                 background-image: var(--bg-image);
                 c: 0 0 hl;
             } else if ( app_image == default ) {
