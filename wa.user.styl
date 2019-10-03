@@ -269,10 +269,11 @@
             /// TODO: Implement filter option.
             if ( app_image == custom ) {
                 s = calc(-1 * var(--bg-blur));
-                opacity: var(--bg-opacity);
+                b = blur(var(--bg-blur));
+                o = opacity(var(--bg-opacity));
                 top: s; right: s; bottom: s; left: s;
                 height: unset; width: unset;
-                filter: blur(var(--bg-blur)) invert(0);
+                filter: b o;
                 background-image: var(--bg-image);
                 c: 0 0 hl;
             } else if ( app_image == default ) {
