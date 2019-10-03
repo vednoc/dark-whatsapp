@@ -84,8 +84,6 @@
         --t         : transparent;
         --bshadow   : 0 2px 4px var(--shadow);
 
-        --userstyle: 'Dark-WhatsApp [Alpha]';
-
         --emoji-o   : emoji_o;
         --emoji-r   : emoji_r;
 
@@ -101,9 +99,9 @@
         --ui-font   : ui_font, 'Segoe UI', 'Helvetica Neue', Helvetica,
             'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif;
 
-        --version: 'Dark-WhatsApp v1.9.9';
-        --message: 'WIP v2. ';
-        --changes: 'See the PR at: https://github.com/vednoc/onyx/pull/38';
+        --version   : 'Dark-WhatsApp [Alpha] v1.9.9';
+        --message   : 'WIP v2. ';
+        --changes   : 'See the PR at: https://github.com/vednoc/onyx/pull/38';
     }
 
     // * Use stylus-lang variables with CSS variables.
@@ -179,7 +177,7 @@
                 &::after {
                     right: 0;
                     position: absolute;
-                    content: var(--userstyle);
+                    content: var(--version);
                 }
                 path[fill ^= '#FFF'] { fill: ac }
                 path[fill ^= '#00E'] { fill: bd }
