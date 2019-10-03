@@ -320,6 +320,12 @@
         &:not(:hover):not(:focus):not(.selected) {
             filter: opacity(var(--emoji-o));
         }
+        /// Making sure active emoji is different from the rest.
+        if ( emoji_o >= 0.7 ) {
+            &:hover, &:focus, &.selected {
+                filter: opacity(calc(var(--emoji-o) - 0.3));
+            }
+        }
     }
 
     /// Global -> Emoji picker popout.
