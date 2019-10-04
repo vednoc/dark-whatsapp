@@ -871,16 +871,19 @@
         }
         /// Left.
         &-in {
-            border-top-left-radius: 0 i;
             > div { c: 0 0 t }
             &:not(.a81-s) {
                 c: fg 0 left;
                 box-shadow: 0 1px sh !important;
             }
-            &.tail > .tail-container {
-                rad: 4px 0 0 0;
-                border-top-color: left;
-                border-right-color: left;
+            /// Reset tails.
+            &.tail {
+                border-top-left-radius: 0 i;
+                > .tail-container {
+                    rad: 4px 0 0 0;
+                    border-top-color: left;
+                    border-right-color: left;
+                }
             }
             /// Context menu.
             ._2Nkc4:not(#z), > span:last-child > div[style] {
@@ -889,16 +892,19 @@
         }
         /// Right.
         &-out {
-            border-top-right-radius: 0 i;
             > div { c: 0 0 t }
             &:not(.a81-s) {
                 c: fg 0 right;
                 box-shadow: 0 1px sh !important;
             }
-            &.tail > .tail-container {
-                rad: 0 4px 0 0;
-                border-top-color: right;
-                border-left-color: right;
+            /// Reset tails.
+            &.tail {
+                border-top-right-radius: 0 i;
+                > .tail-container {
+                    rad: 0 4px 0 0;
+                    border-top-color: right;
+                    border-left-color: right;
+                }
             }
             /// Context menu.
             > span:last-child > div[style] {
