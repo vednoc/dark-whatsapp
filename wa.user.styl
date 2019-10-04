@@ -776,6 +776,8 @@
             &::after { content: none }
             [style *= 'height: 40px'] { c: 0 0 t }
             [title] { c: fg }
+            /// Muted color for group members.
+            > div:nth-child(2) > div:nth-child(2) span[title] { c: cm }
         }
         /// Chat -> Loader.
         [title *= 'load'] {
