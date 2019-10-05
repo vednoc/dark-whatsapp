@@ -869,6 +869,11 @@
         left = bd;
         right = hl;
         &-in, &-out {
+            /// Reset bubble colors.
+            > div {
+                c: 0 0 t;
+                box-shadow: 0 1px sh i;
+            }
             /// Tails.
             &.tail > .tail-container {
                 width: unset;
@@ -909,11 +914,8 @@
         }
         /// Left.
         &-in {
-            > div { c: 0 0 t }
-            &:not(.a81-s) {
-                c: fg 0 left;
-                box-shadow: 0 1px sh !important;
-            }
+            /// Not stickers.
+            &:not(.a81-s) { c: fg 0 left }
             /// Reset tails.
             &.tail {
                 border-top-left-radius: 0 i;
@@ -932,11 +934,8 @@
         }
         /// Right.
         &-out {
-            > div { c: 0 0 t }
-            &:not(.a81-s) {
-                c: fg 0 right;
-                box-shadow: 0 1px sh !important;
-            }
+            /// Not stickers.
+            &:not(.a81-s) { c: fg 0 right }
             /// Reset tails.
             &.tail {
                 border-top-right-radius: 0 i;
