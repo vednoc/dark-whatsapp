@@ -922,7 +922,12 @@
             }
             /// Context menu.
             > span:last-child > div[style] {
-                background: linear-gradient(90deg, t, right) i;
+                /// Non-stickers.
+                &:not(._2PpWQ) {
+                    background: linear-gradient(90deg, t, right) i;
+                }
+                /// Stickers.
+                &._2PpWQ div[style *= 'opacity'] { c: 0 0 right }
             }
             /// Replies.
             ._2HTIU { c: 0 0 left }
