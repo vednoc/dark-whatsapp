@@ -789,7 +789,7 @@
             > div:nth-child(2) > div:nth-child(2) span[title] { c: cm }
         }
         /// Chat -> Loader.
-        [title *= 'load'] {
+        [title *= 'load']:not(a) {
             c: 0 0 hl;
             box-shadow: inner, bsh;
             svg circle { stroke: green }
@@ -834,6 +834,11 @@
             ._3Xx0y {
                 c: fg bd hl;
                 > span { c: 0 0 bd }
+            }
+            /// Attached files.
+            a[title] {
+                > ._1mrMQ { c: fg 0 sh }
+                + div { &, > span::before { c: cm }}
             }
         }
     }
