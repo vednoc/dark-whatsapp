@@ -783,6 +783,22 @@
         /// Search -> Msg content/date.
         span[title] > span[dir] { c: fg }
         ._0LqQ { c: cm }
+        /// Media/Links/Docs.
+        [data-active-tab] {
+            border-bottom: 1px solid bd;
+            c: 0 0 t;
+            button {
+                c: cm;
+                &:hover { c: 0 0 hl }
+                &._3caqI { c: fg }
+            }
+            /// Selected.
+            &::before {
+                margin-bottom: -1px;
+                height: 1px;
+                c: 0 0 ac;
+            }
+        }
     }
 
     // Main -> Chat.
