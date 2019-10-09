@@ -890,13 +890,8 @@
         left = bd;
         right = hl;
         &-in, &-out {
-            /// Reset bubble colors.
-            > div {
-                c: 0 0 t;
-                box-shadow: 0 1px sh i;
-            }
             /// Tails.
-            &.tail > .tail-container {
+            .tail > .tail-container {
                 width: unset;
                 height: unset;
                 border: 6px solid t;
@@ -940,9 +935,9 @@
         /// Left.
         &-in {
             /// Not stickers.
-            &:not(.a81-s) { c: fg 0 left }
+            > div:not(.a81-s) > div { c: fg 0 left }
             /// Reset tails.
-            &.tail {
+            .tail {
                 border-top-left-radius: 0 i;
                 > .tail-container {
                     rad: 4px 0 0 0;
@@ -953,7 +948,14 @@
             /// Groups -> Nickname.
             [role] > span[role = 'button'] + span { c: fg }
             /// Context menu.
-            ._2Nkc4:not(#z), > span:last-child > div[style] {
+            > div > span:last-child > div[style] {
+                /// Non-stickers.
+                &:not(._2PpWQ) {
+                    background: linear-gradient(90deg, t, left) i;
+                }
+                /// Stickers.
+                &._2PpWQ > div[style *= 'opacity'] { c: 0 0 left }
+            }
                 background: linear-gradient(90deg, t, left) i;
             }
             /// Replies.
@@ -962,9 +964,9 @@
         /// Right.
         &-out {
             /// Not stickers.
-            &:not(.a81-s) { c: fg 0 right }
+            > div:not(.a81-s) > div { c: fg 0 right }
             /// Reset tails.
-            &.tail {
+            .tail {
                 border-top-right-radius: 0 i;
                 > .tail-container {
                     rad: 0 4px 0 0;
@@ -973,7 +975,7 @@
                 }
             }
             /// Context menu.
-            > span:last-child > div[style] {
+            > div > span:last-child > div[style] {
                 /// Non-stickers.
                 &:not(._2PpWQ) {
                     background: linear-gradient(90deg, t, right) i;
