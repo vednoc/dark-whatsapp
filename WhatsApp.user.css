@@ -407,8 +407,11 @@
     color: var(--accent) !important;
     background-color: transparent !important; }
     /* Hide borders. */
-    ._2DxRd {
-      border-color: var(--darker) !important; }
+    ._2DxRd, ._39cGk {
+      border-color: var(--shadow) !important; }
+    /* Input text color. */
+    ._44uDJ {
+      color: var(--light) !important; }
 
   /* Search results. */
   #side ._1AKfk {
@@ -721,6 +724,7 @@
   ._1WMT2::before, ._1WMT2::after {
     display: none !important; }
     /* Selected message. */
+    ._1WMT2._2V_Wj,
     ._1WMT2._2nA3s,
     ._1WMT2:hover {
       transition: 200ms ease-in-out !important;
@@ -914,7 +918,7 @@
       background-color: var(--darker) !important; }
 
     /* Document embeds. */
-    ._3a29n, [title *= 'Download'] > div {
+    ._3a29n, ._1mrMQ {
       background-color: var(--dark) !important; }
 
     /* Embeds description */
@@ -1232,6 +1236,8 @@
       opacity: 0.3 !important; }
 
   /* Upload files. */
+  .azEEh { color:var(--light) !important; }
+  ._2sn3C { background-color: var(--darker) !important; }
   .Ijb1Q::after { box-shadow: 0 4px 8px 2px var(--shadow) !important; }
 
   /* Default profile picture background. */
