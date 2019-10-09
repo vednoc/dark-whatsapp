@@ -820,17 +820,12 @@
   .velocity-animating > .tail > .tail-container {
     border-top-color: var(--accent) !important }
 
-  /* Message bubbles. */
-  .message-in:not(.a81-s) > div,
-  .message-out:not(.a81-s) > div {
+  /* Bubble colors. #49 #54 */
+  .message-in > div:not(.a81-s) > div,
+  .message-out > div:not(.a81-s) > div {
     background-color: var(--darker) !important; }
     ._2v02G {
       color: var(--lighter) !important; }
-
-    /* Bubble colors. #49 */
-    .message-in:not(.a81-s) > div > div,
-    .message-out:not(.a81-s) > div > div {
-      background-color: var(--darker) !important; }
 
     /* Message text color. */
     .message-in .selectable-text,
