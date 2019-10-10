@@ -890,6 +890,11 @@
         left = bd;
         right = hl;
         &-in, &-out {
+            /// Fix shadows.
+            > div:not(.a81-s) {
+                box-shadow: 0 1px sh i;
+                > div { box-shadow: none i }
+            }
             /// Tails.
             .tail > .tail-container {
                 width: unset;
