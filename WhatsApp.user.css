@@ -1273,15 +1273,14 @@
   span[data-icon="audio-file"] svg path:last-child,
   span[data-icon="new-group"] svg path,
   span[data-icon="add-user-light"] svg path,
-  span[data-icon="link"] svg path,
-  span[data-icon="ptt-in-blue"] svg path:first-child,
-  span[data-icon="ptt-out-blue"] svg path:first-child {
+  span[data-icon="link"] svg path {
     fill: var(--icon) !important; }
 
-  /* Audio message icons. */
-  span[data-icon="ptt-in-blue"] svg path:first-child,
-  span[data-icon="ptt-out-blue"] svg path:first-child {
-    fill: transparent !important; }
+  /* Audio message icons. #55 */
+  span[data-icon^="ptt-"] svg path:first-child {
+    fill: var(--dark) !important; }
+  span[data-icon^="ptt-"] svg path:last-child {
+    fill: var(--accent) !important; }
 
   /* Logo. */
   ._3CSsZ > svg > path:first-child {
