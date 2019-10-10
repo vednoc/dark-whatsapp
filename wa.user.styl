@@ -536,9 +536,9 @@
             &:first-child { fill: bd }
             &:last-child { fill: ac }
         }
-        /// Seen message.
-        &[data-icon $= '-dblcheck'] path { v: cm }
-        &[data-icon $= '-dblcheck-ack'] path { v: blue }
+        /// Message status.
+        &[data-icon *= '-dblcheck'] path { v: cm }
+        &[data-icon *= '-dblcheck-ack'] path { v: blue }
         /// Report contact.
         &[data-icon = 'thumbs-down'] {
             path { v: orange }
