@@ -1123,6 +1123,9 @@
       /* Emoji menu triangle. */
       ._1gFYk .iqJMX {
         background-color: var(--dark) !important; }
+    /* Quick replies. #56 */
+      ._1omcu._2saG0, ._2saG0 {
+        background-color: var(--darker) !important; }
 
 
   /* Backdrop. */
