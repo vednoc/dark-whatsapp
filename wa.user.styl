@@ -33,6 +33,9 @@
 @var range    chat_bg_o  'Chat: Bg image opacity' [0.1, 0.0, 1, 0.01]
 @var range    chat_bg_i  'Chat: Bg image invert ' [0.6, 0.0, 1, 0.1]
 
+@var checkbox chat_left  'Chat: Align left msg  ' 0
+@var checkbox chat_right 'Chat: Align right msg ' 0
+
 @var color dark    'Color: Primary bg   ' #292929
 @var color darken  'Color: Highlight bg ' #333333
 @var color darker  'Color: Secondary bg ' #424242
@@ -981,6 +984,8 @@
             }
             /// Replies.
             ._2HTIU { c: 0 0 right }
+            /// Feat -> Align left bubble.
+            if ( chat_left == 1 ) { justify-content: flex-end }
         }
         /// Right.
         &-out {
@@ -1006,6 +1011,8 @@
             }
             /// Replies.
             ._2HTIU { c: 0 0 left }
+            /// Feat -> Align right bubble.
+            if ( chat_right == 1 ) { justify-content: flex-start }
         }
     }
 
