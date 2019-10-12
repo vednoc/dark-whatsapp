@@ -35,6 +35,10 @@ To use this style you have to install [Stylus](https://add0n.com/stylus.html) an
 
 **NOTE:** _Stylish_ is only supported through [userstyles.org](https://userstyles.org/styles/142096); it's obsolete, please replace it with Stylus.
 
+### Using with Franz
+
+A port of this theme is available in the [dcferreira/franz-themes](https://github.com/dcferreira/franz-themes) repository.
+
 
 ## Contribute
 
