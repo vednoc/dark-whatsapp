@@ -28,6 +28,8 @@
 @var range    bg_blur    'App: Image blur size  ' [8, 0, 50, 1, 'px']
 @var range    bg_invert  'App: Image inversion  ' [0, 0.0, 1, 0.1]
 
+@var checkbox chat_b_img 'Chat: Blur img/videos ' 0
+
 @var checkbox chat_bg    'Chat: Show bg image   ' 1
 @var text     chat_image 'Chat: Custom image URL' url('/img/bg-chat-tile_8a055527b27b887521a9f084497d8879.png')
 @var range    chat_bg_o  'Chat: Bg image opacity' [0.1, 0.0, 1, 0.01]
@@ -892,6 +894,29 @@
                 div > div:nth-child(1) span { c: fg }
                 div > div:nth-child(2) span { c: cm }
                 div > div:nth-child(3) span { c: fg }
+            }
+        }
+        /// Feat -> Blur img/videos.
+        if ( chat_b_img == 1 ) {
+            [style *= 'height'] {
+                > img, > div[style], video {
+                    transition: 500ms ease;
+                    transition-delay: 0ms;
+                    filter: blur(16px) grayscale(100%);
+                    &:hover {
+                        transition-delay: 500ms;
+                        filter: none i;
+                    }
+                }
+                /// HACK: Reset blur for videos.
+                &[style *= 'width'] > div:first-child:hover ~ div {
+                    > video {
+                        transition-delay: 500ms;
+                        filter: none i;
+                    }
+                }
+                /// HACK: Reset img timestamp wrapper.
+                img[src] + div { pointer-events: none }
             }
         }
     }
