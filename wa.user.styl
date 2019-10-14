@@ -12,7 +12,6 @@
 @var checkbox theme      'Old/new[custom] colors' 0
 @var text     ui_font    'Custom UI font        ' ''font_name''
 @var text     radius     'Custom rounded corners' 4px
-@var checkbox msg_tails  'Enable message tails  ' 1
 @var checkbox fullscreen 'Enable fullscreen mode' 0
 
 @var range    emoji_o    'Emoji: Default opacity' [0.8, 0.0, 1, 0.01]
@@ -27,6 +26,8 @@
 @var range    bg_opacity 'App: Image opacity    ' [0.5, 0.0, 1, 0.01]
 @var range    bg_blur    'App: Image blur size  ' [8, 0, 50, 1, 'px']
 @var range    bg_invert  'App: Image inversion  ' [0, 0.0, 1, 0.1]
+
+@var checkbox chat_msg_t 'Chat: Hide msg tails  ' 0
 
 @var checkbox chat_b_c   'Chat: Blur contacts   ' 0
 @var checkbox chat_b_img 'Chat: Blur img/videos ' 0
@@ -948,9 +949,11 @@
                 background: none !important;
             }
             /// Feat -> Message tails.
-            if ( msg_tails != 1 ) {
-                rad: 7.5px !important;
-                &.tail > .tail-container { display: none }
+            if ( chat_msg_t == 1 ) {
+                .tail {
+                    > div { rad: 7.5px !important; }
+                    > .tail-container { display: none }
+                }
             }
             /// Date.
             [data-pre-plain-text] + div * { c: cm }
