@@ -28,6 +28,7 @@
 @var range    bg_blur    'App: Image blur size  ' [8, 0, 50, 1, 'px']
 @var range    bg_invert  'App: Image inversion  ' [0, 0.0, 1, 0.1]
 
+@var checkbox chat_b_c   'Chat: Blur contacts   ' 0
 @var checkbox chat_b_img 'Chat: Blur img/videos ' 0
 
 @var checkbox chat_bg    'Chat: Show bg image   ' 1
@@ -665,6 +666,14 @@
         .r7sRK {
             c: ac 0 t;
             box-shadow: 0 1px bd;
+        }
+        /// Feat -> Blur contacts.
+        if ( chat_b_c == 1 ) {
+            [style *= 'height'] > div > div[class] {
+                filter: blur(6px);
+                transition: filter 300ms ease;
+                &._3mMX1, &:hover { filter: blur(0px) }
+            }
         }
     }
 
