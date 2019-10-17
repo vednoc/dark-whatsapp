@@ -10,19 +10,19 @@
 @preprocessor stylus
 
 @var checkbox theme      'Old/new[custom] colors' 0
-@var text     ui_font    'Custom UI font        ' ''font_name''
-@var text     radius     'Custom rounded corners' 4px
-@var checkbox fullscreen 'Enable fullscreen mode' 0
+@var text     ui_font    'App: Custom UI font   ' ''font_name''
+@var text     radius     'App: Custom border rad' 4px
+@var checkbox fullscreen 'App: Enable fullscreen' 0
 
 @var range    emoji_o    'Emoji: Default opacity' [0.8, 0.0, 1, 0.01]
 @var range    emoji_r    'Emoji: Clip size      ' [49, 48, 70, 1, '%']
 
-@var select   app_image  'Custom app background ' {
+@var select   app_image  'App: Custom background' {
     'Custom  *': 'custom  ',
     'Default  ': 'default ',
     'None     ': 'none    ',
 }
-@var text     image_url  'Custom background link' url('https://images.unsplash.com/photo-1434569117012-ce134ee1a088?fit=crop&w=1280&h=720&q=80')
+@var text     image_url  'App: Custom bg link   ' url('https://images.unsplash.com/photo-1434569117012-ce134ee1a088?fit=crop&w=1280&h=720&q=80')
 @var range    bg_opacity 'App: Image opacity    ' [0.5, 0.0, 1, 0.01]
 @var range    bg_blur    'App: Image blur size  ' [8, 0, 50, 1, 'px']
 @var range    bg_invert  'App: Image inversion  ' [0, 0.0, 1, 0.1]
