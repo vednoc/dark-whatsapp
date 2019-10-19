@@ -929,6 +929,23 @@
                 img[src] + div { pointer-events: none }
             }
         }
+        /// Chat -> Documents.
+        /._1mrMQ {
+            c: 0 0 bg;
+            /// Stats.
+            /._1o0MN { c: cm }
+        }
+        /// Embeds -> Background.
+        /.HNuTV, /._3qblR, /._1SsXF {
+            c: 0 0 bg;
+        }
+        /// Embeds -> Thumbnail.
+        /._3_nIn { c: 0 0 #55555510 }
+        /// Embeds -> Text.
+        /a[href][target = '_blank'], /._2Lp2x {
+            > * { c: cm }
+            > :first, > :last { &-child { c: fg }}
+        }
     }
 
     // Main -> Chat message bubbles.
