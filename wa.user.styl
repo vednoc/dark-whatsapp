@@ -1083,6 +1083,41 @@
         }
     }
 
+    // Main -> Upload preview.
+    ._1BdTk, ._1cJw0, .kqC9O {
+        border-left: 1px solid bd;
+        c: 0 0 bg;
+        header {
+            border-bottom: 1px solid bd;
+            c: fg 0 hl;
+        }
+        /// Input.
+        .Am8s6 { c: cm }
+        ._3ogpF { c: 0 ac }
+        /// Footer.
+        > div[tabindex] > span:nth-child(2) {
+            border-top: 1px solid bd;
+            c: 0 0 hl;
+        }
+        /// Buttons.
+        [role = 'button'] {
+            + ._2sn3C { c: 0 0 hl }
+            /// Send.
+            &._1g8sv {
+                c: 0 0 ac;
+                box-shadow: bsh;
+                transition: 0.15s ease;
+                &:hover { opacity: 0.75 }
+            }
+            /// Add file.
+            &[style *= 'opacity'] {
+                c: ac 0 bg;
+                box-shadow: inner;
+                &::after { c: 0 0 ac }
+            }
+        }
+    }
+
     // Main -> Chat input.
     #main > footer {
         c: 0 0 t;
