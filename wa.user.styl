@@ -327,7 +327,7 @@
     /// Global -> Emojis.
     .emojik {
         clip-path: circle(var(--emoji-r));
-        &:focus, &.selected { box-shadow: 0 0 0 2px ac !important }
+        &:focus, &.selected { box-shadow: 0 0 0 2px ac i }
         &:not(:hover):not(:focus):not(.selected) {
             filter: opacity(var(--emoji-o));
         }
@@ -342,7 +342,7 @@
     /// Global -> Emoji picker popout.
     // ._342qq._1mTBR {
     ._342qq {
-        rad: r !important;
+        rad: r i;
         box-shadow: bsh;
         /// Header.
         ._2avTY {
@@ -498,11 +498,11 @@
         /// Item reset.
         ._1LdNS {
             &.cJP5q {
-                border: none !important;
-                transform: scale(1) !important;
+                border: none i;
+                transform: scale(1) i;
                 outline: 4px solid ac;
             }
-            &:hover:not(.cJP5q):not(#spec) { outline: 4px solid ac !important }
+            &:hover:not(.cJP5q):not(#spec) { outline: 4px solid ac i }
         }
     }
 
@@ -516,7 +516,7 @@
             /// Animate-ish.
             &:hover > svg > path {
                 opacity: 1;
-                fill-opacity: 0.9 !important;
+                fill-opacity: 0.9 i;
             }
         }
         /// Left -> Status icon.
@@ -682,10 +682,9 @@
         > div[class], > span > div[class], > div > div[class] {
             c: 0 0 bg;
             > header {
-                min-height: unset !important;
-                // &, > div { height: unset }
-                border-bottom: 1px solid bd;
                 height: unset;
+                min-height: unset i;
+                border-bottom: 1px solid bd;
                 c: 0 0 hl;
                 /// NOTE: Reset text position.
                 ._1pYs5 {
@@ -885,7 +884,7 @@
                 /// Selected messages.
                 .qTFAl {
                     &:hover, &._3Z2tD {
-                        opacity: 0.5 !important;
+                        opacity: 0.5 i;
                         c: 0 0 hl;
                     }
                 }
@@ -1137,7 +1136,6 @@
                 rad: r;
                 c: 0 bd hl;
                 [style *= 'visibility'] {
-                    // padding-top: 2px;
                     c: cm;
                     /// Hide input placeholder.
                     ../ .focused > div[style] { c: t }
@@ -1192,7 +1190,7 @@
                 }
             }
         }
-        ///  Alerts -> Not a group participant.
+        /// Alerts -> Not a group participant.
         ._26pkE { c: cm }
         /// Reply.
         ._1ebw2 {
@@ -1207,7 +1205,7 @@
             /// Close button.
             div:last-child {
                 position: relative;
-                margin: 0 8px 5px 8px !important;
+                margin: 0 8px 5px 8px i;
                 c: 0 0 t;
                 svg {
                     padding: 18px;
