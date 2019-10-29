@@ -561,6 +561,8 @@
         &[data-icon = 'miss'] {
             path { v: red }
         }
+        /// Default avatar loader.
+        /svg[width = '50'][height = '50'] > circle[fill] { stroke: cm }
     }
 
     // Global -> Context menu.
@@ -767,7 +769,11 @@
     ._1C9rS .copyable-area {
         border-left: 1px solid bd;
         /// Avatar.
-        [style *= 'height: 200px'] { c: 0 0 bd }
+        [style *= 'height: 200px'] {
+            c: 0 0 bd;
+            /// Default avatar.
+            ._2EaHs { c: 0 0 hl }
+        }
         ._1drsQ { c: fg }
         ._2IwIk { c: cm }
         /// Buttons.
