@@ -708,7 +708,6 @@
             }
             /// Settings -> User info section.
             ._2UaNq {
-                border-bottom: 1px solid bd;
                 c: 0 0 t;
                 &::after { content: none }
                 [style *= 'height: 82px'] { c: 0 0 t }
@@ -734,7 +733,10 @@
                 /// Resets for contacts.
                 + ._1c8mz {
                     c: 0 0 t;
-                    .r7sRK { c: ac 0 hl }
+                    .r7sRK {
+                        c: ac 0 t;
+                        /.r7sRK:not(#z) { box-shadow: inset 0 1px bd i }
+                    }
                     ._8-yzK { c: 0 0 t }
                     ._2DxRd, ._2WP9Q { c: 0 t }
                 }
