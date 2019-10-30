@@ -111,7 +111,7 @@
         --changes   : 'See the PR at: https://github.com/vednoc/onyx/pull/38';
     }
 
-    // * Use stylus-lang variables with CSS variables.
+    // Use stylus-lang variables with CSS variables.
     bg      = var(--dark);
     hl      = var(--darken);
     bd      = var(--darker);
@@ -386,7 +386,9 @@
         > .cGLoy, .s4BtI {
             c: 0 0 bg;
             box-shadow: 0 1px bd;
+            /// Remove unnecessary background.
             div { c: 0 0 t }
+            /// Text.
             .xD91K { c: cm }
             ._3H4MS { c: fg }
         }
@@ -424,7 +426,7 @@
             c: 0 0 bg;
             box-shadow: 0 4px 8px 2px sh;
             ._13HPh { c: fg }
-            /// Forward message to...
+            /// 'Forward message' popout.
             ._1KDYa {
                 c: 0 0 t;
                 header { c: fg 0 hl }
@@ -449,7 +451,7 @@
         }
     }
 
-    // * Global -> Status.
+    // Global -> Status.
     [data-animate-status-v3-modal-background='true'] {
         c: 0 0 t;
         /// Backdrop.
@@ -561,7 +563,7 @@
         &[data-icon = 'miss'] {
             path { v: red }
         }
-        /// Default avatar loader.
+        /// Right -> Default avatar loader.
         /svg[width = '50'][height = '50'] > circle[fill] { stroke: cm }
     }
 
@@ -705,7 +707,7 @@
                 c: 0 0 t;
                 box-shadow: none;
                 ._3he1q { c: ac }
-                ._3K9Sw { c: 0 bd }
+                ._3K9Sw { c: 0 t }
                 ._5UNoc ._3hnO5 { c: 0 ac }
             }
             /// Settings -> User info section.
@@ -775,7 +777,7 @@
             ._2EaHs { c: 0 0 hl }
         }
         ._1drsQ { c: fg }
-        ._2IwIk { c: cm }
+        ._2IwIk, ._1goQ0 { c: cm }
         /// Buttons.
         ._3_-Si {
             padding: 0 15px;
