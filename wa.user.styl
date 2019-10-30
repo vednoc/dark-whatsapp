@@ -430,7 +430,6 @@
             ._1KDYa {
                 c: 0 0 t;
                 header { c: fg 0 hl }
-                /// TODO: See if search/contacts can be re-used.
                 .r7sRK { c: ac 0 t }
                 ._2UaNq { c: fg 0 t }
                 /// Footer.
@@ -711,10 +710,12 @@
                 ._5UNoc ._3hnO5 { c: 0 ac }
             }
             /// Settings -> User info section.
-            ._2UaNq {
+            /._2UaNq {
                 c: 0 0 t;
-                &::after { content: none }
+                &::after { content: none i }
+                &:hover:not(#z):not(#x) { c: 0 0 hl }
                 [style *= 'height: 82px'] { c: 0 0 t }
+                ._2WP9Q { border-top: none i }
                 /// Nick/info.
                 ._3H4MS { c: fg }
                 .xD91K { c: cm }
