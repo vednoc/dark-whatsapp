@@ -1214,15 +1214,15 @@
             c: 0 0 bg;
             box-shadow: bsh, inset 0 1px bd i;
             /// Content.
-            > div:first-child {
-                margin: 0 0 5px 10px !important;
+            > div:first-child:not(#z) {
+                margin-bottom: 5px i;
                 c: 0 0 t;
-                > div { c: 0 0 hl }
+                div[role] { c: 0 0 hl }
+                /.quoted-mention { c: cm }
             }
             /// Close button.
             div:last-child {
                 position: relative;
-                margin: 0 8px 5px 8px i;
                 c: 0 0 t;
                 svg {
                     padding: 18px;
