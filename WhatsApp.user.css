@@ -243,12 +243,13 @@
     --emojiOpacity: /*[[emojiOpacity]]*/;
     --version: "WhatsApp by Mew v1.5.3";
     --message: "Updated on 11th of October. Fixed bubbles once again. ";
+    --ui-font: /*[[customFonts]]*/ sans-serif;
     --changes: "See the changelog at: https://github.com/vednoc/onyx/releases";
   }
 
   /* Body reset. */
   body {
-    font-family: /*[[customFonts]]*/ sans-serif;
+    font-family: var(--ui-font);
     background: none;
     background-color: var(--dark); }
 
