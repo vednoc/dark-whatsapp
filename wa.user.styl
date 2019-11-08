@@ -14,6 +14,7 @@
 @var text     radius     'App: Custom border rad' 4px
 @var checkbox fullscreen 'App: Enable fullscreen' 0
 
+@var checkbox emoji_t    'Emoji: Transparent img' 1
 @var range    emoji_o    'Emoji: Default opacity' [0.8, 0.0, 1, 0.01]
 @var range    emoji_r    'Emoji: Clip size      ' [49, 48, 70, 1, '%']
 
@@ -326,7 +327,6 @@
 
     /// Global -> Emojis.
     .emojik {
-        clip-path: circle(var(--emoji-r));
         &:focus, &.selected { box-shadow: 0 0 0 2px ac i }
         &:not(:hover):not(:focus):not(.selected) {
             filter: opacity(var(--emoji-o));
@@ -336,6 +336,17 @@
             &:hover, &:focus, &.selected {
                 filter: opacity(calc(var(--emoji-o) - 0.3));
             }
+        }
+        /// Feat -> Transparent emoji images.
+        if ( emoji_t == 1 ) {
+            images = 'https://raw.githubusercontent.com/vednoc/wae/master/i'
+            for i in 0..101 {
+                &.wa.b{i} {
+                    background-image: url(s('%s/%s.webp', unquote(images), i))
+                }
+            }
+        } else {
+            clip-path: circle(var(--emoji-r));
         }
     }
 
