@@ -5,7 +5,7 @@
 @homepageURL  https://github.com/vednoc/onyx
 @supportURL   https://github.com/vednoc/onyx/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/onyx/master/WhatsApp.user.css
-@version      1.6.0
+@version      1.6.1
 @author       vednoc
 @license      MIT
 @preprocessor uso
@@ -242,8 +242,8 @@
     --image: url(https://media.discordapp.net/attachments/310799529161129984/417408747812552715/zilesanamin.jpg);
     --emojiOpacity: /*[[emojiOpacity]]*/;
     --ui-font: /*[[customFonts]]*/ sans-serif;
-    --version: "WhatsApp by Mew v1.6.0";
-    --message: "Updated on 8th of November. Transparent emoji backgrounds are here!!! ";
+    --version: "WhatsApp by Mew v1.6.1";
+    --message: "Updated on 10th of November. Fixed iOS emoji images. ";
     --changes: "See the changelog at: https://github.com/vednoc/onyx/releases";
   }
 
