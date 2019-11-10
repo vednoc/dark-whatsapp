@@ -339,10 +339,17 @@
         }
         /// Feat -> Transparent emoji images.
         if ( emoji_t == 1 ) {
-            images = 'https://raw.githubusercontent.com/vednoc/wae/master/i'
+            images = 'https://raw.githubusercontent.com/vednoc/wae/dev'
+            /// Android emojis.
             for i in 0..101 {
                 &.wa.b{i} {
-                    background-image: url(s('%s/%s.webp', unquote(images), i))
+                    background-image: url(s('%s/a/%s.webp', unquote(images), i))
+                }
+            }
+            /// iOS emojis.
+            for i in 0..100 {
+                &.apple.b{i} {
+                    background-image: url(s('%s/i/%s.webp', unquote(images), i))
                 }
             }
         } else {
