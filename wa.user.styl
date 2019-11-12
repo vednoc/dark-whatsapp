@@ -1267,8 +1267,9 @@
             div:last-child {
                 position: relative;
                 c: 0 0 t;
-                svg {
-                    padding: 18px;
+                /// Add clickable whitespace.
+                [role = 'button'] > span > svg {
+                    padding: 16px;
                     border-radius: 6px;
                 }
             }
