@@ -1066,8 +1066,8 @@
                 }
                 /// Date.
                 ._3qAvH {
-                    c: cm 0 hl;
-                    // box-shadow: inner !important;
+                    c: cm;
+                    box-shadow: 0 1px sh i;
                     div { color: inherit }
                 }
                 /// Fix bubble radius.
@@ -1100,6 +1100,8 @@
         &-in {
             /// Not stickers.
             > div:not(.a81-s) > div { c: fg 0 left }
+            /// Stickers -> Timestamp.
+            > div.a81-s ._3qAvH { c: 0 0 left }
             /// Reset tails.
             .tail {
                 border-top-left-radius: 0 i;
@@ -1131,6 +1133,8 @@
         &-out {
             /// Not stickers.
             > div:not(.a81-s) > div { c: fg 0 right }
+            /// Stickers -> Timestamp.
+            > div.a81-s ._3qAvH { c: 0 0 right }
             /// Reset tails.
             .tail {
                 border-top-right-radius: 0 i;
