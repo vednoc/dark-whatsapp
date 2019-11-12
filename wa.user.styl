@@ -13,6 +13,7 @@
 @var text     ui_font    'App: Custom UI font   ' ''font_name''
 @var text     radius     'App: Custom border rad' 4px
 @var checkbox fullscreen 'App: Enable fullscreen' 0
+@var text     app_width  'App: Custom max-width ' 1396px
 
 @var checkbox emoji_t    'Emoji: Transparent img' 1
 @var range    emoji_o    'Emoji: Default opacity' [0.8, 0.0, 1, 0.01]
@@ -102,6 +103,8 @@
         --radius    : radius;
         --t         : transparent;
         --bshadow   : 0 2px 4px var(--shadow);
+
+        --app-width : app_width;
 
         --emoji-o   : emoji_o;
         --emoji-r   : emoji_r;
@@ -325,6 +328,8 @@
                 border: 1px solid bd;
                 rad: r;
                 box-shadow: bsh;
+                /// Feat -> Custom max-width.
+                width: var(--app-width);
                 /// Feat -> Fullscreen mode.
                 if ( fullscreen == 1 ) {
                     rad: 0;
