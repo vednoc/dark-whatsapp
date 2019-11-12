@@ -598,6 +598,11 @@
         }
         /// Right -> Default avatar loader.
         /svg[width = '50'][height = '50'] > circle[fill] { stroke: cm }
+        /// Chat -> Sticker bg.
+        &[data-icon = 'sticker-placeholder'] > svg > path {
+            fill: bd;
+            fill-opacity: 0.6;
+        }
     }
 
     // Global -> Context menu.
