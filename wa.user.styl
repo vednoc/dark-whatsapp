@@ -1094,11 +1094,24 @@
             }
             /// Search -> Selected message.
             > .velocity-animating * { c: ac }
-            /// Images.
+            /// Images -> Timestamp.
             div[style *= 'width'][style *= 'height'] + div[class] {
-                padding: 3px 7px;
+                padding: 2px 5px;
                 rad: 7.5px;
                 c: 0 0 hl;
+            }
+            /// Videos -> Timestamp.
+            .video-thumb {
+                ._3_IKd {
+                    padding: 2px 5px;
+                    rad: 7.5px;
+                    c: fg 0 bg;
+                }
+                + div > ._3MYI2 {
+                    padding: 2px 5px;
+                    rad: 7.5px;
+                    c: fg 0 bg;
+                }
             }
         }
         /// Left.
