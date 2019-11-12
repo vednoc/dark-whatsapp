@@ -998,6 +998,8 @@
                         filter: none i;
                     }
                 }
+                /// HACK: Reset blur for audio msg avatars.
+                &[style *= 'width'] > img.jZhyM { filter: none i }
                 /// HACK: Reset img timestamp wrapper.
                 img[src] + div { pointer-events: none }
             }
