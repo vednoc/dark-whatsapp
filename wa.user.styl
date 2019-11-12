@@ -30,6 +30,17 @@
 
 @var checkbox chat_msg_t 'Chat: Hide msg tails  ' 0
 
+@var select chat_b_l     'Chat: Left bubble bg  ' {
+    'Default *': 'default ',
+    'Custom   ': 'custom  ',
+}
+@var color b_l_bg  'Chat: Left bubble custom bg ' #222730
+@var select chat_b_r     'Chat: Right bubble bg ' {
+    'Default *': 'default ',
+    'Custom   ': 'custom  ',
+}
+@var color b_r_bg  'Chat: Right bubble custom bg' #1f232a
+
 @var checkbox chat_b_c   'Chat: Blur contacts   ' 0
 @var checkbox chat_b_img 'Chat: Blur img/videos ' 0
 
@@ -1012,8 +1023,10 @@
 
     // Main -> Chat message bubbles.
     .message {
-        left = bd;
-        right = hl;
+        /// Feat -> Custom bubble colors.
+        ( chat_b_l == 'default' ) ? left = bd : left = b_l_bg;
+        ( chat_b_r == 'default' ) ? right = hl : right = b_r_bg;
+        /// Global bubble styles.
         &-in, &-out {
             /// Fix shadows.
             > div:not(.a81-s) {
