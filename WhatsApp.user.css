@@ -458,7 +458,8 @@
       height: auto;
       background-color: var(--darker) !important; }
       /* Send contacts. #42 */
-      .WOXAS {
+      .WOXAS,
+      ._1v8mQ {
         background-color: transparent !important; }
       /* Footer. */
       ._21bWq, ._22oFl {
@@ -836,7 +837,8 @@
     .message-in .selectable-text,
     .message-out .selectable-text,
     .quoted-mention,
-    ._1upWv {
+    ._1upWv,
+    ._3ZVco {
       color: var(--light) !important; }
 
     /* Voice messages. */
