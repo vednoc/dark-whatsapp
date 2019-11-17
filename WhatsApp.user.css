@@ -1498,6 +1498,9 @@
     fill: var(--dark) !important; }
   span[data-icon^="ptt-"] svg path:last-child {
     fill: var(--accent) !important; }
+  
+  span[data-icon="ptt-out-gray"] svg path:last-child {
+    fill: var(--icon) !important; }
 
   /* Logo. */
   ._3CSsZ > svg > path:first-child {
