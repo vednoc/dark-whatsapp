@@ -5,7 +5,7 @@
 @homepageURL  https://github.com/vednoc/onyx
 @supportURL   https://github.com/vednoc/onyx/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/onyx/master/WhatsApp.user.css
-@version      1.6.1
+@version      1.6.2
 @author       vednoc
 @license      MIT
 @preprocessor uso
@@ -242,8 +242,8 @@
     --image: url(https://raw.githubusercontent.com/vednoc/onyx/master/images/background.jpg);
     --emojiOpacity: /*[[emojiOpacity]]*/;
     --ui-font: /*[[customFonts]]*/ sans-serif;
-    --version: "WhatsApp by Mew v1.6.1";
-    --message: "Updated on 10th of November. Fixed iOS emoji images. ";
+    --version: "WhatsApp by Mew v1.6.2";
+    --message: "Updated on 18th of November. Addressing GH issues and pull requests. ";
     --changes: "See the changelog at: https://github.com/vednoc/onyx/releases";
   }
 
