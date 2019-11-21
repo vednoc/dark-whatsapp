@@ -1268,10 +1268,15 @@
     // Main -> Chat input.
     #main > footer {
         c: 0 0 t;
-        /// Active emojis.
-        .-XQxp._1oNFt path {
-            fill-opacity: 1;
-            fill: ac;
+        /// Emoji/gif/sticker icons.
+        .-XQxp {
+            /// Overwrite defaults. @upstream
+            path { fill-opacity: 0.55 }
+            /// Active.
+            &._1oNFt path {
+                fill-opacity: 1;
+                fill: ac;
+            }
         }
         /// Emoji picker.
         ._2mlOb {
