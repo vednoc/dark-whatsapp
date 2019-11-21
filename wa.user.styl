@@ -871,10 +871,14 @@
          }
         /// Read/Delivered section.
         ._2WP9Q { border: none }
-        /// Search -> Items.
-        [style] > div > ._2UaNq:hover {
-            c: 0 0 hl;
-            box-shadow: inset 0 1px bd;
+        /// Search -> Default message.
+        ._3dwyT { c: cm }
+        /// Search -> Items on hover.
+        [style]:not(#z):not(#x) > div > ._2UaNq {
+            &._3sA1g:hover, &._3mMX1 {
+                c: 0 0 hl;
+                box-shadow: 0 0 0 1px bd;
+            }
         }
         /// Search -> Msg content/date.
         span[title] > span[dir] { c: fg }
