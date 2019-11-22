@@ -11,7 +11,8 @@
 
 @var checkbox theme      'Old/custom colorscheme' 0
 @var text     ui_font    'App: Custom UI font   ' ''font_name''
-@var text     radius     'App: Custom border rad' 4px
+@var text     radius-g   'App: Global el radius ' 4px
+@var text     radius-i   'App: Inputfield radius' 4px
 @var checkbox fullscreen 'App: Enable fullscreen' 0
 @var text     app_width  'App: Custom max-width ' 1396px
 
@@ -100,7 +101,7 @@
         --cyan      : cyan;
         --green     : green;
         --white     : white;
-        --radius    : radius;
+        --radius    : radius-g;
         --t         : transparent;
         --bshadow   : 0 2px 4px var(--shadow);
 
@@ -1290,7 +1291,7 @@
             border-top: 1px solid bd;
             c: 0 bd bg;
             div[style] + div[tabindex] {
-                rad: r;
+                rad: radius-i;
                 c: 0 bd hl;
                 [style *= 'visibility'] {
                     c: cm;
