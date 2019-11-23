@@ -192,17 +192,19 @@
             /// Progress completed.
             ../ ._1N8Pv { c: 0 0 ac }
         }
-        ::-webkit-progress {
-            &-bar { c: 0 0 bd }
-            &-value { c: 0 0 ac }
-        }
-        ::-webkit-slider {
-            &-runnable-track { c: 0 0 bg }
-            &-thumb { c: 0 0 ac }
-        }
-        ::-webkit-scrollbar {
-            &-track { background-color: #5552 }
-            &-thumb { background-color: ac }
+        ::-webkit- {
+            &progress {
+                &-bar { c: 0 0 bd }
+                &-value { c: 0 0 ac }
+            }
+            &slider {
+                &-runnable-track { c: 0 0 bg }
+                &-thumb { c: 0 0 ac }
+            }
+            &scrollbar {
+                &-track { background-color: #5552 }
+                &-thumb { background-color: ac }
+            }
         }
 
         /// Feat -> Custom font.
