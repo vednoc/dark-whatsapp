@@ -1000,8 +1000,8 @@
     Fixes message content/timestamp overlapping.
     Apparently they forgot to add nl-specific styles. XD
   */
-  html[lang=nl] .EopGb { width: 56px }
-  html[lang=nl] ._2COY9 { width: 92px }
+  html[lang='vn'] .EopGb, html[lang='nl'] .EopGb { width: 56px }
+  html[lang='vn'], html[lang='nl'] ._2COY9 { width: 92px }
 
   /* Bubble tails -- experimental. */
   .tail .tail-container {
