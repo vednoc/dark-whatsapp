@@ -645,10 +645,9 @@
         &[data-icon *= '-dblcheck'] path { v: cm }
         &[data-icon *= '-dblcheck-ack'] path { v: blue }
         &[data-icon *= 'check'] path { fill-opacity: 1 i }
-        /// Report contact.
-        &[data-icon = 'thumbs-down'] {
-            path { v: orange }
-        }
+        /// Exit/Report.
+        &[data-icon = 'exit'],
+        &[data-icon = 'thumbs-down'],
         /// Delete chat/missed call.
         &[data-icon = 'delete-danger'],
         &[data-icon ^= 'miss'] {
