@@ -681,6 +681,10 @@
             fill: bd;
             fill-opacity: 0.6;
         }
+        /// Right -> Group search.
+        &[data-icon = 'search'] {
+            path[fill-opacity = '.3'] { fill-opacity: 0.55 }
+        }
     }
 
     // Global -> Context menu.
@@ -1077,6 +1081,12 @@
                 ._15wNI {
                     c: 0 ac ac;
                     div { c: 0 white }
+                }
+                /// Reset icon opacity.
+                /._1wRbe {
+                    [data-icon = 'x'] { opacity: 0.55 i }
+                    &:disabled path { opacity: 0.55 i }
+                    path { opacity: 1 i }
                 }
             }
             /// Forwarded message.
