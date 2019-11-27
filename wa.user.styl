@@ -281,6 +281,7 @@
         /// App -> Intro.
         .iFKgT {
             c: 0 bd bg;
+            a { color: ac }
             &::after { c: 0 ac }
             [style] {
                 h1 { c: fg }
@@ -306,12 +307,14 @@
                 &::after {
                     display: block;
                     font-size: 16px;
-                    margin-top: 10px;
-                    padding-top: 10px;
+                    margin-top: 16px;
+                    padding-top: 16px;
                     content: var(--version);
                     border-top: 1px solid bd;
                 }
             }
+            /// Platform-specific section border..
+            ._3ZVgT { c: 0 0 bd }
         }
 
         /// Left -> Typing indicator.
