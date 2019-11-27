@@ -1364,18 +1364,23 @@
         /// Buttons.
         /[role = 'button'] {
             + ._2sn3C { c: 0 0 hl }
-            /// Send.
-            &._1g8sv {
+            /// Left -> Remove group participant.
+            &._1Dfrr:hover {
                 c: 0 0 ac;
                 box-shadow: bsh;
-                transition: 0.15s ease;
-                &:hover { opacity: 0.75 }
             }
             /// Add file.
             &[style *= 'opacity'] {
                 c: ac 0 bg;
                 box-shadow: inner;
                 &::after { c: 0 0 ac }
+            }
+            /// Send.
+            &._1g8sv {
+                c: 0 0 ac;
+                box-shadow: bsh;
+                transition: 0.15s ease;
+                &:hover { opacity: 0.75 }
             }
         }
         /// Upload skeleton.
