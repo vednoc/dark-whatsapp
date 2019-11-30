@@ -54,6 +54,8 @@
 @var checkbox chat_left  'Chat: Align left msg  ' 0
 @var checkbox chat_right 'Chat: Align right msg ' 0
 
+@var checkbox ss-mode    'App: Screenshot mode  ' 0
+
 @var color dark    'Color: Primary background   ' #292929
 @var color darken  'Color: Highlight background ' #333333
 @var color darker  'Color: Secondary background ' #424242
@@ -1538,6 +1540,22 @@
         &[lang = 'vi'], &[lang = 'nl'] {
             .EopGb { width: 56px }
             ._2COY9 { width: 92px }
+        }
+    }
+
+    // Feat -> WIP Screenshot mode.
+    if ( ss-mode == 1 ) {
+        /:not(#x):not(#y):not(#z) {
+            /// Chat -> content / nickname / mention / timestamp / nick (right pane)
+            [class *= '-text'],
+            ._1QjgA > span,
+            .quoted-mention,
+            ._3fnHB,
+            ._3VvbK {
+                c: t;
+            }
+            [title] { c: t }
+            img, .emoji { visibility: hidden i }
         }
     }
 }
