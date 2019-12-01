@@ -5,7 +5,7 @@
 @homepageURL  https://github.com/vednoc/onyx
 @supportURL   https://github.com/vednoc/onyx/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/WhatsApp.user.css
-@version      1.6.2
+@version      1.6.3
 @author       vednoc
 @license      MIT
 @preprocessor uso
@@ -242,7 +242,7 @@
     --image: url(https://raw.githubusercontent.com/vednoc/onyx/master/images/background.jpg);
     --emojiOpacity: /*[[emojiOpacity]]*/;
     --ui-font: /*[[customFonts]]*/ sans-serif;
-    --version: "WhatsApp by Mew v1.6.2";
+    --version: "WhatsApp by Mew v1.6.3";
     --message: "Updated on 1st of December. Repository name will be changed from `onyx` to `dark-whatsapp` exactly in a week, so I'm updating UpdateURL beforehand. Manual reinstall might be required. ";
     --changes: "See the changelog at: https://github.com/vednoc/onyx/releases";
   }
