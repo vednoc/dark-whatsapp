@@ -399,15 +399,16 @@
 
     /// Global -> Emojis.
     .emojik {
-        &:focus, &.selected { box-shadow: 0 0 0 2px ac i }
+        transition: transform 0.15s ease;
+        /// Default opacity.
         &:not(:hover):not(:focus):not(.selected) {
             filter: opacity(var(--emoji-o));
         }
-        /// Making sure active emoji is different from the rest.
-        if ( emoji_o >= 0.7 ) {
-            &:hover, &:focus, &.selected {
-                filter: opacity(calc(var(--emoji-o) - 0.3));
-            }
+        /// Active state.
+        &:hover, &:focus, &.selected {
+            opacity: 1;
+            transform: scale(1.2);
+            box-shadow: none i;
         }
         /// Feat -> Transparent emoji images.
         if ( emoji_t == 1 ) {
