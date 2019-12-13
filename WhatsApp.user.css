@@ -830,6 +830,9 @@
   .message-in > div:not(.a81-s) > div,
   .message-out > div:not(.a81-s) > div {
     background-color: var(--darker) !important; }
+    /* Message sender bubble. #69 */
+    ._3tMyP {
+        background-color: var(--darker) !important; }
     ._2v02G {
       color: var(--lighter) !important; }
 
