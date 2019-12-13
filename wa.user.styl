@@ -1244,7 +1244,7 @@
         &-in, &-out {
             /// Fix shadows.
             > div:not(.a81-s) {
-                box-shadow: 0 1px sh i;
+                box-shadow: 0 1px 0.5px sh i;
                 > div { box-shadow: none i }
             }
             /// Tails.
@@ -1323,6 +1323,11 @@
             > div:not(.a81-s) > div { c: fg 0 left }
             /// Stickers -> Timestamp.
             > div.a81-s ._3qAvH { c: 0 0 left }
+            /// Stickers -> Sender name bubble. #69
+            ._3tMyP {
+                c: 0 0 left;
+                box-shadow: 0 1px 0.5px sh i;
+            }
             /// Reset tails.
             .tail {
                 border-top-left-radius: 0 i;
