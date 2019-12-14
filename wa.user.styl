@@ -72,7 +72,8 @@
 @var color cyan    'Color: Cyan                 ' #5e8d87
 @var color green   'Color: Green                ' #7b823a
 @var color white   'Color: White                ' #ffffff
-@var color shadow  'Color: Shadow               ' #00000025
+@var color sh      'Color: Shadow light         ' #00000025
+@var color sh-h    'Color: Shadow heavy         ' #00000050
 ==/UserStyle== */
 
 @-moz-document domain('web.whatsapp.com') {
@@ -86,6 +87,7 @@
             --lighter   : lighter;
             --accent    : accent;
             --shadow    : shadow;
+            --sh-h      : sh-h;
         } else {
             --dark      : #1f232a;
             --darken    : #252A33;
@@ -94,6 +96,7 @@
             --lighter   : #a1a1a1;
             --accent    : accent;
             --shadow    : shadow;
+            --sh-h      : sh-h;
         }
         --yellow    : yellow;
         --orange    : orange;
@@ -139,6 +142,7 @@
     cm      = var(--lighter);
     ac      = var(--accent);
     sh      = var(--shadow);
+    sh-h    = var(--sh-h);
     bsh     = var(--bshadow);
     yellow  = var(--yellow);
     orange  = var(--orange);
