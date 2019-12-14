@@ -28,6 +28,7 @@
 @var text     image_url  'App: Custom bg link   ' url('https://images.unsplash.com/photo-1434569117012-ce134ee1a088?fit=crop&w=1280&h=720&q=80')
 @var range    bg_opacity 'App: Image opacity    ' [0.5, 0.0, 1, 0.01]
 @var range    bg_blur    'App: Image blur size  ' [8, 0, 50, 1, 'px']
+@var range    bg_hue     'App: Image hue        ' [0, 0, 360, 1, 'deg']
 @var range    bg_invert  'App: Image inversion  ' [0, 0.0, 1, 0.1]
 
 @var checkbox chat_msg_t 'Chat: Hide msg tails  ' 0
@@ -115,6 +116,7 @@
         --bg-image  : image_url;
         --bg-opacity: bg_opacity;
         --bg-blur   : bg_blur;
+        --bg-hue    : bg_hue;
         --bg-invert : bg_invert;
 
         --chat-image: chat_image;
@@ -357,9 +359,10 @@
                 b = blur(var(--bg-blur));
                 o = opacity(var(--bg-opacity));
                 i = invert(var(--bg-invert));
+                h = hue-rotate(var(--bg-hue));
                 top: s; right: s; bottom: s; left: s;
                 height: unset; width: unset;
-                filter: b o i;
+                filter: b o i h;
                 background-image: var(--bg-image);
                 c: 0 0 hl;
             } else if ( app_image == default ) {
