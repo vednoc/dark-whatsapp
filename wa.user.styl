@@ -830,7 +830,11 @@
                 box-shadow: 0 1px bd;
                 /.matched-text:not(#z) { c: ac }
                 /// Active states.
-                &:hover, &._3mMX1 {
+                &:hover {
+                    c: 0 0 #55555515;
+                    box-shadow: inset 0 1px bd, 0 1px bd;
+                }
+                &._3mMX1 {
                     c: 0 0 bd;
                     box-shadow: inset 0 1px bd, 0 1px bd;
                 }
@@ -903,7 +907,10 @@
             /._2UaNq {
                 c: 0 0 t;
                 &::after { content: none i }
-                &:hover:not(#z):not(#x) { c: 0 0 bd }
+                &:hover:not(#z):not(#x) {
+                    c: 0 0 #55555510;
+                    box-shadow: 0 -1px bd, inset 0 -1px bd;
+                }
                 [style *= 'height: 82px'] { c: 0 0 t }
                 ._2WP9Q { border-top: none i }
                 /// Nick/info.
@@ -915,7 +922,7 @@
                 border-bottom: 1px solid bd;
                 c: 0 0 t;
                 box-shadow: 0 -1px bd;
-                &:hover { c: 0 0 bd }
+                &:hover { c: 0 0 #55555510 }
                 &::before { content: none }
                 > div:last-child { c: 0 t }
                 ._6xQdq { c: fg }
@@ -1034,7 +1041,7 @@
         /// Search -> Items on hover.
         [style]:not(#z):not(#x) > div > ._2UaNq {
             &._3sA1g:hover, &._3mMX1, &.hover {
-                c: 0 0 bd;
+                c: 0 0 #55555510;
                 box-shadow: 0 0 0 1px bd;
             }
         }
