@@ -836,17 +836,10 @@
             /// Items.
             [style *= 'z-index'] > div > div[class] {
                 c: 0 0 t;
-                box-shadow: 0 1px bd;
                 /.matched-text:not(#z) { c: ac }
                 /// Active states.
-                &:hover {
-                    c: 0 0 #55555515;
-                    box-shadow: inset 0 1px bd, 0 1px bd;
-                }
-                &._3mMX1 {
-                    c: 0 0 bd;
-                    box-shadow: inset 0 1px bd, 0 1px bd;
-                }
+                &:hover { c: 0 0 #55555515 }
+                &._3mMX1 { c: 0 0 bd }
                 /// Remove borders.
                 &::after, > div:last-child { border: none }
                 /// Avatar background.
@@ -912,14 +905,12 @@
                 /// Input area border.
                 /._5UNoc ._3hnO5 { c: 0 ac }
             }
-            /// Settings -> User info section.
+            /// Global -> List items.
             /._2UaNq {
+                border-top: 1px solid bd;
                 c: 0 0 t;
                 &::after { content: none i }
-                &:hover:not(#z):not(#x) {
-                    c: 0 0 #55555510;
-                    box-shadow: 0 -1px bd, inset 0 -1px bd;
-                }
+                &:hover:not(#z):not(#x) { c: 0 0 #55555510 }
                 [style *= 'height: 82px'] { c: 0 0 t }
                 ._2WP9Q { border-top: none i }
                 /// Nick/info.
@@ -1053,10 +1044,7 @@
         ._3dwyT { c: cm }
         /// Search -> Items on hover.
         [style]:not(#z):not(#x) > div > ._2UaNq {
-            &._3sA1g:hover, &._3mMX1, &.hover {
-                c: 0 0 #55555510;
-                box-shadow: 0 0 0 1px bd;
-            }
+            &._3sA1g:hover, &._3mMX1, &.hover { c: 0 0 #55555510 }
         }
         /// Search -> Msg content/date.
         span[title] > span[dir] { c: fg }
