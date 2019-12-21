@@ -56,6 +56,7 @@
 @var checkbox chat_right 'Chat: Align right msg ' 0
 
 @var checkbox ss-mode    'App: Screenshot mode  ' 0
+@var checkbox ff_scroll  'Thin scrollbars in Firefox' 1
 
 @var color dark    'Color: Primary background   ' #292929
 @var color darken  'Color: Highlight background ' #333333
@@ -79,6 +80,11 @@
 @-moz-document domain('web.whatsapp.com') {
 
     :root {
+        /// Feat -> Thin scrollbar in Firefox.
+        if ( ff_scroll == 1 ) {
+            * { scrollbar-width: thin }
+        }
+        /// Feat -> Toggle between themes.
         if ( theme == 1 ) {
             --dark      : dark;
             --darken    : darken;
