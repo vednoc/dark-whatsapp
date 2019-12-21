@@ -1,0 +1,1772 @@
+/* ==UserStyle==
+@name         Dark-WhatsApp
+@description  Dark and light, very customizable theme for WhatsApp.
+@namespace    github.com/vednoc/dark-whatsapp
+@homepageURL  https://github.com/vednoc/dark-whatsapp
+@supportURL   https://github.com/vednoc/dark-whatsapp/issues
+@updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.styl
+@version      2.0.0
+@author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
+@license      MIT
+@preprocessor stylus
+
+@var checkbox theme      'Old/custom or new color-scheme' 0
+@var text     ui_font    'Custom UI font' ''font_name''
+@var text     radius-g   'Custom rounded corners for menus' 4px
+@var text     radius-i   'Custom rounded corners for input area' 4px
+@var text     app_width  'Custom width for chat app' 1396px
+@var checkbox fullscreen 'Enable fullscreen mode' 0
+@var checkbox app_c_m    'Enable compact mode' 1
+@var text     app_c_m_w  'Compact mode breakpoint' 720px
+@var text     app_c_m_h  'Compact mode on-hover delay' 1s
+
+@var checkbox chat_b_c   'Enable blurred contacts' 0
+@var checkbox chat_b_img 'Enable blurred images/videos' 0
+
+@var checkbox chat_msg_t 'Hide message tails' 0
+
+@var checkbox chat_left  'Left message bubble position' 0
+@var checkbox chat_right 'Right message bubble position' 0
+
+
+@var checkbox emoji_t    'Enable transparent emojis' 1
+@var range    emoji_o    'Emoji default opacity' [0.8, 0.0, 1, 0.01]
+
+@var select   app_image  'Custom app background' {
+    'Custom  *': 'custom  ',
+    'Default  ': 'default ',
+    'None     ': 'none    ',
+}
+@var text     image_url  'Custom background image link' url('https://images.unsplash.com/photo-1434569117012-ce134ee1a088?fit=crop&w=1280&h=720&q=80')
+@var range    bg_opacity 'Background image opacity' [0.4, 0.0, 1, 0.01]
+@var range    bg_blur    'Background image blur size' [12, 0, 50, 1, 'px']
+@var range    bg_hue     'Background image hue' [320, 0, 360, 1, 'deg']
+@var range    bg_invert  'Background image invert colors' [0, 0.0, 1, 0.1]
+
+@var checkbox chat_bg    'Enable chat background image' 1
+@var text     chat_image 'Custom image for chat' url('/img/bg-chat-tile_8a055527b27b887521a9f084497d8879.png')
+@var range    chat_bg_o  'Chat background image opacity' [0.1, 0.0, 1, 0.01]
+@var range    chat_bg_i  'Chat background image inverted colors' [0.6, 0.0, 1, 0.1]
+
+@var select chat_b_l     'Left message bubble background' {
+    'Default *': 'default ',
+    'Custom   ': 'custom  ',
+}
+@var color b_l_bg  'Left bubble color' #222730
+@var select chat_b_r     'Right message bubble background' {
+    'Default *': 'default ',
+    'Custom   ': 'custom  ',
+}
+@var color b_r_bg  'Right bubble color' #1f232a
+@var checkbox ff_scroll  'Thin scrollbars in Firefox' 1
+
+@var color dark    'Color: Primary background   ' #1f232a
+@var color darken  'Color: Highlight background ' #252A33
+@var color darker  'Color: Secondary background ' #2c313a
+@var color light   'Color: Primary foreground   ' #e9e9e9
+@var color lighter 'Color: Secondary foreground ' #a1a1a1
+@var color accent  'Color: Accent               ' #7289da
+@var color yellow  'Color: Yellow               ' #f0c674
+@var color orange  'Color: Orange               ' #d98245
+@var color red     'Color: Red                  ' #a54242
+@var color magenta 'Color: Magenta              ' #b294bb
+@var color violet  'Color: Violet               ' #85678f
+@var color blue    'Color: Blue                 ' #54738c
+@var color cyan    'Color: Cyan                 ' #5e8d87
+@var color green   'Color: Green                ' #7b823a
+@var color white   'Color: White                ' #ffffff
+@var color sh      'Color: Shadow light         ' #00000025
+@var color sh-h    'Color: Shadow heavy         ' #00000035
+==/UserStyle== */
+
+@-moz-document domain('web.whatsapp.com') {
+
+    :root {
+        /// Feat -> Thin scrollbar in Firefox.
+        if ( ff_scroll == 1 ) {
+            * { scrollbar-width: thin }
+        }
+        /// Feat -> Toggle between themes.
+        if ( theme == 0 ) {
+            --dark      : dark;
+            --darken    : darken;
+            --darker    : darker;
+            --light     : light;
+            --lighter   : lighter;
+            --accent    : accent;
+            --shadow    : sh;
+            --sh-h      : sh-h;
+        } else {
+            --dark      : #292929;
+            --darken    : #333333;
+            --darker    : #424242;
+            --light     : #e6e6e6;
+            --lighter   : #bababa;
+            --accent    : accent;
+            --shadow    : sh;
+            --sh-h      : sh-h;
+        }
+        --yellow    : yellow;
+        --orange    : orange;
+        --red       : red;
+        --magenta   : magenta;
+        --violet    : violet;
+        --blue      : blue;
+        --cyan      : cyan;
+        --green     : green;
+        --white     : white;
+        --radius    : radius-g;
+        --t         : transparent;
+        --bshadow   : 0 2px 4px var(--shadow);
+
+        --app-width : app_width;
+
+        --emoji-o   : emoji_o;
+
+        --bg-image  : image_url;
+        --bg-opacity: bg_opacity;
+        --bg-blur   : bg_blur;
+        --bg-hue    : bg_hue;
+        --bg-invert : bg_invert;
+
+        --chat-image: chat_image;
+        --chat-bg-o : chat_bg_o;
+        --chat-bg-i : chat_bg_i;
+
+        --c-m-hover : app_c_m_h;
+
+        --ui-font   : ui_font, 'Segoe UI', 'Helvetica Neue', Helvetica,
+            'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif;
+
+        --version   : 'Dark-WhatsApp v2.0.0';
+        --message   : 'The v2 is finally here! 🎉 🥳 Read more: ';
+        --changes   : 'https://vednoc.me/blog/the-new-dark-whatsapp';
+    }
+
+    // Use stylus-lang variables with CSS variables.
+    bg      = var(--dark);
+    hl      = var(--darken);
+    bd      = var(--darker);
+    fg      = var(--light);
+    cm      = var(--lighter);
+    ac      = var(--accent);
+    sh      = var(--shadow);
+    sh-h    = var(--sh-h);
+    bsh     = var(--bshadow);
+    yellow  = var(--yellow);
+    orange  = var(--orange);
+    red     = var(--red);
+    magenta = var(--magenta);
+    violet  = var(--violet);
+    blue    = var(--blue);
+    cyan    = var(--cyan);
+    green   = var(--green);
+    white   = var(--white);
+    t       = var(--t);
+    r       = var(--radius);
+    outer   = 0 0 0 1px bd;
+    inner   = inset outer;
+
+    // Color mixin.
+    // All colors: `c: fg bd bg;`
+    // Only border-color: `c: 0 bd;`
+    c(x, y = 0, z = 0, xi = 1, yi = 1, zi = 1) {
+        i = !important;
+        if x is a 'call' or x is a 'rgba' {            color: xi is 0? x : x i }
+        if y is a 'call' or y is a 'rgba' {     border-color: yi is 0? y : y i }
+        if z is a 'call' or z is a 'rgba' { background-color: zi is 0? z : z i }
+    }
+    // SVG mixin.
+    v(x, y = 0, xi = 1, yi = 1) {
+        i = !important;
+        if x is a 'call' or x is a 'rgba' {   fill: xi is 0? x : x i }
+        if y is a 'call' or y is a 'rgba' { stroke: yi is 0? y : y i }
+    }
+    // Rounded corners.
+    rad() { border-radius: arguments }
+    // Shorter important.
+    i = !important;
+
+    body {
+        c: fg 0 bg;
+        background-image: none;
+        scrollbar-color: ac #5552;
+
+        /// Text.
+        ::placeholder, ._2kE6F { c: cm }
+        a { color: ac }
+        strong { c: fg }
+        select {
+            c: fg bd;
+            /.Fzl83 { margin-right: 24px }
+        }
+        option { c: fg 0 bd }
+
+        /// Browser-specific resets.
+        ::-moz-range {
+            &-progress { c: 0 0 blue }
+            &-thumb { c: 0 0 ac }
+            &-track { c: 0 0 bg }
+            /// Progress completed.
+            ../ ._1N8Pv { c: 0 0 ac }
+        }
+        ::-webkit- {
+            &progress {
+                &-bar { c: 0 0 bd }
+                &-value { c: 0 0 ac }
+            }
+            &slider {
+                &-runnable-track { c: 0 0 bg }
+                &-thumb { c: 0 0 ac }
+            }
+            &scrollbar {
+                &-track { background-color: #5552 }
+                &-thumb { background-color: ac }
+            }
+        }
+
+        /// Feat -> Custom font.
+        &, button, input { font-family: var(--ui-font) }
+
+        /// App -> Landing page.
+        .landing {
+            &-wrapper::before { c: 0 0 hl }
+            &-header {
+                position: relative;
+                &::after {
+                    right: 0;
+                    position: absolute;
+                    content: var(--version);
+                }
+                path[fill ^= '#FFF'] { fill: ac }
+                path[fill ^= '#00E'] { fill: bd }
+                div { c: fg }
+            }
+            &-window:not(#z) {
+                rad: r;
+                c: 0 0 bg;
+                box-shadow: inner, bsh;
+            }
+            &-main {
+                a[href] { c: ac }
+                ._2yUXW { c: cm }
+                .landing-title { c: fg }
+                rect[fill ^= '#f2f'], rect[fill ^= '#F2F'] { fill: bd }
+                path[fill ^= '#818'] { fill: ac }
+                /// QR code.
+                div[data-ref] {
+                    rad: 0;
+                    filter: contrast(150%);
+                    outline: 4px solid white;
+                    box-shadow: 0 0 0 4px white;
+                    [role='button'] { c: white 0 ac }
+                    /// Change QR's white border.
+                    &._2VkjG {
+                        outline: 4px solid ac;
+                        box-shadow: 0 0 0 4px ac;
+                    }
+                }
+                /// Video showcase.
+                + ._310T_ {
+                    c: 0 0 t;
+                    img { opacity: 0.3 }
+                    /// Reset background on button container.
+                    [style *= 'opacity: 1'] { c: 0 0 t }
+                }
+                /// 'Keep me signed in' reported in #59.
+                ._152b1 {
+                    c: white 0 ac;
+                    box-shadow: bsh;
+                    &::before { border-bottom-color: ac }
+                }
+            }
+        }
+
+        /// App -> Startup.
+        #initial_startup, #startup {
+            c: 0 0 bg;
+            progress { c: ac 0 bd }
+            ::-moz-progress-bar { c: 0 0 ac }
+            circle { stroke: fg }
+        }
+
+        // App -> Tooltips.
+        ._3pkG4 {
+            c: fg 0 hl;
+            box-shadow: inner, bsh;
+            button { c: ac }
+        }
+
+        /// App -> Intro.
+        .iFKgT {
+            c: 0 bd bg;
+            a { color: ac }
+            &::after { c: 0 ac }
+            [style] {
+                h1 { c: fg }
+                div { c: cm }
+            }
+            /// Reset default image.
+            [data-asset-intro-image] {
+                rad: 50%;
+                max-width: 200px;
+                max-height: 200px;
+                filter: opacity(0.75);
+                transition: opacity 0.6s ease;
+            }
+            /// Userstyle info.
+            h1 + div[class] {
+                font-size: 0;
+                &::before {
+                    display: block;
+                    font-size: 16px;
+                    margin-bottom: -16px;
+                    content: var(--message) var(--changes);
+                }
+                &::after {
+                    display: block;
+                    font-size: 16px;
+                    margin-top: 16px;
+                    padding-top: 16px;
+                    content: var(--version);
+                    border-top: 1px solid bd;
+                }
+            }
+            /// Platform-specific section border..
+            ._3ZVgT { c: 0 0 bd }
+        }
+
+        /// Left -> Typing indicator.
+        span[title *= 'typing...'], ._2ZAIy { c: ac }
+
+        /// Global -> Checkboxes.
+        ._1Zo-R { c: 0 cm hl }
+        ._15wNI { c: 0 ac ac }
+
+        /// Global -> Active buttons.
+        ._3j8Pd {
+            &.GPmgF, &.GPmgf {
+                c: 0 0 bd;
+                [data-icon] path { fill-opacity: 1 i }
+            }
+        }
+
+        /// Contacts/Search -> Loader.
+        svg[width = '18'][height = '18'],
+        svg[width = '20'][height = '20'] {
+            circle { stroke: green }
+        }
+        svg[width = '34'][height = '34'] {
+            circle { stroke: cm }
+        }
+
+        /// Panes -> Change avatars.
+        ._1JS2G { c: fg 0 #66666666 }
+
+        /// Group invite link.
+        #group-invite-link-anchor { c: ac }
+
+        /// Global -> Media player.
+        /.OZVc4 {
+            /// Reset sliders.
+            ._3N5w5 {
+                &::-webkit-slider-runnable-track { c: 0 0 t }
+                &::-moz-range { &-progress, &-track { c: 0 0 t }}
+            }
+            /// Progress bar.
+            ._2bTRm ._2ZXtj { c: 0 0 ac }
+        }
+    }
+
+    #app > div {
+        &::after {
+            if ( app_image == custom ) {
+                s = calc(-1 * var(--bg-blur));
+                b = blur(var(--bg-blur));
+                o = opacity(var(--bg-opacity));
+                i = invert(var(--bg-invert));
+                h = hue-rotate(var(--bg-hue));
+                top: s; right: s; bottom: s; left: s;
+                height: unset; width: unset;
+                filter: b o i h;
+                background-image: var(--bg-image);
+                c: 0 0 hl;
+            } else if ( app_image == default ) {
+                c: 0 0 hl;
+            } else {
+                display: none;
+            }
+            /// Remove image in fullscreen mode.
+            if ( fullscreen == 1 ) { content: none }
+        }
+
+        .app {
+            c: 0 0 bg;
+            background-image: none;
+            @media (min-width: 1441px) {
+                border: 1px solid bd;
+                rad: r;
+                box-shadow: bsh;
+                /// Feat -> Custom max-width.
+                &, /._11ARv {
+                    width: calc(100% - 38px);
+                    max-width: var(--app-width);
+                }
+                /// Feat -> Fullscreen mode.
+                if ( fullscreen == 1 ) {
+                    &, /._11ARv {
+                        rad: 0;
+                        top: unset;
+                        width: 100%;
+                        max-width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+            /// Right -> Fix the width with three open panes.
+            &.three > ._37f_5 { width: calc(100% + 1px) }
+            /// HACK: Resolve pane gap/border glitches.
+            ._2rI9W { margin-right: -1px }
+        }
+    }
+
+    /// Global -> Emojis.
+    .emojik {
+        transition: transform 0.15s ease;
+        /// Default opacity.
+        &:not(:hover):not(:focus):not(.selected) {
+            filter: opacity(var(--emoji-o));
+        }
+        /// Active state.
+        &:hover, &:focus, &.selected {
+            opacity: 1;
+            transform: scale(1.2);
+            box-shadow: none i;
+        }
+        /// Feat -> Transparent emoji images.
+        if ( emoji_t == 1 ) {
+            images = 'https://raw.githubusercontent.com/vednoc/wae/dev'
+            /// Android emojis.
+            for i in 0..101 {
+                &.wa.b{i} {
+                    background-image: url(s('%s/a/%s.webp', unquote(images), i))
+                }
+            }
+            /// iOS emojis.
+            for i in 0..100 {
+                &.apple.b{i} {
+                    background-image: url(s('%s/i/%s.webp', unquote(images), i))
+                }
+            }
+        } else {
+            clip-path: circle(49%);
+        }
+    }
+
+    /// Global -> Emoji picker popout.
+    ._342qq._1mTBR {
+        rad: r i;
+        box-shadow: bsh;
+        /// Header.
+        ._2avTY {
+            c: 0 0 hl;
+            box-shadow: inset 0 -1px bd;
+            [style] { c: 0 0 ac }
+        }
+        /// Content.
+        .QChXd {
+            c: 0 0 bg;
+            [data-tab] {
+                c: 0 0 bg;
+                /// Input.
+                label {
+                    c: fg 0 hl;
+                    box-shadow: inner;
+                }
+            }
+            /// Sections.
+            ._2lKjK { c: cm }
+        }
+        + [data-animate-dropdown-nib] {
+            border-bottom: 1px solid bd;
+            border-right: 1px solid bd;
+            c: 0 0 bg;
+            box-shadow: none;
+        }
+    }
+
+    // Global -> Badges.
+    ._2WwbV { c: blue blue hl }
+    .FPZFa { c: ac ac hl }
+
+    /// Global -> Modals.
+    .overlay {
+        c: 0 0 t;
+        /// Backdrop.
+        &::before {
+            content: '';
+            z-index: -1;
+            opacity: 0.81;
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            c: 0 0 bg;
+        }
+        /// Header.
+        > .cGLoy, .s4BtI {
+            c: 0 0 bg;
+            box-shadow: 0 1px bd;
+            /// Remove unnecessary background.
+            div { c: 0 0 t }
+            /// Text.
+            .xD91K { c: cm }
+            ._3H4MS { c: fg }
+            /// Media -> Fix header background hover conflict.
+            ._2UaNq {
+                &._3Ff9z, &._1k-OW {
+                    &:not(#z):not(#x):hover { c: 0 0 t }
+                }
+            }
+        }
+        /// Footer.
+        ._21bWq { c: 0 0 hl }
+        /// Previous/next buttons.
+        ._3yth3:not(#z) {
+            c: 0 0 bg;
+            box-shadow: inner, bsh;
+            &:hover { c: 0 0 hl }
+        }
+        /// Text.
+        .X5OiD { c: 0 0 bd }
+        ._3qb2N, .JmH7x { c: cm }
+        ._2yVvV { c: fg }
+        /// Buttons.
+        [role = 'button'] {
+            &._23_1v {
+                c: cm;
+                &:hover {
+                    c: fg 0 hl;
+                    box-shadow: none;
+                }
+            }
+            /// Primary.
+            &._3PQ7V {
+                c: white 0 ac;
+                box-shadow: bsh;
+                transition: 0.15s ease;
+                &:hover { opacity: 0.8 }
+            }
+        }
+        /// Popup message.
+        [data-animate-modal-popup]:not(#z) {
+            border: 1px solid bd;
+            rad: r;
+            c: 0 0 bg;
+            box-shadow: 0 4px 8px 2px sh;
+            ._13HPh { c: fg }
+            ._2VDPW { c: 0 0 hl }
+            /// 'Forward message' popout.
+            ._1KDYa {
+                c: 0 0 t;
+                header { c: fg 0 hl }
+                .r7sRK { c: ac 0 t }
+                ._2UaNq { c: fg 0 t }
+                /// Footer.
+                > span > div[style] {
+                    c: fg 0 hl;
+                    [role = 'button'] {
+                        c: 0 0 ac;
+                        box-shadow: bsh;
+                    }
+                }
+            }
+            /// Failed to connect.
+            span[role = 'button'] { c: ac }
+            hr {
+                c: 0 bd;
+                + div { c: fg }
+            }
+        }
+        /// Settings -> Upload a new avatar.
+        [data-animate-modal-body] {
+            ._1BdTk { border-left: none }
+            /// Canvas background.
+            ._3979j { c: 0 0 t }
+            /// Buttons.
+            ._1DKwn {
+                c: 0 0 hl;
+                box-shadow: bsh;
+            }
+            /// Footer.
+            ._2HyTU, ._22aOT {
+                min-height: 91px; /// NOTE: Border is hidden on default 90px.
+                c: 0 0 hl;
+                box-shadow: inset 0 1px bd;
+            }
+        }
+        /// View contact.
+        ._1VwzF {
+            c: 0 0 t;
+            ._1VI-m { c: fg }
+            [role = 'button'] { c: 0 0 ac }
+        }
+        /// View group invite.
+        ._2Vo52 {
+            /// Header.
+            .XOIaT { c: 0 0 hl }
+            /// Text.
+            ._1WSDe { c: fg }
+            ._3WFBR, .vJCph, ._2oG62 { c: cm }
+        }
+        /// Send/view contacts.
+        .WOXAS, ._1v8mQ {
+            c: 0 0 t;
+            box-shadow: 0 1px bd i ;
+            /.fwByR { c: ac }
+        }
+        /// Settings -> Help.
+        ._1wt6r, /._3Yulp, /.bHCVK { c: cm }
+        ._3hnO5 { c: 0 ac }
+        ._1T8rb { c: ac 0 t }
+        /// Left -> Turn on desktop notifications.
+        .NWyjc.AZ3xD { margin: 16px }
+        /// Left -> Show previews for notifications.
+        /._2vOyW._26EsD .lz4Mo { c: fg }
+    }
+
+    // Global -> Status.
+    [data-animate-status-v3-modal-background='true'] {
+        c: 0 0 t;
+        /// Backdrop.
+        &::before {
+            content: '';
+            z-index: -1;
+            opacity: 0.91;
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            c: 0 0 bg;
+        }
+        /// Content.
+        > div {
+            c: 0 0 bg;
+            @media (min-width: 1441px) {
+                rad: r;
+                border: 1px solid bd;
+            }
+            hr {
+                opacity: 1;
+                border: none;
+                border-top: 1px solid bd;
+            }
+            /// Contacts.
+            > div[class]:nth-child(1) {
+                c: 0 0 hl;
+                box-shadow: 1px 0 bd;
+                @media (min-width: 1441px) { rad: r 0 0 r }
+                /// Text.
+                .OEFaY { c: cm }
+                ._26-u- { c: fg }
+                /// Circle.
+                circle[r = '50'] { stroke: ac i }
+            }
+            > div[class]:nth-child(2) {
+                .ojaNO { c: cm }
+                /// Reset the circle icon.
+                svg[width][height] path { v: t fg }
+            }
+            /// Remove borders from list items.
+            ._2UaNq { border-top: none }
+            /// Reply to the status.
+            /.QRsOy { c: 0 0 bg }
+            /// Feat -> Fullscreen mode.
+            if ( fullscreen == 1 ) {
+                rad: 0;
+                top: unset;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    // Global -> Media selection.
+    ._2n0jo {
+        c: 0 bd hl;
+        /// Item reset.
+        ._1LdNS {
+            &.cJP5q {
+                border: none i;
+                outline: 4px solid ac;
+            }
+            &:hover:not(.cJP5q):not(#spec) { outline: 4px solid ac i }
+        }
+    }
+
+    // Global -> Icons.
+    span[class] {
+        &[data-icon] {
+            > svg > path {
+                fill: fg;
+                transition: 0.15s ease;
+            }
+            /// Animate-ish.
+            &:hover > svg > path {
+                opacity: 1;
+                fill-opacity: 0.9 i;
+            }
+        }
+        /// Left -> Status icon.
+        &[data-icon ^= 'status-v3'] path {
+            &:first-child {
+                v: fg;
+                fill-opacity: 0.55;
+            }
+        }
+        &[data-icon = 'status-v3-unread'] path {
+            &:last-child { v: ac }
+        }
+        /// Search -> Back button.
+        &[data-icon = 'back-blue'] path { v: blue }
+        /// Default user/group/broadcasts icons.
+        &[data-icon ^= 'default-'] path {
+            &:first-child { fill: bg }
+            &:last-child { fill: cm }
+        }
+        /// Business accounts.
+        &[data-icon ^= 'business-'] path { fill: cm }
+        /// Audio files.
+        &[data-icon = 'audio-file'] path {
+            &:first-child { fill: orange }
+            &:last-child { fill: hl }
+        }
+        &[data-icon ^= 'ptt-'] path {
+            &:first-child { fill: bd }
+            &:last-child { fill: ac }
+        }
+        /// Message info -> Played audio message.
+        &[data-icon = 'status-ptt-blue'] path { fill: ac i }
+        /// Message status.
+        &[data-icon *= '-check'] path { v: cm }
+        &[data-icon *= '-dblcheck'] path { v: cm }
+        &[data-icon *= '-dblcheck-ack'] path { v: ac }
+        &[data-icon *= 'check'] path { fill-opacity: 1 i }
+        /// Exit/Report.
+        &[data-icon = 'exit'],
+        &[data-icon = 'thumbs-down'],
+        /// Delete chat/missed call.
+        &[data-icon = 'delete-danger'],
+        &[data-icon ^= 'miss'] {
+            path { v: red }
+        }
+        /// Right -> Default avatar loader.
+        /svg[width = '50'][height = '50'] > circle[fill] { stroke: cm }
+        /// Chat -> Sticker bg.
+        &[data-icon = 'sticker-placeholder'] > svg > path {
+            fill: bd;
+            fill-opacity: 0.6;
+        }
+        /// Right -> Group search.
+        &[data-icon = 'search'] {
+            path[fill-opacity = '.3'] { fill-opacity: 0.55 }
+        }
+        /// Right -> Selected media.
+        &[data-icon = 'checkbox-round-checked'] {
+            [fill = '#00BFA5'] { v: ac }
+            [fill = '#FFF'] { v: white }
+        }
+    }
+
+    // Global -> Context menu.
+    div:not(#z) {
+        &[style ^= 'transform-origin:'] {
+            border: 1px solid bd;
+            rad: r;
+            c: 0 0 hl;
+            box-shadow: 0 4px 12px sh-h;
+            li {
+                &._3VXiW > div { c: 0 0 bd }
+                > div {
+                    c: cm;
+                    &:hover { c: fg 0 bd }
+                }
+            }
+            /// Chat -> Attach dropdown.
+            &._1fRWV {
+                c: 0 0 t;
+                border: none i;
+                box-shadow: none i;
+                .Ijb1Q::after { box-shadow: bsh }
+            }
+            /// Emojis -> Race selection.
+            > ul._3z3lc {
+                > li:first-child { c: 0 bd }
+                + [data-animate-dropdown-nib] {
+                    border-bottom: 1px solid bd;
+                    border-right: 1px solid bd;
+                    bottom: -8px;
+                    c: 0 0 hl;
+                }
+            }
+        }
+    }
+
+    // App -> Left.
+    #side {
+        > header {
+            border-bottom: 1px solid bd;
+            c: 0 0 hl;
+            /// Avatar background.
+            [style *= 'height: 40px'] { c: 0 0 t }
+        }
+        /// Alerts.
+        > header + span[class] {
+            ._1puWZ, ._2xikZ, ._1sFYw, ._2t3oV {
+                border-bottom: 1px solid bd;
+                c: 0 0 hl;
+            }
+            /// Disconnected/connecting.
+            ._1puWZ, ._2xikZ {
+                * { c: yellow }
+                [data-icon ^= 'chevron-'] path { fill: yellow }
+                [data-icon ^= 'alert-'] path {
+                    &[fill ^= '#FFF'] { fill: yellow }
+                    &[fill ^= '#FFB'] { fill: hl }
+                }
+            }
+            /// Enable notifications.
+            ._1sFYw {
+                * { c: blue }
+                [data-icon ^= 'chevron-'] path { v: blue }
+                [data-icon ^= 'alert-'] path[fill ^= '#FFF'] { fill: blue }
+            }
+            /// Phone battery low.
+            ._2t3oV {
+                * { c: red }
+                [data-icon ^= 'chevron-'] path { v: red }
+                [data-icon ^= 'alert-'] path[fill ^= '#FFF'] { fill: red }
+            }
+        }
+        /// Search.
+        /div[class *= 'ZP8RM'] {
+            border-bottom: 1px solid bd;
+            c: 0 0 hl;
+            &._19OGD { c: 0 0 hl }
+            &::after { content: none }
+            > div { c: cm }
+            > div + label {
+                c: 0 0 t;
+                input { c: fg 0 t }
+            }
+        }
+        /// Contacts.
+        #pane-side {
+            c: 0 0 hl;
+            /// Items.
+            [style *= 'z-index'] > div > div[class] {
+                c: 0 0 t;
+                /.matched-text:not(#z) { c: ac }
+                /// Active states.
+                &:hover { c: 0 0 #55555515 }
+                &._3mMX1 { c: 0 0 bd }
+                /// Remove borders.
+                &::after, > div:last-child { border: none }
+                /// Avatar background.
+                /[style *= 'height: 49px'] { c: 0 0 bd }
+                /// Text.
+                > div:last-child {
+                    /// Title/timestamp.
+                    > div:first-child {
+                        > div:first-child { c: fg }
+                        > div:last-child { c: cm }
+                    }
+                    /// Body.
+                    > div:last-child { c: cm }
+                }
+                /// Unread indicators.
+                /.P6z4j { c: white 0 ac }
+            }
+        }
+        /// Search contacts/messages.
+        .r7sRK {
+            c: ac 0 t;
+            box-shadow: 0 1px bd;
+        }
+        /// Feat -> Blur contacts.
+        if ( chat_b_c == 1 ) {
+            [style *= 'height'] > div > div[class] {
+                filter: blur(6px);
+                transition: filter 300ms ease;
+                &._3mMX1, &:hover { filter: blur(0px) }
+            }
+        }
+    }
+
+    // App -> Left -> Profile/Settings.
+    .app span > div[style *= 'height: 100%'] {
+        > div[class], > span > div[class], > div > div[class] {
+            c: 0 0 hl;
+            > header {
+                height: unset;
+                min-height: unset i;
+                border-bottom: 1px solid bd;
+                c: 0 0 hl;
+                /// Global -> Reset header text.
+                /._1pYs5:not(#z) {
+                    margin: 0;
+                    padding-top: 4px;
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+                .kyJvR {
+                    height: 58px;
+                    c: fg;
+                    /// Broadcast list info.
+                    ._6xQdq { c: fg }
+                }
+            }
+            /// Highlighted sections.
+            ._2LSbZ {
+                c: 0 0 t;
+                box-shadow: none;
+                ._3he1q { c: ac }
+                ._3K9Sw { c: 0 t }
+                /// Input area border.
+                /._5UNoc ._3hnO5 { c: 0 ac }
+            }
+            /// Global -> List items.
+            /._2UaNq {
+                border-top: 1px solid bd;
+                c: 0 0 t;
+                &::after { content: none i }
+                &:hover:not(#z):not(._27Ppf) { c: 0 0 #55555510 }
+                [style *= 'height: 82px'] { c: 0 0 t }
+                ._2WP9Q { border-top: none i }
+                /// Nick/info.
+                ._3H4MS { c: fg }
+                .xD91K { c: cm }
+                /// Already blocked.
+                &._30Q1W { .3H4MS:not(#z) { c: cm }}
+                /// Settings -> Reset first list item.
+                &._3fAgu { border-top: none i }
+                /// Left -> Add group participants.
+                &._27Ppf {
+                    c: 0 0 bd;
+                    /// Default avatar background.
+                    [style *= 'height: 26px'] { c: 0 0 bd }
+                }
+            }
+            /// Settings -> Options.
+            ._26JG5 {
+                border-bottom: 1px solid bd;
+                c: 0 0 t;
+                box-shadow: 0 -1px bd;
+                &:hover { c: 0 0 #55555510 }
+                &::before { content: none }
+                > div:last-child { c: 0 t }
+                ._6xQdq { c: fg }
+            }
+            /.wjdTm, ._1qWhd { c: cm }
+            /// New group.
+            ._1w-mX {
+                c: 0 0 t;
+                input { c: fg }
+                ._39cGk { c: 0 bd }
+                /// Resets for contacts.
+                + ._1c8mz {
+                    c: 0 0 t;
+                    .r7sRK {
+                        c: ac 0 t;
+                        /.r7sRK:not(#z) { box-shadow: inset 0 1px bd i }
+                    }
+                    ._8-yzK { c: 0 0 t }
+                    ._2DxRd, ._2WP9Q { c: 0 t }
+                }
+            }
+            /// New group creation.
+            /._1wt6r { c: cm }
+            /// New chat.
+            ._1c8mz {
+                /// New chat.
+                ._11p3Q, ._8-yzK { c: 0 0 t }
+                .r7sRK { c: ac 0 t }
+                /// New group button.
+                /._3p0T6 { c: 0 0 ac }
+                /// Remove borders.
+                ._2DxRd, ._2WP9Q { border: none }
+            }
+            /// Starred/Archived.
+            ._1WMT2 {
+                &::before {
+                    margin-top: -1px;
+                    left: 0;
+                    c: 0 0 bd;
+                }
+                &::after { content: none }
+                &._1lakC, &._2nA3s, &._2V_Wj { c: 0 0 #55555510 }
+                ._2V2qB, .jLybP::before { c: cm }
+                /// Reset tails.
+                .tail {
+                    &, > div[class] { rad: 7.5px i }
+                    &-container { display: none i }
+                }
+                /// Reset avatars.
+                [style *= 'height: 26px; width: 26px'] {
+                    c: 0 0 t;
+                }
+            }
+            /// Blocked contacts.
+            ._2TLLH { c: 0 t }
+            ._13U-5, /._3dwyT { c: cm }
+            ._1i7uJ { c: 0 0 bd }
+            /// Version info.
+            ._357v7 { c: fg }
+        }
+        /// Right -> Replace shadow with borders.
+        ._2LSbZ { box-shadow: 0 -1px bd i }
+    }
+
+    // App -> Right.
+    ._1C9rS .copyable-area {
+        border-left: 1px solid bd;
+        /// Avatar.
+        [style *= 'height: 200px'] {
+            c: 0 0 bd;
+            /// Default avatar.
+            ._2EaHs { c: 0 0 hl }
+        }
+        ._1drsQ { c: fg }
+        ._2IwIk, ._1goQ0 { c: cm }
+        /// Buttons.
+        ._3_-Si {
+            padding: 0 15px;
+            > ._2x2XP { padding-right: 0 }
+            > div { c: 0 bd }
+            span { c: fg }
+        }
+        /// Reset padding.
+        ._1ur1f { padding: 28px 15px 19px }
+        ._2ZVEo { padding: 14px 15px 10px }
+        ._2k1Z5 { padding: 14px 15px 4px }
+        ._3EN0l { padding: 14px 15px }
+        .ujWpH { padding: 14px 15px }
+        ._2nQ7u, ._1goQ0 { padding: 0 }
+        ._2nQ7u + div[class] > div { padding-top: 1px }
+        ._2LSbZ._2j5ir { margin-bottom: unset }
+        ._1tyVr {
+            padding: 0 15px;
+            width: auto;
+        }
+        /// Message info -> Image.
+        ._2rGVQ {
+            border-bottom: 1px solid bd;
+            c: 0 0 t;
+        }
+        /// Message info -> Read by.
+        ._2AJf5 {
+            c: 0 0 t;
+            span { c: ac }
+        }
+        /// Message info -> X remaining.
+        ._19xqi {
+            c: 0 0 t;
+            box-shadow: 0 1px bd;
+        }
+        /// HACK: Reset msg info in DMs but not in groups.
+        .rK2ei:not(._1c8mz):not(#z):not(#x) ._2UaNq:hover {
+            c: 0 0 t;
+            box-shadow: none i;
+        }
+        /// Read/Delivered section.
+        ._2WP9Q { border: none }
+        /// Search -> Default message.
+        ._3dwyT { c: cm }
+        /// Search -> Items on hover.
+        [style]:not(#z):not(#x) > div > ._2UaNq {
+            &._3sA1g:hover, &._3mMX1, &.hover { c: 0 0 #55555510 }
+        }
+        /// Search -> Msg content/date.
+        span[title] > span[dir] { c: fg }
+        /._0LqQ { c: cm }
+        /// Starred messages header.
+        .BfrqJ > header._3jHKU {
+            height: 59px;
+            c: 0 0 hl;
+            box-shadow: inset 0 -1px bd;
+            div { c: fg }
+        }
+        /// Media/Links/Docs -> Selected header.
+        .yrOIH {
+            c: 0 0 hl;
+            box-shadow: inset 0 -1px bd;
+            span { c: fg }
+        }
+        /// Media/Links/Docs -> Content.
+        [data-active-tab] {
+            border-bottom: 1px solid bd;
+            c: 0 0 t;
+            button {
+                c: cm;
+                &:hover { c: 0 0 hl }
+                &._3caqI { c: fg }
+            }
+            /// Selected.
+            &::before {
+                margin-bottom: -1px;
+                height: 1px;
+                c: 0 0 ac;
+            }
+            /// Selected media.
+            /._2Ji5m { c: 0 hl }
+        }
+    }
+
+    // Main -> Chat.
+    #main {
+        c: 0 0 bg;
+        /// Chat doodle image.
+        /[data-asset-chat-background] {
+            opacity: 1;
+            filter: invert(var(--chat-bg-i)) opacity(var(--chat-bg-o));
+            background: var(--chat-image);
+            /// Feat -> Show chat image.
+            if ( chat_bg != 1 ) { display: none }
+        }
+        /// Chat header.
+        > header {
+            border-right: none;
+            border-bottom: 1px solid bd;
+            c: 0 bd hl;
+            &::after { content: none }
+            [style *= 'height: 40px'] { c: 0 0 t }
+            [title] { c: fg }
+            /// Muted color for group members.
+            > div:nth-child(2) > div:nth-child(2) span[title] { c: cm }
+        }
+        /// Chat -> Loader.
+        ._2sOZc {
+            c: 0 0 hl;
+            box-shadow: inner, bsh;
+            svg circle { stroke: green }
+        }
+        /// Chat -> System messages.
+        .a7otO {
+            opacity: 0.95;
+            letter-spacing: 0;
+            font-weight: 600;
+            text-shadow: none;
+            c: fg 0 hl;
+            box-shadow: bsh, inner, inset 0 -3px bd;
+            &.S-bQb { c: orange }
+            &:not(.tail) { c: fg }
+        }
+        /// Chat -> Jump to new messages.
+        ._3KRbU {
+            c: 0 0 hl;
+            box-shadow: inner;
+            // &:hover { c: 0 0 bd }
+            .P6z4j { c: white 0 ac }
+        }
+        /// Messages area.
+        .copyable-area > div[tabindex] {
+            c: 0 bd;
+            /// Chat -> Fix message spacing reported in #43.
+            ._1ays2 {
+                display: flex i;
+                flex-direction: column i;
+            }
+            /// Chat -> Select messages.
+            &._2AqZl {
+                c: 0 0 t;
+                [class *= 'message-'] { position: relative }
+                /// Selected messages.
+                /.qTFAl {
+                    /// Pseudo-background.
+                    &::before {
+                        content: '';
+                        opacity: 0.6;
+                        position: absolute;
+                        top: 0; left: 0; bottom: 0; right: 0;
+                    }
+                    /// States.
+                    &:hover, &._3Z2tD {
+                        c: 0 0 t;
+                        &::before { c: 0 0 hl }
+                    }
+                    /// Right -> Fix bg for checkbox button.
+                    &._21W00::before { c: 0 0 t }
+                }
+                /// Checkboxes.
+                ._15wNI {
+                    c: 0 ac ac;
+                    div { c: 0 white }
+                }
+                /// Reset icon opacity.
+                /._1wRbe {
+                    [data-icon = 'x'] { opacity: 0.55 i }
+                    &:disabled path { opacity: 0.55 i }
+                    path { opacity: 1 i }
+                }
+            }
+            /// Forwarded message.
+            /._8fE-g { c: cm }
+            /// X unread messages.
+            ._3Xx0y {
+                c: fg bd hl;
+                > span { c: 0 0 bd }
+            }
+            /// Attached files.
+            a[title] {
+                > ._1mrMQ { c: fg 0 bg }
+                + div { &, > span::before { c: cm }}
+            }
+            /// Rich embeds.
+            ._1SsXF {
+                div > div:nth-child(1) span { c: fg }
+                div > div:nth-child(2) span { c: cm }
+                div > div:nth-child(3) span { c: fg }
+            }
+            /// Deleted message.
+            ._2v02G, ._3uHCS {
+                c: cm;
+                [data-icon] path { fill: cm }
+            }
+            /// 'Read more' button.
+            /._1Jc9f, /._3THW4 { c: ac }
+            /// 'Join group' button.
+            /._1PENu {
+                c: 0 bg;
+                [role = 'button'] { c: ac }
+            }
+        }
+        /// Feat -> Blur img/videos.
+        if ( chat_b_img == 1 ) {
+            [class *= 'message-'] [style *= 'height'] {
+                > img, > div[style], video {
+                    transition: 500ms ease;
+                    transition-delay: 0ms;
+                    filter: blur(16px) grayscale(100%);
+                    &:hover {
+                        transition-delay: 500ms;
+                        filter: none i;
+                    }
+                }
+                /// HACK: Reset blur for videos.
+                &[style *= 'width'] > div:first-child:hover ~ div {
+                    > video {
+                        transition-delay: 500ms;
+                        filter: none i;
+                    }
+                }
+                /// HACK: Reset blur for audio msg avatars.
+                &[style *= 'width'] > img.jZhyM { filter: none i }
+                /// HACK: Reset img timestamp wrapper.
+                img[src] + div { pointer-events: none }
+            }
+        }
+        /// Chat -> Documents.
+        /._1mrMQ {
+            c: 0 0 bg;
+            /// Stats.
+            /._1o0MN { c: cm }
+        }
+        /// Embeds -> Background.
+        /.HNuTV, /._3qblR, /._1SsXF {
+            c: 0 0 bg;
+        }
+        /// Embeds -> Thumbnail.
+        /._3_nIn { c: 0 0 #55555510 }
+        /// Embeds -> Text.
+        /a[href][target = '_blank'], /._2Lp2x {
+            > * { c: cm }
+            > :first, > :last { &-child { c: fg }}
+        }
+        /// Embeds -> Shared contact.
+        /._1ikYm {
+            div[style *= 'base64'] { filter: none i }
+            ._2LRBk { c: fg }
+            ._3fnHB { c: cm }
+            ._1PENu { c: 0 bg }
+            [role = 'button'] {
+                c: ac;
+                &:hover { opacity: 0.8 }
+            }
+        }
+        /// Multiple contacts.
+        /.L4M2f, /._1d0W1 { c: 0 bg t }
+        /._3ZVco { c: fg }
+    }
+
+    // Main -> Chat message bubbles.
+    .message {
+        /// Feat -> Custom bubble colors.
+        ( chat_b_l == 'default' ) ? left = bd : left = b_l_bg;
+        ( chat_b_r == 'default' ) ? right = hl : right = b_r_bg;
+        /// Global bubble styles.
+        &-in, &-out {
+            /// Fix shadows.
+            > div:not(.a81-s) {
+                box-shadow: 0 1px 0.5px sh i;
+                > div { box-shadow: none i }
+            }
+            /// Tails.
+            .tail > .tail-container {
+                width: unset;
+                height: unset;
+                border: 6px solid t;
+                background: none !important;
+            }
+            /// Feat -> Message tails.
+            if ( chat_msg_t == 1 ) {
+                .tail {
+                    > div { rad: 7.5px i }
+                    .tail-container { display: none }
+                }
+            }
+            /// Date.
+            [data-pre-plain-text] + div * { c: cm }
+            /// Reset image context menu.
+            &._26GKj ._2Nkc4:not(#z) { background: none i  }
+            /// Stickers.
+            .a81-s {
+                /// Header.
+                ._3Mf7Z {
+                    c: 0 0 left;
+                    box-shadow: 0 1px sh i;
+                }
+                /// Date.
+                ._3qAvH {
+                    c: cm;
+                    box-shadow: 0 1px sh i;
+                    div { color: inherit }
+                }
+                /// Fix bubble radius.
+                if ( msg_tails != 1 ) {
+                    :not(.tail) > div > ._2Hp95._1X6iJ ._3Mf7Z { rad: 7.5px }
+                }
+            }
+            /// Context menu -> Images and forwarded messages.
+            > div > span:nth-last-child(2) > div[style] {
+                background: linear-gradient(30deg, t 65%, bg 120%) i;
+            }
+            /// Audio messages.
+            ._1lxsr, ._3MYI2 { c: cm }
+            /// Avatars.
+            [style *= 'height: 55px'] {
+                c: 0 0 bg;
+                box-shadow: bsh;
+                svg path[fill = '#DFE5E7'] { v: t }
+            }
+            /// Search -> Selected message.
+            &.velocity-animating { opacity: 0.4 }
+            /// Images -> Timestamp.
+            div[style *= 'width'][style *= 'height'] + .iVt71 {
+                padding: 2px 5px;
+                rad: 7.5px;
+                c: 0 0 hl;
+            }
+            /// Videos -> Timestamp.
+            .video-thumb {
+                ._3_IKd {
+                    padding: 2px 5px;
+                    rad: 7.5px;
+                    c: fg 0 bg;
+                }
+                + div > ._3MYI2 {
+                    padding: 2px 5px;
+                    rad: 7.5px;
+                    c: fg 0 bg;
+                }
+            }
+            /// Fix context menu height for shared contacts.
+            ._2rg5w._3EQsG { height: 50px }
+        }
+        /// Left.
+        &-in {
+            /// Not stickers.
+            > div:not(.a81-s) > div { c: fg 0 left }
+            /// Stickers -> Timestamp.
+            > div.a81-s ._3qAvH { c: 0 0 left }
+            /// Stickers -> Sender name bubble. #69
+            ._3tMyP {
+                c: 0 0 left;
+                box-shadow: 0 1px 0.5px sh i;
+            }
+            /// Reset tails.
+            .tail {
+                border-top-left-radius: 0 i;
+                > .tail-container {
+                    rad: 4px 0 0 0;
+                    border-top-color: left;
+                    border-right-color: left;
+                }
+            }
+            /// Groups -> Nickname.
+            [role] > span[role = 'button'] + span { c: fg }
+            /// Context menu.
+            > div > span:last-child > div[style] {
+                /// Non-stickers.
+                &:not(._2PpWQ) { background: linear-gradient(90deg, t, left 80%) i }
+                /// Stickers.
+                &._2PpWQ > div[style *= 'opacity'] { c: 0 0 left }
+                /// Images.
+                &._20WGU { background: linear-gradient(30deg, t 65%, #44444455 120%) i }
+                /// Fix context menu for local RTL layouts.
+                &._38wik._2Nkc4 { background: linear-gradient(270deg, t, left 80%) i }
+            }
+            /// Replies.
+            ._2HTIU { c: 0 0 bg }
+            /// Feat -> Align left bubble.
+            if ( chat_left == 1 ) { align-items: flex-end }
+        }
+        /// Right.
+        &-out {
+            /// Not stickers.
+            > div:not(.a81-s) > div { c: fg 0 right }
+            /// Stickers -> Timestamp.
+            > div.a81-s ._3qAvH { c: 0 0 right }
+            /// Reset tails.
+            .tail {
+                border-top-right-radius: 0 i;
+                > .tail-container {
+                    rad: 0 4px 0 0;
+                    border-top-color: right;
+                    border-left-color: right;
+                }
+            }
+            /// Context menu.
+            > div > span:last-child > div[style] {
+                /// Non-stickers.
+                &:not(._2PpWQ) { background: linear-gradient(90deg, t, right 80%) i }
+                /// Stickers.
+                &._2PpWQ div[style *= 'opacity'] { c: 0 0 right }
+                /// Images.
+                &._20WGU { background: linear-gradient(30deg, t 65%, #44444455 120%) i }
+                /// Fix context menu for local RTL layouts.
+                &._38wik._3EQsG { background: linear-gradient(270deg, t, right 80%) i }
+            }
+            /// Replies.
+            ._2HTIU { c: 0 0 bg }
+            /// Feat -> Align right bubble.
+            if ( chat_right == 1 ) {  align-items: flex-start }
+        }
+    }
+
+    // Main -> Upload preview.
+    ._1BdTk, ._1cJw0, .kqC9O {
+        border-left: 1px solid bd;
+        c: 0 0 bg;
+        header {
+            border-bottom: 1px solid bd;
+            c: fg 0 hl;
+        }
+        /// Input.
+        .Am8s6 { c: cm }
+        ._3ogpF { c: 0 ac }
+        /// Footer.
+        > div[tabindex] > span:nth-child(2) {
+            border-top: 1px solid bd;
+            c: 0 0 hl;
+        }
+        /// Buttons.
+        /[role = 'button'] {
+            + ._2sn3C { c: 0 0 hl }
+            /// Left -> Remove group participant.
+            &._1Dfrr:hover {
+                c: 0 0 ac;
+                box-shadow: bsh;
+            }
+            /// Add file.
+            &[style *= 'opacity'] {
+                c: ac 0 bg;
+                box-shadow: inner;
+                &::after { c: 0 0 ac }
+            }
+            /// Send.
+            &._1g8sv {
+                c: 0 0 ac;
+                box-shadow: bsh;
+                transition: 0.15s ease;
+                &:hover { opacity: 0.75 }
+            }
+        }
+        /// Upload skeleton.
+        /.lC2xi {
+            c: 0 0 bg;
+            ._8C3uJ { c: fg bd }
+            ~ .NeQRT { c: 0 0 bg }
+        }
+    }
+
+    // Main -> Chat input.
+    #main > footer {
+        c: 0 0 t;
+        /// Emoji/gif/sticker icons.
+        .-XQxp {
+            /// Overwrite defaults. @upstream
+            path { fill-opacity: 0.55 }
+            /// Active.
+            &._1oNFt path {
+                fill-opacity: 1;
+                fill: ac;
+            }
+        }
+        /// Emoji picker.
+        ._2mlOb {
+            c: 0 bd hl;
+            box-shadow: inset 0 1px bd;
+            &::before { content: none }
+        }
+        /// Input area.
+        > div:first-child {
+            border-top: 1px solid bd;
+            c: 0 bd hl;
+            div[style] + div[tabindex] {
+                rad: radius-i;
+                c: 0 bd bg;
+                [style *= 'visibility'] {
+                    c: cm;
+                    /// Hide input placeholder.
+                    ../ .focused > div[style] { c: t }
+                }
+            }
+        }
+        /// Emoji/gif/sticker menu.
+        ._30sf0 {
+            c: 0 bd;
+            /// Header.
+            ._2avTY {
+                c: 0 0 hl;
+                box-shadow: inset 0 1px bd, inset 0 -1px bd;
+                div[style *= 'background'] { c: 0 0 ac }
+                > :not(._2wn58) { c: cm }
+                ._2wn58 { c: fg }
+                /// Stickers -> Active nav.
+                .Orl3a { c: 0 0 ac }
+            }
+            /// Body.
+            .QChXd, ._20KNO, .RxbUw {
+                c: 0 0 bg;
+                /// Search.
+                [data-tab] {
+                    c: 0 bd bg;
+                    label {
+                        c: fg bd hl;
+                        box-shadow: inner;
+                        input { c: fg }
+                    }
+                }
+                /// Header colors.
+                ._2lKjK { c: cm }
+                /// Gif -> Preloader.
+                ._2x9yi { c: 0 0 hl }
+                /// Stickers -> Retry button.
+                [data-id = 'retry'] { c: ac }
+            }
+        }
+        /// Chat -> Select messages.
+        + span:not([class]) > div {
+            border-left: 1px solid bd;
+            border-top: 1px solid bd;
+            c: 0 0 bg;
+        }
+        /// Alerts -> Not in your contacts.
+        ._2Pown {
+            c: fg bd hl;
+            [role = 'button'] {
+                c: cm 0 bd;
+                &:hover {
+                    c: fg;
+                    box-shadow: 0 4px 8px sh;
+                }
+            }
+        }
+        /// Alerts -> Not a group participant.
+        ._26pkE { c: cm }
+        /// Reply.
+        ._1ebw2 {
+            c: 0 0 bg;
+            box-shadow: bsh, inset 0 1px bd i;
+            /// Nickname.
+            /._1F9Ap:not(#z) { c: cm }
+            /// Content.
+            > div:first-child:not(#z) {
+                margin: 4px 0 8px 66px;
+                c: 0 0 hl;
+                div[role] { c: 0 0 hl }
+                /.quoted-mention { c: cm }
+                /// Add border around wrapper.
+                /._1SsXF, ._3LVMN {
+                    rad: 0 7.5px 7.5px 0;
+                    box-shadow: inset 0 0 0 1px bd;
+                }
+            }
+            /// Close button.
+            div:last-child {
+                position: relative;
+                c: 0 0 t;
+                /// Add clickable whitespace.
+                [role = 'button'] > span > svg {
+                    padding: 16px;
+                    border-radius: 6px;
+                }
+            }
+        }
+        /// Mention popout.
+        ._2j-wI {
+            c: 0 bd bg;
+            box-shadow: 0 -1px bd i;
+            &::before { content: none }
+            .XSeqj {
+                c: fg bd bg;
+                &._1Yz8K, &:hover { c: 0 0 hl }
+            }
+            ._3SW-z { c: cm }
+        }
+        /// Audio msg length.
+        /._2NdXo { c: cm }
+    }
+
+    // Fix whitespace for message content/timestamp. @upstream
+    html {
+        &[lang = 'vi'], &[lang = 'nl'] {
+            .EopGb { width: 56px }
+            ._2COY9 { width: 92px }
+        }
+    }
+
+    // Feat -> WIP Screenshot mode.
+    if ( ss-mode == 1 ) {
+        /:not(#x):not(#y):not(#z) {
+            /// Chat -> content / nickname / mention / timestamp / nick (right pane)
+            [class *= '-text'],
+            ._1QjgA > span,
+            .quoted-mention,
+            ._3fnHB,
+            ._3VvbK {
+                c: t;
+            }
+            [title] { c: t }
+            img, .emoji { visibility: hidden i }
+        }
+    }
+
+    /// Feat -> Compact mode.
+    if ( app_c_m == 1 ) {
+        /// Reset height/width if there's an overflow.
+        #app > div > .app {
+            @media screen and (max-height: 500px) { min-height: auto }
+            @media screen and (max-width: 648px) { min-width: auto }
+            // > div *:hover { box-shadow: inset 0 0 0 1px crimson i }
+        }
+        /// Compact mode.
+        @media screen and (max-width: app_c_m_w) {
+            .two, .three {
+                /// Left -> Settings/Contacts.
+                > div:nth-child(3) {
+                    flex: 0 0 80px i;
+                    transition: 0.2s ease;
+                    &:hover, &:focus-within { flex: 0 0 30% i }
+                }
+            }
+            .two {
+                /// Reset upload preview.
+                >  div:nth-child(2) > div._2rI9W {
+                    flex: 0 0 calc(100% - 80px) i;
+                    margin-left: calc(-25% + 80px);
+                }
+                /// Expand contacts.
+                > div:nth-child(3) {
+                    min-width: 1px i;
+                    transition: 0.3s ease i;
+                    transition-delay: 1.2s i;
+                    &:hover {
+                        min-width: 400px i;
+                        transition-delay: var(--c-m-hover) i;
+                        flex: 0 0 30% i;
+                    }
+                }
+                /// Settings.
+                ._3kF8H { flex: 0 0 25% }
+            }
+            .three {
+                /// Reset upload preview.
+                >  div:nth-child(2) > div._2rI9W {
+                    flex: 0 0 calc(100% - 30% - 80px) i;
+                    margin-left: calc(-25% + 80px);
+                }
+                /// Reset chat when info is open.
+                > div:nth-child(4) {
+                    flex: 0 0 calc(100% - 30% - 80px) i;
+                }
+                /// Don't expand left pane.
+                > div:nth-child(3):hover { flex: 0 0 80px i }
+                /// Right -> Info pane.
+                ._1C9rS {
+                    flex: 0 0 30% i;
+                    c: 0 t;
+                }
+            }
+            /// Fix search bar width.
+            .ZP8RM:not(._19OGD) label { padding: 0px }
+            /// Contacts.
+            #side {
+                // Fix header width.
+                > header {
+                    min-width: 240px;
+                    /// Hide notifications.
+                    + span { display: none }
+                }
+                /// HACK: Unread message indicator.
+                ._2UaNq .xD91K {
+                    z-index: 199 i;
+                    display: flex i;
+                    flex-direction: row-reverse i;
+                }
+                /// Items.
+                ._2UaNq {
+                    /// Remove unnecessary icons.
+                    ._1ZMSM > span:not(.P6z4j) { display: none i }
+                    /// Reset text position.
+                    .xD91K span[dir] { margin-left: 10px }
+                    /// Unread messages.
+                    ._1ZMSM .P6z4j {
+                        z-index: 999 i;
+                        line-height: 22px i;
+                        margin: 7px 0px 0px -60px i;
+                        box-shadow: 0 0 0 3px hl i;
+                    }
+                    /// Message status.
+                    ._3VIru {
+                        padding: 0.5px;
+                        z-index: 101;
+                        position: absolute;
+                        margin: 5px 0 0 -55px;
+                        border-radius: 50%;
+                        c: 0 0 bg;
+                        box-shadow: 0 0 0 3px hl;
+                        /// Make SVG smaller.
+                        > span > svg {
+                            padding: 2px;
+                            height: 14px i;
+                            width: 14px i;
+                        }
+                    }
+                    /// Active states.
+                    &._3mMX1 .xD91K {
+                        .P6z4j, ._3VIru { box-shadow: 0 0 0 3px bd i }
+                    }
+                    &:hover:not(._3mMX1) .xD91K {
+                        .P6z4j, ._3VIru {
+                            box-shadow: 0 0 0 3px #ffffff05, 0 0 0 3px hl i;
+                        }
+                    }
+                }
+                /// Unset overflow to be able to see indicators.
+                ._0LqQ {
+                    margin-left: -10px i;
+                    overflow: unset i;
+                    /// Prevents indicators jumping all over the place.
+                    > span:last-child:not(._17TaE) { display: none i }
+                }
+            }
+        }
+    }
+}
