@@ -9,7 +9,7 @@
 @license      MIT
 @preprocessor stylus
 
-@var checkbox theme      'Old/custom colorscheme' 0
+@var checkbox theme      'Old/custom or new color-scheme' 0
 @var text     ui_font    'App: Custom UI font   ' ''font_name''
 @var text     radius-g   'App: Global el radius ' 4px
 @var text     radius-i   'App: Inputfield radius' 4px
@@ -61,11 +61,11 @@
 @var checkbox ss-mode    'App: Screenshot mode  ' 0
 @var checkbox ff_scroll  'Thin scrollbars in Firefox' 1
 
-@var color dark    'Color: Primary background   ' #292929
-@var color darken  'Color: Highlight background ' #333333
-@var color darker  'Color: Secondary background ' #424242
-@var color light   'Color: Primary foreground   ' #e6e6e6
-@var color lighter 'Color: Secondary foreground ' #bababa
+@var color dark    'Color: Primary background   ' #1f232a
+@var color darken  'Color: Highlight background ' #252A33
+@var color darker  'Color: Secondary background ' #2c313a
+@var color light   'Color: Primary foreground   ' #e9e9e9
+@var color lighter 'Color: Secondary foreground ' #a1a1a1
 @var color accent  'Color: Accent               ' #7289da
 @var color yellow  'Color: Yellow               ' #f0c674
 @var color orange  'Color: Orange               ' #d98245
@@ -88,7 +88,7 @@
             * { scrollbar-width: thin }
         }
         /// Feat -> Toggle between themes.
-        if ( theme == 1 ) {
+        if ( theme == 0 ) {
             --dark      : dark;
             --darken    : darken;
             --darker    : darker;
@@ -98,11 +98,11 @@
             --shadow    : sh;
             --sh-h      : sh-h;
         } else {
-            --dark      : #1f232a;
-            --darken    : #252A33;
-            --darker    : #2c313a;
-            --light     : #e9e9e9;
-            --lighter   : #a1a1a1;
+            --dark      : #292929;
+            --darken    : #333333;
+            --darker    : #424242;
+            --light     : #e6e6e6;
+            --lighter   : #bababa;
             --accent    : accent;
             --shadow    : sh;
             --sh-h      : sh-h;
