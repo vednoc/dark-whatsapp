@@ -13,6 +13,7 @@
 @var text     ui_font    'App: Custom UI font   ' ''font_name''
 @var text     radius-g   'App: Global el radius ' 4px
 @var text     radius-i   'App: Inputfield radius' 4px
+@var checkbox app_c_m    'Enable compact mode   ' 1
 @var checkbox fullscreen 'App: Enable fullscreen' 0
 @var text     app_width  'App: Custom max-width ' 1396px
 
@@ -1642,6 +1643,128 @@
             }
             [title] { c: t }
             img, .emoji { visibility: hidden i }
+        }
+    }
+
+    /// Feat -> Compact mode.
+    if ( app_c_m == 1 ) {
+        /// Reset height/width if there's an overflow.
+        #app > div > .app {
+            @media screen and (max-height: 500px) { min-height: auto }
+            @media screen and (max-width: 648px) { min-width: auto }
+            // > div *:hover { box-shadow: inset 0 0 0 1px crimson i }
+        }
+        /// Compact mode.
+        @media screen and (max-width: 9999px) {
+            .two, .three {
+                /// Left -> Settings/Contacts.
+                > div:nth-child(3) {
+                    flex: 0 0 80px i;
+                    transition: 0.2s ease;
+                    &:hover, &:focus-within { flex: 0 0 30% i }
+                }
+            }
+            .two {
+                /// Reset upload preview.
+                >  div:nth-child(2) > div._2rI9W {
+                    flex: 0 0 calc(100% - 80px) i;
+                    margin-left: calc(-25% + 80px);
+                }
+                /// Expand contacts.
+                > div:nth-child(3) {
+                    min-width: 1px i;
+                    transition: 0.3s ease i;
+                    transition-delay: 1.2s i;
+                    &:hover {
+                        min-width: 400px i;
+                        transition-delay: var(--hover-delay) i;
+                        flex: 0 0 30% i;
+                    }
+                }
+                /// Settings.
+                ._3kF8H { flex: 0 0 25% }
+            }
+            .three {
+                /// Reset upload preview.
+                >  div:nth-child(2) > div._2rI9W {
+                    flex: 0 0 calc(100% - 30% - 80px) i;
+                    margin-left: calc(-25% + 80px);
+                }
+                /// Reset chat when info is open.
+                > div:nth-child(4) {
+                    flex: 0 0 calc(100% - 30% - 80px) i;
+                }
+                /// Don't expand left pane.
+                > div:nth-child(3):hover { flex: 0 0 80px i }
+                /// Right -> Info pane.
+                ._1C9rS {
+                    flex: 0 0 30% i;
+                    c: 0 t;
+                }
+            }
+            /// Fix search bar width.
+            .ZP8RM:not(._19OGD) label { padding: 0px }
+            /// Contacts.
+            #side {
+                // Fix header width.
+                > header {
+                    min-width: 240px;
+                    /// Hide notifications.
+                    + span { display: none }
+                }
+                /// HACK: Unread message indicator.
+                ._2UaNq .xD91K {
+                    z-index: 199 i;
+                    display: flex i;
+                    flex-direction: row-reverse i;
+                }
+                /// Items.
+                ._2UaNq {
+                    /// Remove unnecessary icons.
+                    ._1ZMSM > span:not(.P6z4j) { display: none i }
+                    /// Reset text position.
+                    .xD91K span[dir] { margin-left: 10px }
+                    /// Unread messages.
+                    ._1ZMSM .P6z4j {
+                        z-index: 999 i;
+                        line-height: 22px i;
+                        margin: 7px 0px 0px -60px i;
+                        box-shadow: 0 0 0 3px hl i;
+                    }
+                    /// Message status.
+                    ._3VIru {
+                        padding: 0.5px;
+                        z-index: 101;
+                        position: absolute;
+                        margin: 5px 0 0 -55px;
+                        border-radius: 50%;
+                        c: 0 0 bg;
+                        box-shadow: 0 0 0 3px hl;
+                        /// Make SVG smaller.
+                        > span > svg {
+                            padding: 2px;
+                            height: 14px i;
+                            width: 14px i;
+                        }
+                    }
+                    /// Active states.
+                    &._3mMX1 .xD91K {
+                        .P6z4j, ._3VIru { box-shadow: 0 0 0 3px bd i }
+                    }
+                    &:hover:not(._3mMX1) .xD91K {
+                        .P6z4j, ._3VIru {
+                            box-shadow: 0 0 0 3px #ffffff05, 0 0 0 3px hl i;
+                        }
+                    }
+                }
+                /// Unset overflow to be able to see indicators.
+                ._0LqQ {
+                    margin-left: -10px i;
+                    overflow: unset i;
+                    /// Prevents indicators jumping all over the place.
+                    > span:last-child:not(._17TaE) { display: none i }
+                }
+            }
         }
     }
 }
