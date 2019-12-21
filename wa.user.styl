@@ -10,55 +10,53 @@
 @preprocessor stylus
 
 @var checkbox theme      'Old/custom or new color-scheme' 0
-@var text     ui_font    'App: Custom UI font   ' ''font_name''
-@var text     radius-g   'App: Global el radius ' 4px
-@var text     radius-i   'App: Inputfield radius' 4px
+@var text     ui_font    'Custom UI font' ''font_name''
+@var text     radius-g   'Custom rounded corners for menus' 4px
+@var text     radius-i   'Custom rounded corners for input area' 4px
+@var text     app_width  'Custom width for chat app' 1396px
+@var checkbox fullscreen 'Enable fullscreen mode' 0
 @var checkbox app_c_m    'Enable compact mode' 1
-@var text     app_c_m_w  'Compact mode width' 720px
-@var text     app_c_m_h  'Compact mode hover delay' 1s
-@var checkbox fullscreen 'App: Enable fullscreen' 0
-@var text     app_width  'App: Custom max-width ' 1396px
+@var text     app_c_m_w  'Compact mode breakpoint' 720px
+@var text     app_c_m_h  'Compact mode on-hover delay' 1s
 
-@var checkbox emoji_t    'Emoji: Transparent img' 1
-@var range    emoji_o    'Emoji: Default opacity' [0.8, 0.0, 1, 0.01]
-@var range    emoji_r    'Emoji: Clip size      ' [49, 48, 70, 1, '%']
+@var checkbox chat_b_c   'Enable blurred contacts' 0
+@var checkbox chat_b_img 'Enable blurred images/videos' 0
 
-@var select   app_image  'App: Custom background' {
+@var checkbox chat_msg_t 'Hide message tails' 0
+
+@var checkbox chat_left  'Left message bubble position' 0
+@var checkbox chat_right 'Right message bubble position' 0
+
+
+@var checkbox emoji_t    'Enable transparent emojis' 1
+@var range    emoji_o    'Emoji default opacity' [0.8, 0.0, 1, 0.01]
+
+@var select   app_image  'Custom app background' {
     'Custom  *': 'custom  ',
     'Default  ': 'default ',
     'None     ': 'none    ',
 }
-@var text     image_url  'App: Custom bg link   ' url('https://images.unsplash.com/photo-1434569117012-ce134ee1a088?fit=crop&w=1280&h=720&q=80')
-@var range    bg_opacity 'App: Image opacity    ' [0.5, 0.0, 1, 0.01]
-@var range    bg_blur    'App: Image blur size  ' [8, 0, 50, 1, 'px']
-@var range    bg_hue     'App: Image hue        ' [0, 0, 360, 1, 'deg']
-@var range    bg_invert  'App: Image inversion  ' [0, 0.0, 1, 0.1]
+@var text     image_url  'Custom background image link' url('https://images.unsplash.com/photo-1434569117012-ce134ee1a088?fit=crop&w=1280&h=720&q=80')
+@var range    bg_opacity 'Background image opacity' [0.4, 0.0, 1, 0.01]
+@var range    bg_blur    'Background image blur size' [12, 0, 50, 1, 'px']
+@var range    bg_hue     'Background image hue' [320, 0, 360, 1, 'deg']
+@var range    bg_invert  'Background image invert colors' [0, 0.0, 1, 0.1]
 
-@var checkbox chat_msg_t 'Chat: Hide msg tails  ' 0
+@var checkbox chat_bg    'Enable chat background image' 1
+@var text     chat_image 'Custom image for chat' url('/img/bg-chat-tile_8a055527b27b887521a9f084497d8879.png')
+@var range    chat_bg_o  'Chat background image opacity' [0.1, 0.0, 1, 0.01]
+@var range    chat_bg_i  'Chat background image inverted colors' [0.6, 0.0, 1, 0.1]
 
-@var select chat_b_l     'Chat: Left bubble bg  ' {
+@var select chat_b_l     'Left message bubble background' {
     'Default *': 'default ',
     'Custom   ': 'custom  ',
 }
-@var color b_l_bg  'Chat: Left bubble custom bg ' #222730
-@var select chat_b_r     'Chat: Right bubble bg ' {
+@var color b_l_bg  'Left bubble color' #222730
+@var select chat_b_r     'Right message bubble background' {
     'Default *': 'default ',
     'Custom   ': 'custom  ',
 }
-@var color b_r_bg  'Chat: Right bubble custom bg' #1f232a
-
-@var checkbox chat_b_c   'Chat: Blur contacts   ' 0
-@var checkbox chat_b_img 'Chat: Blur img/videos ' 0
-
-@var checkbox chat_bg    'Chat: Show bg image   ' 1
-@var text     chat_image 'Chat: Custom image URL' url('/img/bg-chat-tile_8a055527b27b887521a9f084497d8879.png')
-@var range    chat_bg_o  'Chat: Bg image opacity' [0.1, 0.0, 1, 0.01]
-@var range    chat_bg_i  'Chat: Bg image invert ' [0.6, 0.0, 1, 0.1]
-
-@var checkbox chat_left  'Chat: Align left msg  ' 0
-@var checkbox chat_right 'Chat: Align right msg ' 0
-
-@var checkbox ss-mode    'App: Screenshot mode  ' 0
+@var color b_r_bg  'Right bubble color' #1f232a
 @var checkbox ff_scroll  'Thin scrollbars in Firefox' 1
 
 @var color dark    'Color: Primary background   ' #1f232a
@@ -123,7 +121,6 @@
         --app-width : app_width;
 
         --emoji-o   : emoji_o;
-        --emoji-r   : emoji_r;
 
         --bg-image  : image_url;
         --bg-opacity: bg_opacity;
@@ -461,7 +458,7 @@
                 }
             }
         } else {
-            clip-path: circle(var(--emoji-r));
+            clip-path: circle(49%);
         }
     }
 
