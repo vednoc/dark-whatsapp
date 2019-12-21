@@ -19,7 +19,7 @@ Complete, feature-rich, very customizable userstyle for WhatsApp.
 
 ## Preview
 
-Version 1.3.0 with default settings.
+Version 2.0.0 with default options, and Inter as the UI font.
 
 ![preview](images/preview.png)
 
@@ -31,7 +31,7 @@ To use this style you have to install [Stylus](https://add0n.com/stylus.html) an
 [![Install directly with Stylus][badge]][style]
 
 [badge]: https://img.shields.io/badge/Install%20directly%20with-Stylus-116b59.svg?longCache=true&style=for-the-badge
-[style]: https://raw.githubusercontent.com/vednoc/onyx/master/WhatsApp.user.css
+[style]: https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.styl
 
 **NOTE:** _Stylish_ is only supported through [userstyles.org](https://userstyles.org/styles/142096); it's obsolete, please replace it with Stylus.
 
