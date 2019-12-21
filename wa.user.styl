@@ -13,7 +13,9 @@
 @var text     ui_font    'App: Custom UI font   ' ''font_name''
 @var text     radius-g   'App: Global el radius ' 4px
 @var text     radius-i   'App: Inputfield radius' 4px
-@var checkbox app_c_m    'Enable compact mode   ' 1
+@var checkbox app_c_m    'Enable compact mode' 1
+@var text     app_c_m_w  'Compact mode width' 720px
+@var text     app_c_m_h  'Compact mode hover delay' 1s
 @var checkbox fullscreen 'App: Enable fullscreen' 0
 @var text     app_width  'App: Custom max-width ' 1396px
 
@@ -132,6 +134,8 @@
         --chat-image: chat_image;
         --chat-bg-o : chat_bg_o;
         --chat-bg-i : chat_bg_i;
+
+        --c-m-hover : app_c_m_h;
 
         --ui-font   : ui_font, 'Segoe UI', 'Helvetica Neue', Helvetica,
             'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif;
@@ -1655,7 +1659,7 @@
             // > div *:hover { box-shadow: inset 0 0 0 1px crimson i }
         }
         /// Compact mode.
-        @media screen and (max-width: 9999px) {
+        @media screen and (max-width: app_c_m_w) {
             .two, .three {
                 /// Left -> Settings/Contacts.
                 > div:nth-child(3) {
@@ -1677,7 +1681,7 @@
                     transition-delay: 1.2s i;
                     &:hover {
                         min-width: 400px i;
-                        transition-delay: var(--hover-delay) i;
+                        transition-delay: var(--c-m-hover) i;
                         flex: 0 0 30% i;
                     }
                 }
