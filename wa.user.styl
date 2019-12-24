@@ -1356,13 +1356,15 @@
             }
             /// Search -> Selected message.
             &.velocity-animating { opacity: 0.4 }
-            /// Images -> Timestamp.
-            div[style *= 'width'][style *= 'height'] + .iVt71 {
-                padding: 2px 5px;
-                rad: 7.5px;
-                c: 0 0 hl;
+            /// Image/gif -> Timestamp background.
+            div[style *= 'width'][style *= 'height'] {
+                + .iVt71, + ._3hsuL {
+                    padding: 2px 5px;
+                    rad: 7.5px;
+                    c: 0 0 hl;
+                }
             }
-            /// Videos -> Timestamp.
+            /// Videos -> Timestamp background.
             .video-thumb {
                 ._3_IKd {
                     padding: 2px 5px;
