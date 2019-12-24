@@ -10,7 +10,6 @@
 @license      MIT
 @preprocessor stylus
 
-@var checkbox theme      'Old/custom or new color-scheme' 0
 @var text     ui_font    'Custom UI font' ''font_name''
 @var text     radius-g   'Custom rounded corners for menus' 4px
 @var text     radius-i   'Custom rounded corners for input area' 4px
@@ -60,6 +59,12 @@
 @var color b_r_bg  'Right bubble color' #1f232a
 @var checkbox ff_scroll  'Thin scrollbars in Firefox' 1
 
+@var select theme 'Color-scheme' {
+    'Dark blue (old) *': 'old',
+    'Dark gray (new)  ': 'new',
+    'Custom colors    ': 'custom',
+}
+
 @var color dark    'Color: Primary background   ' #1f232a
 @var color darken  'Color: Highlight background ' #252A33
 @var color darker  'Color: Secondary background ' #2c313a
@@ -86,25 +91,28 @@
         if ( ff_scroll == 1 ) {
             * { scrollbar-width: thin }
         }
-        /// Feat -> Toggle between themes.
-        if ( theme == 0 ) {
+        /// Feat -> Toggle between themes. #32
+        if ( theme == 'old' ) {
+            --dark      : #1f232a;
+            --darken    : #252a33;
+            --darker    : #2c313a;
+            --light     : #e9e9e9;
+            --lighter   : #a1a1a1;
+            --accent    : #7289da;
+        } else if ( theme == 'new' ) {
+            --dark      : #292929;
+            --darken    : #333333;
+            --darker    : #424242;
+            --light     : #e6e6e6;
+            --lighter   : #bababa;
+            --accent    : #7289da;
+        } else {
             --dark      : dark;
             --darken    : darken;
             --darker    : darker;
             --light     : light;
             --lighter   : lighter;
             --accent    : accent;
-            --shadow    : sh;
-            --sh-h      : sh-h;
-        } else {
-            --dark      : #292929;
-            --darken    : #333333;
-            --darker    : #424242;
-            --light     : #e6e6e6;
-            --lighter   : #bababa;
-            --accent    : accent;
-            --shadow    : sh;
-            --sh-h      : sh-h;
         }
         --yellow    : yellow;
         --orange    : orange;
@@ -117,6 +125,8 @@
         --white     : white;
         --radius    : radius-g;
         --t         : transparent;
+        --shadow    : sh;
+        --sh-h      : sh-h;
         --bshadow   : 0 2px 4px var(--shadow);
 
         --app-width : app_width;
