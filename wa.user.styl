@@ -339,6 +339,12 @@
         /// Left -> Typing indicator.
         span[title *= 'typing...'], ._2ZAIy { c: ac }
 
+        /// Global -> Mentions.
+        /[data-mention-jid] .at-symbol {
+            c: cm;
+            + span { c: ac }
+        }
+
         /// Global -> Checkboxes.
         ._1Zo-R { c: 0 cm hl }
         ._15wNI { c: 0 ac ac }
