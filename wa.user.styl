@@ -24,9 +24,14 @@
 
 @var checkbox chat_msg_t 'Enable message tails' 1
 
-@var checkbox chat_left  'Left message bubble position' 0
-@var checkbox chat_right 'Right message bubble position' 0
-
+@var select chat_left 'Left message bubble position' {
+    'Left side  *': 'start ',
+    'Right side  ': 'end   ',
+}
+@var select chat_right 'Right message bubble position' {
+    'Left side   ': 'start ',
+    'Right side *': 'end   ',
+}
 
 @var checkbox emoji_t    'Enable transparent emojis' 1
 @var range    emoji_o    'Emoji default opacity' [0.8, 0.0, 1, 0.01]
@@ -1437,7 +1442,7 @@
             /// Replies.
             ._2HTIU { c: 0 0 bg }
             /// Feat -> Align left bubble.
-            if ( chat_left == 1 ) { align-items: flex-end }
+            if ( chat_left == 'end' ) { align-items: flex-end }
         }
         /// Right.
         &-out {
@@ -1468,7 +1473,7 @@
             /// Replies.
             ._2HTIU { c: 0 0 bg }
             /// Feat -> Align right bubble.
-            if ( chat_right == 1 ) {  align-items: flex-start }
+            if ( chat_right == 'start' ) { align-items: flex-start }
         }
     }
 
