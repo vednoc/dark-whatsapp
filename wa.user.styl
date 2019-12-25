@@ -28,10 +28,14 @@
     'Left side  *': 'start ',
     'Right side  ': 'end   ',
 }
+@var checkbox chat_b_l 'Custom background for left message bubble' 0
+@var color b_l_bg 'Left message bubble color' #222730
 @var select chat_right 'Right message bubble position' {
     'Left side   ': 'start ',
     'Right side *': 'end   ',
 }
+@var checkbox chat_b_r 'Custom background for right message bubble' 0
+@var color b_r_bg 'Right message bubble color' #1f232a
 
 @var checkbox emoji_t    'Enable transparent emojis' 1
 @var range    emoji_o    'Emoji default opacity' [0.8, 0.0, 1, 0.01]
@@ -52,16 +56,6 @@
 @var range    chat_bg_o  'Chat background image opacity' [0.1, 0.0, 1, 0.01]
 @var range    chat_bg_i  'Chat background image inverted colors' [0.6, 0.0, 1, 0.1]
 
-@var select chat_b_l     'Left message bubble background' {
-    'Default *': 'default ',
-    'Custom   ': 'custom  ',
-}
-@var color b_l_bg  'Left bubble color' #222730
-@var select chat_b_r     'Right message bubble background' {
-    'Default *': 'default ',
-    'Custom   ': 'custom  ',
-}
-@var color b_r_bg  'Right bubble color' #1f232a
 @var checkbox ff_scroll  'Thin scrollbars in Firefox' 1
 
 @var select theme 'Color-scheme' {
@@ -1323,8 +1317,8 @@
     // Main -> Chat message bubbles.
     .message {
         /// Feat -> Custom bubble colors.
-        ( chat_b_l == 'default' ) ? left = bd : left = b_l_bg;
-        ( chat_b_r == 'default' ) ? right = hl : right = b_r_bg;
+        ( chat_b_l == 0 ) ? left = bd : left = b_l_bg;
+        ( chat_b_r == 0 ) ? right = hl : right = b_r_bg;
         /// Global bubble styles.
         &-in, &-out {
             /// Fix shadows.
