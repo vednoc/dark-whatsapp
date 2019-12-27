@@ -1362,10 +1362,6 @@
                     :not(.tail) > div > ._2Hp95._1X6iJ ._3Mf7Z { rad: 7.5px }
                 }
             }
-            /// Context menu -> Images and forwarded messages.
-            > div > span:nth-last-child(2) > div[style] {
-                background: linear-gradient(30deg, t 65%, bg 120%) i;
-            }
             /// Audio messages.
             ._1lxsr, ._3MYI2 { c: cm }
             /// Avatars.
@@ -1435,6 +1431,13 @@
                 /// Fix context menu for messages with files.
                 /._15CAo._2Nkc4 { background: linear-gradient(90deg, t, left 80%) i }
             }
+            /// Context menu -> Forwarded messages.
+            > div > span:nth-last-child(2) > div[style] {
+                &._15CAo._3EQsG {
+                    height: 23px;
+                    background: linear-gradient(90deg, t, left 80%) i;
+                }
+            }
             /// Replies.
             ._2HTIU { c: 0 0 bg }
             /// Feat -> Align left bubble.
@@ -1467,6 +1470,13 @@
                 &._38wik._3EQsG { background: linear-gradient(270deg, t, right 80%) i }
                 /// Fix context menu for messages with files.
                 /._15CAo._2Nkc4 { background: linear-gradient(90deg, t, right 80%) i }
+            }
+            /// Context menu -> Forwarded messages.
+            > div > span:nth-last-child(2) > div[style] {
+                &._15CAo._3EQsG {
+                    height: 23px;
+                    background: linear-gradient(90deg, t, right 80%) i;
+                }
             }
             /// Replies.
             ._2HTIU { c: 0 0 bg }
