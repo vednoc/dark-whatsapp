@@ -2,8 +2,8 @@
 ** 2.0.0 [2019-12-21]
 Moving forward, all the changes will be documented here.
 
-Huge thanks to [[github:E-RELevant]] for testing and reporting bugs throughout this
-entire process. It wouldn't have been the same without your help. :tada:
+Huge thanks to [[https:github.com/E-RELevant][Erelephant]] for testing and reporting bugs throughout this entire
+process. It wouldn't have been the same without your help. :tada:
 
 *** About v1.x.x version
 *TL;DR:* It is going away soon.
