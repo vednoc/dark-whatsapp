@@ -1,6 +1,6 @@
 * Changelog
 ** 2.0.1 [2019-12-21]
-Thanks to [[https:github.com/E-RELevant][Erelephant]] for reporting quite a few of small bugs.
+Thanks to [[https://github.com/E-RELevant][Erelephant]] for reporting quite a few of small bugs.
 
 *** Improved
 - App background image is scaled properly
