@@ -1,4 +1,17 @@
 * Changelog
+** 2.0.1 [2019-12-21]
+Thanks to [[https:github.com/E-RELevant][Erelephant]] for reporting quite a few of small bugs.
+
+*** Improved
+- App background image is scaled properly
+- Color-scheme option allows you to choose between old, new, and custom colors
+- Simplified the logic for message tails, bubble positions, and bubble colors
+*** Fixed
+- Mention's =@= symbol and contact name
+- Bold font weight and audio icon color in contact's area
+- Context menus for forwarded messages and messages with files
+- Missing timestamp background from gif messages
+
 ** 2.0.0 [2019-12-21]
 Moving forward, all the changes will be documented here.
 
