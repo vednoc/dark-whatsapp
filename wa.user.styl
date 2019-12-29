@@ -348,10 +348,14 @@
         /// Left -> Typing indicator.
         span[title *= 'typing...'], ._2ZAIy { c: ac }
 
-        /// Global -> Mentions.
-        /[data-mention-jid] .at-symbol {
-            c: cm;
-            + span { c: ac }
+        /.matched {
+            /// Global -> Matched text.
+            &-text:not(#z) { c: ac }
+            /// Global -> Mentions.
+            &-mention, /[data-mention-jid] {
+                c: ac;
+                .at-symbol { c: cm }
+            }
         }
 
         /// Global -> Checkboxes.
@@ -880,7 +884,6 @@
             /// Items.
             [style *= 'z-index'] > div > div[class] {
                 c: 0 0 t;
-                /.matched-text:not(#z) { c: ac }
                 /// Active states.
                 &:hover { c: 0 0 #55555515 }
                 &._3mMX1 { c: 0 0 bd }
