@@ -1,5 +1,17 @@
 * Changelog
-** 2.0.1 [2019-12-21]
+** 2.0.2 [2019-12-29]
+Minor bug fixes and improvements.
+
+*** Improved
+- Message tails has three options now (Thanks [[https://github.com/E-RELevant][Erelephant]] for this suggestion)
+
+*** Fixed
+- Border around reply content works properly now
+- Context menu for messages with files/links
+- Second selector for mentions in the chat area
+- Colors for forwarded status in message info area
+
+** 2.0.1 [2019-12-27]
 Thanks to [[https://github.com/E-RELevant][Erelephant]] for reporting quite a few of small bugs.
 
 *** Improved
