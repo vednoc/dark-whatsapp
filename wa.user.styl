@@ -754,6 +754,8 @@
             &:first-child { fill: bg }
             &:last-child { fill: cm }
         }
+        /// Chat -> Default avatars in replies.
+        &[data-icon $= '-square'] path:first-child { fill: t }
         /// Business accounts.
         &[data-icon ^= 'business-'] path { fill: cm }
         /// Audio files.
