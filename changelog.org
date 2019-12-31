@@ -1,4 +1,18 @@
 * Changelog
+** 2.0.3 [2019-12-31]
+Minor bug fixes and improvements.
+
+*** Improved
+- Navigation bar in emoji/gif/sticker menu
+- The =@= symbol color in mentions
+
+*** Fixed
+- Background for default avatars in replies
+- Audio slider colors in media player
+- Text color of video duration
+- Small border radius for reply/embed content
+- Glitchy menu in starred messages
+
 ** 2.0.2 [2019-12-29]
 Minor bug fixes and improvements.
 
@@ -18,6 +32,7 @@ Thanks to [[https://github.com/E-RELevant][Erelephant]] for reporting quite a fe
 - App background image is scaled properly
 - Color-scheme option allows you to choose between old, new, and custom colors
 - Simplified the logic for message tails, bubble positions, and bubble colors
+
 *** Fixed
 - Mention's =@= symbol and contact name
 - Bold font weight and audio icon color in contact's area
