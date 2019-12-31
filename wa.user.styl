@@ -356,10 +356,7 @@
             /// Global -> Matched text.
             &-text:not(#z) { c: ac }
             /// Global -> Mentions.
-            &-mention, /[data-mention-jid] {
-                c: ac;
-                .at-symbol { c: cm }
-            }
+            &-mention, /[data-mention-jid] { span { c: ac }}
         }
 
         /// Global -> Checkboxes.
