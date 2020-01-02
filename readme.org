@@ -1,0 +1,49 @@
+#+HTML: <div align="center">
+#+HTML: <img src="https://user-images.githubusercontent.com/20738487/71411679-0bc7b580-2653-11ea-99dd-f4c49a536132.png" width="96" height="96"/>
+
+* Dark-WhatsApp
+
+Complete, feature-rich, very customizable userstyle for WhatsApp.
+
+[[https://github.com/vednoc/dark-whatsapp/tags][https://img.shields.io/github/tag/vednoc/dark-whatsapp.svg?label=version&style=flat]]
+[[https://github.com/vednoc/dark-whatsapp/stargazers][http://github-svg-buttons.herokuapp.com/star.svg?user=vednoc&repo=dark-whatsapp&style=flat&background=007ec6]]
+[[https://github.com/vednoc/dark-whatsapp/network][https://img.shields.io/github/forks/vednoc/dark-whatsapp.svg?style=flat]]
+[[https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.styl][https://img.shields.io/badge/Install%20directly%20with-Stylus-116b59.svg?longCache=true&style=flat]]
+
+#+HTML: <img src="https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/images/preview.png"/>
+/Version 2.0.0 with default options and [[https://github.com/rsms/inter/][Inter]] as custom font./
+
+#+HTML: </div>
+
+** Features
+
+- Whole UI is styled to match the overall theme
+- Customizable colors, wide variety of light and dark color-schemes supported
+- Compact mode for small resolutions (since there is no official support for it yet)
+- Custom compact mode breakpoint and ability to disable it
+- Fullscreen mode, if you prefer using the app without wasted space
+- Private mode where contact list and/or images are blurred until you hover over them
+- Custom background images
+- Light/dark/no chat area dood
+- Enable/disable message's tails
+- Custom emoji opacity
+For the full feature list, go to the [[https://github.com/vednoc/dark-whatsapp/wiki][wiki]].
+
+** Installation
+
+You have to install [[https://add0n.com/stylus.html][Stylus]] and then click on the install link.
+
+**** /Stylish/ is only supported through [[https://userstyles.org/styles/142096][userstyles.org]]
+USo is still the largest repositiory for themes despite all the issues. Don't
+use this version unless you /really/ have to.
+**** Installing in /[[https://meetfranz.com/][Franz]]/
+A port of this theme is available in the [[https://github.com/dcferreira/franz-themes][dcferreira/franz-themes]] repository.
+
+** Contributions
+
+Any contribution is greatly appreciated. If you really like the project and
+would like to tip me then you can buy me a coffee over at [[https://ko-fi.com/vednoc][ko-fi]].
+
+** License
+
+Code released under the [[LICENSE][MIT]] license.
