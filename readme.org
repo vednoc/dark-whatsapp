@@ -10,7 +10,7 @@ Complete, feature-rich, very customizable userstyle for WhatsApp.
 [[https://github.com/vednoc/dark-whatsapp/network][https://img.shields.io/github/forks/vednoc/dark-whatsapp.svg?style=flat]]
 [[https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.styl][https://img.shields.io/badge/Install%20directly%20with-Stylus-116b59.svg?longCache=true&style=flat]]
 
-#+HTML: <img src="https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/images/preview.png"/>
+#+HTML: <img src="https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/images/preview.png" width="100%"/>
 /Version 2.0.0 with default options and [[https://github.com/rsms/inter/][Inter]] as custom font./
 
 #+HTML: </div>
