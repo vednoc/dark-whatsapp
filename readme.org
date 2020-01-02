@@ -3,7 +3,8 @@
 
 * Dark-WhatsApp
 
-Complete, feature-rich, very customizable userstyle for WhatsApp.
+Complete dark mode implementation for [[https://web.whatsapp.com][WhatsApp Web]] with many improvements and
+wide range of customizable options.
 
 [[https://github.com/vednoc/dark-whatsapp/tags][https://img.shields.io/github/tag/vednoc/dark-whatsapp.svg?label=version&style=flat]]
 [[https://github.com/vednoc/dark-whatsapp/stargazers][http://github-svg-buttons.herokuapp.com/star.svg?user=vednoc&repo=dark-whatsapp&style=flat&background=007ec6]]
@@ -31,9 +32,12 @@ For the full feature list, go to the [[https://github.com/vednoc/dark-whatsapp/w
 
 ** Installation
 
-You have to install [[https://add0n.com/stylus.html][Stylus]] and then click on the install link.
+You have to install [[https://add0n.com/stylus.html][Stylus]] and then click on the install link below.
 
-**** /Stylish/ is only supported through [[https://userstyles.org/styles/142096][userstyles.org]]
+[[https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.styl][https://img.shields.io/badge/Install%20directly%20with-Stylus-116b59.svg?longCache=true&style=flat]]
+
+*** Other ways to install this userstyle
+**** /Stylish/ is only supported through /[[https://userstyles.org/styles/142096][userstyles.org]]/
 USo is still the largest repositiory for themes despite all the issues. Don't
 use this version unless you /really/ have to.
 **** Installing in /[[https://meetfranz.com/][Franz]]/
