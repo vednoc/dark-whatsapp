@@ -18,17 +18,20 @@ wide range of customizable options.
 
 ** Features
 
-- Whole UI is styled to match the overall theme
-- Customizable colors, wide variety of light and dark color-schemes supported
-- Compact mode for small resolutions (since there is no official support for it yet)
-- Custom compact mode breakpoint and ability to disable it
-- Fullscreen mode, if you prefer using the app without wasted space
-- Private mode where contact list and/or images are blurred until you hover over them
-- Custom background images
-- Light/dark/no chat area dood
-- Enable/disable message's tails
-- Custom emoji opacity
-For the full feature list, go to the [[https://github.com/vednoc/dark-whatsapp/wiki][wiki]].
+- Complete dark mode implementation
+- Fully customizable colors (light/dark color-schemes fully supported)
+- Private mode where contacts and/or chat images are blurred by default
+- Compact mode for small resolutions (more of a hack; works well though)
+- Custom compact mode breakpoint and option to disable compact mode
+- Fullscreen mode if you prefer not wasting any space
+- Custom background images for app/chat background
+- Options to set custom bubble colors and align their positions
+- Custom emoji opacity and transparent emoji images
+- Light/dark/no chat area doodles
+- Various styles for message tails
+- Custom chat window width
+
+For the full feature list, visit the [[https://github.com/vednoc/dark-whatsapp/wiki][wiki]].
 
 ** Installation
 
