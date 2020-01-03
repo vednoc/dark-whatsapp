@@ -815,10 +815,10 @@
             c: 0 0 hl;
             box-shadow: 0 4px 12px sh-h;
             li {
-                &._3VXiW > div { c: 0 0 bd }
+                &._3VXiW { c: 0 0 bd }
                 > div {
                     c: cm;
-                    &:hover { c: fg 0 bd }
+                    &:hover { c: fg }
                 }
             }
             /// Chat -> Attach dropdown.
@@ -1631,6 +1631,8 @@
                 /// Stickers -> Retry button.
                 [data-id = 'retry'] { c: ac }
             }
+            /// Remove wrapper background.
+            /._3LFRS { c: 0 0 t }
         }
         /// Chat -> Select messages.
         + span:not([class]) > div {
