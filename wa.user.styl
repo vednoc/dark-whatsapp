@@ -885,8 +885,9 @@
             &::after { content: none }
             > div { c: cm }
             > div + label {
-                c: 0 0 t;
+                c: 0 0 bd;
                 input { c: fg 0 t }
+                &:focus-within{ c: 0 0 t; }
             }
         }
         /// Contacts.
