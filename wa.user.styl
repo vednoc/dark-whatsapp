@@ -805,6 +805,13 @@
         }
         /// Contacts -> Audio message.
         &[data-icon *= 'status-ptt-green'] > svg > path { fill: ac }
+        /// Global -> Starred messages.
+        &[data-icon = 'star'], &[data-icon = 'star-in'] {
+            > svg > path {
+                opacity: 1;
+                fill: ac;
+            }
+        }
     }
 
     // Global -> Context menu.
