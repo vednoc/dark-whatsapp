@@ -1,4 +1,19 @@
 * Changelog
+** 2.0.4 [2020-01-05]
+Minor bug fixes and improvements.
+
+*** Improved
+- Made readme friendlier ([[https://github.com/vednoc/dark-whatsapp/pull/71][#71]]) and rewrote it in org-mode
+- Search box and restored the old look ([[https://github.com/vednoc/dark-whatsapp/pull/73][#73]])
+- Star icons in messages are now using accent color
+- The way how thin scrollbars are applied in Firefox
+
+*** Fixed
+- An empty, old object-like, element that caused background glitches
+- Context menu in messages with embedded links
+- Outset for background blur
+- Media player's box shadow
+
 ** 2.0.3 [2019-12-31]
 Minor bug fixes and improvements.
 
