@@ -92,7 +92,9 @@
     :root {
         /// Feat -> Thin scrollbar in Firefox.
         if ( ff_scroll == 1 ) {
-            * { scrollbar-width: thin }
+            @supports (-moz-user-select: none) {
+                * { scrollbar-width: thin }
+            }
         }
         /// Feat -> Toggle between themes. #32
         if ( theme == 'old' ) {
