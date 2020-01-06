@@ -41,9 +41,9 @@ You have to install [[https://add0n.com/stylus.html][Stylus]] and then click on 
 
 *** Other ways to install this userstyle
 **** /Stylish/ is only supported through /[[https://userstyles.org/styles/142096][userstyles.org]]/
-**** Installing in /[[https://meetfranz.com/][Franz]]/
 USo is still the largest repository for themes despite all the issues. Don't
 use this version unless you /absolutely/ have to.
+**** Installing in /[[https://meetfranz.com/][Franz]]/ or /[[https://getferdi.com][Ferdi]]/
 A port of this theme is available in the [[https://github.com/dcferreira/franz-themes][dcferreira/franz-themes]] repository.
 
 ** Contributions
