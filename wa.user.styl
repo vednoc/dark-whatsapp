@@ -810,7 +810,8 @@
         /// Contacts -> Audio message.
         &[data-icon *= 'status-ptt-green'] > svg > path { fill: ac }
         /// Global -> Starred messages.
-        &[data-icon = 'star'], &[data-icon = 'star-in'] {
+        /// Applys to 'star', 'star-in' & 'star-light'
+        &[data-icon *= 'star'] {
             > svg > path {
                 opacity: 1;
                 fill: ac;
