@@ -1,7 +1,7 @@
 #+HTML: <div align="center">
 #+HTML: <img src="https://user-images.githubusercontent.com/20738487/71411679-0bc7b580-2653-11ea-99dd-f4c49a536132.png" width="96" height="96"/>
 
-* Dark-WhatsApp
+* Dark-WhatsApp (né onyx)
 
 Complete dark mode implementation for [[https://web.whatsapp.com][WhatsApp Web]] with many improvements and
 wide range of customizable options.
