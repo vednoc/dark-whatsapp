@@ -741,9 +741,24 @@
                 transition: 0.15s ease;
             }
             /// Animate-ish.
-            &:hover:not([data-icon='muted']):not([data-icon='pinned']):not([data-icon='status-sticker']):not([data-icon='status-vcard']):not([data-icon='status-image']):not([data-icon='status-video']):not([data-icon='status-gif']):not([data-icon='status-document']) > svg > path {
+            > svg > path {
                 opacity: 1;
                 fill-opacity: 0.9 i;
+            }
+            /// Exclude from animating.
+            &[data-icon='muted'],
+            &[data-icon='pinned'],
+            &[data-icon='status-image'],
+            &[data-icon='status-video'],
+            &[data-icon='status-gif'],
+            &[data-icon='status-vcard'],
+            &[data-icon='status-sticker'],
+            &[data-icon='status-document'],
+            &[data-icon='recalled-in'],
+            &[data-icon='recalled-out'] {
+                > svg > path {
+                    fill-opacity: 0.25 i;
+                }
             }
         }
         /// Left -> Status icon.
