@@ -741,25 +741,21 @@
                 transition: 0.15s ease;
             }
             /// Animate-ish.
-            > svg > path {
+            &:hover > svg > path {
                 opacity: 1;
                 fill-opacity: 0.9 i;
             }
             /// Exclude from animating.
-            &[data-icon='muted'],
-            &[data-icon='pinned'],
-            &[data-icon='status-image'],
-            &[data-icon='status-video'],
-            &[data-icon='status-gif'],
-            &[data-icon='status-vcard'],
-            &[data-icon='status-sticker'],
-            &[data-icon='status-document'],
-            &[data-icon='recalled-in'],
-            &[data-icon='recalled-out'],
-            &[data-icon='status-check'],
-            &[data-icon='status-dblcheck'],
-            &[data-icon='status-dblcheck-ack'],
-            {
+            &[data-icon='muted'],           // muted chat
+            &[data-icon='pinned'],          // pinned chat
+            &[data-icon='status-image'],    // image
+            &[data-icon='status-video'],    // video
+            &[data-icon='status-gif'],      // gif
+            &[data-icon='status-vcard'],    // contact
+            &[data-icon='status-sticker'],  // sticker
+            &[data-icon='status-document'], // document
+            &[data-icon='recalled-in'],     // deleted message
+            &[data-icon='recalled-out'] {   // deleted message
                 > svg > path {
                     fill-opacity: 0.25 i;
                 }
