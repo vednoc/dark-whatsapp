@@ -756,6 +756,21 @@
                 opacity: 1;
                 fill-opacity: 0.9 i;
             }
+            /// Exclude from animating.
+            &[data-icon='muted'],           // muted chat
+            &[data-icon='pinned'],          // pinned chat
+            &[data-icon='status-image'],    // image
+            &[data-icon='status-video'],    // video
+            &[data-icon='status-gif'],      // gif
+            &[data-icon='status-vcard'],    // contact
+            &[data-icon='status-sticker'],  // sticker
+            &[data-icon='status-document'], // document
+            &[data-icon='recalled-in'],     // deleted message
+            &[data-icon='recalled-out'] {   // deleted message
+                > svg > path {
+                    fill-opacity: 0.25 i;
+                }
+            }
         }
         /// Left -> Status icon.
         &[data-icon ^= 'status-v3'] path {
@@ -1286,6 +1301,12 @@
                     [data-icon = 'x'] { opacity: 0.55 i }
                     &:disabled path { opacity: 0.55 i }
                     path { opacity: 1 i }
+                    
+                    //Animate-ish
+                    &:hover > span > svg > path { 
+                        opacity: 1 i;
+                        fill-opacity: 0.9 i;
+                    }
                 }
             }
             /// Forwarded message.
