@@ -363,7 +363,10 @@
             /// Global -> Matched text.
             &-text:not(#z) { c: ac }
             /// Global -> Mentions.
-            &-mention, /[data-mention-jid] { span { c: ac }}
+            &-mention, /[data-mention-jid] {
+                span { c: ac }
+                &:hover span { text-decoration: underline i }
+            }
         }
 
         /// Global -> Checkboxes.
