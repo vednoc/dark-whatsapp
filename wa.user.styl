@@ -350,11 +350,9 @@
             /// Platform-specific section border..
             ._3ZVgT { c: 0 0 bd }
         }
-        
-        /// Intro bottom gap
-        .aheht {
-            margin-top: 16px !important;
-        }
+
+        /// Intro alert for desktop applications.
+        .aheht { margin-top: 16px i }
 
         /// Left -> Typing indicator.
         span[title *= 'typing...'], ._2ZAIy { c: ac }
@@ -391,9 +389,9 @@
         }
 
         /// Panes -> Change avatars.
-        ._1JS2G { 
+        ._1JS2G {
             c: fg 0 #66666666;
-            border-radius: 0 !important;
+            rad: 0 i;
         }
 
         /// Group invite link.
@@ -611,19 +609,20 @@
             /// Contacts popup ('Forward message' / Group -> 'Message admins').
             ._1KDYa {
                 c: 0 0 t;
-                header { c: fg 0 hl }
+                > header {
+                    border-bottom: 1px solid bd;
+                    c: fg 0 hl;
+                }
                 .r7sRK { c: ac 0 t }
                 ._2UaNq { c: fg 0 t }
                 /// Footer.
                 > span > div[style] {
+                    border-top: 1px solid bd;
                     c: fg 0 hl;
                     [role = 'button'] {
                         c: 0 0 ac;
                         box-shadow: bsh;
                     }
-                }
-                > header {
-                    border-bottom: 1px solid bd;
                 }
             }
             /// Failed to connect.
@@ -1233,19 +1232,15 @@
             /// Muted color for group members.
             > div:nth-child(2) > div:nth-child(2) span[title] { c: cm }
         }
-        /// Group -> description.
+        /// Group -> Description.
         ._3SYkD {
             > div {
                 border-bottom: 1px solid bd;
                 border-left: 1px solid bd;
                 background-color: hl;
             }
-            ._6xQdq, ._3GIEC {
-                c: fg;
-            }
-            ._3D8gv {
-                c: cm;
-            }
+            ._6xQdq, ._3GIEC { c: fg }
+            ._3D8gv { c: cm }
         }
         /// Chat -> Loader.
         ._2sOZc {
@@ -1310,9 +1305,8 @@
                     [data-icon = 'x'] { opacity: 0.55 i }
                     &:disabled path { opacity: 0.55 i }
                     path { opacity: 1 i }
-                    
-                    //Animate-ish
-                    &:hover > span > svg > path { 
+                    /// Animate-ish.
+                    &:hover > span > svg > path {
                         opacity: 1 i;
                         fill-opacity: 0.9 i;
                     }
@@ -1424,7 +1418,7 @@
                 width: unset;
                 height: unset;
                 border: 6px solid t;
-                background: none !important;
+                background: none i;
             }
             /// Feat -> Message tails.
             if ( chat_msg_t == 'rounded' ) {
@@ -1735,7 +1729,7 @@
         /// Alerts -> Group ('Not a group participant' / 'Only admins can send messages').
         ._26pkE {
             c: cm;
-            border-left: 1px solid bd; 
+            border-left: 1px solid bd;
         }
         /// Reply.
         ._1ebw2 {
