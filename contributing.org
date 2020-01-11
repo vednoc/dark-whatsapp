@@ -1,0 +1,136 @@
+#+TITLE: Contributing to Dark-WhatsApp
+#+STARTUP: nofold
+
+* Table of Contents :TOC_5:
+- [[#getting-involved][Getting Involved]]
+- [[#how-to-report-style-issues][How to Report Style Issues]]
+  - [[#i-dont-know-css][I don't know CSS]]
+  - [[#i-know-both-css--github][I know both CSS & GitHub]]
+    - [[#style-guide][Style Guide]]
+- [[#getting-started][Getting Started]]
+  - [[#build--test][Build & test]]
+
+* Getting Involved
+
+There are a number of ways to get involved with the development of this Dark
+WhatsApp theme. Even if you've never contributed to an Open Source project
+before, we're always looking for help identifying missing styles or other
+issues.
+
+* How to Report Style Issues
+
+** I don't know CSS
+
+If you don't know CSS very well and have found a missing style, please include
+as much as possible of following information when opening an issue:
+
+- Screenshot of the problem
+- Include the element(s) in the console if at all possible
+  - To select an element, target it with your mouse then right-click and choose
+    "Inspect Element"
+  - Copy the HTML if at all possible
+
+** I know both CSS & GitHub
+
+- Follow the [[#style-guide][style guide]] below
+- Make any needed changes, then send us a pull request
+- Please include a URL to the page (if public)
+
+*** Style Guide
+
+- Limit to the [[https://en.wikipedia.org/wiki/Indentation_style#Variant:_BSD_KNF][K&R (KNF variation style)]], and *TAB SPACE INDENTATION* (not more,
+  and not less than 4 spaces).
+  - Use [[https://editorconfig.org/][EditorConfig]] plugin for your editor if at all possible, and let it take
+    care of indentation.
+
+- K&R - KNF Variation Example:
+  #+BEGIN_SRC css
+  element[attr='value'] {
+  ····property: value;
+  }
+  #+END_SRC
+
+- *Not* Allman
+  #+BEGIN_SRC css
+  element[property='value']
+  {
+  ····property: value;
+  }
+  #+END_SRC
+
+- Strict space between the =selector= and the ={=:
+  #+BEGIN_SRC css
+    /* good */
+    element[attr='value'] { }
+    /* bad */
+    element[attr='value']{ }
+  #+END_SRC
+
+- Don't go multi-line for simple one-liners
+  #+BEGIN_SRC css
+  /* good */
+  element { property: value }
+  /* bad */
+  element {
+      property: value;
+  }
+  #+END_SRC
+
+- 4 [Tab] Space indentation
+  #+BEGIN_SRC css
+  /* good */
+  ····property: value;
+  /* bad */
+  ··property: value;
+  --property: value;
+  ·property: value;
+  #+END_SRC
+
+- Use the provided mixins and variables
+
+  You can find more about them at the top of the =wa.user.styl= file. Also, use
+  [[http://stylus-lang.com/][stylus-lang documentation]] to get familar with stylus-lang syntax and features.
+
+  #+BEGIN_SRC css
+  /* good */
+  element { c: #eee 0 #333 }
+  /* best */
+  element { c: fg 0 bg }
+  /* bad */
+  element {
+    color: #eee,
+    background-color: #333;
+  }
+  #+END_SRC
+
+- Try to wrap lines at around 80 characters.
+- This style does not have a size limit, but:
+  - If possible, reduce any added selectors. Remember that the style likely has
+    an =!important= flag to override default styling, so a selector starting
+    from the body isn't always necessary.
+  - If your CSS definition already exists within the style, do not add it again!
+    Add your selector to the existing definition.
+- Insert any new CSS selectors in any available slot before the style
+  definition, or on a new line as needed.
+- If you want to add a new userstyle variable, please open an issue and discuss
+  it with us first.
+- Don't include version bumps with your contribution, all releases are handled
+  internally.
+- If your pull request (PR) fixes an open issue or replaces another PR, include
+  fixes/closes =#issue-number= in your commit message title. [[https://help.github.com/en/articles/closing-issues-using-keywords][Read more on this.]]
+* Getting Started
+- [[https://user-images.githubusercontent.com/20738487/72159480-1c06c100-33c5-11ea-91d1-7a67c1dd7ae5.png]]
+  [[https://github.com/vednoc/dark-whatsapp/archive/master.zip][Download]],
+  [[https://user-images.githubusercontent.com/20738487/72159479-1c06c100-33c5-11ea-9ce4-c3d17110348a.png]]
+  [[https://github.com/vednoc/dark-whatsapp/fork][fork]], or clone this repository.
+- Make the changes to the [[https://github.com/vednoc/dark-whatsapp/blob/master/wa.user.styl][wa.user.styl]] file.
+** Build & test
+- Create & change into a new branch of your local Dark-WhatsApp repository.
+- Open the =wa.user.styl= file in your browser, and make sure to have "live
+  preview" checked for testing.
+- Once you are satisfied with the changes
+  - You can commit the changes of the =wa.user.styl= file to your fork's branch.
+  - Push the changes to your branch, then submit a pull request.
+  - Make sure your changes address only a single issue. Don't combine all the
+    things into a single PR.
+- And thanks again for contributing!
