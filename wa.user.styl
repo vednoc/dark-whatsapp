@@ -88,7 +88,7 @@
 ==/UserStyle== */
 
 @-moz-document domain('web.whatsapp.com') {
-
+    /// CSS custom properties.
     :root {
         /// Feat -> Thin scrollbar in Firefox.
         if ( ff_scroll == 1 ) {
@@ -205,7 +205,7 @@
     body {
         c: fg 0 bg;
         background-image: none;
-        scrollbar-color: ac #5552;
+        scrollbar-color: ac #55555520;
 
         /// Text.
         ::placeholder, ._2kE6F { c: cm }
@@ -298,7 +298,7 @@
         }
 
         /// App -> Startup.
-        #initial_startup, #startup {
+        [id *= 'startup'] {
             c: 0 0 bg;
             progress { c: ac 0 bd }
             ::-moz-progress-bar { c: 0 0 ac }
@@ -487,17 +487,17 @@
         }
         /// Feat -> Transparent emoji images.
         if ( emoji_t == 1 ) {
-            images = 'https://raw.githubusercontent.com/vednoc/wae/master'
+            repo = 'https://raw.githubusercontent.com/vednoc/wae/master'
             /// Android emojis.
             for i in 0..101 {
                 &.wa.b{i} {
-                    background-image: url(s('%s/a/%s.webp', unquote(images), i))
+                    background-image: url(s('%s/a/%s.webp', unquote(repo), i))
                 }
             }
             /// iOS emojis.
             for i in 0..100 {
                 &.apple.b{i} {
-                    background-image: url(s('%s/i/%s.webp', unquote(images), i))
+                    background-image: url(s('%s/i/%s.webp', unquote(repo), i))
                 }
             }
         } else {
