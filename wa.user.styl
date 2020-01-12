@@ -88,7 +88,7 @@
 ==/UserStyle== */
 
 @-moz-document domain('web.whatsapp.com') {
-
+    /// CSS custom properties.
     :root {
         /// Feat -> Thin scrollbar in Firefox.
         if ( ff_scroll == 1 ) {
@@ -205,7 +205,7 @@
     body {
         c: fg 0 bg;
         background-image: none;
-        scrollbar-color: ac #5552;
+        scrollbar-color: ac #55555520;
 
         /// Text.
         ::placeholder, ._2kE6F { c: cm }
@@ -298,7 +298,7 @@
         }
 
         /// App -> Startup.
-        #initial_startup, #startup {
+        [id *= 'startup'] {
             c: 0 0 bg;
             progress { c: ac 0 bd }
             ::-moz-progress-bar { c: 0 0 ac }
@@ -350,11 +350,9 @@
             /// Platform-specific section border..
             ._3ZVgT { c: 0 0 bd }
         }
-        
-        /// Intro bottom gap
-        .aheht {
-            margin-top: 16px !important;
-        }
+
+        /// Intro alert for desktop applications.
+        .aheht { margin-top: 16px i }
 
         /// Left -> Typing indicator.
         span[title *= 'typing...'], ._2ZAIy { c: ac }
@@ -363,7 +361,10 @@
             /// Global -> Matched text.
             &-text:not(#z) { c: ac }
             /// Global -> Mentions.
-            &-mention, /[data-mention-jid] { span { c: ac }}
+            &-mention, /[data-mention-jid] {
+                span { c: ac }
+                &:hover span { text-decoration: underline i }
+            }
         }
 
         /// Global -> Checkboxes.
@@ -388,9 +389,9 @@
         }
 
         /// Panes -> Change avatars.
-        ._1JS2G { 
+        ._1JS2G {
             c: fg 0 #66666666;
-            border-radius: 0 !important;
+            rad: 0 i;
         }
 
         /// Group invite link.
@@ -486,17 +487,17 @@
         }
         /// Feat -> Transparent emoji images.
         if ( emoji_t == 1 ) {
-            images = 'https://raw.githubusercontent.com/vednoc/wae/master'
+            repo = 'https://raw.githubusercontent.com/vednoc/wae/master'
             /// Android emojis.
             for i in 0..101 {
                 &.wa.b{i} {
-                    background-image: url(s('%s/a/%s.webp', unquote(images), i))
+                    background-image: url(s('%s/a/%s.webp', unquote(repo), i))
                 }
             }
             /// iOS emojis.
             for i in 0..100 {
                 &.apple.b{i} {
-                    background-image: url(s('%s/i/%s.webp', unquote(images), i))
+                    background-image: url(s('%s/i/%s.webp', unquote(repo), i))
                 }
             }
         } else {
@@ -608,19 +609,20 @@
             /// Contacts popup ('Forward message' / Group -> 'Message admins').
             ._1KDYa {
                 c: 0 0 t;
-                header { c: fg 0 hl }
+                > header {
+                    border-bottom: 1px solid bd;
+                    c: fg 0 hl;
+                }
                 .r7sRK { c: ac 0 t }
                 ._2UaNq { c: fg 0 t }
                 /// Footer.
                 > span > div[style] {
+                    border-top: 1px solid bd;
                     c: fg 0 hl;
                     [role = 'button'] {
                         c: 0 0 ac;
                         box-shadow: bsh;
                     }
-                }
-                > header {
-                    border-bottom: 1px solid bd;
                 }
             }
             /// Failed to connect.
@@ -628,6 +630,12 @@
             hr {
                 c: 0 bd;
                 + div { c: fg }
+            }
+            /// Inner padding tweak.
+            &._3RiLE {
+                padding: 0 i;
+                > .aymnx { padding: 22px 24px 20px i }
+                .AZ3xD { margin: 0 }
             }
         }
         /// Settings -> Upload a new avatar.
@@ -1224,19 +1232,15 @@
             /// Muted color for group members.
             > div:nth-child(2) > div:nth-child(2) span[title] { c: cm }
         }
-        /// Group -> description.
+        /// Group -> Description.
         ._3SYkD {
             > div {
                 border-bottom: 1px solid bd;
                 border-left: 1px solid bd;
                 background-color: hl;
             }
-            ._6xQdq, ._3GIEC {
-                c: fg;
-            }
-            ._3D8gv {
-                c: cm;
-            }
+            ._6xQdq, ._3GIEC { c: fg }
+            ._3D8gv { c: cm }
         }
         /// Chat -> Loader.
         ._2sOZc {
@@ -1301,9 +1305,8 @@
                     [data-icon = 'x'] { opacity: 0.55 i }
                     &:disabled path { opacity: 0.55 i }
                     path { opacity: 0.55 i }
-                    
-                    /// Animate-ish
-                    &:hover > span > svg > path { 
+                    /// Animate-ish.
+                    &:hover > span > svg > path {
                         opacity: 1 i;
                         fill-opacity: 0.9 i;
                     }
@@ -1415,7 +1418,7 @@
                 width: unset;
                 height: unset;
                 border: 6px solid t;
-                background: none !important;
+                background: none i;
             }
             /// Feat -> Message tails.
             if ( chat_msg_t == 'rounded' ) {
@@ -1491,7 +1494,7 @@
             /// Stickers -> Timestamp.
             > div.a81-s ._3qAvH { c: 0 0 left }
             /// Stickers -> Sender name bubble. #69
-            ._3tMyP {
+            /._3tMyP {
                 c: 0 0 left;
                 box-shadow: 0 1px 0.5px sh i;
             }
@@ -1511,7 +1514,7 @@
                 /// Non-stickers.
                 &:not(._2PpWQ) { background: linear-gradient(90deg, t, left 80%) i }
                 /// Stickers.
-                &._2PpWQ > div[style *= 'opacity'] { c: 0 0 left }
+                /._2PpWQ._2Nkc4 div[style *= 'opacity'] { c: 0 0 left }
                 /// Images.
                 &._20WGU { background: linear-gradient(30deg, t 65%, #44444455 120%) i }
                 /// Fix context menu for local RTL layouts.
@@ -1553,7 +1556,7 @@
                 /// Non-stickers.
                 &:not(._2PpWQ) { background: linear-gradient(90deg, t, right 80%) i }
                 /// Stickers.
-                &._2PpWQ div[style *= 'opacity'] { c: 0 0 right }
+                /._3EQsG._2PpWQ div[style *= 'opacity'] { c: 0 0 right }
                 /// Images.
                 &._20WGU { background: linear-gradient(30deg, t 65%, #44444455 120%) i }
                 /// Fix context menu for local RTL layouts.
@@ -1726,7 +1729,7 @@
         /// Alerts -> Group ('Not a group participant' / 'Only admins can send messages').
         ._26pkE {
             c: cm;
-            border-left: 1px solid bd; 
+            border-left: 1px solid bd;
         }
         /// Reply.
         ._1ebw2 {
