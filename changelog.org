@@ -1,4 +1,37 @@
+#+STARTUP: nofold
+
 * Changelog
+** 2.0.5 [2020-01-13]
+Minor bug fixes and improvements.
+
+Huge thanks to [[https://github.com/E-RELevant][Erelephant]] for making a bunch of pull requests and fixing a ton
+of bugs, as well as doing most of the work for [[https://github.com/vednoc/dark-whatsapp/wiki][project wiki pages]]!
+
+*** Documentation
+- Added old project name in the readme
+- Added info about using this userstyle with Ferdi
+- Added contributing ([[https://github.com/vednoc/dark-whatsapp/pull/85][#85]])
+- Added credits to the readme
+
+*** Improved
+- Wrapper background for the left pane
+- Default colors for custom message bubbles ([[https://github.com/vednoc/dark-whatsapp/pull/78][#78]])
+- Whitespace for desktop apps on intro pane ([[https://github.com/vednoc/dark-whatsapp/pull/82][#82]])
+- Animation for icons that take action ([[https://github.com/vednoc/dark-whatsapp/pull/81][#81]], [[https://github.com/vednoc/dark-whatsapp/pull/86][#86]])
+- Hover event for mentions now applies underline
+- Padding for modal body in a few modals
+
+*** Fixed
+- Star icons color for images/videos/gifs ([[https://github.com/vednoc/dark-whatsapp/pull/75][#75]])
+- Emoji picker in upload preview pane
+- Background for attach dropdown items
+- Borders for group alerts ([[https://github.com/vednoc/dark-whatsapp/pull/79][#79]])
+- Divider between modal header and search ([[https://github.com/vednoc/dark-whatsapp/pull/80][#80]])
+- New group description alert ([[https://github.com/vednoc/dark-whatsapp/pull/83][#83]])
+- Avatar border-radius glitches ([[https://github.com/vednoc/dark-whatsapp/pull/84][#84]])
+- Context menu colors for messages with stickers
+- Disabled icons in selected messages area
+
 ** 2.0.4 [2020-01-05]
 Minor bug fixes and improvements.
 
