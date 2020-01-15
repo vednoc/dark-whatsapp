@@ -32,15 +32,41 @@ as much as possible of following information when opening an issue:
 
 ** I know both CSS & GitHub
 
+- *Recommended:* [[#duplicate-the-style][duplicate]] the style or [[#create-a-companion-style][create a "companion style"]]
 - Follow the [[#style-guide][style guide]] below
 - Make any needed changes, then send us a pull request
 - Please include a URL to the page (if public)
 
+*** Duplicate the style or create a "companion style"
+
+When a userstyle is installed from a page, Stylus stores the url of that page internally along with the CSS style.
+
+If that userstyle is then modified or even renamed, it will still maintain the original install location, but all automatic updates of the modified userstyle will be blocked. A manual update of that userstyle is required to update, but be warned that an update *will overwrite* all changes, i.e. *all modifications will be lost*!
+
+To get around this, either duplicate it or create a "companion style".
+
+**** Duplicate the style
+
+The easiest way is to copy and paste the source code into a new, *local* style.
+
+1. Copy the style
+    - Open Dark-WhatsApp in the [[https://github.com/openstyles/stylus/wiki/Editor][Stylus' Editor]] [[https://user-images.githubusercontent.com/136959/44433186-de548e80-a56a-11e8-8947-d3331bd6d7a1.png]]
+    - Copy the code directly from the edit window.
+    - If not all content is automatically selected in the popped up window, use Select All (@@html:<kbd>@@Ctrl@@html:</kbd>@@+@@html:<kbd>@@A@@html:</kbd>@@), then Copy (@@html:<kbd>@@Ctrl@@html:</kbd>@@+@@html:<kbd>@@C@@html:</kbd>@@) the style.
+2. Paste into a new style
+    - Click "Write new style" in the [[https://github.com/openstyles/stylus/wiki/Manager][Stylus' Manager]] [[https://user-images.githubusercontent.com/136959/44433186-de548e80-a56a-11e8-8947-d3331bd6d7a1.png]]
+    - Paste (@@html:<kbd>@@Ctrl@@html:</kbd>@@+@@html:<kbd>@@V@@html:</kbd>@@) the style into the code block area.
+    - Give the style a name, then save.
+
+**** Create a "companion style"
+
+Please refer to the [[https://github.com/openstyles/stylus/wiki/Writing-styles#making-a-companion-style][Stylus' Writing Styles page]] [[https://user-images.githubusercontent.com/136959/44433186-de548e80-a56a-11e8-8947-d3331bd6d7a1.png]] for more details.
+
 *** Style Guide
 
-- Limit to the [[https://en.wikipedia.org/wiki/Indentation_style#Variant:_BSD_KNF][K&R (KNF variation style)]], and *TAB SPACE INDENTATION* (not more,
+- Limit to the [[https://en.wikipedia.org/wiki/Indentation_style#Variant:_BSD_KNF][K&R (KNF variation style)]] [[https://user-images.githubusercontent.com/136959/44433186-de548e80-a56a-11e8-8947-d3331bd6d7a1.png]], and *TAB SPACE INDENTATION* (not more,
   and not less than 4 spaces).
-  - Use [[https://editorconfig.org/][EditorConfig]] plugin for your editor if at all possible, and let it take
+  - Use [[https://editorconfig.org/][EditorConfig]] [[https://user-images.githubusercontent.com/136959/44433186-de548e80-a56a-11e8-8947-d3331bd6d7a1.png]] plugin for your editor if at all possible, and let it take
     care of indentation.
 
 - K&R - KNF Variation Example:
@@ -89,7 +115,7 @@ as much as possible of following information when opening an issue:
 - Use the provided mixins and variables
 
   You can find more about them at the top of the =wa.user.styl= file. Also, use
-  [[http://stylus-lang.com/][stylus-lang documentation]] to get familar with stylus-lang syntax and features.
+  [[http://stylus-lang.com/][stylus-lang documentation]] [[https://user-images.githubusercontent.com/136959/44433186-de548e80-a56a-11e8-8947-d3331bd6d7a1.png]] to get familar with stylus-lang syntax and features.
 
   #+BEGIN_SRC css
   /* good */
@@ -117,7 +143,7 @@ as much as possible of following information when opening an issue:
 - Don't include version bumps with your contribution, all releases are handled
   internally.
 - If your pull request (PR) fixes an open issue or replaces another PR, include
-  fixes/closes =#issue-number= in your commit message title. [[https://help.github.com/en/articles/closing-issues-using-keywords][Read more on this.]]
+  fixes/closes =#issue-number= in your commit message title. [[https://help.github.com/en/articles/closing-issues-using-keywords][Read more on this]] [[https://user-images.githubusercontent.com/136959/44433186-de548e80-a56a-11e8-8947-d3331bd6d7a1.png]]
 * Getting Started
 - [[https://user-images.githubusercontent.com/20738487/72159480-1c06c100-33c5-11ea-91d1-7a67c1dd7ae5.png]]
   [[https://github.com/vednoc/dark-whatsapp/archive/master.zip][Download]],
