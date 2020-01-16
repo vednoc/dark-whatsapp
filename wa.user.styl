@@ -213,7 +213,11 @@
         strong { c: fg }
         select {
             c: fg bd;
-            /.Fzl83 { margin-right: 24px }
+            /.Fzl83 {
+                margin-right: 24px;
+                /// Caret.
+                &::before { c: cm }
+            }
         }
         option { c: fg 0 bd }
 
