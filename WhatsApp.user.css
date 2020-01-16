@@ -5,7 +5,7 @@
 @homepageURL  https://github.com/vednoc/dark-whatsapp
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/WhatsApp.user.css
-@version      1.7.0
+@version      1.7.1
 @author       vednoc
 @license      MIT
 @preprocessor uso
@@ -170,7 +170,7 @@
       /* Pane -> Chat. *\/
       .three ._2rI9W { flex: 1 1 auto !important; }
       /* Pane -> Info. *\/
-      .three ._1C9rS {
+      .three ._7YAGC {
         max-width: 400px;
         width: calc(100% - 76px); }
       /* ? Hack for positioning unread counter. *\/
@@ -242,9 +242,9 @@
     --image: url("https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/images/background.jpg");
     --emojiOpacity: /*[[emojiOpacity]]*/;
     --ui-font: /*[[customFonts]]*/ sans-serif;
-    --version: "WhatsApp by Mew v1.7.0";
-    --message: "Updated on 13th of December. Repository name changed. ";
-    --changes: "See the changelog at: https://github.com/vednoc/dark-whatsapp/releases";
+    --version: "WhatsApp by Mew v1.7.1";
+    --message: "Updated on 16th of January. Ported some fixes to v1. Please switch to v2 because v1 is unsupported! ";
+    --changes: "Visit https://github.com/vednoc/dark-whatsapp for more info.";
   }
 
   /* Body reset. */
@@ -326,33 +326,35 @@
 
 
   /* Landing page. */
-  .app .iFKgT {
+  .app ._1qNwV {
     border: none;
     background-color: var(--dark) !important; }
     /* Image. */
-    .app .iFKgT [data-asset-intro-image] {
+    .app ._1qNwV [data-asset-intro-image] {
       max-width: 200px;
       max-height: 200px;
       border-radius: 50%;
       filter: opacity(/*[[emojiOpacity]]*/);
       transition: opacity 1s ease !important; }
     /* Text color. */
-    .app .iFKgT * {
+    .app ._1qNwV * {
       color: var(--light); }
     /* Accent bar. */
-    .app .iFKgT::after {
+    .app ._1qNwV::after {
       border-top-color: var(--accent) !important; }
     /* Hide the text. */
-    .iFKgT ._3mkas { font-size: 0px; }
+    ._1qNwV .tzihe { font-size: 0px; }
     /** Theme note. */
-    .app .iFKgT ._3mkas::before {
+    .app ._1qNwV .tzihe::before {
       display: block;
       margin-bottom: -20px;
-      font-size: 16px;
+      line-height: 1.3;
+      font-size: 20px;
+      color: var(--accent);
       content: var(--message) var(--changes) !important;
     }
     /** Theme info. */
-    .app .iFKgT ._3mkas::after {
+    .app ._1qNwV .tzihe::after {
       display: block;
       margin-top: 10px;
       padding-top: 10px;
@@ -384,15 +386,15 @@
         color: var(--lighter); }
 
     /* Global -> Search. */
-    ._2HS9r {
-      border-bottom: 0px solid var(--dark);
-      background-color: var(--darker) !important;
-      background-color: transparent !important; }
+    ._2vikl {
+      border-bottom: 1px solid var(--darker);
+      background-color: var(--darker) !important; }
       /* Label background. */
       .ZP8RM label, .ZP8RM._19OGD {
         border: 0px solid var(--dark);
         background-color: var(--dark) !important; }
       /* Input element. */
+
       .ZP8RM ._183ES,
       .ZP8RM label input {
         color: var(--light);
@@ -400,7 +402,7 @@
       .ZP8RM::after,
       .ZP8RM > div::after {
         border-color: var(--darker) !important;
-        background-color: var(--dark) !important; }
+        background-color: var(--darker) !important; }
 
   /* New group and group info buttons. */
   ._1w-mX, ._70TS5, ._11p3Q, .r7sRK, ._8-yzK {
@@ -450,10 +452,10 @@
 
 
   /* Settings. */
-  ._11GZy, ._1KDYa {
+  ._7YAGC, ._1KDYa {
     background-color: var(--darker) !important; }
     /* Header color. */
-    ._11GZy header, ._1KDYa header {
+    ._7YAGC header, ._1KDYa header {
       min-height: 50px;
       height: auto;
       background-color: var(--darker) !important; }
@@ -465,25 +467,25 @@
       ._21bWq, ._22oFl {
         background-color: var(--accent) !important; }
       /* Reset header height. */
-      ._11GZy header > div:first-child {
+      ._7YAGC header > div:first-child {
         padding: 12px 0 !important;
         height: auto; }
       /* Reset header title in left/right drawers. */
-      ._11GZy ._1xGbt {
+      ._7YAGC ._1xGbt {
         margin-top: 2px !important;
         font-size: 16px; }
     /* Transparent sections. */
-    ._11GZy ._1CRb5, ._1KDYa ._2LSbZ {
+    ._7YAGC ._1CRb5, ._1KDYa ._2LSbZ, ._26JG5 {
       box-shadow: none !important;
       background-color: transparent !important; }
       /* Highlighted sections. */
-      ._11GZy ._3hhmj ._1CkkN {
+      ._7YAGC ._3hhmj ._1CkkN {
         background-color: var(--darker) !important; }
       /* Change profile picture. */
-      ._11GZy .WX_XW, ._11GZy ._2Lbqu, ._1JS2G {
+      ._7YAGC .WX_XW, ._7YAGC ._2Lbqu, ._1JS2G {
         background-color: rgba(0,0,0,0.5) !important; }
       /* Text color. */
-      ._11GZy * {
+      ._3wYPn * {
         color: var(--light); }
     /* Input element. */
     ._5UNoc ._3hnO5 { border-color: var(--accent) !important; }
@@ -762,7 +764,7 @@
       color: var(--light) !important; }
 
   /* Media/docs/links section. */
-  ._27U_m, .yrOIH {
+  ._27U_m, ._2XHj8 {
     border-bottom: 1px solid var(--dark);
     background-color: var(--darker) !important; }
   /* Active indicator. */
@@ -884,7 +886,7 @@
       border-radius: 4px;
       background-color: var(--shadow); }
       /* Text color. */
-      .KYpDv ._1DZAH ._3EFt_ {
+      .KYpDv ._1DZAH ._3EFt_, ._2MyYN {
         margin-top: 0px;
         color: var(--lighter); }
 
@@ -1084,7 +1086,7 @@
       box-shadow: none !important;
       background-color: var(--dark) !important; }
       /* Text color. */
-      ._2Qm0c input {
+      .QChXd input, ._2Qm0c input {
         color: var(--light) !important; }
 
     /* Gif preloader background. */
@@ -1501,7 +1503,7 @@
     fill: var(--dark) !important; }
   span[data-icon^="ptt-"] svg path:last-child {
     fill: var(--accent) !important; }
-  
+
   span[data-icon="ptt-out-gray"] svg path:last-child {
     fill: var(--icon) !important; }
 
