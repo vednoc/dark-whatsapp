@@ -264,7 +264,7 @@
             }
             &-main {
                 a[href] { c: ac }
-                ._2yUXW { c: cm }
+                label, ._2yUXW { c: cm }
                 .landing-title { c: fg }
                 rect[fill ^= '#f2f'], rect[fill ^= '#F2F'] { fill: bd }
                 path[fill ^= '#818'] { fill: ac }
@@ -282,14 +282,14 @@
                     }
                 }
                 /// Video showcase.
-                + ._310T_ {
+                + ._3vndg {
                     c: 0 0 t;
                     img { opacity: 0.3 }
                     /// Reset background on button container.
                     [style *= 'opacity: 1'] { c: 0 0 t }
                 }
                 /// 'Keep me signed in' reported in #59.
-                ._152b1 {
+                ._2-fMQ {
                     c: white 0 ac;
                     box-shadow: bsh;
                     &::before { border-bottom-color: ac }
@@ -313,7 +313,7 @@
         }
 
         /// App -> Intro.
-        .iFKgT {
+        ._1qNwV {
             c: 0 bd bg;
             a { color: ac }
             &::after { c: 0 ac }
@@ -1109,8 +1109,8 @@
     }
 
     // App -> Right.
-    ._1C9rS .copyable-area {
-        border-left: 1px solid bd;
+    // _1C9rS
+    ._7YAGC .copyable-area {
         /// Avatar.
         [style *= 'height: 200px'] {
             c: 0 0 bd;
@@ -1209,6 +1209,9 @@
             /._2Ji5m { c: 0 hl }
         }
     }
+
+    // App -> Fix right pane border.
+    ._1mseJ ._3wYPn { border-left: 1px solid bd }
 
     // Main -> Chat.
     #main {
@@ -1592,7 +1595,7 @@
         .Am8s6 { c: cm }
         ._3ogpF { c: 0 ac }
         /// Footer.
-        > div[tabindex] > span:nth-child(2) {
+        > div[tabindex] > div:nth-child(2) {
             border-top: 1px solid bd;
             c: 0 0 hl;
         }
@@ -1605,11 +1608,13 @@
                 box-shadow: bsh;
             }
             /// Add file.
-            &[style *= 'opacity'] {
+            &._3fktq {
                 c: ac 0 bg;
                 box-shadow: inner;
                 &::after { c: 0 0 ac }
             }
+            /// Selected file.
+            &._1gcLL::after { c: 0 0 ac }
             /// Send.
             &._1g8sv {
                 c: 0 0 ac;
@@ -1816,6 +1821,8 @@
                     transition: 0.2s ease;
                     &:hover, &:focus-within { flex: 0 0 30% i }
                 }
+                /// Left -> Add right border.
+                // ._3A_Ft ._3wYPn { border-right: 1px solid bd }
             }
             .two {
                 /// Reset upload preview.
@@ -1850,7 +1857,7 @@
                 /// Don't expand left pane.
                 > div:nth-child(3):hover { flex: 0 0 80px i }
                 /// Right -> Info pane.
-                ._1C9rS {
+                ._7YAGC {
                     flex: 0 0 30% i;
                     c: 0 t;
                 }
