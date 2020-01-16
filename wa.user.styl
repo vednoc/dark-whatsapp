@@ -1884,13 +1884,16 @@
                     ._1ZMSM > span:not(.P6z4j) { display: none i }
                     /// Reset text position.
                     .xD91K span[dir] { margin-left: 10px }
+                    /// Reset text position for msg with images/videos/etc.
+                    ._2Bw3Q [class *= 'status-'] { margin-left: 10px }
                     /// Unread messages.
                     ._1ZMSM .P6z4j {
                         z-index: 999 i;
-                        line-height: 22px i;
                         margin: 7px 0px 0px -60px i;
                         box-shadow: 0 0 0 3px hl i;
                     }
+                    /// NOTE: Fixes weird issue with alignment.
+                    ._1ZMSM { margin-right: 0 }
                     /// Message status.
                     ._3VIru {
                         padding: 0.5px;
