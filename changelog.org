@@ -2,7 +2,7 @@
 
 * Changelog
 ** 2.0.6 [2020-01-17]
-Hotfix for the latest update.
+Hotfix for the latest update (version ‪0.4.315‬).
 
 *** USo/v1 notice
 - Ported some of the changes; please move over to v2
@@ -15,13 +15,13 @@ Hotfix for the latest update.
 
 *** Fixed
 - A ton of broken things from the newest update ([[https://github.com/vednoc/dark-whatsapp/pull/89][#89]])
-- Selected media header and icons
-- Icons and badges in compact mode
-- Z-index for the menu in starred messages
-- Caret color for ~select~ elements
-- Modal colors when adding group participants
-- Bottom divider for applications on intro page ([[https://github.com/vednoc/dark-whatsapp/pull/90][#90]])
-- Emoji search input text color in Chromium
+  - Selected media header and icons
+  - Icons and badges in compact mode
+  - Z-index for the menu in starred messages
+  - Caret color for ~select~ elements
+  - Modal colors when adding group participants
+  - Bottom divider for applications on intro page ([[https://github.com/vednoc/dark-whatsapp/pull/90][#90]])
+  - Emoji search input text color in Chromium
 
 ** 2.0.5 [2020-01-13]
 Minor bug fixes and improvements.
