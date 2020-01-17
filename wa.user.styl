@@ -252,14 +252,18 @@
             &-wrapper::before { c: 0 0 hl }
             &-header {
                 position: relative;
+                /// WhatsApp logo.
+                path[fill ^= '#FFF'] { fill: ac }
+                path[fill ^= '#00E'] { fill: bg }
+                div { text-transform: unset; c: fg }
+                /// Userstyle version.
                 &::after {
                     right: 0;
+                    font-size: 14px;
+                    font-weight: 500;
                     position: absolute;
                     content: var(--version);
                 }
-                path[fill ^= '#FFF'] { fill: ac }
-                path[fill ^= '#00E'] { fill: bd }
-                div { c: fg }
             }
             &-window:not(#z) {
                 rad: r;
@@ -280,7 +284,7 @@
                     box-shadow: 0 0 0 4px white;
                     [role='button'] { c: white 0 ac }
                     /// Change QR's white border.
-                    &._2VkjG {
+                    &._3aqLw {
                         outline: 4px solid ac;
                         box-shadow: 0 0 0 4px ac;
                     }
