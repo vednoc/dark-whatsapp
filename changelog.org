@@ -2,7 +2,7 @@
 
 * Changelog
 ** 2.0.6 [2020-01-17]
-Hotfix for the latest update.
+Hotfix for the latest update (version ~0.4.315~).
 
 *** USo/v1 notice
 - Ported some of the changes; please move over to v2
@@ -14,7 +14,7 @@ Hotfix for the latest update.
 - Added external links and info about companion-style ([[https://github.com/vednoc/dark-whatsapp/pull/87][#87]])
 
 *** Fixed
-- A ton of broken things from the newest update ([[https://github.com/vednoc/dark-whatsapp/pull/89][#89]])
+- Intro pane and search bar ([[https://github.com/vednoc/dark-whatsapp/pull/89][#89]])
 - Selected media header and icons
 - Icons and badges in compact mode
 - Z-index for the menu in starred messages
