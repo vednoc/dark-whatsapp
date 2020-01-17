@@ -1179,10 +1179,15 @@
             c: fg bd t;
             span { color: inherit }
         }
-        /// HACK: Reset msg info in DMs but not in groups.
-        .rK2ei:not(._1c8mz):not(#z):not(#x) ._2UaNq:hover {
-            c: 0 0 t;
-            box-shadow: none i;
+        /// HACK: Resets.
+        .rK2ei:not(._1c8mz):not(#z):not(#x) ._2UaNq {
+            // Message info in DMs but not in groups.
+            &:hover {
+                c: 0 0 t;
+                box-shadow: none i;
+            }
+            /// Add group participants.
+            &._27Ppf:hover { c: 0 0 bd }
         }
         /// Read/Delivered section.
         ._2WP9Q { border: none }
