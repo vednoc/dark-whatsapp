@@ -15,6 +15,7 @@
 @var text     radius-i   'Custom rounded corners for input area' 4px
 @var text     app_width  'Custom width for chat app' 1396px
 @var checkbox fullscreen 'Enable fullscreen mode' 0
+@var text     l_p_width  'Left pane width' 30%
 @var checkbox app_c_m    'Enable compact mode' 1
 @var text     app_c_m_w  'Compact mode breakpoint' 720px
 @var text     app_c_m_h  'Compact mode on-hover delay' 1s
@@ -1957,6 +1958,13 @@
                     > span:last-child:not(._17TaE) { display: none i }
                 }
             }
+        }
+    }
+    // Compact mode is disabled
+    else {
+        ._3A_Ft {
+            flex: none !important;
+            width: l_p_width !important;
         }
     }
 }
