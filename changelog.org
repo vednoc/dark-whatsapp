@@ -1,6 +1,39 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.1.0 [2020-01-21]
+Adding new features and porting v2 to `wa.user.css` format for use in extensions
+that don't support stylus-lang and/or other projects.
+
+*** Additions
+- An option to hide notification alerts ([[https://github.com/vednoc/dark-whatsapp/pull/101][#101]])
+- An option to use theme colors in groups
+- New style for message tails, inspired by Facebook
+- New tertiary colors
+- /Lite/, non-customizable v2 version ([[https://github.com/vednoc/dark-whatsapp/commit/670210d579cb569c79afa5c8f764807d6e64b0db][info in this commit]])
+
+*** Documentation
+- Updated wording for the ~2.0.6~ release ([[https://github.com/vednoc/dark-whatsapp/pull/92][#92]])
+- Added more badges to the readme
+
+*** Improved
+- Intro message content ([[https://github.com/vednoc/dark-whatsapp/pull/93][#93]])
+- Header content and QR code on the landing page
+- Visuals of active media tab in profiles ([[https://github.com/vednoc/dark-whatsapp/pull/97][#97]])
+- On hover effect for chat replies ([[https://github.com/vednoc/dark-whatsapp/pull/105][#105]])
+- On hover animation for arrows ([[https://github.com/vednoc/dark-whatsapp/pull/104][#104]])
+- On hover background for avatars you can change ([[https://github.com/vednoc/dark-whatsapp/pull/103][#103]])
+
+*** Fixed
+- Footer background color in /select messages/ mode
+- Colors for status area icons ([[https://github.com/vednoc/dark-whatsapp/issues/91][#91]])
+- Hover background color when adding new group members
+- Background for 'x more members' button ([[https://github.com/vednoc/dark-whatsapp/pull/98][#98]])
+- Selected media button opacity ([[https://github.com/vednoc/dark-whatsapp/pull/100][#100]])
+- Icon opacity and colors on the left pane
+- Icon opacity for all icons
+- Icon color for "low battery" alert ([[https://github.com/vednoc/dark-whatsapp/pull/106][#106]])
+
 ** 2.0.6 [2020-01-17]
 Hotfix for the latest update (version ~0.4.315~).
 
