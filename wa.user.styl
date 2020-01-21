@@ -22,6 +22,12 @@
 @var checkbox chat_b_c   'Enable blurred contacts' 0
 @var checkbox chat_b_img 'Enable blurred images/videos' 0
 
+@var select   alerts     'Alerts' {
+    'Show all                      *': 'show          ',
+    'Hide "Allow notifications"     ': 'notifications ',
+    'Hide all                       ': 'hide          ',
+}
+
 @var select chat_msg_t 'Message tails style' {
     'Default *': 'default ',
     'Minimal  ': 'minimal ',
@@ -939,6 +945,8 @@
                 * { c: blue }
                 [data-icon ^= 'chevron-'] path { v: blue }
                 [data-icon ^= 'alert-'] path[fill ^= '#FFF'] { fill: blue }
+                /// Alerts -> Remove 'allow desktop notifications' alert.
+                if ( alerts ==  'notifications' ) { display: none i }
             }
             /// Phone battery low.
             ._2t3oV {
@@ -946,6 +954,8 @@
                 [data-icon ^= 'chevron-'] path { v: red }
                 [data-icon ^= 'alert-'] path[fill ^= '#FFF'] { fill: red }
             }
+            /// Alerts -> Remove all alerts.
+            if ( alerts ==  'hide' ) { display: none i }
         }
         /// Search.
         /div[class *= 'ZP8RM'] {
