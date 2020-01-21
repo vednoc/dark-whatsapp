@@ -809,16 +809,10 @@
                 }
             }
         }
-        /// Left -> Status icon.
-        &[data-icon ^= 'status-v3'] path {
-            &:first-child {
-                v: fg;
-                fill-opacity: 0.55;
-            }
-        }
-        &[data-icon = 'status-v3-unread'] path {
-            &:last-child { v: ac }
-        }
+        /// Left -> Reset status/chat/menu icons.
+        &[data-icon = 'status-v3-unread'] path:last-child { v: ac }
+        &[data-icon = 'chat'] path { opacity: 1 }
+        &[data-icon = 'menu'] path { fill-opacity: 0.55 }
         /// Search -> Back button.
         &[data-icon = 'back-blue'] path { v: blue }
         /// Default user/group/broadcasts icons.
