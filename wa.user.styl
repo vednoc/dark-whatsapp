@@ -382,7 +382,7 @@
 
         /// Global -> Active buttons.
         ._3j8Pd {
-            fill-opacity: 0.55;
+            path:not([fill = '#009588']) { fill-opacity: 0.55 }
             &.GPmgF, &.GPmgf {
                 c: 0 0 bd;
                 [data-icon] path { fill-opacity: 1 i }
@@ -788,10 +788,10 @@
                 fill: fg;
                 transition: 0.15s ease;
             }
-            /// Animate-ish.
+            /// Hover animation.
             &:hover > svg > path {
                 opacity: 1;
-                fill-opacity: 0.9 i;
+                fill-opacity: 1 i;
             }
             /// Exclude from animating.
             &[data-icon='muted'],           // muted chat
