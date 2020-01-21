@@ -69,6 +69,8 @@
 
 @var checkbox ff_scroll  'Thin scrollbars in Firefox' 1
 
+@var checkbox c_g_c      'Theme colors in groups' 1
+
 @var select theme 'Color-scheme' {
     'Dark blue (old) *': 'old',
     'Dark gray (new)  ': 'new',
@@ -2015,6 +2017,58 @@
                     > span:last-child:not(._17TaE) { display: none i }
                 }
             }
+        }
+    }
+    /// Feat -> Theme colors in groups.
+    if ( c_g_c == 1 ) {
+        .color {
+            /._1QjgA { c: ac }
+            &-0  { c: blue                               }
+            &-1  { c: cyan                               }
+            &-2  { c: green                              }
+            &-3  { c: violet                             }
+            &-4  { c: magenta                            }
+            &-5  { c: red                                }
+            &-6  { c: orange                             }
+            &-7  { c: yellow                             }
+            &-8  { c: blue; filter: hue-rotate(20deg)    }
+            &-9  { c: cyan; filter: hue-rotate(20deg)    }
+            &-10 { c: green; filter: hue-rotate(20deg)   }
+            &-11 { c: violet; filter: hue-rotate(20deg)  }
+            &-12 { c: magenta; filter: hue-rotate(20deg) }
+            &-13 { c: red; filter: hue-rotate(20deg)     }
+            &-14 { c: orange; filter: hue-rotate(20deg)  }
+            &-15 { c: yellow; filter: hue-rotate(20deg)  }
+            &-15 { c: blue; filter: hue-rotate(40deg)    }
+            &-16 { c: cyan; filter: hue-rotate(40deg)    }
+            &-17 { c: green; filter: hue-rotate(40deg)   }
+            &-18 { c: violet; filter: hue-rotate(40deg)  }
+            &-19 { c: magenta; filter: hue-rotate(40deg) }
+            &-20 { c: red; filter: hue-rotate(40deg)     }
+        }
+        .bg-color {
+            &-0  { c: 0 0 blue                               }
+            &-1  { c: 0 0 cyan                               }
+            &-2  { c: 0 0 green                              }
+            &-3  { c: 0 0 violet                             }
+            &-4  { c: 0 0 magenta                            }
+            &-5  { c: 0 0 red                                }
+            &-6  { c: 0 0 orange                             }
+            &-7  { c: 0 0 yellow                             }
+            &-8  { c: 0 0 blue; filter: hue-rotate(20deg)    }
+            &-9  { c: 0 0 cyan; filter: hue-rotate(20deg)    }
+            &-10 { c: 0 0 green; filter: hue-rotate(20deg)   }
+            &-11 { c: 0 0 violet; filter: hue-rotate(20deg)  }
+            &-12 { c: 0 0 magenta; filter: hue-rotate(20deg) }
+            &-13 { c: 0 0 red; filter: hue-rotate(20deg)     }
+            &-14 { c: 0 0 orange; filter: hue-rotate(20deg)  }
+            &-15 { c: 0 0 yellow; filter: hue-rotate(20deg)  }
+            &-15 { c: 0 0 blue; filter: hue-rotate(40deg)    }
+            &-16 { c: 0 0 cyan; filter: hue-rotate(40deg)    }
+            &-17 { c: 0 0 green; filter: hue-rotate(40deg)   }
+            &-18 { c: 0 0 violet; filter: hue-rotate(40deg)  }
+            &-19 { c: 0 0 magenta; filter: hue-rotate(40deg) }
+            &-20 { c: 0 0 red; filter: hue-rotate(40deg)     }
         }
     }
 }
