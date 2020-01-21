@@ -32,6 +32,7 @@
     'Default *': 'default ',
     'Minimal  ': 'minimal ',
     'Rounded  ': 'rounded ',
+    'Facebook ': 'fb-like ',
 }
 
 @var select chat_left 'Left message bubble position' {
@@ -1463,6 +1464,32 @@
         /// Feat -> Custom bubble colors.
         ( chat_b_l == 0 ) ? left = bd : left = b_l_bg;
         ( chat_b_r == 0 ) ? right = hl : right = b_r_bg;
+        /// Tails -> Facebook style.
+        /// TODO: Refactor later.
+        if ( chat_msg_t == 'fb-like' ) {
+            &-in {
+                .tail-container { display: none }
+                /// (first|all|last|single) message/s.
+                .tail > div { rad: 12px 12px 12px 6px i }
+                ._2Wx_5 { rad: 6px 12px 12px 6px i }
+                &._4jEk2 + .message-in:not(._4jEk2) {
+                    // c: 0 0 ac;
+                    ._2Wx_5 { rad: 6px 12px 12px 12px i }
+                }
+                &:not(._4jEk2) ._2Wx_5 { rad: 12px i }
+            }
+            &-out {
+                .tail-container { display: none }
+                /// (first|all|last|single) message/s.
+                .tail > div { rad: 12px 12px 6px 12px i }
+                ._2Wx_5 { rad: 12px 6px 6px 12px i }
+                &._4jEk2 + .message-out:not(._4jEk2) {
+                    // c: 0 0 ac;
+                    ._2Wx_5 { rad: 12px 6px 12px 12px i }
+                }
+                &:not(._4jEk2) ._2Wx_5 { rad: 12px i }
+            }
+        }
         /// Global bubble styles.
         &-in, &-out {
             /// Fix shadows.
