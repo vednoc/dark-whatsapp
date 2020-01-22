@@ -2,8 +2,8 @@
 
 * Changelog
 ** 2.1.0 [2020-01-21]
-Adding new features and porting v2 to `wa.user.css` format for use in extensions
-that don't support stylus-lang and/or other projects.
+Adding new features and porting v2 to =wa.user.css= format for use in extensions
+that don't support [[https://github.com/stylus/stylus/][stylus-lang]] and/or other projects.
 
 *** Additions
 - An option to hide notification alerts ([[https://github.com/vednoc/dark-whatsapp/pull/101][#101]])
