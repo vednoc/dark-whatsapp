@@ -1883,22 +1883,6 @@
         }
     }
 
-    // Feat -> WIP Screenshot mode.
-    if ( ss-mode == 1 ) {
-        /:not(#x):not(#y):not(#z) {
-            /// Chat -> content / nickname / mention / timestamp / nick (right pane)
-            [class *= '-text'],
-            ._1QjgA > span,
-            .quoted-mention,
-            ._3fnHB,
-            ._3VvbK {
-                c: t;
-            }
-            [title] { c: t }
-            img, .emoji { visibility: hidden i }
-        }
-    }
-
     /// Feat -> Compact mode.
     if ( app_c_m == 1 ) {
         /// Reset height/width if there's an overflow.
