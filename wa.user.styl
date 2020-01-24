@@ -28,30 +28,30 @@
     'Hide all                    ': 'hide          ',
 }
 
-@var select chat_msg_t 'Message tails style' {
+@var select   chat_m_t   'Message tails style' {
     'Default  *': 'default ',
     'Minimal   ': 'minimal ',
     'Rounded   ': 'rounded ',
     'Facebook  ': 'fb-like ',
 }
 
-@var select chat_left 'Left message bubble position' {
+@var select   chat_left  'Left message bubble position' {
     'Left side  *': 'start ',
     'Right side  ': 'end   ',
 }
-@var checkbox chat_b_l 'Custom background for left message bubble' 0
-@var color b_l_bg 'Left message bubble color' #383d46
-@var select chat_right 'Right message bubble position' {
+@var checkbox chat_b_l   'Custom background for left message bubble' 0
+@var color    b_l_bg     'Left message bubble color' #383d46
+@var select   chat_right 'Right message bubble position' {
     'Left side   ': 'start ',
     'Right side *': 'end   ',
 }
-@var checkbox chat_b_r 'Custom background for right message bubble' 0
-@var color b_r_bg 'Right message bubble color' #2f343d
+@var checkbox chat_b_r   'Custom background for right message bubble' 0
+@var color    b_r_bg     'Right message bubble color' #2f343d
 
-@var checkbox emoji_t 'Enable transparent emojis' 1
-@var range    emoji_o 'Emoji default opacity' [0.8, 0.0, 1, 0.01]
+@var checkbox emoji_t    'Enable transparent emojis' 1
+@var range    emoji_o    'Emoji default opacity' [0.8, 0.0, 1, 0.01]
 
-@var select   app_image 'Custom app background' {
+@var select   app_image  'Custom app background' {
     'Custom  *': 'custom  ',
     'Default  ': 'default ',
     'None     ': 'none    ',
@@ -71,29 +71,29 @@
 
 @var checkbox c_g_c      'Theme colors in groups' 1
 
-@var select theme 'Color-scheme' {
+@var select  theme       'Color-scheme' {
     'Dark blue (old) *': 'old',
     'Dark gray (new)  ': 'new',
     'Custom colors    ': 'custom',
 }
 
-@var color dark    'Color: Primary background   ' #1f232a
-@var color darken  'Color: Highlight background ' #252A33
-@var color darker  'Color: Secondary background ' #2c313a
-@var color light   'Color: Primary foreground   ' #e9e9e9
-@var color lighter 'Color: Secondary foreground ' #a1a1a1
-@var color accent  'Color: Accent               ' #7289da
-@var color yellow  'Color: Yellow               ' #e5c512
-@var color orange  'Color: Orange               ' #df4b16
-@var color red     'Color: Red                  ' #dc322f
-@var color magenta 'Color: Magenta              ' #f33682
-@var color violet  'Color: Violet               ' #6c71c4
-@var color blue    'Color: Blue                 ' #268bd2
-@var color cyan    'Color: Cyan                 ' #2aa198
-@var color green   'Color: Green                ' #859900
-@var color white   'Color: White                ' #ffffff
-@var color sh      'Color: Shadow light         ' #00000025
-@var color sh-h    'Color: Shadow heavy         ' #00000035
+@var color   dark        'Color: Primary background   ' #1f232a
+@var color   darken      'Color: Highlight background ' #252A33
+@var color   darker      'Color: Secondary background ' #2c313a
+@var color   light       'Color: Primary foreground   ' #e9e9e9
+@var color   lighter     'Color: Secondary foreground ' #a1a1a1
+@var color   accent      'Color: Accent               ' #7289da
+@var color   yellow      'Color: Yellow               ' #e5c512
+@var color   orange      'Color: Orange               ' #df4b16
+@var color   red         'Color: Red                  ' #dc322f
+@var color   magenta     'Color: Magenta              ' #f33682
+@var color   violet      'Color: Violet               ' #6c71c4
+@var color   blue        'Color: Blue                 ' #268bd2
+@var color   cyan        'Color: Cyan                 ' #2aa198
+@var color   green       'Color: Green                ' #859900
+@var color   white       'Color: White                ' #ffffff
+@var color   sh          'Color: Shadow light         ' #00000025
+@var color   sh-h        'Color: Shadow heavy         ' #00000035
 ==/UserStyle== */
 
 @-moz-document domain('web.whatsapp.com') {
@@ -1473,7 +1473,7 @@
         ( chat_b_r == 0 ) ? right = hl : right = b_r_bg;
         /// Tails -> Facebook style.
         /// TODO: Refactor later.
-        if ( chat_msg_t == 'fb-like' ) {
+        if ( chat_m_t == 'fb-like' ) {
             &-in {
                 .tail-container { display: none }
                 /// (first|all|last|single) message/s.
@@ -1512,12 +1512,12 @@
                 background: none i;
             }
             /// Feat -> Message tails.
-            if ( chat_msg_t == 'rounded' ) {
+            if ( chat_m_t == 'rounded' ) {
                 .tail {
                     > div { rad: 7.5px i }
                     .tail-container { display: none }
                 }
-            } else if ( chat_msg_t == 'minimal' ) {
+            } else if ( chat_m_t == 'minimal' ) {
                 .tail .tail-container { display: none }
             }
             /// Date.
