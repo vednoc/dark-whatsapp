@@ -23,16 +23,16 @@
 @var checkbox chat_b_img 'Enable blurred images/videos' 0
 
 @var select   alerts     'Alerts' {
-    'Show all                      *': 'show          ',
-    'Hide "Allow notifications"     ': 'notifications ',
-    'Hide all                       ': 'hide          ',
+    'Show all                   *': 'show          ',
+    'Hide "Allow notifications"  ': 'notifications ',
+    'Hide all                    ': 'hide          ',
 }
 
 @var select chat_msg_t 'Message tails style' {
-    'Default *': 'default ',
-    'Minimal  ': 'minimal ',
-    'Rounded  ': 'rounded ',
-    'Facebook ': 'fb-like ',
+    'Default  *': 'default ',
+    'Minimal   ': 'minimal ',
+    'Rounded   ': 'rounded ',
+    'Facebook  ': 'fb-like ',
 }
 
 @var select chat_left 'Left message bubble position' {
@@ -48,10 +48,10 @@
 @var checkbox chat_b_r 'Custom background for right message bubble' 0
 @var color b_r_bg 'Right message bubble color' #2f343d
 
-@var checkbox emoji_t    'Enable transparent emojis' 1
-@var range    emoji_o    'Emoji default opacity' [0.8, 0.0, 1, 0.01]
+@var checkbox emoji_t 'Enable transparent emojis' 1
+@var range    emoji_o 'Emoji default opacity' [0.8, 0.0, 1, 0.01]
 
-@var select   app_image  'Custom app background' {
+@var select   app_image 'Custom app background' {
     'Custom  *': 'custom  ',
     'Default  ': 'default ',
     'None     ': 'none    ',
@@ -692,10 +692,8 @@
             ._1VI-m { c: fg }
             [role = 'button'] { c: 0 0 ac }
         }
-        /// Contact/group -> Profile image
-        ._8icek {
-            fill-opacity: 0.55
-        }
+        /// Contact/group -> Profile image.
+        ._8icek { fill-opacity: 0.55 }
         /// View group invite.
         ._2Vo52 {
             /// Header.
@@ -1187,10 +1185,10 @@
             padding: 0 15px;
             width: auto;
         }
-        /// Contact info -> Media, links and docs / Starred messages
+        /// Contact info -> Media, links and docs / Starred messages.
         ._2h7Od, ._88RDg {
             path { opacity: 0.55 i }
-            /// Animate-ish.
+            /// Hover animation.
             &:hover > span > svg > path {
                 opacity: 1 i;
                 fill-opacity: 0.9 i;
