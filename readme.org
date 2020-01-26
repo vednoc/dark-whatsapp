@@ -14,7 +14,10 @@ wide range of customizable options.
 [[https://discord.gg/NpT8PzA][https://img.shields.io/discord/272011641694978048.svg?longCache=true&colorB=7289da&logo=discord&style=flat]]
 
 #+HTML: <img src="https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/images/preview.png" width="100%"/>
-/Version 2.0.0 with default options and [[https://github.com/rsms/inter/][Inter]] as custom font./
+
+/Version 2.1.0 with [[https://github.com/rsms/inter/][Inter]] as the custom font, hidden notification alerts, and/
+/enabled custom message bubble colors. Check [[https://github.com/vednoc/dark-whatsapp/wiki/Configuration][configuration]] page on our project/
+/wiki to get started customizing your Dark-WhatsApp./
 
 #+HTML: </div>
 
