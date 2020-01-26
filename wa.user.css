@@ -6,7 +6,7 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      2.1.0
+@version      2.1.1
 @license      MIT
 ==/UserStyle== */
 
@@ -44,8 +44,8 @@
     --chat-bg-i: 0.6;
     --c-m-hover: 1s;
     --ui-font: 'font_name', 'Segoe UI', 'Helvetica Neue', Helvetica, 'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif;
-    --version: 'Dark-WhatsApp Lite v2.1.0';
-    --message: 'Version 2 is finally here! 🎉🥳 Read more: ';
+    --version: 'Dark-WhatsApp Lite v2.1.1';
+    --message: 'Version 2.1.1 is out! More info in the changelog. 🎉🥳 My blog post about v2 release: ';
     --changes: 'https://vednoc.me/blog/the-new-dark-whatsapp';
   }
   @supports (-moz-user-select: none) {
@@ -1444,6 +1444,9 @@
   div:not(#z)[style ^= 'transform-origin:']._1fRWV .Ijb1Q::after {
     box-shadow: var(--bshadow);
   }
+  div:not(#z)[style ^= 'transform-origin:'] > ul._3z3lc li._1sHYl {
+    background-color: var(--t) !important;
+  }
   div:not(#z)[style ^= 'transform-origin:'] > ul._3z3lc > li:first-child {
     border-color: var(--darker) !important;
   }
@@ -1504,6 +1507,9 @@
   #side > header + span[class] ._2t3oV [data-icon ^= 'alert-'] path[fill ^= '#FFF'] {
     fill: var(--red);
   }
+  #side > header + span[class] ._1cvvW path {
+    fill-opacity: 0.55;
+  }
   div[class *= 'ZP8RM'] {
     transition: 0.2s ease;
     border-bottom: 1px solid var(--darker);
@@ -1528,6 +1534,10 @@
   }
   ._2HS9r {
     background-color: var(--t) !important;
+  }
+  div[class *= 'ZP8RM'] ._183ES,
+  div[class *= 'ZP8RM'] ._201Bk {
+    color: var(--lighter) !important;
   }
   #side #pane-side {
     background-color: var(--darken) !important;
@@ -2068,20 +2078,22 @@
   }
   .qTFAl::before {
     content: '';
-    opacity: 0.6;
+    opacity: 0.08;
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
+    z-index: 0;
   }
   .qTFAl:hover,
   .qTFAl._3Z2tD {
     background-color: var(--t) !important;
+    z-index: 0;
   }
   .qTFAl:hover::before,
   .qTFAl._3Z2tD::before {
-    background-color: var(--darken) !important;
+    background-color: var(--accent) !important;
   }
   .qTFAl._21W00::before {
     background-color: var(--t) !important;
