@@ -1,6 +1,22 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.1.1 [2020-01-27]
+Weekly update to address a few minor things.
+
+*** Documentation
+- Updated summary of the last release
+- Updated and improved preview image
+
+*** Improved
+- Alignment of UserCSS metadata
+- Accent color for the /new/ color-scheme preset ([[https://github.com/vednoc/dark-whatsapp/issues/32][#32]])
+
+*** Fixed
+- Background z-index in /select messages/ mode ([[https://github.com/vednoc/dark-whatsapp/pull/108][#108]])
+- Emoji race selection hover background
+- Search placeholder text color
+
 ** 2.1.0 [2020-01-21]
 Adding new features and porting v2 to =wa.user.css= format for use in extensions
 that don't support [[https://github.com/stylus/stylus/][stylus-lang]] and/or other projects.
