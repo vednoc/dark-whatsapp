@@ -1418,8 +1418,14 @@
             /._1Jc9f, /._3THW4 { c: ac }
             /// 'Join group' button.
             /._1PENu {
-                c: 0 bg;
-                [role = 'button'] { c: ac }
+                c: 0 t;
+                [role = 'button'] {
+                    max-width: 100px i;
+                    padding: 8px 0 i;
+                    c: white 0 ac;
+                    rad: r i;
+                    &:hover { opacity: 0.8 }
+                }
             }
         }
         /// Feat -> Blur img/videos.
@@ -1469,11 +1475,6 @@
             div[style *= 'base64'] { filter: none i }
             ._2LRBk { c: fg }
             ._3fnHB { c: cm }
-            ._1PENu { c: 0 bg }
-            [role = 'button'] {
-                c: ac;
-                &:hover { opacity: 0.8 }
-            }
         }
         /// Multiple contacts.
         /.L4M2f, /._1d0W1 { c: 0 bg t }
