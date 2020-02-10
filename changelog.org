@@ -1,6 +1,21 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.1.2 [2020-02-10]
+Minor bug fixes and improvements (version ~0.4.613~).
+
+*** Improved
+- Gifs now have rounded corners
+- Colors for 'download media' buttons
+- Colors for 'download sticker' buttons
+- Colors for 'join' and 'view all contact' buttons
+
+*** Fixed
+- Tooltip colors for attach menu dropdown items
+- Z-index causing glitches in 'select messages' mode
+- Context menu gradient for embedded links
+- Message text position in compact mode ([[https://github.com/vednoc/dark-whatsapp/pull/112][#112]])
+
 ** 2.1.1 [2020-01-27]
 Weekly update to address a few minor things.
 
