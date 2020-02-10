@@ -6,7 +6,7 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      2.1.1
+@version      2.1.2
 @license      MIT
 ==/UserStyle== */
 
@@ -43,9 +43,9 @@
     --chat-bg-o: 0.1;
     --chat-bg-i: 0.6;
     --c-m-hover: 1s;
-    --ui-font: 'font_name', 'Segoe UI', 'Helvetica Neue', Helvetica, 'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif;
-    --version: 'Dark-WhatsApp Lite v2.1.1';
-    --message: 'Version 2.1.1 is out! More info in the changelog. 🎉🥳 My blog post about v2 release: ';
+    --ui-font: 'custom font', 'Segoe UI', 'Helvetica Neue', Helvetica, 'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif;
+    --version: 'Dark-WhatsApp Lite v2.1.2';
+    --message: 'Version 2.1.2 is out! More info in the changelog. 🎉🥳 My blog post about v2 release: ';
     --changes: 'https://vednoc.me/blog/the-new-dark-whatsapp';
   }
   @supports (-moz-user-select: none) {
@@ -297,6 +297,17 @@
   body ._3j8Pd.GPmgF [data-icon] path,
   body ._3j8Pd.GPmgf [data-icon] path {
     fill-opacity: 1 !important;
+  }
+  body ._10YBz,
+  body ._3UAb1 {
+    color: var(--light) !important;
+    background-color: var(--dark) !important;
+    opacity: 0.75;
+    box-shadow: var(--bshadow);
+  }
+  body ._10YBz svg path,
+  body ._3UAb1 svg path {
+    fill: var(--light) !important;
   }
   body svg[width = '18'][height = '18'] circle,
   body svg[width = '20'][height = '20'] circle {
@@ -1442,6 +1453,11 @@
     background-color: var(--t) !important;
   }
   div:not(#z)[style ^= 'transform-origin:']._1fRWV .Ijb1Q::after {
+    box-shadow: var(--bshadow) !important;
+  }
+  div:not(#z)[style ^= 'transform-origin:']._1fRWV ._3Fjw5 {
+    color: var(--light) !important;
+    background-color: var(--darker) !important;
     box-shadow: var(--bshadow);
   }
   div:not(#z)[style ^= 'transform-origin:'] > ul._3z3lc li._1sHYl {
@@ -1839,9 +1855,9 @@
   .app span > div[style *= 'height: 100%'] > div > div[class] ._1i7uJ {
     background-color: var(--darker) !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._357v7,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._357v7,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._357v7 {
+  .app span > div[style *= 'height: 100%'] > div[class] ._2MoEz,
+  .app span > div[style *= 'height: 100%'] > span > div[class] ._2MoEz,
+  .app span > div[style *= 'height: 100%'] > div > div[class] ._2MoEz {
     color: var(--light) !important;
   }
   ._7YAGC .copyable-area [style *= 'height: 200px'] {
@@ -2076,6 +2092,9 @@
   #main .copyable-area > div[tabindex]._2AqZl [class *= 'message-'] {
     position: relative;
   }
+  .qTFAl {
+    z-index: 0 !important;
+  }
   .qTFAl::before {
     content: '';
     opacity: 0.08;
@@ -2084,12 +2103,10 @@
     left: 0;
     bottom: 0;
     right: 0;
-    z-index: 0;
   }
   .qTFAl:hover,
   .qTFAl._3Z2tD {
     background-color: var(--t) !important;
-    z-index: 0;
   }
   .qTFAl:hover::before,
   .qTFAl._3Z2tD::before {
@@ -2157,10 +2174,17 @@
     color: var(--accent) !important;
   }
   ._1PENu {
-    border-color: var(--dark) !important;
+    border-color: var(--t) !important;
   }
   ._1PENu [role = 'button'] {
-    color: var(--accent) !important;
+    max-width: 100px !important;
+    padding: 8px 0 !important;
+    color: var(--white) !important;
+    background-color: var(--accent) !important;
+    border-radius: var(--radius) !important;
+  }
+  ._1PENu [role = 'button']:hover {
+    opacity: 0.8;
   }
   ._1mrMQ {
     background-color: var(--dark) !important;
@@ -2194,15 +2218,6 @@
   }
   ._1ikYm ._3fnHB {
     color: var(--lighter) !important;
-  }
-  ._1ikYm ._1PENu {
-    border-color: var(--dark) !important;
-  }
-  ._1ikYm [role = 'button'] {
-    color: var(--accent) !important;
-  }
-  ._1ikYm [role = 'button']:hover {
-    opacity: 0.8;
   }
   .L4M2f,
   ._1d0W1 {
@@ -2343,7 +2358,7 @@
     background: linear-gradient(90deg, var(--t), var(--darker) 80%) !important;
   }
   .message-in > div > span:nth-last-child(2) > div[style]._15CAo._3WZEQ {
-    background: none !important;
+    background: linear-gradient(90deg, var(--t), var(--dark) 60%) !important;
   }
   .message-in ._2HTIU {
     background-color: var(--dark) !important;
@@ -2386,7 +2401,7 @@
     background: linear-gradient(90deg, var(--t), var(--darken) 80%) !important;
   }
   .message-out > div > span:nth-last-child(2) > div[style]._15CAo._3WZEQ {
-    background: none !important;
+    background: linear-gradient(90deg, var(--t), var(--dark) 60%) !important;
   }
   .message-out ._2HTIU {
     background-color: var(--dark) !important;
@@ -2555,6 +2570,7 @@
   #main > footer ._30sf0 .QChXd ._2x9yi,
   #main > footer ._30sf0 ._20KNO ._2x9yi,
   #main > footer ._30sf0 .RxbUw ._2x9yi {
+    border-radius: 4px;
     background-color: var(--darken) !important;
   }
   #main > footer ._30sf0 .QChXd [data-id = 'retry'],
@@ -2640,14 +2656,6 @@
   ._2NdXo {
     color: var(--lighter) !important;
   }
-  html[lang = 'vi'] .EopGb,
-  html[lang = 'nl'] .EopGb {
-    width: 56px;
-  }
-  html[lang = 'vi'] ._2COY9,
-  html[lang = 'nl'] ._2COY9 {
-    width: 92px;
-  }
 @media screen and (max-height: 500px) {
     #app > div > .app {
       min-height: auto;
@@ -2718,10 +2726,8 @@
     #side ._2UaNq ._1ZMSM > span:not(.P6z4j) {
       display: none !important;
     }
-    #side ._2UaNq .xD91K span[dir] {
-      margin-left: 10px;
-    }
-    #side ._2UaNq ._2Bw3Q [class *= 'status-'] {
+    #side ._2UaNq ._1Wn_k > ._3VIru + span[dir],
+    #side ._2UaNq ._1Wn_k > :first-child:not(._3VIru) {
       margin-left: 10px;
     }
     #side ._2UaNq ._1ZMSM .P6z4j {
@@ -2733,10 +2739,10 @@
       margin-right: 0;
     }
     #side ._2UaNq ._3VIru {
-      padding: 0.5px;
+      padding: 1px;
       z-index: 101;
       position: absolute;
-      margin: 5px 0 0 -55px;
+      margin: 4px 0 0 -59px;
       border-radius: 50%;
       background-color: var(--dark) !important;
       box-shadow: 0 0 0 3px var(--darken);
