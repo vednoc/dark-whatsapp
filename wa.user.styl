@@ -985,6 +985,7 @@
             > div + label {
                 rad: radius-i i;
                 c: 0 0 bg;
+                &:not(:focus-within) { box-shadow: inner }
                 input { c: fg 0 t }
                 &:focus-within { c: 0 0 t }
             }
