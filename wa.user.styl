@@ -28,6 +28,8 @@
     'Hide all                    ': 'hide          ',
 }
 
+@var range avatar_r 'Contacts\' avatar radius' [50, 0, 50, 1, '%']
+
 @var select   chat_m_t   'Message tails style' {
     'Default  *': 'default ',
     'Minimal   ': 'minimal ',
@@ -146,6 +148,8 @@
         --app-width : app_width;
 
         --emoji-o   : emoji_o;
+        
+        --avatar-r  : avatar_r;
 
         --bg-image  : image_url;
         --bg-opacity: bg_opacity;
@@ -497,6 +501,12 @@
             /// HACK: Resolve pane gap/border glitches.
             ._2rI9W { margin-right: -1px }
         }
+    }
+
+    /// Global -> Profile avatar, Chat avatars, New group icon & no-blocked-contacts icon radius.
+    ._3BYwr, ._3RWII, ._3p0T6, ._1i7uJ {
+      border-radius: var(--avatar-r) !important;
+      > img { border-radius: var(--avatar-r) !important }
     }
 
     /// Global -> Emojis.
