@@ -1063,9 +1063,9 @@
 
     // App -> Left/right panes.
     ._2t4Ic {
-        /// Pane background.
         .copyable-area {
-            c: 0 0 hl;
+            /// Pane background.
+            &:not(.overlay) { c: 0 0 hl }
             /// Header.
             header {
                 height: unset;
