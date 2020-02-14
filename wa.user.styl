@@ -97,7 +97,7 @@
 ==/UserStyle== */
 
 @-moz-document domain('web.whatsapp.com') {
-    /// CSS custom properties.
+    // CSS custom properties.
     :root {
         /// Feat -> Thin scrollbar in Firefox.
         if ( ff_scroll == 1 ) {
@@ -190,10 +190,11 @@
     r       = var(--radius);
     outer   = 0 0 0 1px bd;
     inner   = inset outer;
+    i       = !important;
 
     // Color mixin.
-    // All colors: `c: fg bd bg;`
-    // Only border-color: `c: 0 bd;`
+    /// All colors: `c: fg bd bg;`
+    /// Only border-color: `c: 0 bd;`
     c(x, y = 0, z = 0, xi = 1, yi = 1, zi = 1) {
         i = !important;
         if x is a 'call' or x is a 'rgba' {            color: xi is 0? x : x i }
@@ -201,6 +202,7 @@
         if z is a 'call' or z is a 'rgba' { background-color: zi is 0? z : z i }
     }
     // SVG mixin.
+    /// Same usage as for `c` mixin.
     v(x, y = 0, xi = 1, yi = 1) {
         i = !important;
         if x is a 'call' or x is a 'rgba' {   fill: xi is 0? x : x i }
@@ -208,9 +210,8 @@
     }
     // Rounded corners.
     rad() { border-radius: arguments }
-    // Shorter important.
-    i = !important;
 
+    // Base styles.
     body {
         c: fg 0 bg;
         background-image: none;
@@ -322,7 +323,7 @@
             circle { stroke: fg }
         }
 
-        // App -> Tooltips.
+        /// App -> Tooltips.
         ._3pkG4 {
             c: fg 0 hl;
             box-shadow: inner, bsh;
@@ -449,7 +450,9 @@
         }
     }
 
+    /// App.
     #app > div {
+        /// Feat -> App background.
         &::after {
             if ( app_image == custom ) {
                 s = calc(-2 * var(--bg-blur));
@@ -471,7 +474,7 @@
             /// Remove image in fullscreen mode.
             if ( fullscreen == 1 ) { content: none }
         }
-
+        /// Resets.
         .app {
             c: 0 0 bg;
             background-image: none;
@@ -560,6 +563,7 @@
             /// Sections.
             ._2lKjK { c: cm }
         }
+        /// Nib.
         + [data-animate-dropdown-nib] {
             border-bottom: 1px solid bd;
             border-right: 1px solid bd;
@@ -644,7 +648,7 @@
             box-shadow: 0 4px 8px 2px sh;
             ._13HPh { c: fg }
             ._2VDPW { c: 0 0 hl }
-            /// Contacts popup ('Forward message' / Group -> 'Message admins').
+            /// Contacts popup -> Forward message / Message group admins.
             ._1KDYa {
                 c: 0 0 t;
                 > header {
@@ -1106,7 +1110,7 @@
                 ._6xQdq { c: fg }
             }
             /.wjdTm, ._1qWhd { c: cm }
-            /// New group.
+            /// Left -> New group.
             ._1w-mX {
                 c: 0 0 t;
                 input { c: fg }
@@ -1122,9 +1126,9 @@
                     ._2DxRd, ._2WP9Q { c: 0 t }
                 }
             }
-            /// New group creation.
+            /// Left -> New group creation.
             /._1wt6r { c: cm }
-            /// New chat.
+            /// Left -> New chat.
             ._1c8mz {
                 /// New chat.
                 ._11p3Q, ._8-yzK { c: 0 0 t }
@@ -1141,7 +1145,7 @@
                 /// Remove borders.
                 ._2DxRd, ._2WP9Q { border: none }
             }
-            /// Starred/Archived.
+            /// Left -> Starred/Archived.
             ._1WMT2 {
                 &::before {
                     margin-top: -1px;
@@ -1173,7 +1177,6 @@
     }
 
     // App -> Right.
-    // _1C9rS
     ._7YAGC .copyable-area {
         /// Avatar.
         [style *= 'height: 200px'] {
@@ -1203,7 +1206,7 @@
             padding: 0 15px;
             width: auto;
         }
-        /// Contact info -> Media, links and docs / Starred messages.
+        /// Right -> Media, links and docs / Starred messages.
         ._2h7Od, ._88RDg {
             path { opacity: 0.55 i }
             /// Hover animation.
@@ -1851,7 +1854,7 @@
                 }
             }
         }
-        /// Alerts -> Group ('Not a group participant' / 'Only admins can send messages').
+        /// Alerts -> Not a group member / Only admins can send messages.
         ._26pkE {
             c: cm;
             border-left: 1px solid bd;
@@ -1962,7 +1965,7 @@
             .ZP8RM:not(._19OGD) label { padding: 0px }
             /// Contacts.
             #side {
-                // Fix header width.
+                /// Fix header width.
                 > header {
                     min-width: 240px;
                     /// Hide notifications.
@@ -2032,6 +2035,7 @@
             }
         }
     }
+
     /// Feat -> Theme colors in groups.
     if ( c_g_c == 1 ) {
         .color {
