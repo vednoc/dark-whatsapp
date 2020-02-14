@@ -28,6 +28,8 @@
     'Hide all                    ': 'hide          ',
 }
 
+@var range avatar_r 'Contacts\' avatar radius' [50, 0, 50, 1, '%']
+
 @var select   chat_m_t   'Message tails style' {
     'Default  *': 'default ',
     'Minimal   ': 'minimal ',
@@ -146,6 +148,8 @@
         --app-width : app_width;
 
         --emoji-o   : emoji_o;
+
+        --avatar-r  : avatar_r;
 
         --bg-image  : image_url;
         --bg-opacity: bg_opacity;
@@ -502,6 +506,22 @@
             &.three > ._37f_5 { width: calc(100% + 1px) }
             /// HACK: Resolve pane gap/border glitches.
             ._2rI9W { margin-right: -1px }
+        }
+    }
+
+    /// Global -> Profile avatar, Chat avatars, New group icon & no-blocked-contacts icon radius.
+    ._3BYwr, ._3RWII, ._3p0T6, ._1i7uJ {
+        rad: var(--avatar-r) i;
+        c: 0 0 bg;
+        > img { rad: var(--avatar-r) i }
+        /// Tweak default-user icon.
+        if ( avatar_r != '50%' ) {
+            /[style *= 'height: 49px'], /[style *= 'height: 200px'] {
+                [data-icon = 'default-user'] svg {
+                    margin-top: -4px;
+                    transform: scale(0.8) i;
+                }
+            }
         }
     }
 
@@ -1008,8 +1028,6 @@
                 &._3mMX1 { c: 0 0 bd }
                 /// Remove borders.
                 &::after, > div:last-child { border: none }
-                /// Avatar background.
-                /[style *= 'height: 49px'] { c: 0 0 bd }
                 /// Text.
                 > div:last-child {
                     /// Title/timestamp.
@@ -1178,12 +1196,9 @@
 
     // App -> Right.
     ._7YAGC .copyable-area {
-        /// Avatar.
-        [style *= 'height: 200px'] {
-            c: 0 0 bd;
-            /// Default avatar.
-            ._2EaHs { c: 0 0 hl }
-        }
+        /// Default avatar.
+        [style *= 'height: 200px'] ._2EaHs { c: 0 0 hl }
+        /// Text color.
         ._1drsQ { c: fg }
         ._2IwIk, ._1goQ0 { c: cm }
         /// Buttons.
