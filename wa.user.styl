@@ -508,6 +508,15 @@
         rad: var(--avatar-r) i;
         c: 0 0 bg;
         > img { rad: var(--avatar-r) i }
+        /// Tweak default-user icon.
+        if ( avatar_r != '50%' ) {
+            /[style *= 'height: 49px'], /[style *= 'height: 200px'] {
+                [data-icon = 'default-user'] svg {
+                    margin-top: -4px;
+                    transform: scale(0.8) i;
+                }
+            }
+        }
     }
 
     /// Global -> Emojis.
@@ -1015,8 +1024,6 @@
                 &._3mMX1 { c: 0 0 bd }
                 /// Remove borders.
                 &::after, > div:last-child { border: none }
-                /// Avatar background.
-                /[style *= 'height: 49px'] { c: 0 0 bd }
                 /// Text.
                 > div:last-child {
                     /// Title/timestamp.
@@ -1182,12 +1189,9 @@
     // App -> Right.
     // _1C9rS
     ._7YAGC .copyable-area {
-        /// Avatar.
-        [style *= 'height: 200px'] {
-            c: 0 0 bd;
-            /// Default avatar.
-            ._2EaHs { c: 0 0 hl }
-        }
+        /// Default avatar.
+        [style *= 'height: 200px'] ._2EaHs { c: 0 0 hl }
+        /// Text color.
         ._1drsQ { c: fg }
         ._2IwIk, ._1goQ0 { c: cm }
         /// Buttons.
