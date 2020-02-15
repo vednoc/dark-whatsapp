@@ -6,7 +6,7 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      2.1.2
+@version      2.2.0
 @license      MIT
 ==/UserStyle== */
 
@@ -34,6 +34,7 @@
     --bshadow: 0 2px 4px var(--shadow);
     --app-width: 1396px;
     --emoji-o: 0.8;
+    --avatar-r: 50%;
     --bg-image: url("https://images.unsplash.com/photo-1434569117012-ce134ee1a088?fit=crop&w=1280&h=720&q=80");
     --bg-opacity: 0.4;
     --bg-blur: 12px;
@@ -44,8 +45,8 @@
     --chat-bg-i: 0.6;
     --c-m-hover: 1s;
     --ui-font: 'custom font', 'Segoe UI', 'Helvetica Neue', Helvetica, 'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif;
-    --version: 'Dark-WhatsApp Lite v2.1.2';
-    --message: 'Version 2.1.2 is out! More info in the changelog. 🎉🥳 My blog post about v2 release: ';
+    --version: 'Dark-WhatsApp Lite v2.2.0';
+    --message: 'Version 2.2.0 is out! More info in the changelog. 🎉🥳 My blog post about v2 release: ';
     --changes: 'https://vednoc.me/blog/the-new-dark-whatsapp';
   }
   @supports (-moz-user-select: none) {
@@ -63,11 +64,12 @@
   body ._2kE6F {
     color: var(--lighter) !important;
   }
+  body strong,
+  body [contenteditable] {
+    color: var(--light) !important;
+  }
   body a {
     color: var(--accent);
-  }
-  body strong {
-    color: var(--light) !important;
   }
   body select {
     color: var(--light) !important;
@@ -214,6 +216,12 @@
   }
   body ._3pkG4 button {
     color: var(--accent) !important;
+  }
+  body ._2WwbV,
+  body .FPZFa {
+    color: var(--accent) !important;
+    border-color: var(--accent) !important;
+    background-color: var(--darken) !important;
   }
   body ._1qNwV {
     border-color: var(--darker) !important;
@@ -382,8 +390,22 @@
   #app > div .app ._2rI9W {
     margin-right: -1px;
   }
+  ._3BYwr,
+  ._3RWII,
+  ._3p0T6,
+  ._1i7uJ {
+    border-radius: var(--avatar-r) !important;
+    background-color: var(--dark) !important;
+  }
+  ._3BYwr > img,
+  ._3RWII > img,
+  ._3p0T6 > img,
+  ._1i7uJ > img {
+    border-radius: var(--avatar-r) !important;
+  }
   .emojik {
     transition: transform 0.15s ease;
+    clip-path: circle(49%);
   }
   .emojik:not(:hover):not(:focus):not(.selected) {
     filter: opacity(var(--emoji-o));
@@ -395,613 +417,613 @@
     transform: scale(1.2);
     box-shadow: none !important;
   }
-  .emojik.wa.b0 {
+  .d.emojik.wa.b0 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/0.webp");
   }
-  .emojik.wa.b1 {
+  .d.emojik.wa.b1 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/1.webp");
   }
-  .emojik.wa.b2 {
+  .d.emojik.wa.b2 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/2.webp");
   }
-  .emojik.wa.b3 {
+  .d.emojik.wa.b3 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/3.webp");
   }
-  .emojik.wa.b4 {
+  .d.emojik.wa.b4 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/4.webp");
   }
-  .emojik.wa.b5 {
+  .d.emojik.wa.b5 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/5.webp");
   }
-  .emojik.wa.b6 {
+  .d.emojik.wa.b6 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/6.webp");
   }
-  .emojik.wa.b7 {
+  .d.emojik.wa.b7 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/7.webp");
   }
-  .emojik.wa.b8 {
+  .d.emojik.wa.b8 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/8.webp");
   }
-  .emojik.wa.b9 {
+  .d.emojik.wa.b9 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/9.webp");
   }
-  .emojik.wa.b10 {
+  .d.emojik.wa.b10 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/10.webp");
   }
-  .emojik.wa.b11 {
+  .d.emojik.wa.b11 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/11.webp");
   }
-  .emojik.wa.b12 {
+  .d.emojik.wa.b12 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/12.webp");
   }
-  .emojik.wa.b13 {
+  .d.emojik.wa.b13 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/13.webp");
   }
-  .emojik.wa.b14 {
+  .d.emojik.wa.b14 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/14.webp");
   }
-  .emojik.wa.b15 {
+  .d.emojik.wa.b15 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/15.webp");
   }
-  .emojik.wa.b16 {
+  .d.emojik.wa.b16 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/16.webp");
   }
-  .emojik.wa.b17 {
+  .d.emojik.wa.b17 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/17.webp");
   }
-  .emojik.wa.b18 {
+  .d.emojik.wa.b18 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/18.webp");
   }
-  .emojik.wa.b19 {
+  .d.emojik.wa.b19 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/19.webp");
   }
-  .emojik.wa.b20 {
+  .d.emojik.wa.b20 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/20.webp");
   }
-  .emojik.wa.b21 {
+  .d.emojik.wa.b21 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/21.webp");
   }
-  .emojik.wa.b22 {
+  .d.emojik.wa.b22 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/22.webp");
   }
-  .emojik.wa.b23 {
+  .d.emojik.wa.b23 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/23.webp");
   }
-  .emojik.wa.b24 {
+  .d.emojik.wa.b24 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/24.webp");
   }
-  .emojik.wa.b25 {
+  .d.emojik.wa.b25 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/25.webp");
   }
-  .emojik.wa.b26 {
+  .d.emojik.wa.b26 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/26.webp");
   }
-  .emojik.wa.b27 {
+  .d.emojik.wa.b27 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/27.webp");
   }
-  .emojik.wa.b28 {
+  .d.emojik.wa.b28 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/28.webp");
   }
-  .emojik.wa.b29 {
+  .d.emojik.wa.b29 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/29.webp");
   }
-  .emojik.wa.b30 {
+  .d.emojik.wa.b30 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/30.webp");
   }
-  .emojik.wa.b31 {
+  .d.emojik.wa.b31 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/31.webp");
   }
-  .emojik.wa.b32 {
+  .d.emojik.wa.b32 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/32.webp");
   }
-  .emojik.wa.b33 {
+  .d.emojik.wa.b33 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/33.webp");
   }
-  .emojik.wa.b34 {
+  .d.emojik.wa.b34 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/34.webp");
   }
-  .emojik.wa.b35 {
+  .d.emojik.wa.b35 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/35.webp");
   }
-  .emojik.wa.b36 {
+  .d.emojik.wa.b36 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/36.webp");
   }
-  .emojik.wa.b37 {
+  .d.emojik.wa.b37 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/37.webp");
   }
-  .emojik.wa.b38 {
+  .d.emojik.wa.b38 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/38.webp");
   }
-  .emojik.wa.b39 {
+  .d.emojik.wa.b39 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/39.webp");
   }
-  .emojik.wa.b40 {
+  .d.emojik.wa.b40 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/40.webp");
   }
-  .emojik.wa.b41 {
+  .d.emojik.wa.b41 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/41.webp");
   }
-  .emojik.wa.b42 {
+  .d.emojik.wa.b42 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/42.webp");
   }
-  .emojik.wa.b43 {
+  .d.emojik.wa.b43 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/43.webp");
   }
-  .emojik.wa.b44 {
+  .d.emojik.wa.b44 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/44.webp");
   }
-  .emojik.wa.b45 {
+  .d.emojik.wa.b45 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/45.webp");
   }
-  .emojik.wa.b46 {
+  .d.emojik.wa.b46 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/46.webp");
   }
-  .emojik.wa.b47 {
+  .d.emojik.wa.b47 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/47.webp");
   }
-  .emojik.wa.b48 {
+  .d.emojik.wa.b48 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/48.webp");
   }
-  .emojik.wa.b49 {
+  .d.emojik.wa.b49 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/49.webp");
   }
-  .emojik.wa.b50 {
+  .d.emojik.wa.b50 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/50.webp");
   }
-  .emojik.wa.b51 {
+  .d.emojik.wa.b51 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/51.webp");
   }
-  .emojik.wa.b52 {
+  .d.emojik.wa.b52 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/52.webp");
   }
-  .emojik.wa.b53 {
+  .d.emojik.wa.b53 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/53.webp");
   }
-  .emojik.wa.b54 {
+  .d.emojik.wa.b54 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/54.webp");
   }
-  .emojik.wa.b55 {
+  .d.emojik.wa.b55 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/55.webp");
   }
-  .emojik.wa.b56 {
+  .d.emojik.wa.b56 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/56.webp");
   }
-  .emojik.wa.b57 {
+  .d.emojik.wa.b57 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/57.webp");
   }
-  .emojik.wa.b58 {
+  .d.emojik.wa.b58 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/58.webp");
   }
-  .emojik.wa.b59 {
+  .d.emojik.wa.b59 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/59.webp");
   }
-  .emojik.wa.b60 {
+  .d.emojik.wa.b60 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/60.webp");
   }
-  .emojik.wa.b61 {
+  .d.emojik.wa.b61 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/61.webp");
   }
-  .emojik.wa.b62 {
+  .d.emojik.wa.b62 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/62.webp");
   }
-  .emojik.wa.b63 {
+  .d.emojik.wa.b63 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/63.webp");
   }
-  .emojik.wa.b64 {
+  .d.emojik.wa.b64 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/64.webp");
   }
-  .emojik.wa.b65 {
+  .d.emojik.wa.b65 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/65.webp");
   }
-  .emojik.wa.b66 {
+  .d.emojik.wa.b66 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/66.webp");
   }
-  .emojik.wa.b67 {
+  .d.emojik.wa.b67 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/67.webp");
   }
-  .emojik.wa.b68 {
+  .d.emojik.wa.b68 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/68.webp");
   }
-  .emojik.wa.b69 {
+  .d.emojik.wa.b69 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/69.webp");
   }
-  .emojik.wa.b70 {
+  .d.emojik.wa.b70 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/70.webp");
   }
-  .emojik.wa.b71 {
+  .d.emojik.wa.b71 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/71.webp");
   }
-  .emojik.wa.b72 {
+  .d.emojik.wa.b72 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/72.webp");
   }
-  .emojik.wa.b73 {
+  .d.emojik.wa.b73 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/73.webp");
   }
-  .emojik.wa.b74 {
+  .d.emojik.wa.b74 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/74.webp");
   }
-  .emojik.wa.b75 {
+  .d.emojik.wa.b75 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/75.webp");
   }
-  .emojik.wa.b76 {
+  .d.emojik.wa.b76 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/76.webp");
   }
-  .emojik.wa.b77 {
+  .d.emojik.wa.b77 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/77.webp");
   }
-  .emojik.wa.b78 {
+  .d.emojik.wa.b78 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/78.webp");
   }
-  .emojik.wa.b79 {
+  .d.emojik.wa.b79 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/79.webp");
   }
-  .emojik.wa.b80 {
+  .d.emojik.wa.b80 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/80.webp");
   }
-  .emojik.wa.b81 {
+  .d.emojik.wa.b81 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/81.webp");
   }
-  .emojik.wa.b82 {
+  .d.emojik.wa.b82 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/82.webp");
   }
-  .emojik.wa.b83 {
+  .d.emojik.wa.b83 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/83.webp");
   }
-  .emojik.wa.b84 {
+  .d.emojik.wa.b84 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/84.webp");
   }
-  .emojik.wa.b85 {
+  .d.emojik.wa.b85 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/85.webp");
   }
-  .emojik.wa.b86 {
+  .d.emojik.wa.b86 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/86.webp");
   }
-  .emojik.wa.b87 {
+  .d.emojik.wa.b87 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/87.webp");
   }
-  .emojik.wa.b88 {
+  .d.emojik.wa.b88 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/88.webp");
   }
-  .emojik.wa.b89 {
+  .d.emojik.wa.b89 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/89.webp");
   }
-  .emojik.wa.b90 {
+  .d.emojik.wa.b90 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/90.webp");
   }
-  .emojik.wa.b91 {
+  .d.emojik.wa.b91 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/91.webp");
   }
-  .emojik.wa.b92 {
+  .d.emojik.wa.b92 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/92.webp");
   }
-  .emojik.wa.b93 {
+  .d.emojik.wa.b93 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/93.webp");
   }
-  .emojik.wa.b94 {
+  .d.emojik.wa.b94 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/94.webp");
   }
-  .emojik.wa.b95 {
+  .d.emojik.wa.b95 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/95.webp");
   }
-  .emojik.wa.b96 {
+  .d.emojik.wa.b96 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/96.webp");
   }
-  .emojik.wa.b97 {
+  .d.emojik.wa.b97 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/97.webp");
   }
-  .emojik.wa.b98 {
+  .d.emojik.wa.b98 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/98.webp");
   }
-  .emojik.wa.b99 {
+  .d.emojik.wa.b99 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/99.webp");
   }
-  .emojik.wa.b100 {
+  .d.emojik.wa.b100 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/100.webp");
   }
-  .emojik.wa.b101 {
+  .d.emojik.wa.b101 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/101.webp");
   }
-  .emojik.apple.b0 {
+  .d.emojik.apple.b0 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/0.webp");
   }
-  .emojik.apple.b1 {
+  .d.emojik.apple.b1 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/1.webp");
   }
-  .emojik.apple.b2 {
+  .d.emojik.apple.b2 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/2.webp");
   }
-  .emojik.apple.b3 {
+  .d.emojik.apple.b3 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/3.webp");
   }
-  .emojik.apple.b4 {
+  .d.emojik.apple.b4 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/4.webp");
   }
-  .emojik.apple.b5 {
+  .d.emojik.apple.b5 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/5.webp");
   }
-  .emojik.apple.b6 {
+  .d.emojik.apple.b6 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/6.webp");
   }
-  .emojik.apple.b7 {
+  .d.emojik.apple.b7 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/7.webp");
   }
-  .emojik.apple.b8 {
+  .d.emojik.apple.b8 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/8.webp");
   }
-  .emojik.apple.b9 {
+  .d.emojik.apple.b9 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/9.webp");
   }
-  .emojik.apple.b10 {
+  .d.emojik.apple.b10 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/10.webp");
   }
-  .emojik.apple.b11 {
+  .d.emojik.apple.b11 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/11.webp");
   }
-  .emojik.apple.b12 {
+  .d.emojik.apple.b12 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/12.webp");
   }
-  .emojik.apple.b13 {
+  .d.emojik.apple.b13 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/13.webp");
   }
-  .emojik.apple.b14 {
+  .d.emojik.apple.b14 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/14.webp");
   }
-  .emojik.apple.b15 {
+  .d.emojik.apple.b15 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/15.webp");
   }
-  .emojik.apple.b16 {
+  .d.emojik.apple.b16 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/16.webp");
   }
-  .emojik.apple.b17 {
+  .d.emojik.apple.b17 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/17.webp");
   }
-  .emojik.apple.b18 {
+  .d.emojik.apple.b18 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/18.webp");
   }
-  .emojik.apple.b19 {
+  .d.emojik.apple.b19 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/19.webp");
   }
-  .emojik.apple.b20 {
+  .d.emojik.apple.b20 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/20.webp");
   }
-  .emojik.apple.b21 {
+  .d.emojik.apple.b21 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/21.webp");
   }
-  .emojik.apple.b22 {
+  .d.emojik.apple.b22 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/22.webp");
   }
-  .emojik.apple.b23 {
+  .d.emojik.apple.b23 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/23.webp");
   }
-  .emojik.apple.b24 {
+  .d.emojik.apple.b24 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/24.webp");
   }
-  .emojik.apple.b25 {
+  .d.emojik.apple.b25 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/25.webp");
   }
-  .emojik.apple.b26 {
+  .d.emojik.apple.b26 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/26.webp");
   }
-  .emojik.apple.b27 {
+  .d.emojik.apple.b27 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/27.webp");
   }
-  .emojik.apple.b28 {
+  .d.emojik.apple.b28 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/28.webp");
   }
-  .emojik.apple.b29 {
+  .d.emojik.apple.b29 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/29.webp");
   }
-  .emojik.apple.b30 {
+  .d.emojik.apple.b30 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/30.webp");
   }
-  .emojik.apple.b31 {
+  .d.emojik.apple.b31 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/31.webp");
   }
-  .emojik.apple.b32 {
+  .d.emojik.apple.b32 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/32.webp");
   }
-  .emojik.apple.b33 {
+  .d.emojik.apple.b33 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/33.webp");
   }
-  .emojik.apple.b34 {
+  .d.emojik.apple.b34 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/34.webp");
   }
-  .emojik.apple.b35 {
+  .d.emojik.apple.b35 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/35.webp");
   }
-  .emojik.apple.b36 {
+  .d.emojik.apple.b36 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/36.webp");
   }
-  .emojik.apple.b37 {
+  .d.emojik.apple.b37 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/37.webp");
   }
-  .emojik.apple.b38 {
+  .d.emojik.apple.b38 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/38.webp");
   }
-  .emojik.apple.b39 {
+  .d.emojik.apple.b39 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/39.webp");
   }
-  .emojik.apple.b40 {
+  .d.emojik.apple.b40 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/40.webp");
   }
-  .emojik.apple.b41 {
+  .d.emojik.apple.b41 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/41.webp");
   }
-  .emojik.apple.b42 {
+  .d.emojik.apple.b42 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/42.webp");
   }
-  .emojik.apple.b43 {
+  .d.emojik.apple.b43 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/43.webp");
   }
-  .emojik.apple.b44 {
+  .d.emojik.apple.b44 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/44.webp");
   }
-  .emojik.apple.b45 {
+  .d.emojik.apple.b45 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/45.webp");
   }
-  .emojik.apple.b46 {
+  .d.emojik.apple.b46 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/46.webp");
   }
-  .emojik.apple.b47 {
+  .d.emojik.apple.b47 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/47.webp");
   }
-  .emojik.apple.b48 {
+  .d.emojik.apple.b48 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/48.webp");
   }
-  .emojik.apple.b49 {
+  .d.emojik.apple.b49 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/49.webp");
   }
-  .emojik.apple.b50 {
+  .d.emojik.apple.b50 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/50.webp");
   }
-  .emojik.apple.b51 {
+  .d.emojik.apple.b51 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/51.webp");
   }
-  .emojik.apple.b52 {
+  .d.emojik.apple.b52 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/52.webp");
   }
-  .emojik.apple.b53 {
+  .d.emojik.apple.b53 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/53.webp");
   }
-  .emojik.apple.b54 {
+  .d.emojik.apple.b54 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/54.webp");
   }
-  .emojik.apple.b55 {
+  .d.emojik.apple.b55 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/55.webp");
   }
-  .emojik.apple.b56 {
+  .d.emojik.apple.b56 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/56.webp");
   }
-  .emojik.apple.b57 {
+  .d.emojik.apple.b57 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/57.webp");
   }
-  .emojik.apple.b58 {
+  .d.emojik.apple.b58 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/58.webp");
   }
-  .emojik.apple.b59 {
+  .d.emojik.apple.b59 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/59.webp");
   }
-  .emojik.apple.b60 {
+  .d.emojik.apple.b60 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/60.webp");
   }
-  .emojik.apple.b61 {
+  .d.emojik.apple.b61 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/61.webp");
   }
-  .emojik.apple.b62 {
+  .d.emojik.apple.b62 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/62.webp");
   }
-  .emojik.apple.b63 {
+  .d.emojik.apple.b63 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/63.webp");
   }
-  .emojik.apple.b64 {
+  .d.emojik.apple.b64 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/64.webp");
   }
-  .emojik.apple.b65 {
+  .d.emojik.apple.b65 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/65.webp");
   }
-  .emojik.apple.b66 {
+  .d.emojik.apple.b66 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/66.webp");
   }
-  .emojik.apple.b67 {
+  .d.emojik.apple.b67 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/67.webp");
   }
-  .emojik.apple.b68 {
+  .d.emojik.apple.b68 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/68.webp");
   }
-  .emojik.apple.b69 {
+  .d.emojik.apple.b69 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/69.webp");
   }
-  .emojik.apple.b70 {
+  .d.emojik.apple.b70 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/70.webp");
   }
-  .emojik.apple.b71 {
+  .d.emojik.apple.b71 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/71.webp");
   }
-  .emojik.apple.b72 {
+  .d.emojik.apple.b72 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/72.webp");
   }
-  .emojik.apple.b73 {
+  .d.emojik.apple.b73 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/73.webp");
   }
-  .emojik.apple.b74 {
+  .d.emojik.apple.b74 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/74.webp");
   }
-  .emojik.apple.b75 {
+  .d.emojik.apple.b75 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/75.webp");
   }
-  .emojik.apple.b76 {
+  .d.emojik.apple.b76 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/76.webp");
   }
-  .emojik.apple.b77 {
+  .d.emojik.apple.b77 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/77.webp");
   }
-  .emojik.apple.b78 {
+  .d.emojik.apple.b78 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/78.webp");
   }
-  .emojik.apple.b79 {
+  .d.emojik.apple.b79 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/79.webp");
   }
-  .emojik.apple.b80 {
+  .d.emojik.apple.b80 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/80.webp");
   }
-  .emojik.apple.b81 {
+  .d.emojik.apple.b81 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/81.webp");
   }
-  .emojik.apple.b82 {
+  .d.emojik.apple.b82 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/82.webp");
   }
-  .emojik.apple.b83 {
+  .d.emojik.apple.b83 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/83.webp");
   }
-  .emojik.apple.b84 {
+  .d.emojik.apple.b84 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/84.webp");
   }
-  .emojik.apple.b85 {
+  .d.emojik.apple.b85 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/85.webp");
   }
-  .emojik.apple.b86 {
+  .d.emojik.apple.b86 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/86.webp");
   }
-  .emojik.apple.b87 {
+  .d.emojik.apple.b87 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/87.webp");
   }
-  .emojik.apple.b88 {
+  .d.emojik.apple.b88 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/88.webp");
   }
-  .emojik.apple.b89 {
+  .d.emojik.apple.b89 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/89.webp");
   }
-  .emojik.apple.b90 {
+  .d.emojik.apple.b90 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/90.webp");
   }
-  .emojik.apple.b91 {
+  .d.emojik.apple.b91 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/91.webp");
   }
-  .emojik.apple.b92 {
+  .d.emojik.apple.b92 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/92.webp");
   }
-  .emojik.apple.b93 {
+  .d.emojik.apple.b93 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/93.webp");
   }
-  .emojik.apple.b94 {
+  .d.emojik.apple.b94 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/94.webp");
   }
-  .emojik.apple.b95 {
+  .d.emojik.apple.b95 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/95.webp");
   }
-  .emojik.apple.b96 {
+  .d.emojik.apple.b96 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/96.webp");
   }
-  .emojik.apple.b97 {
+  .d.emojik.apple.b97 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/97.webp");
   }
-  .emojik.apple.b98 {
+  .d.emojik.apple.b98 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/98.webp");
   }
-  .emojik.apple.b99 {
+  .d.emojik.apple.b99 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/99.webp");
   }
-  .emojik.apple.b100 {
+  .d.emojik.apple.b100 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/100.webp");
   }
   ._342qq._1mTBR {
@@ -1037,16 +1059,6 @@
     border-right: 1px solid var(--darker);
     background-color: var(--dark) !important;
     box-shadow: none;
-  }
-  ._2WwbV {
-    color: var(--blue) !important;
-    border-color: var(--blue) !important;
-    background-color: var(--darken) !important;
-  }
-  .FPZFa {
-    color: var(--accent) !important;
-    border-color: var(--accent) !important;
-    background-color: var(--darken) !important;
   }
   .overlay {
     background-color: var(--t) !important;
@@ -1392,7 +1404,7 @@
   span[class][data-icon *= '-dblcheck'] path {
     fill: var(--lighter) !important;
   }
-  span[class][data-icon *= '-dblcheck-ack'] path {
+  ._1t84_ span[class][data-icon *= '-dblcheck'] path {
     fill: var(--accent) !important;
   }
   span[class][data-icon *= 'check'] path {
@@ -1541,6 +1553,9 @@
     border-radius: 4px !important;
     background-color: var(--dark) !important;
   }
+  div[class *= 'ZP8RM'] > div + label:not(:focus-within) {
+    box-shadow: inset 0 0 0 1px var(--darker);
+  }
   div[class *= 'ZP8RM'] > div + label input {
     color: var(--light) !important;
     background-color: var(--t) !important;
@@ -1571,9 +1586,6 @@
   #side #pane-side [style *= 'z-index'] > div > div[class] > div:last-child {
     border: none;
   }
-  [style *= 'height: 49px'] {
-    background-color: var(--darker) !important;
-  }
   #side #pane-side [style *= 'z-index'] > div > div[class] > div:last-child > div:first-child > div:first-child {
     color: var(--light) !important;
   }
@@ -1598,14 +1610,10 @@
     background-color: var(--t) !important;
     box-shadow: 0 1px var(--darker);
   }
-  .app span > div[style *= 'height: 100%'] > div[class],
-  .app span > div[style *= 'height: 100%'] > span > div[class],
-  .app span > div[style *= 'height: 100%'] > div > div[class] {
+  ._2t4Ic .copyable-area:not(.overlay) {
     background-color: var(--darken) !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] > header,
-  .app span > div[style *= 'height: 100%'] > span > div[class] > header,
-  .app span > div[style *= 'height: 100%'] > div > div[class] > header {
+  ._2t4Ic .copyable-area header {
     height: unset;
     min-height: unset !important;
     border-bottom: 1px solid var(--darker);
@@ -1617,31 +1625,21 @@
     font-size: 18px;
     font-weight: 500;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] > header .kyJvR,
-  .app span > div[style *= 'height: 100%'] > span > div[class] > header .kyJvR,
-  .app span > div[style *= 'height: 100%'] > div > div[class] > header .kyJvR {
+  ._2t4Ic .copyable-area header .kyJvR {
     height: 58px;
     color: var(--light) !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] > header .kyJvR ._6xQdq,
-  .app span > div[style *= 'height: 100%'] > span > div[class] > header .kyJvR ._6xQdq,
-  .app span > div[style *= 'height: 100%'] > div > div[class] > header .kyJvR ._6xQdq {
+  ._2t4Ic .copyable-area header .kyJvR ._6xQdq {
     color: var(--light) !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._2LSbZ,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._2LSbZ,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._2LSbZ {
+  ._2t4Ic .copyable-area ._2LSbZ {
     background-color: var(--t) !important;
     box-shadow: none;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._2LSbZ ._3he1q,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._2LSbZ ._3he1q,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._2LSbZ ._3he1q {
+  ._2t4Ic .copyable-area ._2LSbZ ._3he1q {
     color: var(--accent) !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._2LSbZ ._3K9Sw,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._2LSbZ ._3K9Sw,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._2LSbZ ._3K9Sw {
+  ._2t4Ic .copyable-area ._2LSbZ ._3K9Sw {
     border-color: var(--t) !important;
   }
   ._5UNoc ._3hnO5 {
@@ -1681,95 +1679,61 @@
   ._2UaNq._27Ppf [style *= 'height: 26px'] {
     background-color: var(--darker) !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._26JG5,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._26JG5,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._26JG5 {
+  ._2t4Ic .copyable-area ._26JG5 {
     border-bottom: 1px solid var(--darker);
     background-color: var(--t) !important;
     box-shadow: 0 -1px var(--darker);
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._26JG5:hover,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._26JG5:hover,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._26JG5:hover {
+  ._2t4Ic .copyable-area ._26JG5:hover {
     background-color: rgba(85,85,85,0.063) !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._26JG5::before,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._26JG5::before,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._26JG5::before {
+  ._2t4Ic .copyable-area ._26JG5::before {
     content: none;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._26JG5 > div:last-child,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._26JG5 > div:last-child,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._26JG5 > div:last-child {
+  ._2t4Ic .copyable-area ._26JG5 > div:last-child {
     border-color: var(--t) !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._26JG5 ._6xQdq,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._26JG5 ._6xQdq,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._26JG5 ._6xQdq {
+  ._2t4Ic .copyable-area ._26JG5 ._6xQdq {
     color: var(--light) !important;
   }
   .wjdTm,
-  .app span > div[style *= 'height: 100%'] > div[class] ._1qWhd,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1qWhd,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1qWhd {
+  ._2t4Ic .copyable-area ._1qWhd {
     color: var(--lighter) !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._1w-mX,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1w-mX,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1w-mX {
+  ._2t4Ic .copyable-area ._1w-mX {
     background-color: var(--t) !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._1w-mX input,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1w-mX input,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1w-mX input {
+  ._2t4Ic .copyable-area ._1w-mX input {
     color: var(--light) !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._1w-mX ._39cGk,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1w-mX ._39cGk,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1w-mX ._39cGk {
+  ._2t4Ic .copyable-area ._1w-mX ._39cGk {
     border-color: var(--darker) !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._1w-mX + ._1c8mz,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1w-mX + ._1c8mz,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1w-mX + ._1c8mz {
+  ._2t4Ic .copyable-area ._1w-mX + ._1c8mz {
     background-color: var(--t) !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._1w-mX + ._1c8mz .r7sRK,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1w-mX + ._1c8mz .r7sRK,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1w-mX + ._1c8mz .r7sRK {
+  ._2t4Ic .copyable-area ._1w-mX + ._1c8mz .r7sRK {
     color: var(--accent) !important;
     background-color: var(--t) !important;
   }
   .r7sRK:not(#z) {
     box-shadow: inset 0 1px var(--darker) !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._1w-mX + ._1c8mz ._8-yzK,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1w-mX + ._1c8mz ._8-yzK,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1w-mX + ._1c8mz ._8-yzK {
+  ._2t4Ic .copyable-area ._1w-mX + ._1c8mz ._8-yzK {
     background-color: var(--t) !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._1w-mX + ._1c8mz ._2DxRd,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1w-mX + ._1c8mz ._2DxRd,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1w-mX + ._1c8mz ._2DxRd,
-  .app span > div[style *= 'height: 100%'] > div[class] ._1w-mX + ._1c8mz ._2WP9Q,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1w-mX + ._1c8mz ._2WP9Q,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1w-mX + ._1c8mz ._2WP9Q {
+  ._2t4Ic .copyable-area ._1w-mX + ._1c8mz ._2DxRd,
+  ._2t4Ic .copyable-area ._1w-mX + ._1c8mz ._2WP9Q {
     border-color: var(--t) !important;
   }
   ._1wt6r {
     color: var(--lighter) !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._1c8mz ._11p3Q,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1c8mz ._11p3Q,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1c8mz ._11p3Q,
-  .app span > div[style *= 'height: 100%'] > div[class] ._1c8mz ._8-yzK,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1c8mz ._8-yzK,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1c8mz ._8-yzK {
+  ._2t4Ic .copyable-area ._1c8mz ._11p3Q,
+  ._2t4Ic .copyable-area ._1c8mz ._8-yzK {
     background-color: var(--t) !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._1c8mz .r7sRK,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1c8mz .r7sRK,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1c8mz .r7sRK {
+  ._2t4Ic .copyable-area ._1c8mz .r7sRK {
     color: var(--accent) !important;
     background-color: var(--t) !important;
   }
@@ -1782,86 +1746,52 @@
   ._3p0T6.w4k6i path {
     fill-opacity: 0.55;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._1c8mz ._2DxRd,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1c8mz ._2DxRd,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1c8mz ._2DxRd,
-  .app span > div[style *= 'height: 100%'] > div[class] ._1c8mz ._2WP9Q,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1c8mz ._2WP9Q,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1c8mz ._2WP9Q {
+  ._2t4Ic .copyable-area ._1c8mz ._2DxRd,
+  ._2t4Ic .copyable-area ._1c8mz ._2WP9Q {
     border: none;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._1WMT2::before,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1WMT2::before,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1WMT2::before {
+  ._2t4Ic .copyable-area ._1WMT2::before {
     margin-top: -1px;
     left: 0;
     background-color: var(--darker) !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._1WMT2::after,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1WMT2::after,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1WMT2::after {
+  ._2t4Ic .copyable-area ._1WMT2::after {
     content: none;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._1WMT2._1lakC,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1WMT2._1lakC,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1WMT2._1lakC,
-  .app span > div[style *= 'height: 100%'] > div[class] ._1WMT2._2nA3s,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1WMT2._2nA3s,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1WMT2._2nA3s,
-  .app span > div[style *= 'height: 100%'] > div[class] ._1WMT2._2V_Wj,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1WMT2._2V_Wj,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1WMT2._2V_Wj {
+  ._2t4Ic .copyable-area ._1WMT2._1lakC,
+  ._2t4Ic .copyable-area ._1WMT2._2nA3s,
+  ._2t4Ic .copyable-area ._1WMT2._2V_Wj {
     background-color: rgba(85,85,85,0.063) !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._1WMT2 ._2V2qB,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1WMT2 ._2V2qB,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1WMT2 ._2V2qB,
-  .app span > div[style *= 'height: 100%'] > div[class] ._1WMT2 .jLybP::before,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1WMT2 .jLybP::before,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1WMT2 .jLybP::before {
+  ._2t4Ic .copyable-area ._1WMT2 ._2V2qB,
+  ._2t4Ic .copyable-area ._1WMT2 .jLybP::before {
     color: var(--lighter) !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._1WMT2 .tail,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1WMT2 .tail,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1WMT2 .tail,
-  .app span > div[style *= 'height: 100%'] > div[class] ._1WMT2 .tail > div[class],
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1WMT2 .tail > div[class],
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1WMT2 .tail > div[class] {
+  ._2t4Ic .copyable-area ._1WMT2 .tail,
+  ._2t4Ic .copyable-area ._1WMT2 .tail > div[class] {
     border-radius: 7.5px !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._1WMT2 .tail-container,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1WMT2 .tail-container,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1WMT2 .tail-container {
+  ._2t4Ic .copyable-area ._1WMT2 .tail-container {
     display: none !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._1WMT2 [style *= 'height: 26px; width: 26px'],
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1WMT2 [style *= 'height: 26px; width: 26px'],
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1WMT2 [style *= 'height: 26px; width: 26px'] {
+  ._2t4Ic .copyable-area ._1WMT2 [style *= 'height: 26px; width: 26px'] {
     background-color: var(--t) !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._2TLLH,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._2TLLH,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._2TLLH {
+  ._2t4Ic .copyable-area #pane-side {
+    background-color: var(--t) !important;
+  }
+  ._2t4Ic .copyable-area ._2TLLH {
     border-color: var(--t) !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._13U-5,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._13U-5,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._13U-5,
+  ._2t4Ic .copyable-area ._13U-5,
   ._3dwyT {
     color: var(--lighter) !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._1i7uJ,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._1i7uJ,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._1i7uJ {
+  ._2t4Ic .copyable-area ._1i7uJ {
     background-color: var(--darker) !important;
   }
-  .app span > div[style *= 'height: 100%'] > div[class] ._2MoEz,
-  .app span > div[style *= 'height: 100%'] > span > div[class] ._2MoEz,
-  .app span > div[style *= 'height: 100%'] > div > div[class] ._2MoEz {
+  ._2t4Ic .copyable-area ._2MoEz {
     color: var(--light) !important;
-  }
-  ._7YAGC .copyable-area [style *= 'height: 200px'] {
-    background-color: var(--darker) !important;
   }
   ._7YAGC .copyable-area [style *= 'height: 200px'] ._2EaHs {
     background-color: var(--darken) !important;
@@ -1991,13 +1921,13 @@
     border-bottom: 1px solid var(--darker);
     background-color: var(--dark) !important;
   }
-  ._7YAGC .copyable-area [data-active-tab] button:not(.Y1iVg) {
+  ._7YAGC .copyable-area [data-active-tab] button {
     color: var(--lighter) !important;
   }
-  ._7YAGC .copyable-area [data-active-tab] button:not(.Y1iVg):hover {
+  ._7YAGC .copyable-area [data-active-tab] button:hover {
     background-color: var(--darken) !important;
   }
-  ._7YAGC .copyable-area [data-active-tab] button:not(.Y1iVg)._3caqI {
+  ._7YAGC .copyable-area [data-active-tab] button._3caqI {
     color: var(--light) !important;
   }
   ._7YAGC .copyable-area [data-active-tab]::before {
@@ -2073,7 +2003,11 @@
   }
   #main ._3KRbU {
     background-color: var(--darken) !important;
-    box-shadow: inset 0 0 0 1px var(--darker);
+    transition: 0.15s ease;
+    box-shadow: inset 0 0 0 1px var(--darker), 0 4px 8px var(--shadow);
+  }
+  #main ._3KRbU:hover {
+    background-color: var(--darker) !important;
   }
   #main ._3KRbU .P6z4j {
     color: var(--white) !important;
@@ -2093,7 +2027,7 @@
     position: relative;
   }
   .qTFAl {
-    z-index: 0 !important;
+    z-index: 999 !important;
   }
   .qTFAl::before {
     content: '';
@@ -2252,7 +2186,7 @@
   }
   .message-in .a81-s ._3Mf7Z,
   .message-out .a81-s ._3Mf7Z {
-    background-color: var(--darker) !important;
+    background-color: #383d46 !important;
     box-shadow: 0 1px var(--shadow) !important;
   }
   .message-in .a81-s ._3qAvH,
@@ -2318,13 +2252,13 @@
   }
   .message-in > div:not(.a81-s) > div {
     color: var(--light) !important;
-    background-color: var(--darker) !important;
+    background-color: #383d46 !important;
   }
   .message-in > div.a81-s ._3qAvH {
-    background-color: var(--darker) !important;
+    background-color: #383d46 !important;
   }
   ._3tMyP {
-    background-color: var(--darker) !important;
+    background-color: #383d46 !important;
     box-shadow: 0 1px 0.5px var(--shadow) !important;
   }
   .message-in .tail {
@@ -2332,30 +2266,30 @@
   }
   .message-in .tail > .tail-container {
     border-radius: 4px 0 0 0;
-    border-top-color: var(--darker);
-    border-right-color: var(--darker);
+    border-top-color: #383d46;
+    border-right-color: #383d46;
   }
   .message-in [role] > span[role = 'button'] + span {
     color: var(--light) !important;
   }
   .message-in > div > span:last-child > div[style]:not(._2PpWQ) {
-    background: linear-gradient(90deg, var(--t), var(--darker) 80%) !important;
+    background: linear-gradient(90deg, var(--t), #383d46 80%) !important;
   }
   ._2PpWQ._2Nkc4 div[style *= 'opacity'] {
-    background-color: var(--darker) !important;
+    background-color: #383d46 !important;
   }
   .message-in > div > span:last-child > div[style]._20WGU {
     background: linear-gradient(30deg, var(--t) 65%, rgba(68,68,68,0.333) 120%) !important;
   }
   .message-in > div > span:last-child > div[style]._38wik._2Nkc4 {
-    background: linear-gradient(270deg, var(--t), var(--darker) 80%) !important;
+    background: linear-gradient(270deg, var(--t), #383d46 80%) !important;
   }
   .message-in > div > span:nth-last-child(2) > div[style]._15CAo._2Nkc4 {
-    background: linear-gradient(90deg, var(--t), var(--darker) 80%) !important;
+    background: linear-gradient(90deg, var(--t), #383d46 80%) !important;
   }
   .message-in > div > span:nth-last-child(2) > div[style]._15CAo._3EQsG {
     height: 23px;
-    background: linear-gradient(90deg, var(--t), var(--darker) 80%) !important;
+    background: linear-gradient(90deg, var(--t), #383d46 80%) !important;
   }
   .message-in > div > span:nth-last-child(2) > div[style]._15CAo._3WZEQ {
     background: linear-gradient(90deg, var(--t), var(--dark) 60%) !important;
@@ -2368,37 +2302,37 @@
   }
   .message-out > div:not(.a81-s) > div {
     color: var(--light) !important;
-    background-color: var(--darken) !important;
+    background-color: #2f343d !important;
   }
   .message-out > div.a81-s ._3qAvH {
-    background-color: var(--darken) !important;
+    background-color: #2f343d !important;
   }
   .message-out .tail {
     border-top-right-radius: 0 !important;
   }
   .message-out .tail > .tail-container {
     border-radius: 0 4px 0 0;
-    border-top-color: var(--darken);
-    border-left-color: var(--darken);
+    border-top-color: #2f343d;
+    border-left-color: #2f343d;
   }
   .message-out > div > span:last-child > div[style]:not(._2PpWQ) {
-    background: linear-gradient(90deg, var(--t), var(--darken) 80%) !important;
+    background: linear-gradient(90deg, var(--t), #2f343d 80%) !important;
   }
   ._3EQsG._2PpWQ div[style *= 'opacity'] {
-    background-color: var(--darken) !important;
+    background-color: #2f343d !important;
   }
   .message-out > div > span:last-child > div[style]._20WGU {
     background: linear-gradient(30deg, var(--t) 65%, rgba(68,68,68,0.333) 120%) !important;
   }
   .message-out > div > span:last-child > div[style]._38wik._3EQsG {
-    background: linear-gradient(270deg, var(--t), var(--darken) 80%) !important;
+    background: linear-gradient(270deg, var(--t), #2f343d 80%) !important;
   }
   .message-out > div > span:nth-last-child(2) > div[style]._15CAo._2Nkc4 {
-    background: linear-gradient(90deg, var(--t), var(--darken) 80%) !important;
+    background: linear-gradient(90deg, var(--t), #2f343d 80%) !important;
   }
   .message-out > div > span:nth-last-child(2) > div[style]._15CAo._3EQsG {
     height: 23px;
-    background: linear-gradient(90deg, var(--t), var(--darken) 80%) !important;
+    background: linear-gradient(90deg, var(--t), #2f343d 80%) !important;
   }
   .message-out > div > span:nth-last-child(2) > div[style]._15CAo._3WZEQ {
     background: linear-gradient(90deg, var(--t), var(--dark) 60%) !important;
@@ -2431,6 +2365,13 @@
   ._1cJw0 ._3ogpF,
   .kqC9O ._3ogpF {
     border-color: var(--accent) !important;
+  }
+  ._1BdTk ._1u0aP,
+  ._1cJw0 ._1u0aP,
+  .kqC9O ._1u0aP {
+    color: var(--light) !important;
+    background-color: var(--darker) !important;
+    box-shadow: var(--bshadow) !important;
   }
   ._1BdTk > div[tabindex] > div:nth-child(2),
   ._1cJw0 > div[tabindex] > div:nth-child(2),
@@ -2718,31 +2659,35 @@
     #side > header + span {
       display: none;
     }
-    #side ._2UaNq .xD91K {
-      z-index: 199 !important;
-      display: flex !important;
-      flex-direction: row-reverse !important;
+    #side ._2UaNq .KgevS {
+      padding-left: 5px !important;
     }
     #side ._2UaNq ._1ZMSM > span:not(.P6z4j) {
       display: none !important;
     }
     #side ._2UaNq ._1Wn_k > ._3VIru + span[dir],
+    #side ._2UaNq ._1Wn_k > ._3VIru + div[class],
     #side ._2UaNq ._1Wn_k > :first-child:not(._3VIru) {
-      margin-left: 10px;
+      margin-left: 15px;
     }
     #side ._2UaNq ._1ZMSM .P6z4j {
       z-index: 999 !important;
       margin: 7px 0px 0px -60px !important;
       box-shadow: 0 0 0 3px var(--darken) !important;
     }
+    #side ._2UaNq .xD91K {
+      z-index: 199 !important;
+      display: flex !important;
+      flex-direction: row-reverse !important;
+    }
     #side ._2UaNq ._1ZMSM {
       margin-right: 0;
     }
     #side ._2UaNq ._3VIru {
-      padding: 1px;
+      padding: 1.5px;
       z-index: 101;
       position: absolute;
-      margin: 4px 0 0 -59px;
+      margin: 4px 0 0 -60px;
       border-radius: 50%;
       background-color: var(--dark) !important;
       box-shadow: 0 0 0 3px var(--darken);
@@ -2930,5 +2875,19 @@
   .bg-color-20 {
     background-color: var(--red) !important;
     filter: hue-rotate(40deg);
+  }
+  ._2ZAIy {
+    overflow: unset !important;
+    margin-top: -16px !important;
+    position: absolute;
+  }
+  ._2ZAIy::before {
+    content: '';
+    position: absolute;
+    top: -1rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--yellow) !important;
   }
 }
