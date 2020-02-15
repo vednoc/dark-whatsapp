@@ -1,6 +1,35 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.2.0 [2020-02-15]
+Bug fixes and improvements (version ~0.4.930~).
+
+This update brought /hidden/ and still in-progress native dark mode to WhatsApp
+Web; to try it out yourself, open DevTools and add ~dark~ to the classes of the
+HTML element. The change should look like so: ~<html class="dark js webp...">~~
+
+*** Breaking
+- Transparent emoji images are disabled until desktop installers are updated to
+  the latest version. If you enable the option, it will use wrong emoji images.
+
+*** Additions
+- Added an option to set custom avatar radius ([[https://github.com/vednoc/dark-whatsapp/pull/117][#117]])
+
+*** Documentation
+- Revised code comments
+
+*** Improved
+- Compiled CSS output by refactoring left pane selectors
+- Compact mode indicators and message content positioning
+- Search input bar by adding a border around it
+- Hover/shadow styles for chat jump button
+- Badges now use the same colors
+
+*** Fixed
+- Alert colors in 'upload preview' pane
+- Minor regressions caused by refactoring
+- Hover/selected bugs for selected messages
+
 ** 2.1.2 [2020-02-10]
 Minor bug fixes and improvements (version ~0.4.613~).
 
@@ -14,7 +43,7 @@ Minor bug fixes and improvements (version ~0.4.613~).
 - Tooltip colors for attach menu dropdown items
 - Z-index causing glitches in 'select messages' mode
 - Context menu gradient for embedded links
-- Message text position in compact mode ([[https://github.com/vednoc/dark-whatsapp/pull/112][#112]])
+- Message text position in compact mode ([[https://github.com/vednoc/dark-whatsapp/issues/112][#112]])
 
 ** 2.1.1 [2020-01-27]
 Weekly update to address a few minor things.
