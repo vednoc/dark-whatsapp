@@ -1,12 +1,21 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.2.1 [2020-02-16]
+Minor bug fixes for yesterday's update.
+
+*** Fixed
+- Missing ~dblcheck-ack~ colors
+- Full chat background image link
+- Colors for audio message controls
+- Animation for down arrow icon
+
 ** 2.2.0 [2020-02-15]
 Bug fixes and improvements (version ~0.4.930~).
 
 This update brought /hidden/ and still in-progress native dark mode to WhatsApp
 Web; to try it out yourself, open DevTools and add ~dark~ to the classes of the
-HTML element. The change should look like so: ~<html class="dark js webp...">~~
+HTML element. The change should look like so: ~<html class="dark js webp...">~
 
 *** Breaking
 - Transparent emoji images are disabled until desktop installers are updated to
