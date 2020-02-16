@@ -6,7 +6,7 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      2.2.0
+@version      2.2.1
 @license      MIT
 ==/UserStyle== */
 
@@ -45,8 +45,8 @@
     --chat-bg-i: 0.6;
     --c-m-hover: 1s;
     --ui-font: 'custom font', 'Segoe UI', 'Helvetica Neue', Helvetica, 'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif;
-    --version: 'Dark-WhatsApp Lite v2.2.0';
-    --message: 'Version 2.2.0 is out! More info in the changelog. 🎉🥳 My blog post about v2 release: ';
+    --version: 'Dark-WhatsApp Lite v2.2.1';
+    --message: 'Version 2.2.1 is out! More info in the changelog. 🎉🥳 My blog post about v2 release: ';
     --changes: 'https://vednoc.me/blog/the-new-dark-whatsapp';
   }
   @supports (-moz-user-select: none) {
@@ -1404,6 +1404,9 @@
   span[class][data-icon *= '-dblcheck'] path {
     fill: var(--lighter) !important;
   }
+  span[class][data-icon *= '-dblcheck-ack'] path,
+  span[class].Ryz_m[data-icon *= '-dblcheck'] path,
+  span[class]._33bww[data-icon *= '-dblcheck'] path,
   ._1t84_ span[class][data-icon *= '-dblcheck'] path {
     fill: var(--accent) !important;
   }
@@ -1440,6 +1443,9 @@
   span[class][data-icon = 'star-light'] > svg > path {
     opacity: 1;
     fill: var(--accent);
+  }
+  span[class][data-icon = 'down'] {
+    fill-opacity: 0.55;
   }
   div:not(#z)[style ^= 'transform-origin:'] {
     border: 1px solid var(--darker);
@@ -2455,6 +2461,15 @@
   #main > footer > div:first-child div[style] + div[tabindex] .focused > div[style] {
     color: var(--t) !important;
   }
+  #main > footer [data-icon = 'ptt'] path {
+    fill-opacity: 0.55;
+  }
+  #main > footer [fill = '#09D261'] {
+    fill: var(--green) !important;
+  }
+  #main > footer [fill = '#E53935'] {
+    fill: var(--red) !important;
+  }
   #main > footer ._30sf0 {
     border-color: var(--darker) !important;
   }
@@ -2875,19 +2890,5 @@
   .bg-color-20 {
     background-color: var(--red) !important;
     filter: hue-rotate(40deg);
-  }
-  ._2ZAIy {
-    overflow: unset !important;
-    margin-top: -16px !important;
-    position: absolute;
-  }
-  ._2ZAIy::before {
-    content: '';
-    position: absolute;
-    top: -1rem;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: var(--yellow) !important;
   }
 }
