@@ -831,6 +831,19 @@
                 opacity: 1;
                 fill-opacity: 1 i;
             }
+            /// Exclude youtube video from animating.
+            &[data-icon='logo-youtube'] > svg > path {
+                fill-opacity: 0.25 i;
+
+                &:first-child {
+                    fill-opacity: 0.3;
+                    fill: #263238;
+                }
+                &:last-child {
+                    fill-opacity: 0.3;
+                    fill: #fff;
+                }
+            }
             /// Exclude from animating.
             &[data-icon='muted'],           // muted chat
             &[data-icon='pinned'],          // pinned chat
