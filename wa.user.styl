@@ -831,16 +831,14 @@
                 opacity: 1;
                 fill-opacity: 1 i;
             }
-            /// Exclude youtube video from animating.
-            &[data-icon='logo-youtube'] > svg > path {
-                fill-opacity: 0.25 i;
+            /// Exclude videos' icons from animating ('logo-youtube', 'logo-facebook' etc.)
+            &[data-icon*='logo-'] > svg > path {
+                fill-opacity: 0.6 i;
 
                 &:first-child {
-                    fill-opacity: 0.3;
                     fill: #263238;
                 }
                 &:last-child {
-                    fill-opacity: 0.3;
                     fill: #fff;
                 }
             }
