@@ -2022,6 +2022,22 @@
                         display: flex i;
                         flex-direction: row-reverse i;
                     }
+                    /// HACK: Add typing indicator status.
+                    /._2ZAIy {
+                        overflow: unset i;
+                        margin-top: -8px i;
+                        margin-left: 16px i;
+                        position: absolute;
+                        &::before {
+                            content: '';
+                            z-index: -3;
+                            position: absolute;
+                            top: -30px; right: 72px; bottom: 0; left: -72px;
+                            border: 2px solid green;
+                            rad: var(--avatar-r);
+                            animation: 2s _20RFk infinite;
+                        }
+                    }
                     /// NOTE: Fixes weird issue with alignment.
                     ._1ZMSM { margin-right: 0 }
                     /// Message status.
