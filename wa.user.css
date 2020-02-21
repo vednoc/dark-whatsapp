@@ -6,7 +6,7 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      2.2.1
+@version      2.2.2
 @license      MIT
 ==/UserStyle== */
 
@@ -40,13 +40,13 @@
     --bg-blur: 12px;
     --bg-hue: 320deg;
     --bg-invert: 0;
-    --chat-image: url("/img/bg-chat-tile_8a055527b27b887521a9f084497d8879.png");
-    --chat-bg-o: 0.1;
+    --chat-image: url("https://web.whatsapp.com/img/bg-chat-tile_9e8a2898faedb7db9bf5638405cf81ae.png");
+    --chat-bg-o: 0.15;
     --chat-bg-i: 0.6;
     --c-m-hover: 1s;
     --ui-font: 'custom font', 'Segoe UI', 'Helvetica Neue', Helvetica, 'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif;
-    --version: 'Dark-WhatsApp Lite v2.2.1';
-    --message: 'Version 2.2.1 is out! More info in the changelog. 🎉🥳 My blog post about v2 release: ';
+    --version: 'Dark-WhatsApp Lite v2.2.2';
+    --message: 'Version 2.2.2 is out! More info in the changelog. 🎉🥳 My blog post about v2 release: ';
     --changes: 'https://vednoc.me/blog/the-new-dark-whatsapp';
   }
   @supports (-moz-user-select: none) {
@@ -405,7 +405,6 @@
   }
   .emojik {
     transition: transform 0.15s ease;
-    clip-path: circle(49%);
   }
   .emojik:not(:hover):not(:focus):not(.selected) {
     filter: opacity(var(--emoji-o));
@@ -417,614 +416,695 @@
     transform: scale(1.2);
     box-shadow: none !important;
   }
-  .d.emojik.wa.b0 {
+  .emojik.wa.b0 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/0.webp");
   }
-  .d.emojik.wa.b1 {
+  .emojik.wa.b1 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/1.webp");
   }
-  .d.emojik.wa.b2 {
+  .emojik.wa.b2 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/2.webp");
   }
-  .d.emojik.wa.b3 {
+  .emojik.wa.b3 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/3.webp");
   }
-  .d.emojik.wa.b4 {
+  .emojik.wa.b4 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/4.webp");
   }
-  .d.emojik.wa.b5 {
+  .emojik.wa.b5 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/5.webp");
   }
-  .d.emojik.wa.b6 {
+  .emojik.wa.b6 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/6.webp");
   }
-  .d.emojik.wa.b7 {
+  .emojik.wa.b7 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/7.webp");
   }
-  .d.emojik.wa.b8 {
+  .emojik.wa.b8 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/8.webp");
   }
-  .d.emojik.wa.b9 {
+  .emojik.wa.b9 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/9.webp");
   }
-  .d.emojik.wa.b10 {
+  .emojik.wa.b10 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/10.webp");
   }
-  .d.emojik.wa.b11 {
+  .emojik.wa.b11 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/11.webp");
   }
-  .d.emojik.wa.b12 {
+  .emojik.wa.b12 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/12.webp");
   }
-  .d.emojik.wa.b13 {
+  .emojik.wa.b13 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/13.webp");
   }
-  .d.emojik.wa.b14 {
+  .emojik.wa.b14 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/14.webp");
   }
-  .d.emojik.wa.b15 {
+  .emojik.wa.b15 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/15.webp");
   }
-  .d.emojik.wa.b16 {
+  .emojik.wa.b16 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/16.webp");
   }
-  .d.emojik.wa.b17 {
+  .emojik.wa.b17 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/17.webp");
   }
-  .d.emojik.wa.b18 {
+  .emojik.wa.b18 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/18.webp");
   }
-  .d.emojik.wa.b19 {
+  .emojik.wa.b19 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/19.webp");
   }
-  .d.emojik.wa.b20 {
+  .emojik.wa.b20 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/20.webp");
   }
-  .d.emojik.wa.b21 {
+  .emojik.wa.b21 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/21.webp");
   }
-  .d.emojik.wa.b22 {
+  .emojik.wa.b22 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/22.webp");
   }
-  .d.emojik.wa.b23 {
+  .emojik.wa.b23 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/23.webp");
   }
-  .d.emojik.wa.b24 {
+  .emojik.wa.b24 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/24.webp");
   }
-  .d.emojik.wa.b25 {
+  .emojik.wa.b25 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/25.webp");
   }
-  .d.emojik.wa.b26 {
+  .emojik.wa.b26 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/26.webp");
   }
-  .d.emojik.wa.b27 {
+  .emojik.wa.b27 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/27.webp");
   }
-  .d.emojik.wa.b28 {
+  .emojik.wa.b28 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/28.webp");
   }
-  .d.emojik.wa.b29 {
+  .emojik.wa.b29 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/29.webp");
   }
-  .d.emojik.wa.b30 {
+  .emojik.wa.b30 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/30.webp");
   }
-  .d.emojik.wa.b31 {
+  .emojik.wa.b31 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/31.webp");
   }
-  .d.emojik.wa.b32 {
+  .emojik.wa.b32 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/32.webp");
   }
-  .d.emojik.wa.b33 {
+  .emojik.wa.b33 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/33.webp");
   }
-  .d.emojik.wa.b34 {
+  .emojik.wa.b34 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/34.webp");
   }
-  .d.emojik.wa.b35 {
+  .emojik.wa.b35 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/35.webp");
   }
-  .d.emojik.wa.b36 {
+  .emojik.wa.b36 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/36.webp");
   }
-  .d.emojik.wa.b37 {
+  .emojik.wa.b37 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/37.webp");
   }
-  .d.emojik.wa.b38 {
+  .emojik.wa.b38 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/38.webp");
   }
-  .d.emojik.wa.b39 {
+  .emojik.wa.b39 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/39.webp");
   }
-  .d.emojik.wa.b40 {
+  .emojik.wa.b40 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/40.webp");
   }
-  .d.emojik.wa.b41 {
+  .emojik.wa.b41 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/41.webp");
   }
-  .d.emojik.wa.b42 {
+  .emojik.wa.b42 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/42.webp");
   }
-  .d.emojik.wa.b43 {
+  .emojik.wa.b43 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/43.webp");
   }
-  .d.emojik.wa.b44 {
+  .emojik.wa.b44 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/44.webp");
   }
-  .d.emojik.wa.b45 {
+  .emojik.wa.b45 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/45.webp");
   }
-  .d.emojik.wa.b46 {
+  .emojik.wa.b46 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/46.webp");
   }
-  .d.emojik.wa.b47 {
+  .emojik.wa.b47 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/47.webp");
   }
-  .d.emojik.wa.b48 {
+  .emojik.wa.b48 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/48.webp");
   }
-  .d.emojik.wa.b49 {
+  .emojik.wa.b49 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/49.webp");
   }
-  .d.emojik.wa.b50 {
+  .emojik.wa.b50 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/50.webp");
   }
-  .d.emojik.wa.b51 {
+  .emojik.wa.b51 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/51.webp");
   }
-  .d.emojik.wa.b52 {
+  .emojik.wa.b52 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/52.webp");
   }
-  .d.emojik.wa.b53 {
+  .emojik.wa.b53 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/53.webp");
   }
-  .d.emojik.wa.b54 {
+  .emojik.wa.b54 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/54.webp");
   }
-  .d.emojik.wa.b55 {
+  .emojik.wa.b55 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/55.webp");
   }
-  .d.emojik.wa.b56 {
+  .emojik.wa.b56 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/56.webp");
   }
-  .d.emojik.wa.b57 {
+  .emojik.wa.b57 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/57.webp");
   }
-  .d.emojik.wa.b58 {
+  .emojik.wa.b58 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/58.webp");
   }
-  .d.emojik.wa.b59 {
+  .emojik.wa.b59 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/59.webp");
   }
-  .d.emojik.wa.b60 {
+  .emojik.wa.b60 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/60.webp");
   }
-  .d.emojik.wa.b61 {
+  .emojik.wa.b61 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/61.webp");
   }
-  .d.emojik.wa.b62 {
+  .emojik.wa.b62 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/62.webp");
   }
-  .d.emojik.wa.b63 {
+  .emojik.wa.b63 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/63.webp");
   }
-  .d.emojik.wa.b64 {
+  .emojik.wa.b64 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/64.webp");
   }
-  .d.emojik.wa.b65 {
+  .emojik.wa.b65 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/65.webp");
   }
-  .d.emojik.wa.b66 {
+  .emojik.wa.b66 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/66.webp");
   }
-  .d.emojik.wa.b67 {
+  .emojik.wa.b67 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/67.webp");
   }
-  .d.emojik.wa.b68 {
+  .emojik.wa.b68 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/68.webp");
   }
-  .d.emojik.wa.b69 {
+  .emojik.wa.b69 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/69.webp");
   }
-  .d.emojik.wa.b70 {
+  .emojik.wa.b70 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/70.webp");
   }
-  .d.emojik.wa.b71 {
+  .emojik.wa.b71 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/71.webp");
   }
-  .d.emojik.wa.b72 {
+  .emojik.wa.b72 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/72.webp");
   }
-  .d.emojik.wa.b73 {
+  .emojik.wa.b73 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/73.webp");
   }
-  .d.emojik.wa.b74 {
+  .emojik.wa.b74 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/74.webp");
   }
-  .d.emojik.wa.b75 {
+  .emojik.wa.b75 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/75.webp");
   }
-  .d.emojik.wa.b76 {
+  .emojik.wa.b76 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/76.webp");
   }
-  .d.emojik.wa.b77 {
+  .emojik.wa.b77 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/77.webp");
   }
-  .d.emojik.wa.b78 {
+  .emojik.wa.b78 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/78.webp");
   }
-  .d.emojik.wa.b79 {
+  .emojik.wa.b79 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/79.webp");
   }
-  .d.emojik.wa.b80 {
+  .emojik.wa.b80 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/80.webp");
   }
-  .d.emojik.wa.b81 {
+  .emojik.wa.b81 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/81.webp");
   }
-  .d.emojik.wa.b82 {
+  .emojik.wa.b82 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/82.webp");
   }
-  .d.emojik.wa.b83 {
+  .emojik.wa.b83 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/83.webp");
   }
-  .d.emojik.wa.b84 {
+  .emojik.wa.b84 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/84.webp");
   }
-  .d.emojik.wa.b85 {
+  .emojik.wa.b85 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/85.webp");
   }
-  .d.emojik.wa.b86 {
+  .emojik.wa.b86 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/86.webp");
   }
-  .d.emojik.wa.b87 {
+  .emojik.wa.b87 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/87.webp");
   }
-  .d.emojik.wa.b88 {
+  .emojik.wa.b88 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/88.webp");
   }
-  .d.emojik.wa.b89 {
+  .emojik.wa.b89 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/89.webp");
   }
-  .d.emojik.wa.b90 {
+  .emojik.wa.b90 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/90.webp");
   }
-  .d.emojik.wa.b91 {
+  .emojik.wa.b91 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/91.webp");
   }
-  .d.emojik.wa.b92 {
+  .emojik.wa.b92 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/92.webp");
   }
-  .d.emojik.wa.b93 {
+  .emojik.wa.b93 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/93.webp");
   }
-  .d.emojik.wa.b94 {
+  .emojik.wa.b94 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/94.webp");
   }
-  .d.emojik.wa.b95 {
+  .emojik.wa.b95 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/95.webp");
   }
-  .d.emojik.wa.b96 {
+  .emojik.wa.b96 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/96.webp");
   }
-  .d.emojik.wa.b97 {
+  .emojik.wa.b97 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/97.webp");
   }
-  .d.emojik.wa.b98 {
+  .emojik.wa.b98 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/98.webp");
   }
-  .d.emojik.wa.b99 {
+  .emojik.wa.b99 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/99.webp");
   }
-  .d.emojik.wa.b100 {
+  .emojik.wa.b100 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/100.webp");
   }
-  .d.emojik.wa.b101 {
+  .emojik.wa.b101 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/101.webp");
   }
-  .d.emojik.apple.b0 {
+  .emojik.wa.b102 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/102.webp");
+  }
+  .emojik.wa.b103 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/103.webp");
+  }
+  .emojik.wa.b104 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/104.webp");
+  }
+  .emojik.wa.b105 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/105.webp");
+  }
+  .emojik.wa.b106 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/106.webp");
+  }
+  .emojik.wa.b107 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/107.webp");
+  }
+  .emojik.wa.b108 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/108.webp");
+  }
+  .emojik.wa.b109 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/109.webp");
+  }
+  .emojik.wa.b110 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/110.webp");
+  }
+  .emojik.wa.b111 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/111.webp");
+  }
+  .emojik.wa.b112 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/a/112.webp");
+  }
+  .emojik.apple.b0 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/0.webp");
   }
-  .d.emojik.apple.b1 {
+  .emojik.apple.b1 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/1.webp");
   }
-  .d.emojik.apple.b2 {
+  .emojik.apple.b2 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/2.webp");
   }
-  .d.emojik.apple.b3 {
+  .emojik.apple.b3 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/3.webp");
   }
-  .d.emojik.apple.b4 {
+  .emojik.apple.b4 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/4.webp");
   }
-  .d.emojik.apple.b5 {
+  .emojik.apple.b5 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/5.webp");
   }
-  .d.emojik.apple.b6 {
+  .emojik.apple.b6 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/6.webp");
   }
-  .d.emojik.apple.b7 {
+  .emojik.apple.b7 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/7.webp");
   }
-  .d.emojik.apple.b8 {
+  .emojik.apple.b8 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/8.webp");
   }
-  .d.emojik.apple.b9 {
+  .emojik.apple.b9 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/9.webp");
   }
-  .d.emojik.apple.b10 {
+  .emojik.apple.b10 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/10.webp");
   }
-  .d.emojik.apple.b11 {
+  .emojik.apple.b11 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/11.webp");
   }
-  .d.emojik.apple.b12 {
+  .emojik.apple.b12 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/12.webp");
   }
-  .d.emojik.apple.b13 {
+  .emojik.apple.b13 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/13.webp");
   }
-  .d.emojik.apple.b14 {
+  .emojik.apple.b14 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/14.webp");
   }
-  .d.emojik.apple.b15 {
+  .emojik.apple.b15 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/15.webp");
   }
-  .d.emojik.apple.b16 {
+  .emojik.apple.b16 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/16.webp");
   }
-  .d.emojik.apple.b17 {
+  .emojik.apple.b17 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/17.webp");
   }
-  .d.emojik.apple.b18 {
+  .emojik.apple.b18 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/18.webp");
   }
-  .d.emojik.apple.b19 {
+  .emojik.apple.b19 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/19.webp");
   }
-  .d.emojik.apple.b20 {
+  .emojik.apple.b20 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/20.webp");
   }
-  .d.emojik.apple.b21 {
+  .emojik.apple.b21 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/21.webp");
   }
-  .d.emojik.apple.b22 {
+  .emojik.apple.b22 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/22.webp");
   }
-  .d.emojik.apple.b23 {
+  .emojik.apple.b23 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/23.webp");
   }
-  .d.emojik.apple.b24 {
+  .emojik.apple.b24 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/24.webp");
   }
-  .d.emojik.apple.b25 {
+  .emojik.apple.b25 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/25.webp");
   }
-  .d.emojik.apple.b26 {
+  .emojik.apple.b26 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/26.webp");
   }
-  .d.emojik.apple.b27 {
+  .emojik.apple.b27 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/27.webp");
   }
-  .d.emojik.apple.b28 {
+  .emojik.apple.b28 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/28.webp");
   }
-  .d.emojik.apple.b29 {
+  .emojik.apple.b29 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/29.webp");
   }
-  .d.emojik.apple.b30 {
+  .emojik.apple.b30 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/30.webp");
   }
-  .d.emojik.apple.b31 {
+  .emojik.apple.b31 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/31.webp");
   }
-  .d.emojik.apple.b32 {
+  .emojik.apple.b32 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/32.webp");
   }
-  .d.emojik.apple.b33 {
+  .emojik.apple.b33 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/33.webp");
   }
-  .d.emojik.apple.b34 {
+  .emojik.apple.b34 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/34.webp");
   }
-  .d.emojik.apple.b35 {
+  .emojik.apple.b35 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/35.webp");
   }
-  .d.emojik.apple.b36 {
+  .emojik.apple.b36 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/36.webp");
   }
-  .d.emojik.apple.b37 {
+  .emojik.apple.b37 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/37.webp");
   }
-  .d.emojik.apple.b38 {
+  .emojik.apple.b38 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/38.webp");
   }
-  .d.emojik.apple.b39 {
+  .emojik.apple.b39 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/39.webp");
   }
-  .d.emojik.apple.b40 {
+  .emojik.apple.b40 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/40.webp");
   }
-  .d.emojik.apple.b41 {
+  .emojik.apple.b41 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/41.webp");
   }
-  .d.emojik.apple.b42 {
+  .emojik.apple.b42 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/42.webp");
   }
-  .d.emojik.apple.b43 {
+  .emojik.apple.b43 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/43.webp");
   }
-  .d.emojik.apple.b44 {
+  .emojik.apple.b44 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/44.webp");
   }
-  .d.emojik.apple.b45 {
+  .emojik.apple.b45 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/45.webp");
   }
-  .d.emojik.apple.b46 {
+  .emojik.apple.b46 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/46.webp");
   }
-  .d.emojik.apple.b47 {
+  .emojik.apple.b47 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/47.webp");
   }
-  .d.emojik.apple.b48 {
+  .emojik.apple.b48 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/48.webp");
   }
-  .d.emojik.apple.b49 {
+  .emojik.apple.b49 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/49.webp");
   }
-  .d.emojik.apple.b50 {
+  .emojik.apple.b50 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/50.webp");
   }
-  .d.emojik.apple.b51 {
+  .emojik.apple.b51 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/51.webp");
   }
-  .d.emojik.apple.b52 {
+  .emojik.apple.b52 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/52.webp");
   }
-  .d.emojik.apple.b53 {
+  .emojik.apple.b53 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/53.webp");
   }
-  .d.emojik.apple.b54 {
+  .emojik.apple.b54 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/54.webp");
   }
-  .d.emojik.apple.b55 {
+  .emojik.apple.b55 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/55.webp");
   }
-  .d.emojik.apple.b56 {
+  .emojik.apple.b56 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/56.webp");
   }
-  .d.emojik.apple.b57 {
+  .emojik.apple.b57 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/57.webp");
   }
-  .d.emojik.apple.b58 {
+  .emojik.apple.b58 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/58.webp");
   }
-  .d.emojik.apple.b59 {
+  .emojik.apple.b59 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/59.webp");
   }
-  .d.emojik.apple.b60 {
+  .emojik.apple.b60 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/60.webp");
   }
-  .d.emojik.apple.b61 {
+  .emojik.apple.b61 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/61.webp");
   }
-  .d.emojik.apple.b62 {
+  .emojik.apple.b62 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/62.webp");
   }
-  .d.emojik.apple.b63 {
+  .emojik.apple.b63 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/63.webp");
   }
-  .d.emojik.apple.b64 {
+  .emojik.apple.b64 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/64.webp");
   }
-  .d.emojik.apple.b65 {
+  .emojik.apple.b65 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/65.webp");
   }
-  .d.emojik.apple.b66 {
+  .emojik.apple.b66 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/66.webp");
   }
-  .d.emojik.apple.b67 {
+  .emojik.apple.b67 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/67.webp");
   }
-  .d.emojik.apple.b68 {
+  .emojik.apple.b68 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/68.webp");
   }
-  .d.emojik.apple.b69 {
+  .emojik.apple.b69 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/69.webp");
   }
-  .d.emojik.apple.b70 {
+  .emojik.apple.b70 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/70.webp");
   }
-  .d.emojik.apple.b71 {
+  .emojik.apple.b71 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/71.webp");
   }
-  .d.emojik.apple.b72 {
+  .emojik.apple.b72 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/72.webp");
   }
-  .d.emojik.apple.b73 {
+  .emojik.apple.b73 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/73.webp");
   }
-  .d.emojik.apple.b74 {
+  .emojik.apple.b74 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/74.webp");
   }
-  .d.emojik.apple.b75 {
+  .emojik.apple.b75 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/75.webp");
   }
-  .d.emojik.apple.b76 {
+  .emojik.apple.b76 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/76.webp");
   }
-  .d.emojik.apple.b77 {
+  .emojik.apple.b77 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/77.webp");
   }
-  .d.emojik.apple.b78 {
+  .emojik.apple.b78 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/78.webp");
   }
-  .d.emojik.apple.b79 {
+  .emojik.apple.b79 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/79.webp");
   }
-  .d.emojik.apple.b80 {
+  .emojik.apple.b80 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/80.webp");
   }
-  .d.emojik.apple.b81 {
+  .emojik.apple.b81 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/81.webp");
   }
-  .d.emojik.apple.b82 {
+  .emojik.apple.b82 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/82.webp");
   }
-  .d.emojik.apple.b83 {
+  .emojik.apple.b83 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/83.webp");
   }
-  .d.emojik.apple.b84 {
+  .emojik.apple.b84 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/84.webp");
   }
-  .d.emojik.apple.b85 {
+  .emojik.apple.b85 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/85.webp");
   }
-  .d.emojik.apple.b86 {
+  .emojik.apple.b86 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/86.webp");
   }
-  .d.emojik.apple.b87 {
+  .emojik.apple.b87 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/87.webp");
   }
-  .d.emojik.apple.b88 {
+  .emojik.apple.b88 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/88.webp");
   }
-  .d.emojik.apple.b89 {
+  .emojik.apple.b89 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/89.webp");
   }
-  .d.emojik.apple.b90 {
+  .emojik.apple.b90 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/90.webp");
   }
-  .d.emojik.apple.b91 {
+  .emojik.apple.b91 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/91.webp");
   }
-  .d.emojik.apple.b92 {
+  .emojik.apple.b92 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/92.webp");
   }
-  .d.emojik.apple.b93 {
+  .emojik.apple.b93 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/93.webp");
   }
-  .d.emojik.apple.b94 {
+  .emojik.apple.b94 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/94.webp");
   }
-  .d.emojik.apple.b95 {
+  .emojik.apple.b95 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/95.webp");
   }
-  .d.emojik.apple.b96 {
+  .emojik.apple.b96 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/96.webp");
   }
-  .d.emojik.apple.b97 {
+  .emojik.apple.b97 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/97.webp");
   }
-  .d.emojik.apple.b98 {
+  .emojik.apple.b98 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/98.webp");
   }
-  .d.emojik.apple.b99 {
+  .emojik.apple.b99 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/99.webp");
   }
-  .d.emojik.apple.b100 {
+  .emojik.apple.b100 {
     background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/100.webp");
+  }
+  .emojik.apple.b101 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/101.webp");
+  }
+  .emojik.apple.b102 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/102.webp");
+  }
+  .emojik.apple.b103 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/103.webp");
+  }
+  .emojik.apple.b104 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/104.webp");
+  }
+  .emojik.apple.b105 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/105.webp");
+  }
+  .emojik.apple.b106 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/106.webp");
+  }
+  .emojik.apple.b107 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/107.webp");
+  }
+  .emojik.apple.b108 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/108.webp");
+  }
+  .emojik.apple.b109 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/109.webp");
+  }
+  .emojik.apple.b110 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/110.webp");
+  }
+  .emojik.apple.b111 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/111.webp");
+  }
+  .emojik.apple.b112 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/112.webp");
+  }
+  .emojik.apple.b113 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/113.webp");
+  }
+  .emojik.apple.b114 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/114.webp");
+  }
+  .emojik.apple.b115 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/115.webp");
+  }
+  .emojik.apple.b116 {
+    background-image: url("https://raw.githubusercontent.com/vednoc/wae/master/i/116.webp");
   }
   ._342qq._1mTBR {
     border-radius: var(--radius) !important;
@@ -1266,10 +1346,10 @@
   ._2vOyW._26EsD .lz4Mo {
     color: var(--light) !important;
   }
-  [data-animate-status-v3-modal-background='true'] {
+  [data-animate-status-v3-modal-background = 'true'] {
     background-color: var(--t) !important;
   }
-  [data-animate-status-v3-modal-background='true']::before {
+  [data-animate-status-v3-modal-background = 'true']::before {
     content: '';
     z-index: -1;
     opacity: 0.91;
@@ -1280,43 +1360,43 @@
     left: 0;
     background-color: var(--dark) !important;
   }
-  [data-animate-status-v3-modal-background='true'] > div {
+  [data-animate-status-v3-modal-background = 'true'] > div {
     background-color: var(--dark) !important;
   }
 @media (min-width: 1441px) {
-    [data-animate-status-v3-modal-background='true'] > div {
+    [data-animate-status-v3-modal-background = 'true'] > div {
       border-radius: var(--radius);
       border: 1px solid var(--darker);
     }
 }
-  [data-animate-status-v3-modal-background='true'] > div hr {
+  [data-animate-status-v3-modal-background = 'true'] > div hr {
     opacity: 1;
     border: none;
     border-top: 1px solid var(--darker);
   }
-  [data-animate-status-v3-modal-background='true'] > div > div[class]:nth-child(1) {
+  [data-animate-status-v3-modal-background = 'true'] > div > div[class]:nth-child(1) {
     background-color: var(--darken) !important;
     box-shadow: 1px 0 var(--darker);
   }
 @media (min-width: 1441px) {
-    [data-animate-status-v3-modal-background='true'] > div > div[class]:nth-child(1) {
+    [data-animate-status-v3-modal-background = 'true'] > div > div[class]:nth-child(1) {
       border-radius: var(--radius) 0 0 var(--radius);
     }
 }
-  [data-animate-status-v3-modal-background='true'] > div > div[class]:nth-child(1) .OEFaY {
+  [data-animate-status-v3-modal-background = 'true'] > div > div[class]:nth-child(1) .OEFaY {
     color: var(--lighter) !important;
   }
-  [data-animate-status-v3-modal-background='true'] > div > div[class]:nth-child(1) ._26-u- {
+  [data-animate-status-v3-modal-background = 'true'] > div > div[class]:nth-child(1) ._26-u- {
     color: var(--light) !important;
   }
-  [data-animate-status-v3-modal-background='true'] > div > div[class]:nth-child(2) .ojaNO {
+  [data-animate-status-v3-modal-background = 'true'] > div > div[class]:nth-child(2) .ojaNO {
     color: var(--lighter) !important;
   }
-  [data-animate-status-v3-modal-background='true'] > div > div[class]:nth-child(2) svg[width][height] path {
+  [data-animate-status-v3-modal-background = 'true'] > div > div[class]:nth-child(2) svg[width][height] path {
     fill: var(--t) !important;
     stroke: var(--light) !important;
   }
-  [data-animate-status-v3-modal-background='true'] > div ._2UaNq {
+  [data-animate-status-v3-modal-background = 'true'] > div ._2UaNq {
     border-top: none;
   }
   .QRsOy {
@@ -1346,6 +1426,15 @@
   span[class][data-icon]:hover > svg > path {
     opacity: 1;
     fill-opacity: 1 !important;
+  }
+  span[class][data-icon][data-icon*='logo-'] > svg > path {
+    fill-opacity: 0.6 !important;
+  }
+  span[class][data-icon][data-icon*='logo-'] > svg > path:first-child {
+    fill: var(--dark);
+  }
+  span[class][data-icon][data-icon*='logo-'] > svg > path:last-child {
+    fill: var(--light);
   }
   span[class][data-icon][data-icon='muted'] > svg > path,
   span[class][data-icon][data-icon='pinned'] > svg > path,
@@ -1406,6 +1495,7 @@
   }
   span[class][data-icon *= '-dblcheck-ack'] path,
   span[class].Ryz_m[data-icon *= '-dblcheck'] path,
+  span[class]._3rqs1[data-icon *= '-dblcheck'] path,
   span[class]._33bww[data-icon *= '-dblcheck'] path,
   ._1t84_ span[class][data-icon *= '-dblcheck'] path {
     fill: var(--accent) !important;
@@ -1453,14 +1543,32 @@
     background-color: var(--darken) !important;
     box-shadow: 0 4px 12px var(--sh-h);
   }
+  div:not(#z)[style ^= 'transform-origin:'] ul > div {
+    color: var(--light) !important;
+  }
   div:not(#z)[style ^= 'transform-origin:'] li._3VXiW {
     background-color: var(--darker) !important;
+  }
+  div:not(#z)[style ^= 'transform-origin:'] li > button span {
+    color: var(--lighter) !important;
+  }
+  div:not(#z)[style ^= 'transform-origin:'] li > button:hover span {
+    color: var(--light) !important;
   }
   div:not(#z)[style ^= 'transform-origin:'] li > div {
     color: var(--lighter) !important;
   }
   div:not(#z)[style ^= 'transform-origin:'] li > div:hover {
     color: var(--light) !important;
+  }
+  div:not(#z)[style ^= 'transform-origin:'] svg path[fill = '#5696ff'] {
+    fill: var(--blue) !important;
+  }
+  div:not(#z)[style ^= 'transform-origin:'] svg path[fill = '#54c166'] {
+    fill: var(--green) !important;
+  }
+  div:not(#z)[style ^= 'transform-origin:'] svg path[fill = '#ff7a6b'] {
+    fill: var(--orange) !important;
   }
   div:not(#z)[style ^= 'transform-origin:']._1fRWV {
     background-color: var(--t) !important;
@@ -1951,7 +2059,7 @@
     background-color: var(--dark) !important;
   }
   [data-asset-chat-background] {
-    opacity: 1;
+    opacity: 1 !important;
     filter: invert(var(--chat-bg-i)) opacity(var(--chat-bg-o));
     background: var(--chat-image);
   }
@@ -2062,14 +2170,20 @@
   #main .copyable-area > div[tabindex]._2AqZl ._15wNI div {
     border-color: var(--white) !important;
   }
-  ._3f5U8 path {
+  ._3f5U8 path,
+  ._3MU5v path,
+  ._2-qoA path {
     opacity: 0.55 !important;
   }
-  ._3f5U8:disabled path {
+  ._3f5U8:disabled path,
+  ._3MU5v:disabled path,
+  ._2-qoA:disabled path {
     fill: var(--lighter) !important;
     opacity: 0.25 !important;
   }
-  ._3f5U8:hover > span > svg > path {
+  ._3f5U8:hover > span > svg > path,
+  ._3MU5v:hover > span > svg > path,
+  ._2-qoA:hover > span > svg > path {
     opacity: 1 !important;
     fill-opacity: 0.9 !important;
   }
@@ -2114,17 +2228,10 @@
     color: var(--accent) !important;
   }
   ._1PENu {
-    border-color: var(--t) !important;
+    border-color: rgba(136,136,136,0.188) !important;
   }
   ._1PENu [role = 'button'] {
-    max-width: 100px !important;
-    padding: 8px 0 !important;
-    color: var(--white) !important;
-    background-color: var(--accent) !important;
-    border-radius: var(--radius) !important;
-  }
-  ._1PENu [role = 'button']:hover {
-    opacity: 0.8;
+    color: var(--light) !important;
   }
   ._1mrMQ {
     background-color: var(--dark) !important;
@@ -2634,7 +2741,7 @@
     .three > div:nth-child(3):focus-within {
       flex: 0 0 30% !important;
     }
-    .two > div:nth-child(2) > div._2rI9W {
+    .two > div:nth-child(2) > div:nth-child(2) {
       flex: 0 0 calc(100% - 80px) !important;
       margin-left: calc(-25% + 80px);
     }
@@ -2648,10 +2755,14 @@
       transition-delay: var(--c-m-hover) !important;
       flex: 0 0 30% !important;
     }
-    .two ._3kF8H {
-      flex: 0 0 25%;
+    .two > :nth-child(2) > :nth-child(1) {
+      z-index: 201 !important;
+      flex: 0 0 30% !important;
     }
-    .three > div:nth-child(2) > div._2rI9W {
+    .two > :nth-child(2) > :nth-child(1) [style][tabindex] {
+      border-right: 1px solid var(--darker) !important;
+    }
+    .three > div:nth-child(2) > div:nth-child(2) {
       flex: 0 0 calc(100% - 30% - 80px) !important;
       margin-left: calc(-25% + 80px);
     }
@@ -2694,6 +2805,24 @@
       z-index: 199 !important;
       display: flex !important;
       flex-direction: row-reverse !important;
+    }
+    ._2ZAIy {
+      overflow: unset !important;
+      margin-top: -8px !important;
+      margin-left: 16px !important;
+      position: absolute;
+    }
+    ._2ZAIy::before {
+      content: '';
+      z-index: -3;
+      position: absolute;
+      top: -30px;
+      right: 72px;
+      bottom: 0;
+      left: -72px;
+      border: 2px solid var(--green);
+      border-radius: var(--avatar-r);
+      animation: 2s _20RFk infinite;
     }
     #side ._2UaNq ._1ZMSM {
       margin-right: 0;
