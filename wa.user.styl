@@ -933,12 +933,25 @@
             rad: r;
             c: 0 0 hl;
             box-shadow: 0 4px 12px sh-h;
+            /// Headers.
+            ul > div { c: fg }
+            /// Items.
             li {
                 &._3VXiW { c: 0 0 bd }
+                > button {
+                    span { c: cm }
+                    &:hover span { c: fg }
+                }
                 > div {
                     c: cm;
                     &:hover { c: fg }
                 }
+            }
+            /// Icons.
+            svg {
+                path[fill = '#5696ff'] { v: blue }
+                path[fill = '#54c166'] { v: green }
+                path[fill = '#ff7a6b'] { v: orange }
             }
             /// Chat -> Attach dropdown.
             &._1fRWV {
