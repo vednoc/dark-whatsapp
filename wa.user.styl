@@ -832,6 +832,12 @@
                 opacity: 1;
                 fill-opacity: 1 i;
             }
+            /// Exclude videos' icons from animating ('logo-youtube', 'logo-facebook' etc.)
+            &[data-icon*='logo-'] > svg > path {
+                fill-opacity: 0.6 i;
+                &:first-child { fill: bg }
+                &:last-child { fill: fg }
+            }
             /// Exclude from animating.
             &[data-icon='muted'],           // muted chat
             &[data-icon='pinned'],          // pinned chat
