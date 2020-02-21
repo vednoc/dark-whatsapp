@@ -297,7 +297,7 @@
                     outline: 4px solid white;
                     box-shadow: 0 0 0 4px white;
                     [role='button'] { c: white 0 ac }
-                    /// Change QR's white border.
+                    /// Change white border for QR code.
                     &._3aqLw {
                         outline: 4px solid ac;
                         box-shadow: 0 0 0 4px ac;
@@ -454,7 +454,7 @@
         }
     }
 
-    /// App.
+    // App.
     #app > div {
         /// Feat -> App background.
         &::after {
@@ -509,14 +509,15 @@
         }
     }
 
-    /// Global -> Profile avatar, Chat avatars, New group icon & no-blocked-contacts icon radius.
+    // Global -> Profile avatar, Chat avatars, New group icon & no-blocked-contacts icon radius.
     ._3BYwr, ._3RWII, ._3p0T6, ._1i7uJ {
         rad: var(--avatar-r) i;
         c: 0 0 bg;
         > img { rad: var(--avatar-r) i }
         /// Tweak default-user icon.
         if ( avatar_r != '50%' ) {
-            /[style *= 'height: 49px'], /[style *= 'height: 200px'] {
+            /[style *= 'height: 49px'],
+            /[style *= 'height: 200px'] {
                 [data-icon = 'default-user'] svg {
                     margin-top: -4px;
                     transform: scale(0.8) i;
@@ -525,7 +526,7 @@
         }
     }
 
-    /// Global -> Emojis.
+    // Global -> Emojis.
     .emojik {
         transition: transform 0.15s ease;
         /// Default opacity.
@@ -558,7 +559,7 @@
         }
     }
 
-    /// Global -> Emoji picker popout.
+    // Global -> Emoji picker popout.
     ._342qq._1mTBR {
         rad: r i;
         box-shadow: bsh;
@@ -592,7 +593,7 @@
         }
     }
 
-    /// Global -> Modals.
+    // Global -> Modals.
     .overlay {
         c: 0 0 t;
         /// Backdrop.
@@ -750,7 +751,7 @@
     }
 
     // Global -> Status.
-    [data-animate-status-v3-modal-background='true'] {
+    [data-animate-status-v3-modal-background = 'true'] {
         c: 0 0 t;
         /// Backdrop.
         &::before {
@@ -1318,7 +1319,7 @@
     // Main -> Chat.
     #main {
         c: 0 0 bg;
-        /// Chat doodle image.
+        /// Feat -> Chat doodle image.
         /[data-asset-chat-background] {
             opacity: 1 i;
             filter: invert(var(--chat-bg-i)) opacity(var(--chat-bg-o));
@@ -1923,9 +1924,9 @@
         /._2NdXo { c: cm }
     }
 
-    /// Feat -> Compact mode.
+    // Feat -> Compact mode.
     if ( app_c_m == 1 ) {
-        /// Reset height/width if there's an overflow.
+        /// Reset height/width if there is an overflow.
         #app > div > .app {
             @media screen and (max-height: 500px) { min-height: auto }
             @media screen and (max-width: 648px) { min-width: auto }
@@ -1975,7 +1976,7 @@
                 > div:nth-child(4) {
                     flex: 0 0 calc(100% - 30% - 80px) i;
                 }
-                /// Don't expand left pane.
+                /// Do not expand left pane when right pane is open.
                 > div:nth-child(3):hover { flex: 0 0 80px i }
                 /// Right -> Info pane.
                 ._7YAGC {
@@ -2074,7 +2075,7 @@
         }
     }
 
-    /// Feat -> Theme colors in groups.
+    // Feat -> Theme colors in groups.
     if ( c_g_c == 1 ) {
         .color {
             /._1QjgA { c: ac }
