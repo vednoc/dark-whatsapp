@@ -297,20 +297,20 @@
                     outline: 4px solid white;
                     box-shadow: 0 0 0 4px white;
                     [role='button'] { c: white 0 ac }
-                    /// Change white border for QR code.
+                    /// Change white border when inactive.
                     &._3aqLw {
                         outline: 4px solid ac;
                         box-shadow: 0 0 0 4px ac;
                     }
                 }
-                /// Video showcase.
+                /// Video tutorial.
                 + ._3vndg {
                     c: 0 0 t;
                     img { opacity: 0.3 }
                     /// Reset background on button container.
                     [style *= 'opacity: 1'] { c: 0 0 t }
                 }
-                /// 'Keep me signed in' reported in #59.
+                /// 'Keep me signed in' tooltip. #59
                 ._2-fMQ {
                     c: white 0 ac;
                     box-shadow: bsh;
@@ -372,7 +372,7 @@
                     border-top: 1px solid bd;
                 }
             }
-            /// Platform-specific section border..
+            /// Platform-specific section border.
             ._3ZVgT { c: 0 0 bd }
         }
 
@@ -423,7 +423,7 @@
             circle { stroke: cm }
         }
 
-        /// Panes -> Change avatars.
+        /// Panes -> Change avatar hover animation.
         ._1JS2G {
             c: fg 0 #19191980;
             rad: 0 i;
@@ -449,7 +449,7 @@
                     &-track { height: 2px; c: 0 0 gray }
                 }
             }
-            /// Fix box shadow.
+            /// Fix box-shadow.
             /._1p-0O { box-shadow: 0 4px 12px 2px sh-h i }
         }
     }
@@ -504,7 +504,7 @@
             }
             /// Right -> Fix the width with three open panes.
             &.three > ._37f_5 { width: calc(100% + 1px) }
-            /// HACK: Resolve pane gap/border glitches.
+            /// HACK: Resolve gap/border between panes.
             ._2rI9W { margin-right: -1px }
         }
     }
