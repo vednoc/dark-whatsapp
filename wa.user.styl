@@ -1940,18 +1940,12 @@
                     transition: 0.2s ease;
                     &:hover, &:focus-within { flex: 0 0 30% i }
                 }
-                /// Left -> Add right border.
-                // ._3A_Ft ._3wYPn { border-right: 1px solid bd }
             }
             .two {
                 /// Reset upload preview.
                 >  div:nth-child(2) > div:nth-child(2) {
                     flex: 0 0 calc(100% - 80px) i;
                     margin-left: calc(-25% + 80px);
-                    /header ._1pYs5::after {
-                        content: ' | This pane is hard to fix, sorry! -- v';
-                        c: cm;
-                    }
                 }
                 /// Expand contacts.
                 > div:nth-child(3) {
@@ -1964,8 +1958,12 @@
                         flex: 0 0 30% i;
                     }
                 }
-                /// Settings.
-                ._3kF8H { flex: 0 0 25% }
+                /// Settings/Starred/Archived panes.
+                > :nth-child(2) > :nth-child(1) {
+                    z-index: 201 i;
+                    flex: 0 0 calc(30% + 43px) i;
+                    [style][tabindex] { border-right: 1px solid bd i }
+                }
             }
             .three {
                 /// Reset upload preview.
