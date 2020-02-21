@@ -50,7 +50,7 @@
 @var checkbox chat_b_r   'Custom background for right message bubble' 0
 @var color    b_r_bg     'Right message bubble color' #2f343d
 
-@var checkbox emoji_ti   'Enable transparent emoji images' 1
+@var checkbox emoji_t    'Enable transparent emoji images' 1
 @var range    emoji_o    'Emoji default opacity' [0.8, 0.0, 1, 0.01]
 
 @var select   app_image  'Custom app background' {
@@ -540,8 +540,8 @@
             box-shadow: none i;
         }
         /// Feat -> Transparent emoji images.
-        if ( emoji_ti == 1 ) {
-            repo = 'https://raw.githubusercontent.com/vednoc/wae/test'
+        if ( emoji_t == 1 ) {
+            repo = 'https://raw.githubusercontent.com/vednoc/wae/master'
             /// Android emojis.
             for i in 0..112 {
                 &.wa.b{i} {
