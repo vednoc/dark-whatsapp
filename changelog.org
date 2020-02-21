@@ -1,6 +1,25 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.2.2 [2020-02-22]
+Minor bug fixes and improvements.
+
+*** Documentation
+- Revised code comments
+
+*** Improved
+- Typing indicator hack while in compact mode ([[https://github.com/vednoc/dark-whatsapp/issues/111][#111]])
+- Reverted to old styles for 'join group' buttons
+- Left floating panes in compact mode
+
+*** Fixed
+- Upload preview pane in compact mode
+- Chat background image opacity in Ferdi/Franz
+- Seen message status in message info
+- Logo icons for videos, embeds, etc ([[https://github.com/vednoc/dark-whatsapp/pull/120][#120]])
+- Context menu icon hover animation ([[https://github.com/vednoc/dark-whatsapp/pull/121][#121]])
+- Chat filter in WhatsApp Business ([[https://github.com/vednoc/dark-whatsapp/issues/122][#122]])
+
 ** 2.2.1 [2020-02-16]
 Minor bug fixes for yesterday's update.
 
