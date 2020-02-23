@@ -240,8 +240,10 @@
             &-progress { c: 0 0 blue }
             &-thumb { c: 0 0 ac }
             &-track { c: 0 0 bg }
-            /// Progress completed.
+            /// Global -> Progress completed.
             ../ ._1N8Pv { c: 0 0 ac }
+            /// Chat -> Played state for audio messages.
+            ../ ._2PmJH:not(._2gO--) ._30LFW::-moz-range-thumb { c: 0 0 green }
         }
         ::-webkit- {
             &progress {
@@ -250,7 +252,11 @@
             }
             &slider {
                 &-runnable-track { c: 0 0 bg }
-                &-thumb { c: 0 0 ac }
+                &-thumb {
+                    c: 0 0 ac;
+                    /// Chat -> Played state for audio messages.
+                    /._2PmJH:not(._2gO--) ._30LFW::-webkit-slider-thumb { c: 0 0 green }
+                }
             }
             &scrollbar {
                 &-track { background-color: #5552 }
@@ -847,6 +853,7 @@
             &[data-icon='status-vcard'],    // contact
             &[data-icon='status-sticker'],  // sticker
             &[data-icon='status-document'], // document
+            &[data-icon='status-ptt-gray'], // your audio message
             &[data-icon='recalled-in'],     // deleted message
             &[data-icon='recalled-out'] {   // deleted message
                 > svg > path {
@@ -879,7 +886,9 @@
             &:last-child { fill: ac }
         }
         /// Message info -> Played audio message.
-        &[data-icon = 'status-ptt-blue'] path { fill: ac i }
+        &[data-icon *= 'ptt-blue'] path { v: ac }
+        /// Chat -> Played state for audio messages.
+        &[data-icon *= 'in-green'] path[fill = '#09D261'] { v: green }
         /// Message status.
         &[data-icon *= '-check'] path { v: cm }
         &[data-icon *= '-dblcheck'] path { v: cm }
