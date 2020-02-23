@@ -946,21 +946,19 @@
             ul > div { c: fg }
             /// Items.
             li {
+                transition: background 0.2s ease;
                 &._3VXiW { c: 0 0 bd }
-                > button {
-                    span { c: cm }
-                    &:hover span { c: fg }
-                }
-                > div {
+                div, span {
                     c: cm;
-                    &:hover { c: fg }
+                    transition: 0.2s ease;
+                    &:hover { svg path { fill-opacity: 1 i }}
+                    ../:hover {
+                        c: 0 0 bd;
+                        div, span { c: fg }
+                    }
                 }
-            }
-            /// Icons.
-            svg {
-                path[fill = '#5696ff'] { v: blue }
-                path[fill = '#54c166'] { v: green }
-                path[fill = '#ff7a6b'] { v: orange }
+                /// Icons -> Exclude labels.
+                &:not(:hover) [data-icon] path { fill-opacity: 0.55 i }
             }
             /// Chat -> Attach dropdown.
             &._1fRWV {
