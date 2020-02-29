@@ -13,6 +13,7 @@
 @var text     ui_font    'Custom UI font' ''font_name''
 @var text     radius-g   'Custom rounded corners for menus' 4px
 @var text     radius-i   'Custom rounded corners for input area' 4px
+@var range    radius-a   'Custom rounded corners for avatars' [50, 0, 50, 1, '%']
 @var text     app_width  'Custom width for chat app' 1396px
 @var checkbox fullscreen 'Enable fullscreen mode' 0
 @var checkbox app_c_m    'Enable compact mode' 1
@@ -27,8 +28,6 @@
     'Hide "Allow notifications"  ': 'notifications ',
     'Hide all                    ': 'hide          ',
 }
-
-@var range    avatar_r   'Contacts\' avatar radius' [50, 0, 50, 1, '%']
 
 @var select   chat_m_t   'Message tails style' {
     'Default  *': 'default ',
@@ -149,7 +148,7 @@
 
         --emoji-o   : emoji_o;
 
-        --avatar-r  : avatar_r;
+        --avatar-r  : radius-a;
 
         --bg-image  : image_url;
         --bg-opacity: bg_opacity;
