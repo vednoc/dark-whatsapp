@@ -522,6 +522,8 @@
         > img { rad: var(--avatar-r) i }
         /// Tweak default-user icon.
         if ( avatar_r != '50%' ) {
+            /[style *= 'height: 26px'],
+            /[style *= 'height: 40px'],
             /[style *= 'height: 49px'],
             /[style *= 'height: 200px'] {
                 [data-icon = 'default-user'] svg {
@@ -994,8 +996,6 @@
         > header {
             border-bottom: 1px solid bd;
             c: 0 0 hl;
-            /// Avatar background.
-            [style *= 'height: 40px'] { c: 0 0 t }
         }
         /// Alerts.
         > header + span[class] {
@@ -1144,11 +1144,7 @@
                 /// Settings -> Reset first list item.
                 &._3fAgu { border-top: none i }
                 /// Left -> Add group participants.
-                &._27Ppf {
-                    c: 0 0 bd;
-                    /// Default avatar background.
-                    [style *= 'height: 26px'] { c: 0 0 bd }
-                }
+                &._27Ppf { height: 25px i; c: 0 0 bd }
             }
             /// Settings -> Options.
             ._26JG5 {
@@ -1210,10 +1206,6 @@
                 .tail {
                     &, > div[class] { rad: 7.5px i }
                     &-container { display: none i }
-                }
-                /// Reset avatars.
-                [style *= 'height: 26px; width: 26px'] {
-                    c: 0 0 t;
                 }
             }
             /// Right -> Search messages.
@@ -1359,7 +1351,6 @@
             border-bottom: 1px solid bd;
             c: 0 bd hl;
             &::after { content: none }
-            [style *= 'height: 40px'] { c: 0 0 t }
             [title] { c: fg }
             /// Muted color for group members.
             > div:nth-child(2) > div:nth-child(2) span[title] { c: cm }
