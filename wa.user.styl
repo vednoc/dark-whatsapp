@@ -408,7 +408,8 @@
             path:not([fill = '#009588']) { fill-opacity: 0.55 }
             &.GPmgF, &.GPmgf {
                 c: 0 0 bd;
-                [data-icon] path { fill-opacity: 1 i }
+                /// Chat -> Reset opacity for attach menu items.
+                &:not(#z):not(#y) [data-icon] path { fill-opacity: 1 i }
             }
         }
 
