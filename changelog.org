@@ -1,6 +1,31 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.3.0 [2020-03-22]
+Bug fixes and improvements (version ~0.4.1307~).
+
+*** Breaking
+- Settings related to masteravatar radiusmaster, masterapp backgroundmaster, and mastermessage bubblesmaster will
+  probably reset to their default values.
+
+*** Improved
+- Background images by adding different image versions
+- Avatar radius option by adding more avatar selectors
+- Header and buttons for media overlay modal
+- Opacity and radius for various icons
+- Typing indicator hack in compact mode
+- The contract for message bubble colors
+- The contrast for secondary background color
+- The app background option
+
+*** Fixed
+- Played state of audio messages
+- Items and icons for chat filter
+- Avatar's loading background in info pane
+- Animation for 'Jump to new messages' button
+- Opacity for attach menu icons
+- Elements for 'failed to send msg' area
+
 ** 2.2.2 [2020-02-22]
 Minor bug fixes and improvements.
 
