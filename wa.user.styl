@@ -53,13 +53,16 @@
 @var range    emoji_o    'Emoji default opacity' [0.8, 0.0, 1, 0.01]
 
 @var select   app_image  'Custom app background' {
-    'Custom  *': 'custom  ',
-    'Default  ': 'default ',
-    'None     ': 'none    ',
+    'Theme image with 12px blur   *': 'bg-high ',
+    'Theme image with 6px blur     ': 'bg-low  ',
+    'Theme image without blur      ': 'bg-none ',
+    'Custom background image       ': 'custom  ',
+    'Default background            ': 'default ',
+    'None                          ': 'none    ',
 }
 @var text     image_url  'Custom background image link' url('https://images.unsplash.com/photo-1434569117012-ce134ee1a088?fit=crop&w=1280&h=720&q=80')
 @var range    bg_opacity 'Background image opacity' [0.4, 0.0, 1, 0.01]
-@var range    bg_blur    'Background image blur size' [12, 0, 50, 1, 'px']
+@var range    bg_blur    'Background image blur size' [0, 0, 50, 1, 'px']
 @var range    bg_hue     'Background image hue' [320, 0, 360, 1, 'deg']
 @var range    bg_invert  'Background image invert colors' [0, 0.0, 1, 0.1]
 
@@ -156,7 +159,18 @@
 
         --avatar-r  : radius-a;
 
-        --bg-image  : image_url;
+        /// Feat -> Background image dropdown.
+        if ( app_image == bg-high ) {
+            --bg-image: url('https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/images/bg-blur-high.jpg');
+        } else if ( app_image == bg-low ) {
+            --bg-image: url('https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/images/bg-blur-low.jpg');
+        } else if ( app_image == bg-none ) {
+            --bg-image: url('https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/images/bg-blur-none.jpg');
+        } else if ( app_image == custom ) {
+            --bg-image: image_url;
+        } else {
+            --bg-image: none;
+        }
         --bg-opacity: bg_opacity;
         --bg-blur   : bg_blur;
         --bg-hue    : bg_hue;
@@ -472,7 +486,7 @@
     #app > div {
         /// Feat -> App background.
         &::after {
-            if ( app_image == custom ) {
+            if ( app_image != none && app_image != default ) {
                 s = calc(-2 * var(--bg-blur));
                 b = blur(var(--bg-blur));
                 o = opacity(var(--bg-opacity));
@@ -483,14 +497,14 @@
                 filter: b o i h;
                 background-image: var(--bg-image);
                 background-size: cover;
-                c: 0 0 hl;
+                c: 0 0 t;
             } else if ( app_image == default ) {
                 c: 0 0 hl;
             } else {
                 display: none;
             }
             /// Remove image in fullscreen mode.
-            if ( fullscreen == 1 ) { content: none }
+            if ( fullscreen == 1 ) { content: none i }
         }
         /// Resets.
         .app {
