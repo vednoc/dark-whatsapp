@@ -1701,6 +1701,20 @@
         &-out {
             /// (1) Not stickers; (2) Not error ("couldn't send this message").
             > div:not(.a81-s) > div:not(._19l4G) { c: fg 0 right }
+            /// "Couldn't send this message" tweaks.
+            ._19l4G:not(#z) {
+                /// Popout message.
+                > :first-child:not(:last-child) {
+                    c: fg 0 hl;
+                    box-shadow: inner, bsh;
+                    &::after { border-left-color: bd i }
+                }
+                /// Button.
+                > [role = 'button'] {
+                    c: 0 sh red;
+                    path[fill = '#FFF'] { v: white }
+                }
+            }
             /// Stickers -> Timestamp.
             > div.a81-s ._3qAvH { c: 0 0 right }
             /// Reset tails.
