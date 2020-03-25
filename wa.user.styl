@@ -482,7 +482,7 @@
         }
     }
 
-    // App.
+    // App -> Base styles.
     #app > div {
         /// Feat -> App background.
         &::after {
@@ -538,7 +538,8 @@
     }
 
     // Global -> Avatars.
-    /// Profile and Chat avatars (without quoted contacts); New group and 'No blocked contacts yet' icons.
+    /// Profile and Chat avatars (without quoted contacts);
+    /// New group and 'No blocked contacts yet' icons.
     ._3BYwr, ._3RWII:not(.eLUC2), ._3p0T6, ._1i7uJ {
         rad: var(--avatar-r) i;
         c: 0 0 bg;
@@ -864,13 +865,13 @@
                 opacity: 1;
                 fill-opacity: 1 i;
             }
-            /// Exclude videos' icons from animating ('logo-youtube', 'logo-facebook' etc.)
+            /// Exclude logos in embedded links from hover animation.
             &[data-icon*='logo-'] > svg > path {
                 fill-opacity: 0.6 i;
                 &:first-child { fill: bg }
                 &:last-child { fill: fg }
             }
-            /// Exclude from animating.
+            /// Exclude from hover animation.
             &[data-icon='muted'],           // muted chat
             &[data-icon='pinned'],          // pinned chat
             &[data-icon='status-image'],    // image
