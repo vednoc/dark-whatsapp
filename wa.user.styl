@@ -1525,10 +1525,10 @@
             }
         }
         /// Chat -> Documents.
-        /._1mrMQ {
+        /._2RBFb {
             c: 0 0 bg;
             /// Stats.
-            /._1o0MN { c: cm }
+            /._2DwXW { c: cm }
         }
         /// Embeds -> Thumbnail.
         /._3_nIn { c: 0 0 #55555510 }
@@ -1643,12 +1643,12 @@
             }
             /// Videos -> Timestamp background.
             .video-thumb {
-                ._3_IKd {
+                ._1Ppwx {
                     padding: 2px 5px;
                     rad: 7.5px;
                     c: fg 0 bg;
                 }
-                + div > ._3MYI2 {
+                + div > [role = 'button'] {
                     padding: 2px 5px;
                     rad: 7.5px;
                     c: fg 0 bg;
@@ -1689,21 +1689,12 @@
                 }
                 /// Stickers.
                 /._1i1U7._1UyGF div[style *= 'opacity'] { c: 0 0 left }
-                /// Images.
-                &._20WGU { background: linear-gradient(30deg, t 65%, #44444455 120%) i }
+                /// Images/Videos.
+                &._20WGU, &.LSBf- {
+                    background: linear-gradient(30deg, t 60%, sh) i;
+                }
                 /// Fix context menu for local RTL layouts.
                 &._38wik._2Nkc4 { background: linear-gradient(270deg, t, left 80%) i }
-            }
-            /// Context menu -> Forwarded messages.
-            > div > span:nth-last-child(2) > div[style] {
-                /// Fix context menu for messages with files/links.
-                &._15CAo._2Nkc4 { background: linear-gradient(90deg, t, left 80%) i }
-                &._15CAo._3EQsG {
-                    height: 23px;
-                    background: linear-gradient(90deg, t, left 80%) i;
-                }
-                /// Embedded links.
-                &._15CAo._3WZEQ { background: linear-gradient(90deg, t, bg 60%) i }
             }
             /// Replies.
             ._1iJeo {
@@ -1748,21 +1739,19 @@
                 &:not(._1qhoQ) { background: linear-gradient(90deg, t, right 80%) i }
                 /// Stickers.
                 /._1i1U7._1qhoQ div[style *= 'opacity'] { c: 0 0 right }
-                /// Images.
-                &._20WGU { background: linear-gradient(30deg, t 65%, #44444455 120%) i }
+                /// Images/Videos.
+                &._20WGU, &.LSBf- {
+                    background: linear-gradient(30deg, t 60%, sh) i;
+                }
                 /// Fix context menu for local RTL layouts.
                 &._38wik._3EQsG { background: linear-gradient(270deg, t, right 80%) i }
             }
             /// Context menu -> Forwarded messages.
             > div > span:nth-last-child(2) > div[style] {
-                /// Fix context menu for messages with files/links.
-                &._15CAo._2Nkc4 { background: linear-gradient(90deg, t, right 80%) i }
-                &._15CAo._3EQsG {
-                    height: 23px;
-                    background: linear-gradient(90deg, t, right 80%) i;
-                }
                 /// Embedded links.
-                &._15CAo._3WZEQ { background: linear-gradient(90deg, t, bg 60%) i }
+                &._1i1U7 { background: linear-gradient(90deg, t, bg 60%) i }
+                /// Files.
+                &.jZ4tp { background: linear-gradient(90deg, t, right 80%) i }
             }
             /// Replies.
             ._1iJeo {
