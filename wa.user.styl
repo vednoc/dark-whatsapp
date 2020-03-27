@@ -236,6 +236,12 @@
     // Rounded corners.
     rad() { border-radius: arguments }
 
+    /// Typing indicator animation.
+    @keyframes pulse {
+        40% { opacity: 0 }
+        80% { opacity: 1 }
+    }
+
     // Base styles.
     body {
         c: fg 0 bg;
@@ -1112,7 +1118,7 @@
                 c: 0 0 t;
                 /// Active states.
                 &:hover { c: 0 0 #55555515 }
-                &._3mMX1 { c: 0 0 bd }
+                &._1f1zm { c: 0 0 bd }
                 /// Remove borders.
                 &::after, > div:last-child { border: none }
                 /// Text.
@@ -2069,13 +2075,13 @@
                 /// Do not expand left pane when right pane is open.
                 > div:nth-child(3):hover { flex: 0 0 80px i }
                 /// Right -> Info pane.
-                ._7YAGC {
+                ._14VS3 {
                     flex: 0 0 30% i;
                     c: 0 t;
                 }
             }
             /// Fix search bar width.
-            .ZP8RM:not(._19OGD) label { padding: 0px }
+            .gQzdc:not(._3sdhb) label { padding: 0px }
             /// Contacts.
             #side {
                 /// Fix header width.
@@ -2085,32 +2091,34 @@
                     + span { display: none }
                 }
                 /// Items.
-                ._2UaNq {
-                    /// Increase padding for message options.
-                    .KgevS { padding-left: 5px i }
-                    /// Remove unnecessary icons.
-                    ._1ZMSM > span:not(.P6z4j) { display: none i }
-                    /// Reset message content area.
-                    ._1Wn_k {
-                        > ._3VIru + span[dir],
-                        > ._3VIru + div[class],
-                        > :first-child:not(._3VIru) {
-                            margin-left: 15px;
-                        }
-                    }
-                    /// HACK: Unread messages.
-                    ._1ZMSM .P6z4j {
-                        z-index: 999 i;
-                        margin: 7px 0px 0px -60px i;
-                        box-shadow: 0 0 0 3px hl i;
-                    }
-                    /// HACK: Unread message indicator.
-                    .xD91K {
-                        z-index: 199 i;
-                        display: flex i;
+                ._2EXPL {
+                    /// Add whitespace to hide message content.
+                    > div:last-child { padding-left: 5px i }
+                    /// Reverse message content.
+                    ._1AwDx {
+                        position: relative;
                         flex-direction: row-reverse i;
+                        /// Remove margin from status wrapper.
+                        ._3Bxar {
+                            z-index: 999 i;
+                            margin-left: 0 i;
+                            position: absolute;
+                            left: -41px;
+                            bottom: -6px;
+                            rad: 50%;
+                            ._15G96 { margin: 0 }
+                            /// Unread messages indicator.
+                            .OUeyt { border: 4px solid hl }
+                        }
+                        /// Reverse message and icons.
+                        ._3Bxar > span {
+                            display: flex i;
+                            flex-direction: row-reverse i;
+                        }
+                        /// Remove chevron icon and all status icons.
+                        .ZR5SB, ._15G96 > *:not(.OUeyt) { display: none }
                     }
-                    /// HACK: Add typing indicator status.
+                    /// Typing indicator status.
                     /.vdXUe {
                         overflow: unset i;
                         margin-top: -8px i;
@@ -2118,27 +2126,25 @@
                         position: absolute;
                         &::before {
                             content: '';
-                            z-index: -3;
+                            z-index: 1;
                             position: absolute;
-                            top: -31px; left: -66px;
+                            top: -31px; left: -71px;
                             height: 53px;
                             width: 53px;
                             box-shadow: inset 0 0 0 3px green;
                             rad: var(--avatar-r);
-                            animation: 2s _20RFk infinite;
+                            animation: 2s pulse infinite;
                         }
                     }
-                    /// NOTE: Fixes weird issue with alignment.
-                    ._1ZMSM { margin-right: 0 }
                     /// Message status.
-                    ._3VIru {
+                    .a5DO0 {
                         padding: 1.5px;
                         z-index: 101;
                         position: absolute;
-                        margin: 4px 0 0 -60px;
-                        border-radius: 50%;
+                        margin: -2px 0 0 -75px;
+                        border: 3px solid hl;
                         c: 0 0 bg;
-                        box-shadow: 0 0 0 3px hl;
+                        rad: 50%;
                         /// Make SVG smaller.
                         > span > svg {
                             padding: 2px;
@@ -2147,22 +2153,16 @@
                         }
                     }
                     /// Active states.
-                    &._3mMX1 .xD91K {
-                        .P6z4j, ._3VIru { box-shadow: 0 0 0 3px bd i }
-                    }
-                    &:hover:not(._3mMX1) .xD91K {
-                        .P6z4j, ._3VIru {
-                            box-shadow: 0 0 0 3px #ffffff05, 0 0 0 3px hl i;
+                    &._1f1zm { .OUeyt, .a5DO0 { c: 0 bd }}
+                    &:hover:not(._1f1zm) {
+                        .OUeyt, .a5DO0 {
+                            c: 0 hl;
+                            filter: brightness(110%);
                         }
                     }
                 }
-                /// Unset overflow to be able to see indicators.
-                ._0LqQ {
-                    margin-left: -10px i;
-                    overflow: unset i;
-                    /// Prevents indicators jumping all over the place.
-                    > span:last-child:not(._17TaE) { display: none i }
-                }
+                /// I wish I could understand why this works.
+                ._3j7s9 { min-width: 80px i }
             }
         }
     }
