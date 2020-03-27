@@ -860,6 +860,11 @@
                 opacity: 1;
                 fill-opacity: 1 i;
             }
+            /// Hover animation.
+            &[data-icon *= 'chevron-'],
+            &[data-icon = 'down-context'] {
+                > svg > path { fill-opacity: 0.55 }
+            }
             /// Exclude logos in embedded links from hover animation.
             &[data-icon*='logo-'] > svg > path {
                 fill-opacity: 0.6 i;
@@ -961,7 +966,10 @@
             }
         }
         /// Global -> Down arrow animation.
-        &[data-icon = 'down'] { fill-opacity: 0.55 }
+        &[data-icon = 'down'] {
+            fill-opacity: 0.55;
+            path { v: white }
+        }
     }
 
     // Global -> Context menu.
