@@ -248,7 +248,7 @@
         a { color: ac }
         select {
             c: fg bd;
-            /.Fzl83 {
+            /.uyEaY {
                 margin-right: 24px;
                 /// Caret.
                 &::before { c: cm }
@@ -362,7 +362,8 @@
         }
 
         /// App -> Badges.
-        ._2WwbV, .FPZFa { c: ac ac hl }
+        ._3JEcM { c: cm cm hl }
+        ._2e8Mu { c: ac ac hl }
 
         /// App -> Intro.
         ._2zynu {
@@ -776,7 +777,7 @@
         /// Left -> Turn on desktop notifications.
         .NWyjc.AZ3xD { margin: 16px }
         /// Left -> Show previews for notifications.
-        /._2vOyW._26EsD .lz4Mo { c: fg }
+        /.cFkAx._2ojWN ._3FR9x { c: fg }
     }
 
     // Global -> Status.
@@ -1171,13 +1172,20 @@
                 ._2WP9Q { border-top: none i }
                 /// Nick/info.
                 ._25Ooe { c: fg }
-                ._3Bxar, ._1AwDx { c: cm }
+                ._3Bxar, ._1AwDx, /._1jd1m { c: cm }
                 /// Already blocked.
-                &._30Q1W { .3H4MS:not(#z) { c: cm }}
+                &._2EXPL:not(#z) {
+                    ._25Ooe { c: fg }
+                    ._1AwDx div { c: cm }
+                }
                 /// Settings -> Reset first list item.
-                &._3fAgu { border-top: none i }
+                &._3ntaf { border-top: none i }
                 /// Left -> Add group participants.
-                &._27Ppf { height: 25px i; c: 0 0 bd }
+                &._13iu_ {
+                    height: 25px i;
+                    &, &:not(#z):hover { c: 0 0 bd }
+                    [role = 'button']:hover { c: 0 0 bg }
+                }
             }
             /// Settings -> Options.
             ._1CkkN {
@@ -1209,7 +1217,7 @@
                 ._2zkF3 { c: 0 0 t }
                 ._1AKfk { c: ac 0 t }
                 /// New group button.
-                /._3p0T6 {
+                /._1jJLh {
                     c: 0 0 ac;
                     /// Expand group participants list button.
                     &.w4k6i {
@@ -1242,6 +1250,10 @@
             ._3hhmj { c: 0 t }
             ._27YTC, /._3dwyT { c: cm }
             ._1i7uJ { c: 0 0 bd }
+            /// Contact us.
+            /._2rXhY { c: cm }
+            /._1BLxK { c: ac 0 t }
+            /._2WSfN { c: ac 0 hl }
             /// Version info.
             .ZIgPi { c: fg }
         }
