@@ -49,7 +49,7 @@
 @var checkbox chat_b_r   'Custom background for right message bubble' 0
 @var color    b_r_bg     'Right message bubble color' #333a47
 
-@var checkbox emoji_t    'Enable transparent emoji images' 1
+@var checkbox emoji_ti   '[BROKEN]: Enable transparent emoji images' 0
 @var range    emoji_o    'Emoji default opacity' [0.8, 0.0, 1, 0.01]
 
 @var select   app_image  'Custom app background' {
@@ -68,7 +68,7 @@
 
 @var checkbox chat_bg    'Enable chat background image' 1
 @var text     chat_image 'Custom image for chat' url('https://web.whatsapp.com/img/bg-chat-tile_9e8a2898faedb7db9bf5638405cf81ae.png')
-@var range    chat_bg_o  'Chat background image opacity' [0.1, 0.0, 1, 0.01]
+@var range    chat_bg_o  'Chat background image opacity' [0.10, 0.0, 1, 0.01]
 @var range    chat_bg_i  'Chat background image inverted colors' [0.6, 0.0, 1, 0.1]
 
 @var checkbox ff_scroll  'Thin scrollbars in Firefox' 1
@@ -243,7 +243,7 @@
         scrollbar-color: ac #55555520;
 
         /// Input/preloader color.
-        ::placeholder, ._2kE6F { c: cm }
+        ::placeholder, ._1mpL5 { c: cm }
         strong, [contenteditable] { c: fg }
         a { color: ac }
         select {
@@ -325,20 +325,20 @@
                     box-shadow: 0 0 0 4px white;
                     [role='button'] { c: white 0 ac }
                     /// Change white border when inactive.
-                    &._3aqLw {
+                    &._1-KGg {
                         outline: 4px solid ac;
                         box-shadow: 0 0 0 4px ac;
                     }
                 }
                 /// Video tutorial.
-                + ._3vndg {
+                + ._3B9bf {
                     c: 0 0 t;
                     img { opacity: 0.3 }
                     /// Reset background on button container.
                     [style *= 'opacity: 1'] { c: 0 0 t }
                 }
                 /// 'Keep me signed in' tooltip. #59
-                ._2-fMQ {
+                .KACnm {
                     c: white 0 ac;
                     box-shadow: bsh;
                     &::before { border-bottom-color: ac }
@@ -365,7 +365,7 @@
         ._2WwbV, .FPZFa { c: ac ac hl }
 
         /// App -> Intro.
-        ._1qNwV {
+        ._2zynu {
             c: 0 bd bg;
             a { color: ac }
             &::after { c: 0 ac }
@@ -540,7 +540,7 @@
     // Global -> Avatars.
     /// Profile and Chat avatars (without quoted contacts);
     /// New group and 'No blocked contacts yet' icons.
-    ._3BYwr, ._3RWII:not(.eLUC2), ._3p0T6, ._1i7uJ {
+    ._1WliW, ._1jJLh, ._2Lev2 {
         rad: var(--avatar-r) i;
         c: 0 0 bg;
         > img { rad: var(--avatar-r) i }
@@ -573,7 +573,7 @@
             box-shadow: none i;
         }
         /// Feat -> Transparent emoji images.
-        if ( emoji_t == 1 ) {
+        if ( emoji_ti == 1 ) {
             repo = 'https://raw.githubusercontent.com/vednoc/wae/master'
             /// Android emojis.
             for i in 0..112 {
@@ -593,17 +593,17 @@
     }
 
     // Global -> Emoji picker popout.
-    ._342qq._1mTBR {
+    ._3ZkhL._3NVMy {
         rad: r i;
         box-shadow: bsh;
         /// Header.
-        ._2avTY {
+        ._1qUma {
             c: 0 0 hl;
             box-shadow: inset 0 -1px bd;
             [style] { c: 0 0 ac }
         }
         /// Content.
-        .QChXd {
+        ._3tlsa {
             c: 0 0 bg;
             [data-tab] {
                 c: 0 0 bg;
@@ -615,7 +615,7 @@
                 input { c: fg }
             }
             /// Sections.
-            ._2lKjK { c: cm }
+            ._3xMAk { c: cm }
         }
         /// Nib.
         + [data-animate-dropdown-nib] {
@@ -639,20 +639,16 @@
             c: 0 0 bg;
         }
         /// Header.
-        > .cGLoy, .s4BtI {
+        &[data-animate-media-viewer] > div:first-child  {
             c: 0 0 hl;
             box-shadow: 0 1px bd;
             /// Remove all borders and backgrounds.
-            div { c: 0 t t }
+            div:not([style *= 'height']) { c: fg t t }
             /// Text.
             .xD91K { c: cm }
             ._3H4MS { c: fg }
             /// Media -> Fix header background hover conflict.
-            ._2UaNq {
-                &._3Ff9z, &._1k-OW {
-                    &:not(#z):not(#x):hover { c: 0 0 t }
-                }
-            }
+            ._2EXPL:not(#z):hover { c: 0 0 t }
         }
         /// Add group participants.
         .I72vi {
@@ -668,14 +664,14 @@
         /// Footer.
         ._21bWq { c: 0 0 hl }
         /// Previous/next buttons.
-        ._3yth3:not(#z) {
+        .KNt1E:not(#z) {
             c: 0 0 hl;
             box-shadow: inner, bsh;
             &:hover { c: 0 0 bd }
         }
         /// Text.
         .X5OiD { c: 0 0 bd }
-        ._3qb2N, .JmH7x { c: cm }
+        ._26BZr, .JmH7x { c: cm }
         ._2yVvV { c: fg }
         /// Buttons.
         [role = 'button'] {
@@ -703,13 +699,13 @@
             ._13HPh { c: fg }
             ._2VDPW { c: 0 0 hl }
             /// Contacts popup -> Forward message / Message group admins.
-            ._1KDYa {
+            .copyable-area {
                 c: 0 0 t;
                 > header {
                     border-bottom: 1px solid bd;
                     c: fg 0 hl;
                 }
-                .r7sRK { c: ac 0 t }
+                ._1AKfk { c: ac 0 t }
                 ._2UaNq { c: fg 0 t }
                 /// Footer.
                 > span > div[style] {
@@ -728,19 +724,19 @@
                 + div { c: fg }
             }
             /// Inner padding tweak.
-            &._3RiLE {
+            /._1CnF3 {
                 padding: 0 i;
-                > .aymnx { padding: 22px 24px 20px i }
-                .AZ3xD { margin: 0 }
+                > div { padding: 22px 24px 20px i }
+                [role = 'button'] { c: white 0 ac }
             }
         }
         /// Settings -> Upload a new avatar.
         [data-animate-modal-body] {
             ._1BdTk { border-left: none }
             /// Canvas background.
-            ._3979j { c: 0 0 t }
+            ._7RNZ3 { c: 0 0 hl }
             /// Buttons.
-            ._1DKwn {
+            ._2LALH {
                 c: 0 0 hl;
                 box-shadow: bsh;
             }
@@ -819,7 +815,7 @@
             > div[class]:nth-child(2) {
                 .ojaNO { c: cm }
                 /// Reset the circle icon.
-                svg[width][height] path { v: t fg }
+                svg[width][height] path { v: cm }
             }
             /// Remove borders from list items.
             ._2UaNq { border-top: none }
@@ -836,20 +832,20 @@
         /// Status icon state.
         /circle {
             v: 0 cm;
-            &._3yudO { v: 0 ac }
+            &._1tACm { v: 0 ac }
         }
     }
 
     // Global -> Media selection.
-    ._2n0jo {
+    .C73Q6 {
         c: 0 bd hl;
         /// Item reset.
-        ._1LdNS {
-            &.cJP5q {
+        .UPNDG {
+            &._1xQmx {
                 border: none i;
                 outline: 4px solid ac;
             }
-            &:hover:not(.cJP5q):not(#spec) { outline: 4px solid ac i }
+            &:hover:not(._1xQmx):not(#z) { outline: 4px solid ac i }
         }
     }
 
@@ -890,9 +886,13 @@
             }
         }
         /// Left -> Reset status/chat/menu icons.
-        &[data-icon = 'status-v3-unread'] path:last-child { v: ac }
-        &[data-icon = 'chat'] path { opacity: 1 }
-        &[data-icon = 'menu'] path { fill-opacity: 0.55 }
+        &[data-icon = 'status-v3'] path { fill-opacity: 0.55 i }
+        &[data-icon = 'status-v3-unread'] path {
+            &:not(:last-child) { fill-opacity: 0.55 i }
+            &:last-child { v: ac }
+        }
+        &[data-icon = 'chat'] path { fill-opacity: 0.55 i }
+        &[data-icon = 'menu'] path { fill-opacity: 0.55 i }
         /// Search -> Back button.
         &[data-icon = 'back-blue'] path { v: blue }
         /// Default user/group/broadcasts icons.
@@ -921,10 +921,12 @@
         &[data-icon *= '-check'] path { v: cm }
         &[data-icon *= '-dblcheck'] path { v: cm }
         &[data-icon *= '-dblcheck-ack'] path,
-        &.Ryz_m[data-icon *= '-dblcheck'] path,
-        &._3rqs1[data-icon *= '-dblcheck'] path,
-        &._33bww[data-icon *= '-dblcheck'] path,
-        /._1t84_ &[data-icon *= '-dblcheck'] path { v: ac }
+        /.a5DO0, /._2lSfP {
+            span[data-icon *= '-dblcheck'] path { v: ac }
+        }
+        /._2lSfP, /._209Po {
+            &[data-icon *= '-dblcheck']:not(#z) path { v: ac }
+        }
         &[data-icon *= 'check'] path { fill-opacity: 1 i }
         /// Exit/Report.
         &[data-icon = 'exit'],
@@ -1025,24 +1027,24 @@
         }
         /// Alerts.
         > header + span[class] {
-            ._1puWZ, ._2xikZ, ._1sFYw, ._2t3oV {
+            > div > div {
                 border-bottom: 1px solid bd;
                 c: 0 0 hl;
             }
             /// Disconnected/connecting.
-            ._1puWZ, ._2xikZ {
+            ._1UvQg {
                 * { c: yellow }
                 [data-icon ^= 'chevron-'] path { fill: yellow }
                 [data-icon ^= 'alert-'] path {
-                    &[fill ^= '#FFF'] { fill: yellow }
+                    &[fill ^= 'curr'] { fill: yellow }
                     &[fill ^= '#FFB'] { fill: hl }
                 }
             }
             /// Enable notifications.
-            ._1sFYw {
+            ._35DHA {
                 * { c: blue }
                 [data-icon ^= 'chevron-'] path { v: blue }
-                [data-icon ^= 'alert-'] path[fill ^= '#FFF'] { fill: blue }
+                [data-icon ^= 'alert-'] path { fill: blue }
                 /// Alerts -> Remove 'allow desktop notifications' alert.
                 if ( alerts ==  'notifications' ) { display: none i }
             }
@@ -1050,7 +1052,7 @@
             ._2t3oV {
                 * { c: red }
                 [data-icon ^= 'chevron-'] path { v: red }
-                [data-icon ^= 'alert-'] path[fill ^= '#FFF'] { fill: red }
+                [data-icon ^= 'alert-'] path { fill: red }
             }
             /// Close icon.
             ._1cvvW path { fill-opacity: 0.55 }
@@ -1058,7 +1060,7 @@
             if ( alerts ==  'hide' ) { display: none i }
         }
         /// Search.
-        /div[class *= 'ZP8RM'] {
+        /div[class *= 'gQzdc'] {
             transition: 0.2s ease;
             border-bottom: 1px solid bd;
             c: 0 0 hl;
@@ -1100,13 +1102,13 @@
                     strong { c: cm }
                 }
                 /// Unread indicators.
-                /.P6z4j { c: white 0 ac }
+                /.OUeyt { c: white 0 ac }
             }
             /// Remove background glitch of an empty element.
             ._2xINO { height: 0 }
         }
         /// Search contacts/messages.
-        .r7sRK {
+        ._1AKfk {
             c: ac 0 t;
             box-shadow: 0 1px bd;
         }
@@ -1121,7 +1123,7 @@
     }
 
     // App -> Left/right panes.
-    ._2t4Ic {
+    ._1-iDe {
         .copyable-area {
             /// Pane background.
             &:not(.overlay) { c: 0 0 hl }
@@ -1132,13 +1134,13 @@
                 border-bottom: 1px solid bd;
                 c: 0 0 hl;
                 /// Global -> Reset header text.
-                /._1pYs5:not(#z) {
+                /._1xGbt:not(#z) {
                     margin: 0;
                     padding-top: 4px;
                     font-size: 18px;
                     font-weight: 500;
                 }
-                .kyJvR {
+                > div {
                     height: 58px;
                     c: fg;
                     /// Broadcast list info.
@@ -1146,25 +1148,27 @@
                 }
             }
             /// Highlighted sections.
-            ._2LSbZ {
+            ._1CRb5 {
                 c: 0 0 t;
                 box-shadow: none;
-                ._3he1q { c: ac }
+                ._1sYdX { c: ac }
+                /.Cpiae, /._2EuwQ { c: cm }
                 ._3K9Sw { c: 0 t }
                 /// Input area border.
-                /._5UNoc ._3hnO5 { c: 0 ac }
+                /._31WRs ._1DTd4 { c: 0 ac }
             }
             /// Global -> List items.
-            /._2UaNq {
+            /._2EXPL {
                 border-top: 1px solid bd;
                 c: 0 0 t;
+                > div { border: none i }
                 &::after { content: none i }
                 &:hover:not(#z):not(._27Ppf) { c: 0 0 #55555510 }
                 [style *= 'height: 82px'] { c: 0 0 t }
                 ._2WP9Q { border-top: none i }
                 /// Nick/info.
-                ._3H4MS { c: fg }
-                .xD91K { c: cm }
+                ._25Ooe { c: fg }
+                ._3Bxar, ._1AwDx { c: cm }
                 /// Already blocked.
                 &._30Q1W { .3H4MS:not(#z) { c: cm }}
                 /// Settings -> Reset first list item.
@@ -1173,39 +1177,34 @@
                 &._27Ppf { height: 25px i; c: 0 0 bd }
             }
             /// Settings -> Options.
-            ._26JG5 {
+            ._1CkkN {
                 border-bottom: 1px solid bd;
                 c: 0 0 t;
                 box-shadow: 0 -1px bd;
                 &:hover { c: 0 0 #55555510 }
                 &::before { content: none }
                 > div:last-child { c: 0 t }
-                ._6xQdq { c: fg }
+                ._3LL06 { c: fg }
             }
             /.wjdTm, ._1qWhd { c: cm }
             /// Left -> New group.
-            ._1w-mX {
+            ._66JgU {
                 c: 0 0 t;
                 input { c: fg }
-                ._39cGk { c: 0 bd }
+                ._3_3Rs { c: 0 bd }
                 /// Resets for contacts.
-                + ._1c8mz {
+                + div {
                     c: 0 0 t;
-                    .r7sRK {
-                        c: ac 0 t;
-                        /.r7sRK:not(#z) { box-shadow: inset 0 1px bd i }
-                    }
                     ._8-yzK { c: 0 0 t }
-                    ._2DxRd, ._2WP9Q { c: 0 t }
                 }
             }
             /// Left -> New group creation.
             /._1wt6r { c: cm }
             /// Left -> New chat.
-            ._1c8mz {
+            ._1ecJY {
                 /// New chat.
-                ._11p3Q, ._8-yzK { c: 0 0 t }
-                .r7sRK { c: ac 0 t }
+                ._2zkF3 { c: 0 0 t }
+                ._1AKfk { c: ac 0 t }
                 /// New group button.
                 /._3p0T6 {
                     c: 0 0 ac;
@@ -1216,18 +1215,18 @@
                     }
                 }
                 /// Remove borders.
-                ._2DxRd, ._2WP9Q { border: none }
+                /._3YwRO { border: none i }
             }
             /// Left -> Starred/Archived.
-            ._1WMT2 {
+            .MS-DH {
                 &::before {
                     margin-top: -1px;
                     left: 0;
                     c: 0 0 bd;
                 }
                 &::after { content: none }
-                &._1lakC, &._2nA3s, &._2V_Wj { c: 0 0 #55555510 }
-                ._2V2qB, .jLybP::before { c: cm }
+                &._2-mCk, &.ZuHmv { c: 0 0 #55555510 }
+                /._3WZoe, ._1bcjS, ._2-rkJ::before { c: cm }
                 /// Reset tails.
                 .tail {
                     &, > div[class] { rad: 7.5px i }
@@ -1237,8 +1236,8 @@
             /// Right -> Search messages.
             #pane-side { c: 0 0 t }
             /// Blocked contacts.
-            ._2TLLH { c: 0 t }
-            ._13U-5, /._3dwyT { c: cm }
+            ._3hhmj { c: 0 t }
+            ._27YTC, /._3dwyT { c: cm }
             ._1i7uJ { c: 0 0 bd }
             /// Version info.
             ._2MoEz { c: fg }
@@ -1246,17 +1245,19 @@
     }
 
     // App -> Right.
-    ._7YAGC .copyable-area {
+    ._14VS3 .copyable-area {
         /// Default avatar.
         [style *= 'height: 200px'] ._2EaHs { c: 0 0 bg }
         /// Text color.
-        ._1drsQ { c: fg }
-        ._2IwIk, ._1goQ0 { c: cm }
+        .iYPsH { c: fg }
+        ._2IwIk, ._1goQ0, ._2IkcY { c: cm }
         /// Buttons.
-        ._3_-Si {
-            padding: 0 15px;
-            > ._2x2XP { padding-right: 0 }
-            > div { c: 0 bd }
+        ._14oqx {
+            padding: 0;
+            > div {
+                padding: 0 30px;
+                c: 0 bd;
+            }
             span { c: fg }
         }
         /// Reset padding.
@@ -1273,7 +1274,7 @@
             width: auto;
         }
         /// Right -> Media, links and docs / Starred messages.
-        ._2h7Od, ._88RDg {
+        ._GaHgu {
             path { opacity: 0.55 i }
             /// Hover animation.
             &:hover > span > svg > path {
@@ -1282,12 +1283,12 @@
             }
         }
         /// Message info -> Image.
-        ._2rGVQ {
+        ._3FAwT {
             border-bottom: 1px solid bd;
             c: 0 0 t;
         }
         /// Message info -> Read by.
-        ._2AJf5 {
+        ._2flas {
             c: 0 0 t;
             span { c: ac }
         }
@@ -1297,12 +1298,12 @@
             box-shadow: 0 1px bd;
         }
         /// Message info -> Forwarded x time(s).
-        ._1NZZN, ._3XHR- {
+        ._3E0ID {
             c: fg bd t;
             span { color: inherit }
         }
         /// HACK: Resets.
-        .rK2ei:not(._1c8mz):not(#z):not(#x) ._2UaNq {
+        ._2feU1:not(._1c8mz):not(#z):not(#x) ._2EXPL {
             // Message info in DMs but not in groups.
             &:hover {
                 c: 0 0 t;
@@ -1332,7 +1333,7 @@
             /._3jHKU { z-index: 999 i }
         }
         /// Media/Links/Docs -> Selected header.
-        ._2XHj8 {
+        .GaHgu {
             c: 0 0 hl;
             box-shadow: inset 0 -1px bd;
             span { c: fg }
@@ -1353,12 +1354,11 @@
                 c: 0 0 blue;
             }
             /// Selected media.
-            /._2Ji5m { c: 0 hl }
+            /._2mlDB { c: 0 hl }
         }
+        /// App -> Fix right pane border.
+        /._1-iDe._14VS3 > span { border-left: 1px solid bd }
     }
-
-    // App -> Fix right pane border.
-    ._1mseJ ._3wYPn { border-left: 1px solid bd }
 
     // Main -> Chat.
     #main {
@@ -1392,13 +1392,13 @@
             ._3D8gv { c: cm }
         }
         /// Chat -> Loader.
-        ._2sOZc {
+        ._3dGYA {
             c: 0 0 hl;
             box-shadow: inner, bsh;
             svg circle { stroke: green }
         }
         /// Chat -> System messages.
-        .a7otO {
+        .Zq3Mc {
             opacity: 0.95;
             letter-spacing: 0;
             font-weight: 600;
@@ -1409,7 +1409,7 @@
             &:not(.tail) { c: fg }
         }
         /// Chat -> Jump to new messages.
-        ._3KRbU {
+        ._298R6 {
             c: 0 0 hl;
             transition: background 0.15s ease;
             box-shadow: inner, 0 4px 8px sh;
@@ -1420,16 +1420,16 @@
         .copyable-area > div[tabindex] {
             c: 0 bd;
             /// Chat -> Fix message spacing reported in #43.
-            ._1ays2 {
+            > [tabindex = '-1'] {
                 display: flex i;
                 flex-direction: column i;
             }
             /// Chat -> Select messages.
-            &._2AqZl {
+            &._3D9Wd {
                 c: 0 0 t;
                 [class *= 'message-'] { position: relative }
                 /// Selected messages.
-                /.qTFAl {
+                /._1o1sm {
                     z-index: 999 i;
                     /// Pseudo-background.
                     &::before {
@@ -1439,7 +1439,7 @@
                         top: 0; left: 0; bottom: 0; right: 0;
                     }
                     /// States.
-                    &:hover, &._3Z2tD {
+                    &:hover, &._2nOMz {
                         c: 0 0 t;
                         &::before { c: 0 0 ac }
                     }
@@ -1447,13 +1447,12 @@
                     &._21W00::before { c: 0 0 t }
                 }
                 /// Checkboxes.
-                ._15wNI {
+                ._1VD7W {
                     c: 0 ac ac;
                     div { c: 0 white }
                 }
                 /// Reset icon opacity.
-                /// ???, media and voice message classes
-                /._3f5U8, /._3MU5v, /._2-qoA {
+                /._1l9lt {
                     path { opacity: 0.55 i }
                     /// Disabled icons.
                     &:disabled path { fill: cm i; opacity: 0.25 i }
@@ -1465,9 +1464,9 @@
                 }
             }
             /// Forwarded message.
-            /._8fE-g { c: cm }
+            /._15aTv { c: cm }
             /// X unread messages.
-            ._3Xx0y {
+            ._1mq8g {
                 c: fg bd hl;
                 > span { c: 0 0 bd }
             }
@@ -1477,20 +1476,21 @@
                 + div { &, > span::before { c: cm }}
             }
             /// Rich embeds.
-            ._1SsXF {
+            /._2nFG1, /._2pvbg, /._3mRez, /._1sGGp {
+                c: 0 0 bg;
                 div > div:nth-child(1) span { c: fg }
                 div > div:nth-child(2) span { c: cm }
                 div > div:nth-child(3) span { c: fg }
             }
             /// Deleted message.
-            ._2v02G, ._3uHCS {
+            ._1upWv {
                 c: cm;
                 [data-icon] path { fill: cm }
             }
             /// 'Read more' button.
-            /._1Jc9f, /._3THW4 { c: ac }
+            /._484uz, /._3BIvq { c: ac }
             /// 'Join group' / 'View all' buttons.
-            /._1PENu {
+            /._3DBC1 {
                 c: 0 #88888830;
                 [role = 'button'] { c: fg }
             }
@@ -1526,10 +1526,6 @@
             /// Stats.
             /._1o0MN { c: cm }
         }
-        /// Embeds -> Background.
-        /.HNuTV, /._3qblR, /._1SsXF {
-            c: 0 0 bg;
-        }
         /// Embeds -> Thumbnail.
         /._3_nIn { c: 0 0 #55555510 }
         /// Embeds -> Text.
@@ -1538,14 +1534,13 @@
             > :first, > :last { &-child { c: fg }}
         }
         /// Embeds -> Shared contact.
-        /._1ikYm {
+        /._1YNgi {
             div[style *= 'base64'] { filter: none i }
-            ._2LRBk { c: fg }
-            ._3fnHB { c: cm }
+            ._3gkvk { c: fg }
+            /// Multiple contacts.
+            /._3BtGF, /.mc_ET { c: 0 bg t }
+            /.AVd_p { c: fg }
         }
-        /// Multiple contacts.
-        /.L4M2f, /._1d0W1 { c: 0 bg t }
-        /._3ZVco { c: fg }
     }
 
     // Main -> Chat message bubbles.
@@ -1582,7 +1577,7 @@
         /// Global bubble styles.
         &-in, &-out {
             /// Fix shadows.
-            > div:not(.a81-s) {
+            > div:not(._1rK-b) {
                 box-shadow: 0 1px 0.5px sh i;
                 > div { box-shadow: none i }
             }
@@ -1603,25 +1598,25 @@
                 .tail .tail-container { display: none }
             }
             /// Date.
-            [data-pre-plain-text] + div * { c: cm }
+            [data-pre-plain-text] + div *, /._1DZAH { c: cm }
             /// Reset image context menu.
             &._26GKj ._2Nkc4:not(#z) { background: none i  }
             /// Stickers.
-            .a81-s {
+            ._1rK-b {
                 /// Header.
-                ._3Mf7Z {
+                ._2R8MP {
                     c: 0 0 left;
                     box-shadow: 0 1px sh i;
                 }
                 /// Date.
-                ._3qAvH {
+                ._2Ll5c {
                     c: cm;
                     box-shadow: 0 1px sh i;
                     div { color: inherit }
                 }
                 /// Fix bubble radius.
                 if ( msg_tails != 1 ) {
-                    :not(.tail) > div > ._2Hp95._1X6iJ ._3Mf7Z { rad: 7.5px }
+                    :not(.tail) > div > ._2Hp95._1X6iJ ._2R8MP { rad: 7.5px }
                 }
             }
             /// Audio messages.
@@ -1636,7 +1631,7 @@
             &.velocity-animating { opacity: 0.4 }
             /// Image/gif -> Timestamp background.
             div[style *= 'width'][style *= 'height'] {
-                + .iVt71, + ._3hsuL {
+                + ._1uFFm, + .GbMip {
                     padding: 2px 5px;
                     rad: 7.5px;
                     c: 0 0 hl;
@@ -1655,7 +1650,7 @@
                     c: fg 0 bg;
                 }
                 /// Video duration.
-                /._2HHbr { c: cm }
+                /.Y9G3K { c: cm }
             }
             /// Fix context menu height for shared contacts.
             ._2rg5w._3EQsG { height: 50px }
@@ -1663,11 +1658,11 @@
         /// Left.
         &-in {
             /// Not stickers.
-            > div:not(.a81-s) > div { c: fg 0 left }
+            > div:not(._1rK-b) > div { c: fg 0 left }
             /// Stickers -> Timestamp.
-            > div.a81-s ._3qAvH { c: 0 0 left }
+            > div._1rK-b ._2Ll5c { c: 0 0 left }
             /// Stickers -> Sender name bubble. #69
-            /._3tMyP {
+            /._3_9XW {
                 c: 0 0 left;
                 box-shadow: 0 1px 0.5px sh i;
             }
@@ -1684,10 +1679,12 @@
             [role] > span[role = 'button'] + span { c: fg }
             /// Context menu.
             > div > span:last-child > div[style] {
-                /// Non-stickers.
-                &:not(._2PpWQ) { background: linear-gradient(90deg, t, left 80%) i }
+                /// Non-stickers | Groups -> Combined stickers.
+                &:not(._1UyGF), /._1i1U7.jZ4tp {
+                    background: linear-gradient(90deg, t, left 80%) i;
+                }
                 /// Stickers.
-                /._2PpWQ._2Nkc4 div[style *= 'opacity'] { c: 0 0 left }
+                /._1i1U7._1UyGF div[style *= 'opacity'] { c: 0 0 left }
                 /// Images.
                 &._20WGU { background: linear-gradient(30deg, t 65%, #44444455 120%) i }
                 /// Fix context menu for local RTL layouts.
@@ -1705,7 +1702,7 @@
                 &._15CAo._3WZEQ { background: linear-gradient(90deg, t, bg 60%) i }
             }
             /// Replies.
-            ._2HTIU {
+            ._1iJeo {
                 c: 0 0 bg;
                 &:hover { opacity: 0.8 }
             }
@@ -1715,7 +1712,7 @@
         /// Right.
         &-out {
             /// (1) Not stickers; (2) Not error ("couldn't send this message").
-            > div:not(.a81-s) > div:not(._19l4G) { c: fg 0 right }
+            > div:not(._1rK-b) > div:not(._19l4G) { c: fg 0 right }
             /// "Couldn't send this message" tweaks.
             ._19l4G:not(#z) {
                 /// Popout message.
@@ -1731,7 +1728,7 @@
                 }
             }
             /// Stickers -> Timestamp.
-            > div.a81-s ._3qAvH { c: 0 0 right }
+            > div._1rK-b ._2Ll5c { c: 0 0 right }
             /// Reset tails.
             .tail {
                 border-top-right-radius: 0 i;
@@ -1744,9 +1741,9 @@
             /// Context menu.
             > div > span:last-child > div[style] {
                 /// Non-stickers.
-                &:not(._2PpWQ) { background: linear-gradient(90deg, t, right 80%) i }
+                &:not(._1qhoQ) { background: linear-gradient(90deg, t, right 80%) i }
                 /// Stickers.
-                /._3EQsG._2PpWQ div[style *= 'opacity'] { c: 0 0 right }
+                /._1i1U7._1qhoQ div[style *= 'opacity'] { c: 0 0 right }
                 /// Images.
                 &._20WGU { background: linear-gradient(30deg, t 65%, #44444455 120%) i }
                 /// Fix context menu for local RTL layouts.
@@ -1764,7 +1761,7 @@
                 &._15CAo._3WZEQ { background: linear-gradient(90deg, t, bg 60%) i }
             }
             /// Replies.
-            ._2HTIU {
+            ._1iJeo {
                 c: 0 0 bg;
                 &:hover { opacity: 0.8 }
             }
@@ -1774,16 +1771,16 @@
     }
 
     // Main -> Upload preview.
-    ._1BdTk, ._1cJw0, .kqC9O {
-        border-left: 1px solid bd;
+    ._1drQ-, ._1dGTK, .r3Nu1 {
+        border-left: 1px solid bd i;
         c: 0 0 bg;
         header {
             border-bottom: 1px solid bd;
             c: fg 0 hl;
         }
         /// Input.
-        .Am8s6 { c: cm }
-        ._3ogpF { c: 0 ac }
+        ._7HWvs { c: cm }
+        .CzI8E { c: 0 ac }
         /// Alert.
         ._1u0aP {
             c: fg 0 bd;
@@ -1803,15 +1800,15 @@
                 box-shadow: bsh;
             }
             /// Add file.
-            &._3fktq {
+            &._1ypOz {
                 c: ac 0 bg;
-                box-shadow: inner;
+                box-shadow: inner i;
                 &::after { c: 0 0 ac }
             }
             /// Selected file.
-            &._1gcLL::after { c: 0 0 ac }
+            &._2gZno::after { c: 0 0 ac }
             /// Send.
-            &._1g8sv {
+            &._3hV1n {
                 c: 0 0 ac;
                 box-shadow: bsh;
                 transition: 0.15s ease;
@@ -1819,28 +1816,28 @@
             }
         }
         /// Upload skeleton.
-        /.lC2xi {
+        /._2n-96 {
             c: 0 0 bg;
-            ._8C3uJ { c: fg bd }
-            ~ .NeQRT { c: 0 0 bg }
+            > div { c: fg bd }
         }
     }
 
     // Main -> Chat input.
     #main > footer {
         c: 0 0 t;
-        /// Emoji/gif/sticker icons.
-        .-XQxp {
+        > div > div { c: 0 bd }
+        /// Icons -> Emojis/gifs/stickers.
+        ._1x_c3 {
             /// Overwrite defaults. @upstream
             path { fill-opacity: 0.55 }
             /// Active.
-            &._1oNFt path {
+            &.bRYFY path {
                 fill-opacity: 1;
                 fill: ac;
             }
         }
-        /// Emoji picker.
-        /._2mlOb {
+        // /// Emoji picker.
+        /._23EHf {
             c: 0 bd hl;
             box-shadow: inset 0 1px bd i;
             &::before { content: none }
@@ -1871,10 +1868,10 @@
         [fill = '#09D261'] { v: green }
         [fill = '#E53935'] { v: red }
         /// Emoji/gif/sticker menu.
-        ._30sf0 {
+        ._1vDUw {
             c: 0 bd;
             /// Header.
-            ._2avTY {
+            ._1qUma {
                 c: 0 0 hl;
                 box-shadow: inset 0 1px bd, inset 0 -1px bd;
                 div[style *= 'background'] { c: 0 0 ac }
@@ -1886,13 +1883,13 @@
                     &:hover, ../ ._2wn58 { c: fg }
                 }
                 /// Active menu.
-                .Orl3a {
+                ._1Wbpa {
                     height: 1px;
                     c: 0 0 ac;
                 }
             }
             /// Body.
-            .QChXd, ._20KNO, .RxbUw {
+            ._3tlsa, ._2HBs4, ._2z7kg {
                 c: 0 0 bg;
                 /// Search.
                 [data-tab] {
@@ -1904,9 +1901,9 @@
                     }
                 }
                 /// Header colors.
-                ._2lKjK { c: cm }
+                ._3xMAk { c: cm }
                 /// Gif -> Preloader.
-                ._2x9yi {
+                .zl5TR {
                     rad: 4px;
                     c: 0 0 hl;
                 }
@@ -1936,12 +1933,12 @@
             }
         }
         /// Alerts -> Not a group member / Only admins can send messages.
-        ._26pkE {
+        ._2XiC1 {
             c: cm;
             border-left: 1px solid bd;
         }
         /// Reply.
-        ._1ebw2 {
+        .rstyJ {
             c: 0 0 bg;
             box-shadow: bsh, inset 0 1px bd i;
             /// Nickname.
@@ -1953,10 +1950,11 @@
                 div[role] { c: 0 0 hl }
                 /.quoted-mention { c: cm }
                 /// Add border around replies.
-                /._1SsXF, ._2HTIU {
-                    rad: 6px i;
+                [class *= 'bg-color'] + [dir] {
+                    rad: 0 6px 6px 0 i;
                     box-shadow: inset 0 0 0 1px bd;
                 }
+                .EebcE + div { box-shadow: inner }
             }
             /// Close button.
             div:last-child {
@@ -1970,18 +1968,18 @@
             }
         }
         /// Mention popout.
-        ._2j-wI {
+        .Uukb4 {
             c: 0 bd bg;
             box-shadow: 0 -1px bd i;
             &::before { content: none }
-            .XSeqj {
+            .J6TrU {
                 c: fg bd bg;
-                &._1Yz8K, &:hover { c: 0 0 hl }
+                &._1g_fA, &:hover { c: 0 0 hl }
             }
             ._3SW-z { c: cm }
         }
-        /// Audio msg length.
-        /._2NdXo { c: cm }
+        /// Audio message length.
+        /._1M0Ew { c: cm }
     }
 
     // Feat -> Compact mode.
