@@ -1,6 +1,18 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.3.3 [2020-03-27]
+Fixing more new bugs, some caused by last night's hotfix.
+
+*** Added
+- An option to set 'hover-off' duration in compact mode ([[https://github.com/vednoc/dark-whatsapp/issues/138][#138]])
+
+*** Fixed
+- Many more selectors throughout the app
+- Colors for audio/video sliders ([[https://github.com/vednoc/dark-whatsapp/issues/136][#136]])
+- 'Computer not connected' alert ([[https://github.com/vednoc/dark-whatsapp/issues/140][#140]])
+- Rewritten compact mode
+
 ** 2.3.2 [2020-03-27]
 Fixing more new bugs, some caused by last night's hotfix.
 
