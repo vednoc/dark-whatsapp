@@ -272,7 +272,7 @@
                 &-value { c: 0 0 ac }
             }
             &slider {
-                &-runnable-track { c: 0 0 bg }
+                &-runnable-track { c: 0 0 gray }
                 &-thumb {
                     c: 0 0 ac;
                     /// Chat -> Played state for audio messages.
@@ -471,7 +471,16 @@
             }
             /// Progress bar.
             ._1y1Zk { c: 0 0 ac }
-            /// Audio level.
+            /// Audio level in Chromium.
+            /._9sTVb:not(#z) {
+                div { c: 0 0 ac }
+                ::-webkit-slider {
+                    &-runnable-track { c: 0 0 #88888840 }
+                }
+            }
+            /// Audio message length in Chromium.
+            /._3L8ub .Q8uSF { c: 0 0 ac }
+            // Audio level in Firefox.
             /.Q8uSF {
                 c: 0 0 t;
                 + ::-moz-range {
