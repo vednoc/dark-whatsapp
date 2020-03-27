@@ -18,7 +18,8 @@
 @var checkbox fullscreen 'Enable fullscreen mode' 0
 @var checkbox app_c_m    'Enable compact mode' 1
 @var text     app_c_m_w  'Compact mode breakpoint' 720px
-@var text     app_c_m_h  'Compact mode on-hover delay' 1s
+@var text     app_c_m_h  'Compact mode hover-on delay' 0.6s
+@var text     app_c_m_d  'Compact mode hover-off delay' 1.2s
 
 @var checkbox chat_b_c   'Enable blurred contacts' 0
 @var checkbox chat_b_img 'Enable blurred images/videos' 0
@@ -181,6 +182,7 @@
         --chat-bg-i : chat_bg_i;
 
         --c-m-hover : app_c_m_h;
+        --c-m-delay : app_c_m_d;
 
         --ui-font   : ui_font, 'Segoe UI', 'Helvetica Neue', Helvetica,
             'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif;
@@ -2049,7 +2051,7 @@
                 > div:nth-child(3) {
                     min-width: 1px i;
                     transition: 0.3s ease i;
-                    transition-delay: 1.2s i;
+                    transition-delay: var(--c-m-delay) i;
                     &:hover {
                         min-width: 400px i;
                         transition-delay: var(--c-m-hover) i;
