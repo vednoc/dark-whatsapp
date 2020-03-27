@@ -1,6 +1,14 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.3.2 [2020-03-27]
+Fixing more new bugs, some caused by last night's hotfix.
+
+*** Fixed
+- A bunch of styles all throughout the app
+- Colors for the 'seen' message status ([[https://github.com/vednoc/dark-whatsapp/issues/131][#131]])
+- Selectors for built-in video player ([[https://github.com/vednoc/dark-whatsapp/issues/133][#133]])
+
 ** 2.3.1 [2020-03-27]
 Hotfix for the latest update (version ~0.4.2080~). Reported in [[https://github.com/vednoc/dark-whatsapp/issues/130][#130]].
 
