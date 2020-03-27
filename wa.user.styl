@@ -1074,6 +1074,9 @@
                 input { c: fg 0 t }
                 &:focus-within { c: 0 0 t }
             }
+            /// Icons -> Close/Loading.
+            > span > button { right: 20px i }
+            > span > div { right: 22px i }
             /// Remove wrapper background.
             /._2HS9r { c: 0 0 t }
             /// Placeholder text color.
@@ -1406,7 +1409,7 @@
             text-shadow: none;
             c: fg 0 hl;
             box-shadow: bsh, inner, inset 0 -3px bd;
-            &.S-bQb { c: orange }
+            &._14b5J { c: orange }
             &:not(.tail) { c: fg }
         }
         /// Chat -> Jump to new messages.
@@ -1484,7 +1487,7 @@
                 div > div:nth-child(3) span { c: fg }
             }
             /// Deleted message.
-            ._18dOq {
+            ._18dOq, ._1upWv {
                 c: cm;
                 [data-icon] path { fill: cm }
             }
