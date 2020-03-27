@@ -2102,16 +2102,16 @@
                         flex-direction: row-reverse i;
                     }
                     /// HACK: Add typing indicator status.
-                    /._2ZAIy {
+                    /.vdXUe {
                         overflow: unset i;
                         margin-top: -8px i;
-                        margin-left: 16px i;
+                        margin-left: 0px i;
                         position: absolute;
                         &::before {
                             content: '';
                             z-index: -3;
                             position: absolute;
-                            top: -31px; left: -72px;
+                            top: -31px; left: -66px;
                             height: 53px;
                             width: 53px;
                             box-shadow: inset 0 0 0 3px green;
@@ -2160,7 +2160,7 @@
 
     // Feat -> Theme colors in groups.
     if ( c_g_c == 1 ) {
-        .color {
+        :not(#z) .color {
             /._1QjgA { c: ac }
             &-0  { c: blue                               }
             &-1  { c: cyan                               }
@@ -2185,7 +2185,7 @@
             &-19 { c: magenta; filter: hue-rotate(40deg) }
             &-20 { c: red; filter: hue-rotate(40deg)     }
         }
-        .bg-color {
+        :not(#z) .bg-color {
             &-0  { c: 0 0 blue                               }
             &-1  { c: 0 0 cyan                               }
             &-2  { c: 0 0 green                              }
