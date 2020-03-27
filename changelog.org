@@ -1,6 +1,20 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.3.1 [2020-03-27]
+Hotfix for the latest update (version ~0.4.2080~). Reported in [[https://github.com/vednoc/dark-whatsapp/issues/130][#130]].
+
+*** Documentation
+- Revised code comments
+
+*** Improved
+- Chat background image opacity (0.10 -> 0.15)
+
+*** Fixed
+- 'No stickers' alert ([[https://github.com/vednoc/dark-whatsapp/issues/129][#129]]) in chat
+- Avatar size of the default-user icons
+- A bunch of things from the latest update
+
 ** 2.3.0 [2020-03-22]
 Bug fixes and improvements (version ~0.4.1307~).
 
