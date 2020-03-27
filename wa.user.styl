@@ -264,7 +264,7 @@
             /// Global -> Progress completed.
             ../ ._1N8Pv { c: 0 0 ac }
             /// Chat -> Played state for audio messages.
-            ../ ._2PmJH:not(._2gO--) ._30LFW::-moz-range-thumb { c: 0 0 green }
+            /.bB3vH ._4_92b::-moz-range-thumb { c: 0 0 green }
         }
         ::-webkit- {
             &progress {
@@ -276,7 +276,7 @@
                 &-thumb {
                     c: 0 0 ac;
                     /// Chat -> Played state for audio messages.
-                    /._2PmJH:not(._2gO--) ._30LFW::-webkit-slider-thumb { c: 0 0 green }
+                    /.bB3vH ._4_92b::-moz-range-thumb { c: 0 0 green }
                 }
             }
             &scrollbar {
@@ -472,11 +472,15 @@
             /// Progress bar.
             ._1y1Zk { c: 0 0 ac }
             /// Audio level.
-            /._3wbrC {
+            /.Q8uSF {
                 c: 0 0 t;
                 + ::-moz-range {
                     &-progress, &-thumb { c: 0 0 ac }
                     &-track { height: 2px; c: 0 0 gray }
+                    /// Track color.
+                    /._4_92b::-moz-range-track { c: 0 0 gray }
+                    /// Playing state.
+                    /.bB3vH._38DlQ ._4_92b::-moz-range-thumb { c: 0 0 ac }
                 }
             }
             /// Fix box-shadow.
@@ -1706,6 +1710,8 @@
                 }
                 /// Stickers.
                 /._1i1U7._1UyGF div[style *= 'opacity'] { c: 0 0 left }
+                /// Audio messages.
+                &._15hve { &.jZ4tp, &._2DNgV { background: none i }}
                 /// Images/Videos.
                 &._20WGU, &.LSBf- {
                     background: linear-gradient(30deg, t 60%, sh) i;
