@@ -922,10 +922,10 @@
         &[data-icon *= '-check'] path { v: cm }
         &[data-icon *= '-dblcheck'] path { v: cm }
         &[data-icon *= '-dblcheck-ack'] path,
-        /.a5DO0, /._2lSfP {
-            span[data-icon *= '-dblcheck'] path { v: ac }
-        }
-        /._2lSfP, /._209Po {
+        /// Left -> Contacts. |
+        /.a5DO0 span[data-icon *= '-dblcheck'] path { v: ac }
+        /// Zzz | Chat | Message info.
+        /._2lSfP, /._1xtH9, /.wrS81 {
             &[data-icon *= '-dblcheck']:not(#z) path { v: ac }
         }
         &[data-icon *= 'check'] path { fill-opacity: 1 i }
