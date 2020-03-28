@@ -1,6 +1,19 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.3.4 [2020-03-28]
+Fixing the leftover minor bugs.
+
+*** Improved
+- Bug report template now has 'WA version' field ([[https://github.com/vednoc/dark-whatsapp/issues/141][#141]])
+
+*** Fixed
+- Colors for video progress bar colors ([[https://github.com/vednoc/dark-whatsapp/issues/142][#142]])
+- Colors for vudio progress bar colors
+- Rounded corners for avatar in settings
+- Colors for 'low battery' alert
+- Selectors for emoji/gif/sticker menus
+
 ** 2.3.3 [2020-03-27]
 Fixing more new bugs, some caused by last night's hotfix.
 
