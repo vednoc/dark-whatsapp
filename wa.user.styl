@@ -266,7 +266,7 @@
 
         /// Browser-specific resets.
         ::-moz-range {
-            &-progress { c: 0 0 blue }
+            &-progress { c: 0 0 ac }
             &-thumb { c: 0 0 ac }
             &-track { c: 0 0 bg }
             /// Global -> Progress completed.
@@ -480,10 +480,11 @@
             }
             /// Progress bar.
             ._1y1Zk { c: 0 0 ac }
-            /// Audio level in Chromium.
+            /// Audio levels.
             /._9sTVb:not(#z) {
-                div { c: 0 0 ac }
+                div { height: 1px; c: 0 0 ac }
                 ::-webkit-slider-runnable-track { c: 0 0 #88888840 }
+                ::-moz-range-track { c: 0 0 #88888840 }
                 /// Media viewer videos.
                 /._3y8EC::-webkit-slider-runnable-track { c: 0 0 t }
             }
