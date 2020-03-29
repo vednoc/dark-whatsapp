@@ -52,7 +52,7 @@ Hotfix for the latest update (version ~0.4.2080~). Reported in [[https://github.
 Bug fixes and improvements (version ~0.4.1307~).
 
 *** Breaking
-- Settings related to masteravatar radiusmaster, masterapp backgroundmaster, and mastermessage bubblesmaster will
+- Settings related to avatar radius, app background, and message bubbles will
   probably reset to their default values.
 
 *** Improved
