@@ -42,19 +42,24 @@ For the full feature list, visit the [[https://github.com/vednoc/dark-whatsapp/w
 
 You have to install [[https://add0n.com/stylus.html][Stylus]] and then click on the install link below.
 
-[[https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.styl][https://img.shields.io/badge/Install%20directly%20with-Stylus-116b59.svg?longCache=true&style=flat]]
+[[https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.styl][https://img.shields.io/badge/Install%20directly%20with-Stylus-116b59.svg]]
 
 *** Other ways to install this userstyle
-**** /Stylish/ is only supported through /[[https://userstyles.org/styles/142096][userstyles.org]]/
-USo is still the largest repository for themes despite all the issues. Don't
-use this version unless you /absolutely/ have to.
-**** Installing in /[[https://meetfranz.com/][Franz]]/ or /[[https://getferdi.com][Ferdi]]/
-A port of this theme is available in the [[https://github.com/dcferreira/franz-themes][dcferreira/franz-themes]] repository.
+See [[https://github.com/vednoc/dark-whatsapp/wiki/Installation][installation page]].
+
+** Getting Started
+Have questions? make sure to visit the [[https://github.com/vednoc/dark-whatsapp/wiki/FAQ][FAQ page]] first.
+
+To learn more about using the theme and customizing it for your personal use, visit the [[https://github.com/vednoc/dark-whatsapp/wiki/Configuration][configuration page]].
 
 ** Contributions
 
-Any contribution is greatly appreciated. If you really like the project and
-would like to tip me then you can buy me a coffee over at [[https://ko-fi.com/vednoc][ko-fi]].
+Any contribution is greatly appreciated.
+
+If you'd like to contribute code, please make sure to visit the [[https://github.com/vednoc/dark-whatsapp/blob/master/contributing.org][contribution guidelines]].
+
+If you really like the project and
+would like to tip me then you can buy me a coffee over at [[https://ko-fi.com/vednoc][ko-fi]] or supporting me over at [[https://liberapay.com/vednoc][LiberaPay]].
 ** Credits
 
 This project wouldn't be possible without:
@@ -64,4 +69,4 @@ This project wouldn't be possible without:
 
 ** License
 
-Code released under the [[LICENSE][MIT]] license.
+Code released under the [[license][MIT]] license.
