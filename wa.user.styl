@@ -604,13 +604,13 @@
         if ( emoji_t == 1 ) {
             repo = 'https://raw.githubusercontent.com/vednoc/wae/dev'
             /// Android emojis.
-            for i in 0..112 {
+            for i in 0..111 {
                 &.wa.b{i} {
                     background-image: url(s('%s/a/%s.png', unquote(repo), i))
                 }
             }
             /// iOS emojis.
-            for i in 0..116 {
+            for i in 0..127 {
                 &.apple.b{i} {
                     background-image: url(s('%s/i/%s.png', unquote(repo), i))
                 }
