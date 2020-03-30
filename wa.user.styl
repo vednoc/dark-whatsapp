@@ -698,6 +698,7 @@
         /// Text.
         .X5OiD { c: 0 0 bd }
         ._26BZr, .JmH7x { c: cm }
+        ._26BZr { font-weight: normal i }
         ._2yVvV { c: fg }
         /// Buttons.
         [role = 'button'] {
@@ -845,7 +846,9 @@
             /// Remove borders from list items.
             ._2EXPL { border-top: none }
             /// Reply to the status.
-            /.QRsOy { c: 0 0 bg }
+            /._3OHGh { c: 0 0 bg }
+            /// Emoji picker border.
+            /._1k6Uw._129il { c: 0 hl }
             /// Feat -> Fullscreen mode.
             if ( fullscreen == 1 ) {
                 rad: 0;
@@ -1110,7 +1113,7 @@
             /// Remove wrapper background.
             /._2HS9r { c: 0 0 t }
             /// Placeholder text color.
-            ._183ES, ._201Bk { c: cm }
+            ._183ES, ._201Bk, ._2cLHw { c: cm }
         }
         /// Contacts.
         #pane-side {
@@ -1600,8 +1603,8 @@
         /// Tails -> Facebook style.
         /// TODO: Refactor later.
         if ( chat_m_t == 'fb-like' ) {
-            /// Fix rounded corners for videos/images/gifs.
-            &-in, &-out { ._1opHa, .gDOmN, ._3CnDa { rad: 10px i }}
+            /// Fix rounded corners for videos/images/gifs/replies.
+            &-in, &-out { ._1opHa, .gDOmN, ._3CnDa, ._1iJeo { rad: 10px i }}
             &-in {
                 .tail-container { display: none }
                 /// (first|all|last|single) message(s).
@@ -1925,7 +1928,6 @@
             /// Header in chat/popout.
             ._1qUma, /._3ZkhL._3NVMy ._1qUma {
                 c: 0 0 hl;
-                box-shadow: inset 0 1px bd, inset 0 -1px bd;
                 div[style *= 'background'] { c: 0 0 ac }
                 > :not(._2DzXb)  {
                     c: cm;
