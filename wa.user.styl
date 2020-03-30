@@ -1596,34 +1596,38 @@
         /// Tails -> Facebook style.
         /// TODO: Refactor later.
         if ( chat_m_t == 'fb-like' ) {
+            /// Fix rounded corners for videos/images/gifs.
+            &-in, &-out { ._1opHa, .gDOmN, ._3CnDa { rad: 10px i }}
             &-in {
                 .tail-container { display: none }
-                /// (first|all|last|single) message/s.
-                .tail > div { rad: 12px 12px 12px 6px i }
-                ._2Wx_5 { rad: 6px 12px 12px 6px i }
-                &._4jEk2 + .message-in:not(._4jEk2) {
-                    // c: 0 0 ac;
-                    ._2Wx_5 { rad: 6px 12px 12px 12px i }
+                /// (first|all|last|single) message(s).
+                .tail > div { rad: 12px 12px 12px 4px i }
+                > div > div { rad: 4px 12px 12px 4px i }
+                &._1T1d2 + .message-in:not(._1T1d2) {
+                    // c: 0 0 right;
+                    /// Last message | Groups -> Sticker sender.
+                    > div > div { &, ._2R8MP { rad: 4px 12px 12px 12px i }}
                 }
-                &:not(._4jEk2) ._2Wx_5 { rad: 12px i }
+                /// Last message | Groups -> Sticker sender.
+                &:not(._1T1d2) > div > div { &, ._2R8MP { rad: 12px i }}
             }
             &-out {
                 .tail-container { display: none }
-                /// (first|all|last|single) message/s.
-                .tail > div { rad: 12px 12px 6px 12px i }
-                ._2Wx_5 { rad: 12px 6px 6px 12px i }
-                &._4jEk2 + .message-out:not(._4jEk2) {
-                    // c: 0 0 ac;
-                    ._2Wx_5 { rad: 12px 6px 12px 12px i }
+                /// (first|all|last|single) message(s).
+                .tail > div { rad: 12px 12px 4px 12px i }
+                > div > div { rad: 12px 4px 4px 12px i }
+                &._1T1d2 + .message-out:not(._1T1d2) {
+                    // c: 0 0 left;
+                    > div > div { rad: 12px 4px 12px 12px i }
                 }
-                &:not(._4jEk2) ._2Wx_5 { rad: 12px i }
+                &:not(._1T1d2) > div > div { rad: 12px i }
             }
         }
         /// Global bubble styles.
         &-in, &-out {
             /// Fix shadows.
             > div:not(._1rK-b) {
-                box-shadow: 0 1px 0.5px sh i;
+                box-shadow: 0 1px sh i;
                 > div { box-shadow: none i }
             }
             /// Tails.
