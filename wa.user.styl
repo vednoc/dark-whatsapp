@@ -900,6 +900,7 @@
             /// Exclude from hover animation.
             &[data-icon='muted'],           // muted chat
             &[data-icon='pinned'],          // pinned chat
+            &[data-icon='status-time'],     // sent message
             &[data-icon='status-image'],    // image
             &[data-icon='status-video'],    // video
             &[data-icon='status-gif'],      // gif
@@ -909,7 +910,7 @@
             &[data-icon='status-ptt-gray'], // your audio message
             &[data-icon='recalled-in'],     // deleted message
             &[data-icon='recalled-out'] {   // deleted message
-                > svg > path { fill-opacity: 0.25 i }
+                > svg > path { fill-opacity: 0.30 i }
             }
             &[data-icon='forwarded'] {      // forwarded message
                 > svg > path { fill-opacity: 0.55 i }
