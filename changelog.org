@@ -1,6 +1,22 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.3.5 [2020-04-01]
+Adding transparent emoji images and polishing things up.
+
+*** Documentation
+- Updated readme ([[https://github.com/vednoc/dark-whatsapp/issues/143][#143]])
+
+*** Improved
+- New transparent emoji images ([[https://github.com/vednoc/dark-whatsapp/issues/137][#137]])
+
+*** Fixed
+- Various button and icon styles
+- Styles in 'upload preview' pane
+- Selectors for the last 'message tails' option
+- Audio length for incoming messages
+- Reply bubble in status area ([[https://github.com/vednoc/dark-whatsapp/issues/144][#144]])
+
 ** 2.3.4 [2020-03-28]
 Fixing the leftover minor bugs.
 
