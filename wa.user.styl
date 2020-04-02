@@ -1406,6 +1406,8 @@
             /// Selected media.
             /._2mlDB { c: 0 hl }
         }
+        /// App -> Fix left pane border.
+        /._1-iDe._1xXdX ._2vPAk { border-right: 1px solid bd i}
         /// App -> Fix right pane border.
         /._1-iDe._14VS3 > span { border-left: 1px solid bd }
     }
@@ -2067,8 +2069,10 @@
                     min-width: 1px i;
                     transition: 0.3s ease i;
                     transition-delay: var(--c-m-delay) i;
+                    /// All left panes should be the same width.
                     &:hover {
-                        min-width: 400px i;
+                        min-width: 349px i;
+                        margin-left: -1px i;
                         transition-delay: var(--c-m-hover) i;
                         flex: 0 0 30% i;
                     }
@@ -2079,12 +2083,14 @@
                     flex: 0 0 30% i;
                     [style][tabindex] { border-right: 1px solid bd i }
                 }
+                /// Tweaks for left pane.
+                ._1xXdX:hover { min-width: 349px i }
             }
             .three {
                 /// Reset upload preview.
-                >  div:nth-child(2) > div:nth-child(2) {
+                > div:nth-child(2) > div:nth-child(2) {
                     flex: 0 0 calc(100% - 30% - 80px) i;
-                    margin-left: calc(-25% + 80px);
+                    margin-left: calc(-30% + 80px);
                 }
                 /// Reset chat when info is open.
                 > div:nth-child(4) {
@@ -2092,8 +2098,8 @@
                 }
                 /// Do not expand left pane when right pane is open.
                 > div:nth-child(3):hover { flex: 0 0 80px i }
-                /// Right -> Info pane.
-                ._14VS3 {
+                /// Tweaks for left and right panes.
+                ._14VS3, ._1xXdX {
                     flex: 0 0 30% i;
                     c: 0 t;
                 }
