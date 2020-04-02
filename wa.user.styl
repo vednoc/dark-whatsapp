@@ -915,6 +915,7 @@
             &[data-icon='recalled-out'] {   // deleted message
                 > svg > path { fill-opacity: 0.30 i }
             }
+            &[data-icon='msg-time'],        // sent message
             &[data-icon='forwarded'] {      // forwarded message
                 > svg > path { fill-opacity: 0.55 i }
             }
@@ -1493,11 +1494,8 @@
                         position: absolute;
                         top: 0; left: 0; bottom: 0; right: 0;
                     }
-                    /// States.
-                    &:hover, &._2nOMz {
-                        c: 0 0 t;
-                        &::before { c: 0 0 ac }
-                    }
+                    /// Fix background for checkbox wrapper.
+                    &:hover, &._2nOMz { &, &::before { c: 0 0 t }}
                 }
                 /// Checkboxes.
                 ._1VD7W {
@@ -1834,7 +1832,7 @@
         ._7HWvs { c: cm }
         .CzI8E { c: 0 ac }
         /// Alert.
-        ._1u0aP {
+        ._1qE6k {
             c: fg 0 bd;
             box-shadow: bsh i;
         }
@@ -1946,6 +1944,8 @@
                     c: 0 0 ac;
                 }
             }
+            /// Chat -> Fix emoji/gif/sticker menu header.
+            ._1qUma { box-shadow: inset 0 1px bd, inset 0 -1px bd i }
             /// Body.
             ._3tlsa, ._2HBs4, ._2z7kg {
                 c: 0 0 bg;
