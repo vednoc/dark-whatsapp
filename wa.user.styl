@@ -1735,8 +1735,8 @@
             [role] > span[role = 'button'] + span { c: fg }
             /// Context menu.
             > div > span:last-child > div[style] {
-                /// Non-stickers | Groups -> Combined stickers.
-                &:not(._1UyGF), /._1i1U7.jZ4tp {
+                /// Exclude stickers.
+                &:not(._1qhoQ) {
                     height: 22px i;
                     background: linear-gradient(90deg, t, left 80%) i;
                 }
@@ -1790,7 +1790,7 @@
             }
             /// Context menu.
             > div > span:last-child > div[style] {
-                /// Non-stickers.
+                /// Exclude stickers.
                 &:not(._1qhoQ) { background: linear-gradient(90deg, t, right 80%) i }
                 /// Stickers.
                 /._1i1U7._1qhoQ div[style *= 'opacity'] { c: 0 0 right }
