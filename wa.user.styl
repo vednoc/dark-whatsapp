@@ -1494,8 +1494,11 @@
                         position: absolute;
                         top: 0; left: 0; bottom: 0; right: 0;
                     }
-                    /// Fix background for checkbox wrapper.
-                    &:hover, &._2nOMz { &, &::before { c: 0 0 t }}
+                    /// States.
+                    &:hover, &._2nOMz {
+                        c: 0 0 t;
+                        &::before { c: 0 0 ac }
+                    }
                 }
                 /// Checkboxes.
                 ._1VD7W {
