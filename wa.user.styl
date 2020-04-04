@@ -113,7 +113,383 @@
 @var color    sh-h       'Color: Shadow heavy         ' #00000035
 ==/UserStyle== */
 
+
 @-moz-document domain('web.whatsapp.com') {
+    // V3 exploration.
+    :root {
+        --dark         : #333943 !important;
+        --dark-rgb     : 51, 57, 67;
+        --darken       : #252a33;
+        --darken-rgb   : 37, 42, 51;
+        --darker       : #1f232a;
+        --darker-rgb   : 31, 35, 42;
+        --light        : #a1a1a1;
+        --light-rgb    : 161, 161, 161;
+        --lighter      : #e9e9e9;
+        --lighter-rgb  : 233, 233, 233;
+        --accent       : #7289da;
+        --accent-rgb   : 114, 137, 218;
+        --msg-l        : lighten(#2c313a, 5%);
+        --msg-r        : lighten(#252a33, 4%);
+        --t            : transparent;
+        --shadow       : sh;
+        --sh-h         : sh-h;
+        --bshadow      : 0 2px 4px var(--shadow);
+
+
+        --beige: #e5ddd5;
+        --beige-rgb: 229, 221, 213;
+        --black: #000;
+        --black-rgb: 0, 0, 0;
+        --blue: #039BE5;
+        --blue-rgb: 3, 155, 229;
+        --blue-light: #00A5F4;
+        --blue-light-rgb: 0, 165, 244;
+        --blue-ocean: #AADAFF;
+        --blue-ocean-rgb: 170, 218, 255;
+        --blue-sky: #9DE1FE;
+        --blue-sky-rgb: 157, 225, 254;
+        --dark: #263238;
+        --dark-rgb: 38, 50, 56;
+        --gray-30: #f7f7f7;
+        --gray-30-rgb: 247, 247, 247;
+        --gray-60: #f0f0f0;
+        --gray-60-rgb: 240, 240, 240;
+        --gray-70: #ededed;
+        --gray-70-rgb: 237, 237, 237;
+        --gray-100: #e6e6e6;
+        --gray-100-rgb: 230, 230, 230;
+        --gray-150: #d9d9d9;
+        --gray-150-rgb: 217, 217, 217;
+        --gray-200: #ccc;
+        --gray-200-rgb: 204, 204, 204;
+        --gray-300: #b3b3b3;
+        --gray-300-rgb: 179, 179, 179;
+        --gray-400: #999;
+        --gray-400-rgb: 153, 153, 153;
+        --gray-500: gray;
+        --gray-500-rgb: 128, 128, 128;
+        --gray-600: #666;
+        --gray-600-rgb: 102, 102, 102;
+        --gray-700: #4a4a4a;
+        --gray-700-rgb: 74, 74, 74;
+        --gray-800: #303030;
+        --gray-800-rgb: 48, 48, 48;
+        --gray-850: #262626;
+        --gray-850-rgb: 38, 38, 38;
+        --gray-900: #1a1a1a;
+        --gray-900-rgb: 26, 26, 26;
+        --green: #07BC4C;
+        --green-rgb: 7, 188, 76;
+        --green-deep: #1B9A59;
+        --green-deep-rgb: 27, 154, 89;
+        --orange: #FFAD20;
+        --orange-rgb: 255, 173, 32;
+        --pale-blue-green: #ECFAF5;
+        --pale-blue-green-rgb: 236, 250, 245;
+        --pale-green: var(--darken); /* #DCF8C6 */
+        --pale-green-rgb: 220, 248, 198;
+        --pale-yellow: #FFF5C4;
+        --pale-yellow-rgb: 255, 245, 196;
+        --red: #D70000;
+        --red-rgb: 215, 0, 0;
+        --red-light: #F44336;
+        --red-light-rgb: 244, 67, 54;
+        --teal: #009688;
+        --teal-rgb: 0, 150, 136;
+        --teal-light: #1DE9B6;
+        --teal-light-rgb: 29, 233, 182;
+        --teal-lighter: #00BFA5;
+        --teal-lighter-rgb: 0, 191, 165;
+        --white: var(--dark); /* #fff */
+        --white-rgb: 255, 255, 255;
+        --yellow: #FED859;
+        --yellow-rgb: 254, 216, 89;
+        --active-tab-marker: #009688;
+        --active-tab-marker-rgb: 0, 150, 136;
+        --app-background-stripe: var(--dark); /* #009688 */
+        --app-background-stripe-rgb: 0, 150, 136;
+        --audio-progress-incoming: #31c76a;
+        --audio-progress-incoming-rgb: 49, 199, 106;
+        --audio-progress-outgoing: #889a7b;
+        --audio-progress-outgoing-rgb: 136, 154, 123;
+        --audio-progress-played-incoming: #30b6f6;
+        --audio-progress-played-incoming-rgb: 48, 182, 246;
+        --audio-progress-played-outgoing: #2ab5eb;
+        --audio-progress-played-outgoing-rgb: 42, 181, 235;
+        --audio-track-incoming: #e6e6e6;
+        --audio-track-incoming-rgb: 230, 230, 230;
+        --audio-track-outgoing: #c6dfb2;
+        --audio-track-outgoing-rgb: 198, 223, 178;
+        --avatar-background: #e6e6e6;
+        --avatar-background-rgb: 230, 230, 230;
+        --avatar-placeholder-background: #DFE5E7;
+        --avatar-placeholder-background-rgb: 223, 229, 231;
+        --avatar-placeholder-primary: var(--dark); /* #fff */
+        --avatar-placeholder-primary-rgb: 255, 255, 255;
+        --background-app: var(--dark); /* #e0e0e0 */
+        --background-app-rgb: 224, 224, 224;
+        --background-default: var(--dark); /* #fff */
+        --background-default-rgb: 255, 255, 255;
+        --background-default-active: var(--darker); /* #ebebeb */
+        --background-default-active-rgb: 235, 235, 235;
+        --background-default-hover: var(--darken); /* #f5f5f5 */
+        --background-default-hover-rgb: 245, 245, 245;
+        --border-bubble: rgba(0, 0, 0, 0.06);
+        --border-bubble-rgb: 0, 0, 0;
+        --border-chatlist: var(--darker); /* #f2f2f2 */
+        --border-chatlist-rgb: 242, 242, 242;
+        --border-default: #f0f0f0;
+        --border-default-rgb: 240, 240, 240;
+        --border-input-active: #00BFA5;
+        --border-input-active-rgb: 0, 191, 165;
+        --border-panel: var(--dark); /* #e0e0e0 */
+        --border-panel-rgb: 224, 224, 224;
+        --border-strong: #d9d9d9;
+        --border-strong-rgb: 217, 217, 217;
+        --border-stronger: rgba(0, 0, 0, 0.08);
+        --border-stronger-rgb: 0, 0, 0;
+        --butterbar-background-battery: #fa685e;
+        --butterbar-background-battery-rgb: 249.69711, 103.94798, 93.50289;
+        --butterbar-background-connection: #FED859;
+        --butterbar-background-connection-rgb: 254, 216, 89;
+        --butterbar-background-default: #9DE1FE;
+        --butterbar-background-default-rgb: 157, 225, 254;
+        --butterbar-background-update: #1DE9B6;
+        --butterbar-background-update-rgb: 29, 233, 182;
+        --butterbar-primary: rgba(48, 48, 48, 0.96);
+        --butterbar-primary-rgb: 48, 48, 48;
+        --butterbar-secondary: rgba(48, 48, 48, 0.85);
+        --butterbar-secondary-rgb: 48, 48, 48;
+        --button-alternative: #00A5F4;
+        --button-alternative-rgb: 0, 165, 244;
+        --button-background-disabled: #e6e6e6;
+        --button-background-disabled-rgb: 230, 230, 230;
+        --button-bubble: rgba(0, 150, 136, 0.7);
+        --button-bubble-rgb: 0, 150, 136;
+        --media-viewer-button-background: #ccc;
+        --media-viewer-button-background-rgb: 204, 204, 204;
+        --media-viewer-button-icon: var(--dark); /* #fff */
+        --media-viewer-button-icon-rgb: 255, 255, 255;
+        --button-primary: var(--dark); /* #fff */
+        --button-primary-rgb: 255, 255, 255;
+        --button-primary-background: #05cd51;
+        --button-primary-background-rgb: 5.44623, 204.85377, 81.46347;
+        --button-primary-background-hover: #06d253;
+        --button-primary-background-hover-rgb: 5.57831, 209.82169, 83.43905;
+        --button-round-background: #09e85e;
+        --button-round-background-rgb: 8.64769, 232.25231, 93.88923;
+        --button-secondary: #07BC4C;
+        --button-secondary-rgb: 7, 188, 76;
+        --button-secondary-background: var(--dark); /* #fff */
+        --button-secondary-background-rgb: 255, 255, 255;
+        --button-secondary-hover: #05cd51;
+        --button-secondary-hover-rgb: 5.44623, 204.85377, 81.46347;
+        --chat-marker: var(--light); /* #999 */
+        --chat-marker-rgb: 153, 153, 153;
+        --chat-marker-admin: #07BC4C;
+        --chat-marker-admin-rgb: 7, 188, 76;
+        --chat-marker-admin-border: rgba(7, 188, 76, 0.7);
+        --chat-marker-admin-border-rgb: 7, 188, 76;
+        --chat-marker-border: rgba(153, 153, 153, 0.7);
+        --chat-marker-border-rgb: 153, 153, 153;
+        --compose-background: var(--dark); /* #fff */
+        --compose-background-rgb: 255, 255, 255;
+        --compose-panel-background: rgba(255, 255, 255, 0.6);
+        --compose-panel-background-rgb: 255, 255, 255;
+        --conversation-panel-background: var(--darken); /* #e5ddd5 */
+        --conversation-panel-background-rgb: 229, 221, 213;
+        --conversation-panel-border: rgba(0, 0, 0, 0.03);
+        --conversation-panel-border-rgb: 0, 0, 0;
+        --danger: #df3333;
+        --danger-rgb: 223, 51, 51;
+        --dropdown-background: var(--dark); /* #fff */
+        --dropdown-background-rgb: 255, 255, 255;
+        --empty-state-icon: var(--dark); /* #fff */
+        --empty-state-icon-rgb: 255, 255, 255;
+        --focus: rgba(0, 165, 244, 0.4);
+        --focus-rgb: 0, 165, 244;
+        --highlight: #009688;
+        --highlight-rgb: 0, 150, 136;
+        --icon: #919191;
+        --icon-rgb: 145, 145, 145;
+        --icon-ack: var(--accent); /* #4FC3F7 */
+        --icon-ack-rgb: 79, 195, 247;
+        --icon-disabled: #c9c9c9;
+        --icon-disabled-rgb: 201, 201, 201;
+        --icon-fixed: #919191;
+        --icon-fixed-rgb: 145, 145, 145;
+        --icon-lighter: rgba(var(--lighter-rgb), 0.3); /* rgba(0, 0, 0, 0.3) */
+        --icon-lighter-rgb: var(--dark); /* 0, 0, 0; */
+        --icon-search-back: #33b7f6;
+        --icon-search-back-rgb: 51, 183, 246;
+        --icon-strong: #333;
+        --icon-strong-rgb: 51, 51, 51;
+        --incoming-background: var(--dark); /* #fff */
+        --incoming-background-rgb: var(--dark-rgb); /* 255, 255, 255; */
+        --incoming-background-deeper:  var(--darker); /* #f0f0f0 */
+        --incoming-background-deeper-rgb: 240, 240, 240;
+        --incoming-primary: #989898;
+        --incoming-primary-rgb: 152, 152, 152;
+        --input-placeholder: var(--light); /* #999 */
+        --input-placeholder-rgb: 153, 153, 153;
+        --intro-background: #f8f9fa;
+        --intro-background-rgb: 248, 249, 250;
+        --inverse: var(--dark); /* #fff */
+        --inverse-rgb: 255, 255, 255;
+        --link: #039BE5;
+        --link-rgb: 3, 155, 229;
+        --live-location-footer-background: rgba(255, 255, 255, 0.9);
+        --live-location-footer-background-rgb: 255, 255, 255;
+        --live-location-glow: rgba(37, 211, 102, 0.3);
+        --live-location-glow-rgb: 37, 211, 102;
+        --live-location-glow-stale: rgba(255, 0, 31, 0.3);
+        --live-location-glow-stale-rgb: 255, 0, 31;
+        --location-cluster-background: var(--dark); /* #fff */
+        --location-cluster-background-rgb: 255, 255, 255;
+        --media-editor-control: #1c313f;
+        --media-editor-control-rgb: 28, 49, 63;
+        --media-viewer-background: var(--dark); /* #fff */
+        --media-viewer-background-rgb: 255, 255, 255;
+        --message-placeholder-icon: rgba(48, 48, 48, 0.3);
+        --message-placeholder-icon-rgb: 48, 48, 48;
+        --menu-tabs-list-active: #6cea91;
+        --menu-tabs-list-active-rgb: 108.28579, 234.05421, 145.4638;
+        --modal-backdrop: rgba(255, 255, 255, 0.85);
+        --modal-backdrop-rgb: 255, 255, 255;
+        --modal-backdrop-solid: #ededed;
+        --modal-backdrop-solid-rgb: 237, 237, 237;
+        --modal-background: var(--dark); /* #fff */
+        --modal-background-rgb: 255, 255, 255;
+        --notification-biz-background: rgba(236, 250, 245, 0.95);
+        --notification-biz-background-rgb: 236, 250, 245;
+        --notification-e2e-background: rgba(255, 245, 196, 0.95);
+        --notification-e2e-background-rgb: 255, 245, 196;
+        --outgoing-background: var(--darker); /* #DCF8C6 */
+        --outgoing-background-rgb: var(--darken-rgb); /* 220, 248, 198; */
+        --outgoing-background-deeper: var(--dark); /* #cfe9ba */
+        --outgoing-background-deeper-rgb: var(--dark-rgb); /* 207, 233, 186; */
+        --overlay: #000;
+        --overlay-rgb: 0, 0, 0;
+        --panel-background: var(--darken); /* #ededed */
+        --panel-background-rgb: 237, 237, 237;
+        --panel-background-active: #dadada;
+        --panel-background-active-rgb: 218, 218, 218;
+        --panel-background-colored: #00BFA5;
+        --panel-background-colored-rgb: 0, 191, 165;
+        --panel-background-colored-deeper: #009688;
+        --panel-background-colored-deeper-rgb: 0, 150, 136;
+        --panel-background-deep: #d9d9d9;
+        --panel-background-deep-rgb: 217, 217, 217;
+        --panel-background-deeper: #e6e6e6;
+        --panel-background-deeper-rgb: 230, 230, 230;
+        --panel-background-hover: #e4e4e4;
+        --panel-background-hover-rgb: 228, 228, 228;
+        --panel-background-lighter: var(--darker); /* #f7f7f7 */
+        --panel-background-lighter-rgb: 247, 247, 247;
+        --panel-primary: rgba(0, 0, 0, 0.35);
+        --panel-primary-rgb: 0, 0, 0;
+        --payment-amount: #008c7f;
+        --payment-amount-rgb: 0, 139.8, 126.752;
+        --payment-status-failed: #F44336;
+        --payment-status-failed-rgb: 244, 67, 54;
+        --payment-status-processing: rgba(0, 0, 0, 0.45);
+        --payment-status-processing-rgb: 0, 0, 0;
+        --payment-status-success: #07BC4C;
+        --payment-status-success-rgb: 7, 188, 76;
+        --payment-status-waiting: rgba(0, 0, 0, 0.45);
+        --payment-status-waiting-rgb: 0, 0, 0;
+        --photopicker-overlay-background: rgba(102, 102, 102, 0.8);
+        --photopicker-overlay-background-rgb: 102, 102, 102;
+        --primary: var(--lighten);
+        --primary-rgb: 74, 74, 74;
+        --primary-strong: var(--lighter); /* #000 */
+        --primary-strong-rgb:  var(--light-rgb); /* 0, 0, 0; */
+        --primary-stronger: var(--light); /* #303030 */
+        --primary-stronger-rgb: var(--light-rgb); /* 48, 48, 48; */
+        --primary-title: #525252;
+        --primary-title-rgb: 81.65, 81.65, 81.65;
+        --product-thumb-background: #ededed;
+        --product-thumb-background-rgb: 237, 237, 237;
+        --ptt-blue: var(--accent); /* #4FC3F7 */
+        --ptt-blue-rgb: 79, 195, 247;
+        --ptt-button-cancel: rgba(229, 57, 53, 0.8);
+        --ptt-button-cancel-rgb: 229, 57, 53;
+        --ptt-button-send: rgba(9, 210, 97, 0.8);
+        --ptt-button-send-rgb: 9, 210, 97;
+        --ptt-green: #09D261;
+        --ptt-green-rgb: 9, 210, 97;
+        --rich-text-panel-background: var(--darker) ;/* #f0f0f0 */
+        --rich-text-panel-background-rgb: 240, 240, 240;
+        --secondary: rgba(var(--light-rgb), 0.6); /* rgba(0, 0, 0, 0.6) */
+        --secondary-rgb: 0, 0, 0;
+        --secondary-light: rgba(var(--light-rgb), 0.25); /* rgba(0, 0, 0, 0.25) */
+        --secondary-light-rgb: 0, 0, 0;
+        --secondary-lighter: rgba(var(--light-rgb), 0.45); /* rgba(0, 0, 0, 0.45); */
+        --secondary-lighter-rgb: 0, 0, 0;
+        --secondary-stronger: rgba(var(--light-rgb), 0.8); /* rgba(0, 0, 0, 0.8); */
+        --secondary-stronger-rgb: 0, 0, 0;
+        --shadow: #000;
+        --shadow-rgb: 0, 0, 0;
+        --shadow-light: rgba(0, 0, 0, 0.08);
+        --shadow-light-rgb: 0, 0, 0;
+        --spinner-incoming: #b3b3b3;
+        --spinner-incoming-rgb: 179, 179, 179;
+        --spinner-outgoing: #9aae8b;
+        --spinner-outgoing-rgb: 154, 174, 139;
+        --status-background: #000;
+        --status-background-rgb: 0, 0, 0;
+        --status-background-hover: #262626;
+        --status-background-hover-rgb: 38, 38, 38;
+        --status-primary: var(--dark); /* #fff */
+        --status-primary-rgb: 255, 255, 255;
+        --status-secondary: rgba(255, 255, 255, 0.55);
+        --status-secondary-rgb: 255, 255, 255;
+        --status-secondary-stronger: #b3b3b3;
+        --status-secondary-stronger-rgb: 179, 179, 179;
+        --success: #07BC4C;
+        --success-rgb: 7, 188, 76;
+        --suspicious-background: rgba(244, 67, 54, 0.8);
+        --suspicious-background-rgb: 244, 67, 54;
+        --teal-hover: #00ab97;
+        --teal-hover-rgb: 0, 171, 151;
+        --teal-pale: #5fb9b0;
+        --teal-pale-rgb: 95, 185, 176;
+        --tooltip-background: rgba(89, 89, 89, 0.85);
+        --tooltip-background-rgb: 89.25, 89.25, 89.25;
+        --unread-background: var(--dark); /* #fff */
+        --unread-background-rgb: 255, 255, 255;
+        --unread-bar-background: rgba(255, 255, 255, 0.25);
+        --unread-bar-background-rgb: 255, 255, 255;
+        --unread-marker-background: var(--accent); /* #06d755 */
+        --unread-marker-background-rgb: 5.71038, 214.78962, 85.41462;
+        --unread-marker-text: var(--dark); /* #fff */
+        --unread-marker-text-rgb: 255, 255, 255;
+        --video-player-background: #000;
+        --video-player-background-rgb: 0, 0, 0;
+        --video-primary: var(--dark); /* #fff */
+        --video-primary-rgb: 255, 255, 255;
+        --voip-accept-background: #39d575;
+        --voip-accept-background-rgb: 57, 213, 117;
+        --voip-background: #262626;
+        --voip-background-rgb: 38, 38, 38;
+        --voip-background-deep: #000;
+        --voip-background-deep-rgb: 0, 0, 0;
+        --voip-primary: var(--dark); /* #fff */
+        --voip-primary-rgb: 255, 255, 255;
+        --voip-reject-background: #e54b40;
+        --voip-reject-background-rgb: 229, 75, 64;
+        --win32-title-primary: var(--dark); /* #fff */
+        --win32-title-primary-rgb: 255, 255, 255;
+        --system-message-background: rgba(225, 245, 254, 0.92);
+        --system-message-background-rgb: 225, 245, 254;
+        --system-message-text: rgba(0, 0, 0, 0.88);
+        --system-message-text-rgb: 0, 0, 0;
+        --notification-text: rgba(0, 0, 0, 0.96);
+        --notification-text-rgb: 0, 0, 0;
+    }
+}
+@-moz-document domain('_web.whatsapp.com') {
     // CSS custom properties.
     :root {
         /// Feat -> Thin scrollbar in Firefox.
