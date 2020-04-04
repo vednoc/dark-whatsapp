@@ -68,5 +68,10 @@ This project wouldn't be possible without:
 - [[https://unsplash.com/@totem_phillip][Phillip Sauerbeck]] for the gorgeous [[https://unsplash.com/photos/Tmk0MkQVwwA][background image]]
 - Everyone that helped with [[https://github.com/vednoc/dark-whatsapp/issues][issues]] and/or [[https://github.com/vednoc/dark-whatsapp/pulls][code]]
 
+Similar open-source projects:
+- [[https://github.com/Barina/Dark-Telegram][Barina/Dark-Telegram]] - Port of Dark-WhatsApp to Telegram
+- [[https://github.com/dcferreira/franz-themes][dcferreira/franz-themes]] - Port of v2 CSS for Ferdi/Franz (desktop app)
+- [[https://github.com/amanharwara/altus][amanharwara/altus]] - Port of v1 CSS for Altus (desktop app)
+
 ** License
 Code released under the [[license][MIT]] license.
