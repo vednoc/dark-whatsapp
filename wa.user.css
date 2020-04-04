@@ -6,10 +6,9 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      2.3.5
+@version      2.3.6
 @license      MIT
 ==/UserStyle== */
-
 @-moz-document domain("web.whatsapp.com") {
   :root {
     --dark: #1f232a;
@@ -48,8 +47,8 @@
     --c-m-hover: 0.6s;
     --c-m-delay: 1.2s;
     --ui-font: "custom font", "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", Arial, Ubuntu, Cantarell, "Fira Sans", sans-serif;
-    --version: "Dark-WhatsApp v2.3.5 — April 1st, 2020";
-    --message: "Transparent emoji images are back! 🎉 🥳 I published an important update about my userstyles, please read it: ";
+    --version: "Dark-WhatsApp v2.3.6 — April 4th, 2020";
+    --message: "Fixing more bugs! 🎉 🥳 I published an important update about my userstyles, please read it: ";
     --changes: "https://vednoc.me/blog/the-end-of-an-era";
   }
   @supports (-moz-user-select: none) {
@@ -1270,7 +1269,8 @@
     background-color: var(--darker) !important;
   }
   .overlay ._26BZr,
-  .overlay .JmH7x {
+  .overlay .JmH7x,
+  .overlay ._2HiNF {
     color: var(--lighter) !important;
   }
   .overlay ._26BZr {
@@ -1376,15 +1376,17 @@
   .overlay ._8icek {
     fill-opacity: 0.55;
   }
-  .overlay ._2Vo52 .XOIaT {
+  .overlay ._2S_XV {
+    color: var(--light) !important;
     background-color: var(--darken) !important;
   }
-  .overlay ._2Vo52 ._1WSDe {
+  .overlay ._2S_XV * {
+    color: var(--lighter) !important;
+  }
+  .overlay ._2S_XV + div span:first-child {
     color: var(--light) !important;
   }
-  .overlay ._2Vo52 ._3WFBR,
-  .overlay ._2Vo52 .vJCph,
-  .overlay ._2Vo52 ._2oG62 {
+  .overlay ._2S_XV + div span:last-child {
     color: var(--lighter) !important;
   }
   .overlay .WOXAS,
@@ -1412,6 +1414,11 @@
   }
   .cFkAx._2ojWN ._3FR9x {
     color: var(--light) !important;
+  }
+  .vLVax {
+    color: var(--light) !important;
+    border-color: var(--darker) !important;
+    background-color: var(--darken) !important;
   }
   [data-animate-status-v3-modal-background = "true"] {
     background-color: var(--t) !important;
@@ -1523,6 +1530,7 @@
   span[class][data-icon][data-icon="recalled-out"] > svg > path {
     fill-opacity: 0.3 !important;
   }
+  span[class][data-icon][data-icon="msg-time"] > svg > path,
   span[class][data-icon][data-icon="forwarded"] > svg > path {
     fill-opacity: 0.55 !important;
   }
@@ -2155,6 +2163,9 @@
   ._2mlDB {
     border-color: var(--darken) !important;
   }
+  ._1-iDe._1xXdX ._2vPAk {
+    border-right: 1px solid var(--darker) !important;
+  }
   ._1-iDe._14VS3 > span {
     border-left: 1px solid var(--darker);
   }
@@ -2445,10 +2456,11 @@
   .message-out div[style *= "width"][style *= "height"] + .GbMip {
     padding: 2px 5px;
     border-radius: 7.5px;
-    background-color: var(--darken) !important;
+    background-color: var(--dark) !important;
   }
   .message-in .video-thumb ._1Ppwx,
-  .message-out .video-thumb ._1Ppwx {
+  .message-out .video-thumb ._1Ppwx,
+  ._2G09- > ._2Pjvv {
     padding: 2px 5px;
     border-radius: 7.5px;
     color: var(--light) !important;
@@ -2490,8 +2502,7 @@
   .message-in [role] > span[role = "button"] + span {
     color: var(--light) !important;
   }
-  .message-in > div > span:last-child > div[style]:not(._1UyGF),
-  ._1i1U7.jZ4tp {
+  .message-in > div > span:last-child > div[style]:not(._1qhoQ) {
     height: 22px !important;
     background: linear-gradient(90deg, var(--t), var(--msg-l) 80%) !important;
   }
@@ -2509,29 +2520,35 @@
   .message-in > div > span:last-child > div[style]._38wik._2Nkc4 {
     background: linear-gradient(270deg, var(--t), var(--msg-l) 80%) !important;
   }
+  .message-in > div > span:nth-last-child(2) > div[style].jZ4tp._1i1U7 {
+    background: linear-gradient(90deg, var(--t), var(--msg-l) 80%) !important;
+  }
+  .message-in > div > span:nth-last-child(2) > div[style].jZ4tp._1i1U7._2Cju4 {
+    background: none !important;
+  }
   .message-in ._1iJeo {
     background-color: var(--dark) !important;
   }
   .message-in ._1iJeo:hover {
     opacity: 0.8;
   }
-  .message-out > div:not(._1rK-b) > div:not(._19l4G) {
+  .message-out > div:not(._1rK-b) > div:not(.YsGwW) {
     color: var(--light) !important;
     background-color: var(--msg-r) !important;
   }
-  .message-out ._19l4G:not(#z) > :first-child:not(:last-child) {
+  .message-out .YsGwW:not(#z) > :first-child:not(:last-child) {
     color: var(--light) !important;
     background-color: var(--darken) !important;
     box-shadow: inset 0 0 0 1px var(--darker), var(--bshadow);
   }
-  .message-out ._19l4G:not(#z) > :first-child:not(:last-child)::after {
+  .message-out .YsGwW:not(#z) > :first-child:not(:last-child)::after {
     border-left-color: var(--darker) !important;
   }
-  .message-out ._19l4G:not(#z) > [role = "button"] {
+  .message-out .YsGwW:not(#z) > [role = "button"] {
     border-color: var(--shadow) !important;
     background-color: var(--red) !important;
   }
-  .message-out ._19l4G:not(#z) > [role = "button"] path[fill = "#FFF"] {
+  .message-out .YsGwW:not(#z) > [role = "button"] path[fill = "#FFF"] {
     fill: var(--white) !important;
   }
   .message-out > div._1rK-b ._2Ll5c {
@@ -2562,10 +2579,10 @@
     background: linear-gradient(270deg, var(--t), var(--msg-r) 80%) !important;
   }
   .message-out > div > span:nth-last-child(2) > div[style]._1i1U7 {
-    background: linear-gradient(90deg, var(--t), var(--dark) 60%) !important;
+    background: linear-gradient(90deg, var(--t), var(--msg-r) 60%) !important;
   }
-  .message-out > div > span:nth-last-child(2) > div[style].jZ4tp {
-    background: linear-gradient(90deg, var(--t), var(--msg-r) 80%) !important;
+  .message-out > div > span:nth-last-child(2) > div[style]._2Cju4 {
+    background: none !important;
   }
   .message-out ._1iJeo {
     background-color: var(--dark) !important;
@@ -2588,7 +2605,10 @@
   }
   ._1drQ- ._7HWvs,
   ._1dGTK ._7HWvs,
-  .r3Nu1 ._7HWvs {
+  .r3Nu1 ._7HWvs,
+  ._1drQ- ._2n7FA,
+  ._1dGTK ._2n7FA,
+  .r3Nu1 ._2n7FA {
     color: var(--lighter) !important;
   }
   ._1drQ- .CzI8E,
@@ -2596,9 +2616,9 @@
   .r3Nu1 .CzI8E {
     border-color: var(--accent) !important;
   }
-  ._1drQ- ._1u0aP,
-  ._1dGTK ._1u0aP,
-  .r3Nu1 ._1u0aP {
+  ._1drQ- ._1qE6k,
+  ._1dGTK ._1qE6k,
+  .r3Nu1 ._1qE6k {
     color: var(--light) !important;
     background-color: var(--darker) !important;
     box-shadow: var(--bshadow) !important;
@@ -2738,6 +2758,9 @@
     height: 1px;
     background-color: var(--accent) !important;
   }
+  #main > footer ._1vDUw ._1qUma {
+    box-shadow: inset 0 1px var(--darker), inset 0 -1px var(--darker) !important;
+  }
   #main > footer ._1vDUw ._3tlsa,
   #main > footer ._1vDUw ._2HBs4,
   #main > footer ._1vDUw ._2z7kg {
@@ -2789,18 +2812,18 @@
     border-top: 1px solid var(--darker);
     background-color: var(--darken) !important;
   }
-  #main > footer ._2Pown {
+  #main > footer .TYhk9 {
     color: var(--light) !important;
     border-color: var(--darker) !important;
     background-color: var(--darken) !important;
   }
-  #main > footer ._2Pown [role = "button"] {
+  #main > footer .TYhk9 [role = "button"] {
     color: var(--lighter) !important;
     background-color: var(--darker) !important;
   }
-  #main > footer ._2Pown [role = "button"]:hover {
+  #main > footer .TYhk9 [role = "button"]:hover {
     color: var(--light) !important;
-    box-shadow: 0 4px 8px var(--shadow);
+    box-shadow: var(--bshadow);
   }
   #main > footer ._2XiC1 {
     color: var(--lighter) !important;
@@ -2815,20 +2838,11 @@
   }
   #main > footer .rstyJ > div:first-child:not(#z) {
     margin: 4px 0 8px 66px;
-    background-color: var(--darken) !important;
-  }
-  #main > footer .rstyJ > div:first-child:not(#z) div[role] {
+    box-shadow: inset 0 0 0 1px var(--darker);
     background-color: var(--darken) !important;
   }
   .quoted-mention {
     color: var(--lighter) !important;
-  }
-  #main > footer .rstyJ > div:first-child:not(#z) [class *= "bg-color"] + [dir] {
-    border-radius: 0 6px 6px 0 !important;
-    box-shadow: inset 0 0 0 1px var(--darker);
-  }
-  #main > footer .rstyJ > div:first-child:not(#z) .EebcE + div {
-    box-shadow: inset 0 0 0 1px var(--darker);
   }
   #main > footer .rstyJ div:last-child {
     position: relative;
@@ -2837,6 +2851,7 @@
   #main > footer .rstyJ div:last-child [role = "button"] > span > svg {
     padding: 16px;
     border-radius: 6px;
+    fill-opacity: 0.55;
   }
   #main > footer .Uukb4 {
     border-color: var(--darker) !important;
@@ -2893,7 +2908,8 @@
       transition-delay: var(--c-m-delay) !important;
     }
     .two > div:nth-child(3):hover {
-      min-width: 400px !important;
+      min-width: 349px !important;
+      margin-left: -1px !important;
       transition-delay: var(--c-m-hover) !important;
       flex: 0 0 30% !important;
     }
@@ -2904,9 +2920,12 @@
     .two > :nth-child(2) > :nth-child(1) [style][tabindex] {
       border-right: 1px solid var(--darker) !important;
     }
+    .two ._1xXdX:hover {
+      min-width: 349px !important;
+    }
     .three > div:nth-child(2) > div:nth-child(2) {
       flex: 0 0 calc(100% - 30% - 80px) !important;
-      margin-left: calc(-25% + 80px);
+      margin-left: calc(-30% + 80px);
     }
     .three > div:nth-child(4) {
       flex: 0 0 calc(100% - 30% - 80px) !important;
@@ -2914,7 +2933,8 @@
     .three > div:nth-child(3):hover {
       flex: 0 0 80px !important;
     }
-    .three ._14VS3 {
+    .three ._14VS3,
+    .three ._1xXdX {
       flex: 0 0 30% !important;
       border-color: var(--t) !important;
     }
