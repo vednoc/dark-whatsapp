@@ -1,11 +1,27 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.3.6 [2020-04-04]
+Lots of bug fixing and polishing in this update.
+
+*** Documentation
+- Added 'similar projects' section to the readme
+
+*** Improved
+- A few edge-cases for compact mode styles
+- Styles for content in reply area
+
+*** Fixed
+- Lots of fixes for context menus, icons, and modals
+- Selectors for blurred contacts/media option
+- Reply bubble colors in status area ([[https://github.com/vednoc/dark-whatsapp/issues/144][#144]])
+- Alerts from 'unknown sender' ([[https://github.com/vednoc/dark-whatsapp/issues/146][#146)]]
+
 ** 2.3.5 [2020-04-01]
 Adding transparent emoji images and polishing things up.
 
 *** Documentation
-- Updated readme ([[https://github.com/vednoc/dark-whatsapp/issues/143][#143]])
+- Updated readme ([[https://github.com/vednoc/dark-whatsapp/pull/143][#143]])
 
 *** Improved
 - New transparent emoji images ([[https://github.com/vednoc/dark-whatsapp/issues/137][#137]])
