@@ -123,28 +123,33 @@ c(x, y = 0, z = 0, xi = 1, yi = 1, zi = 1) {
     if z is a 'call' or z is a 'rgba' { background-color: zi is 0? z : z i }
 }
 
+to_rgb(input) {
+    unquote(slice(s('%s', rgba(input, 0)), 5, -3))
+}
+
+i = !important;
+
 @-moz-document domain('web.whatsapp.com') {
     // V3 exploration.
     :root {
-        --dark         : #333943 !important;
-        --dark-rgb     : 51, 57, 67;
-        --darken       : #252a33;
-        --darken-rgb   : 37, 42, 51;
-        --darker       : #1f232a;
-        --darker-rgb   : 31, 35, 42;
-        --light        : #a1a1a1;
-        --light-rgb    : 161, 161, 161;
-        --lighter      : #e9e9e9;
-        --lighter-rgb  : 233, 233, 233;
-        --accent       : #7289da;
-        --accent-rgb   : 114, 137, 218;
+        --dark         : dark i;
+        --dark--rgb    : to_rgb(dark);
+        --darken       : darken i;
+        --darken-rgb   : to_rgb(darken);
+        --darker       : darker i;
+        --darker-rgb   : to_rgb(darker);
+        --light        : light i;
+        --light-rgb    : to_rgb(light);
+        --lighter      : lighter i;
+        --lighter-rgb  : to_rgb(lighter);
+        --accent       : accent i;
+        --accent-rgb   : to_rgb(accent);
         --msg-l        : lighten(#2c313a, 5%);
         --msg-r        : lighten(#252a33, 4%);
         --t            : transparent;
         --shadow       : sh;
         --sh-h         : sh-h;
         --bshadow      : 0 2px 4px var(--shadow);
-
 
         --beige: #e5ddd5;
         --beige-rgb: 229, 221, 213;
@@ -501,6 +506,8 @@ c(x, y = 0, z = 0, xi = 1, yi = 1, zi = 1) {
     body {
         background-image: none i;
         c: 0 0 var(--dark);
+        /// Intro image.
+        [data-asset-intro-image] { filter: opacity(0.5) i }
     }
 }
 
