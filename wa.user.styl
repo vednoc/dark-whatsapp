@@ -113,6 +113,15 @@
 @var color    sh-h       'Color: Shadow heavy         ' #00000035
 ==/UserStyle== */
 
+// Color mixin.
+/// All colors: `c: fg bd bg;`
+/// Only border-color: `c: 0 bd;`
+c(x, y = 0, z = 0, xi = 1, yi = 1, zi = 1) {
+    i = !important;
+    if x is a 'call' or x is a 'rgba' {            color: xi is 0? x : x i }
+    if y is a 'call' or y is a 'rgba' {     border-color: yi is 0? y : y i }
+    if z is a 'call' or z is a 'rgba' { background-color: zi is 0? z : z i }
+}
 
 @-moz-document domain('web.whatsapp.com') {
     // V3 exploration.
@@ -235,7 +244,7 @@
         --background-default-active-rgb: 235, 235, 235;
         --background-default-hover: var(--darken); /* #f5f5f5 */
         --background-default-hover-rgb: 245, 245, 245;
-        --border-bubble: rgba(0, 0, 0, 0.06);
+        // --border-bubble: rgba(0, 0, 0, 0.06);
         --border-bubble-rgb: 0, 0, 0;
         --border-chatlist: var(--darker); /* #f2f2f2 */
         --border-chatlist-rgb: 242, 242, 242;
@@ -247,7 +256,7 @@
         --border-panel-rgb: 224, 224, 224;
         --border-strong: #d9d9d9;
         --border-strong-rgb: 217, 217, 217;
-        --border-stronger: rgba(0, 0, 0, 0.08);
+        // --border-stronger: rgba(0, 0, 0, 0.08);
         --border-stronger-rgb: 0, 0, 0;
         --butterbar-background-battery: #fa685e;
         --butterbar-background-battery-rgb: 249.69711, 103.94798, 93.50289;
@@ -257,15 +266,15 @@
         --butterbar-background-default-rgb: 157, 225, 254;
         --butterbar-background-update: #1DE9B6;
         --butterbar-background-update-rgb: 29, 233, 182;
-        --butterbar-primary: rgba(48, 48, 48, 0.96);
+        // --butterbar-primary: rgba(48, 48, 48, 0.96);
         --butterbar-primary-rgb: 48, 48, 48;
-        --butterbar-secondary: rgba(48, 48, 48, 0.85);
+        // --butterbar-secondary: rgba(48, 48, 48, 0.85);
         --butterbar-secondary-rgb: 48, 48, 48;
         --button-alternative: #00A5F4;
         --button-alternative-rgb: 0, 165, 244;
         --button-background-disabled: #e6e6e6;
         --button-background-disabled-rgb: 230, 230, 230;
-        --button-bubble: rgba(0, 150, 136, 0.7);
+        // --button-bubble: rgba(0, 150, 136, 0.7);
         --button-bubble-rgb: 0, 150, 136;
         --media-viewer-button-background: #ccc;
         --media-viewer-button-background-rgb: 204, 204, 204;
@@ -289,17 +298,17 @@
         --chat-marker-rgb: 153, 153, 153;
         --chat-marker-admin: #07BC4C;
         --chat-marker-admin-rgb: 7, 188, 76;
-        --chat-marker-admin-border: rgba(7, 188, 76, 0.7);
+        // --chat-marker-admin-border: rgba(7, 188, 76, 0.7);
         --chat-marker-admin-border-rgb: 7, 188, 76;
-        --chat-marker-border: rgba(153, 153, 153, 0.7);
+        // --chat-marker-border: rgba(153, 153, 153, 0.7);
         --chat-marker-border-rgb: 153, 153, 153;
         --compose-background: var(--dark); /* #fff */
         --compose-background-rgb: 255, 255, 255;
-        --compose-panel-background: rgba(255, 255, 255, 0.6);
+        // --compose-panel-background: rgba(255, 255, 255, 0.6);
         --compose-panel-background-rgb: 255, 255, 255;
         --conversation-panel-background: var(--darken); /* #e5ddd5 */
         --conversation-panel-background-rgb: 229, 221, 213;
-        --conversation-panel-border: rgba(0, 0, 0, 0.03);
+        // --conversation-panel-border: rgba(0, 0, 0, 0.03);
         --conversation-panel-border-rgb: 0, 0, 0;
         --danger: #df3333;
         --danger-rgb: 223, 51, 51;
@@ -307,7 +316,7 @@
         --dropdown-background-rgb: 255, 255, 255;
         --empty-state-icon: var(--dark); /* #fff */
         --empty-state-icon-rgb: 255, 255, 255;
-        --focus: rgba(0, 165, 244, 0.4);
+        // --focus: rgba(0, 165, 244, 0.4);
         --focus-rgb: 0, 165, 244;
         --highlight: #009688;
         --highlight-rgb: 0, 150, 136;
@@ -319,7 +328,7 @@
         --icon-disabled-rgb: 201, 201, 201;
         --icon-fixed: #919191;
         --icon-fixed-rgb: 145, 145, 145;
-        --icon-lighter: rgba(var(--lighter-rgb), 0.3); /* rgba(0, 0, 0, 0.3) */
+        // --icon-lighter: rgba(var(--lighter-rgb), 0.3); /* rgba(0, 0, 0, 0.3) */
         --icon-lighter-rgb: var(--dark); /* 0, 0, 0; */
         --icon-search-back: #33b7f6;
         --icon-search-back-rgb: 51, 183, 246;
@@ -339,11 +348,11 @@
         --inverse-rgb: 255, 255, 255;
         --link: #039BE5;
         --link-rgb: 3, 155, 229;
-        --live-location-footer-background: rgba(255, 255, 255, 0.9);
+        // --live-location-footer-background: rgba(255, 255, 255, 0.9);
         --live-location-footer-background-rgb: 255, 255, 255;
-        --live-location-glow: rgba(37, 211, 102, 0.3);
+        // --live-location-glow: rgba(37, 211, 102, 0.3);
         --live-location-glow-rgb: 37, 211, 102;
-        --live-location-glow-stale: rgba(255, 0, 31, 0.3);
+        // --live-location-glow-stale: rgba(255, 0, 31, 0.3);
         --live-location-glow-stale-rgb: 255, 0, 31;
         --location-cluster-background: var(--dark); /* #fff */
         --location-cluster-background-rgb: 255, 255, 255;
@@ -351,19 +360,19 @@
         --media-editor-control-rgb: 28, 49, 63;
         --media-viewer-background: var(--dark); /* #fff */
         --media-viewer-background-rgb: 255, 255, 255;
-        --message-placeholder-icon: rgba(48, 48, 48, 0.3);
+        // --message-placeholder-icon: rgba(48, 48, 48, 0.3);
         --message-placeholder-icon-rgb: 48, 48, 48;
         --menu-tabs-list-active: #6cea91;
         --menu-tabs-list-active-rgb: 108.28579, 234.05421, 145.4638;
-        --modal-backdrop: rgba(255, 255, 255, 0.85);
+        // --modal-backdrop: rgba(255, 255, 255, 0.85);
         --modal-backdrop-rgb: 255, 255, 255;
         --modal-backdrop-solid: #ededed;
         --modal-backdrop-solid-rgb: 237, 237, 237;
         --modal-background: var(--dark); /* #fff */
         --modal-background-rgb: 255, 255, 255;
-        --notification-biz-background: rgba(236, 250, 245, 0.95);
+        // --notification-biz-background: rgba(236, 250, 245, 0.95);
         --notification-biz-background-rgb: 236, 250, 245;
-        --notification-e2e-background: rgba(255, 245, 196, 0.95);
+        // --notification-e2e-background: rgba(255, 245, 196, 0.95);
         --notification-e2e-background-rgb: 255, 245, 196;
         --outgoing-background: var(--darker); /* #DCF8C6 */
         --outgoing-background-rgb: var(--darken-rgb); /* 220, 248, 198; */
@@ -387,19 +396,19 @@
         --panel-background-hover-rgb: 228, 228, 228;
         --panel-background-lighter: var(--darker); /* #f7f7f7 */
         --panel-background-lighter-rgb: 247, 247, 247;
-        --panel-primary: rgba(0, 0, 0, 0.35);
+        // --panel-primary: rgba(0, 0, 0, 0.35);
         --panel-primary-rgb: 0, 0, 0;
         --payment-amount: #008c7f;
         --payment-amount-rgb: 0, 139.8, 126.752;
         --payment-status-failed: #F44336;
         --payment-status-failed-rgb: 244, 67, 54;
-        --payment-status-processing: rgba(0, 0, 0, 0.45);
+        // --payment-status-processing: rgba(0, 0, 0, 0.45);
         --payment-status-processing-rgb: 0, 0, 0;
         --payment-status-success: #07BC4C;
         --payment-status-success-rgb: 7, 188, 76;
-        --payment-status-waiting: rgba(0, 0, 0, 0.45);
+        // --payment-status-waiting: rgba(0, 0, 0, 0.45);
         --payment-status-waiting-rgb: 0, 0, 0;
-        --photopicker-overlay-background: rgba(102, 102, 102, 0.8);
+        // --photopicker-overlay-background: rgba(102, 102, 102, 0.8);
         --photopicker-overlay-background-rgb: 102, 102, 102;
         --primary: var(--lighten);
         --primary-rgb: 74, 74, 74;
@@ -413,25 +422,25 @@
         --product-thumb-background-rgb: 237, 237, 237;
         --ptt-blue: var(--accent); /* #4FC3F7 */
         --ptt-blue-rgb: 79, 195, 247;
-        --ptt-button-cancel: rgba(229, 57, 53, 0.8);
+        // --ptt-button-cancel: rgba(229, 57, 53, 0.8);
         --ptt-button-cancel-rgb: 229, 57, 53;
-        --ptt-button-send: rgba(9, 210, 97, 0.8);
+        // --ptt-button-send: rgba(9, 210, 97, 0.8);
         --ptt-button-send-rgb: 9, 210, 97;
         --ptt-green: #09D261;
         --ptt-green-rgb: 9, 210, 97;
         --rich-text-panel-background: var(--darker) ;/* #f0f0f0 */
         --rich-text-panel-background-rgb: 240, 240, 240;
-        --secondary: rgba(var(--light-rgb), 0.6); /* rgba(0, 0, 0, 0.6) */
+        // --secondary: rgba(var(--light-rgb), 0.6); /* rgba(0, 0, 0, 0.6) */
         --secondary-rgb: 0, 0, 0;
-        --secondary-light: rgba(var(--light-rgb), 0.25); /* rgba(0, 0, 0, 0.25) */
+        // --secondary-light: rgba(var(--light-rgb), 0.25); /* rgba(0, 0, 0, 0.25) */
         --secondary-light-rgb: 0, 0, 0;
-        --secondary-lighter: rgba(var(--light-rgb), 0.45); /* rgba(0, 0, 0, 0.45); */
+        // --secondary-lighter: rgba(var(--light-rgb), 0.45); /* rgba(0, 0, 0, 0.45); */
         --secondary-lighter-rgb: 0, 0, 0;
-        --secondary-stronger: rgba(var(--light-rgb), 0.8); /* rgba(0, 0, 0, 0.8); */
+        // --secondary-stronger: rgba(var(--light-rgb), 0.8); /* rgba(0, 0, 0, 0.8); */
         --secondary-stronger-rgb: 0, 0, 0;
         --shadow: #000;
         --shadow-rgb: 0, 0, 0;
-        --shadow-light: rgba(0, 0, 0, 0.08);
+        // --shadow-light: rgba(0, 0, 0, 0.08);
         --shadow-light-rgb: 0, 0, 0;
         --spinner-incoming: #b3b3b3;
         --spinner-incoming-rgb: 179, 179, 179;
@@ -443,23 +452,23 @@
         --status-background-hover-rgb: 38, 38, 38;
         --status-primary: var(--dark); /* #fff */
         --status-primary-rgb: 255, 255, 255;
-        --status-secondary: rgba(255, 255, 255, 0.55);
+        // --status-secondary: rgba(255, 255, 255, 0.55);
         --status-secondary-rgb: 255, 255, 255;
         --status-secondary-stronger: #b3b3b3;
         --status-secondary-stronger-rgb: 179, 179, 179;
         --success: #07BC4C;
         --success-rgb: 7, 188, 76;
-        --suspicious-background: rgba(244, 67, 54, 0.8);
+        // --suspicious-background: rgba(244, 67, 54, 0.8);
         --suspicious-background-rgb: 244, 67, 54;
         --teal-hover: #00ab97;
         --teal-hover-rgb: 0, 171, 151;
         --teal-pale: #5fb9b0;
         --teal-pale-rgb: 95, 185, 176;
-        --tooltip-background: rgba(89, 89, 89, 0.85);
+        // --tooltip-background: rgba(89, 89, 89, 0.85);
         --tooltip-background-rgb: 89.25, 89.25, 89.25;
         --unread-background: var(--dark); /* #fff */
         --unread-background-rgb: 255, 255, 255;
-        --unread-bar-background: rgba(255, 255, 255, 0.25);
+        // --unread-bar-background: rgba(255, 255, 255, 0.25);
         --unread-bar-background-rgb: 255, 255, 255;
         --unread-marker-background: var(--accent); /* #06d755 */
         --unread-marker-background-rgb: 5.71038, 214.78962, 85.41462;
@@ -481,14 +490,20 @@
         --voip-reject-background-rgb: 229, 75, 64;
         --win32-title-primary: var(--dark); /* #fff */
         --win32-title-primary-rgb: 255, 255, 255;
-        --system-message-background: rgba(225, 245, 254, 0.92);
+        // --system-message-background: rgba(225, 245, 254, 0.92);
         --system-message-background-rgb: 225, 245, 254;
-        --system-message-text: rgba(0, 0, 0, 0.88);
+        // --system-message-text: rgba(0, 0, 0, 0.88);
         --system-message-text-rgb: 0, 0, 0;
-        --notification-text: rgba(0, 0, 0, 0.96);
+        // --notification-text: rgba(0, 0, 0, 0.96);
         --notification-text-rgb: 0, 0, 0;
     }
+
+    body {
+        background-image: none i;
+        c: 0 0 var(--dark);
+    }
 }
+
 @-moz-document domain('_web.whatsapp.com') {
     // CSS custom properties.
     :root {
