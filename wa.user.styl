@@ -132,26 +132,7 @@ i = !important;
 @-moz-document domain('web.whatsapp.com') {
     // V3 exploration.
     :root {
-        --dark         : dark i;
-        --dark--rgb    : to_rgb(dark);
-        --darken       : darken i;
-        --darken-rgb   : to_rgb(darken);
-        --darker       : darker i;
-        --darker-rgb   : to_rgb(darker);
-        --light        : light i;
-        --light-rgb    : to_rgb(light);
-        --lighter      : lighter i;
-        --lighter-rgb  : to_rgb(lighter);
-        --accent       : accent i;
-        --accent-rgb   : to_rgb(accent);
-        --msg-l        : lighten(#2c313a, 5%);
-        --msg-r        : lighten(#252a33, 4%);
-        --t            : transparent;
-        --shadow       : sh;
-        --sh-h         : sh-h;
-        --bshadow      : 0 2px 4px var(--shadow);
-
-        /// WhatsApp variables.
+        /// WA variables.
         --beige: #e5ddd5;
         --beige-rgb: 229, 221, 213;
         --black: #000;
@@ -165,7 +146,7 @@ i = !important;
         --blue-sky: #9DE1FE;
         --blue-sky-rgb: 157, 225, 254;
         --dark: var(--dark);
-        --dark-rgb: var(--dark--rgb);
+        --dark-rgb: var(--dark-rgb);
         --gray-30: #f7f7f7;
         --gray-30-rgb: 247, 247, 247;
         --gray-60: #f0f0f0;
@@ -341,7 +322,7 @@ i = !important;
         --icon-strong: #333;
         --icon-strong-rgb: 51, 51, 51;
         --incoming-background: var(--dark); /* #fff */
-        --incoming-background-rgb: var(--dark--rgb); /* 255, 255, 255; */
+        --incoming-background-rgb: var(--dark-rgb); /* 255, 255, 255; */
         --incoming-background-deeper:  var(--darker); /* #f0f0f0 */
         --incoming-background-deeper-rgb: 240, 240, 240;
         --incoming-primary: #989898;
@@ -349,7 +330,7 @@ i = !important;
         --input-placeholder: var(--light); /* #999 */
         --input-placeholder-rgb: 153, 153, 153;
         --intro-background: var(--dark);
-        --intro-background-rgb: var(--dark--rgb);
+        --intro-background-rgb: var(--dark-rgb);
         --inverse: var(--dark); /* #fff */
         --inverse-rgb: 255, 255, 255;
         --link: #039BE5;
@@ -365,7 +346,7 @@ i = !important;
         --media-editor-control: #1c313f;
         --media-editor-control-rgb: 28, 49, 63;
         --media-viewer-background: var(--dark); /* #fff */
-        --media-viewer-background-rgb: var(--dark--rgb);
+        --media-viewer-background-rgb: var(--dark-rgb);
         // --message-placeholder-icon: rgba(48, 48, 48, 0.3);
         --message-placeholder-icon-rgb: 48, 48, 48;
         --menu-tabs-list-active: #6cea91;
@@ -383,7 +364,7 @@ i = !important;
         --outgoing-background: var(--darker); /* #DCF8C6 */
         --outgoing-background-rgb: var(--darken-rgb); /* 220, 248, 198; */
         --outgoing-background-deeper: var(--dark); /* #cfe9ba */
-        --outgoing-background-deeper-rgb: var(--dark--rgb); /* 207, 233, 186; */
+        --outgoing-background-deeper-rgb: var(--dark-rgb); /* 207, 233, 186; */
         --overlay: #000;
         --overlay-rgb: 0, 0, 0;
         --panel-background: var(--darken); /* #ededed */
@@ -502,11 +483,31 @@ i = !important;
         --system-message-text-rgb: 0, 0, 0;
         // --notification-text: rgba(0, 0, 0, 0.96);
         --notification-text-rgb: 0, 0, 0;
+
+        /// DWA variables.
+        --dark         : dark i;
+        --dark-rgb     : to_rgb(dark);
+        --darken       : darken i;
+        --darken-rgb   : to_rgb(darken);
+        --darker       : darker i;
+        --darker-rgb   : to_rgb(darker);
+        --light        : light i;
+        --light-rgb    : to_rgb(light);
+        --lighter      : lighter i;
+        --lighter-rgb  : to_rgb(lighter);
+        --accent       : accent i;
+        --accent-rgb   : to_rgb(accent);
+        --msg-l        : lighten(#2c313a, 5%);
+        --msg-r        : lighten(#252a33, 4%);
+        --t            : transparent;
+        --shadow       : sh;
+        --sh-h         : sh-h;
+        --bshadow      : 0 2px 4px var(--shadow);
     }
 
     body {
         background-image: none i;
-        c: 0 0 var(--dark);
+        c: var(--light) 0 var(--dark);
         /// Intro image.
         [data-asset-intro-image] { filter: opacity(0.5) i }
     }
