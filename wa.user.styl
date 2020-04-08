@@ -10,6 +10,7 @@
 @license      MIT
 @preprocessor stylus
 
+@var checkbox v3         '[DEV]: Enable v3 mode' 0
 @var text     ui_font    'Custom UI font' ''font_name''
 @var text     radius-g   'Custom rounded corners for menus' 4px
 @var text     radius-i   'Custom rounded corners for input area' 4px
@@ -129,6 +130,7 @@ to_rgb(input) {
 
 i = !important;
 
+if ( v3 == 1 ) {
 @-moz-document domain('web.whatsapp.com') {
     // V3 exploration.
     :root {
@@ -512,8 +514,8 @@ i = !important;
         [data-asset-intro-image] { filter: opacity(0.5) i }
     }
 }
-
-@-moz-document domain('_web.whatsapp.com') {
+} else {
+@-moz-document domain('web.whatsapp.com') {
     // CSS custom properties.
     :root {
         /// Feat -> Thin scrollbar in Firefox.
@@ -3082,4 +3084,5 @@ i = !important;
             }
         }
     }
+}
 }
