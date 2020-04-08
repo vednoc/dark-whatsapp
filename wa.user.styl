@@ -512,6 +512,21 @@ if ( v3 == 1 ) {
         c: var(--light) 0 var(--dark);
         /// Intro image.
         [data-asset-intro-image] { filter: opacity(0.5) i }
+        /// Chat image.
+        [data-asset-chat-background] { filter: invert(1) i }
+    }
+    [id *= 'startup'] {
+        c: 0 0 dark;
+        /progress {
+            c: 0 0 darker;
+            &[value]::-moz-progress-bar { c: 0 0 accent }
+            /::-moz-progress-bar { c: 0 0 darker }
+        }
+    }
+    #app > div > .app {
+        background: none i;
+        border-radius: 0.25rem;
+        border: 1px solid darker i;
     }
 }
 } else {
