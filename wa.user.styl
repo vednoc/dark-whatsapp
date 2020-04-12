@@ -132,6 +132,38 @@ i = !important;
 
 if ( v3 == 1 ) {
 @-moz-document domain('web.whatsapp.com') {
+    input = #232629;
+
+    if (dark(input)) {
+        output = 'dark mode styles';
+        b1 = input;
+        b2 = darken(input, 15%);
+        b3 = darken(input, 30%);
+        f1 = #ccc;
+        f2 = #aaa;
+
+        if (luminosity(input) < 0.035) {
+            output = 'edge-case dark mode styles';
+            b1 = input;
+            b2 = lighten(input, 08%);
+            b3 = lighten(input, 16%);
+        }
+    } else {
+        output = 'light mode styles';
+        b1 = input;
+        b2 = darken(input, 06%);
+        b3 = darken(input, 12%);
+        f1 = #333;
+        f2 = #555;
+    }
+    :root {
+        --dark:    b1 i;
+        --darken:  b2 i;
+        --darker:  b3 i;
+        --light:   f1 i;
+        --lighter: f2 i;
+    }
+
     // V3 exploration.
     :root {
         /// WA variables.
@@ -487,16 +519,16 @@ if ( v3 == 1 ) {
         --notification-text-rgb: 0, 0, 0;
 
         /// DWA variables.
-        --dark         : dark i;
-        --dark-rgb     : to_rgb(dark);
-        --darken       : darken i;
-        --darken-rgb   : to_rgb(darken);
-        --darker       : darker i;
-        --darker-rgb   : to_rgb(darker);
-        --light        : light i;
-        --light-rgb    : to_rgb(light);
-        --lighter      : lighter i;
-        --lighter-rgb  : to_rgb(lighter);
+        --dark         : b1 i;
+        --dark-rgb     : to_rgb(b1);
+        --darken       : b2 i;
+        --darken-rgb   : to_rgb(b2);
+        --darker       : b3 i;
+        --darker-rgb   : to_rgb(b3);
+        --light        : f1 i;
+        --light-rgb    : to_rgb(f1);
+        --lighter      : f2 i;
+        --lighter-rgb  : to_rgb(f2);
         --accent       : accent i;
         --accent-rgb   : to_rgb(accent);
         --white        : white;
