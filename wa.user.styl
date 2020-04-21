@@ -23,6 +23,8 @@
 
 @var checkbox chat_b_c   'Enable blurred contacts' 0
 @var checkbox chat_b_img 'Enable blurred images/videos' 0
+@var text     chat_b_in  'Chat blur hover-on delay' 0.4s
+@var text     chat_b_out 'Chat blur hover-off delay' 0.2s
 
 @var select   alerts     'Alerts' {
     'Show all                   *': 'show          ',
@@ -182,6 +184,9 @@
 
         --c-m-hover : app_c_m_h;
         --c-m-delay : app_c_m_d;
+
+        --blur-in   : chat_b_in;
+        --blur-out  : chat_b_out;
 
         --ui-font   : ui_font, 'Segoe UI', 'Helvetica Neue', Helvetica,
             'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif;
@@ -1545,11 +1550,11 @@
         if ( chat_b_img == 1 ) {
             [class *= 'message-'] [style *= 'height'] {
                 > img, > div[style], video {
-                    transition: 500ms ease;
-                    transition-delay: 0ms;
+                    transition: 0.5s ease;
+                    transition-delay: var(--blur-out);
                     filter: blur(16px) grayscale(100%);
                     &:hover {
-                        transition-delay: 500ms;
+                        transition-delay: var(--blur-in);
                         filter: none i;
                     }
                 }
