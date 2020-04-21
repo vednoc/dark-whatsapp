@@ -50,7 +50,6 @@
 @var checkbox chat_b_r   'Custom background for right message bubble' 0
 @var color    b_r_bg     'Right message bubble color' #333a47
 
-@var checkbox emoji_t    'Enable transparent emoji images' 1
 @var range    emoji_o    'Emoji default opacity' [0.8, 0.0, 1, 0.01]
 
 @var select   app_image  'Custom app background' {
@@ -594,7 +593,7 @@
         &:not(:hover):not(:focus):not(.selected) {
             filter: opacity(var(--emoji-o));
         }
-        /// Active state.
+        /// Hovered/focused states.
         &:hover:not(.selected), &:focus {
             opacity: 1;
             transform: scale(1.2);
@@ -602,24 +601,6 @@
         }
         /// Selected state. #148
         &.selected { box-shadow: 0 0 0 1px hl, 0 0 0 3px ac i }
-        /// Feat -> Transparent emoji images.
-        if ( emoji_t == 1 ) {
-            repo = 'https://raw.githubusercontent.com/vednoc/wae/dev'
-            /// Android emojis.
-            for i in 0..111 {
-                &.wa.b{i} {
-                    background-image: url(s('%s/a/%s.png', unquote(repo), i))
-                }
-            }
-            /// iOS emojis.
-            for i in 0..127 {
-                &.apple.b{i} {
-                    background-image: url(s('%s/i/%s.png', unquote(repo), i))
-                }
-            }
-        } else {
-            clip-path: circle(49%);
-        }
     }
 
     // Global -> Emoji picker popout.
