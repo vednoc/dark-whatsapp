@@ -595,11 +595,13 @@
             filter: opacity(var(--emoji-o));
         }
         /// Active state.
-        &:hover, &:focus, &.selected {
+        &:hover:not(.selected), &:focus {
             opacity: 1;
             transform: scale(1.2);
             box-shadow: none i;
         }
+        /// Selected state. #148
+        &.selected { box-shadow: 0 0 0 1px hl, 0 0 0 3px ac i }
         /// Feat -> Transparent emoji images.
         if ( emoji_t == 1 ) {
             repo = 'https://raw.githubusercontent.com/vednoc/wae/dev'
