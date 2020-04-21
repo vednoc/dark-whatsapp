@@ -1,6 +1,21 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.4.0 [2020-04-21]
+Small maintenance update for =2.2013.7= release.
+
+*** Added
+- Options to set hover on/off delay for blurred chat media ([[https://github.com/vednoc/dark-whatsapp/issues/149][#149]])
+
+*** Improved
+- Selected state for emojis ([[https://github.com/vednoc/dark-whatsapp/issues/148][#148]])
+- Landing pane announcement ([[https://github.com/vednoc/dark-whatsapp/issues/128][#128]])
+
+*** Fixed
+- Colors for view/send contact areas
+- Chat labels for WhatsApp for Business ([[https://github.com/vednoc/dark-whatsapp/issues/147][#147]])
+- Transparent emoji images are no longer needed ([[https://github.com/vednoc/dark-whatsapp/commit/5f60c41788a1bf2b3598dfcb88a1146d0f6779b7][5f60c41]])
+
 ** 2.3.6 [2020-04-04]
 Lots of bug fixing and polishing in this update.
 
@@ -15,7 +30,7 @@ Lots of bug fixing and polishing in this update.
 - Lots of fixes for context menus, icons, and modals
 - Selectors for blurred contacts/media option
 - Reply bubble colors in status area ([[https://github.com/vednoc/dark-whatsapp/issues/144][#144]])
-- Alerts from 'unknown sender' ([[https://github.com/vednoc/dark-whatsapp/issues/146][#146)]]
+- Alerts from 'unknown sender' ([[https://github.com/vednoc/dark-whatsapp/issues/146][#146]])
 
 ** 2.3.5 [2020-04-01]
 Adding transparent emoji images and polishing things up.
