@@ -800,6 +800,22 @@
         /.cFkAx._2ojWN ._3FR9x { c: fg }
         /// Forward already forwarded message.
         /.vLVax { c: fg bd hl }
+        /// Settings -> Tweaks for 'Set Chat Wallpaper' area. #149
+        /[style *= 'd-color: rgb(237\, 233\, 228)'] {
+            position: relative;
+            &::before {
+                content: 'Use this for Dark-WhatsApp'
+                position: absolute;
+                font-size: 15px;
+                width: 100%;
+                c: black;
+            }
+        }
+        /[style *= 'rgb(222\, 227\, 233)'],
+        /[style *= 'rgb(217\, 218\, 222)'],
+        /[style *= 'rgb(192\, 193\, 196)'] {
+            c: 0 0 bg;
+        }
     }
 
     // Global -> Status.
