@@ -1,6 +1,20 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.4.1 [2020-04-28]
+Hotfix update for =2.2017.6= release.
+
+*** Improved
+- Various things in 'Set Chat Wallpaper' area ([[https://github.com/vednoc/dark-whatsapp/issues/149][#149]])
+- Styles for 'Upload/Take picture' modals
+
+*** Fixed
+- All styles for message tails option ([[https://github.com/vednoc/dark-whatsapp/issues/150][#150]])
+- Wrong color for 'missed video call' icon
+- Background for checkmarks in docs/links
+- Wrong color for 'typing...' element
+- Colors for thumbnails and separators in embeds
+
 ** 2.4.0 [2020-04-21]
 Small maintenance update for =2.2013.7= release.
 
