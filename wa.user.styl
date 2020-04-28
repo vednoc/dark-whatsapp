@@ -1273,10 +1273,9 @@
                 &._1baOM:not(#z) { c: 0 0 bd }
                 &._2-mCk, &.ZuHmv { c: 0 0 #55555510 }
                 /._3WZoe, ._1bcjS, ._2-rkJ::before { c: cm }
-                /// Reset tails.
-                .tail {
-                    &, > div[class] { rad: 7.5px i }
-                    &-container { display: none i }
+                /// Fix incoming message's tails. @upstream
+                .tail-override-left [data-icon = 'tail-out'] {
+                    transform: rotateY(180deg) i;
                 }
             }
             /// Right -> Search messages.
@@ -1608,9 +1607,8 @@
             /// Fix rounded corners for videos/images/gifs/replies.
             &-in, &-out { ._1opHa, .gDOmN, ._3CnDa, ._1iJeo { rad: 10px i }}
             &-in {
-                .tail-container { display: none }
                 /// (first|all|last|single) message(s).
-                .tail > div { rad: 12px 12px 12px 4px i }
+                [data-icon *= 'tail'] + div, ._2R8MP { rad: 12px 12px 12px 4px i }
                 > div > div { rad: 4px 12px 12px 4px i }
                 &._1T1d2 + .message-in:not(._1T1d2) {
                     // c: 0 0 right;
@@ -1621,9 +1619,8 @@
                 &:not(._1T1d2) > div > div { &, ._2R8MP { rad: 12px i }}
             }
             &-out {
-                .tail-container { display: none }
                 /// (first|all|last|single) message(s).
-                .tail > div { rad: 12px 12px 4px 12px i }
+                [data-icon *= 'tail'] + div { rad: 12px 12px 4px 12px i }
                 > div > div { rad: 12px 4px 4px 12px i }
                 &._1T1d2 + .message-out:not(._1T1d2) {
                     // c: 0 0 left;
@@ -1639,21 +1636,19 @@
                 box-shadow: 0 1px sh i;
                 > div { box-shadow: none i }
             }
-            /// Tails.
-            .tail > .tail-container {
-                width: unset;
-                height: unset;
-                border: 6px solid t;
-                background: none i;
-            }
             /// Feat -> Message tails.
             if ( chat_m_t == 'rounded' ) {
-                .tail {
-                    > div { rad: 7.5px i }
-                    .tail-container { display: none }
+                [data-icon *= 'tail'] {
+                    display: none i;
+                    /// 1 -> Messages | 2-3 -> Sticker senders.
+                    + div { &, ._2R8MP, /._3_9XW { rad: 7.5px i }}
                 }
-            } else if ( chat_m_t == 'minimal' ) {
-                .tail .tail-container { display: none }
+            } else if ( chat_m_t == 'minimal' || chat_m_t == 'fb-like' ) {
+                [data-icon *= 'tail'] { display: none i }
+            } else {
+                [data-icon *= 'tail'] svg path:first-child { v: sh }
+                [data-icon = 'tail-in'] svg path:last-child { v: left i }
+                [data-icon = 'tail-out'] svg path:last-child { v: right i }
             }
             /// Date.
             [data-pre-plain-text] + div *, /._1DZAH { c: cm }
@@ -1671,10 +1666,6 @@
                     c: cm;
                     box-shadow: 0 1px sh i;
                     div { color: inherit }
-                }
-                /// Fix bubble radius.
-                if ( msg_tails != 1 ) {
-                    :not(.tail) > div > ._2Hp95._1X6iJ ._2R8MP { rad: 7.5px }
                 }
             }
             /// Audio messages.
@@ -1723,15 +1714,6 @@
             /._3_9XW {
                 c: 0 0 left;
                 box-shadow: 0 1px 0.5px sh i;
-            }
-            /// Reset tails.
-            .tail {
-                border-top-left-radius: 0 i;
-                > .tail-container {
-                    rad: 4px 0 0 0;
-                    border-top-color: left;
-                    border-right-color: left;
-                }
             }
             /// Groups -> Nickname.
             [role] > span[role = 'button'] + span { c: fg }
@@ -1789,15 +1771,6 @@
             }
             /// Stickers -> Timestamp.
             > div._1rK-b ._2Ll5c { c: 0 0 right }
-            /// Reset tails.
-            .tail {
-                border-top-right-radius: 0 i;
-                > .tail-container {
-                    rad: 0 4px 0 0;
-                    border-top-color: right;
-                    border-left-color: right;
-                }
-            }
             /// Context menu.
             > div > span:last-child > div[style] {
                 /// Exclude stickers.
