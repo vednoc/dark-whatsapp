@@ -1838,11 +1838,12 @@
         if ( fix_rtl == 1 ) {
             &-in .selectable-text.invisible-space[dir = 'rtl'] {
                 > span[class] { display: unset i }
-                &::before { width: 56px i }
+                &::before { width: 0px i }
+                &::after { height: 2.25 em }
             }
             &-out .selectable-text.invisible-space[dir = 'rtl'] {
-                > span[class] { display: unset i }
-                &::before { width: 76px i }
+                > span { display: unset i }
+                &::after { height: 2.25 em }
             }
         }
     }
