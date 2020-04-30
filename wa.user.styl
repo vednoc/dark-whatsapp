@@ -32,6 +32,7 @@
     'Hide all                    ': 'hide          ',
 }
 
+@var checkbox fix_rtl    'Fix whitespace for RTL layout' 1
 @var select   chat_m_t   'Message tails style' {
     'Default  *': 'default ',
     'Minimal   ': 'minimal ',
@@ -1832,6 +1833,17 @@
             }
             /// Feat -> Align right bubble.
             if ( chat_right == 'start' ) { align-items: flex-start }
+        }
+        /// Feat -> Fixes for RTL layout. @upstream
+        if ( fix_rtl == 1 ) {
+            &-in .selectable-text.invisible-space[dir = 'rtl'] {
+                > span[class] { display: unset i }
+                &::before { width: 56px i }
+            }
+            &-out .selectable-text.invisible-space[dir = 'rtl'] {
+                > span[class] { display: unset i }
+                &::before { width: 76px i }
+            }
         }
     }
 
