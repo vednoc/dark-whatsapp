@@ -1662,11 +1662,8 @@
         }
         /// Global bubble styles.
         &-in, &-out {
-            /// Fix shadows.
-            > div:not(._1rK-b) {
-                box-shadow: 0 1px sh i;
-                > div { box-shadow: none i }
-            }
+            /// Bubble shadows.
+            > div:not(._1rK-b) > div { box-shadow: 0 1px sh i }
             /// Feat -> Message tails.
             if ( chat_m_t == 'rounded' ) {
                 [data-icon *= 'tail'] {
