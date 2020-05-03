@@ -32,8 +32,8 @@
     'Hide all                    ': 'hide          ',
 }
 
-@var checkbox rtl_header 'Fix message header in RTL layout' 1
-@var checkbox rtl_layout 'Fix message content for RTL layout' 1
+@var checkbox rtl_header 'RTL: Remove empty message header' 1
+@var checkbox rtl_format 'RTL: Fix formatting for message content' 1
 
 @var select   chat_m_t   'Message tails style' {
     'Default  *': 'default ',
@@ -1834,13 +1834,13 @@
             if ( chat_right == 'start' ) { align-items: flex-start }
         }
         /// Feat -> Fixes for RTL layout. @upstream
-        if (rtl_header && !rtl_layout) {
+        if (rtl_header && !rtl_format) {
             &-in, &-out {
                 .selectable-text.invisible-space[dir = 'rtl'] {
                     &::before { content: unset i }
                 }
             }
-        } else if (rtl_header && rtl_layout) {
+        } else if (rtl_header && rtl_format) {
             &-in, &-out {
                 .selectable-text.invisible-space[dir = 'rtl'] {
                     > span[class] { display: unset i }
