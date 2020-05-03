@@ -6,7 +6,7 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      2.4.1
+@version      2.5.0
 @license      MIT
 ==/UserStyle== */
 @-moz-document domain("web.whatsapp.com") {
@@ -49,8 +49,8 @@
     --blur-in: 0.4s;
     --blur-out: 0.2s;
     --ui-font: "custom font", "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", Arial, Ubuntu, Cantarell, "Fira Sans", sans-serif;
-    --version: "Dark-WhatsApp v2.4.1 — April 28th, 2020";
-    --message: "Fixed latest update, more info in the changelog. 🎉 🥳 I rewrote my Dark-Instagram theme, check it out at link below.";
+    --version: "Dark-WhatsApp Lite v2.5.0 — May 3rd, 2020";
+    --message: "Fixed RTL message layout, more info in the changelog. 🎉 🥳 I rewrote my Dark-Instagram theme, check it out at link below.";
     --changes: "https://github.com/vednoc/dark-instagram";
   }
   @supports (-moz-user-select: none) {
@@ -278,7 +278,7 @@
     content: var(--version);
     border-top: 1px solid var(--darker);
   }
-  body ._2zynu ._3ZVgT {
+  body ._2zynu ._1TgXb {
     background-color: var(--darker) !important;
   }
   body .IMBOA {
@@ -417,7 +417,7 @@
     background-color: var(--dark) !important;
     background-image: none;
   }
-@media (min-width: 1441px) {
+  @media (min-width: 1441px) {
     #app > div .app {
       border: 1px solid var(--darker);
       border-radius: var(--radius);
@@ -428,7 +428,7 @@
       width: calc(100% - 38px);
       max-width: var(--app-width);
     }
-}
+  }
   #app > div .app.three > ._37f_5 {
     width: calc(100% + 1px);
   }
@@ -757,12 +757,19 @@
   [data-animate-status-v3-modal-background = "true"] > div {
     background-color: var(--dark) !important;
   }
-@media (min-width: 1441px) {
+  @media (min-width: 1441px) {
     [data-animate-status-v3-modal-background = "true"] > div {
       border-radius: var(--radius) !important;
       border: 1px solid var(--darker) !important;
     }
-}
+  }
+  [data-animate-status-v3-modal-background = "true"] > div ._35Ai0 {
+    color: var(--light) !important;
+  }
+  [data-animate-status-v3-modal-background = "true"] > div ._3_-c_,
+  [data-animate-status-v3-modal-background = "true"] > div ._1Ou9Y {
+    color: var(--lighter) !important;
+  }
   [data-animate-status-v3-modal-background = "true"] > div hr {
     opacity: 1 !important;
     border: none !important;
@@ -772,16 +779,10 @@
     background-color: var(--darken) !important;
     box-shadow: 1px 0 var(--darker);
   }
-@media (min-width: 1441px) {
+  @media (min-width: 1441px) {
     [data-animate-status-v3-modal-background = "true"] > div > div[class]:nth-child(1) {
       border-radius: var(--radius) 0 0 var(--radius);
     }
-}
-  [data-animate-status-v3-modal-background = "true"] > div > div[class]:nth-child(1) .OEFaY {
-    color: var(--lighter) !important;
-  }
-  [data-animate-status-v3-modal-background = "true"] > div > div[class]:nth-child(1) ._26-u- {
-    color: var(--light) !important;
   }
   [data-animate-status-v3-modal-background = "true"] > div > div[class]:nth-child(2) ._2LuDL {
     color: var(--lighter) !important;
@@ -1716,13 +1717,9 @@
   .AVd_p {
     color: var(--light) !important;
   }
-  .message-in > div:not(._1rK-b),
-  .message-out > div:not(._1rK-b) {
-    box-shadow: 0 1px var(--shadow) !important;
-  }
   .message-in > div:not(._1rK-b) > div,
   .message-out > div:not(._1rK-b) > div {
-    box-shadow: none !important;
+    box-shadow: 0 1px var(--shadow) !important;
   }
   .message-in [data-icon *= "tail"] svg path:first-child,
   .message-out [data-icon *= "tail"] svg path:first-child {
@@ -1826,6 +1823,9 @@
     height: 22px !important;
     background: linear-gradient(90deg, var(--t), var(--msg-l) 80%) !important;
   }
+  .message-in > div > span:last-child > div[style].se9J6 {
+    background: linear-gradient(90deg, var(--msg-l) 50%, var(--t)) !important;
+  }
   ._1i1U7._1UyGF div[style *= "opacity"] {
     background-color: var(--msg-l) !important;
   }
@@ -1877,6 +1877,9 @@
   .message-out > div > span:last-child > div[style]:not(._1qhoQ) {
     background: linear-gradient(90deg, var(--t), var(--msg-r) 80%) !important;
   }
+  .message-out > div > span:last-child > div[style].se9J6 {
+    background: linear-gradient(90deg, var(--msg-r) 50%, var(--t)) !important;
+  }
   ._1i1U7._1qhoQ div[style *= "opacity"] {
     background-color: var(--msg-r) !important;
   }
@@ -1901,6 +1904,27 @@
   }
   .message-out ._1iJeo:hover {
     opacity: 0.8;
+  }
+  .message-in .selectable-text.invisible-space[dir = "rtl"] > span[class],
+  .message-out .selectable-text.invisible-space[dir = "rtl"] > span[class] {
+    display: unset !important;
+  }
+  @supports (-moz-user-select: none) {
+    .message-in .selectable-text.invisible-space[dir = "rtl"]::after,
+    .message-out .selectable-text.invisible-space[dir = "rtl"]::after {
+      padding-bottom: 1.35em !important;
+    }
+    .message-in .selectable-text.invisible-space[dir = "rtl"]::before,
+    .message-out .selectable-text.invisible-space[dir = "rtl"]::before {
+      content: unset !important;
+    }
+  }
+  @supports not (-moz-user-select: none) {
+    .message-in .selectable-text.invisible-space[dir = "rtl"]::after,
+    .message-out .selectable-text.invisible-space[dir = "rtl"]::after {
+      height: 1.35em !important;
+      display: block !important;
+    }
   }
   ._1drQ-,
   ._1dGTK,
@@ -2188,17 +2212,17 @@
   ._1M0Ew {
     color: var(--lighter) !important;
   }
-@media screen and (max-height: 500px) {
+  @media screen and (max-height: 500px) {
     #app > div > .app {
       min-height: auto;
     }
-}
-@media screen and (max-width: 648px) {
+  }
+  @media screen and (max-width: 648px) {
     #app > div > .app {
       min-width: auto;
     }
-}
-@media screen and (max-width: 720px) {
+  }
+  @media screen and (max-width: 720px) {
     .two > div:nth-child(3),
     .three > div:nth-child(3) {
       flex: 0 0 80px !important;
@@ -2332,7 +2356,7 @@
     #side ._3j7s9 {
       min-width: 80px !important;
     }
-}
+  }
   ._1QjgA {
     color: var(--accent) !important;
   }
