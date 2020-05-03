@@ -1,6 +1,24 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.5.0 [2020-05-03]
+Fix formatting for RTL messages and minor broken styles.
+
+*** Added
+- Options to disable RTL formatting tweaks
+
+*** Documentation
+- Removed deprecated v1 userstyle from the file tree
+
+*** Improved
+- Formatting for RTL messages ([[https://github.com/vednoc/dark-whatsapp/issues/107][#107]]; thanks [[https://github.com/E-RELevant][Erel]] for the help!)
+
+*** Fixed
+- Context menus for RTL messages
+- Styles for header in status area
+- Platform-specific alert about desktop app
+- Drop shadow for message bubbles
+
 ** 2.4.1 [2020-04-28]
 Hotfix update for =2.2017.6= release.
 
