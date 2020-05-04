@@ -5,7 +5,7 @@
 
 echo 'Converting...'
 
-sed -n '/:root/,$p' wa.user.css | sed '$d' | sed 's/^\ \ //'> darkmode.css
+sed -n '/:root/,$p' wa.user.css | sed 's/^\ \ //; $d' > darkmode.css
 
-[ -f darkmode.css ] && echo 'Done! darkmode.css is ready.' \
-                    || echo 'Something went wrong!'
+[ -e darkmode.css ] && echo 'Done! darkmode.css is ready.' \
+                    || echo 'File not found!' >&2
