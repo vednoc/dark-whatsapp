@@ -1842,14 +1842,13 @@
             }
         } else if (rtl_header && rtl_format) {
             &-in, &-out {
+                [data-pre-plain-text] > [dir = 'rtl'] {
+                    padding-bottom: 1.25em i;
+                }
                 .selectable-text.invisible-space[dir = 'rtl'] {
                     > span[class] { display: unset i }
                     @supports (-moz-user-select: none) {
-                        &::after { padding-bottom: 1.35em i }
                         &::before { content: unset i }
-                    }
-                    @supports not (-moz-user-select: none) {
-                        &::after { height: 1.35em i; display: block i }
                     }
                 }
             }
