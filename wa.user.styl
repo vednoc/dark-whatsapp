@@ -491,8 +491,7 @@
             ._1y1Zk { c: 0 0 ac }
             /// Audio levels.
             /._9sTVb:not(#z) {
-                div { height: 1px; c: 0 0 ac }
-                ::-webkit-slider-runnable-track { c: 0 0 #88888840 }
+                ::-webkit-slider-runnable-track { c: 0 0 #88888880 }
                 ::-moz-range-track { c: 0 0 #88888840 }
                 /// Media viewer videos.
                 /._3y8EC::-webkit-slider-runnable-track { c: 0 0 t }
@@ -503,15 +502,21 @@
             /.Q8uSF {
                 c: 0 0 t;
                 + ::-moz-range {
-                    &-progress, &-thumb { c: 0 0 ac }
-                    &-track { height: 2px; c: 0 0 gray }
+                    &-progress, &-thumb { c: 0 0 blue }
+                    &-track { c: 0 0 gray }
                     /// Track default color.
                     /._4_92b::-moz-range-track { c: 0 0 gray }
                     /// Thumb default color.
                     /._3L8ub ._4_92b::-moz-range-thumb { c: 0 0 fg 0 0 0 }
-                    /// Playing state.
-                    /.bB3vH._38DlQ ._4_92b::-moz-range-thumb { c: 0 0 ac }
                 }
+            }
+            /// Audio message colors. #151
+            /._1SDZT:not(#z) {
+                /._3L8ub .Q8uSF, ._4_92b::-moz-range-thumb { c: 0 0 blue }
+            }
+            /.bB3vH {
+                .Q8uSF { c: 0 0 blue }
+                ._4_92b::-webkit-slider-thumb { c: 0 0 blue }
             }
             /// Fix box-shadow.
             /.llRZq { box-shadow: 0 4px 12px 2px sh-h i }
@@ -967,12 +972,13 @@
         }
         &[data-icon ^= 'ptt-'] path {
             &:first-child { fill: bd }
-            &:last-child { fill: ac }
+            &:last-child { fill: blue }
         }
         /// Message info -> Played audio message.
-        &[data-icon *= 'ptt-blue'] path { v: ac }
+        &[data-icon *= 'ptt-blue'] path { v: blue }
         /// Chat -> Played state for audio messages.
         /._3tiW9 .ptt-status-icon { v: green }
+        /.Zj18s .ptt-status-icon { v: cm }
         /// Message status.
         &[data-icon *= '-check'] path { v: cm }
         &[data-icon *= '-dblcheck'] path { v: cm }
@@ -2066,7 +2072,7 @@
             ._3SW-z { c: cm }
         }
         /// Audio message length.
-        /._1M0Ew { c: cm }
+        /._30ie-, /._1M0Ew { c: cm }
     }
 
     // Feat -> Compact mode.
