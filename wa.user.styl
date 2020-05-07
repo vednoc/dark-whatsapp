@@ -1207,6 +1207,8 @@
                     padding-top: 4px;
                     font-size: 18px;
                     font-weight: 500;
+                    /// Right -> Broadcast list.
+                    > div { c: red }
                 }
                 > div {
                     height: 58px;
@@ -1567,9 +1569,13 @@
             /// Rich embeds.
             /._2nFG1, /._2pvbg, /._3mRez, /._1sGGp {
                 c: 0 0 bg;
-                div > div:nth-child(1) span { c: fg }
-                div > div:nth-child(2) span { c: cm }
-                div > div:nth-child(3) span { c: fg }
+                div > div:nth-child(1) { &, span { c: fg }}
+                div > div:nth-child(2) { &, span { c: cm }}
+                div > div:nth-child(3) { &, span { c: fg }}
+                /// Right -> Fix overflowing text in links. @upstream
+                @supports not (-moz-user-select: none) {
+                    /.XO_8o.selectable-text a { display: unset i }
+                }
             }
             /// Deleted message.
             ._18dOq, ._1upWv {
@@ -1868,6 +1874,8 @@
                 [style *= 'width'], .video-thumb {
                     + div > ._3zb-j[dir = 'rtl'] { padding-bottom: 1.25em i }
                 }
+                /// Remove whitespace for links.
+                .message-text-link::after { content: unset i }
             }
         }
     }
