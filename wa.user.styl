@@ -1843,6 +1843,8 @@
         if (rtl_header) {
             &-in, &-out {
                 .selectable-text.invisible-space[dir = 'rtl'],
+                /// Some links have TWO empty headers.
+                a.selectable-text[href],
                 /// Embedded links are special snowflakes, too.
                 ._3zb-j[dir = 'ltr'] > [dir = 'ltr'] {
                     &::before { content: unset i }
