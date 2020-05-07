@@ -1842,7 +1842,9 @@
         /// Feat -> Fixes for RTL layout. @upstream
         if (rtl_header) {
             &-in, &-out {
-                .selectable-text.invisible-space[dir = 'rtl'] {
+                .selectable-text.invisible-space[dir = 'rtl'],
+                /// Embedded links are special snowflakes, too.
+                ._3zb-j[dir = 'ltr'] > [dir = 'ltr'] {
                     &::before { content: unset i }
                 }
             }
@@ -1861,7 +1863,9 @@
                 }
                 /// Apparently messages with images/videos are treated like
                 /// special snowflakes, so this resets their timestamps.
-                /._3zb-j[dir = 'rtl'] { padding-bottom: 1.25em i }
+                [style *= 'width'], .video-thumb {
+                    + div > ._3zb-j[dir = 'rtl'] { padding-bottom: 1.25em i }
+                }
             }
         }
     }
