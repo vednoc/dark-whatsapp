@@ -6,7 +6,7 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      2.5.0
+@version      2.6.0
 @license      MIT
 ==/UserStyle== */
 @-moz-document domain("web.whatsapp.com") {
@@ -49,8 +49,8 @@
     --blur-in: 0.4s;
     --blur-out: 0.2s;
     --ui-font: "custom font", "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", Arial, Ubuntu, Cantarell, "Fira Sans", sans-serif;
-    --version: "Dark-WhatsApp Lite v2.5.0 — May 3rd, 2020";
-    --message: "Fixed RTL message layout, more info in the changelog. 🎉 🥳 I rewrote my Dark-Instagram theme, check it out at link below.";
+    --version: "Dark-WhatsApp Lite v2.6.0 — May 7th, 2020";
+    --message: "Improved RTL message hacks, more info in the changelog. 🎉 🥳 I rewrote my Dark-Instagram theme, check it out at link below.";
     --changes: "https://github.com/vednoc/dark-instagram";
   }
   @supports (-moz-user-select: none) {
@@ -361,12 +361,8 @@
   ._2jPGD ._1y1Zk {
     background-color: var(--accent) !important;
   }
-  ._9sTVb:not(#z) div {
-    height: 1px;
-    background-color: var(--accent) !important;
-  }
   ._9sTVb:not(#z) ::-webkit-slider-runnable-track {
-    background-color: rgba(136,136,136,0.251) !important;
+    background-color: rgba(136,136,136,0.502) !important;
   }
   ._9sTVb:not(#z) ::-moz-range-track {
     background-color: rgba(136,136,136,0.251) !important;
@@ -383,10 +379,9 @@
   }
   .Q8uSF + ::-moz-range-progress,
   .Q8uSF + ::-moz-range-thumb {
-    background-color: var(--accent) !important;
+    background-color: var(--blue) !important;
   }
   .Q8uSF + ::-moz-range-track {
-    height: 2px;
     background-color: #808080 !important;
   }
   ._4_92b::-moz-range-track {
@@ -395,8 +390,15 @@
   ._3L8ub ._4_92b::-moz-range-thumb {
     background-color: var(--light);
   }
-  .bB3vH._38DlQ ._4_92b::-moz-range-thumb {
-    background-color: var(--accent) !important;
+  ._3L8ub .Q8uSF,
+  ._1SDZT:not(#z) ._4_92b::-moz-range-thumb {
+    background-color: var(--blue) !important;
+  }
+  .bB3vH .Q8uSF {
+    background-color: var(--blue) !important;
+  }
+  .bB3vH ._4_92b::-webkit-slider-thumb {
+    background-color: var(--blue) !important;
   }
   .llRZq {
     box-shadow: 0 4px 12px 2px var(--sh-h) !important;
@@ -528,16 +530,16 @@
   .overlay ._3pRd1 ._2EXPL:not(#z):hover {
     background-color: var(--t) !important;
   }
-  .overlay .I72vi {
+  .overlay ._3fOoY {
     background-color: var(--darken) !important;
     overflow: hidden;
     box-shadow: 0 1px var(--darker);
   }
-  .overlay .I72vi > div:not(#z) {
+  .overlay ._3fOoY > div:not(#z) {
     background-color: var(--t) !important;
     border: none !important;
   }
-  .overlay .I72vi > div:not(#z) > div {
+  .overlay ._3fOoY > div:not(#z) > div {
     background-color: var(--darker) !important;
   }
   .overlay ._21bWq {
@@ -895,13 +897,16 @@
     fill: var(--darker);
   }
   span[class][data-icon ^= "ptt-"] path:last-child {
-    fill: var(--accent);
+    fill: var(--blue);
   }
   span[class][data-icon *= "ptt-blue"] path {
-    fill: var(--accent) !important;
+    fill: var(--blue) !important;
   }
-  span[class][data-icon *= "in-green"] path[fill = "#09D261"] {
+  ._3tiW9 .ptt-status-icon {
     fill: var(--green) !important;
+  }
+  .Zj18s .ptt-status-icon {
+    fill: var(--lighter) !important;
   }
   span[class][data-icon *= "-check"] path {
     fill: var(--lighter) !important;
@@ -1163,6 +1168,9 @@
     padding-top: 4px;
     font-size: 18px;
     font-weight: 500;
+  }
+  ._1xGbt:not(#z) > div {
+    color: var(--red) !important;
   }
   ._1-iDe .copyable-area header > div {
     height: 58px;
@@ -1643,23 +1651,40 @@
   ._1sGGp {
     background-color: var(--dark) !important;
   }
+  ._2nFG1 div > div:nth-child(1),
+  ._2pvbg div > div:nth-child(1),
+  ._3mRez div > div:nth-child(1),
+  ._1sGGp div > div:nth-child(1),
   ._2nFG1 div > div:nth-child(1) span,
   ._2pvbg div > div:nth-child(1) span,
   ._3mRez div > div:nth-child(1) span,
   ._1sGGp div > div:nth-child(1) span {
     color: var(--light) !important;
   }
+  ._2nFG1 div > div:nth-child(2),
+  ._2pvbg div > div:nth-child(2),
+  ._3mRez div > div:nth-child(2),
+  ._1sGGp div > div:nth-child(2),
   ._2nFG1 div > div:nth-child(2) span,
   ._2pvbg div > div:nth-child(2) span,
   ._3mRez div > div:nth-child(2) span,
   ._1sGGp div > div:nth-child(2) span {
     color: var(--lighter) !important;
   }
+  ._2nFG1 div > div:nth-child(3),
+  ._2pvbg div > div:nth-child(3),
+  ._3mRez div > div:nth-child(3),
+  ._1sGGp div > div:nth-child(3),
   ._2nFG1 div > div:nth-child(3) span,
   ._2pvbg div > div:nth-child(3) span,
   ._3mRez div > div:nth-child(3) span,
   ._1sGGp div > div:nth-child(3) span {
     color: var(--light) !important;
+  }
+  @supports not (-moz-user-select: none) {
+    .XO_8o.selectable-text a {
+      display: unset !important;
+    }
   }
   #main .copyable-area > div[tabindex] ._18dOq,
   #main .copyable-area > div[tabindex] ._1upWv {
@@ -1905,26 +1930,37 @@
   .message-out ._1iJeo:hover {
     opacity: 0.8;
   }
+  .message-in .selectable-text.invisible-space[dir = "rtl"]::before,
+  .message-out .selectable-text.invisible-space[dir = "rtl"]::before,
+  .message-in a.selectable-text[href]::before,
+  .message-out a.selectable-text[href]::before,
+  .message-in ._3zb-j[dir = "ltr"] > [dir = "ltr"]::before,
+  .message-out ._3zb-j[dir = "ltr"] > [dir = "ltr"]::before {
+    content: unset !important;
+  }
+  .message-in [data-pre-plain-text] > [dir = "rtl"],
+  .message-out [data-pre-plain-text] > [dir = "rtl"] {
+    padding-bottom: 1.25em !important;
+  }
   .message-in .selectable-text.invisible-space[dir = "rtl"] > span[class],
   .message-out .selectable-text.invisible-space[dir = "rtl"] > span[class] {
     display: unset !important;
   }
   @supports (-moz-user-select: none) {
-    .message-in .selectable-text.invisible-space[dir = "rtl"]::after,
-    .message-out .selectable-text.invisible-space[dir = "rtl"]::after {
-      padding-bottom: 1.35em !important;
-    }
     .message-in .selectable-text.invisible-space[dir = "rtl"]::before,
     .message-out .selectable-text.invisible-space[dir = "rtl"]::before {
       content: unset !important;
     }
   }
-  @supports not (-moz-user-select: none) {
-    .message-in .selectable-text.invisible-space[dir = "rtl"]::after,
-    .message-out .selectable-text.invisible-space[dir = "rtl"]::after {
-      height: 1.35em !important;
-      display: block !important;
-    }
+  .message-in [style *= "width"] + div > ._3zb-j[dir = "rtl"],
+  .message-out [style *= "width"] + div > ._3zb-j[dir = "rtl"],
+  .message-in .video-thumb + div > ._3zb-j[dir = "rtl"],
+  .message-out .video-thumb + div > ._3zb-j[dir = "rtl"] {
+    padding-bottom: 1.25em !important;
+  }
+  .message-in .message-text-link::after,
+  .message-out .message-text-link::after {
+    content: unset !important;
   }
   ._1drQ-,
   ._1dGTK,
@@ -2209,6 +2245,7 @@
   #main > footer .Uukb4 ._3SW-z {
     color: var(--lighter) !important;
   }
+  ._30ie-,
   ._1M0Ew {
     color: var(--lighter) !important;
   }
