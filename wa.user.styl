@@ -2078,15 +2078,23 @@
             }
         }
         /// Mention popout.
-        .Uukb4 {
+        /.Uukb4 {
             c: 0 bd bg;
             box-shadow: 0 -1px bd i;
             &::before { content: none }
             .J6TrU {
-                c: fg bd bg;
-                &._1g_fA, &:hover { c: 0 0 hl }
+                c: cm bd bg;
+                &._1g_fA, &:hover { c: fg 0 hl }
+                /// Nicknames.
+                ._2u5ts { c: cm }
             }
             ._3SW-z { c: cm }
+            /// Upload preview -> Mention group members.
+            &.BDk0G {
+                border-left: none i;
+                c: 0 0 bg;
+                .J6TrU { &._1g_fA, &:hover { c: fg 0 bd }}
+            }
         }
         /// Audio message length.
         /._30ie-, /._1M0Ew { c: cm }
