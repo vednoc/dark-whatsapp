@@ -70,8 +70,8 @@ This project wouldn't be possible without:
 
 Similar open-source projects:
 - [[https://github.com/Barina/Dark-Telegram][Barina/Dark-Telegram]] - Port of Dark-WhatsApp to Telegram
-- [[https://github.com/dcferreira/franz-themes][dcferreira/franz-themes]] - Port of v2 CSS for Ferdi/Franz (desktop app)
-- [[https://github.com/obvionaoe/dark][obvionaoe/dark]] - Port of v2 CSS for Frands/Ferdi/Rambox (desktop app)
+- [[https://github.com/dcferreira/franz-themes][dcferreira/franz-themes]] - Port of v2 CSS for Ferdi/Franz (desktop apps)
+- [[https://github.com/obvionaoe/dark][obvionaoe/dark]] - Port of v2 CSS for Ferdi/Franz/Rambox (desktop apps)
 - [[https://github.com/amanharwara/altus][amanharwara/altus]] - Port of v1 CSS for Altus (desktop app)
 
 ** License
