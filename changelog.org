@@ -1,7 +1,7 @@
 #+STARTUP: nofold
 
 * Changelog
-** 2.6.0 [2020-05-07]
+** 2.6.0 [2020-05-07 Thu]
 Improvements for RTL tweaks (thanks [[https://github.com/E-RELevant][Erel]] for keeping me busy with lots of bug
 reports) and minor broken styles.
 
@@ -14,7 +14,7 @@ reports) and minor broken styles.
 - Contacts area in 'add participant' modal ([[https://github.com/vednoc/dark-whatsapp/issues/152][#152]])
 - Colors for voice message icons ([[https://github.com/vednoc/dark-whatsapp/issues/151][#151]])
 
-** 2.5.0 [2020-05-03]
+** 2.5.0 [2020-05-03 Sun]
 Fix formatting for RTL messages and minor broken styles.
 
 *** Added
@@ -33,7 +33,7 @@ Fix formatting for RTL messages and minor broken styles.
 - Platform-specific alert about desktop app
 - Drop shadow for message bubbles
 
-** 2.4.1 [2020-04-28]
+** 2.4.1 [2020-04-28 Tue]
 Hotfix update for =2.2017.6= release.
 
 *** Improved
@@ -47,7 +47,7 @@ Hotfix update for =2.2017.6= release.
 - Wrong color for 'typing...' element
 - Colors for thumbnails and separators in embeds
 
-** 2.4.0 [2020-04-21]
+** 2.4.0 [2020-04-21 Tue]
 Small maintenance update for =2.2013.7= release.
 
 *** Added
@@ -62,7 +62,7 @@ Small maintenance update for =2.2013.7= release.
 - Chat labels for WhatsApp for Business ([[https://github.com/vednoc/dark-whatsapp/issues/147][#147]])
 - Transparent emoji images are no longer needed ([[https://github.com/vednoc/dark-whatsapp/commit/5f60c41788a1bf2b3598dfcb88a1146d0f6779b7][5f60c41]])
 
-** 2.3.6 [2020-04-04]
+** 2.3.6 [2020-04-04 Sat]
 Lots of bug fixing and polishing in this update.
 
 *** Documentation
@@ -78,7 +78,7 @@ Lots of bug fixing and polishing in this update.
 - Reply bubble colors in status area ([[https://github.com/vednoc/dark-whatsapp/issues/144][#144]])
 - Alerts from 'unknown sender' ([[https://github.com/vednoc/dark-whatsapp/issues/146][#146]])
 
-** 2.3.5 [2020-04-01]
+** 2.3.5 [2020-04-01 Wed]
 Adding transparent emoji images and polishing things up.
 
 *** Documentation
@@ -94,7 +94,7 @@ Adding transparent emoji images and polishing things up.
 - Audio length for incoming messages
 - Reply bubble in status area ([[https://github.com/vednoc/dark-whatsapp/issues/144][#144]])
 
-** 2.3.4 [2020-03-28]
+** 2.3.4 [2020-03-28 Sat]
 Fixing the leftover minor bugs.
 
 *** Improved
@@ -107,7 +107,7 @@ Fixing the leftover minor bugs.
 - Colors for 'low battery' alert
 - Selectors for emoji/gif/sticker menus
 
-** 2.3.3 [2020-03-27]
+** 2.3.3 [2020-03-27 Fri]
 Fixing more new bugs, some caused by last night's hotfix.
 
 *** Added
@@ -119,7 +119,7 @@ Fixing more new bugs, some caused by last night's hotfix.
 - 'Computer not connected' alert ([[https://github.com/vednoc/dark-whatsapp/issues/140][#140]])
 - Rewritten compact mode
 
-** 2.3.2 [2020-03-27]
+** 2.3.2 [2020-03-27 Fri]
 Fixing more new bugs, some caused by last night's hotfix.
 
 *** Fixed
@@ -127,7 +127,7 @@ Fixing more new bugs, some caused by last night's hotfix.
 - Colors for the 'seen' message status ([[https://github.com/vednoc/dark-whatsapp/issues/131][#131]])
 - Selectors for built-in video player ([[https://github.com/vednoc/dark-whatsapp/issues/133][#133]])
 
-** 2.3.1 [2020-03-27]
+** 2.3.1 [2020-03-27 Fri]
 Hotfix for the latest update (version ~0.4.2080~). Reported in [[https://github.com/vednoc/dark-whatsapp/issues/130][#130]].
 
 *** Documentation
@@ -141,7 +141,7 @@ Hotfix for the latest update (version ~0.4.2080~). Reported in [[https://github.
 - Avatar size of the default-user icons
 - A bunch of things from the latest update
 
-** 2.3.0 [2020-03-22]
+** 2.3.0 [2020-03-22 Sun]
 Bug fixes and improvements (version ~0.4.1307~).
 
 *** Breaking
@@ -166,7 +166,7 @@ Bug fixes and improvements (version ~0.4.1307~).
 - Opacity for attach menu icons
 - Elements for 'failed to send msg' area
 
-** 2.2.2 [2020-02-22]
+** 2.2.2 [2020-02-22 Sat]
 Minor bug fixes and improvements.
 
 *** Documentation
@@ -185,7 +185,7 @@ Minor bug fixes and improvements.
 - Context menu icon hover animation ([[https://github.com/vednoc/dark-whatsapp/pull/121][#121]])
 - Chat filter in WhatsApp Business ([[https://github.com/vednoc/dark-whatsapp/issues/122][#122]])
 
-** 2.2.1 [2020-02-16]
+** 2.2.1 [2020-02-16 Sun]
 Minor bug fixes for yesterday's update.
 
 *** Fixed
@@ -194,7 +194,7 @@ Minor bug fixes for yesterday's update.
 - Colors for audio message controls
 - Animation for down arrow icon
 
-** 2.2.0 [2020-02-15]
+** 2.2.0 [2020-02-15 Sat]
 Bug fixes and improvements (version ~0.4.930~).
 
 This update brought /hidden/ and still in-progress native dark mode to WhatsApp
@@ -205,7 +205,7 @@ HTML element. The change should look like so: ~<html class="dark js webp...">~
 - Transparent emoji images are disabled until desktop installers are updated to
   the latest version. If you enable the option, it will use wrong emoji images.
 
-*** Additions
+*** Added
 - Added an option to set custom avatar radius ([[https://github.com/vednoc/dark-whatsapp/pull/117][#117]])
 
 *** Documentation
@@ -223,7 +223,7 @@ HTML element. The change should look like so: ~<html class="dark js webp...">~
 - Minor regressions caused by refactoring
 - Hover/selected bugs for selected messages
 
-** 2.1.2 [2020-02-10]
+** 2.1.2 [2020-02-10 Mon]
 Minor bug fixes and improvements (version ~0.4.613~).
 
 *** Improved
@@ -238,7 +238,7 @@ Minor bug fixes and improvements (version ~0.4.613~).
 - Context menu gradient for embedded links
 - Message text position in compact mode ([[https://github.com/vednoc/dark-whatsapp/issues/112][#112]])
 
-** 2.1.1 [2020-01-27]
+** 2.1.1 [2020-01-27 Mon]
 Weekly update to address a few minor things.
 
 *** Documentation
@@ -254,11 +254,11 @@ Weekly update to address a few minor things.
 - Emoji race selection hover background
 - Search placeholder text color
 
-** 2.1.0 [2020-01-21]
+** 2.1.0 [2020-01-21 Tue]
 Adding new features and porting v2 to =wa.user.css= format for use in extensions
 that don't support [[https://github.com/stylus/stylus/][stylus-lang]] and/or other projects.
 
-*** Additions
+*** Added
 - An option to hide notification alerts ([[https://github.com/vednoc/dark-whatsapp/pull/101][#101]])
 - An option to use theme colors in groups
 - New style for message tails, inspired by Facebook
@@ -287,7 +287,7 @@ that don't support [[https://github.com/stylus/stylus/][stylus-lang]] and/or oth
 - Icon opacity for all icons
 - Icon color for "low battery" alert ([[https://github.com/vednoc/dark-whatsapp/pull/106][#106]])
 
-** 2.0.6 [2020-01-17]
+** 2.0.6 [2020-01-17 Fri]
 Hotfix for the latest update (version ~0.4.315~).
 
 *** USo/v1 notice
@@ -309,7 +309,7 @@ Hotfix for the latest update (version ~0.4.315~).
 - Bottom divider for applications on intro page ([[https://github.com/vednoc/dark-whatsapp/pull/90][#90]])
 - Emoji search input text color in Chromium
 
-** 2.0.5 [2020-01-13]
+** 2.0.5 [2020-01-13 Mon]
 Minor bug fixes and improvements.
 
 Huge thanks to [[https://github.com/E-RELevant][Erelephant]] for making a bunch of pull requests and fixing a ton
@@ -340,7 +340,7 @@ of bugs, as well as doing most of the work for [[https://github.com/vednoc/dark-
 - Context menu colors for messages with stickers
 - Disabled icons in selected messages area
 
-** 2.0.4 [2020-01-05]
+** 2.0.4 [2020-01-05 Sun]
 Minor bug fixes and improvements.
 
 *** Improved
@@ -355,7 +355,7 @@ Minor bug fixes and improvements.
 - Outset for background blur
 - Media player's box shadow
 
-** 2.0.3 [2019-12-31]
+** 2.0.3 [2019-12-31 Tue]
 Minor bug fixes and improvements.
 
 *** Improved
@@ -369,7 +369,7 @@ Minor bug fixes and improvements.
 - Small border radius for reply/embed content
 - Glitchy menu in starred messages
 
-** 2.0.2 [2019-12-29]
+** 2.0.2 [2019-12-29 Sun]
 Minor bug fixes and improvements.
 
 *** Improved
@@ -381,7 +381,7 @@ Minor bug fixes and improvements.
 - Second selector for mentions in the chat area
 - Colors for forwarded status in message info area
 
-** 2.0.1 [2019-12-27]
+** 2.0.1 [2019-12-27 Fri]
 Thanks to [[https://github.com/E-RELevant][Erelephant]] for reporting quite a few of small bugs.
 
 *** Improved
@@ -395,7 +395,7 @@ Thanks to [[https://github.com/E-RELevant][Erelephant]] for reporting quite a fe
 - Context menus for forwarded messages and messages with files
 - Missing timestamp background from gif messages
 
-** 2.0.0 [2019-12-21]
+** 2.0.0 [2019-12-21 Sat]
 Moving forward, all the changes will be documented here.
 
 Huge thanks to [[https://github.com/E-RELevant][Erelephant]] for testing and reporting bugs throughout this entire
