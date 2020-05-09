@@ -1,6 +1,17 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.6.1 [2020-05-10 Sun]
+Small maintenance for latest release.
+
+*** Documentation
+- Fixed typos in readme and changelog
+- Added day names to dates in the changelog
+
+*** Fixed
+- User mentions in groups and upload preview
+- Margin for platform-specific borders
+
 ** 2.6.0 [2020-05-07 Thu]
 Improvements for RTL tweaks (thanks [[https://github.com/E-RELevant][Erel]] for keeping me busy with lots of bug
 reports) and minor broken styles.
