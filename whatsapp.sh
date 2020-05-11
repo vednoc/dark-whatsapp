@@ -11,4 +11,4 @@ output="darkmode.css"
 sed -n '/:root/,$p' $input | sed 's/^\ \ //; $d' > $output
 
 [ -e $output ] && echo "Done! $output is ready." \
-                    || echo 'File not found!' >&2
+               || echo 'File not found!' >&2
