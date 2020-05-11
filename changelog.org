@@ -1,6 +1,13 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.6.2 [2020-05-11 Mon]
+Hotfix update for =2.2019.6= release.
+
+*** Fixed
+- Shortcut elements in 'keyboard shortcuts' modal
+- Selected message blinking twice
+
 ** 2.6.1 [2020-05-10 Sun]
 Small maintenance for latest release.
 
