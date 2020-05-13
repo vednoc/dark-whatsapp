@@ -435,7 +435,9 @@
             /// Global -> Mentions.
             &-mention, /[data-mention-jid] {
                 span { c: ac }
+                .at-symbol { c: cm }
                 &:hover span { text-decoration: underline i }
+                &:hover .at-symbol { text-decoration: none i }
             }
         }
 
