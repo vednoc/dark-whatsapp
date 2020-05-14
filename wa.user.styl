@@ -258,7 +258,6 @@
     body {
         c: fg 0 bg;
         background-image: none;
-        scrollbar-color: ac #55555520;
 
         /// Input/preloader color.
         ::placeholder, ._1mpL5 { c: cm }
@@ -302,6 +301,8 @@
                 &-thumb { background-color: ac }
             }
         }
+        /// Scrollbar colors in Firefox.
+        * { scrollbar-color: ac #5552 i }
 
         /// Feat -> Custom font.
         &, button, input { font-family: var(--ui-font) }
