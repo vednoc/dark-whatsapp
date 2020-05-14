@@ -1655,32 +1655,38 @@
         /// Feat -> Custom bubble colors.
         ( chat_b_l == 0 ) ? left  = msg_l : left  = b_l_bg;
         ( chat_b_r == 0 ) ? right = msg_r : right = b_r_bg;
-        /// Tails -> Facebook style.
-        /// TODO: Refactor later.
+        /// Feat -> Message tails -> Facebook style.
         if ( chat_m_t == 'fb-like' ) {
-            /// Fix rounded corners for videos/images/gifs/replies.
-            &-in, &-out { ._1opHa, .gDOmN, ._3CnDa, ._1iJeo { rad: 10px i }}
+            _o = 16px;
+            _i = 6px;
+            &-in, &-out {
+                /// Last message | Groups -> Sticker sender.
+                &:not(._1T1d2) > div > div { &, ._2R8MP { rad: _o i }}
+                /// Fix rounded corners for videos/images/gifs/replies/links.
+                ._1opHa, .gDOmN, ._3CnDa, ._1iJeo, .D4OT6, ._2nFG1 {
+                    rad: (_o - 2px) i;
+                }
+                /// Forward button.
+                ._26fC0 { rad: _o i }
+            }
             &-in {
                 /// (first|all|last|single) message(s).
-                [data-icon *= 'tail'] + div, ._2R8MP { rad: 12px 12px 12px 4px i }
-                > div > div:not(._26fC0) { rad: 4px 12px 12px 4px i }
+                [data-icon *= 'tail'] + div, ._2R8MP { rad: _o _o _o _i i }
+                > div > div { rad: _i _o _o _i i }
                 &._1T1d2 + .message-in:not(._1T1d2) {
                     // c: 0 0 right;
                     /// Last message | Groups -> Sticker sender.
-                    > div > div { &, ._2R8MP { rad: 4px 12px 12px 12px i }}
+                    > div > div { &, ._2R8MP { rad: _i _o _o _o i }}
                 }
-                /// Last message | Groups -> Sticker sender.
-                &:not(._1T1d2) > div > div { &, ._2R8MP { rad: 12px i }}
             }
             &-out {
                 /// (first|all|last|single) message(s).
-                [data-icon *= 'tail'] + div { rad: 12px 12px 4px 12px i }
-                > div > div:not(._26fC0) { rad: 12px 4px 4px 12px i }
+                [data-icon *= 'tail'] + div { rad: _o _o _i _o i }
+                > div > div { rad: _o _i _i _o i }
                 &._1T1d2 + .message-out:not(._1T1d2) {
                     // c: 0 0 left;
-                    > div > div { rad: 12px 4px 12px 12px i }
+                    > div > div { rad: _o _i _o _o i }
                 }
-                &:not(._1T1d2) > div > div { rad: 12px i }
             }
         }
         /// Global bubble styles.
