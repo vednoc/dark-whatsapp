@@ -1,6 +1,17 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.6.3 [2020-05-14 Thu]
+Minor polish and refactoring.
+
+**** Improved
+- Fb-like option for message tails
+- Logic for custom app background
+
+**** Fixed
+- Color for =@= symbol in mentions
+- Colors for scrollbars in Firefox
+
 ** 2.6.2 [2020-05-11 Mon]
 Hotfix update for =2.2019.6= release.
 
