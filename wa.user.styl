@@ -164,13 +164,15 @@
 
         --avatar-r  : radius-a;
 
-        /// Feat -> Background image dropdown.
+        /// Feat -> Custom app background.
+        image_path  = 'https://raw.githubusercontent.com/'
+        image_path += 'vednoc/dark-whatsapp/master/images/bg-blur'
         if ( app_image == bg-high ) {
-            --bg-image: url('https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/images/bg-blur-high.jpg');
+            --bg-image: url(image_path + '-high.jpg');
         } else if ( app_image == bg-low ) {
-            --bg-image: url('https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/images/bg-blur-low.jpg');
+            --bg-image: url(image_path + '-low.jpg');
         } else if ( app_image == bg-none ) {
-            --bg-image: url('https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/images/bg-blur-none.jpg');
+            --bg-image: url(image_path + '-none.jpg');
         } else if ( app_image == custom ) {
             --bg-image: image_url;
         } else {
