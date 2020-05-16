@@ -1652,6 +1652,7 @@
 
     // Main -> Chat message bubbles.
     .message {
+        _media = '._1opHa, .gDOmN, ._3CnDa, ._1iJeo, .D4OT6, ._2nFG1'
         /// Feat -> Custom bubble colors.
         ( chat_b_l == 0 ) ? left  = msg_l : left  = b_l_bg;
         ( chat_b_r == 0 ) ? right = msg_r : right = b_r_bg;
@@ -1663,9 +1664,7 @@
                 /// Last message | Groups -> Sticker sender.
                 &:not(._1T1d2) > div > div { &, ._2R8MP { rad: _o i }}
                 /// Fix rounded corners for videos/images/gifs/replies/links.
-                ._1opHa, .gDOmN, ._3CnDa, ._1iJeo, .D4OT6, ._2nFG1 {
-                    rad: (_o - 2px) i;
-                }
+                { _media } { rad: (_o - 2px) (_o - 2px) _o _o i }
                 /// Forward button.
                 ._26fC0 { rad: _o i }
             }
@@ -1674,9 +1673,16 @@
                 [data-icon *= 'tail'] + div, ._2R8MP { rad: _o _o _o _i i }
                 > div > div { rad: _i _o _o _i i }
                 &._1T1d2 + .message-in:not(._1T1d2) {
-                    // c: 0 0 right;
+                    c: 0 0 right;
                     /// Last message | Groups -> Sticker sender.
                     > div > div { &, ._2R8MP { rad: _i _o _o _o i }}
+                }
+                &._1T1d2 {
+                    /// Rounded corners for media/replies/etc.
+                    + ._1T1d2, + :not(._1T1d2) {
+                        c: 0 0 blue;
+                        { _media } { rad: _i _o _o _o i }
+                    }
                 }
             }
             &-out {
@@ -1685,7 +1691,12 @@
                 > div > div { rad: _o _i _i _o i }
                 &._1T1d2 + .message-out:not(._1T1d2) {
                     // c: 0 0 left;
-                    > div > div { rad: _o _i _o _o i }
+                    > div > div, { _media } { rad: _o _i _o _o i }
+                }
+                /// Rounded corners for media/replies/etc.
+                &._1T1d2 + ._1T1d2 {
+                    // c: 0 0 blue;
+                    { _media } { rad: _o _i _o _o i }
                 }
             }
         }
