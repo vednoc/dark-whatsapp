@@ -70,11 +70,17 @@
 @var range    bg_blur    'Background image blur size' [0, 0, 50, 1, 'px']
 @var range    bg_hue     'Background image hue' [320, 0, 360, 1, 'deg']
 @var range    bg_invert  'Background image invert colors' [0, 0.0, 1, 0.1]
+@var text     bg_size    'Background image size' cover
+@var text     bg_pos     'Background image position' center
+@var text     bg_rep     'Background image repeat' no-repeat
 
 @var checkbox chat_bg    'Enable chat background image' 1
 @var text     chat_image 'Custom image for chat' url('https://web.whatsapp.com/img/bg-chat-tile_9e8a2898faedb7db9bf5638405cf81ae.png')
 @var range    chat_bg_o  'Chat background image opacity' [0.15, 0.0, 1, 0.01]
 @var range    chat_bg_i  'Chat background image inverted colors' [0.6, 0.0, 1, 0.1]
+@var text     chat_bg_s  'Chat background image size' initial
+@var text     chat_bg_p  'Chat background image position' top left
+@var text     chat_bg_r  'Chat background image repeat' repeat
 
 @var checkbox ff_scroll  'Thin scrollbars in Firefox' 1
 
@@ -183,10 +189,16 @@
         --bg-blur-s : calc(-2 * var(--bg-blur));
         --bg-hue    : bg_hue;
         --bg-invert : bg_invert;
+        --bg-size   : bg_size;
+        --bg-pos    : bg_pos;
+        --bg-rep    : bg_rep;
 
         --chat-image: chat_image;
         --chat-bg-o : chat_bg_o;
         --chat-bg-i : chat_bg_i;
+        --chat-bg-s : chat_bg_s;
+        --chat-bg-p : chat_bg_p;
+        --chat-bg-r : chat_bg_r;
 
         --c-m-hover : app_c_m_h;
         --c-m-delay : app_c_m_d;
@@ -538,13 +550,15 @@
                 s = var(--bg-blur-s);
                 b = blur(var(--bg-blur));
                 o = opacity(var(--bg-opacity));
-                i = invert(var(--bg-invert));
+                t = invert(var(--bg-invert));
                 h = hue-rotate(var(--bg-hue));
                 top: s; right: s; bottom: s; left: s;
                 height: unset; width: unset;
-                filter: b o i h;
-                background-image: var(--bg-image);
-                background-size: cover;
+                filter: b o t h;
+                background-image: var(--bg-image) i;
+                background-position: var(--bg-pos) i;
+                background-repeat: var(--bg-rep) i;
+                background-size: var(--bg-size) i;
                 c: 0 0 t;
             } else if ( app_image == default ) {
                 c: 0 0 hl;
@@ -1469,7 +1483,10 @@
         /[data-asset-chat-background] {
             opacity: 1 i;
             filter: invert(var(--chat-bg-i)) opacity(var(--chat-bg-o));
-            background: var(--chat-image);
+            background: var(--chat-image) i;
+            background-size: var(--chat-bg-s) i;
+            background-position: var(--chat-bg-p) i;
+            background-repeat: var(--chat-bg-r) i;
             /// Feat -> Show chat image.
             if ( chat_bg != 1 ) { display: none }
         }
