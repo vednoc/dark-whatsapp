@@ -1918,6 +1918,37 @@
                 .message-text-link::after { content: unset i }
             }
         }
+        if (rtl_format && chat_m_t == 'fb-like') {
+            &-in, &-out {
+                /// Horizontal whitespace.
+                .ZhF0n { display: none i }
+                /// Vertical whitespace.
+                ._3zb-j {
+                    position: relative;
+                    padding-bottom: 1rem i;
+                    margin: 0.1rem 0.2rem i;
+                }
+                /// Hide timemstamps.
+                &._1T1d2 {
+                    ._3zb-j { transition: padding 0.2s ease i }
+                    ._2f-RV { transition: opacity 0.2s ease i }
+                    > div:not(:hover) {
+                        ._2f-RV { opacity: 0 i }
+                        ._3zb-j { padding-bottom: 0 i }
+                    }
+                    /// Extend 'hover' area.
+                    ../../-in, ../../-out {
+                        > div::before {
+                            content: '' i;
+                            position: absolute i;
+                            top: 0; right: -50px; bottom: 0; left: -50px;
+                        }
+                        // ../../../-in > div::before { c: 0 0 #55ff5510 }
+                        // ../../../-out > div::before { c: 0 0 #5555ff10 }
+                    }
+                }
+            }
+        }
     }
 
     // Main -> Upload preview.
