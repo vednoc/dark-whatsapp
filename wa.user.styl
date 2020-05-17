@@ -1666,7 +1666,7 @@
                 /// Fix rounded corners for videos/images/gifs/replies/links.
                 { _media } { rad: (_o - 2px) (_o - 2px) _o _o i }
                 /// Forward button.
-                ._26fC0 { rad: _o i }
+                &:not(#z) ._26fC0:not(#z) { rad: _o i }
                 /// Reply context menu.
                 ._20EE3 { border-top-right-radius: _o i }
             }
@@ -1920,33 +1920,43 @@
         }
         if (rtl_format && chat_m_t == 'fb-like') {
             &-in, &-out {
-                /// Horizontal whitespace.
-                .ZhF0n { display: none i }
-                /// Vertical whitespace.
-                ._3zb-j {
+                /// LTR whitespace.
+                .ZhF0n {
+                    display: block i;
+                    padding-top: 1rem;
+                }
+                /// RTL whitespace.
+                ._3zb-j[dir = 'rtl'] {
                     position: relative;
                     padding-bottom: 1rem i;
                     margin: 0.1rem 0.2rem i;
                 }
+                /// Exclude padding from last message.
+                &._1T1d2 + :not(._1T1d2) ._3zb-j {
+                    // padding-bottom: 0 i;
+                }
                 /// Hide timemstamps.
                 &._1T1d2 {
-                    ._3zb-j { transition: padding 0.2s ease i }
-                    ._2f-RV { transition: opacity 0.2s ease i }
+                    ._3zb-j, .ZhF0n { transition: padding 0.2s ease i }
+                    ._2f-RV, ._2G09-, ._3EFt_ { transition: opacity 0.2s ease i }
                     > div:not(:hover) {
-                        ._2f-RV { opacity: 0 i }
-                        ._3zb-j { padding-bottom: 0 i }
+                        ._2f-RV, ._2G09-, ._3EFt_ { opacity: 0 i }
+                        ._3zb-j[dir = 'rtl'] { padding-bottom: 0 i }
+                        .ZhF0n { padding-top: 0rem i }
                     }
                     /// Extend 'hover' area.
                     ../../-in, ../../-out {
                         > div::before {
                             content: '' i;
                             position: absolute i;
-                            top: 0; right: -50px; bottom: 0; left: -50px;
+                            top: 0; right: -20px; bottom: 0; left: -20px;
                         }
                         // ../../../-in > div::before { c: 0 0 #55ff5510 }
                         // ../../../-out > div::before { c: 0 0 #5555ff10 }
                     }
                 }
+                /// Reset whitespace for embedded links/images/videos.
+                ._3zb-j [class *= text]::after { content: unset i }
             }
         }
     }
