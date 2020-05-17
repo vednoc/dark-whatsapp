@@ -180,6 +180,7 @@
         }
         --bg-opacity: bg_opacity;
         --bg-blur   : bg_blur;
+        --bg-blur-s : calc(-2 * var(--bg-blur));
         --bg-hue    : bg_hue;
         --bg-invert : bg_invert;
 
@@ -534,7 +535,7 @@
         /// Feat -> App background.
         &::after {
             if ( app_image != none && app_image != default ) {
-                s = calc(-2 * var(--bg-blur));
+                s = var(--bg-blur-s);
                 b = blur(var(--bg-blur));
                 o = opacity(var(--bg-opacity));
                 i = invert(var(--bg-invert));
