@@ -1614,7 +1614,7 @@
             /// 'Read more' button.
             /._484uz, /._3BIvq { c: ac }
             /// 'Join group' / 'View all' buttons.
-            /._3DBC1 {
+            /._3DBC1, .nOJPX {
                 c: 0 #88888830;
                 [role = 'button'] { c: fg }
             }
@@ -1845,7 +1845,6 @@
             > div > span:last-child > div[style] {
                 /// Exclude stickers.
                 &:not(._1qhoQ) {
-                    height: 22px i;
                     background: linear-gradient(90deg, t, left 80%) i;
                 }
                 /// RTL messages.
@@ -1981,8 +1980,12 @@
                 }
                 /// Photos/gifs.
                 ._2F4Rh, ._1umJf, ._3jbqt { padding: 4px i }
+                /// Groups -> Usernames.
+                [class *= 'color-'] + div {
+                    ._3FDzO, ._3CVlE { margin-top: 5px i }
+                }
                 /// Timestamp whitespace.
-                ._2f-RV, ._1uFFm { margin-right: 0.2rem i }
+                ._2f-RV, ._1uFFm, .GbMip, ._2G09- { margin-right: 0.2rem i }
                 /// Hide timemstamps.
                 &._1T1d2 {
                     ._3zb-j, .ZhF0n { transition: padding 0.2s ease i }
