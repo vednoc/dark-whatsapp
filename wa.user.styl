@@ -293,8 +293,6 @@
             &-track { c: 0 0 bg }
             /// Global -> Progress completed.
             ../ ._1N8Pv { c: 0 0 ac }
-            /// Chat -> Played state for audio messages.
-            /.bB3vH ._4_92b::-moz-range-thumb { c: 0 0 green }
         }
         ::-webkit- {
             &progress {
@@ -303,11 +301,7 @@
             }
             &slider {
                 &-runnable-track { c: 0 0 gray }
-                &-thumb {
-                    c: 0 0 ac;
-                    /// Chat -> Played state for audio messages.
-                    /.bB3vH ._4_92b::-moz-range-thumb { c: 0 0 green }
-                }
+                &-thumb { c: 0 0 ac }
             }
             &scrollbar {
                 &-track { background-color: #5552 }
@@ -535,7 +529,11 @@
             }
             /.bB3vH {
                 .Q8uSF { c: 0 0 blue }
-                ._4_92b::-webkit-slider-thumb { c: 0 0 blue }
+                /// Chat -> Played state for audio messages.
+                ._4_92b::-webkit-slider-thumb { c: 0 0 green }
+                ._4_92b::-moz-range-thumb { c: 0 0 green }
+                &._38DlQ ._4_92b::-moz-range-thumb { c: 0 0 blue }
+                &._38DlQ ._4_92b::-webkit-slider-thumb { c: 0 0 blue }
             }
             /// Fix box-shadow.
             /.llRZq { box-shadow: 0 4px 12px 2px sh-h i }
@@ -1002,8 +1000,10 @@
             &:last-child { fill: blue }
         }
         /// Message info -> Played audio message.
+        &[data-icon *= 'status-ptt'] path,
         &[data-icon *= 'ptt-blue'] path { v: blue }
         /// Chat -> Played state for audio messages.
+        /._30tKt &[data-icon *= 'status-ptt'] path,
         /._3tiW9 .ptt-status-icon { v: green }
         /.Zj18s .ptt-status-icon { v: cm }
         /// Message status.
@@ -1672,7 +1672,7 @@
     // Main -> Chat message bubbles.
     .message {
         _media = '._1opHa, .gDOmN, ._3CnDa, ._1iJeo, .D4OT6, ._2nFG1, .q5faU'
-        _timestamps = '._2f-RV, ._2G09-, ._3EFt_, ._2Ll5c, .GbMip, ._1uFFm'
+        _timestamps = '._2f-RV, ._2G09-, ._3EFt_, ._2Ll5c, .GbMip, ._1uFFm, ._1Ppwx'
         /// Feat -> Custom bubble colors.
         ( chat_b_l == 0 ) ? left  = msg_l : left  = b_l_bg;
         ( chat_b_r == 0 ) ? right = msg_r : right = b_r_bg;
