@@ -947,7 +947,8 @@
                 > svg > path { fill-opacity: 0.55 }
             }
             /// Exclude logos in embedded links from hover animation.
-            &[data-icon*='logo-'] > svg > path {
+            &[data-icon = 'giphy'] > svg > path,
+            &[data-icon *= 'logo-'] > svg > path {
                 fill-opacity: 0.6 i;
                 &:first-child { fill: bg }
                 &:last-child { fill: fg }
