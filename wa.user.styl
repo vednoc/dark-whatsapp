@@ -41,6 +41,7 @@
     'Rounded   ': 'rounded ',
     'Facebook  ': 'fb-like ',
 }
+@var checkbox emoji_b    'Decrease height of big emojis for fb-like tails style' 1
 
 @var select   chat_left  'Left message bubble position' {
     'Left side  *': 'start ',
@@ -1619,6 +1620,20 @@
                 c: 0 #88888830;
                 [role = 'button'] { c: fg }
             }
+            /// Emojis -> Big emoji wrapper.
+            if(emoji_b && chat_m_t == 'fb-like') {
+                ._2x9bY {
+                    margin: 0 0 0 -8px i;
+                    padding-top: 2px i;
+                    /// Emoji.
+                    .QkfD1 {
+                        &._1D2ku, &._2DV1k {
+                            width: 24px i;
+                            height: @width;
+                        }
+                    }
+                }
+            }
         }
         /// Feat -> Blur img/videos.
         if ( chat_b_img == 1 ) {
@@ -1988,8 +2003,8 @@
                     display: block i;
                     padding-top: 0.8rem;
                 }
-                /// RTL whitespace.
-                ._3zb-j[dir = 'rtl'] {
+                /// RTL whitespace | Big emojis..
+                ._3zb-j[dir = 'rtl'], ._2x9bY {
                     position: relative;
                     padding-bottom: 0.8rem i;
                     margin: 0.1rem 0.2rem i;
@@ -2008,11 +2023,11 @@
                 ._2f-RV, ._1uFFm, .GbMip, ._2G09- { margin-right: 0.2rem i }
                 /// Hide timemstamps.
                 &._1T1d2 {
-                    ._3zb-j, .ZhF0n { transition: padding 0.2s ease i }
+                    ._3zb-j, .ZhF0n, ._2x9bY { transition: padding 0.2s ease i }
                     { _timestamps } { transition: opacity 0.2s ease i }
                     > div:not(:hover) {
                         { _timestamps } { opacity: 0 i }
-                        ._3zb-j[dir = 'rtl'] { padding-bottom: 0 i }
+                        ._3zb-j[dir = 'rtl'], ._2x9bY { padding-bottom: 0 i }
                         .ZhF0n { padding-top: 0rem i }
                     }
                     /// Extend 'hover' area.
