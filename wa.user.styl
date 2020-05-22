@@ -84,6 +84,7 @@
 @var text     chat_bg_r  'Chat background image repeat' repeat
 
 @var checkbox ff_scroll  'Thin scrollbars in Firefox' 1
+@var checkbox ss_mode    '[Dev]: Screenshot mode' 0
 
 @var checkbox c_g_c      'Theme colors in groups' 1
 
@@ -2471,6 +2472,130 @@
             &-18 { c: 0 0 violet; filter: hue-rotate(40deg)  }
             &-19 { c: 0 0 magenta; filter: hue-rotate(40deg) }
             &-20 { c: 0 0 red; filter: hue-rotate(40deg)     }
+        }
+    }
+
+    // Feat -> Screenshot mode.
+    if ( ss_mode == 1 ) {
+        ss = lighten(darker, 8%);
+        html[class][dir]:not(x):not(y):not(z) > body[class] > #app {
+            /// Hide avatars.
+            [style *= 'height'][style *= 'width'] > img[src] { opacity: 0 i }
+            /// Left pane.
+            #side {
+                /// Titles.
+                [title]:not([role = 'button']) {
+                    rad: 4px i;
+                    c: t 0 ss;
+                }
+                /// Content.
+                span > span[dir] {
+                    rad: 4px i;
+                    c: t 0 ss;
+                }
+                /// Sender/content whitespace.
+                ._1AwDx {
+                    margin-top: 4px i;
+                    ._3Bxar:not(#z) { margin: 0 i  }
+                }
+                /// Selected.
+                [aria-selected = 'true'] {
+                    span > span[dir] {
+                        rad: 4px i;
+                        c: t 0 ss;
+                    }
+                }
+                /// Timestamps.
+                ._3Bxar:not(#z) {
+                    margin-top: 0 i;
+                    padding-right: 0 i;
+                    min-height: 21px i;
+                    rad: 4px;
+                    c: t 0 ss;
+                    > * { display: none i }
+                }
+                /// Hide emojis and icons.
+                .emoji,
+                #pane-side [data-icon]:not([data-icon *= 'default']) {
+                    background-image: none i;
+                    visibility: hidden i;
+                }
+            }
+            /// Main pane.
+            #main {
+                /// Chat -> Header.
+                > header > div:nth-child(2) {
+                    /// Contact name.
+                    [dir][title] {
+                        max-width: 190px;
+                        rad: 4px;
+                        c: t 0 ss;
+                    }
+                    /// Online status.
+                    [title]:not([dir]) {
+                        margin-top: 4px i;
+                        max-width: 50px;
+                        rad: 4px;
+                        c: t 0 ss;
+                    }
+                }
+                /// Chat -> Hide emojis and icons.
+                [class *= 'text']:not([contenteditable]) span {
+                    /// Exclude icons/whitespace.
+                    &:not([data-icon]):not(.ZhF0n) {
+                        rad: 4px;
+                        c: t 0 ss;
+                        * { c: t }
+                        &._2x9bY { margin-left: 18px i }
+                    }
+                }
+                /// Chat -> Hide media.
+                [src *= 'blob'], [src *= 'data'], [style *= 'url('] {
+                    opacity: 0.4 i;
+                    filter: blur(32px) brightness(0.8) i;
+                    /// Override stickers.
+                    ../ ._22Mb1 { filter: blur(8px) i }
+                }
+                /// Chat -> Hide documents/contacts; exclude big emojis.
+                ._3FXB1:not(._2x9bY):not(img) {
+                    max-height: 21px;
+                    max-width: 128px;
+                    rad: 4px;
+                    c: t 0 ss;
+                }
+                /// Chat -> Replies.
+                ._2a1Yw { margin-left: 0px i }
+                /// Chat -> Hide emojis.
+                img[src *= '/img/'] { opacity: 0 i }
+            }
+            /// Right pane.
+            ._14VS3 {
+                /// Name/members/description.
+                [class *= 'text'], .Cpiae, .bMKum {
+                    // display: inline-block i;
+                    // max-height: 21px i;
+                    rad: 4px;
+                    c: t 0 ss;
+                }
+                /// Media.
+                ._2Ry6_ {
+                    overflow: hidden i;
+                    > div:nth-child(2) {
+                        filter: blur(32px) brightness(0.8) i;
+                    }
+                }
+                /// About/participants.
+                ._1CRb5, ._2EXPL {
+                    [dir], span[title] {
+                        max-width: 250px;
+                        rad: 4px;
+                        c: t 0 ss;
+                        span { c: t }
+                    }
+                }
+                /// Emojis.
+                .emoji { visibility: hidden i }
+            }
         }
     }
 }
