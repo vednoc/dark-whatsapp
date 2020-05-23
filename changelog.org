@@ -1,6 +1,30 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.7.0 [2020-05-23 Sat]
+Improved ~fb-like~ message tails style and various other things that got broken in
+the latest ~2.2021.3~ update.
+
+**** Added
+- App and chat background images now support custom ~size~, ~position~, and ~repeat~
+- ~Fb-like~ message tails option received a lot of enhancements
+  - Huge thanks to [[https://github.com/E-RELevant][Erel]] for the idea of hiding timestamps for all messages
+    except the very last one, and for non-stop testing and bug reporting!
+  - We hope everyone will enjoy using this style because it looks great!
+  - Here is [[https://github.com/vednoc/dark-whatsapp/wiki/Configuration#message-tails][how to enable it]]! Quick preview:
+    [[https://user-images.githubusercontent.com/18245694/82741377-86efdd80-9d51-11ea-84d8-2ccb1315f346.gif]]
+- An option to enable ~screenshot mode~ for preview image
+  - This option could be used for bug-reports and for user-submitted previews
+
+**** Improved
+- Lots of improvements for audio messages and audio sliders
+- Left/right side options for message bubbles work great with fb-like tails
+
+**** Fixed
+- Compact mode's typing indicator in Ferdi ([[https://github.com/vednoc/dark-whatsapp/pull/153][#153]])
+- Avatar radius for shared contact(s) messages
+- Colors for giphy and delete chat icons
+
 ** 2.6.3 [2020-05-14 Thu]
 Minor polish and refactoring.
 
