@@ -327,11 +327,12 @@
                 div { text-transform: unset; c: fg }
                 /// Userstyle version.
                 &::after {
-                    right: 0;
                     font-size: 14px;
                     font-weight: 500;
                     position: absolute;
                     content: var(--version);
+                    /html[dir = 'RTL'] & { left: 0 }
+                    /html[dir = 'LTR'] & { right: 0 }
                 }
             }
             &-window:not(#z) {
