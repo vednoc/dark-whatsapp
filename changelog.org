@@ -12,6 +12,7 @@ the latest ~2.2021.3~ update.
     except the very last one, and for non-stop testing and bug reporting!
   - We hope everyone will enjoy using this style because it looks great!
   - Here is [[https://github.com/vednoc/dark-whatsapp/wiki/Configuration#message-tails][how to enable it]]! Quick preview:
+
     [[https://user-images.githubusercontent.com/18245694/82741377-86efdd80-9d51-11ea-84d8-2ccb1315f346.gif]]
 - An option to enable ~screenshot mode~ for preview image
   - This option could be used for bug-reports and for user-submitted previews
