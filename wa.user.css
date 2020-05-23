@@ -6,7 +6,7 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      2.6.3
+@version      2.7.0
 @license      MIT
 ==/UserStyle== */
 @-moz-document domain("web.whatsapp.com") {
@@ -39,18 +39,25 @@
     --bg-image: url("https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/images/bg-blur-high.jpg");
     --bg-opacity: 0.4;
     --bg-blur: 0px;
+    --bg-blur-s: calc(-2 * var(--bg-blur));
     --bg-hue: 320deg;
     --bg-invert: 0;
+    --bg-size: cover;
+    --bg-pos: center;
+    --bg-rep: no-repeat;
     --chat-image: url("https://web.whatsapp.com/img/bg-chat-tile_9e8a2898faedb7db9bf5638405cf81ae.png");
     --chat-bg-o: 0.15;
     --chat-bg-i: 0.6;
+    --chat-bg-s: initial;
+    --chat-bg-p: top left;
+    --chat-bg-r: repeat;
     --c-m-hover: 0.6s;
     --c-m-delay: 1.2s;
     --blur-in: 0.4s;
     --blur-out: 0.2s;
     --ui-font: "custom font", "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", Arial, Ubuntu, Cantarell, "Fira Sans", sans-serif;
-    --version: "Dark-WhatsApp Lite v2.6.3 — May 14th, 2020";
-    --message: "Improved RTL message hacks, more info in the changelog. 🎉 🥳 I rewrote my Dark-Instagram theme, check it out at link below.";
+    --version: "Dark-WhatsApp Lite v2.7.0 — May 23rd, 2020";
+    --message: "Improved fb-like tails style; more info in the changelog. 🎉 🥳 I rewrote my Dark-Instagram theme, check it out at link below.";
     --changes: "https://github.com/vednoc/dark-instagram";
   }
   @supports (-moz-user-select: none) {
@@ -100,9 +107,6 @@
   body ._1N8Pv {
     background-color: var(--accent) !important;
   }
-  .bB3vH ._4_92b::-moz-range-thumb {
-    background-color: var(--green) !important;
-  }
   body ::-webkit-progress-bar {
     background-color: var(--darker) !important;
   }
@@ -114,9 +118,6 @@
   }
   body ::-webkit-slider-thumb {
     background-color: var(--accent) !important;
-  }
-  .bB3vH ._4_92b::-moz-range-thumb {
-    background-color: var(--green) !important;
   }
   body ::-webkit-scrollbar-track {
     background-color: rgba(85,85,85,0.133);
@@ -149,11 +150,16 @@
     color: var(--light) !important;
   }
   body .landing-header::after {
-    right: 0;
     font-size: 14px;
     font-weight: 500;
     position: absolute;
     content: var(--version);
+  }
+  html[dir = "RTL"] body .landing-header::after {
+    left: 0;
+  }
+  html[dir = "LTR"] body .landing-header::after {
+    right: 0;
   }
   body .landing-window:not(#z) {
     border-radius: var(--radius);
@@ -411,22 +417,33 @@
     background-color: var(--blue) !important;
   }
   .bB3vH ._4_92b::-webkit-slider-thumb {
+    background-color: var(--green) !important;
+  }
+  .bB3vH ._4_92b::-moz-range-thumb {
+    background-color: var(--green) !important;
+  }
+  .bB3vH._38DlQ ._4_92b::-moz-range-thumb {
+    background-color: var(--blue) !important;
+  }
+  .bB3vH._38DlQ ._4_92b::-webkit-slider-thumb {
     background-color: var(--blue) !important;
   }
   .llRZq {
     box-shadow: 0 4px 12px 2px var(--sh-h) !important;
   }
   #app > div::after {
-    top: calc(-2 * var(--bg-blur));
-    right: calc(-2 * var(--bg-blur));
-    bottom: calc(-2 * var(--bg-blur));
-    left: calc(-2 * var(--bg-blur));
+    top: var(--bg-blur-s);
+    right: var(--bg-blur-s);
+    bottom: var(--bg-blur-s);
+    left: var(--bg-blur-s);
     height: unset;
     width: unset;
     filter: blur(var(--bg-blur)) opacity(var(--bg-opacity)) invert(var(--bg-invert)) hue-rotate(var(--bg-hue));
-    background-image: var(--bg-image);
-    background-size: cover;
-    background-color: var(--t) !important;
+    background-color: transparent !important;
+    background-image: var(--bg-image) !important;
+    background-position: var(--bg-pos) !important;
+    background-repeat: var(--bg-rep) !important;
+    background-size: var(--bg-size) !important;
   }
   #app > div .app {
     background-color: var(--dark) !important;
@@ -453,14 +470,16 @@
   ._2UkYn,
   ._1WliW,
   ._1jJLh,
-  ._2Lev2 {
+  ._2Lev2,
+  ._24lP4 {
     border-radius: var(--avatar-r) !important;
     background-color: var(--dark) !important;
   }
   ._2UkYn > img,
   ._1WliW > img,
   ._1jJLh > img,
-  ._2Lev2 > img {
+  ._2Lev2 > img,
+  ._24lP4 > img {
     border-radius: var(--avatar-r) !important;
   }
   .emojik {
@@ -849,13 +868,16 @@
   span[class][data-icon][data-icon = "down-context"] > svg > path {
     fill-opacity: 0.55;
   }
-  span[class][data-icon][data-icon*="logo-"] > svg > path {
+  span[class][data-icon][data-icon = "giphy"] > svg > path,
+  span[class][data-icon][data-icon *= "logo-"] > svg > path {
     fill-opacity: 0.6 !important;
   }
-  span[class][data-icon][data-icon*="logo-"] > svg > path:first-child {
+  span[class][data-icon][data-icon = "giphy"] > svg > path:first-child,
+  span[class][data-icon][data-icon *= "logo-"] > svg > path:first-child {
     fill: var(--dark);
   }
-  span[class][data-icon][data-icon*="logo-"] > svg > path:last-child {
+  span[class][data-icon][data-icon = "giphy"] > svg > path:last-child,
+  span[class][data-icon][data-icon *= "logo-"] > svg > path:last-child {
     fill: var(--light);
   }
   span[class][data-icon][data-icon="muted"] > svg > path,
@@ -918,9 +940,11 @@
   span[class][data-icon ^= "ptt-"] path:last-child {
     fill: var(--blue);
   }
+  span[class][data-icon *= "status-ptt"] path,
   span[class][data-icon *= "ptt-blue"] path {
     fill: var(--blue) !important;
   }
+  ._30tKt span[class][data-icon *= "status-ptt"] path,
   ._3tiW9 .ptt-status-icon {
     fill: var(--green) !important;
   }
@@ -946,6 +970,7 @@
     fill-opacity: 1 !important;
   }
   span[class][data-icon = "exit"] path,
+  span[class][data-icon = "delete"] path,
   span[class][data-icon = "thumbs-down"] path,
   span[class][data-icon = "delete-danger"] path,
   span[class][data-icon = "status-miss_video"] path,
@@ -1528,7 +1553,10 @@
   [data-asset-chat-background] {
     opacity: 1 !important;
     filter: invert(var(--chat-bg-i)) opacity(var(--chat-bg-o));
-    background: var(--chat-image);
+    background: var(--chat-image) !important;
+    background-size: var(--chat-bg-s) !important;
+    background-position: var(--chat-bg-p) !important;
+    background-repeat: var(--chat-bg-r) !important;
   }
   #main > header {
     border-right: none;
@@ -1717,10 +1745,12 @@
   ._3BIvq {
     color: var(--accent) !important;
   }
-  ._3DBC1 {
+  ._3DBC1,
+  #main .copyable-area > div[tabindex] .nOJPX {
     border-color: rgba(136,136,136,0.188) !important;
   }
-  ._3DBC1 [role = "button"] {
+  ._3DBC1 [role = "button"],
+  #main .copyable-area > div[tabindex] .nOJPX [role = "button"] {
     color: var(--light) !important;
   }
   ._2RBFb {
@@ -1756,7 +1786,6 @@
   ._3BtGF,
   .mc_ET {
     border-color: var(--dark) !important;
-    background-color: var(--t) !important;
   }
   .AVd_p {
     color: var(--light) !important;
@@ -1860,7 +1889,6 @@
     color: var(--light) !important;
   }
   .message-in > div > span:last-child > div[style]:not(._1qhoQ) {
-    height: 22px !important;
     background: linear-gradient(90deg, var(--t), var(--msg-l) 80%) !important;
   }
   .message-in > div > span:last-child > div[style].se9J6 {
@@ -1884,6 +1912,10 @@
     background: linear-gradient(90deg, var(--t), var(--msg-l) 80%) !important;
   }
   .message-in > div > span:nth-last-child(2) > div[style].jZ4tp._1i1U7._2Cju4 {
+    background: none !important;
+  }
+  .message-in > div > span:nth-last-child(2) > div[style]._15hve._2DNgV,
+  .message-in > div > span:nth-last-child(2) > div[style]._15hve.jZ4tp {
     background: none !important;
   }
   .message-in ._1iJeo {
@@ -1939,6 +1971,10 @@
   .message-out > div > span:nth-last-child(2) > div[style]._2Cju4 {
     background: none !important;
   }
+  .message-out > div > span:nth-last-child(2) > div[style]._15hve._2DNgV,
+  .message-out > div > span:nth-last-child(2) > div[style]._15hve.jZ4tp {
+    background: none !important;
+  }
   .message-out ._1iJeo {
     background-color: var(--dark) !important;
   }
@@ -1955,7 +1991,7 @@
   }
   .message-in [data-pre-plain-text] > [dir = "rtl"],
   .message-out [data-pre-plain-text] > [dir = "rtl"] {
-    padding-bottom: 1.25em !important;
+    padding-bottom: 0.8rem !important;
   }
   .message-in .selectable-text.invisible-space[dir = "rtl"] > span[class],
   .message-out .selectable-text.invisible-space[dir = "rtl"] > span[class] {
@@ -1971,7 +2007,7 @@
   .message-out [style *= "width"] + div > ._3zb-j[dir = "rtl"],
   .message-in .video-thumb + div > ._3zb-j[dir = "rtl"],
   .message-out .video-thumb + div > ._3zb-j[dir = "rtl"] {
-    padding-bottom: 1.25em !important;
+    padding-bottom: 0.8rem !important;
   }
   .message-in .message-text-link::after,
   .message-out .message-text-link::after {
@@ -2381,19 +2417,19 @@
       overflow: unset !important;
       margin-top: -8px !important;
       margin-left: 0px !important;
-      position: absolute;
+      position: absolute !important;
     }
     .vdXUe::before {
-      content: "";
-      z-index: 1;
-      position: absolute;
-      top: -31px;
-      left: -71px;
-      height: 53px;
-      width: 53px;
-      box-shadow: inset 0 0 0 3px var(--green);
-      border-radius: var(--avatar-r);
-      animation: 2s pulse infinite;
+      content: "" !important;
+      z-index: 1 !important;
+      position: absolute !important;
+      top: -31px !important;
+      left: -71px !important;
+      height: 53px !important;
+      width: 53px !important;
+      box-shadow: inset 0 0 0 3px var(--green) !important;
+      border-radius: var(--avatar-r) !important;
+      animation: 2s pulse infinite !important;
     }
     #side ._2EXPL .a5DO0 {
       padding: 1.5px;
