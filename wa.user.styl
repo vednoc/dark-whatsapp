@@ -2610,6 +2610,10 @@
                 ._2a1Yw { margin-left: 0px i }
                 /// Chat -> Hide emojis.
                 img[src *= '/img/'] { opacity: 0 i }
+                /// Chat -> Fix whitespace for RTL messages.
+                .selectable-text.invisible-space[dir = 'rtl'] {
+                    > span[class] { display: block i }
+                }
             }
             /// Right pane.
             ._14VS3 {
