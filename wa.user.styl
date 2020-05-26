@@ -2058,8 +2058,17 @@
                 /// Photos/gifs.
                 ._2F4Rh, ._1umJf, ._3jbqt { padding: 4px i }
                 /// Groups -> Usernames.
-                [class *= 'color-'] + div {
+                &:not(#z) [class *= 'color-'] + div {
                     ._3FDzO, ._3CVlE { margin-top: 5px i }
+                    /// Groups -> Reset corners for first message.
+                    if (chat_left == 'start') {
+                        { _media } { border-top-left-radius: _i i }
+                    } else {
+                        { _media } {
+                            border-top-left-radius: _o i;
+                            border-top-right-radius: _i i;
+                        }
+                    }
                 }
                 /// Timestamp whitespace.
                 ._2f-RV, ._1uFFm, .GbMip, ._2G09- { margin-right: 0.2rem i }
