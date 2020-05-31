@@ -1,6 +1,31 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.8.0 [2020-05-31 Sun]
+More polish for ~fb-like~ message tails style, and a new intro image.
+
+*** Added
+- Inlined SVG for intro image ([[https://github.com/vednoc/dark-whatsapp/pull/156][#156]])
+  - Huge thanks to [[https://github.com/jdruedaq][jdruedaq]] for contributing and for the initial idea.
+  - Quick preview when using color-schems from [[https://github.com/vednoc/dark-switcher/][dark-switcher]]:
+
+  [[https://user-images.githubusercontent.com/18245694/83363146-6948f680-a397-11ea-9e65-91089648a74a.gif]]
+- Uniform height for big emojis when ~fb-like~ tails are active
+  - Enabled by default; only works with ~fb-like~ tails.
+
+  [[https://user-images.githubusercontent.com/18245694/83363145-664e0600-a397-11ea-949b-6582211bd25b.gif]]
+
+*** Improved
+- Block contact icon now uses a warning color
+- QR code borders now have a hardcoded ~#ffffff~ value
+  - No more minor conflicts with /some/ color-schemes when using [[https://github.com/vednoc/dark-switcher/][dark-switcher]].
+
+*** Fixed
+- Hover animation for reply messages
+- Conflicts in grouped media (images, videos, etc) in ~fb-like~ tails
+- Selectors for audio message controls
+- Opacity for deleted message icon
+
 ** 2.7.0 [2020-05-23 Sat]
 Improved ~fb-like~ message tails style and various other things that got broken in
 the latest ~2.2021.3~ update.
