@@ -6,7 +6,7 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      2.7.0
+@version      2.8.0
 @license      MIT
 ==/UserStyle== */
 @-moz-document domain("web.whatsapp.com") {
@@ -56,14 +56,17 @@
     --blur-in: 0.4s;
     --blur-out: 0.2s;
     --ui-font: "custom font", "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", Arial, Ubuntu, Cantarell, "Fira Sans", sans-serif;
-    --version: "Dark-WhatsApp Lite v2.7.0 — May 23rd, 2020";
-    --message: "Improved fb-like tails style; more info in the changelog. 🎉 🥳 I rewrote my Dark-Instagram theme, check it out at link below.";
+    --version: "Dark-WhatsApp v2.8.0 — May 31st, 2020";
+    --message: "Finally got around replacing that old intro image with a proper one. More info in the changelog. 🎉 🥳 I rewrote my Dark-Instagram theme, check it out at link below.";
     --changes: "https://github.com/vednoc/dark-instagram";
   }
   @supports (-moz-user-select: none) {
     :root * {
       scrollbar-width: thin;
     }
+  }
+  :root {
+    --intro-image: url("data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"  height="256" width="256"><g stroke="\%237289da"><path d="M128.4901 30.8659a95.4375 95.4375 0 00-95.4375 95.4375 95.4375 95.4375 0 0014.168 50.0332L35.6698 221.276l44.7989-12.498a95.4375 95.4375 0 0048.0214 12.9629 95.4375 95.4375 0 0095.4375-95.4375 95.4375 95.4375 0 00-95.4375-95.4375z" fill="\%231f232a" fill-rule="evenodd" stroke-width="18" stroke-linecap="square"/><path d="M97.8104 79.8463c-4.9671.0406-13.5028 2.0796-17.7812 14.8946-6.8318 20.4631 12.5737 43.3028 27.2438 57.4735 14.7975 14.2938 43.1559 26.507 58.0098 21.08 20.5566-8.9065 15.2475-22.9479 15.2475-22.9479l-22.9727-11.0878s-2.062-1.206-3.4146.5737c-1.0042 1.3213-9.4409 11.3755-9.4409 11.3755s-1.449 1.668-3.827.7402c-5.7574-2.2462-14.2018-7.4856-18.5314-10.7795-6.8875-5.2399-12.957-13.0846-16.9473-19.668-1.2556-2.5597.6953-4.709.6953-4.709s6.0303-8.2629 7.0176-9.5566c1.0068-1.3194.2539-3.3633.2539-3.3633l-10.539-23.2285s-2.0334-.8212-5.0138-.7969z" fill="\%237289da" stroke-linejoin="round"/></g></svg>");
   }
   body {
     color: var(--light) !important;
@@ -186,8 +189,8 @@
   body .landing-main div[data-ref] {
     border-radius: 0;
     filter: contrast(150%);
-    outline: 4px solid var(--white);
-    box-shadow: 0 0 0 4px var(--white);
+    outline: 4px solid #fff;
+    box-shadow: 0 0 0 4px #fff;
   }
   body .landing-main div[data-ref] [role="button"] {
     color: var(--white) !important;
@@ -261,12 +264,12 @@
   body ._2zynu [style] div {
     color: var(--lighter) !important;
   }
-  body ._2zynu [data-asset-intro-image] {
-    border-radius: 50%;
+  [data-asset-intro-image] {
+    border-radius: 0 !important;
     max-width: 200px;
     max-height: 200px;
-    filter: opacity(0.75);
     transition: opacity 0.6s ease;
+    background-image: var(--intro-image) !important;
   }
   body ._2zynu h1 + div[class] {
     font-size: 0;
@@ -895,6 +898,7 @@
     fill-opacity: 0.3 !important;
   }
   span[class][data-icon][data-icon="msg-time"] > svg > path,
+  span[class][data-icon][data-icon="recalled"] > svg > path,
   span[class][data-icon][data-icon="forwarded"] > svg > path {
     fill-opacity: 0.55 !important;
   }
@@ -968,6 +972,9 @@
   }
   span[class][data-icon *= "check"] path {
     fill-opacity: 1 !important;
+  }
+  ._14VS3 [data-icon = "settings-blocked"] path {
+    fill: var(--yellow) !important;
   }
   span[class][data-icon = "exit"] path,
   span[class][data-icon = "delete"] path,
@@ -1860,6 +1867,14 @@
     color: var(--light) !important;
     background-color: var(--dark) !important;
   }
+  .message-in .video-thumb + ._2G09-:not(#z) span,
+  .message-out .video-thumb + ._2G09-:not(#z) span {
+    color: var(--lighter) !important;
+  }
+  ._2kztM ._2G09- {
+    right: 5px !important;
+    bottom: 3px !important;
+  }
   .message-in .video-thumb + div > [role = "button"],
   .message-out .video-thumb + div > [role = "button"] {
     padding: 2px 5px;
@@ -1920,6 +1935,7 @@
   }
   .message-in ._1iJeo {
     background-color: var(--dark) !important;
+    transition: opacity 0.2s ease !important;
   }
   .message-in ._1iJeo:hover {
     opacity: 0.8;
@@ -2139,13 +2155,10 @@
   #main > footer > div:first-child div[style] + div[tabindex] .focused > div[style] {
     color: var(--t) !important;
   }
-  #main > footer [data-icon = "ptt"] path {
-    fill-opacity: 0.55;
-  }
-  #main > footer [fill = "#09D261"] {
+  #main > footer ._2mjJG path {
     fill: var(--green) !important;
   }
-  #main > footer [fill = "#E53935"] {
+  #main > footer ._2Fi6F path {
     fill: var(--red) !important;
   }
   #main > footer ._1vDUw {
