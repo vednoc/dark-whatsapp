@@ -10,7 +10,10 @@
 @license      MIT
 @preprocessor stylus
 
-@var checkbox v3         '[DEV]: Enable v3 mode' 0
+@var checkbox v3         '[DEV]: Enable v3 mode        ' 1
+@var color    next_bg    '[Dev]: Base background color ' #1f232a
+@var color    next_fg    '[Dev]: Base foreground color ' #eeeeee
+
 @var text     ui_font    'Custom UI font' ''font_name''
 @var text     radius-g   'Custom rounded corners for menus' 4px
 @var text     radius-i   'Custom rounded corners for input area' 4px
@@ -95,8 +98,8 @@
     'Custom colors    ': 'custom',
 }
 
-@var color    dark       'Color: Primary background   ' #1f232a
-@var color    darken     'Color: Highlight background ' #252A33
+@var color    _dark      'Color: Primary background   ' #1f232a
+@var color    _darken    'Color: Highlight background ' #252A33
 @var color    darker     'Color: Secondary background ' #333943
 @var color    light      'Color: Primary foreground   ' #e9e9e9
 @var color    lighter    'Color: Secondary foreground ' #a1a1a1
@@ -124,46 +127,61 @@ c(x, y = 0, z = 0, xi = 1, yi = 1, zi = 1) {
     if z is a 'call' or z is a 'rgba' { background-color: zi is 0? z : z i }
 }
 
+// V3.
+if ( v3 == 1 ) {
+// Bare RGB mixin.
+/// Converts HEX to bare rrr-ggg-bbb format.
 to_rgb(input) {
     unquote(slice(s('%s', rgba(input, 0)), 5, -3))
 }
 
-i = !important;
+i  = !important
+_d = darken
+_l = lighten
+BG = next_bg
+FG = next_fg
+AC = next_ac
 
-if ( v3 == 1 ) {
+// Color generator.
+if(dark(BG)) {
+    a1 =  15%; a2 =  20%; a3 =  25%; a4 =  35%; a5 =  50%;
+    lum = luminosity(BG)
+    /// TODO: Implement more rules.
+    if(lum <= 0.5) {
+        b1 =  08%; b2 =  40%; b3 =  16%; b4 =  24%;
+        f1 =  15%; f2 =  20%; f3 =  25%; f4 =  35%; f5 =  50%;
+    }
+    if(lum <= 0.02) {
+        b1 = -04%; b2 = +18%; b3 = -08%; b4 = -12%;
+        f1 =  15%; f2 =  20%; f3 =  25%; f4 =  35%; f5 =  50%;
+    }
+/// NOTE: Added just so that Stylus doesn't error out for using a light color.
+} else {
+    b1 =  06%; b2 =  24%; b3 =  12%; b4 =  18%;
+    f1 = -04%; f2 = -08%; f3 = -12%; f4 = -20%; f5 = -28%;
+    a1 =  15%; a2 =  20%; a3 =  25%; a4 =  35%; a5 =  50%;
+}
+
+bg = {
+    '-0':    BG,
+    '-1': _d(BG, b1),
+    '-2': _d(BG, b2),
+    '-3': _d(BG, b3),
+    '-4': _d(BG, b4),
+}
+fg = {
+    '-0':    FG,
+    '-1': _d(FG, f1),
+    '-2': _d(FG, f2),
+    '-3': _d(FG, f3),
+    '-4': _d(FG, f4),
+    '-5': _d(FG, f5),
+}
+
+define('bg' + key, val) for key, val in bg
+define('fg' + key, val) for key, val in fg
+
 @-moz-document domain('web.whatsapp.com') {
-    input = #232629;
-
-    if (dark(input)) {
-        output = 'dark mode styles';
-        b1 = input;
-        b2 = darken(input, 15%);
-        b3 = darken(input, 30%);
-        f1 = #ccc;
-        f2 = #aaa;
-
-        if (luminosity(input) < 0.035) {
-            output = 'edge-case dark mode styles';
-            b1 = input;
-            b2 = lighten(input, 08%);
-            b3 = lighten(input, 16%);
-        }
-    } else {
-        output = 'light mode styles';
-        b1 = input;
-        b2 = darken(input, 06%);
-        b3 = darken(input, 12%);
-        f1 = #333;
-        f2 = #555;
-    }
-    :root {
-        --dark:    b1 i;
-        --darken:  b2 i;
-        --darker:  b3 i;
-        --light:   f1 i;
-        --lighter: f2 i;
-    }
-
     // V3 exploration.
     :root {
         /// WA variables.
@@ -697,8 +715,8 @@ if ( v3 == 1 ) {
             --msg-l     : lighten(#424242, 5%);
             --msg-r     : lighten(#333333, 4%);
         } else {
-            --dark      : dark;
-            --darken    : darken;
+            --dark      : _dark;
+            --darken    : _darken;
             --darker    : darker;
             --light     : light;
             --lighter   : lighter;
