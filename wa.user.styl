@@ -676,15 +676,24 @@ define('ac' + key, val) for key, val in ac
         --shadow       : sh;
         --sh-h         : sh-h;
         --bshadow      : 0 2px 4px var(--shadow);
-        scrollbar-color: var(--darker) var(--shadow);
-        * { scrollbar-width: thin i }
+        --version   : 'Dark-WhatsApp NEXT — June 4th, 2020';
+        --message   : 'Towards v3 of DWA! The last update broke too many things.';
+        --changes   : 'https://github.com/vednoc/dark-whatsapp';
+        * {
+            scrollbar-width: thin i
+            scrollbar-color: var(--bg-3) var(--shadow);
+            &::-webkit-scrollbar {
+                &-thumb { background: var(--ac-3) i }
+                &-track { background: var(--shadow) i }
+            }
+        }
     }
 
     /// Custom intro image.
-    svg_bg = to_svg(bg-3)
+    svg_bg = to_svg(bg-2)
     svg_ac = to_svg(ac-0)
     :root {
-        _1  = "data:image/svg+xmlutf8,<svg xmlns='http://www.w3.org/2000/svg'  "
+        _1  = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  "
         _1 += "height='256' width='256'><g stroke='"
         _2  = "'><path d='M128.4901 30.8659a95.4375 95.4375 0 00-95.4375 95.4375"
         _2 += " 95.4375 95.4375 0 0014.168 50.0332L35.6698 221.276l44.7989-12.49"
@@ -714,10 +723,30 @@ define('ac' + key, val) for key, val in ac
         /// Intro image.
         [data-asset-intro-image-light] {
             max-width: 200px
-            max-height: @max-width
-            background-image: var(--intro-image) i
+            max-height: 200px
+            background-image: var(--intro-image)
             transition: opacity 0.6s ease
             border-radius: 0 i
+            + div h1 + div[class] {
+                font-size: 0;
+                c: fg-0;
+                &::before {
+                    display: block;
+                    font-size: 16px;
+                    margin-bottom: -16px;
+                    white-space: pre-wrap;
+                    content: var(--message) ' \A\A ' var(--changes);
+                }
+                &::after {
+                    display: block;
+                    font-size: 16px;
+                    margin-top: 16px;
+                    padding-top: 24px;
+                    margin-bottom: -16px;
+                    content: var(--version);
+                    border-top: 1px solid bg-4;
+                }
+            }
         }
 
         /// Chat image.
