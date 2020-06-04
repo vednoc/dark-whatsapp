@@ -13,6 +13,7 @@
 @var checkbox v3         '[DEV]: Enable v3 mode        ' 1
 @var color    next_bg    '[Dev]: Base background color ' #1f232a
 @var color    next_fg    '[Dev]: Base foreground color ' #eeeeee
+@var color    next_ac    '[Dev]: Base accent color     ' #7289da
 
 @var text     ui_font    'Custom UI font' ''font_name''
 @var text     radius-g   'Custom rounded corners for menus' 4px
@@ -177,9 +178,18 @@ fg = {
     '-4': _d(FG, f4),
     '-5': _d(FG, f5),
 }
+ac = {
+    '-0':    AC,
+    '-1': _d(AC, a1),
+    '-2': _d(AC, a2),
+    '-3': _d(AC, a3),
+    '-4': _d(AC, a4),
+    '-5': _d(AC, a5),
+}
 
 define('bg' + key, val) for key, val in bg
 define('fg' + key, val) for key, val in fg
+define('ac' + key, val) for key, val in ac
 
 @-moz-document domain('web.whatsapp.com') {
     // V3 exploration.
