@@ -141,6 +141,7 @@ to_svg(input) {
     s('\%23%s', unquote(substr(s('%s', input), 1, 6)));
 }
 
+t  = transparent
 i  = !important
 _d = darken
 _l = lighten
@@ -709,6 +710,7 @@ define('ac' + key, val) for key, val in ac
     body {
         background-image: none i
         c: var(--fg-0) 0 var(--bg-0)
+
         /// Intro image.
         [data-asset-intro-image-light] {
             max-width: 200px
@@ -717,26 +719,80 @@ define('ac' + key, val) for key, val in ac
             transition: opacity 0.6s ease
             border-radius: 0 i
         }
+
         /// Chat image.
         [data-asset-chat-background-light] { filter: invert(1) i }
+    }
+
+    /// Modals.
+    .overlay {
+        /// -> Fix headers.
+        /.eJ0yJ { c: 0 0 t }
+        /// Media/Avatar viewers have different headers. @upstream
+        ._21ltg, > .KeLEe {
+            c: 0 0 bg-3;
+            border-bottom: 1px solid bg-5 i
+        }
+        /// -> Fix media selection.
+        /._1KWct { c: 0 bg-5 bg-3 }
     }
 
     /// Loading.
     [id *= 'startup'] {
         c: 0 0 bg-0
+
+        /// Progress bar.
         /progress {
-            c: 0 0 darker
+            c: 0 0 bg-2
             &[value]::-moz-progress-bar { c: 0 0 ac-0 }
-            /::-moz-progress-bar { c: 0 0 bg-2 }
+            /::-moz-progress-bar { c: 0 0 bg-4 }
+            /::-webkit-progress {
+                &-bar { c: 0 0 bg-4 }
+                &-value { c: 0 0 ac-0 }
+            }
         }
     }
 
+    /// App.
+    #app > div > [tabindex] {
+        background: none i
+        border-radius: 0.25rem i
+        border: 1px solid bg-5 i
+        box-shadow: 0 2px 4px sh
+
+        /// Search.
+        .gQzdc, ._3qx7_ {
+            c: 0 0 bg-3
+            border-bottom: 1px solid bg-5 i
+            &::after { display: none i }
+        }
+
+        /// Right pane divider.
+        ._14VS3 > ._1V8rX {
+            border-left: 1px solid bg-5 i
         }
     }
-    #app > div > .app {
-        background: none i;
-        border-radius: 0.25rem;
-        border: 1px solid darker i;
+
+    #main {
+        /// Reset header.
+        > header {
+            border-right: none i
+            border-bottom: 1px solid i
+            c: 0 bg-4
+            /// Hide borders.
+            &::after { content: unset i }
+        }
+
+        /// Remove text shadow.
+        ._1E1g0 {
+            font-weight: bold i
+            text-shadow: none i
+        }
+
+        /// Footer.
+        > footer {
+            border-top: 1px solid bg-5 i
+        }
     }
 }
 } else {
