@@ -705,26 +705,32 @@ define('ac' + key, val) for key, val in ac
         --intro-image: _i
     }
 
+    /// Global.
     body {
-        background-image: none i;
-        c: var(--fg-0) 0 var(--bg-0);
+        background-image: none i
+        c: var(--fg-0) 0 var(--bg-0)
         /// Intro image.
         [data-asset-intro-image-light] {
             max-width: 200px
             max-height: @max-width
             background-image: var(--intro-image) i
-            transition: opacity 0.6s ease;
+            transition: opacity 0.6s ease
             border-radius: 0 i
         }
         /// Chat image.
         [data-asset-chat-background-light] { filter: invert(1) i }
     }
+
+    /// Loading.
     [id *= 'startup'] {
-        c: 0 0 dark;
+        c: 0 0 bg-0
         /progress {
-            c: 0 0 darker;
-            &[value]::-moz-progress-bar { c: 0 0 accent }
-            /::-moz-progress-bar { c: 0 0 darker }
+            c: 0 0 darker
+            &[value]::-moz-progress-bar { c: 0 0 ac-0 }
+            /::-moz-progress-bar { c: 0 0 bg-2 }
+        }
+    }
+
         }
     }
     #app > div > .app {
