@@ -144,21 +144,21 @@ FG = next_fg
 AC = next_ac
 
 // Color generator.
+/// TODO: Needs more polish.
 if(dark(BG)) {
-    a1 =  15%; a2 =  20%; a3 =  25%; a4 =  35%; a5 =  50%;
+    a1 =  15%; a2 =  20%; a3 =  25%; a4 =  35%; a5 =  75%;
     lum = luminosity(BG)
-    /// TODO: Implement more rules.
     if(lum <= 0.5) {
-        b1 =  08%; b2 =  40%; b3 =  16%; b4 =  24%;
+        b1 =  08%; b2 =  40%; b3 =  16%; b4 =  24%; b5 =  32%;
         f1 =  15%; f2 =  20%; f3 =  25%; f4 =  35%; f5 =  50%;
     }
     if(lum <= 0.02) {
-        b1 = -04%; b2 = +18%; b3 = -08%; b4 = -12%;
+        b1 = -04%; b2 = +18%; b3 = -08%; b4 = -12%; b5 = -16%;
         f1 =  15%; f2 =  20%; f3 =  25%; f4 =  35%; f5 =  50%;
     }
 /// NOTE: Added just so that Stylus doesn't error out for using a light color.
 } else {
-    b1 =  06%; b2 =  24%; b3 =  12%; b4 =  18%;
+    b1 =  06%; b2 =  24%; b3 =  12%; b4 =  18%; b4 =  24%;
     f1 = -04%; f2 = -08%; f3 = -12%; f4 = -20%; f5 = -28%;
     a1 =  15%; a2 =  20%; a3 =  25%; a4 =  35%; a5 =  50%;
 }
@@ -169,6 +169,7 @@ bg = {
     '-2': _d(BG, b2),
     '-3': _d(BG, b3),
     '-4': _d(BG, b4),
+    '-5': _d(BG, b5),
 }
 fg = {
     '-0':    FG,
@@ -179,12 +180,12 @@ fg = {
     '-5': _d(FG, f5),
 }
 ac = {
-    '-0':    AC,
-    '-1': _d(AC, a1),
-    '-2': _d(AC, a2),
-    '-3': _d(AC, a3),
-    '-4': _d(AC, a4),
-    '-5': _d(AC, a5),
+    '-0':         AC,
+    '-1': mix(BG, AC, a1),
+    '-2': mix(BG, AC, a2),
+    '-3': mix(BG, AC, a3),
+    '-4': mix(BG, AC, a4),
+    '-5': mix(BG, AC, a5),
 }
 
 define('bg' + key, val) for key, val in bg
@@ -675,11 +676,11 @@ define('ac' + key, val) for key, val in ac
 
     body {
         background-image: none i;
-        c: var(--light) 0 var(--dark);
+        c: var(--fg-0) 0 var(--bg-0);
         /// Intro image.
-        [data-asset-intro-image] { filter: opacity(0.5) i }
+        [data-asset-intro-image-light] { filter: opacity(0.5) i }
         /// Chat image.
-        [data-asset-chat-background] { filter: invert(1) i }
+        [data-asset-chat-background-light] { filter: invert(1) i }
     }
     [id *= 'startup'] {
         c: 0 0 dark;
