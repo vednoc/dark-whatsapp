@@ -152,34 +152,26 @@ AC = next_ac
 // Color generator.
 /// TODO: Needs more polish.
 if(dark(BG)) {
-    a1 =  15%; a2 =  20%; a3 =  25%; a4 =  35%; a5 =  75%;
-    lum = luminosity(BG)
-    if(lum <= 0.5) {
-        b1 =  08%; b2 =  40%; b3 =  16%; b4 =  24%; b5 =  32%;
-        f1 =  15%; f2 =  20%; f3 =  25%; f4 =  35%; f5 =  50%;
-    }
-    if(lum <= 0.02) {
-        b1 = -04%; b2 = +18%; b3 = -08%; b4 = -12%; b5 = -16%;
-        f1 =  15%; f2 =  20%; f3 =  25%; f4 =  35%; f5 =  50%;
-    }
-/// NOTE: Added just so that Stylus doesn't error out for using a light color.
+    a1 =  10%; a2 =  20%; a3 =  30%; a4 =  70%; a5 =  80%;
+    b1 =  10%; b2 = -05%; b3 = -10%; b4 = -15%; b5 = -20%;
+    f1 = -10%; f2 =  06%; f3 =  12%; f4 =  24%; f5 =  40%;
 } else {
-    b1 =  06%; b2 =  24%; b3 =  12%; b4 =  18%; b4 =  24%;
-    f1 = -04%; f2 = -08%; f3 = -12%; f4 = -20%; f5 = -28%;
-    a1 =  15%; a2 =  20%; a3 =  25%; a4 =  35%; a5 =  50%;
+    a1 =  10%; a2 =  15%; a3 =  30%; a4 =  60%; a5 =  70%;
+    b1 = -10%; b2 =  08%; b3 =  16%; b4 =  24%; b5 =  32%;
+    f1 = -05%; f2 = -10%; f3 = -15%; f4 = -20%; f5 = -30%;
 }
 
 bg = {
-    '-0':    BG,
-    '-1': _d(BG, b1),
+    '-0': _d(BG, b1),
+    '-1': _d(BG, 0%),
     '-2': _d(BG, b2),
     '-3': _d(BG, b3),
     '-4': _d(BG, b4),
     '-5': _d(BG, b5),
 }
 fg = {
-    '-0':    FG,
-    '-1': _d(FG, f1),
+    '-0': _d(FG, f1),
+    '-1': _d(FG, 0%),
     '-2': _d(FG, f2),
     '-3': _d(FG, f3),
     '-4': _d(FG, f4),
@@ -594,6 +586,8 @@ define('ac' + key, val) for key, val in ac
         --bg-3-rgb     : to_rgb(bg-3)
         --bg-4         : bg-4 i
         --bg-4-rgb     : to_rgb(bg-4)
+        --bg-5         : bg-5 i
+        --bg-5-rgb     : to_rgb(bg-5)
         --fg-0         : fg-0 i
         --fg-0-rgb     : to_rgb(fg-0)
         --fg-1         : fg-1 i
