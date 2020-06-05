@@ -665,9 +665,11 @@ define('ac' + key, val) for key, val in ac
         --bg-pos       : bg_pos
         --bg-rep       : bg_rep
 
-        * {
-            scrollbar-width: thin i
-            scrollbar-color: var(--bg-3) var(--shadow);
+        /\*{
+            @supports (scrollbar-width: thin) {
+                scrollbar-width: thin i
+                scrollbar-color: var(--ac-3) #88888815;
+            }
             &::-webkit-scrollbar {
                 &-thumb { background: var(--ac-3) i }
                 &-track { background: var(--shadow) i }
