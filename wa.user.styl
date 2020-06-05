@@ -10,6 +10,11 @@
 @license      MIT
 @preprocessor stylus
 
+@var checkbox v3         '[DEV]: Enable v3 mode        ' 1
+@var color    next_bg    '[Dev]: Base background color ' #1f232a
+@var color    next_fg    '[Dev]: Base foreground color ' #eeeeee
+@var color    next_ac    '[Dev]: Base accent color     ' #7289da
+
 @var text     ui_font    'Custom UI font' ''font_name''
 @var text     radius-g   'Custom rounded corners for menus' 4px
 @var text     radius-i   'Custom rounded corners for input area' 4px
@@ -94,8 +99,8 @@
     'Custom colors    ': 'custom',
 }
 
-@var color    dark       'Color: Primary background   ' #1f232a
-@var color    darken     'Color: Highlight background ' #252A33
+@var color    _dark      'Color: Primary background   ' #1f232a
+@var color    _darken    'Color: Highlight background ' #252A33
 @var color    darker     'Color: Secondary background ' #333943
 @var color    light      'Color: Primary foreground   ' #e9e9e9
 @var color    lighter    'Color: Secondary foreground ' #a1a1a1
@@ -113,6 +118,671 @@
 @var color    sh-h       'Color: Shadow heavy         ' #00000035
 ==/UserStyle== */
 
+// Color mixin.
+/// All colors: `c: fg bd bg;`
+/// Only border-color: `c: 0 bd;`
+c(x, y = 0, z = 0, xi = 1, yi = 1, zi = 1) {
+    i = !important;
+    if x is a 'call' or x is a 'rgba' {            color: xi is 0? x : x i }
+    if y is a 'call' or y is a 'rgba' {     border-color: yi is 0? y : y i }
+    if z is a 'call' or z is a 'rgba' { background-color: zi is 0? z : z i }
+}
+
+// V3.
+if ( v3 == 1 ) {
+// Bare RGB mixin.
+/// Converts HEX to bare rrr-ggg-bbb format.
+to_rgb(input) {
+    unquote(slice(s('%s', rgba(input, 0)), 5, -3))
+}
+
+// Convert to SVG-friendly colors.
+to_svg(input) {
+    s('\%23%s', unquote(substr(s('%s', input), 1, 6)));
+}
+
+t  = transparent
+i  = !important
+_d = darken
+_l = lighten
+BG = next_bg
+FG = next_fg
+AC = next_ac
+
+// Color generator.
+/// TODO: Needs more polish.
+if(dark(BG)) {
+    a1 =  10%; a2 =  20%; a3 =  30%; a4 =  70%; a5 =  80%;
+    b1 =  10%; b2 = -05%; b3 = -10%; b4 = -15%; b5 = -20%;
+    f1 = -10%; f2 =  06%; f3 =  12%; f4 =  24%; f5 =  40%;
+} else {
+    a1 =  10%; a2 =  15%; a3 =  30%; a4 =  60%; a5 =  70%;
+    b1 = -10%; b2 =  08%; b3 =  16%; b4 =  24%; b5 =  32%;
+    f1 = -05%; f2 = -10%; f3 = -15%; f4 = -20%; f5 = -30%;
+}
+
+bg = {
+    '-0': _d(BG, b1),
+    '-1': _d(BG, 0%),
+    '-2': _d(BG, b2),
+    '-3': _d(BG, b3),
+    '-4': _d(BG, b4),
+    '-5': _d(BG, b5),
+}
+fg = {
+    '-0': _d(FG, f1),
+    '-1': _d(FG, 0%),
+    '-2': _d(FG, f2),
+    '-3': _d(FG, f3),
+    '-4': _d(FG, f4),
+    '-5': _d(FG, f5),
+}
+ac = {
+    '-0':         AC,
+    '-1': mix(BG, AC, a1),
+    '-2': mix(BG, AC, a2),
+    '-3': mix(BG, AC, a3),
+    '-4': mix(BG, AC, a4),
+    '-5': mix(BG, AC, a5),
+}
+
+define('bg' + key, val) for key, val in bg
+define('fg' + key, val) for key, val in fg
+define('ac' + key, val) for key, val in ac
+
+@-moz-document domain('web.whatsapp.com') {
+    // V3 exploration.
+    :root:not(#z) {
+        /// WA variables.
+        --teal: var(--ac-0) //#009688;
+        --teal-rgb: var(--ac-0-rgb) //0,150,136;
+        --teal-light: var(--ac-1) //#1de9b6;
+        --teal-light-rgb: var(--ac-1-rgb) //29,233,182;
+        --teal-lighter: var(--ac-2) //#00bfa5;
+        --teal-lighter-rgb: var(--ac-2) //0,191,165;
+        --active-tab-marker: var(--ac-0) //#00af9c;
+        --active-tab-marker-rgb: var(--ac-0-rgb) //0,175,156;
+        --app-background-stripe: var(--bg-1) //#091e1f;
+        --app-background-stripe-rgb: var(--bg-1-rgb) //9,30,31;
+        --app-background: var(--bg-0) //#080e12;
+        --app-background-rgb: var(--bg-0-rgb) //8,14,18;
+        --app-background-deeper: var(--bg-0) //#080e12;
+        --app-background-deeper-rgb: var(--bg-0-rgb) //8,14,18;
+        --audio-progress-incoming: var(--green) //#3bb463;
+        --audio-progress-incoming-rgb: var(--green-rgb) //59,180,99;
+        --audio-progress-outgoing: var(--fg-5) //#5f8884;
+        --audio-progress-outgoing-rgb: var(--fg-5-rgb) //95,136,132;
+        --audio-progress-played-incoming: var(--blue) //#5ba0c3;
+        --audio-progress-played-incoming-rgb: var(--blue-rgb) //91,160,195;
+        --audio-progress-played-outgoing: var(--blue) //#55a5c5;
+        --audio-progress-played-outgoing-rgb: var(--blue-rgb) //85,165,197;
+        --audio-track-incoming: var(--fg-4) //#374248;
+        --audio-track-incoming-rgb: var(--fg-4-rgb) //55,66,72;
+        --audio-track-outgoing: var(--fg-4) //#1d5852;
+        --audio-track-outgoing-rgb: var(--fg-4-rgb) //29,88,82;
+        --avatar-background: var(--bg-1) //#101d24;
+        --avatar-background-rgb: var(--bg-1-rgb) //16,29,36;
+        --avatar-border: var(--fg-3) //#a5aaad;
+        --avatar-border-rgb: var(--fg-3-rgb) //165,170,173;
+        --avatar-placeholder-background: var(--bg-5) //#6c7478;
+        --avatar-placeholder-background-rgb: var(--bg-5-rgb) //108,116,120;
+        --avatar-placeholder-primary: var(--fg-3) //#d6d8d9;
+        --avatar-placeholder-primary-rgb: var(--fg-3-rgb) //214,216,217;
+        --background-default: var(--bg-1) //#101d24;
+        --background-default-rgb: var(--bg-1-rgb) //16,29,36;
+        --background-default-active: var(--bg-3) //#202c32;
+        --background-default-active-rgb: var(--bg-3-rgb) //32,44,50;
+        --background-default-hover: var(--bg-2) //#17232a;
+        --background-default-hover-rgb: var(--bg-2-rgb) //23,35,42;
+        --border-bubble: var(--bg-5) //#f1f1f20f;
+        --border-bubble-rgb: var(--fg-3-rgb) //241,241,242;
+        --border-default: var(--bg-3) //#1b282e;
+        --border-default-rgb: var(--bg-3-rgb) //27,40,46;
+        --border-list: var(--bg-3) //#1b282e;
+        --border-list-rgb: var(--bg-3-rgb) //27,40,46;
+        --border-panel: var(--bg-5) //#28333a;
+        --border-panel-rgb: var(--bg-5-rgb) //40,51,58;
+        --border-strong: var(--bg-5) //#343f45;
+        --border-strong-rgb: var(--bg-5-rgb) //52,63,69;
+        --border-stronger: var(--bg-5) //#f1f1f20f;
+        --border-stronger-rgb: var(--fg-5-rgb) //241,241,242;
+        --bubble-meta: var(--fg-3) //#f1f1f299;
+        --bubble-meta-rgb: var(--fg-3-rgb) //241,241,242;
+        --bubble-meta-icon: var(--fg-3) //#f1f1f299;
+        --bubble-meta-icon-rgb: var(--fg-3-rgb) //241,241,242;
+        --butterbar-battery-background: mix(BG, red, 70%) //#e05b52;
+        --butterbar-battery-background-rgb: to_rgb(mix(BG, red, 70%)) //224,91,82;
+        --butterbar-battery-primary: var(--fg-0) //#f1f1f2f5;
+        --butterbar-battery-primary-rgb: var(--fg-0-rgb) //241,241,242;
+        --butterbar-battery-secondary: var(--fg-4) //#f1f1f2cc;
+        --butterbar-battery-secondary-rgb: var(--fg-4-rgb) //241,241,242;
+        --butterbar-connection-background: mix(BG, yellow, 75%) //#febc2c;
+        --butterbar-connection-background-rgb: to_rgb(mix(BG, yellow, 75%)) //254,188,44;
+        --butterbar-connection-primary: var(--bg-3) //#1c282ff5;
+        --butterbar-connection-primary-rgb: var(--bg-3-rgb) //28,40,47;
+        --butterbar-connection-secondary: var(--bg-3) //#1c282fd9;
+        --butterbar-connection-secondary-rgb: var(--bg-3-rgb) //28,40,47;
+        --butterbar-default-background: mix(BG, blue, 70%) //#39c;
+        --butterbar-default-background-rgb: to_rgb(mix(BG, blue, 70%)) //51,153,204;
+        --butterbar-icon: var(--fg-1) //#f1f1f2cc;
+        --butterbar-icon-rgb: var(--fg-1-rgb) //241,241,242;
+        --butterbar-primary: var(--fg-0) //#f1f1f2f5;
+        --butterbar-primary-rgb: var(--fg-0-rgb) //241,241,242;
+        --butterbar-secondary: var(--fg-4) //#f1f1f2d9;
+        --butterbar-secondary-rgb: var(--fg-4-rgb) //241,241,242;
+        --butterbar-update-background: var(--ac-0) //#00af9c;
+        --butterbar-update-background-rgb: var(--ac-0-rgb) //0,175,156;
+        --button-alternative: var(--ac-1) //#68bbe4;
+        --button-alternative-rgb: var(--ac-1-rgb) //104,187,228;
+        --button-alternative-background: var(--bg-3) //#222e35;
+        --button-alternative-background-rgb: var(--bg-3-rgb) //34,46,53;
+        --button-background-disabled: var(--bg-2) //#253137;
+        --button-background-disabled-rgb: var(--bg-2-rgb) //37,49,55;
+        --button-bubble: var(--ac-0) //#00af9cb3;
+        --button-bubble-rgb: var(--ac-0-rgb) //0,175,156;
+        --button-primary: var(--white) //#101d24;
+        --button-primary-rgb: var(--white-rgb) //16,29,36;
+        --button-primary-background: var(--ac-0) //#00af9c;
+        --button-primary-background-rgb: var(--ac-0-rgb) //0,175,156;
+        --button-primary-background-hover: var(--ac-3) //#00c3ae;
+        --button-primary-background-hover-rgb: var(--ac-3-rgb) //0,195.4,174.18514;
+        --button-round-background: var(--ac-0) //#00af9c;
+        --button-round-background-rgb: var(--ac-0-rgb) //0,175,156;
+        --button-secondary: var(--ac-0) //#00af9c;
+        --button-secondary-rgb: var(--ac-0-rgb) //0,175,156;
+        --button-secondary-background: transparent;
+        --button-secondary-background-rgb: 0,0,0;
+        --button-secondary-background-hover: #f1f1f20d;
+        --button-secondary-background-hover-rgb: var(--fg-3-rgb) //241,241,242;
+        --button-secondary-hover: var(--ac-0) //#00af9c;
+        --button-secondary-hover-rgb: var(--ac-0-rgb) //0,175,156;
+        --chat-marker: var(--fg-3) //#999;
+        --chat-marker-rgb: var(--fg-3-rgb) //153,153,153;
+        --chat-marker-admin: var(--ac-0) //#00af9c;
+        --chat-marker-admin-rgb: var(--ac-0-rgb) //0,175,156;
+        --chat-marker-admin-border: var(--ac-0) //#00af9cb3;
+        --chat-marker-admin-border-rgb: var(--ac-0-rgb) //0,175,156;
+        --chat-marker-border: var(--fg-3) //#999999b3;
+        --chat-marker-border-rgb: var(--fg-3-rgb) //153,153,153;
+        --chatlist-icon: var(--fg-3) //#f1f1f299;
+        --chatlist-icon-rgb: var(--fg-3-rgb) //241,241,242;
+        --checkbox-background: var(--ac-0) //#00af9c;
+        --checkbox-background-rgb: var(--ac-0-rgb) //0,175,156;
+        --checkbox-mark: var(--white) //#101d24;
+        --checkbox-mark-rgb: var(--white-rgb) //16,29,36;
+        --compose-background: var(--bg-1) //#101d24;
+        --compose-background-rgb: var(--bg-1-rgb) //16,29,36;
+        --compose-background-focused: #203946;
+        --compose-background-focused-rgb: 32,57,70;
+        --compose-border-focused: #274656;
+        --compose-border-focused-rgb: 39,70,86;
+        --compose-panel-background: var(--bg-3) //#222e35;
+        --compose-panel-background-rgb: var(--bg-3-rgb) //34,46,53;
+        --conversation-panel-background: var(--bg-2) //#0b1419;
+        --conversation-panel-background-rgb: var(--bg-2-rgb) //11.29231,20.46731,25.40769;
+        --conversation-panel-border: var(--bg-5) //#f1f1f214;
+        --conversation-panel-border-rgb: var(--fg-3-rgb) //241,241,242;
+        --danger: var(--red) //#ef697a;
+        --danger-rgb: var(--red-rgb) //239,105,122;
+        --drawer-background: var(--bg-3) //#101d24;
+        --drawer-background-rgb: var(--bg-3-rgb) //16,29,36;
+        --drawer-background-deep: var(--bg-0) //#080e12;
+        --drawer-background-deep-rgb: var(--bg-0-rgb) //8,14,18;
+        --drawer-gallery-background: var(--bg-1) //#101d24;
+        --drawer-gallery-background-rgb: var(--bg-1-rgb) //16,29,36;
+        --drawer-header-title: var(--fg-1) //#d6d8d9;
+        --drawer-header-title-rgb: var(--fg-1-rgb) //214,216,217;
+        --drawer-section-background: var(--bg-1) //#101d24;
+        --drawer-section-background-rgb: var(--bg-1-rgb) //16,29,36;
+        --dropdown-background: var(--bg-2) //#253137;
+        --dropdown-background-rgb: var(--bg-2-rgb) //37,49,55;
+        --dropdown-background-hover: var(--bg-3) //#202c33;
+        --dropdown-background-hover-rgb: var(--bg-3-rgb) //32,44,51;
+        --empty-state-background: var(--bg-3) //#1c282f;
+        --empty-state-background-rgb: var(--bg-3-rgb) //28,40,47;
+        --empty-state-icon: #757c81;
+        --empty-state-icon-rgb: 117,124,129;
+        --focus: var(--ac-3) //#68bbe4;
+        --focus-rgb: var(--ac-3-rgb) //104,187,228;
+        --focus-animation: var(--ac-3) //#68bbe442;
+        --focus-animation-rgb: var(--ac-3-rgb) //104,187,228;
+        --focus-animation-deeper: var(--ac-3) //#68bbe452;
+        --focus-animation-deeper-rgb: var(--ac-3-rgb) //104,187,228;
+        --focus-lighter: var(--ac-3) //#68bbe41f;
+        --focus-lighter-rgb: var(--ac-3-rgb) //104,187,228;
+        --highlight: var(--ac-0) //#00af9c;
+        --highlight-rgb: var(--ac-0-rgb) //0,175,156;
+        --icon: var(--fg-3) //#80868b;
+        --icon-rgb: var(--fg-3-rgb) //128,134,139;
+        --icon-ack: var(--ac-0) //#34b7f1;
+        --icon-ack-rgb: var(--ac-0-rgb) //52,183,241;
+        --icon-disabled: var(--fg-5) //#3c464c;
+        --icon-disabled-rgb: var(--fg-5-rgb) //60,70,76;
+        --icon-fixed: var(--fg-3) //#80868b;
+        --icon-fixed-rgb: var(--fg-3-rgb) //128,134,139;
+        --icon-lighter: var(--fg-5) //#f1f1f245;
+        --icon-lighter-rgb: var(--fg-0-rgb) //241,241,242;
+        --icon-search-back: var(--ac-2) //#71787d;
+        --icon-search-back-rgb: var(--ac-2-rgb) //113,120,125;
+        --icon-strong: var(--fg-1) //#c4c7c9;
+        --icon-strong-rgb: var(--fg-1-rgb) //196,199,201;
+        --incoming-background: var(--bg-4) //#222e35;
+        --incoming-background-rgb: var(--bg-4-rgb) //34,46,53;
+        --incoming-background-deeper: var(--bg-3) //#1d272e;
+        --incoming-background-deeper-rgb: var(--bg-3-rgb) //29,39,46;
+        --incoming-background-highlight: #ccc;
+        --incoming-background-highlight-rgb: 204,204,204;
+        --incoming-primary: var(--fg-3) //#777d81;
+        --incoming-primary-rgb: var(--fg-3-rgb) //119,125,129;
+        --input-border-active: var(--ac-0) //#00af9c;
+        --input-border-active-rgb: var(--ac-0-rgb) //0,175,156;
+        --input-placeholder: var(--fg-4) //#6a7276;
+        --input-placeholder-rgb: var(--fg-4) //106,114,118;
+        --intro-background: var(--bg-2) //#222e35;
+        --intro-background-rgb: var(--bg-2-rgb) //34,46,53;
+        --intro-border: var(--ac-3) //#054740;
+        --intro-border-rgb: var(--ac-3-rgb) //5,71,64;
+        --inverse: #f1f1f2;
+        --inverse-rgb: var(--fg-3-rgb) //241,241,242;
+        --labels-icon: #f1f1f266;
+        --labels-icon-rgb: var(--fg-3-rgb) //241,241,242;
+        --link: var(--ac-0) //#68bbe4;
+        --link-rgb: var(--ac-0-rgb) //104,187,228;
+        --live-location-footer-background: var(--bg-1) //#101d24e6;
+        --live-location-footer-background-rgb: var(--bg-1-rgb) //16,29,36;
+        --live-location-glow: #25d3664d;
+        --live-location-glow-rgb: 37,211,102;
+        --live-location-glow-stale: #ff001f4d;
+        --live-location-glow-stale-rgb: 255,0,31;
+        --location-cluster-background: var(--bg-1) //#101d24;
+        --location-cluster-background-rgb: var(--bg-1-rgb) //16,29,36;
+        --media-editor-control: #1c313f;
+        --media-editor-control-rgb: 28,49,63;
+        --media-viewer-background: s('rgba(var(--bg-1-rgb), 0.95)') //#101d24fa;
+        --media-viewer-background-rgb: var(--bg-1-rgb) //16,29,36;
+        --media-viewer-button-background: var(--bg-3) //#1c282f;
+        --media-viewer-button-background-rgb: var(--bg-3-rgb) //28,40,47;
+        --media-viewer-button-icon: #f1f1f2;
+        --media-viewer-button-icon-rgb: var(--fg-3-rgb) //241,241,242;
+        --menu-tabs-list-active: var(--ac-0) //#00af9c;
+        --menu-tabs-list-active-rgb: var(--ac-0-rgb) //0,175,156;
+        --message-background-deep: var(--bg-0) //#080e1259;
+        --message-background-deep-rgb: var(--bg-0-rgb) //8,14,18;
+        --message-placeholder-icon: #cccccc4d;
+        --message-placeholder-icon-rgb: 204,204,204;
+        --message-selection-highlight: s('rgba(var(--ac-0-rgb), 0.1)') //#f1f1f20d;
+        --message-selection-highlight-rgb: var(--ac-0-rgb) //241,241,242;
+        --modal-backdrop: s('rgba(var(--bg-0-rgb), 0.95)') //#080e12d9;
+        --modal-backdrop-rgb: var(--bg-0-rgb) //8,14,18;
+        --modal-backdrop-solid: var(--bg-0) //#1c282f;
+        --modal-backdrop-solid-rgb: var(--bg-0-rgb) //28,40,47;
+        --modal-background: var(--bg-2) //#364147;
+        --modal-background-rgb: var(--bg-2-rgb) //54,65,71;
+        --notification-biz-background: var(--bg-3) //#1c282f;
+        --notification-biz-background-rgb: var(--bg-3-rgb) //28,40,47;
+        --notification-biz-text: #55fad9;
+        --notification-biz-text-rgb: 85,250,217;
+        --notification-e2e-background: var(--bg-3) //#1c282f;
+        --notification-e2e-background-rgb: var(--bg-3-rgb) //28,40,47;
+        --notification-e2e-icon: #fad964;
+        --notification-e2e-icon-rgb: 250,217,100;
+        --notification-e2e-text: #fad964;
+        --notification-e2e-text-rgb: 250,217,100;
+        --notification-text: #f1f1f266;
+        --notification-text-rgb: var(--fg-3-rgb) //241,241,242;
+        --outgoing-background: var(--ac-4) //#054740;
+        --outgoing-background-rgb: var(--ac-4-rgb) //5,71,64;
+        --outgoing-background-deeper: var(--ac-5) //#063b36;
+        --outgoing-background-deeper-rgb: var(--ac-5-rbg) //6,59,54;
+        --outgoing-background-highlight: #ccc;
+        --outgoing-background-highlight-rgb: 204,204,204;
+        --overlay: var(--bg-0) //#080e12;
+        --overlay-rgb: var(--bg-0-rgb) //8,14,18;
+        --panel-background: var(--bg-3) //#1c282f;
+        --panel-background-rgb: var(--bg-3-rgb) //28,40,47;
+        --panel-background-active: #1a262d;
+        --panel-background-active-rgb: 26,38,45;
+        --panel-background-colored: var(--bg-3) //#222e35;
+        --panel-background-colored-rgb: var(--bg-3-rgb) //34,46,53;
+        --panel-background-colored-deeper: var(--bg-3) //#222e35;
+        --panel-background-colored-deeper-rgb: var(--bg-3-rgb) //34,46,53;
+        --panel-background-deep: var(--bg-2) //#162026;
+        --panel-background-deep-rgb: var(--bg-2-rgb) //22,32,38;
+        --panel-background-deeper: var(--bg-2) //#1a252c;
+        --panel-background-deeper-rgb: var(--bg-3-rgb) //26,37,44;
+        --panel-background-hover: #1b272e;
+        --panel-background-hover-rgb: 27,39,46;
+        --panel-background-lighter: var(--bg-2) //#1a252c;
+        --panel-background-lighter-rgb: var(--bg-3-rgb) //26,37,44;
+        --panel-header-background: var(--bg-3) //#222e35;
+        --panel-header-background-rgb: var(--bg-3-rgb) //34,46,53;
+        --panel-header-icon: var(--fg-3) //#9ea3a6;
+        --panel-header-icon-rgb: var(--fg-3-rgb) //158,163,166;
+        --panel-primary: #f1f1f259;
+        --panel-primary-rgb: var(--fg-3-rgb) //241,241,242;
+        --payment-amount: #00a593;
+        --payment-amount-rgb: 0,164.8,146.90743;
+        --payment-status-failed: #ef697a;
+        --payment-status-failed-rgb: 239,105,122;
+        --payment-status-processing: var(--fg-1) //#f1f1f273;
+        --payment-status-processing-rgb: var(--fg-3-rgb) //241,241,242;
+        --payment-status-success: #40cf6c;
+        --payment-status-success-rgb: 64,207,108;
+        --payment-status-waiting: var(--fg-1) //#f1f1f273;
+        --payment-status-waiting-rgb: var(--fg-3-rgb) //241,241,242;
+        --photopicker-overlay-background: #212c31cc;
+        --photopicker-overlay-background-rgb: 33,44,49;
+        --popup-panel-background: var(--bg-2) //#080e1233;
+        --popup-panel-background-rgb: var(--bg-2-rgb) //8,14,18;
+        --primary: var(--fg-2) //#a5aaad;
+        --primary-rgb: var(--fg-2-rgb) //165,170,173;
+        --primary-strong: var(--fg-1) //#d4d5d7;
+        --primary-strong-rgb: var(--fg-1-rgb) //212,213,215;
+        --primary-stronger: var(--fg-0) //#f1f1f2de;
+        --primary-stronger-rgb: var(--fg-0-rgb) //241,241,242;
+        --primary-title: var(--fg-2) //#d4d5d7f7;
+        --primary-title-rgb: var(--fg-2-rgb) //212,213,215;
+        --product-thumb-background: var(--bg-3) //#1c282f;
+        --product-thumb-background-rgb: var(--bg-3-rgb) //28,40,47;
+        --product-thumb-background-deeper: #2b3e49;
+        --product-thumb-background-deeper-rgb: 43.232,61.76,72.568;
+        --ptt-blue: var(--blue) //#4fc3f7;
+        --ptt-blue-rgb: var(--blue-rgb) //79,195,247;
+        --ptt-button-cancel: var(--red) //#e53935cc;
+        --ptt-button-cancel-rgb: var(--red-rgb) //229,57,53;
+        --ptt-button-send: var(--green) //#09d261cc;
+        --ptt-button-send-rgb: var(--green) //9,210,97;
+        --ptt-gray: var(--fg-4) //#f1f1f266;
+        --ptt-gray-rgb: var(--fg-4-rgb) //241,241,242;
+        --ptt-green: var(--green) //#09d261;
+        --ptt-green-rgb: var(--green) //9,210,97;
+        --ptt-message-blue: var(--blue) //#68bbe4;
+        --ptt-message-blue-rgb: var(--blue-rgb) //104,187,228;
+        --quick-action-button: var(--fg-3) //#f1f1f280;
+        --quick-action-button-rgb: var(--fg-3-rgb) //241,241,242;
+        --quick-action-button-background: var(--bg-4) //#080e1299;
+        --quick-action-button-background-rgb: var(--bg-4-rgb) //8,14,18;
+        --rich-text-panel-background: var(--bg-3) //#1c282f;
+        --rich-text-panel-background-rgb: var(--bg-3-rgb) //28,40,47;
+        --secondary: var(--fg-3) //#f1f1f299;
+        --secondary-rgb: var(--fg-3-rgb) //241,241,242;
+        --secondary-light: var(--fg-2) //#f1f1f240;
+        --secondary-light-rgb: var(--fg-2-rgb) //241,241,242;
+        --secondary-lighter: var(--fg-1) //#f1f1f273;
+        --secondary-lighter-rgb: var(--fg-1-rgb) //241,241,242;
+        --secondary-stronger: var(--fg-0) //#f1f1f2cc;
+        --secondary-stronger-rgb: var(--fg-0-rgb) //241,241,242;
+        --shadow: var(--bg-0) //#000;
+        --shadow-rgb: var(--bg-0-rgb) //0,0,0;
+        --shadow-light: var(--bg-0) //#00000014;
+        --shadow-light-rgb: var(--bg-0-rgb) //0,0,0;
+        --spinner-default: var(--fg-3) //#75787a;
+        --spinner-default-rgb: var(--fg-3-rgb) //117,120,122;
+        --spinner-highlight: var(--ac-0) //#00af9c;
+        --spinner-highlight-rgb: var(--ac-0-rgb) //0,175,156;
+        --spinner-incoming: #60696e;
+        --spinner-incoming-rgb: 96,105,110;
+        --spinner-outgoing: #4c7a75;
+        --spinner-outgoing-rgb: 76,122,117;
+        --status-background: var(--bg-1) //#000;
+        --status-background-rgb: var(--bg-1-rgb) //0,0,0;
+        --status-background-hover: var(--bg-2) //#242424;
+        --status-background-hover-rgb: var(--bg-2-rgb) //36,36,36;
+        --status-primary: #fff;
+        --status-primary-rgb: 255,255,255;
+        --status-secondary: #ffffff8c;
+        --status-secondary-rgb: 255,255,255;
+        --status-secondary-stronger: #b3b3b3;
+        --status-secondary-stronger-rgb: 179,179,179;
+        --success: var(--ac-0) //#00af9c;
+        --success-rgb: var(--ac-0-rgb) //0,175,156;
+        --suspicious-background: #ef697acc;
+        --suspicious-background-rgb: 239,105,122;
+        --system-message-background: var(--ac-4) //#1e2a30;
+        --system-message-background-rgb: var(--ac-4-rgb) //30,42,48;
+        --system-message-text: var(--fg-1) //#f1f1f2de;
+        --system-message-text-rgb: 241,241,242;
+        --teal-hover: #00b7a1;
+        --teal-hover-rgb: 0,183,161;
+        --teal-pale: #5fc8bc;
+        --teal-pale-rgb: 95,200,188;
+        --thumb-border-active: var(--bg-2) //#75787a;
+        --thumb-border-active-rgb: var(--bg-2-rgb) //117,120,122;
+        --thumb-border-viewer-active: var(--fg-3) //#75787a;
+        --thumb-border-viewer-active-rgb: var(--fg-3-rgb) //117,120,122;
+        --toast-background: var(--bg-0) //#080e12f5;
+        --toast-background-rgb: var(--bg-0-rgb) //8,14,18;
+        --tooltip-background: #595959d9;
+        --tooltip-background-rgb: 89.25,89.25,89.25;
+        --typing: var(--ac-0) //#00af9c;
+        --typing-rgb: var(--ac-0-rgb) //0,175,156;
+        --unread-background: var(--bg-3) //#1c282f;
+        --unread-background-rgb: var(--bg-3-rgb) //28,40,47;
+        --unread-bar-background: var(--bg-0) //#080e124d;
+        --unread-bar-background-rgb: var(--bg-0-rgb) //8,14,18;
+        --unread-marker-background: var(--ac-0) //#00af9c;
+        --unread-marker-background-rgb: var(--ac-0-rgb) //0,175,156;
+        --unread-marker-text: var(--white) //#101d24;
+        --unread-marker-text-rgb: var(--white-rgb) //16,29,36;
+        --video-player-background: #000;
+        --video-player-background-rgb: 0,0,0;
+        --video-primary: #fff;
+        --video-primary-rgb: 255,255,255;
+        --voip-accept-background: #70db91;
+        --voip-accept-background-rgb: 112,219,145;
+        --voip-background: #262626;
+        --voip-background-rgb: 38,38,38;
+        --voip-background-deep: #000;
+        --voip-background-deep-rgb: 0,0,0;
+        --voip-primary: #fff;
+        --voip-primary-rgb: 255,255,255;
+        --voip-reject-background: #e54b40;
+        --voip-reject-background-rgb: 229,75,64;
+        --win32-title-primary: #fff;
+        --win32-title-primary-rgb: 255,255,255;
+
+        /// DWA variables.
+        --bg-0         : bg-0 i
+        --bg-0-rgb     : to_rgb(bg-0)
+        --bg-1         : bg-1 i
+        --bg-1-rgb     : to_rgb(bg-1)
+        --bg-2         : bg-2 i
+        --bg-2-rgb     : to_rgb(bg-2)
+        --bg-3         : bg-3 i
+        --bg-3-rgb     : to_rgb(bg-3)
+        --bg-4         : bg-4 i
+        --bg-4-rgb     : to_rgb(bg-4)
+        --bg-5         : bg-5 i
+        --bg-5-rgb     : to_rgb(bg-5)
+        --fg-0         : fg-0 i
+        --fg-0-rgb     : to_rgb(fg-0)
+        --fg-1         : fg-1 i
+        --fg-1-rgb     : to_rgb(fg-1)
+        --fg-2         : fg-2 i
+        --fg-2-rgb     : to_rgb(fg-2)
+        --fg-3         : fg-3 i
+        --fg-3-rgb     : to_rgb(fg-3)
+        --fg-4         : fg-4 i
+        --fg-4-rgb     : to_rgb(fg-4)
+        --fg-5         : fg-5 i
+        --fg-5-rgb     : to_rgb(fg-5)
+        --ac-0         : ac-0 i
+        --ac-0-rgb     : to_rgb(ac-0)
+        --ac-1         : ac-1 i
+        --ac-1-rgb     : to_rgb(ac-1)
+        --ac-2         : ac-2 i
+        --ac-2-rgb     : to_rgb(ac-2)
+        --ac-3         : ac-3 i
+        --ac-3-rgb     : to_rgb(ac-3)
+        --ac-4         : ac-4 i
+        --ac-4-rgb     : to_rgb(ac-4)
+        --ac-5         : ac-5 i
+        --ac-5-rgb     : to_rgb(ac-5)
+        --white        : white;
+        --white-rgb    : to_rgb(white);
+        --red          : red;
+        --red-rgb      : to_rgb(red);
+        --green        : green;
+        --green-rgb    : to_rgb(green);
+        --blue         : blue;
+        --blue-rgb     : to_rgb(blue);
+        --yellow       : yellow;
+        --yellow-rgb   : to_rgb(yellow);
+        --msg-l        : lighten(#2c313a, 5%);
+        --msg-r        : lighten(#252a33, 4%);
+        --t            : transparent;
+        --shadow       : sh;
+        --sh-h         : sh-h;
+        --bshadow      : 0 2px 4px var(--shadow);
+        --version   : 'Dark-WhatsApp NEXT — June 4th, 2020';
+        --message   : 'Towards v3 of DWA! The last update broke too many things.';
+        --changes   : 'https://github.com/vednoc/dark-whatsapp';
+        * {
+            scrollbar-width: thin i
+            scrollbar-color: var(--bg-3) var(--shadow);
+            &::-webkit-scrollbar {
+                &-thumb { background: var(--ac-3) i }
+                &-track { background: var(--shadow) i }
+            }
+        }
+    }
+
+    /// Custom intro image.
+    svg_bg = to_svg(bg-2)
+    svg_ac = to_svg(ac-0)
+    :root {
+        _1  = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  "
+        _1 += "height='256' width='256'><g stroke='"
+        _2  = "'><path d='M128.4901 30.8659a95.4375 95.4375 0 00-95.4375 95.4375"
+        _2 += " 95.4375 95.4375 0 0014.168 50.0332L35.6698 221.276l44.7989-12.49"
+        _2 += "8a95.4375 95.4375 0 0048.0214 12.9629 95.4375 95.4375 0 0095.4375"
+        _2 += "-95.4375 95.4375 95.4375 0 00-95.4375-95.4375z' fill='"
+        _3  = "' fill-rule='evenodd' stroke-width='18' stroke-linecap='square'/>"
+        _3 += "<path d='M97.8104 79.8463c-4.9671.0406-13.5028 2.0796-17.7812 14."
+        _3 += "8946-6.8318 20.4631 12.5737 43.3028 27.2438 57.4735 14.7975 14.29"
+        _3 += "38 43.1559 26.507 58.0098 21.08 20.5566-8.9065 15.2475-22.9479 15"
+        _3 += ".2475-22.9479l-22.9727-11.0878s-2.062-1.206-3.4146.5737c-1.0042 1"
+        _3 += ".3213-9.4409 11.3755-9.4409 11.3755s-1.449 1.668-3.827.7402c-5.75"
+        _3 += "74-2.2462-14.2018-7.4856-18.5314-10.7795-6.8875-5.2399-12.957-13."
+        _3 += "0846-16.9473-19.668-1.2556-2.5597.6953-4.709.6953-4.709s6.0303-8."
+        _3 += "2629 7.0176-9.5566c1.0068-1.3194.2539-3.3633.2539-3.3633l-10.539-"
+        _3 += "23.2285s-2.0334-.8212-5.0138-.7969z' fill='"
+        _4  = "' stroke-linejoin='round'/></g></svg>"
+        _i = s('url("%s%s%s%s%s%s%s")', unquote(_1), svg_ac, unquote(_2), svg_bg,
+                                        unquote(_3), svg_ac, unquote(_4))
+        --intro-image: _i
+    }
+
+    /// Global.
+    body {
+        background-image: none i
+        c: var(--fg-0) 0 var(--bg-0)
+
+        /// Intro image.
+        [data-asset-intro-image-light] {
+            max-width: 200px
+            max-height: 200px
+            background-image: var(--intro-image)
+            transition: opacity 0.6s ease
+            border-radius: 0 i
+            + div h1 + div[class] {
+                font-size: 0;
+                c: fg-0;
+                &::before {
+                    display: block;
+                    font-size: 16px;
+                    margin-bottom: -16px;
+                    white-space: pre-wrap;
+                    content: var(--message) ' \A\A ' var(--changes);
+                }
+                &::after {
+                    display: block;
+                    font-size: 16px;
+                    margin-top: 16px;
+                    padding-top: 24px;
+                    margin-bottom: -16px;
+                    content: var(--version);
+                    border-top: 1px solid bg-4;
+                }
+            }
+        }
+
+        /// Chat image.
+        [data-asset-chat-background-light] { filter: invert(1) i }
+    }
+
+    /// Modals.
+    .overlay {
+        /// -> Fix headers.
+        /.eJ0yJ { c: 0 0 t }
+        /// Media/Avatar viewers have different headers. @upstream
+        ._21ltg, > .KeLEe {
+            c: 0 0 bg-3;
+            border-bottom: 1px solid bg-5 i
+        }
+        /// -> Fix media selection.
+        /._1KWct { c: 0 bg-5 bg-3 }
+    }
+
+    /// Loading.
+    [id *= 'startup'] {
+        c: 0 0 bg-0
+
+        /// Progress bar.
+        /progress {
+            c: 0 0 bg-2
+            &[value]::-moz-progress-bar { c: 0 0 ac-0 }
+            /::-moz-progress-bar { c: 0 0 bg-4 }
+            /::-webkit-progress {
+                &-bar { c: 0 0 bg-4 }
+                &-value { c: 0 0 ac-0 }
+            }
+        }
+    }
+
+    /// App.
+    #app > div > [tabindex] {
+        background: none i
+        border-radius: 0.25rem i
+        border: 1px solid bg-5 i
+        box-shadow: 0 2px 4px sh
+
+        /// Search.
+        .gQzdc, ._3qx7_ {
+            c: 0 0 bg-3
+            border-bottom: 1px solid bg-5 i
+            &::after { display: none i }
+        }
+
+        /// Right pane divider.
+        ._14VS3 > ._1V8rX {
+            border-left: 1px solid bg-5 i
+        }
+    }
+
+    #main {
+        /// Reset header.
+        > header {
+            border-right: none i
+            border-bottom: 1px solid i
+            c: 0 bg-4
+            /// Hide borders.
+            &::after { content: unset i }
+        }
+
+        /// Remove text shadow.
+        ._1E1g0 {
+            font-weight: bold i
+            text-shadow: none i
+        }
+
+        /// Footer.
+        > footer {
+            border-top: 1px solid bg-5 i
+        }
+    }
+}
+} else {
 @-moz-document domain('web.whatsapp.com') {
     // CSS custom properties.
     :root {
@@ -142,8 +812,8 @@
             --msg-l     : lighten(#424242, 5%);
             --msg-r     : lighten(#333333, 4%);
         } else {
-            --dark      : dark;
-            --darken    : darken;
+            --dark      : _dark;
+            --darken    : _darken;
             --darker    : darker;
             --light     : light;
             --lighter   : lighter;
@@ -2682,4 +3352,5 @@
             }
         }
     }
+}
 }
