@@ -851,8 +851,9 @@ define('ac' + key, val) for key, val in ac
         }
     }
 
-    // Feat -> App background.
+    // App.
     #app > div {
+        // Feat -> App background.
         &::after {
             if ( app_image != none && app_image != default ) {
                 s = var(--bg-blur-s)
@@ -875,6 +876,13 @@ define('ac' + key, val) for key, val in ac
             }
             /// Remove image in fullscreen mode.
             if ( fullscreen == 1 ) { content: none i }
+        }
+
+        /// Dropdowns.
+        > span > div {
+            &[style ^= 'transform-origin:'][tabindex] {
+                border: 1px solid var(--bg-4);
+            }
         }
     }
 
