@@ -1,6 +1,46 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.9.0 [2020-06-05 Fri]
+Rewriting everything so that we can utilize WhatsApp's native CSS variables. All
+of this is thanks to the ~2.2023.2~ update that broke /a lot/ of things.
+
+*** Added
+We are releasing a preview of our procedural color generation for background,
+foreground, and accent colors in this update. Two months ago, we published
+initial work for it in [[https://github.com/vednoc/dark-whatsapp/pull/145][#145]]; today, we're releasing it to everyone.
+
+This is something we've been working towards for quite a while now, making over
+a dozen of different implementations to find the right one. Since there are 6
+tones for all base colors, the interop with [[https://github.com/vednoc/dark-switcher/][Dark-Switcher]] is no longer possible
+until this functionality is implemented there.
+
+What you see is still early-days, since we have to polish color generator rules
+and include edge-cases, as well as see how it does /in the wild/. If you run into
+issues, or weird looking color generation, we would love to hear it! Don't
+hesitate to open a new [[https://github.com/vednoc/dark-whatsapp/issues/new/choose][issue]] and tell us about it.
+
+Quick preview of changing base background and accent colors:
+
+[[https://user-images.githubusercontent.com/18245694/83881589-33ae5f80-a741-11ea-8db3-f5edb1b1597d.gif]]
+
+*** Broken features
+A lot of our previous work is now broken in the new update, and we'll have to
+rewrite or fix majority of the features you can find on [[https://github.com/vednoc/dark-whatsapp/wiki/Configuration][Configuration]] page on
+our project wiki. Only the following features made it into ~v2.9.0~ release:
+
+- Custom background/foreground/accent colors
+- All app background image options
+- Custom intro image
+- Custom UI font
+
+We will slowly but surely bring old features back in the upcoming updates as we
+make our way towards ~v3~ of Dark-WhatsApp.
+
+*** Fixed
+- Issues where the new update was reported ([[https://github.com/vednoc/dark-whatsapp/issues/158][#158]], [[https://github.com/vednoc/dark-whatsapp/issues/159][#159]])
+- Unreadable 'update alert' text color ([[https://github.com/vednoc/dark-whatsapp/issues/155][#155]])
+
 ** 2.8.0 [2020-05-31 Sun]
 More polish for ~fb-like~ message tails style, and a new intro image.
 
