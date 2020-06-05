@@ -636,9 +636,6 @@ define('ac' + key, val) for key, val in ac
         --shadow       : sh;
         --sh-h         : sh-h;
         --bshadow      : 0 2px 4px var(--shadow);
-        --version   : 'Dark-WhatsApp NEXT — June 4th, 2020';
-        --message   : 'Towards v3 of DWA! The last update broke too many things.';
-        --changes   : 'https://github.com/vednoc/dark-whatsapp';
 
         /// DWA feature variables.
         --ui-font      : ui_font, 'Segoe UI', 'Helvetica Neue', Helvetica,
@@ -666,6 +663,11 @@ define('ac' + key, val) for key, val in ac
         --bg-size      : bg_size
         --bg-pos       : bg_pos
         --bg-rep       : bg_rep
+
+        /// Userstyle info and announcements.
+        --version: 'Dark-WhatsApp NEXT — June 4th, 2020';
+        --message: 'Towards v3 of DWA! The last update broke too many things.';
+        --changes: 'https://github.com/vednoc/dark-whatsapp';
 
         /\*{
             @supports (scrollbar-width: thin) {
@@ -728,7 +730,7 @@ define('ac' + key, val) for key, val in ac
                     font-size: 16px;
                     margin-bottom: -16px;
                     white-space: pre-wrap;
-                    content: var(--message) ' \A\A ' var(--changes);
+                    content: var(--message) var(--changes);
                 }
                 &::after {
                     display: block;
