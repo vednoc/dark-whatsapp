@@ -739,7 +739,9 @@ define('ac' + key, val) for key, val in ac
         }
 
         /// Chat image.
-        [data-asset-chat-background-light] { filter: invert(1) i }
+        if(dark(BG)) {
+            [data-asset-chat-background-light] { filter: invert(1) i }
+        }
     }
 
     // Modals.
