@@ -581,7 +581,7 @@ define('ac' + key, val) for key, val in ac
         --win32-title-primary: #fff;
         --win32-title-primary-rgb: 255,255,255;
 
-        /// DWA variables.
+        /// DWA color variables.
         --bg-0         : bg-0 i
         --bg-0-rgb     : to_rgb(bg-0)
         --bg-1         : bg-1 i
@@ -637,6 +637,10 @@ define('ac' + key, val) for key, val in ac
         --version   : 'Dark-WhatsApp NEXT — June 4th, 2020';
         --message   : 'Towards v3 of DWA! The last update broke too many things.';
         --changes   : 'https://github.com/vednoc/dark-whatsapp';
+
+        /// DWA feature variables.
+        --ui-font      : ui_font, 'Segoe UI', 'Helvetica Neue', Helvetica,
+            'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif
         * {
             scrollbar-width: thin i
             scrollbar-color: var(--bg-3) var(--shadow);
@@ -674,9 +678,12 @@ define('ac' + key, val) for key, val in ac
     }
 
     /// Global.
-    body {
+    html > body {
         background-image: none i
         c: var(--fg-0) 0 var(--bg-0)
+
+        /// Feat -> Custom font.
+        &, button, input { font-family: var(--ui-font) }
 
         /// Intro image.
         [data-asset-intro-image-light] {
