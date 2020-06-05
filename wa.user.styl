@@ -775,6 +775,76 @@ define('ac' + key, val) for key, val in ac
         }
     }
 
+    // App -> Landing page.
+    .landing {
+        &-wrapper::before { c: 0 0 bg-2 }
+        &-header {
+            position: relative
+
+            /// WhatsApp logo.
+            path[fill ^= '#FFF'] { fill: ac-0 }
+            path[fill ^= '#00E'] { fill: bg-1 }
+            div {
+                text-transform: unset;
+                c: fg-1
+            }
+
+            /// Userstyle version.
+            &::after {
+                font-size: 14px
+                font-weight: 500
+                position: absolute
+                content: var(--version)
+                /html[dir = 'RTL'] & { left: 0 }
+                /html[dir = 'LTR'] & { right: 0 }
+            }
+        }
+
+        &-window:not(#z) {
+            border-radius: 4px
+            c: 0 0 bg-1
+            box-shadow: 0 0 1px bg-5
+        }
+
+        &-main {
+            a[href] { c: ac-0 }
+            label, ._2yUXW { c: fg-3 }
+            .landing-title { c: fg-1 }
+            rect[fill ^= '#f2f'], rect[fill ^= '#F2F'] { fill: bg-5 }
+            path[fill ^= '#818'] { fill: ac-0 }
+
+            /// QR code.
+            div[data-ref] {
+                border-radius: 0 i
+                filter: contrast(150%)
+                outline: 4px solid #fff
+                box-shadow: 0 0 0 4px #fff
+                [role='button'] { c: white 0 ac-0 }
+
+                /// Change white border when inactive.
+                &._2BIlf {
+                    outline: 4px solid ac-0
+                    box-shadow: 0 0 0 4px ac-0
+                }
+            }
+
+            /// Video tutorial.
+            + ._3pdvT {
+                c: 0 0 t
+                img { opacity: 0.3 }
+                /// Reset background on button container.
+                [style *= 'opacity: 1'] { c: 0 0 t }
+            }
+
+            /// 'Keep me signed in' tooltip. #59
+            ._3ybl8 {
+                c: white 0 ac-0
+                box-shadow: bsh
+                &::before { border-bottom-color: ac-0 i }
+            }
+        }
+    }
+
     // Feat -> App background.
     #app > div {
         &::after {
