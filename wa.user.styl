@@ -888,9 +888,23 @@ define('ac' + key, val) for key, val in ac
             &::after { display: none i }
         }
 
-        /// Right pane divider.
+        /// Left -> Resets.
+        #side {
+            > header {
+                border-bottom: 1px solid bg-5 i
+                + span > div {
+                    border-bottom: 1px solid bg-5 i
+                    [data-icon = 'x'] svg path { fill: fg-5 }
+                }
+            }
+        }
+
+        /// Right ->  Pane divider.
         ._14VS3 > ._1V8rX {
             border-left: 1px solid bg-5 i
+            .copyable-area > header {
+                border-bottom: 1px solid bg-5 i
+            }
         }
     }
 
