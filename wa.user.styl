@@ -889,9 +889,13 @@ define('ac' + key, val) for key, val in ac
     // App.
     #app > div > [tabindex] {
         background: none i
-        border-radius: 0.25rem i
-        border: 1px solid bg-5 i
-        box-shadow: 0 2px 4px sh
+
+        /// Do not apply tweaks in fullscreen mode.
+        @media (min-width: 1441px) {
+            border-radius: 0.25rem i
+            border: 1px solid bg-5 i
+            box-shadow: 0 2px 4px sh
+        }
 
         /// Odd header-like tall background.
         &::after { content: unset i }
