@@ -930,7 +930,22 @@ define('ac' + key, val) for key, val in ac
 
         /// Footer.
         > footer {
-            border-top: 1px solid bg-5 i
+            /// Compose area wrapper.
+            > .copyable-area {
+                border-top: 1px solid var(--bg-5) i
+            }
+
+            /// Chat -> Select messages.
+            + span > ._2pAWd {
+                border-top: 1px solid var(--bg-5) i
+                border-left: 1px solid var(--bg-5) i
+            }
+
+            /// Emoji group selection.
+            ._3eShu {
+                border-top: 1px solid var(--bg-5) i
+                border-bottom: 1px solid var(--bg-5) i
+            }
         }
     }
 }
