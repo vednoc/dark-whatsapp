@@ -641,6 +641,30 @@ define('ac' + key, val) for key, val in ac
         /// DWA feature variables.
         --ui-font      : ui_font, 'Segoe UI', 'Helvetica Neue', Helvetica,
             'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif
+
+        /// Feat -> Custom app background.
+        image_path  = 'https://raw.githubusercontent.com/'
+        image_path += 'vednoc/dark-whatsapp/master/images/bg-blur'
+        if ( app_image == bg-high ) {
+            --bg-image : url(image_path + '-high.jpg')
+        } else if ( app_image == bg-low ) {
+            --bg-image : url(image_path + '-low.jpg')
+        } else if ( app_image == bg-none ) {
+            --bg-image : url(image_path + '-none.jpg')
+        } else if ( app_image == custom ) {
+            --bg-image : image_url
+        } else {
+            --bg-image : none
+        }
+        --bg-opacity   : bg_opacity
+        --bg-blur      : bg_blur
+        --bg-blur-s    : calc(-2 * var(--bg-blur))
+        --bg-hue       : bg_hue
+        --bg-invert    : bg_invert
+        --bg-size      : bg_size
+        --bg-pos       : bg_pos
+        --bg-rep       : bg_rep
+
         * {
             scrollbar-width: thin i
             scrollbar-color: var(--bg-3) var(--shadow);
@@ -747,7 +771,34 @@ define('ac' + key, val) for key, val in ac
         }
     }
 
-    /// App.
+    // Feat -> App background.
+    #app > div {
+        &::after {
+            if ( app_image != none && app_image != default ) {
+                s = var(--bg-blur-s)
+                b = blur(var(--bg-blur))
+                o = opacity(var(--bg-opacity))
+                t = invert(var(--bg-invert))
+                h = hue-rotate(var(--bg-hue))
+                top: s; right: s; bottom: s; left: s;
+                height: unset; width: unset;
+                filter: b o t h
+                background-color: transparent i
+                background-image: var(--bg-image) i
+                background-position: var(--bg-pos) i
+                background-repeat: var(--bg-rep) i
+                background-size: var(--bg-size) i
+            } else if ( app_image == default ) {
+                c: 0 0 var(--bg-1)
+            } else {
+                display: none;
+            }
+            /// Remove image in fullscreen mode.
+            if ( fullscreen == 1 ) { content: none i }
+        }
+    }
+
+    // App.
     #app > div > [tabindex] {
         background: none i
         border-radius: 0.25rem i
