@@ -781,6 +781,36 @@ define('ac' + key, val) for key, val in ac
 
         /// -> Fix media selection.
         /._1KWct { c: 0 var(--bg-5) var(--bg-3) }
+
+        /// Status area.
+        /[data-animate-status-v3-modal-background = 'true'] {
+            c: 0 0 var(--modal-backdrop);
+            /// Main content.
+            > div {
+                c: 0 0 bg-2
+
+                /// Sidebar.
+                > div:nth-child(1) {
+                    c: 0 0 bg-0
+                    border-right: 1px solid bg-5
+                }
+
+                /// Large screens.
+                @media (min-width: 1441px) {
+                    border: 1px solid bg-5 i
+                    border-radius: 4px i
+                }
+
+                /// Bar/member colors.
+                /.color-1 { c: var(--ac-0) }
+                /.bg-color-1 { c: 0 0 var(--ac-0) }
+            }
+
+            /// Fill color for unread icon. @upstream
+            /[data-icon = 'status-v3-unread'] {
+                [fill = '#009588'] { fill: ac-0 i }
+            }
+        }
     }
 
     // Loading.
