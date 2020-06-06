@@ -17,7 +17,7 @@
 
 @var text     ui_font    'Custom UI font' ''font_name''
 @var text     radius-g   'Custom rounded corners for menus' 4px
-@var text     radius-i   'Custom rounded corners for input area' 4px
+@var text     radius-i   'Custom rounded corners for input area' 24px
 @var range    radius-a   'Custom rounded corners for avatars' [50, 0, 50, 1, '%']
 @var text     app_width  'Custom width for chat app' 1396px
 @var checkbox fullscreen 'Enable fullscreen mode' 0
@@ -773,6 +773,27 @@ define('ac' + key, val) for key, val in ac
         /// Chat image.
         if(dark(BG)) {
             [data-asset-chat-background-light] { filter: invert(1) i }
+        }
+    }
+
+    // Avatars -> Custom rounded corners.
+    ._1BjNO[style] {
+        c: 0 0 bg-5
+        /// Avatars/images/new group.
+        &, > img, /._18cLH { rad: var(--r-avatars) i }
+        /// Tweak default-user icons.
+        if ( radius-a != '50%' ) {
+            /[style *= 'height: 26px'],
+            /[style *= 'height: 40px'],
+            /[style *= 'height: 49px'],
+            /[style *= 'height: 55px'],
+            /[style *= 'height: 82px'],
+            /[style *= 'height: 200px'] {
+                [data-icon = 'default-user'] svg {
+                    margin-top: -4px i
+                    transform: scale(0.7) i
+                }
+            }
         }
     }
 
