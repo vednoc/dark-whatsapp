@@ -760,13 +760,23 @@ define('ac' + key, val) for key, val in ac
 
     // Modals.
     .overlay {
-        /// -> Fix headers.
-        .eJ0yJ { c: 0 0 t }
-
         /// Media/Avatar viewers have different headers. @upstream
-        ._21ltg, > .KeLEe {
+        ._2ouPw, ._21ltg, > .KeLEe {
             c: 0 0 var(--bg-3);
             border-bottom: 1px solid var(--bg-5) i
+
+            /// Fix header onflicts.
+            ../ ._1kEVs { c: 0 0 t }
+        }
+
+        /// Add borders.
+        [data-animate-modal-popup] {
+            border: 1px solid bg-5
+            border-radius: var(--r-menus)
+
+            .copyable-area > header {
+                border-bottom: 1px solid bg-5
+            }
         }
 
         /// -> Fix media selection.
