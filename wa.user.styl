@@ -141,6 +141,9 @@ to_svg(input) {
     s('\%23%s', unquote(substr(s('%s', input), 1, 6)));
 }
 
+// Rounded corners.
+rad() { border-radius: arguments }
+
 t  = transparent
 i  = !important
 _d = darken
@@ -640,6 +643,9 @@ define('ac' + key, val) for key, val in ac
         /// DWA feature variables.
         --ui-font      : ui_font, 'Segoe UI', 'Helvetica Neue', Helvetica,
             'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif
+        --r-menus      : radius-g;
+        --r-inputs     : radius-i;
+        --r-avatars    : radius-a;
 
         /// Feat -> Custom app background.
         image_path  = 'https://raw.githubusercontent.com/'
@@ -729,7 +735,7 @@ define('ac' + key, val) for key, val in ac
             max-height: 200px
             background-image: var(--intro-image)
             transition: opacity 0.6s ease
-            border-radius: 0 i
+            rad: 0 i
             + div h1 + div[class] {
                 font-size: 0;
                 c: fg-0;
@@ -772,7 +778,7 @@ define('ac' + key, val) for key, val in ac
         /// Add borders.
         [data-animate-modal-popup] {
             border: 1px solid bg-5
-            border-radius: var(--r-menus)
+            rad: var(--r-menus) i
 
             .copyable-area > header {
                 border-bottom: 1px solid bg-5
@@ -798,7 +804,7 @@ define('ac' + key, val) for key, val in ac
                 /// Large screens.
                 @media (min-width: 1441px) {
                     border: 1px solid bg-5 i
-                    border-radius: 4px i
+                    rad: var(--r-menus) i
                 }
 
                 /// Bar/member colors.
@@ -855,7 +861,7 @@ define('ac' + key, val) for key, val in ac
         }
 
         &-window:not(#z) {
-            border-radius: 4px
+            rad: 4px
             c: 0 0 bg-1
             box-shadow: 0 0 1px bg-5
         }
@@ -869,7 +875,7 @@ define('ac' + key, val) for key, val in ac
 
             /// QR code.
             div[data-ref] {
-                border-radius: 0 i
+                rad: 0 i
                 filter: contrast(150%)
                 outline: 4px solid #fff
                 box-shadow: 0 0 0 4px #fff
@@ -930,6 +936,7 @@ define('ac' + key, val) for key, val in ac
         > span > div {
             &[style ^= 'transform-origin:'][tabindex] {
                 border: 1px solid var(--bg-4);
+                rad: var(--r-menus) i
             }
         }
     }
@@ -940,7 +947,7 @@ define('ac' + key, val) for key, val in ac
 
         /// Do not apply tweaks in fullscreen mode.
         @media (min-width: 1441px) {
-            border-radius: 0.25rem i
+            rad: var(--r-menus) i
             border: 1px solid bg-5 i
             box-shadow: 0 2px 4px sh
         }
@@ -952,6 +959,12 @@ define('ac' + key, val) for key, val in ac
         .gQzdc, ._3qx7_ {
             border-bottom: 1px solid bg-5 i
             &::after { display: none i }
+
+            /// Remove animation.
+            /._1yO24 { animation: none i }
+
+            /// Feat -> Border radius.
+            label { rad: var(--r-inputs) i }
         }
 
         /// Left -> Resets.
@@ -1018,6 +1031,9 @@ define('ac' + key, val) for key, val in ac
                 border-top: 1px solid var(--bg-5) i
                 border-bottom: 1px solid var(--bg-5) i
             }
+
+            /// Feat -> Border radius.
+            ._3uMse { rad: var(--r-inputs) i }
         }
     }
 }
