@@ -552,8 +552,8 @@ define('ac' + key, val) for key, val in ac
         --thumb-border-active-rgb: var(--bg-2-rgb) //117,120,122;
         --thumb-border-viewer-active: var(--fg-3) //#75787a;
         --thumb-border-viewer-active-rgb: var(--fg-3-rgb) //117,120,122;
-        --toast-background: var(--bg-0) //#080e12f5;
-        --toast-background-rgb: var(--bg-0-rgb) //8,14,18;
+        --toast-background: var(--bg-3) //#080e12f5;
+        --toast-background-rgb: var(--bg-3-rgb) //8,14,18;
         --tooltip-background: #595959d9;
         --tooltip-background-rgb: 89.25,89.25,89.25;
         --typing: var(--ac-0) //#00af9c;
@@ -714,6 +714,14 @@ define('ac' + key, val) for key, val in ac
 
         /// Feat -> Custom font.
         &, button, input { font-family: var(--ui-font) }
+
+        /// Toast notifications.
+        ._11dpe {
+            c: fg-1
+            border: 1px solid bg-5
+            button:nth-child(2) { c: ac-1 }
+            button:nth-child(3) { c: fg-4 }
+        }
 
         /// Intro image.
         [data-asset-intro-image-light] {
