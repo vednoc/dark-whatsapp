@@ -643,9 +643,15 @@ define('ac' + key, val) for key, val in ac
         /// DWA feature variables.
         --ui-font      : ui_font, 'Segoe UI', 'Helvetica Neue', Helvetica,
             'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif
-        --r-menus      : radius-g;
-        --r-inputs     : radius-i;
-        --r-avatars    : radius-a;
+
+        /// Rounded corners.
+        --r-menus      : radius-g
+        --r-inputs     : radius-i
+        --r-avatars    : radius-a
+
+        /// Compact mode.
+        --c-m-hover    : app_c_m_h
+        --c-m-delay    : app_c_m_d
 
         /// Feat -> Custom app background.
         image_path  = 'https://raw.githubusercontent.com/'
@@ -711,6 +717,12 @@ define('ac' + key, val) for key, val in ac
         _i = s('url("%s%s%s%s%s%s%s")', unquote(_1), svg_ac, unquote(_2), svg_bg,
                                         unquote(_3), svg_ac, unquote(_4))
         --intro-image: _i
+    }
+
+    /// Typing indicator animation.
+    @keyframes pulse {
+        40% { opacity: 0 }
+        80% { opacity: 1 }
     }
 
     // Global.
@@ -1034,6 +1046,158 @@ define('ac' + key, val) for key, val in ac
 
             /// Feat -> Border radius.
             ._3uMse { rad: var(--r-inputs) i }
+        }
+    }
+
+    // Feat -> Compact mode.
+    if ( app_c_m == 1 ) {
+        /// Reset height/width if there is an overflow.
+        #app > div > [tabindex] {
+            @media screen and (max-height: 500px) { min-height: auto }
+            @media screen and (max-width: 648px) { min-width: auto }
+            // > div *:hover { box-shadow: inset 0 0 0 1px crimson i }
+        }
+        /// Compact mode.
+        @media screen and (max-width: app_c_m_w) {
+            .two, .three {
+                /// Left -> Settings/Contacts.
+                > div:nth-child(3) {
+                    flex: 0 0 80px i
+                    transition: 0.2s ease
+                    &:hover, &:focus-within { flex: 0 0 30% i }
+                }
+            }
+            .two {
+                /// Reset upload preview.
+                >  div:nth-child(2) > div:nth-child(2) {
+                    flex: 0 0 calc(100% - 80px) i
+                    margin-left: calc(-30% + 80px)
+                }
+                /// Expand contacts.
+                > div:nth-child(3) {
+                    min-width: 1px i
+                    transition: 0.3s ease i
+                    transition-delay: var(--c-m-delay) i
+                    /// All left panes should be the same width.
+                    &:hover {
+                        min-width: 349px i
+                        transition-delay: var(--c-m-hover) i
+                        flex: 0 0 30% i
+                    }
+                }
+                /// Settings/Starred/Archived panes.
+                > :nth-child(2) > :nth-child(1) {
+                    z-index: 201 i
+                    flex: 0 0 30% i
+                    [style][tabindex] { border-right: 1px solid bg-5 i }
+                }
+                /// Tweaks for left pane.
+                ._1xXdX:hover { min-width: 349px i }
+                /// App -> Fix left pane border.
+                @media screen and (max-width: app_c_m_w) {
+                    /._1-iDe._1xXdX ._2fpYo { border-right: 1px solid bg-5 i }
+                }
+            }
+            .three {
+                /// Reset upload preview.
+                > div:nth-child(2) > div:nth-child(2) {
+                    flex: 0 0 calc(100% - 30% - 80px) i
+                    margin-left: calc(-30% + 80px)
+                }
+                /// Reset chat when info is open.
+                > div:nth-child(4) {
+                    flex: 0 0 calc(100% - 30% - 80px) i
+                }
+                /// Do not expand left pane when right pane is open.
+                > div:nth-child(3):hover { flex: 0 0 80px i }
+                /// Tweaks for left and right panes.
+                ._14VS3, ._1xXdX {
+                    flex: 0 0 30% i
+                    c: 0 t
+                }
+            }
+            /// Fix search bar width.
+            ._3qx7_:not(._3fVV4) label { padding: 0px }
+            /// Contacts.
+            #side {
+                /// Fix header width.
+                > header {
+                    min-width: 240px
+                    /// Hide notifications.
+                    + span { display: none }
+                }
+                /// Items.
+                .eJ0yJ {
+                    /// Add whitespace to hide message content.
+                    > div:last-child { padding-left: 5px i }
+                    /// Reverse message content.
+                    ._1582E {
+                        position: relative
+                        flex-direction: row-reverse i
+                        /// Remove margin from status wrapper.
+                        .m61XR {
+                            z-index: 999 i
+                            margin-left: 0 i
+                            position: absolute
+                            left: -41px
+                            bottom: -6px
+                            rad: 50%
+                            ._15G96 { margin: 0 }
+                            /// Unread messages indicator.
+                            ._31gEB { border: 4px solid bg-0 }
+                        }
+                        /// Reverse message and icons.
+                        .m61XR > span {
+                            display: flex i
+                            flex-direction: row-reverse i
+                        }
+                        /// Remove chevron icon and all status icons.
+                        ._38QnI, .ZKn2B > *:not(._31gEB) { display: none }
+                    }
+                    /// Typing indicator status.
+                    /._616fG {
+                        overflow: unset i
+                        margin-top: -8px i
+                        margin-left: 0px i
+                        position: absolute i
+                        &::before {
+                            content: '' i
+                            z-index: 1 i
+                            position: absolute i
+                            top: -32px i
+                            left: -66px i
+                            height: 53px i
+                            width: 53px i
+                            rad: 50% i
+                            box-shadow: inset 0 0 0 3px green i
+                            animation: 2s pulse infinite i
+                        }
+                    }
+                    /// Message status.
+                    .zFnXi {
+                        padding: 1.5px
+                        z-index: 101
+                        position: absolute
+                        margin: -2px 0 0 -75px
+                        border: 3px solid bg-1
+                        c: 0 0 bg-3
+                        rad: 50%
+                        /// Make SVG smaller.
+                        > span > svg {
+                            padding: 2px
+                            height: 14px i
+                            width: 14px i
+                        }
+                    }
+                    /// Active states.
+                    &._13opk { ._31gEB, .zFnXi { c: 0 bg-3 bg-5 }}
+                    &:hover:not(._13opk) {
+                        ._31gEB, .zFnXi { c: 0 bg-2 }
+                    }
+                }
+                /// I _think_ I understand why this works!
+                ._2kHpK { min-width: 80px i }
+            }
         }
     }
 }
