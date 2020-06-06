@@ -965,8 +965,8 @@ define('ac' + key, val) for key, val in ac
             if ( fullscreen == 1 ) { content: none i }
         }
 
-        /// Dropdowns.
-        > span > div {
+        /// Dropdowns -> Chat/Header.
+        > span > div, ._2s_eZ {
             &[style ^= 'transform-origin:'][tabindex] {
                 border: 1px solid var(--bg-4);
                 rad: var(--r-menus) i
@@ -1004,8 +1004,12 @@ define('ac' + key, val) for key, val in ac
         #side {
             > header {
                 border-bottom: 1px solid bg-5 i
+
+                /// Alerts.
                 + span > div {
                     border-bottom: 1px solid bg-5 i
+
+                    /// Close icon for 'low battery' state.
                     [data-icon = 'x'] svg path { fill: fg-5 }
                 }
             }
@@ -1032,8 +1036,8 @@ define('ac' + key, val) for key, val in ac
             &::after { content: unset i }
         }
 
-        /// Remove text shadow.
-        ._1E1g0 { text-shadow: 0 1px 0 rgba(0,0,0,.6) }
+        /// Tweak text shadow.
+        ._1E1g0 { text-shadow: 0 1px 0 s('rgba(var(--fg-3-rgb), 0.2)') }
 
         /// Tweak 'unread messages' alert.
         ._9WQEN { border: none i }
@@ -1044,6 +1048,11 @@ define('ac' + key, val) for key, val in ac
             > span + div:not(.urabC) > div {
                 box-shadow: 0 1px 0 s('rgba(var(--shadow-rgb), 0.33)') i;
             }
+        }
+
+        /// Fix context menu background for stickers.
+        .-AOZp ._2oA-- + div[style] {
+            c: 0 0 var(--bg-4)
         }
 
         /// Footer.
