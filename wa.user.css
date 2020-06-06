@@ -6,7 +6,7 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      2.9.0
+@version      2.10.0
 @license      MIT
 ==/UserStyle== */
 
@@ -54,8 +54,8 @@
     --background-default-active-rgb: var(--bg-3-rgb);
     --background-default-hover: var(--bg-2);
     --background-default-hover-rgb: var(--bg-2-rgb);
-    --border-bubble: var(--bg-5);
-    --border-bubble-rgb: var(--bg-5-rgb);
+    --border-bubble: var(--shadow);
+    --border-bubble-rgb: var(--shadow-rgb);
     --border-default: var(--bg-3);
     --border-default-rgb: var(--bg-3-rgb);
     --border-list: var(--bg-3);
@@ -262,9 +262,9 @@
     --panel-background-rgb: var(--bg-3-rgb);
     --panel-background-active: #1a262d;
     --panel-background-active-rgb: 26, 38, 45;
-    --panel-background-colored: var(--ac-4);
-    --panel-background-colored-rgb: var(--ac-4-rgb);
-    --panel-background-colored-deeper: var(--ac-3);
+    --panel-background-colored: var(--bg-4);
+    --panel-background-colored-rgb: var(--bg-4-rgb);
+    --panel-background-colored-deeper: var(--bg-3);
     --panel-background-colored-deeper-rgb: var(--bg-3-rgb);
     --panel-background-deep: var(--bg-2);
     --panel-background-deep-rgb: var(--bg-2-rgb);
@@ -370,8 +370,8 @@
     --thumb-border-active-rgb: var(--bg-2-rgb);
     --thumb-border-viewer-active: var(--fg-3);
     --thumb-border-viewer-active-rgb: var(--fg-3-rgb);
-    --toast-background: var(--bg-0);
-    --toast-background-rgb: var(--bg-0-rgb);
+    --toast-background: var(--bg-3);
+    --toast-background-rgb: var(--bg-3-rgb);
     --tooltip-background: rgba(89,89,89,0.851);
     --tooltip-background-rgb: 89.25, 89.25, 89.25;
     --typing: var(--ac-0);
@@ -426,16 +426,16 @@
     --fg-5-rgb: 143,143,143;
     --ac-0: #7289da !important;
     --ac-0-rgb: 114,137,218;
-    --ac-1: #697ec8 !important;
-    --ac-1-rgb: 105,126,200;
-    --ac-2: #6174b6 !important;
-    --ac-2-rgb: 97,116,182;
-    --ac-3: #596aa5 !important;
-    --ac-3-rgb: 89,106,165;
-    --ac-4: #37415e !important;
-    --ac-4-rgb: 55,65,94;
-    --ac-5: #2f374d !important;
-    --ac-5-rgb: 47,55,77;
+    --ac-1: #6a7fc9 !important;
+    --ac-1-rgb: 106,127,201;
+    --ac-2: #6376b9 !important;
+    --ac-2-rgb: 99,118,185;
+    --ac-3: #5b6da8 !important;
+    --ac-3-rgb: 91,109,168;
+    --ac-4: #38415a !important;
+    --ac-4-rgb: 56,65,90;
+    --ac-5: #303849 !important;
+    --ac-5-rgb: 48,56,73;
     --white: #fff;
     --white-rgb: 255,255,255;
     --red: #dc322f;
@@ -453,6 +453,11 @@
     --sh-h: rgba(0,0,0,0.208);
     --bshadow: 0 2px 4px var(--shadow);
     --ui-font: 'font_name', 'Segoe UI', 'Helvetica Neue', Helvetica, 'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif;
+    --r-menus: 4px;
+    --r-inputs: 24px;
+    --r-avatars: 50%;
+    --c-m-hover: 0.6s;
+    --c-m-delay: 1.2s;
     --bg-image: url("https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/images/bg-blur-high.jpg");
     --bg-opacity: 0.4;
     --bg-blur: 0px;
@@ -462,8 +467,8 @@
     --bg-size: cover;
     --bg-pos: center;
     --bg-rep: no-repeat;
-    --version: 'Dark-WhatsApp 2.9.0 — June 5th, 2020';
-    --message: 'Towards v3 of DWA! The last update broke too many things, and we are rewriting core functionality — the dark theme — so that in future updates we can reimplement currently broken DWA features – compact mode, tail styles, "private mode", etc.';
+    --version: 'Dark-WhatsApp 2.10.0 — June 6th, 2020';
+    --message: 'Towards v3 of DWA! The last update broke too many things, and we are rewriting core functionality — the dark theme — so that in future updates we can reimplement currently broken DWA features – compact mode, tail styles, "private mode", etc. \A\A Compact mode and custom border radius options are back!';
     --changes: '\A\A https://github.com/vednoc/dark-whatsapp';
   }
   @supports (scrollbar-width: thin) {
@@ -490,6 +495,16 @@
   html > body button,
   html > body input {
     font-family: var(--ui-font);
+  }
+  html > body ._11dpe {
+    color: #eee !important;
+    border: 1px solid #444d5c;
+  }
+  html > body ._11dpe button:nth-child(2) {
+    color: #6a7fc9 !important;
+  }
+  html > body ._11dpe button:nth-child(3) {
+    color: #b5b5b5 !important;
   }
   html > body [data-asset-intro-image-light] {
     max-width: 200px;
@@ -521,17 +536,58 @@
   html > body [data-asset-chat-background-light] {
     filter: invert(1) !important;
   }
-  .overlay .eJ0yJ {
-    background-color: transparent !important;
+  ._1BjNO[style] {
+    background-color: #444d5c !important;
   }
+  ._1BjNO[style],
+  ._1BjNO[style] > img,
+  ._18cLH {
+    border-radius: var(--r-avatars) !important;
+  }
+  .overlay ._2ouPw,
   .overlay ._21ltg,
   .overlay > .KeLEe {
     background-color: var(--bg-3) !important;
     border-bottom: 1px solid var(--bg-5) !important;
   }
+  .overlay ._1kEVs {
+    background-color: transparent !important;
+  }
+  .overlay [data-animate-modal-popup] {
+    border: 1px solid #444d5c;
+    border-radius: var(--r-menus) !important;
+  }
+  .overlay [data-animate-modal-popup] .copyable-area > header {
+    border-bottom: 1px solid #444d5c;
+  }
   ._1KWct {
     border-color: var(--bg-5) !important;
     background-color: var(--bg-3) !important;
+  }
+  [data-animate-status-v3-modal-background = 'true'] {
+    background-color: var(--modal-backdrop) !important;
+  }
+  [data-animate-status-v3-modal-background = 'true'] > div {
+    background-color: #282d37 !important;
+  }
+  [data-animate-status-v3-modal-background = 'true'] > div > div:nth-child(1) {
+    background-color: #1c2026 !important;
+    border-right: 1px solid #444d5c;
+  }
+@media (min-width: 1441px) {
+    [data-animate-status-v3-modal-background = 'true'] > div {
+      border: 1px solid #444d5c !important;
+      border-radius: var(--r-menus) !important;
+    }
+}
+  .color-1 {
+    color: var(--ac-0) !important;
+  }
+  .bg-color-1 {
+    background-color: var(--ac-0) !important;
+  }
+  [data-icon = 'status-v3-unread'] [fill = '#009588'] {
+    fill: #7289da !important;
   }
   [id *= 'startup'] {
     background-color: #1c2026 !important;
@@ -646,15 +702,17 @@
     background-repeat: var(--bg-rep) !important;
     background-size: var(--bg-size) !important;
   }
-  #app > div > span > div[style ^= 'transform-origin:'][tabindex] {
+  #app > div > span > div[style ^= 'transform-origin:'][tabindex],
+  #app > div ._2s_eZ[style ^= 'transform-origin:'][tabindex] {
     border: 1px solid var(--bg-4);
+    border-radius: var(--r-menus) !important;
   }
   #app > div > [tabindex] {
     background: none !important;
   }
 @media (min-width: 1441px) {
     #app > div > [tabindex] {
-      border-radius: 0.25rem !important;
+      border-radius: var(--r-menus) !important;
       border: 1px solid #444d5c !important;
       box-shadow: 0 2px 4px rgba(0,0,0,0.145);
     }
@@ -669,6 +727,13 @@
   #app > div > [tabindex] .gQzdc::after,
   #app > div > [tabindex] ._3qx7_::after {
     display: none !important;
+  }
+  ._1yO24 {
+    animation: none !important;
+  }
+  #app > div > [tabindex] .gQzdc label,
+  #app > div > [tabindex] ._3qx7_ label {
+    border-radius: var(--r-inputs) !important;
   }
   #app > div > [tabindex] #side > header {
     border-bottom: 1px solid #444d5c !important;
@@ -694,13 +759,16 @@
     content: unset !important;
   }
   #main ._1E1g0 {
-    text-shadow: 0 1px 0 rgba(0,0,0,0.6);
+    text-shadow: 0 1px 0 rgba(var(--fg-3-rgb), 0.2);
   }
   #main ._9WQEN {
     border: none !important;
   }
-  #main [class *= 'message-'][data-id] > span + div > div {
+  #main [class *= 'message-'][data-id] > span + div:not(.urabC) > div {
     box-shadow: 0 1px 0 rgba(var(--shadow-rgb), 0.33) !important;
+  }
+  #main .-AOZp ._2oA-- + div[style] {
+    background-color: var(--bg-4) !important;
   }
   #main > footer > .copyable-area {
     border-top: 1px solid var(--bg-5) !important;
@@ -712,5 +780,160 @@
   #main > footer ._3eShu {
     border-top: 1px solid var(--bg-5) !important;
     border-bottom: 1px solid var(--bg-5) !important;
+  }
+  #main > footer ._3uMse {
+    border-radius: var(--r-inputs) !important;
+  }
+  @media screen and (max-height: 500px) {
+    #app > div > [tabindex] {
+      min-height: auto;
+    }
+  }
+  @media screen and (max-width: 648px) {
+    #app > div > [tabindex] {
+      min-width: auto;
+    }
+  }
+  @media screen and (max-width: 720px) {
+    .two > div:nth-child(3),
+    .three > div:nth-child(3) {
+      flex: 0 0 80px !important;
+      transition: 0.2s ease;
+    }
+    .two > div:nth-child(3):hover,
+    .three > div:nth-child(3):hover,
+    .two > div:nth-child(3):focus-within,
+    .three > div:nth-child(3):focus-within {
+      flex: 0 0 30% !important;
+    }
+    .two > div:nth-child(2) > div:nth-child(2) {
+      flex: 0 0 calc(100% - 80px) !important;
+      margin-left: calc(-30% + 80px);
+    }
+    .two > div:nth-child(3) {
+      min-width: 1px !important;
+      transition: 0.3s ease !important;
+      transition-delay: var(--c-m-delay) !important;
+    }
+    .two > div:nth-child(3):hover {
+      min-width: 349px !important;
+      transition-delay: var(--c-m-hover) !important;
+      flex: 0 0 30% !important;
+    }
+    .two > :nth-child(2) > :nth-child(1) {
+      z-index: 201 !important;
+      flex: 0 0 30% !important;
+    }
+    .two > :nth-child(2) > :nth-child(1) [style][tabindex] {
+      border-right: 1px solid #444d5c !important;
+    }
+    .two ._1xXdX:hover {
+      min-width: 349px !important;
+    }
+    .three > div:nth-child(2) > div:nth-child(2) {
+      flex: 0 0 calc(100% - 30% - 80px) !important;
+      margin-left: calc(-30% + 80px);
+    }
+    .three > div:nth-child(4) {
+      flex: 0 0 calc(100% - 30% - 80px) !important;
+    }
+    .three > div:nth-child(3):hover {
+      flex: 0 0 80px !important;
+    }
+    .three ._14VS3,
+    .three ._1xXdX {
+      flex: 0 0 30% !important;
+      border-color: transparent !important;
+    }
+    ._3qx7_:not(._3fVV4) label {
+      padding: 0px;
+    }
+    #side > header {
+      min-width: 240px;
+    }
+    #side > header + span {
+      display: none;
+    }
+    #side .eJ0yJ > div:last-child {
+      padding-left: 5px !important;
+    }
+    #side .eJ0yJ ._1582E {
+      position: relative;
+      flex-direction: row-reverse !important;
+    }
+    #side .eJ0yJ ._1582E .m61XR {
+      z-index: 999 !important;
+      margin-left: 0 !important;
+      position: absolute;
+      left: -41px;
+      bottom: -6px;
+      border-radius: 50%;
+    }
+    #side .eJ0yJ ._1582E .m61XR ._15G96 {
+      margin: 0;
+    }
+    #side .eJ0yJ ._1582E .m61XR ._31gEB {
+      border: 4px solid #1c2026;
+    }
+    #side .eJ0yJ ._1582E .m61XR > span {
+      display: flex !important;
+      flex-direction: row-reverse !important;
+    }
+    #side .eJ0yJ ._1582E ._38QnI,
+    #side .eJ0yJ ._1582E .ZKn2B > *:not(._31gEB) {
+      display: none;
+    }
+    ._616fG {
+      overflow: unset !important;
+      margin-top: -8px !important;
+      margin-left: 0px !important;
+      position: absolute !important;
+    }
+    ._616fG::before {
+      content: '' !important;
+      z-index: 1 !important;
+      position: absolute !important;
+      top: -31px !important;
+      left: -71px !important;
+      height: 53px !important;
+      width: 53px !important;
+      border-radius: var(--r-avatars) !important;
+      box-shadow: inset 0 0 0 3px #859900 !important;
+      animation: 2s pulse infinite !important;
+    }
+    #side .eJ0yJ .zFnXi {
+      padding: 1.5px;
+      z-index: 101;
+      position: absolute;
+      margin: -2px 0 0 -75px;
+      border: 3px solid #1f232a;
+      background-color: #323843 !important;
+      border-radius: 50%;
+    }
+    #side .eJ0yJ .zFnXi > span > svg {
+      padding: 2px;
+      height: 14px !important;
+      width: 14px !important;
+    }
+    #side .eJ0yJ._13opk ._31gEB,
+    #side .eJ0yJ._13opk .zFnXi {
+      border-color: #323843 !important;
+      background-color: #444d5c !important;
+    }
+    #side .eJ0yJ:hover:not(._13opk) ._31gEB,
+    #side .eJ0yJ:hover:not(._13opk) .zFnXi {
+      border-color: #282d37 !important;
+    }
+    #side ._2kHpK {
+      min-width: 80px !important;
+    }
+  }
+  @keyframes pulse {
+      40% {
+        opacity: 0;
+      }
+      80% {
+        opacity: 1;
+      }
   }
 }
