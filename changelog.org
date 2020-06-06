@@ -1,6 +1,29 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.10.0 [2020-06-06 Sat]
+Bringing back more features from previous releases and improvements!
+
+*** Added
+- Small tweaks for accent color generation ([[https://github.com/vednoc/dark-whatsapp/issues/162][#162]])
+- Ported rounded corners for menu/input/avatar ([[https://github.com/vednoc/dark-whatsapp/issues/163][#163]])
+- Ported styles for compact mode ([[https://github.com/vednoc/dark-whatsapp/issues/160][#160]])
+
+  Quick preview:
+
+  [[https://user-images.githubusercontent.com/18245694/83950648-a9dbc080-a82c-11ea-817d-c63857978d48.png]]
+
+*** Improved
+- Added borders around base elements in modals
+- Ported styles for status area
+- Updated a few CSS color variables
+- Seen status icon
+
+*** Fixed
+- Removed message bubble shadow from stickers
+- Colors for toast notifications
+- Context menu background for stickers
+
 ** 2.9.0 [2020-06-05 Fri]
 Rewriting everything so that we can utilize WhatsApp's native CSS variables. All
 of this is thanks to the ~2.2023.2~ update that broke /a lot/ of things.
@@ -39,7 +62,7 @@ make our way towards ~v3~ of Dark-WhatsApp.
 
 *** Fixed
 - Issues where the new update was reported ([[https://github.com/vednoc/dark-whatsapp/issues/158][#158]], [[https://github.com/vednoc/dark-whatsapp/issues/159][#159]])
-- Unreadable 'update alert' text color ([[https://github.com/vednoc/dark-whatsapp/issues/155][#155]])
+- Unreadable 'update alert' text color ([[https://github.com/vednoc/dark-whatsapp/issues/155][#155]], [[https://github.com/vednoc/dark-whatsapp/issues/157][#157]])
 
 ** 2.8.0 [2020-05-31 Sun]
 More polish for ~fb-like~ message tails style, and a new intro image.
