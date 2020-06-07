@@ -10,7 +10,7 @@
 @license      MIT
 @preprocessor stylus
 
-@var checkbox v3         '[DEV]: Enable v3 mode        ' 1
+@var checkbox v3         '[Dev]: Enable v3 mode        ' 1
 @var color    next_bg    '[Dev]: Base background color ' #1f232a
 @var color    next_fg    '[Dev]: Base foreground color ' #eeeeee
 @var color    next_ac    '[Dev]: Base accent color     ' #7289da
@@ -178,6 +178,7 @@ if(dark(BG)) {
 in_msg_quote  = dark(IM) ? -10% : 25%
 out_msg_quote = dark(OM) ? -10% : 25%
 
+// Generate tones for colors.
 bg = {
     '-0': _d(BG, b1),
     '-1': _d(BG, 0%),
@@ -211,6 +212,7 @@ msg-out = {
     '-1': _d(OM, out_msg_quote),
 }
 
+// Generate stylus-lang variables.
 define('bg'      + key, val) for key, val in bg
 define('fg'      + key, val) for key, val in fg
 define('ac'      + key, val) for key, val in ac
@@ -674,6 +676,7 @@ define('msg-in'  + key, val) for key, val in msg-in
             --msg-out-1-rgb : to_rgb(ac-5)
         }
 
+        /// TODO: Improve secondary colors.
         --white         : white;
         --white-rgb     : to_rgb(white);
         --red           : red;
@@ -684,11 +687,8 @@ define('msg-in'  + key, val) for key, val in msg-in
         --blue-rgb      : to_rgb(blue);
         --yellow        : yellow;
         --yellow-rgb    : to_rgb(yellow);
-        --msg-l         : lighten(#2c313a, 5%);
-        --msg-r         : lighten(#252a33, 4%);
         --t             : transparent;
         --shadow        : sh;
-        --sh-h          : sh-h;
         --bshadow       : 0 2px 4px var(--shadow);
 
         /// DWA feature variables.
@@ -1103,7 +1103,7 @@ define('msg-in'  + key, val) for key, val in msg-in
     /// Sidebar.
     #side {
         /// Feat -> Blur contacts.
-        if (chat_b_c == 0) {
+        if (chat_b_c) {
             [style *= '0s; height'] {
                 > [aria-selected = 'true'] {
                     > div::after { display: none i }
