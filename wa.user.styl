@@ -1129,6 +1129,32 @@ define('msg-in'  + key, val) for key, val in msg-in
         /// Fix down arrow icon color for context menus.
         [data-js-context-icon = 'true'] { c: var(--fg-3) }
 
+        /// Add background to media message timestamps.
+        [style *= 'width'][style *= 'height'] + div {
+            /// Images.
+            &._3yTyY, &._2CHFo {
+                padding: 2px 4px i
+                background-color: s('rgba(var(--bg-1-rgb), 0.7)') i
+                rad: 5px i
+            }
+
+            /// Videos.
+            ../ .video-thumb {
+                /// Length/Timestamp.
+                .len7M, + ._2DfqO {
+                    padding: 2px 4px i
+                    background-color: s('rgba(var(--bg-1-rgb), 0.7)') i
+                    rad: 5px i
+                }
+
+                /// Timestamps in grouped media.
+                &._3EMsd + ._2DfqO {
+                    right: 5px i
+                    bottom: 3px i
+                }
+            }
+        }
+
         /// Footer.
         > footer {
             /// Compose area wrapper.
