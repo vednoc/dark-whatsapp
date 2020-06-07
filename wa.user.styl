@@ -1075,6 +1075,26 @@ define('msg-in'  + key, val) for key, val in msg-in
         }
     }
 
+    /// Sidebar.
+    #side {
+        /// Feat -> Blur contacts.
+        if (chat_b_c == 0) {
+            [style *= '0s; height'] {
+                > [aria-selected = 'true'] {
+                    > div::after { display: none i }
+                }
+                > :not([aria-selected = 'true']) {
+                    overflow: hidden i
+                    > div { transition: background, filter 300ms ease-in-out i }
+                    &:not(:hover) > div {
+                        filter: blur(6px)
+                    }
+                    &._1f1zm, &:hover { filter: blur(0px) }
+                }
+            }
+        }
+    }
+
     // Chat.
     #main {
         /// Reset header.
