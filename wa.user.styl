@@ -1126,6 +1126,9 @@ define('msg-in'  + key, val) for key, val in msg-in
             c: 0 0 var(--bg-4)
         }
 
+        /// Fix down arrow icon color for context menus.
+        [data-js-context-icon = 'true'] { c: var(--fg-3) }
+
         /// Footer.
         > footer {
             /// Compose area wrapper.
