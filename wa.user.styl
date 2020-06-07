@@ -14,6 +14,8 @@
 @var color    next_bg    '[Dev]: Base background color ' #1f232a
 @var color    next_fg    '[Dev]: Base foreground color ' #eeeeee
 @var color    next_ac    '[Dev]: Base accent color     ' #7289da
+@var color    next_imsg  '[Dev]: Incoming message bubble color' #16191e
+@var color    next_omsg  '[Dev]: Outgoing message bubble color' #3b4250
 
 @var text     ui_font    'Custom UI font' ''font_name''
 @var text     radius-g   'Custom rounded corners for menus' 4px
@@ -151,6 +153,8 @@ _l = lighten
 BG = next_bg
 FG = next_fg
 AC = next_ac
+IM = next_imsg
+OM = next_omsg
 
 // Color generator.
 /// TODO: Needs more polish.
@@ -163,6 +167,10 @@ if(dark(BG)) {
     b1 = -10%; b2 =  08%; b3 =  16%; b4 =  24%; b5 =  32%;
     f1 = -05%; f2 = -10%; f3 = -15%; f4 = -20%; f5 = -30%;
 }
+if(dark(IM)) { in_msg_quote =  -10%;
+} else       { in_msg_quote =   25%; }
+if(dark(OM)) { out_msg_quote = -10%;
+} else       { out_msg_quote =  25%; }
 
 bg = {
     '-0': _d(BG, b1),
@@ -188,10 +196,20 @@ ac = {
     '-4': mix(_d(BG, -4), AC, a4),
     '-5': mix(_d(BG, -4), AC, a5),
 }
+msg-in = {
+    '-0':    IM,
+    '-1': _d(IM, in_msg_quote),
+}
+msg-out = {
+    '-0':    OM,
+    '-1': _d(OM, out_msg_quote),
+}
 
-define('bg' + key, val) for key, val in bg
-define('fg' + key, val) for key, val in fg
-define('ac' + key, val) for key, val in ac
+define('bg'      + key, val) for key, val in bg
+define('fg'      + key, val) for key, val in fg
+define('ac'      + key, val) for key, val in ac
+define('msg-out' + key, val) for key, val in msg-out
+define('msg-in'  + key, val) for key, val in msg-in
 
 @-moz-document domain('web.whatsapp.com') {
     // V3 exploration.
@@ -371,10 +389,10 @@ define('ac' + key, val) for key, val in ac
         --icon-search-back-rgb: var(--ac-2-rgb) //113,120,125;
         --icon-strong: var(--fg-1) //#c4c7c9;
         --icon-strong-rgb: var(--fg-1-rgb) //196,199,201;
-        --incoming-background: var(--bg-4) //#222e35;
-        --incoming-background-rgb: var(--bg-4-rgb) //34,46,53;
-        --incoming-background-deeper: var(--bg-3) //#1d272e;
-        --incoming-background-deeper-rgb: var(--bg-3-rgb) //29,39,46;
+        --incoming-background: var(--msg-in-0) //#222e35;
+        --incoming-background-rgb: var(--msg-in-0-rgb) //34,46,53;
+        --incoming-background-deeper: var(--msg-in-1) //#1d272e;
+        --incoming-background-deeper-rgb: var(--msg-in-1-rgb) //29,39,46;
         --incoming-background-highlight: #ccc;
         --incoming-background-highlight-rgb: 204,204,204;
         --incoming-primary: var(--fg-3) //#777d81;
@@ -435,10 +453,10 @@ define('ac' + key, val) for key, val in ac
         --notification-e2e-text-rgb: 250,217,100;
         --notification-text: #f1f1f266;
         --notification-text-rgb: var(--fg-3-rgb) //241,241,242;
-        --outgoing-background: var(--ac-4) //#054740;
-        --outgoing-background-rgb: var(--ac-4-rgb) //5,71,64;
-        --outgoing-background-deeper: var(--ac-5) //#063b36;
-        --outgoing-background-deeper-rgb: var(--ac-5-rbg) //6,59,54;
+        --outgoing-background: var(--msg-in-0) //#054740;
+        --outgoing-background-rgb: var(--msg-in-0-rgb) //5,71,64;
+        --outgoing-background-deeper: var(--msg-in-1) //#063b36;
+        --outgoing-background-deeper-rgb: var(--msg-in-1-rgb) //6,59,54;
         --outgoing-background-highlight: #ccc;
         --outgoing-background-highlight-rgb: 204,204,204;
         --overlay: var(--bg-0) //#080e12;
