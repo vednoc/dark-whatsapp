@@ -1,6 +1,33 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.11.0 [2020-06-07 Sun]
+Adding more features and fixing a few of bugs.
+
+*** Added
+- An empty 'divider' to separate working from broken features
+- Options to set custom incoming/outgoing message bubble colors ([[https://github.com/vednoc/dark-whatsapp/issues/162][#162]], [[https://github.com/vednoc/dark-whatsapp/issues/163][#163]])
+  - Thanks to [[https://github.com/E-RELevant][Erel]] for writing code for this from scratch
+  - Further /improved/ by making it an opt-in feature
+  - Quick preview:
+
+  [[https://user-images.githubusercontent.com/18245694/83976901-4f5e6500-a8fd-11ea-98b2-ac36e3b2e599.gif]]
+- Ported custom width for chat app option
+- Ported fullscreen mode
+- Ported blurred contacts
+  - Quick preview:
+
+  [[https://user-images.githubusercontent.com/18245694/83976781-71a3b300-a8fc-11ea-9dcc-a10dbc7ab7b1.gif]]
+
+*** Improved
+- Minor adjustments for color variables
+- Timestmaps for media messages now have background
+
+*** Fixed
+- Missing avatars for custom avatar radius option
+- An issue with non-Lite version applying globally ([[https://github.com/vednoc/dark-whatsapp/issues/164][#164]])
+- Color for down arrow found in message context menus
+
 ** 2.10.0 [2020-06-06 Sat]
 Bringing back more features from previous releases and improvements!
 
@@ -8,8 +35,7 @@ Bringing back more features from previous releases and improvements!
 - Small tweaks for accent color generation ([[https://github.com/vednoc/dark-whatsapp/issues/162][#162]])
 - Ported rounded corners for menu/input/avatar ([[https://github.com/vednoc/dark-whatsapp/issues/163][#163]])
 - Ported styles for compact mode ([[https://github.com/vednoc/dark-whatsapp/issues/160][#160]])
-
-  Quick preview:
+  - Quick preview:
 
   [[https://user-images.githubusercontent.com/18245694/83950648-a9dbc080-a82c-11ea-817d-c63857978d48.png]]
 
