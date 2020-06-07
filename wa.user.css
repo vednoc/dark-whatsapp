@@ -6,7 +6,7 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      2.10.0
+@version      2.11.0
 @license      MIT
 ==/UserStyle== */
 
@@ -186,10 +186,10 @@
     --icon-search-back-rgb: var(--ac-2-rgb);
     --icon-strong: var(--fg-1);
     --icon-strong-rgb: var(--fg-1-rgb);
-    --incoming-background: var(--bg-4);
-    --incoming-background-rgb: var(--bg-4-rgb);
-    --incoming-background-deeper: var(--bg-3);
-    --incoming-background-deeper-rgb: var(--bg-3-rgb);
+    --incoming-background: var(--msg-in-0);
+    --incoming-background-rgb: var(--msg-in-0-rgb);
+    --incoming-background-deeper: var(--msg-in-1);
+    --incoming-background-deeper-rgb: var(--msg-in-1-rgb);
     --incoming-background-highlight: #ccc;
     --incoming-background-highlight-rgb: 204, 204, 204;
     --incoming-primary: var(--fg-3);
@@ -250,10 +250,10 @@
     --notification-e2e-text-rgb: 250, 217, 100;
     --notification-text: rgba(241,241,242,0.4);
     --notification-text-rgb: var(--fg-3-rgb);
-    --outgoing-background: var(--ac-4);
-    --outgoing-background-rgb: var(--ac-4-rgb);
-    --outgoing-background-deeper: var(--ac-5);
-    --outgoing-background-deeper-rgb: var(--ac-5-rbg);
+    --outgoing-background: var(--msg-out-0);
+    --outgoing-background-rgb: var(--msg-out-0-rgb);
+    --outgoing-background-deeper: var(--msg-out-1);
+    --outgoing-background-deeper-rgb: var(--msg-out-1-rgb);
     --outgoing-background-highlight: #ccc;
     --outgoing-background-highlight-rgb: 204, 204, 204;
     --overlay: var(--bg-0);
@@ -328,10 +328,10 @@
     --secondary-rgb: var(--fg-3-rgb);
     --secondary-light: var(--fg-2);
     --secondary-light-rgb: var(--fg-2-rgb);
-    --secondary-lighter: var(--fg-1);
-    --secondary-lighter-rgb: var(--fg-1-rgb);
-    --secondary-stronger: var(--fg-0);
-    --secondary-stronger-rgb: var(--fg-0-rgb);
+    --secondary-lighter: var(--fg-3);
+    --secondary-lighter-rgb: var(--fg-3-rgb);
+    --secondary-stronger: var(--fg-3);
+    --secondary-stronger-rgb: var(--fg-3-rgb);
     --shadow: var(--bg-0);
     --shadow-rgb: var(--bg-0-rgb);
     --shadow-light: var(--bg-0);
@@ -348,12 +348,12 @@
     --status-background-rgb: var(--bg-1-rgb);
     --status-background-hover: var(--bg-2);
     --status-background-hover-rgb: var(--bg-2-rgb);
-    --status-primary: #fff;
-    --status-primary-rgb: 255, 255, 255;
-    --status-secondary: rgba(255,255,255,0.549);
-    --status-secondary-rgb: 255, 255, 255;
-    --status-secondary-stronger: #b3b3b3;
-    --status-secondary-stronger-rgb: 179, 179, 179;
+    --status-primary: var(--fg-1);
+    --status-primary-rgb: var(--fg-1-rgb);
+    --status-secondary: var(--fg-4);
+    --status-secondary-rgb: var(--fg-4-rgb);
+    --status-secondary-stronger: var(--fg-5);
+    --status-secondary-stronger-rgb: var(--fg-5-rgb);
     --success: var(--ac-0);
     --success-rgb: var(--ac-0-rgb);
     --suspicious-background: rgba(239,105,122,0.8);
@@ -372,8 +372,8 @@
     --thumb-border-viewer-active-rgb: var(--fg-3-rgb);
     --toast-background: var(--bg-3);
     --toast-background-rgb: var(--bg-3-rgb);
-    --tooltip-background: rgba(89,89,89,0.851);
-    --tooltip-background-rgb: 89.25, 89.25, 89.25;
+    --tooltip-background: var(--bg-1);
+    --tooltip-background-rgb: var(--bg-1);
     --typing: var(--ac-0);
     --typing-rgb: var(--ac-0-rgb);
     --unread-background: var(--bg-3);
@@ -436,6 +436,14 @@
     --ac-4-rgb: 56,65,90;
     --ac-5: #303849 !important;
     --ac-5-rgb: 48,56,73;
+    --msg-in-0: #3b4250 !important;
+    --msg-in-0-rgb: 59,66,80;
+    --msg-in-1: #323843 !important;
+    --msg-in-1-rgb: 50,56,67;
+    --msg-out-0: #38415a !important;
+    --msg-out-0-rgb: 56,65,90;
+    --msg-out-1: #303849 !important;
+    --msg-out-1-rgb: 48,56,73;
     --white: #fff;
     --white-rgb: 255,255,255;
     --red: #dc322f;
@@ -446,11 +454,8 @@
     --blue-rgb: 38,139,210;
     --yellow: #e5c512;
     --yellow-rgb: 229,197,18;
-    --msg-l: #353b46;
-    --msg-r: #2c323d;
     --t: transparent;
     --shadow: rgba(0,0,0,0.145);
-    --sh-h: rgba(0,0,0,0.208);
     --bshadow: 0 2px 4px var(--shadow);
     --ui-font: 'font_name', 'Segoe UI', 'Helvetica Neue', Helvetica, 'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif;
     --r-menus: 4px;
@@ -458,6 +463,7 @@
     --r-avatars: 50%;
     --c-m-hover: 0.6s;
     --c-m-delay: 1.2s;
+    --app-width: 1396px;
     --bg-image: url("https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/images/bg-blur-high.jpg");
     --bg-opacity: 0.4;
     --bg-blur: 0px;
@@ -467,8 +473,8 @@
     --bg-size: cover;
     --bg-pos: center;
     --bg-rep: no-repeat;
-    --version: 'Dark-WhatsApp 2.10.0 — June 6th, 2020';
-    --message: 'Towards v3 of DWA! The last update broke too many things, and we are rewriting core functionality — the dark theme — so that in future updates we can reimplement currently broken DWA features – compact mode, tail styles, "private mode", etc. \A\A Compact mode and custom border radius options are back!';
+    --version: 'Dark-WhatsApp Lite 2.11.0 — June 7th, 2020';
+    --message: 'Towards v3 of DWA! The last update broke too many things, and we are rewriting core functionality — the dark theme — so that in future updates we can reimplement currently broken DWA features – compact mode, tail styles, "private mode", etc. \A\A Fullscreen mode, custom message bubble colors, and blurred contacts are back!';
     --changes: '\A\A https://github.com/vednoc/dark-whatsapp';
   }
   @supports (scrollbar-width: thin) {
@@ -541,7 +547,9 @@
   }
   ._1BjNO[style],
   ._1BjNO[style] > img,
-  ._18cLH {
+  ._18cLH,
+  ._3_Hvt,
+  ._2H1bg {
     border-radius: var(--r-avatars) !important;
   }
   .overlay ._2ouPw,
@@ -574,12 +582,12 @@
     background-color: #1c2026 !important;
     border-right: 1px solid #444d5c;
   }
-@media (min-width: 1441px) {
+  @media (min-width: 1441px) {
     [data-animate-status-v3-modal-background = 'true'] > div {
-      border: 1px solid #444d5c !important;
+      border: 1px solid var(--bg-5) !important;
       border-radius: var(--r-menus) !important;
     }
-}
+  }
   .color-1 {
     color: var(--ac-0) !important;
   }
@@ -710,13 +718,21 @@
   #app > div > [tabindex] {
     background: none !important;
   }
-@media (min-width: 1441px) {
+  @media (min-width: 1441px) {
     #app > div > [tabindex] {
       border-radius: var(--r-menus) !important;
       border: 1px solid #444d5c !important;
       box-shadow: 0 2px 4px rgba(0,0,0,0.145);
+      border-radius: var(--r-menus) !important;
+      border: 1px solid var(--bg-5) !important;
+      box-shadow: var(--bshadow) !important;
     }
-}
+    #app > div > [tabindex],
+    ._11ARv {
+      width: calc(100% - 38px) !important;
+      max-width: var(--app-width) !important;
+    }
+  }
   #app > div > [tabindex]::after {
     content: unset !important;
   }
@@ -769,6 +785,25 @@
   }
   #main .-AOZp ._2oA-- + div[style] {
     background-color: var(--bg-4) !important;
+  }
+  #main [data-js-context-icon = 'true'] {
+    color: var(--fg-3) !important;
+  }
+  #main [style *= 'width'][style *= 'height'] + div._3yTyY,
+  #main [style *= 'width'][style *= 'height'] + div._2CHFo {
+    padding: 2px 4px !important;
+    background-color: rgba(var(--bg-1-rgb), 0.7) !important;
+    border-radius: 5px !important;
+  }
+  #main .video-thumb .len7M,
+  #main .video-thumb + ._2DfqO {
+    padding: 2px 4px !important;
+    background-color: rgba(var(--bg-1-rgb), 0.7) !important;
+    border-radius: 5px !important;
+  }
+  #main .video-thumb._3EMsd + ._2DfqO {
+    right: 5px !important;
+    bottom: 3px !important;
   }
   #main > footer > .copyable-area {
     border-top: 1px solid var(--bg-5) !important;
@@ -823,12 +858,10 @@
     .two > :nth-child(2) > :nth-child(1) {
       z-index: 201 !important;
       flex: 0 0 30% !important;
+      min-width: 350px !important;
     }
     .two > :nth-child(2) > :nth-child(1) [style][tabindex] {
       border-right: 1px solid #444d5c !important;
-    }
-    .two ._1xXdX:hover {
-      min-width: 349px !important;
     }
     .three > div:nth-child(2) > div:nth-child(2) {
       flex: 0 0 calc(100% - 30% - 80px) !important;
@@ -929,11 +962,11 @@
     }
   }
   @keyframes pulse {
-      40% {
-        opacity: 0;
-      }
-      80% {
-        opacity: 1;
-      }
+    40% {
+      opacity: 0;
+    }
+    80% {
+      opacity: 1;
+    }
   }
 }
