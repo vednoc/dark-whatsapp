@@ -14,7 +14,9 @@
 @var color    next_bg    '[Dev]: Base background color ' #1f232a
 @var color    next_fg    '[Dev]: Base foreground color ' #eeeeee
 @var color    next_ac    '[Dev]: Base accent color     ' #7289da
+@var checkbox ow_imsg    'Override incoming message bubble color' 0
 @var color    next_imsg  '[Dev]: Incoming message bubble color' #16191e
+@var checkbox ow_omsg    'Override outgoing message bubble color' 0
 @var color    next_omsg  '[Dev]: Outgoing message bubble color' #3b4250
 
 @var text     ui_font    'Custom UI font' ''font_name''
@@ -167,10 +169,10 @@ if(dark(BG)) {
     b1 = -10%; b2 =  08%; b3 =  16%; b4 =  24%; b5 =  32%;
     f1 = -05%; f2 = -10%; f3 = -15%; f4 = -20%; f5 = -30%;
 }
-if(dark(IM)) { in_msg_quote =  -10%;
-} else       { in_msg_quote =   25%; }
-if(dark(OM)) { out_msg_quote = -10%;
-} else       { out_msg_quote =  25%; }
+
+// Feat -> Custom colors for message bubble.
+in_msg_quote  = dark(IM) ? -10% : 25%
+out_msg_quote = dark(OM) ? -10% : 25%
 
 bg = {
     '-0': _d(BG, b1),
@@ -641,14 +643,33 @@ define('msg-in'  + key, val) for key, val in msg-in
         --ac-4-rgb      : to_rgb(ac-4)
         --ac-5          : ac-5 i
         --ac-5-rgb      : to_rgb(ac-5)
-        --msg-in-0      : msg-in-0 i
-        --msg-in-0-rgb  : to_rgb(msg-in-0)
-        --msg-in-1      : msg-in-1 i
-        --msg-in-1-rgb  : to_rgb(msg-in-1)
-        --msg-out-0     : msg-out-0 i
-        --msg-out-0-rgb : to_rgb(msg-out-0)
-        --msg-out-1     : msg-out-1 i
-        --msg-out-1-rgb : to_rgb(msg-out-1)
+
+        /// Feat -> Override incoming message bubble colors.
+        if (ow_imsg) {
+            --msg-in-0      : msg-in-0 i
+            --msg-in-0-rgb  : to_rgb(msg-in-0)
+            --msg-in-1      : msg-in-1 i
+            --msg-in-1-rgb  : to_rgb(msg-in-1)
+        } else {
+            --msg-in-0      : bg-4 i
+            --msg-in-0-rgb  : to_rgb(bg-4)
+            --msg-in-1      : bg-3 i
+            --msg-in-1-rgb  : to_rgb(bg-3)
+        }
+
+        /// Feat -> Override incoming message bubble colors.
+        if (ow_omsg) {
+            --msg-out-0     : msg-out-0 i
+            --msg-out-0-rgb : to_rgb(msg-out-0)
+            --msg-out-1     : msg-out-1 i
+            --msg-out-1-rgb : to_rgb(msg-out-1)
+        } else {
+            --msg-out-0     : ac-4 i
+            --msg-out-0-rgb : to_rgb(ac-4)
+            --msg-out-1     : ac-5 i
+            --msg-out-1-rgb : to_rgb(ac-5)
+        }
+
         --white         : white;
         --white-rgb     : to_rgb(white);
         --red           : red;
