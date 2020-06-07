@@ -679,6 +679,9 @@ define('msg-in'  + key, val) for key, val in msg-in
         --c-m-hover    : app_c_m_h
         --c-m-delay    : app_c_m_d
 
+        /// Custom app width.
+        --app-width    : app_width
+
         /// Feat -> Custom app background.
         image_path  = 'https://raw.githubusercontent.com/'
         image_path += 'vednoc/dark-whatsapp/master/images/bg-blur'
@@ -1009,6 +1012,12 @@ define('msg-in'  + key, val) for key, val in msg-in
             rad: var(--r-menus) i
             border: 1px solid bg-5 i
             box-shadow: 0 2px 4px sh
+
+            /// Feat -> Custom app width.
+            &, /._11ARv {
+                width: calc(100% - 38px) i
+                max-width: var(--app-width) i
+            }
         }
 
         /// Odd header-like tall background.
