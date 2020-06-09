@@ -613,42 +613,18 @@ define('msg-in'  + key, val) for key, val in msg-in
         --win32-title-primary-rgb: 255,255,255;
 
         /// DWA color variables.
-        --bg-0          : bg-0 i
-        --bg-0-rgb      : to_rgb(bg-0)
-        --bg-1          : bg-1 i
-        --bg-1-rgb      : to_rgb(bg-1)
-        --bg-2          : bg-2 i
-        --bg-2-rgb      : to_rgb(bg-2)
-        --bg-3          : bg-3 i
-        --bg-3-rgb      : to_rgb(bg-3)
-        --bg-4          : bg-4 i
-        --bg-4-rgb      : to_rgb(bg-4)
-        --bg-5          : bg-5 i
-        --bg-5-rgb      : to_rgb(bg-5)
-        --fg-0          : fg-0 i
-        --fg-0-rgb      : to_rgb(fg-0)
-        --fg-1          : fg-1 i
-        --fg-1-rgb      : to_rgb(fg-1)
-        --fg-2          : fg-2 i
-        --fg-2-rgb      : to_rgb(fg-2)
-        --fg-3          : fg-3 i
-        --fg-3-rgb      : to_rgb(fg-3)
-        --fg-4          : fg-4 i
-        --fg-4-rgb      : to_rgb(fg-4)
-        --fg-5          : fg-5 i
-        --fg-5-rgb      : to_rgb(fg-5)
-        --ac-0          : ac-0 i
-        --ac-0-rgb      : to_rgb(ac-0)
-        --ac-1          : ac-1 i
-        --ac-1-rgb      : to_rgb(ac-1)
-        --ac-2          : ac-2 i
-        --ac-2-rgb      : to_rgb(ac-2)
-        --ac-3          : ac-3 i
-        --ac-3-rgb      : to_rgb(ac-3)
-        --ac-4          : ac-4 i
-        --ac-4-rgb      : to_rgb(ac-4)
-        --ac-5          : ac-5 i
-        --ac-5-rgb      : to_rgb(ac-5)
+        for it in 0..5 {
+            --bg-{ it }:            bg- + it i
+            --bg-{ it }-rgb: to_rgb(bg- + it)
+        }
+        for it in 0..5 {
+            --fg-{ it }:            fg- + it i
+            --fg-{ it }-rgb: to_rgb(fg- + it)
+        }
+        for it in 0..5 {
+            --ac-{ it }:            ac- + it i
+            --ac-{ it }-rgb: to_rgb(ac- + it)
+        }
 
         /// Feat -> Override incoming message bubble colors.
         if (ow_imsg) {
