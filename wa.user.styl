@@ -179,7 +179,7 @@ in_msg_quote  = dark(IM) ? -10% : 25%
 out_msg_quote = dark(OM) ? -10% : 25%
 
 // Generate tones for colors.
-bg = {
+bg_hash = {
     '-0': _d(BG, b1),
     '-1': _d(BG, 0%),
     '-2': _d(BG, b2),
@@ -187,7 +187,7 @@ bg = {
     '-4': _d(BG, b4),
     '-5': _d(BG, b5),
 }
-fg = {
+fg_hash = {
     '-0': _d(FG, f1),
     '-1': _d(FG, 0%),
     '-2': _d(FG, f2),
@@ -195,7 +195,7 @@ fg = {
     '-4': _d(FG, f4),
     '-5': _d(FG, f5),
 }
-ac = {
+ac_hash = {
     '-0':                 AC,
     '-1': mix(_d(BG, -4), AC, a1),
     '-2': mix(_d(BG, -4), AC, a2),
@@ -213,9 +213,9 @@ msg-out = {
 }
 
 // Generate stylus-lang variables.
-define('bg'      + key, val) for key, val in bg
-define('fg'      + key, val) for key, val in fg
-define('ac'      + key, val) for key, val in ac
+define('bg'      + key, val) for key, val in bg_hash
+define('fg'      + key, val) for key, val in fg_hash
+define('ac'      + key, val) for key, val in ac_hash
 define('msg-out' + key, val) for key, val in msg-out
 define('msg-in'  + key, val) for key, val in msg-in
 
@@ -613,17 +613,11 @@ define('msg-in'  + key, val) for key, val in msg-in
         --win32-title-primary-rgb: 255,255,255;
 
         /// DWA color variables.
-        for it in 0..5 {
-            --bg-{ it }:            bg- + it i
-            --bg-{ it }-rgb: to_rgb(bg- + it)
-        }
-        for it in 0..5 {
-            --fg-{ it }:            fg- + it i
-            --fg-{ it }-rgb: to_rgb(fg- + it)
-        }
-        for it in 0..5 {
-            --ac-{ it }:            ac- + it i
-            --ac-{ it }-rgb: to_rgb(ac- + it)
+        for _v in (bg fg ac) {
+            for _i in 0..5 {
+                /// Escape '\' so that it doesn't error out for `*-0` vars.
+                { '--' + _v + '-' + _i }: _v + \- + _i i
+            }
         }
 
         /// Feat -> Override incoming message bubble colors.
