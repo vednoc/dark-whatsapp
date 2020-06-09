@@ -875,7 +875,7 @@ define('msg-in'  + key, val) for key, val in msg-in
         /// -> Fix media selection.
         /._1KWct { c: 0 var(--bg-5) var(--bg-3) }
 
-        /// Status area.
+        /// Status area modal.
         /[data-animate-status-v3-modal-background = 'true'] {
             c: 0 0 var(--modal-backdrop);
             /// Main content.
@@ -904,6 +904,21 @@ define('msg-in'  + key, val) for key, val in msg-in
             /// Fill color for unread icon. @upstream
             /[data-icon = 'status-v3-unread'] {
                 [fill = '#009588'] { fill: ac-0 i }
+            }
+        }
+
+        /// 'Allow notifications' modal.
+        &._3Os9f {
+            c: 0 0 var(--modal-backdrop)
+            [data-animate-modal-popup] {
+                padding: 16px i
+                c: 0 0 var(--bg-1)
+
+                /// Fix icon color.
+                [data-icon = 'back'] path { fill: var(--fg-1) i }
+
+                /// Uniform look with other modals. @upstream
+                --white-rgb: var(--fg-2-rgb)
             }
         }
     }
