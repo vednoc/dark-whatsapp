@@ -616,9 +616,11 @@ define('msg-in'  + key, val) for key, val in msg-in
         /// DWA color variables.
         for _v in (bg fg ac) {
             for _i in 0..5 {
-                /// Escape '\' so that it doesn't error out for `*-0` vars.
-                { '--' + _v + '-' + _i }: _v + \- + _i i
-                { '--' + _v + '-' + _i + '-rgb' }: to_rgb(_v + \- + _i)
+                var_key = '--' + _v + '-' + _i
+                /// Escape '\' for `*-0` vars.
+                var_val = _v + \- + _i
+                { var_key }: var_val i
+                { var_key + '-rgb' }: to_rgb(var_val)
             }
         }
 
