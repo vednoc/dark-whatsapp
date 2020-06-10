@@ -25,6 +25,7 @@
 @var range    radius-a   'Custom rounded corners for avatars' [50, 0, 50, 1, '%']
 @var text     app_width  'Custom width for chat app' 1396px
 @var checkbox fullscreen 'Enable fullscreen mode' 0
+@var checkbox app_c_h    'Enable consistent drawer headers' 1
 @var checkbox app_c_m    'Enable compact mode' 1
 @var text     app_c_m_w  'Compact mode breakpoint' 720px
 @var text     app_c_m_h  'Compact mode hover-on delay' 0.6s
@@ -363,8 +364,8 @@ define('msg-in'  + key, val) for key, val in msg-in
         --drawer-gallery-background-rgb: var(--bg-1-rgb) //16,29,36;
         --drawer-header-title: var(--fg-1) //#d6d8d9;
         --drawer-header-title-rgb: var(--fg-1-rgb) //214,216,217;
-        --drawer-section-background: var(--bg-1) //#101d24;
-        --drawer-section-background-rgb: var(--bg-1-rgb) //16,29,36;
+        --drawer-section-background: var(--bg-2) //#101d24;
+        --drawer-section-background-rgb: var(--bg-2-rgb) //16,29,36;
         --dropdown-background: var(--bg-2) //#253137;
         --dropdown-background-rgb: var(--bg-2-rgb) //37,49,55;
         --dropdown-background-hover: var(--bg-3) //#202c33;
@@ -473,8 +474,8 @@ define('msg-in'  + key, val) for key, val in msg-in
         --panel-background-rgb: var(--bg-3-rgb) //28,40,47;
         --panel-background-active: #1a262d;
         --panel-background-active-rgb: 26,38,45;
-        --panel-background-colored: var(--bg-4) //#222e35;
-        --panel-background-colored-rgb: var(--bg-4-rgb) //34,46,53;
+        --panel-background-colored: var(--bg-3) //#222e35;
+        --panel-background-colored-rgb: var(--bg-3-rgb) //34,46,53;
         --panel-background-colored-deeper: var(--bg-3) //#222e35;
         --panel-background-colored-deeper-rgb: var(--bg-3-rgb) //34,46,53;
         --panel-background-deep: var(--bg-2) //#162026;
@@ -1076,12 +1077,35 @@ define('msg-in'  + key, val) for key, val in msg-in
             }
         }
 
-        /// Right ->  Pane divider.
+        /// Right -> Drawer divider.
         ._14VS3 > ._1V8rX {
             border-left: 1px solid bg-5 i
             .copyable-area > header {
-                border-bottom: none i
+                border-bottom: 1px solid bg-5 i
             }
+        }
+    }
+
+    /// Feat -> Consistent drawer headers.
+    if(app_c_h) {
+        ._1fiOp, ._2TZYF {
+            height: 59px i
+            justify-content: center i
+            border-bottom: 1px solid bg-5 i
+
+            /// Reset left drawer inner item.
+            > [data-animate-drawer-title] { height: unset i }
+
+            /// Reset header text.
+            ._3vTfY {
+                margin-top: 1px i
+                font-size: 18px i
+                font-weight: normal i
+            }
+        }
+    } else {
+        ._1fiOp, ._2TZYF {
+            --panel-background-colored: var(--bg-4) i
         }
     }
 
