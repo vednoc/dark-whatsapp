@@ -51,6 +51,8 @@
 @var text     bg_pos     'Background image position' center
 @var text     bg_rep     'Background image repeat' no-repeat
 
+@var range    emoji_o    'Emoji default opacity' [0.8, 0.0, 1, 0.01]
+
 @var text     divider    '⚠‼ IMPORTANT: Everything below is BROKEN' ''WIP''
 
 @var checkbox chat_b_img 'Enable blurred images/videos' 0
@@ -86,8 +88,6 @@
 }
 @var checkbox chat_b_r   'Custom background for right message bubble' 0
 @var color    b_r_bg     'Right message bubble color' #333a47
-
-@var range    emoji_o    'Emoji default opacity' [0.8, 0.0, 1, 0.01]
 
 @var checkbox chat_bg    'Enable chat background image' 1
 @var text     chat_image 'Custom image for chat' url('https://web.whatsapp.com/img/bg-chat-tile_9e8a2898faedb7db9bf5638405cf81ae.png')
@@ -681,6 +681,9 @@ define('msg-in'  + key, val) for key, val in msg-in
         /// Custom app width.
         --app-width    : app_width
 
+        /// Custom emoji opacity.
+        --emoji-o      : emoji_o
+
         /// Feat -> Custom app background.
         image_path  = 'https://raw.githubusercontent.com/'
         image_path += 'vednoc/dark-whatsapp/master/images/bg-blur'
@@ -823,6 +826,26 @@ define('msg-in'  + key, val) for key, val in msg-in
                 }
             }
         }
+    }
+
+    // Emojis -> Custom enhancements.
+    .emojik {
+        transition: transform 0.15s ease i
+
+        /// Default opacity.
+        &:not(:hover):not(:focus):not(.selected) {
+            filter: opacity(var(--emoji-o))
+        }
+
+        /// Hovered/focused states.
+        &:hover:not(.selected), &:focus {
+            transform: scale(1.2)
+            box-shadow: none i
+            opacity: 1 i
+        }
+
+        /// Selected state. #148
+        &.selected { box-shadow: 0 0 0 1px bg-3, 0 0 0 3px ac-0 i }
     }
 
     // Modals.
