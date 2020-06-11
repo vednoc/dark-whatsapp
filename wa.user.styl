@@ -817,9 +817,12 @@ define('msg-in'  + key, val) for key, val in msg-in
 
     // Avatars -> Custom rounded corners.
     ._1BjNO[style] {
-        c: 0 0 bg-5
-        /// Avatars/images/new group.
-        &, > img, /._18cLH, /._3_Hvt, /._2H1bg { rad: var(--r-avatars) i }
+        /// Global/shared contacts.
+        &, /._1S7ke { c: 0 0 bg-5 }
+        /// Avatars/images/new group/shared contacts.
+        &, > img, /._18cLH, /._3_Hvt, /._2H1bg, /._1S7ke {
+            rad: var(--r-avatars) i
+        }
         /// Tweak default-user icons.
         if ( radius-a != '50%' ) {
             /[style *= 'height: 26px'],
