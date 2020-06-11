@@ -411,8 +411,8 @@ define('msg-in'  + key, val) for key, val in msg-in
         --input-border-active-rgb: var(--ac-0-rgb) //0,175,156;
         --input-placeholder: var(--fg-4) //#6a7276;
         --input-placeholder-rgb: var(--fg-4) //106,114,118;
-        --intro-background: var(--bg-2) //#222e35;
-        --intro-background-rgb: var(--bg-2-rgb) //34,46,53;
+        --intro-background: var(--bg-1) //#222e35;
+        --intro-background-rgb: var(--bg-1-rgb) //34,46,53;
         --intro-border: var(--ac-3) //#054740;
         --intro-border-rgb: var(--ac-3-rgb) //5,71,64;
         --inverse: #f1f1f2;
@@ -888,12 +888,13 @@ define('msg-in'  + key, val) for key, val in msg-in
             c: 0 0 var(--modal-backdrop);
             /// Main content.
             > div {
-                c: 0 0 bg-2
+                c: 0 0 bg-1
 
                 /// Sidebar.
                 > div:nth-child(1) {
-                    c: 0 0 bg-0
+                    c: 0 0 bg-2
                     border-right: 1px solid bg-5
+                    rad: var(--r-menus) 0 0 var(--r-menus) i
                 }
 
                 /// Large screens.
