@@ -571,8 +571,8 @@ define('msg-in'  + key, val) for key, val in msg-in
         --success-rgb: var(--ac-0-rgb) //0,175,156;
         --suspicious-background: #ef697acc;
         --suspicious-background-rgb: 239,105,122;
-        --system-message-background: var(--ac-4) //#1e2a30;
-        --system-message-background-rgb: var(--ac-4-rgb) //30,42,48;
+        --system-message-background: var(--ac-5) //#1e2a30;
+        --system-message-background-rgb: var(--ac-5-rgb) //30,42,48;
         --system-message-text: var(--fg-1) //#f1f1f2de;
         --system-message-text-rgb: 241,241,242;
         --teal-hover: #00b7a1;
@@ -1350,7 +1350,7 @@ define('msg-in'  + key, val) for key, val in msg-in
                             rad: 50%
                             ._15G96 { margin: 0 }
                             /// Unread messages indicator.
-                            ._31gEB { border: 4px solid bg-0 }
+                            ._31gEB { border: 4px solid bg-2 }
                         }
                         /// Reverse message and icons.
                         .m61XR > span {
@@ -1385,8 +1385,8 @@ define('msg-in'  + key, val) for key, val in msg-in
                         z-index: 101
                         position: absolute
                         margin: -2px 0 0 -75px
-                        border: 3px solid bg-1
-                        c: 0 0 bg-3
+                        border: 3px solid bg-2
+                        c: 0 0 bg-1
                         rad: 50%
                         /// Make SVG smaller.
                         > span > svg {
@@ -1396,10 +1396,8 @@ define('msg-in'  + key, val) for key, val in msg-in
                         }
                     }
                     /// Active states.
-                    &._13opk { ._31gEB, .zFnXi { c: 0 bg-3 bg-5 }}
-                    &:hover:not(._13opk) {
-                        ._31gEB, .zFnXi { c: 0 bg-2 }
-                    }
+                    &._13opk { ._31gEB, .zFnXi { c: 0 bg-4 }}
+                    &:hover:not(._13opk) { ._31gEB, .zFnXi { c: 0 bg-3 }}
                 }
                 /// I _think_ I understand why this works!
                 ._2kHpK { min-width: 80px i }
