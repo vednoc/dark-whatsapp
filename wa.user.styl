@@ -53,6 +53,8 @@
 
 @var range    emoji_o    'Emoji default opacity' [0.8, 0.0, 1, 0.01]
 
+@var checkbox ff_scroll  'Thin scrollbars in Firefox' 1
+
 @var text     divider    '⚠‼ IMPORTANT: Everything below is BROKEN' ''WIP''
 
 @var checkbox chat_b_img 'Enable blurred images/videos' 0
@@ -97,7 +99,6 @@
 @var text     chat_bg_p  'Chat background image position' top left
 @var text     chat_bg_r  'Chat background image repeat' repeat
 
-@var checkbox ff_scroll  'Thin scrollbars in Firefox' 1
 @var checkbox ss_mode    '[Dev]: Screenshot mode' 0
 
 @var checkbox c_g_c      'Theme colors in groups' 1
@@ -712,14 +713,21 @@ define('msg-in'  + key, val) for key, val in msg-in
         --message: 'Towards v3 of DWA! The last update broke too many things, and we are rewriting core functionality — the dark theme — so that in future updates we can reimplement currently broken DWA features – compact mode, tail styles, "private mode", etc. \A\A Fullscreen mode, custom message bubble colors, and blurred contacts are back!';
         --changes: '\A\A https://github.com/vednoc/dark-whatsapp';
 
-        /\*{
+        /// Feat -> Thin scrollbar in Firefox.
+        if ( ff_scroll == 1 ) {
             @supports (scrollbar-width: thin) {
-                scrollbar-width: thin i
-                scrollbar-color: var(--ac-3) #88888815;
+                * { scrollbar-width: thin }
+            }
+        }
+
+        /// Scrollbar colors.
+        /\*{
+            @supports (scrollbar-color: #555 #222) {
+                scrollbar-color: var(--ac-3) #88888810 i
             }
             &::-webkit-scrollbar {
-                &-thumb { background: var(--ac-3) i }
-                &-track { background: var(--shadow) i }
+                &-thumb { c: 0 0 var(--ac-3) i }
+                &-track { c: 0 0 var(--shadow) i }
             }
         }
     }
