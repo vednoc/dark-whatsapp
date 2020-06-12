@@ -1,6 +1,28 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.12.0 [2020-06-12 Fri]
+Porting more features and polishing colors.
+
+*** Added
+- An option for consistent drawer headers ([[https://github.com/vednoc/dark-whatsapp/pull/113][#113]])
+  - Enabled by default.
+- More ~v2~-like colors for sidebars/chat/intro/status area
+- Ported various emoji enhancements and default opacity option
+- Ported thin scrollbars option for Firefox users
+- Ported custom chat background options
+
+*** Improved
+- Override for default dark mode color variables
+- Refactored bg/fg/ac variable generation
+- Shadow for left/right drawer sections
+- Various color variables improvements
+- Added background to the app wrapper
+
+*** Fixed
+- Base styles for 'Allow Notifications' modal
+- Missing 'shared contacts' for 'custom avatar radius' option
+
 ** 2.11.0 [2020-06-07 Sun]
 Adding more features and fixing a few of bugs.
 
