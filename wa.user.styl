@@ -481,7 +481,7 @@ define('msg-in'  + key, val) for key, val in msg-in
         --panel-background-colored-deeper-rgb: var(--bg-3-rgb) //34,46,53;
         --panel-background-deep: var(--bg-2) //#162026;
         --panel-background-deep-rgb: var(--bg-2-rgb) //22,32,38;
-        --panel-background-deeper: var(--bg-2) //#1a252c;
+        --panel-background-deeper: var(--bg-3) //#1a252c;
         --panel-background-deeper-rgb: var(--bg-3-rgb) //26,37,44;
         --panel-background-hover: #1b272e;
         --panel-background-hover-rgb: 27,39,46;
@@ -787,9 +787,16 @@ define('msg-in'  + key, val) for key, val in msg-in
             background-image: var(--intro-image)
             transition: opacity 0.6s ease
             rad: 0 i
+
+            /// Title.
+            + div h1 { c: fg-3 }
+
+            /// Custom text.
             + div h1 + div[class] {
                 font-size: 0;
-                c: fg-0;
+                c: fg-1;
+
+                /// Announcements.
                 &::before {
                     display: block;
                     font-size: 16px;
@@ -797,6 +804,8 @@ define('msg-in'  + key, val) for key, val in msg-in
                     white-space: pre-wrap;
                     content: var(--message) var(--changes);
                 }
+
+                /// Version.
                 &::after {
                     display: block;
                     font-size: 16px;
@@ -806,6 +815,18 @@ define('msg-in'  + key, val) for key, val in msg-in
                     content: var(--version);
                     border-top: 1px solid bg-4;
                 }
+            }
+        }
+
+        /// Settings -> Tweaks for 'Set Chat Wallpaper' area. #149
+        /[style *= 'd-color: rgb(237\, 233\, 228)'] {
+            position: relative;
+            &::before {
+                content: 'Use this with Dark-WhatsApp'
+                position: absolute
+                font-size: 15px
+                width: 100%
+                c: black
             }
         }
 
@@ -1127,7 +1148,7 @@ define('msg-in'  + key, val) for key, val in msg-in
             }
 
             /// Remove shadows from drawer sections.
-            ._2Bps4 {
+            /._2Bps4 {
                 box-shadow: 0 0 0 1px var(--bg-4) i
             }
         }
@@ -1239,7 +1260,7 @@ define('msg-in'  + key, val) for key, val in msg-in
         /// Footer.
         > footer {
             /// Compose area wrapper.
-            > .copyable-area {
+            > .copyable-area, [data-list-scroll-container] {
                 border-top: 1px solid var(--bg-5) i
             }
 
