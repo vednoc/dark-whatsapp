@@ -6,12 +6,13 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      2.11.0
+@version      2.12.0
 @license      MIT
 ==/UserStyle== */
 
 @-moz-document domain('web.whatsapp.com') {
-  :root:not(#z) {
+  :root:not(#z),
+  .dark:not(#z) {
     --teal: var(--ac-0);
     --teal-rgb: var(--ac-0-rgb);
     --teal-light: var(--ac-1);
@@ -48,12 +49,12 @@
     --avatar-placeholder-background-rgb: var(--bg-5-rgb);
     --avatar-placeholder-primary: var(--fg-3);
     --avatar-placeholder-primary-rgb: var(--fg-3-rgb);
-    --background-default: var(--bg-1);
-    --background-default-rgb: var(--bg-1-rgb);
-    --background-default-active: var(--bg-3);
-    --background-default-active-rgb: var(--bg-3-rgb);
-    --background-default-hover: var(--bg-2);
-    --background-default-hover-rgb: var(--bg-2-rgb);
+    --background-default: var(--bg-2);
+    --background-default-rgb: var(--bg-2-rgb);
+    --background-default-active: var(--bg-4);
+    --background-default-active-rgb: var(--bg-4-rgb);
+    --background-default-hover: var(--bg-3);
+    --background-default-hover-rgb: var(--bg-3-rgb);
     --border-bubble: var(--shadow);
     --border-bubble-rgb: var(--shadow-rgb);
     --border-default: var(--bg-3);
@@ -138,8 +139,8 @@
     --compose-border-focused-rgb: 39, 70, 86;
     --compose-panel-background: var(--bg-3);
     --compose-panel-background-rgb: var(--bg-3-rgb);
-    --conversation-panel-background: var(--bg-2);
-    --conversation-panel-background-rgb: var(--bg-2-rgb);
+    --conversation-panel-background: var(--bg-1);
+    --conversation-panel-background-rgb: var(--bg-1-rgb);
     --conversation-panel-border: var(--bg-5);
     --conversation-panel-border-rgb: var(--fg-3-rgb);
     --danger: var(--red);
@@ -152,8 +153,8 @@
     --drawer-gallery-background-rgb: var(--bg-1-rgb);
     --drawer-header-title: var(--fg-1);
     --drawer-header-title-rgb: var(--fg-1-rgb);
-    --drawer-section-background: var(--bg-1);
-    --drawer-section-background-rgb: var(--bg-1-rgb);
+    --drawer-section-background: var(--bg-2);
+    --drawer-section-background-rgb: var(--bg-2-rgb);
     --dropdown-background: var(--bg-2);
     --dropdown-background-rgb: var(--bg-2-rgb);
     --dropdown-background-hover: var(--bg-3);
@@ -198,8 +199,8 @@
     --input-border-active-rgb: var(--ac-0-rgb);
     --input-placeholder: var(--fg-4);
     --input-placeholder-rgb: var(--fg-4);
-    --intro-background: var(--bg-2);
-    --intro-background-rgb: var(--bg-2-rgb);
+    --intro-background: var(--bg-1);
+    --intro-background-rgb: var(--bg-1-rgb);
     --intro-border: var(--ac-3);
     --intro-border-rgb: var(--ac-3-rgb);
     --inverse: #f1f1f2;
@@ -262,17 +263,17 @@
     --panel-background-rgb: var(--bg-3-rgb);
     --panel-background-active: #1a262d;
     --panel-background-active-rgb: 26, 38, 45;
-    --panel-background-colored: var(--bg-4);
-    --panel-background-colored-rgb: var(--bg-4-rgb);
+    --panel-background-colored: var(--bg-3);
+    --panel-background-colored-rgb: var(--bg-3-rgb);
     --panel-background-colored-deeper: var(--bg-3);
     --panel-background-colored-deeper-rgb: var(--bg-3-rgb);
     --panel-background-deep: var(--bg-2);
     --panel-background-deep-rgb: var(--bg-2-rgb);
-    --panel-background-deeper: var(--bg-2);
+    --panel-background-deeper: var(--bg-3);
     --panel-background-deeper-rgb: var(--bg-3-rgb);
     --panel-background-hover: #1b272e;
     --panel-background-hover-rgb: 27, 39, 46;
-    --panel-background-lighter: var(--bg-2);
+    --panel-background-lighter: var(--bg-3);
     --panel-background-lighter-rgb: var(--bg-3-rgb);
     --panel-header-background: var(--bg-3);
     --panel-header-background-rgb: var(--bg-3-rgb);
@@ -358,8 +359,8 @@
     --success-rgb: var(--ac-0-rgb);
     --suspicious-background: rgba(239,105,122,0.8);
     --suspicious-background-rgb: 239, 105, 122;
-    --system-message-background: var(--ac-4);
-    --system-message-background-rgb: var(--ac-4-rgb);
+    --system-message-background: var(--ac-5);
+    --system-message-background-rgb: var(--ac-5-rgb);
     --system-message-text: var(--fg-1);
     --system-message-text-rgb: 241, 241, 242;
     --teal-hover: #00b7a1;
@@ -464,6 +465,7 @@
     --c-m-hover: 0.6s;
     --c-m-delay: 1.2s;
     --app-width: 1396px;
+    --emoji-o: 0.8;
     --bg-image: url("https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/images/bg-blur-high.jpg");
     --bg-opacity: 0.4;
     --bg-blur: 0px;
@@ -473,21 +475,31 @@
     --bg-size: cover;
     --bg-pos: center;
     --bg-rep: no-repeat;
-    --version: 'Dark-WhatsApp Lite 2.11.0 — June 7th, 2020';
-    --message: 'Towards v3 of DWA! The last update broke too many things, and we are rewriting core functionality — the dark theme — so that in future updates we can reimplement currently broken DWA features – compact mode, tail styles, "private mode", etc. \A\A Fullscreen mode, custom message bubble colors, and blurred contacts are back!';
+    --chat-image: url("https://web.whatsapp.com/img/bg-chat-tile_9e8a2898faedb7db9bf5638405cf81ae.png");
+    --chat-bg-o: 0.15;
+    --chat-bg-i: 0.6;
+    --chat-bg-s: initial;
+    --chat-bg-p: top left;
+    --chat-bg-r: repeat;
+    --version: 'Dark-WhatsApp 2.12.0 — June 12th, 2020';
+    --message: 'Towards v3 of DWA! Continuing the trend of porting old features to the latest update; check the changelog to see what is new!';
     --changes: '\A\A https://github.com/vednoc/dark-whatsapp';
   }
   @supports (scrollbar-width: thin) {
     * {
-      scrollbar-width: thin !important;
-      scrollbar-color: var(--ac-3) rgba(136,136,136,0.082);
+      scrollbar-width: thin;
+    }
+  }
+  @supports (scrollbar-color: #555 #222) {
+    * {
+      scrollbar-color: var(--ac-3) rgba(136,136,136,0.063) !important;
     }
   }
   *::-webkit-scrollbar-thumb {
-    background: var(--ac-3) !important;
+    background-color: var(--ac-3) !important;
   }
   *::-webkit-scrollbar-track {
-    background: var(--shadow) !important;
+    background-color: var(--shadow) !important;
   }
   :root {
     --intro-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  height='256' width='256'><g stroke='\%237289da'><path d='M128.4901 30.8659a95.4375 95.4375 0 00-95.4375 95.4375 95.4375 95.4375 0 0014.168 50.0332L35.6698 221.276l44.7989-12.498a95.4375 95.4375 0 0048.0214 12.9629 95.4375 95.4375 0 0095.4375-95.4375 95.4375 95.4375 0 00-95.4375-95.4375z' fill='\%231f232a' fill-rule='evenodd' stroke-width='18' stroke-linecap='square'/><path d='M97.8104 79.8463c-4.9671.0406-13.5028 2.0796-17.7812 14.8946-6.8318 20.4631 12.5737 43.3028 27.2438 57.4735 14.7975 14.2938 43.1559 26.507 58.0098 21.08 20.5566-8.9065 15.2475-22.9479 15.2475-22.9479l-22.9727-11.0878s-2.062-1.206-3.4146.5737c-1.0042 1.3213-9.4409 11.3755-9.4409 11.3755s-1.449 1.668-3.827.7402c-5.7574-2.2462-14.2018-7.4856-18.5314-10.7795-6.8875-5.2399-12.957-13.0846-16.9473-19.668-1.2556-2.5597.6953-4.709.6953-4.709s6.0303-8.2629 7.0176-9.5566c1.0068-1.3194.2539-3.3633.2539-3.3633l-10.539-23.2285s-2.0334-.8212-5.0138-.7969z' fill='\%237289da' stroke-linejoin='round'/></g></svg>");
@@ -519,9 +531,12 @@
     transition: opacity 0.6s ease;
     border-radius: 0 !important;
   }
+  html > body [data-asset-intro-image-light] + div h1 {
+    color: #d1d1d1 !important;
+  }
   html > body [data-asset-intro-image-light] + div h1 + div[class] {
     font-size: 0;
-    color: #f0f0f0 !important;
+    color: #eee !important;
   }
   html > body [data-asset-intro-image-light] + div h1 + div[class]::before {
     display: block;
@@ -539,18 +554,42 @@
     content: var(--version);
     border-top: 1px solid #3b4250;
   }
-  html > body [data-asset-chat-background-light] {
-    filter: invert(1) !important;
+  [style *= 'd-color: rgb(237, 233, 228)'] {
+    position: relative;
   }
-  ._1BjNO[style] {
+  [style *= 'd-color: rgb(237, 233, 228)']::before {
+    content: 'Use this with Dark-WhatsApp';
+    position: absolute;
+    font-size: 15px;
+    width: 100%;
+    color: #000 !important;
+  }
+  ._1BjNO[style],
+  ._1S7ke {
     background-color: #444d5c !important;
   }
   ._1BjNO[style],
   ._1BjNO[style] > img,
   ._18cLH,
   ._3_Hvt,
-  ._2H1bg {
+  ._2H1bg,
+  ._1S7ke {
     border-radius: var(--r-avatars) !important;
+  }
+  .emojik {
+    transition: transform 0.15s ease !important;
+  }
+  .emojik:not(:hover):not(:focus):not(.selected) {
+    filter: opacity(var(--emoji-o));
+  }
+  .emojik:hover:not(.selected),
+  .emojik:focus {
+    transform: scale(1.2);
+    box-shadow: none !important;
+    opacity: 1 !important;
+  }
+  .emojik.selected {
+    box-shadow: 0 0 0 1px #323843, 0 0 0 3px #7289da !important;
   }
   .overlay ._2ouPw,
   .overlay ._21ltg,
@@ -576,11 +615,12 @@
     background-color: var(--modal-backdrop) !important;
   }
   [data-animate-status-v3-modal-background = 'true'] > div {
-    background-color: #282d37 !important;
+    background-color: #1f232a !important;
   }
   [data-animate-status-v3-modal-background = 'true'] > div > div:nth-child(1) {
-    background-color: #1c2026 !important;
+    background-color: #282d37 !important;
     border-right: 1px solid #444d5c;
+    border-radius: var(--r-menus) 0 0 var(--r-menus) !important;
   }
   @media (min-width: 1441px) {
     [data-animate-status-v3-modal-background = 'true'] > div {
@@ -596,6 +636,17 @@
   }
   [data-icon = 'status-v3-unread'] [fill = '#009588'] {
     fill: #7289da !important;
+  }
+  .overlay._3Os9f {
+    background-color: var(--modal-backdrop) !important;
+  }
+  .overlay._3Os9f [data-animate-modal-popup] {
+    padding: 16px !important;
+    background-color: var(--bg-1) !important;
+    --white-rgb: var(--fg-2-rgb);
+  }
+  .overlay._3Os9f [data-animate-modal-popup] [data-icon = 'back'] path {
+    fill: var(--fg-1) !important;
   }
   [id *= 'startup'] {
     background-color: #1c2026 !important;
@@ -716,7 +767,7 @@
     border-radius: var(--r-menus) !important;
   }
   #app > div > [tabindex] {
-    background: none !important;
+    background-color: #1f232a !important;
   }
   @media (min-width: 1441px) {
     #app > div > [tabindex] {
@@ -764,7 +815,26 @@
     border-left: 1px solid #444d5c !important;
   }
   #app > div > [tabindex] ._14VS3 > ._1V8rX .copyable-area > header {
-    border-bottom: none !important;
+    border-bottom: 1px solid #444d5c !important;
+  }
+  ._2Bps4 {
+    box-shadow: 0 0 0 1px var(--bg-4) !important;
+  }
+  ._1fiOp,
+  ._2TZYF {
+    height: 59px !important;
+    justify-content: center !important;
+    border-bottom: 1px solid #444d5c !important;
+  }
+  ._1fiOp > [data-animate-drawer-title],
+  ._2TZYF > [data-animate-drawer-title] {
+    height: unset !important;
+  }
+  ._1fiOp ._3vTfY,
+  ._2TZYF ._3vTfY {
+    margin-top: 1px !important;
+    font-size: 18px !important;
+    font-weight: normal !important;
   }
   #main > header {
     border-right: none !important;
@@ -773,6 +843,14 @@
   }
   #main > header::after {
     content: unset !important;
+  }
+  [data-asset-chat-background-light] {
+    filter: invert(var(--chat-bg-i)) opacity(var(--chat-bg-o));
+    background-position: var(--chat-bg-p) !important;
+    background-repeat: var(--chat-bg-r) !important;
+    background-size: var(--chat-bg-s) !important;
+    background: var(--chat-image) !important;
+    opacity: 1 !important;
   }
   #main ._1E1g0 {
     text-shadow: 0 1px 0 rgba(var(--fg-3-rgb), 0.2);
@@ -805,7 +883,8 @@
     right: 5px !important;
     bottom: 3px !important;
   }
-  #main > footer > .copyable-area {
+  #main > footer > .copyable-area,
+  #main > footer [data-list-scroll-container] {
     border-top: 1px solid var(--bg-5) !important;
   }
   #main > footer + span > ._2pAWd {
@@ -906,7 +985,7 @@
       margin: 0;
     }
     #side .eJ0yJ ._1582E .m61XR ._31gEB {
-      border: 4px solid #1c2026;
+      border: 4px solid #282d37;
     }
     #side .eJ0yJ ._1582E .m61XR > span {
       display: flex !important;
@@ -939,8 +1018,8 @@
       z-index: 101;
       position: absolute;
       margin: -2px 0 0 -75px;
-      border: 3px solid #1f232a;
-      background-color: #323843 !important;
+      border: 3px solid #282d37;
+      background-color: #1f232a !important;
       border-radius: 50%;
     }
     #side .eJ0yJ .zFnXi > span > svg {
@@ -950,12 +1029,11 @@
     }
     #side .eJ0yJ._13opk ._31gEB,
     #side .eJ0yJ._13opk .zFnXi {
-      border-color: #323843 !important;
-      background-color: #444d5c !important;
+      border-color: #3b4250 !important;
     }
     #side .eJ0yJ:hover:not(._13opk) ._31gEB,
     #side .eJ0yJ:hover:not(._13opk) .zFnXi {
-      border-color: #282d37 !important;
+      border-color: #323843 !important;
     }
     #side ._2kHpK {
       min-width: 80px !important;
