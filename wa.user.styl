@@ -1101,14 +1101,9 @@ ac5 = var(--ac-5)
 
     // App.
     #app > div > [tabindex] {
-        c: 0 0 bg-1 i
+        c: 0 0 bg1
 
-        /// Do not apply tweaks in fullscreen mode.
         @media (min-width: 1441px) {
-            rad: var(--r-menus) i
-            border: 1px solid bg-5 i
-            box-shadow: 0 2px 4px sh
-
             /// Feat -> Custom app width.
             &, /._11ARv {
                 width: calc(100% - 38px) i
@@ -1125,7 +1120,7 @@ ac5 = var(--ac-5)
                 }
             } else {
                 rad: var(--r-menus) i
-                border: 1px solid var(--bg-5) i
+                border: 1px solid bg5 i
                 box-shadow: var(--bshadow) i
             }
         }
