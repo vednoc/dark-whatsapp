@@ -255,6 +255,82 @@ ac5 = var(--ac-5)
                    'see what is new!';
         --changes: '\A\A https://github.com/vednoc/dark-whatsapp';
 
+        /// Custom UI font.
+        --ui-font: ui_font, Segoe UI, Helvetica Neue, Helvetica, Lucida Grande,
+                   Arial, Ubuntu, Cantarell, Fira Sans, sans-serif i
+
+        /// Rounded corners.
+        --r-menus:   radius-g
+        --r-inputs:  radius-i
+        --r-avatars: radius-a
+
+        /// Compact mode.
+        --c-m-hover: app_c_m_h
+        --c-m-delay: app_c_m_d
+
+        /// Custom app width.
+        --app-width: app_width
+
+        /// Custom emoji opacity.
+        --emoji-o: emoji_o
+
+        /// Feat -> Custom app background.
+        image_path  = 'https://raw.githubusercontent.com/'
+        image_path += 'vednoc/dark-whatsapp/master/images/bg-blur'
+        if ( app_image == bg-high ) {
+            --bg-image: url(image_path + '-high.jpg')
+        } else if ( app_image == bg-low ) {
+            --bg-image: url(image_path + '-low.jpg')
+        } else if ( app_image == bg-none ) {
+            --bg-image: url(image_path + '-none.jpg')
+        } else if ( app_image == custom ) {
+            --bg-image: image_url
+        } else {
+            --bg-image: none
+        }
+        --bg-opacity: bg_opacity
+        --bg-blur:    bg_blur
+        --bg-blur-s:  calc(-2 * var(--bg-blur))
+        --bg-hue:     bg_hue
+        --bg-invert:  bg_invert
+        --bg-size:    bg_size
+        --bg-pos:     bg_pos
+        --bg-rep:     bg_rep
+
+        /// Feat -> Custom chat background.
+        --chat-image: chat_image
+        --chat-bg-o:  chat_bg_o
+        --chat-bg-i:  chat_bg_i
+        --chat-bg-s:  chat_bg_s
+        --chat-bg-p:  chat_bg_p
+        --chat-bg-r:  chat_bg_r
+
+        /// Feat -> Override incoming message bubble colors.
+        if (ow_imsg) {
+            --msg-in-0:     msg-in-0 i
+            --msg-in-0-rgb: to_rgb(msg-in-0)
+            --msg-in-1:     msg-in-1 i
+            --msg-in-1-rgb: to_rgb(msg-in-1)
+        } else {
+            --msg-in-0:     var(--bg-4)
+            --msg-in-0-rgb: var(--bg-4-rgb)
+            --msg-in-1:     var(--bg-3)
+            --msg-in-1-rgb: var(--bg-3-rgb)
+        }
+
+        /// Feat -> Override outgoing message bubble colors.
+        if (ow_omsg) {
+            --msg-out-0:     msg-out-0 i
+            --msg-out-0-rgb: to_rgb(msg-out-0)
+            --msg-out-1:     msg-out-1 i
+            --msg-out-1-rgb: to_rgb(msg-out-1)
+        } else {
+            --msg-out-0:     var(--ac-4)
+            --msg-out-0-rgb: var(--ac-4-rgb)
+            --msg-out-1:     var(--ac-5)
+            --msg-out-1-rgb: var(--ac-5-rgb)
+        }
+
         /// WA variables.
         --teal: var(--ac-0) //#009688;
         --teal-rgb: var(--ac-0-rgb) //0,150,136;
@@ -649,108 +725,34 @@ ac5 = var(--ac-5)
         for _v in (bg fg ac) {
             for _i in 0..5 {
                 var_key = '--' + _v + '-' + _i
-                /// Escape '\' for `*-0` vars.
+                /// Escape `\` for `*-0` vars.
                 var_val = _v + \- + _i
+
+                /// Generate CSS variables.
                 { var_key }: var_val i
                 { var_key + '-rgb' }: to_rgb(var_val)
             }
         }
 
-        /// Feat -> Override incoming message bubble colors.
-        if (ow_imsg) {
-            --msg-in-0      : msg-in-0 i
-            --msg-in-0-rgb  : to_rgb(msg-in-0)
-            --msg-in-1      : msg-in-1 i
-            --msg-in-1-rgb  : to_rgb(msg-in-1)
-        } else {
-            --msg-in-0      : var(--bg-4)
-            --msg-in-0-rgb  : var(--bg-4-rgb)
-            --msg-in-1      : var(--bg-3)
-            --msg-in-1-rgb  : var(--bg-3-rgb)
-        }
-
-        /// Feat -> Override incoming message bubble colors.
-        if (ow_omsg) {
-            --msg-out-0     : msg-out-0 i
-            --msg-out-0-rgb : to_rgb(msg-out-0)
-            --msg-out-1     : msg-out-1 i
-            --msg-out-1-rgb : to_rgb(msg-out-1)
-        } else {
-            --msg-out-0     : var(--ac-4)
-            --msg-out-0-rgb : var(--ac-4-rgb)
-            --msg-out-1     : var(--ac-5)
-            --msg-out-1-rgb : var(--ac-5-rgb)
-        }
-
         /// TODO: Improve secondary colors.
-        --white         : white;
-        --white-rgb     : to_rgb(white);
-        --red           : red;
-        --red-rgb       : to_rgb(red);
-        --green         : green;
-        --green-rgb     : to_rgb(green);
-        --blue          : blue;
-        --blue-rgb      : to_rgb(blue);
-        --yellow        : yellow;
-        --yellow-rgb    : to_rgb(yellow);
-        --t             : transparent;
-        --shadow        : sh;
-        --bshadow       : 0 2px 4px var(--shadow);
+        --white:      white
+        --white-rgb:  to_rgb(white)
+        --red:        red
+        --red-rgb:    to_rgb(red)
+        --green:      green
+        --green-rgb:  to_rgb(green)
+        --blue:       blue
+        --blue-rgb:   to_rgb(blue)
+        --yellow:     yellow
+        --yellow-rgb: to_rgb(yellow)
+        --t:          transparent
+        --shadow:     sh
+        --bshadow:    0 2px 4px var(--shadow)
 
-        /// DWA feature variables.
-        --ui-font      : ui_font, 'Segoe UI', 'Helvetica Neue', Helvetica,
-            'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif
-
-        /// Rounded corners.
-        --r-menus      : radius-g
-        --r-inputs     : radius-i
-        --r-avatars    : radius-a
-
-        /// Compact mode.
-        --c-m-hover    : app_c_m_h
-        --c-m-delay    : app_c_m_d
-
-        /// Custom app width.
-        --app-width    : app_width
-
-        /// Custom emoji opacity.
-        --emoji-o      : emoji_o
-
-        /// Feat -> Custom app background.
-        image_path  = 'https://raw.githubusercontent.com/'
-        image_path += 'vednoc/dark-whatsapp/master/images/bg-blur'
-        if ( app_image == bg-high ) {
-            --bg-image : url(image_path + '-high.jpg')
-        } else if ( app_image == bg-low ) {
-            --bg-image : url(image_path + '-low.jpg')
-        } else if ( app_image == bg-none ) {
-            --bg-image : url(image_path + '-none.jpg')
-        } else if ( app_image == custom ) {
-            --bg-image : image_url
-        } else {
-            --bg-image : none
-        }
-        --bg-opacity   : bg_opacity
-        --bg-blur      : bg_blur
-        --bg-blur-s    : calc(-2 * var(--bg-blur))
-        --bg-hue       : bg_hue
-        --bg-invert    : bg_invert
-        --bg-size      : bg_size
-        --bg-pos       : bg_pos
-        --bg-rep       : bg_rep
-
-        /// Feat -> Custom chat background.
-        --chat-image   : chat_image
-        --chat-bg-o    : chat_bg_o
-        --chat-bg-i    : chat_bg_i
-        --chat-bg-s    : chat_bg_s
-        --chat-bg-p    : chat_bg_p
-        --chat-bg-r    : chat_bg_r
-
-        // Theme intro image.
+        /// Theme intro image.
         svg_bg = to_svg(bg-1)
         svg_ac = to_svg(ac-0)
-        _1  = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  "
+        _1  = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' "
         _1 += "height='256' width='256'><g stroke='"
         _2  = "'><path d='M128.4901 30.8659a95.4375 95.4375 0 00-95.4375 95.4375"
         _2 += " 95.4375 95.4375 0 0014.168 50.0332L35.6698 221.276l44.7989-12.49"
