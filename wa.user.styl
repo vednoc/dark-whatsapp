@@ -247,8 +247,14 @@ ac4 = var(--ac-4)
 ac5 = var(--ac-5)
 
 @-moz-document domain('web.whatsapp.com') {
-    // V3 exploration.
     :root:not(#z), .dark:not(#z) {
+        /// Userstyle info and announcements.
+        --version: 'Dark-WhatsApp 2.12.0 — June 12th, 2020';
+        --message: 'Towards v3 of DWA! Continuing the trend of porting old' + \
+                   'features to the latest update; check the changelog to' + \
+                   'see what is new!';
+        --changes: '\A\A https://github.com/vednoc/dark-whatsapp';
+
         /// WA variables.
         --teal: var(--ac-0) //#009688;
         --teal-rgb: var(--ac-0-rgb) //0,150,136;
@@ -740,11 +746,6 @@ ac5 = var(--ac-5)
         --chat-bg-s    : chat_bg_s
         --chat-bg-p    : chat_bg_p
         --chat-bg-r    : chat_bg_r
-
-        /// Userstyle info and announcements.
-        --version: 'Dark-WhatsApp 2.12.0 — June 12th, 2020';
-        --message: 'Towards v3 of DWA! Continuing the trend of porting old features to the latest update; check the changelog to see what is new!';
-        --changes: '\A\A https://github.com/vednoc/dark-whatsapp';
 
         /// Feat -> Thin scrollbar in Firefox.
         if ( ff_scroll == 1 ) {
