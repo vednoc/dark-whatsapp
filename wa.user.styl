@@ -747,24 +747,6 @@ ac5 = var(--ac-5)
         --chat-bg-p    : chat_bg_p
         --chat-bg-r    : chat_bg_r
 
-        /// Feat -> Thin scrollbar in Firefox.
-        if ( ff_scroll == 1 ) {
-            @supports (scrollbar-width: thin) {
-                * { scrollbar-width: thin }
-            }
-        }
-
-        /// Scrollbar colors.
-        /\*{
-            @supports (scrollbar-width: thin) {
-                scrollbar-color: ac3 #88888810 i
-            }
-            &::-webkit-scrollbar {
-                &-thumb { c: 0 0 ac-3 i }
-                &-track { c: 0 0 var(--shadow) i }
-            }
-        }
-
         // Theme intro image.
         svg_bg = to_svg(bg-1)
         svg_ac = to_svg(ac-0)
@@ -796,7 +778,7 @@ ac5 = var(--ac-5)
         80% { opacity: 1 }
     }
 
-    // Global.
+    // Global styles.
     html > body {
         background-image: none i
         c: fg0 0 bg0
@@ -859,6 +841,25 @@ ac5 = var(--ac-5)
                 font-size: 15px
                 width: 100%
                 c: black
+            }
+        }
+
+        /// Global -> Scrollbar styles.
+        /\*{
+            /// Feat -> Thin scrollbar in Firefox.
+            if ( ff_scroll == 1 ) {
+                @supports (scrollbar-width: thin) {
+                    scrollbar-width: thin i
+                }
+            }
+
+            /// Theme colors.
+            @supports (scrollbar-width: thin) {
+                scrollbar-color: ac3 #88888810 i
+            }
+            &::-webkit-scrollbar {
+                &-thumb { c: 0 0 ac-3 i }
+                &-track { c: 0 0 var(--shadow) i }
             }
         }
     }
