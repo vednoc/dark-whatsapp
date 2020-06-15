@@ -5,8 +5,8 @@
 @homepageURL  https://github.com/vednoc/dark-whatsapp
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.styl
-@version      2.12.0
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
+@version      2.12.0
 @license      MIT
 @preprocessor stylus
 
@@ -139,10 +139,10 @@ c(x, y = 0, z = 0, xi = 1, yi = 1, zi = 1) {
     if z is a 'call' or z is a 'rgba' { background-color: zi is 0? z : z i }
 }
 
-// V3.
+// V3 check.
 if ( v3 == 1 ) {
-// Bare RGB mixin.
-/// Converts HEX to bare rrr-ggg-bbb format.
+// Raw RGB mixin.
+/// Convert HEX to raw rrr-ggg-bbb format.
 to_rgb(input) {
     unquote(slice(s('%s', rgba(input, 0)), 5, -3))
 }
@@ -158,7 +158,7 @@ rad() { border-radius: arguments }
 /// Remove browser prefixes.
 vendors = official
 
-/// Helpers.
+/// Helper variables.
 t  = transparent
 i  = !important
 _d = darken
@@ -185,7 +185,7 @@ if(dark(BG)) {
 in_msg_quote  = dark(IM) ? -10% : 25%
 out_msg_quote = dark(OM) ? -10% : 25%
 
-// Generate tones for colors.
+// Generate tones for base colors.
 bg_hash = {
     '-0': _d(BG, b1),
     '-1': _d(BG, 0%),
@@ -226,7 +226,7 @@ define('ac'      + key, val) for key, val in ac_hash
 define('msg-out' + key, val) for key, val in msg-out
 define('msg-in'  + key, val) for key, val in msg-in
 
-/// Stylus-lang helpers for CSS variables.
+// Stylus-lang helpers for CSS variables.
 bg0 = var(--bg-0)
 bg1 = var(--bg-1)
 bg2 = var(--bg-2)
@@ -774,7 +774,7 @@ ac5 = var(--ac-5)
         --intro-image: _i
     }
 
-    /// Typing indicator animation.
+    /// Animation for typing indicator.
     @keyframes pulse {
         40% { opacity: 0 }
         80% { opacity: 1 }
@@ -810,7 +810,7 @@ ac5 = var(--ac-5)
             /// Custom text.
             + div h1 + div[class] {
                 font-size: 0 i
-                c: fg
+                c: fg1
 
                 /// Announcements.
                 &::before {
@@ -866,7 +866,7 @@ ac5 = var(--ac-5)
         }
     }
 
-    // Avatars -> Custom rounded corners.
+    // Feat -> Rounded corners for avatars.
     ._1BjNO[style] {
         /// Global/shared contacts.
         &, /._1S7ke { c: 0 0 bg5 }
@@ -999,7 +999,7 @@ ac5 = var(--ac-5)
         }
     }
 
-    // App -> Landing page.
+    // Login page.
     .landing {
         &-wrapper::before { c: 0 0 bg2 }
         &-header {
@@ -1069,7 +1069,7 @@ ac5 = var(--ac-5)
         }
     }
 
-    // App.
+    // App background/misc styles.
     #app > div {
         // Feat -> App background.
         &::after {
@@ -1105,7 +1105,7 @@ ac5 = var(--ac-5)
         }
     }
 
-    // App.
+    // Shared app styles.
     #app > div > [tabindex] {
         c: 0 0 bg1
 
