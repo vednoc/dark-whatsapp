@@ -653,10 +653,10 @@ ac5 = var(--ac-5)
             --msg-in-1      : msg-in-1 i
             --msg-in-1-rgb  : to_rgb(msg-in-1)
         } else {
-            --msg-in-0      : bg-4 i
-            --msg-in-0-rgb  : to_rgb(bg-4)
-            --msg-in-1      : bg-3 i
-            --msg-in-1-rgb  : to_rgb(bg-3)
+            --msg-in-0      : var(--bg-4)
+            --msg-in-0-rgb  : var(--bg-4-rgb)
+            --msg-in-1      : var(--bg-3)
+            --msg-in-1-rgb  : var(--bg-3-rgb)
         }
 
         /// Feat -> Override incoming message bubble colors.
@@ -666,10 +666,10 @@ ac5 = var(--ac-5)
             --msg-out-1     : msg-out-1 i
             --msg-out-1-rgb : to_rgb(msg-out-1)
         } else {
-            --msg-out-0     : ac-4 i
-            --msg-out-0-rgb : to_rgb(ac-4)
-            --msg-out-1     : ac-5 i
-            --msg-out-1-rgb : to_rgb(ac-5)
+            --msg-out-0     : var(--ac-4)
+            --msg-out-0-rgb : var(--ac-4-rgb)
+            --msg-out-1     : var(--ac-5)
+            --msg-out-1-rgb : var(--ac-5-rgb)
         }
 
         /// TODO: Improve secondary colors.
@@ -752,10 +752,10 @@ ac5 = var(--ac-5)
         /// Scrollbar colors.
         /\*{
             @supports (scrollbar-width: thin) {
-                scrollbar-color: var(--ac-3) #88888810 i
+                scrollbar-color: ac3 #88888810 i
             }
             &::-webkit-scrollbar {
-                &-thumb { c: 0 0 var(--ac-3) i }
+                &-thumb { c: 0 0 ac-3 i }
                 &-track { c: 0 0 var(--shadow) i }
             }
         }
@@ -796,17 +796,17 @@ ac5 = var(--ac-5)
     // Global.
     html > body {
         background-image: none i
-        c: var(--fg-0) 0 var(--bg-0)
+        c: fg0 0 bg0
 
         /// Feat -> Custom font.
         &, button, input { font-family: var(--ui-font) }
 
         /// Toast notifications.
         ._11dpe {
-            c: fg-1
-            border: 1px solid bg-5
-            button:nth-child(2) { c: ac-1 }
-            button:nth-child(3) { c: fg-4 }
+            c: fg1
+            border: 1px solid bg5 i
+            button:nth-child(2) { c: ac1 }
+            button:nth-child(3) { c: fg4 }
         }
 
         /// Intro image.
@@ -818,12 +818,12 @@ ac5 = var(--ac-5)
             rad: 0 i
 
             /// Title.
-            + div h1 { c: fg-3 }
+            + div h1 { c: fg3 }
 
             /// Custom text.
             + div h1 + div[class] {
-                font-size: 0;
-                c: fg-1;
+                font-size: 0 i
+                c: fg
 
                 /// Announcements.
                 &::before {
@@ -842,7 +842,7 @@ ac5 = var(--ac-5)
                     padding-top: 24px;
                     margin-bottom: -16px;
                     content: var(--version);
-                    border-top: 1px solid bg-4;
+                    border-top: 1px solid bg4 i
                 }
             }
         }
@@ -863,7 +863,7 @@ ac5 = var(--ac-5)
     // Avatars -> Custom rounded corners.
     ._1BjNO[style] {
         /// Global/shared contacts.
-        &, /._1S7ke { c: 0 0 bg-5 }
+        &, /._1S7ke { c: 0 0 bg5 }
         /// Avatars/images/new group/shared contacts.
         &, > img, /._18cLH, /._3_Hvt, /._2H1bg, /._1S7ke {
             rad: var(--r-avatars) i
@@ -901,15 +901,15 @@ ac5 = var(--ac-5)
         }
 
         /// Selected state. #148
-        &.selected { box-shadow: 0 0 0 1px bg-3, 0 0 0 3px ac-0 i }
+        &.selected { box-shadow: 0 0 0 1px bg3, 0 0 0 3px ac0 i }
     }
 
     // Modals.
     .overlay {
         /// Media/Avatar viewers have different headers. @upstream
         ._2ouPw, ._21ltg, > .KeLEe {
-            c: 0 0 var(--bg-3);
-            border-bottom: 1px solid var(--bg-5) i
+            border-bottom: 1px solid bg5 i
+            c: 0 0 bg3
 
             /// Fix header onflicts.
             ../ ._1kEVs { c: 0 0 t }
@@ -917,47 +917,47 @@ ac5 = var(--ac-5)
 
         /// Add borders.
         [data-animate-modal-popup] {
-            border: 1px solid bg-5
+            border: 1px solid bg5
             rad: var(--r-menus) i
 
             .copyable-area > header {
-                border-bottom: 1px solid bg-5
+                border-bottom: 1px solid bg5
             }
         }
 
         /// -> Fix media selection.
-        /._1KWct { c: 0 var(--bg-5) var(--bg-3) }
+        /._1KWct { c: 0 bg5 bg3 }
 
         /// Status area modal.
         /[data-animate-status-v3-modal-background = 'true'] {
             c: 0 0 var(--modal-backdrop);
             /// Main content.
             > div {
-                c: 0 0 bg-1
+                c: 0 0 bg1
 
                 /// Sidebar.
                 > div:nth-child(1) {
-                    c: 0 0 bg-2
-                    border-right: 1px solid bg-5
+                    c: 0 0 bg2
+                    border-right: 1px solid bg5
                     rad: var(--r-menus) 0 0 var(--r-menus) i
                 }
 
                 /// Large screens.
                 if (!fullscreen) {
                     @media (min-width: 1441px) {
-                        border: 1px solid var(--bg-5) i
+                        border: 1px solid bg5 i
                         rad: var(--r-menus) i
                     }
                 }
 
                 /// Bar/member colors.
-                /.color-1 { c: var(--ac-0) }
-                /.bg-color-1 { c: 0 0 var(--ac-0) }
+                /.color-1 { c: ac0 }
+                /.bg-color-1 { c: 0 0 ac0 }
             }
 
             /// Fill color for unread icon. @upstream
             /[data-icon = 'status-v3-unread'] {
-                [fill = '#009588'] { fill: ac-0 i }
+                [fill = '#009588'] { fill: ac0 i }
             }
         }
 
@@ -966,10 +966,10 @@ ac5 = var(--ac-5)
             c: 0 0 var(--modal-backdrop)
             [data-animate-modal-popup] {
                 padding: 16px i
-                c: 0 0 var(--bg-1)
+                c: 0 0 bg1
 
                 /// Fix icon color.
-                [data-icon = 'back'] path { fill: var(--fg-1) i }
+                [data-icon = 'back'] path { fill: fg1 i }
 
                 /// Uniform look with other modals. @upstream
                 --white-rgb: var(--fg-2-rgb)
@@ -979,32 +979,32 @@ ac5 = var(--ac-5)
 
     // Loading.
     [id *= 'startup'] {
-        c: 0 0 bg-0
+        c: 0 0 bg0
 
         /// Progress bar.
         /progress {
-            c: 0 0 bg-2
-            &[value]::-moz-progress-bar { c: 0 0 ac-0 }
-            /::-moz-progress-bar { c: 0 0 bg-4 }
+            c: 0 0 bg2
+            &[value]::-moz-progress-bar { c: 0 0 ac0 }
+            /::-moz-progress-bar { c: 0 0 bg4 }
             /::-webkit-progress {
-                &-bar { c: 0 0 bg-4 }
-                &-value { c: 0 0 ac-0 }
+                &-bar { c: 0 0 bg4 }
+                &-value { c: 0 0 ac0 }
             }
         }
     }
 
     // App -> Landing page.
     .landing {
-        &-wrapper::before { c: 0 0 bg-2 }
+        &-wrapper::before { c: 0 0 bg2 }
         &-header {
             position: relative
 
             /// WhatsApp logo.
-            path[fill ^= '#FFF'] { fill: ac-0 }
-            path[fill ^= '#00E'] { fill: bg-1 }
+            path[fill ^= '#FFF'] { fill: ac0 }
+            path[fill ^= '#00E'] { fill: bg1 }
             div {
                 text-transform: unset;
-                c: fg-1
+                c: fg1
             }
 
             /// Userstyle version.
@@ -1020,16 +1020,16 @@ ac5 = var(--ac-5)
 
         &-window:not(#z) {
             rad: 4px
-            c: 0 0 bg-1
-            box-shadow: 0 0 1px bg-5
+            c: 0 0 bg1
+            box-shadow: 0 0 1px bg5
         }
 
         &-main {
-            a[href] { c: ac-0 }
-            label, ._2yUXW { c: fg-3 }
-            .landing-title { c: fg-1 }
-            rect[fill ^= '#f2f'], rect[fill ^= '#F2F'] { fill: bg-5 }
-            path[fill ^= '#818'] { fill: ac-0 }
+            a[href] { c: ac0 }
+            label, ._2yUXW { c: fg3 }
+            .landing-title { c: fg1 }
+            rect[fill ^= '#f2f'], rect[fill ^= '#F2F'] { fill: bg5 }
+            path[fill ^= '#818'] { fill: ac0 }
 
             /// QR code.
             div[data-ref] {
@@ -1037,12 +1037,12 @@ ac5 = var(--ac-5)
                 filter: contrast(150%)
                 outline: 4px solid #fff
                 box-shadow: 0 0 0 4px #fff
-                [role='button'] { c: white 0 ac-0 }
+                [role='button'] { c: white 0 ac0 }
 
                 /// Change white border when inactive.
                 &._2BIlf {
-                    outline: 4px solid ac-0
-                    box-shadow: 0 0 0 4px ac-0
+                    outline: 4px solid ac0
+                    box-shadow: 0 0 0 4px ac0
                 }
             }
 
@@ -1056,9 +1056,9 @@ ac5 = var(--ac-5)
 
             /// 'Keep me signed in' tooltip. #59
             ._3ybl8 {
-                c: white 0 ac-0
+                c: white 0 ac0
                 box-shadow: bsh
-                &::before { border-bottom-color: ac-0 i }
+                &::before { border-bottom-color: ac0 i }
             }
         }
     }
@@ -1082,7 +1082,7 @@ ac5 = var(--ac-5)
                 background-repeat: var(--bg-rep) i
                 background-size: var(--bg-size) i
             } else if ( app_image == default ) {
-                c: 0 0 var(--bg-1)
+                c: 0 0 bg1
             } else {
                 display: none;
             }
@@ -1093,7 +1093,7 @@ ac5 = var(--ac-5)
         /// Dropdowns -> Chat/Header.
         > span > div, ._2s_eZ {
             &[style ^= 'transform-origin:'][tabindex] {
-                border: 1px solid var(--bg-4);
+                border: 1px solid bg4
                 rad: var(--r-menus) i
             }
         }
@@ -1130,7 +1130,7 @@ ac5 = var(--ac-5)
 
         /// Search.
         .gQzdc, ._3qx7_ {
-            border-bottom: 1px solid bg-5 i
+            border-bottom: 1px solid bg5 i
             &::after { display: none i }
 
             /// Remove animation.
@@ -1143,32 +1143,32 @@ ac5 = var(--ac-5)
         /// Left -> Resets.
         #side {
             > header {
-                border-bottom: 1px solid bg-5 i
+                border-bottom: 1px solid bg5 i
 
                 /// Alerts.
                 + span > div {
-                    border-bottom: 1px solid bg-5 i
+                    border-bottom: 1px solid bg5 i
 
                     /// Close icon for 'low battery' state.
-                    [data-icon = 'x'] svg path { fill: fg-5 }
+                    [data-icon = 'x'] svg path { fill: fg5 }
                 }
             }
         }
 
         /// Right -> Drawer divider.
         ._14VS3 > ._1V8rX {
-            border-left: 1px solid bg-5 i
+            border-left: 1px solid bg5 i
 
             /// Drawer header.
             if (app_c_h) {
                 .copyable-area > header {
-                    border-bottom: 1px solid bg-5 i
+                    border-bottom: 1px solid bg5 i
                 }
             }
 
             /// Remove shadows from drawer sections.
             /._2Bps4 {
-                box-shadow: 0 0 0 1px var(--bg-4) i
+                box-shadow: 0 0 0 1px bg4 i
             }
         }
     }
@@ -1178,7 +1178,7 @@ ac5 = var(--ac-5)
         ._1fiOp, ._2TZYF {
             height: 59px i
             justify-content: center i
-            border-bottom: 1px solid bg-5 i
+            border-bottom: 1px solid bg5 i
 
             /// Reset left drawer inner item.
             > [data-animate-drawer-title] { height: unset i }
@@ -1192,7 +1192,7 @@ ac5 = var(--ac-5)
         }
     } else {
         ._1fiOp, ._2TZYF {
-            --panel-background-colored: var(--bg-4) i
+            --panel-background-colored: bg4 i
         }
     }
 
@@ -1221,8 +1221,8 @@ ac5 = var(--ac-5)
         /// Reset header.
         > header {
             border-right: none i
-            border-bottom: 1px solid i
-            c: 0 var(--bg-5)
+            border-bottom: 1px solid bg5 i
+            c: 0 bg5
 
             /// Hide borders.
             &::after { content: unset i }
@@ -1257,11 +1257,11 @@ ac5 = var(--ac-5)
 
         /// Fix context menu background for stickers.
         .-AOZp ._2oA-- + div[style] {
-            c: 0 0 var(--bg-4)
+            c: 0 0 bg4
         }
 
         /// Fix down arrow icon color for context menus.
-        [data-js-context-icon = 'true'] { c: var(--fg-3) }
+        [data-js-context-icon = 'true'] { c: fg3 }
 
         /// Add background to media message timestamps.
         [style *= 'width'][style *= 'height'] + div {
@@ -1293,19 +1293,19 @@ ac5 = var(--ac-5)
         > footer {
             /// Compose area wrapper.
             > .copyable-area, [data-list-scroll-container] {
-                border-top: 1px solid var(--bg-5) i
+                border-top: 1px solid bg5 i
             }
 
             /// Chat -> Select messages.
             + span > ._2pAWd {
-                border-top: 1px solid var(--bg-5) i
-                border-left: 1px solid var(--bg-5) i
+                border-top: 1px solid bg5 i
+                border-left: 1px solid bg5 i
             }
 
             /// Emoji group selection.
             ._3eShu {
-                border-top: 1px solid var(--bg-5) i
-                border-bottom: 1px solid var(--bg-5) i
+                border-top: 1px solid bg5 i
+                border-bottom: 1px solid bg5 i
             }
 
             /// Feat -> Border radius.
@@ -1354,7 +1354,7 @@ ac5 = var(--ac-5)
                     z-index: 201 i
                     flex: 0 0 30% i
                     min-width: 350px i
-                    [style][tabindex] { border-right: 1px solid bg-5 i }
+                    [style][tabindex] { border-right: 1px solid bg5 i }
                 }
             }
             .three {
@@ -1403,7 +1403,7 @@ ac5 = var(--ac-5)
                             rad: 50%
                             ._15G96 { margin: 0 }
                             /// Unread messages indicator.
-                            ._31gEB { border: 4px solid bg-2 }
+                            ._31gEB { border: 4px solid bg2 }
                         }
                         /// Reverse message and icons.
                         .m61XR > span {
@@ -1438,8 +1438,8 @@ ac5 = var(--ac-5)
                         z-index: 101
                         position: absolute
                         margin: -2px 0 0 -75px
-                        border: 3px solid bg-2
-                        c: 0 0 bg-1
+                        border: 3px solid bg2
+                        c: 0 0 bg1
                         rad: 50%
                         /// Make SVG smaller.
                         > span > svg {
@@ -1449,8 +1449,8 @@ ac5 = var(--ac-5)
                         }
                     }
                     /// Active states.
-                    &._13opk { ._31gEB, .zFnXi { c: 0 bg-4 }}
-                    &:hover:not(._13opk) { ._31gEB, .zFnXi { c: 0 bg-3 }}
+                    &._13opk { ._31gEB, .zFnXi { c: 0 bg4 }}
+                    &:hover:not(._13opk) { ._31gEB, .zFnXi { c: 0 bg3 }}
                 }
                 /// I _think_ I understand why this works!
                 ._2kHpK { min-width: 80px i }
