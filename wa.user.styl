@@ -764,12 +764,10 @@ ac5 = var(--ac-5)
                 &-track { c: 0 0 var(--shadow) i }
             }
         }
-    }
 
-    // Custom intro image.
-    svg_bg = to_svg(bg-1)
-    svg_ac = to_svg(ac-0)
-    :root {
+        // Theme intro image.
+        svg_bg = to_svg(bg-1)
+        svg_ac = to_svg(ac-0)
         _1  = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  "
         _1 += "height='256' width='256'><g stroke='"
         _2  = "'><path d='M128.4901 30.8659a95.4375 95.4375 0 00-95.4375 95.4375"
