@@ -6,13 +6,47 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      2.12.0
+@version      2.13.0
 @license      MIT
 ==/UserStyle== */
 
 @-moz-document domain('web.whatsapp.com') {
   :root:not(#z),
   .dark:not(#z) {
+    --version: 'Dark-WhatsApp 2.13.0 — June 16th, 2020';
+    --message: 'Towards v3 of DWA! Continuing the trend of porting old features to the latest update; check the changelog tosee what is new!';
+    --changes: '\A\A https://github.com/vednoc/dark-whatsapp';
+    --ui-font: 'font_name', Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif !important;
+    --r-menus: 4px;
+    --r-inputs: 24px;
+    --r-avatars: 50%;
+    --c-m-hover: 0.6s;
+    --c-m-delay: 1.2s;
+    --app-width: 1396px;
+    --emoji-o: 0.8;
+    --bg-image: url("https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/images/bg-blur-high.jpg");
+    --bg-opacity: 0.4;
+    --bg-blur: 0px;
+    --bg-blur-s: calc(-2 * var(--bg-blur));
+    --bg-hue: 320deg;
+    --bg-invert: 0;
+    --bg-size: cover;
+    --bg-pos: center;
+    --bg-rep: no-repeat;
+    --chat-image: url("https://web.whatsapp.com/img/bg-chat-tile_9e8a2898faedb7db9bf5638405cf81ae.png");
+    --chat-bg-o: 0.15;
+    --chat-bg-i: 0.6;
+    --chat-bg-s: initial;
+    --chat-bg-p: top left;
+    --chat-bg-r: repeat;
+    --msg-in-0: var(--bg-4);
+    --msg-in-0-rgb: var(--bg-4-rgb);
+    --msg-in-1: var(--bg-3);
+    --msg-in-1-rgb: var(--bg-3-rgb);
+    --msg-out-0: var(--ac-4);
+    --msg-out-0-rgb: var(--ac-4-rgb);
+    --msg-out-1: var(--ac-5);
+    --msg-out-1-rgb: var(--ac-5-rgb);
     --teal: var(--ac-0);
     --teal-rgb: var(--ac-0-rgb);
     --teal-light: var(--ac-1);
@@ -437,14 +471,6 @@
     --ac-4-rgb: 56,65,90;
     --ac-5: #303849 !important;
     --ac-5-rgb: 48,56,73;
-    --msg-in-0: #3b4250 !important;
-    --msg-in-0-rgb: 59,66,80;
-    --msg-in-1: #323843 !important;
-    --msg-in-1-rgb: 50,56,67;
-    --msg-out-0: #38415a !important;
-    --msg-out-0-rgb: 56,65,90;
-    --msg-out-1: #303849 !important;
-    --msg-out-1-rgb: 48,56,73;
     --white: #fff;
     --white-rgb: 255,255,255;
     --red: #dc322f;
@@ -458,51 +484,7 @@
     --t: transparent;
     --shadow: rgba(0,0,0,0.145);
     --bshadow: 0 2px 4px var(--shadow);
-    --ui-font: 'font_name', 'Segoe UI', 'Helvetica Neue', Helvetica, 'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif;
-    --r-menus: 4px;
-    --r-inputs: 24px;
-    --r-avatars: 50%;
-    --c-m-hover: 0.6s;
-    --c-m-delay: 1.2s;
-    --app-width: 1396px;
-    --emoji-o: 0.8;
-    --bg-image: url("https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/images/bg-blur-high.jpg");
-    --bg-opacity: 0.4;
-    --bg-blur: 0px;
-    --bg-blur-s: calc(-2 * var(--bg-blur));
-    --bg-hue: 320deg;
-    --bg-invert: 0;
-    --bg-size: cover;
-    --bg-pos: center;
-    --bg-rep: no-repeat;
-    --chat-image: url("https://web.whatsapp.com/img/bg-chat-tile_9e8a2898faedb7db9bf5638405cf81ae.png");
-    --chat-bg-o: 0.15;
-    --chat-bg-i: 0.6;
-    --chat-bg-s: initial;
-    --chat-bg-p: top left;
-    --chat-bg-r: repeat;
-    --version: 'Dark-WhatsApp 2.12.0 — June 12th, 2020';
-    --message: 'Towards v3 of DWA! Continuing the trend of porting old features to the latest update; check the changelog to see what is new!';
-    --changes: '\A\A https://github.com/vednoc/dark-whatsapp';
-  }
-  @supports (scrollbar-width: thin) {
-    * {
-      scrollbar-width: thin;
-    }
-  }
-  @supports (scrollbar-color: #555 #222) {
-    * {
-      scrollbar-color: var(--ac-3) rgba(136,136,136,0.063) !important;
-    }
-  }
-  *::-webkit-scrollbar-thumb {
-    background-color: var(--ac-3) !important;
-  }
-  *::-webkit-scrollbar-track {
-    background-color: var(--shadow) !important;
-  }
-  :root {
-    --intro-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  height='256' width='256'><g stroke='\%237289da'><path d='M128.4901 30.8659a95.4375 95.4375 0 00-95.4375 95.4375 95.4375 95.4375 0 0014.168 50.0332L35.6698 221.276l44.7989-12.498a95.4375 95.4375 0 0048.0214 12.9629 95.4375 95.4375 0 0095.4375-95.4375 95.4375 95.4375 0 00-95.4375-95.4375z' fill='\%231f232a' fill-rule='evenodd' stroke-width='18' stroke-linecap='square'/><path d='M97.8104 79.8463c-4.9671.0406-13.5028 2.0796-17.7812 14.8946-6.8318 20.4631 12.5737 43.3028 27.2438 57.4735 14.7975 14.2938 43.1559 26.507 58.0098 21.08 20.5566-8.9065 15.2475-22.9479 15.2475-22.9479l-22.9727-11.0878s-2.062-1.206-3.4146.5737c-1.0042 1.3213-9.4409 11.3755-9.4409 11.3755s-1.449 1.668-3.827.7402c-5.7574-2.2462-14.2018-7.4856-18.5314-10.7795-6.8875-5.2399-12.957-13.0846-16.9473-19.668-1.2556-2.5597.6953-4.709.6953-4.709s6.0303-8.2629 7.0176-9.5566c1.0068-1.3194.2539-3.3633.2539-3.3633l-10.539-23.2285s-2.0334-.8212-5.0138-.7969z' fill='\%237289da' stroke-linejoin='round'/></g></svg>");
+    --intro-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='256' width='256'><g stroke='\%237289da'><path d='M128.4901 30.8659a95.4375 95.4375 0 00-95.4375 95.4375 95.4375 95.4375 0 0014.168 50.0332L35.6698 221.276l44.7989-12.498a95.4375 95.4375 0 0048.0214 12.9629 95.4375 95.4375 0 0095.4375-95.4375 95.4375 95.4375 0 00-95.4375-95.4375z' fill='\%231f232a' fill-rule='evenodd' stroke-width='18' stroke-linecap='square'/><path d='M97.8104 79.8463c-4.9671.0406-13.5028 2.0796-17.7812 14.8946-6.8318 20.4631 12.5737 43.3028 27.2438 57.4735 14.7975 14.2938 43.1559 26.507 58.0098 21.08 20.5566-8.9065 15.2475-22.9479 15.2475-22.9479l-22.9727-11.0878s-2.062-1.206-3.4146.5737c-1.0042 1.3213-9.4409 11.3755-9.4409 11.3755s-1.449 1.668-3.827.7402c-5.7574-2.2462-14.2018-7.4856-18.5314-10.7795-6.8875-5.2399-12.957-13.0846-16.9473-19.668-1.2556-2.5597.6953-4.709.6953-4.709s6.0303-8.2629 7.0176-9.5566c1.0068-1.3194.2539-3.3633.2539-3.3633l-10.539-23.2285s-2.0334-.8212-5.0138-.7969z' fill='\%237289da' stroke-linejoin='round'/></g></svg>");
   }
   html > body {
     background-image: none !important;
@@ -515,14 +497,14 @@
     font-family: var(--ui-font);
   }
   html > body ._11dpe {
-    color: #eee !important;
-    border: 1px solid #444d5c;
+    color: var(--fg-1) !important;
+    border: 1px solid var(--bg-5) !important;
   }
   html > body ._11dpe button:nth-child(2) {
-    color: #6a7fc9 !important;
+    color: var(--ac-1) !important;
   }
   html > body ._11dpe button:nth-child(3) {
-    color: #b5b5b5 !important;
+    color: var(--fg-4) !important;
   }
   html > body [data-asset-intro-image-light] {
     max-width: 200px;
@@ -532,11 +514,11 @@
     border-radius: 0 !important;
   }
   html > body [data-asset-intro-image-light] + div h1 {
-    color: #d1d1d1 !important;
+    color: var(--fg-3) !important;
   }
   html > body [data-asset-intro-image-light] + div h1 + div[class] {
-    font-size: 0;
-    color: #eee !important;
+    font-size: 0 !important;
+    color: var(--fg-1) !important;
   }
   html > body [data-asset-intro-image-light] + div h1 + div[class]::before {
     display: block;
@@ -552,7 +534,7 @@
     padding-top: 24px;
     margin-bottom: -16px;
     content: var(--version);
-    border-top: 1px solid #3b4250;
+    border-top: 1px solid var(--bg-4) !important;
   }
   [style *= 'd-color: rgb(237, 233, 228)'] {
     position: relative;
@@ -564,9 +546,25 @@
     width: 100%;
     color: #000 !important;
   }
+  @supports (scrollbar-width: thin) {
+    * {
+      scrollbar-width: thin !important;
+    }
+  }
+  @supports (scrollbar-width: thin) {
+    * {
+      scrollbar-color: var(--ac-3) rgba(136,136,136,0.063) !important;
+    }
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: #5b6da8 !important;
+  }
+  *::-webkit-scrollbar-track {
+    background-color: var(--shadow) !important;
+  }
   ._1BjNO[style],
   ._1S7ke {
-    background-color: #444d5c !important;
+    background-color: var(--bg-5) !important;
   }
   ._1BjNO[style],
   ._1BjNO[style] > img,
@@ -589,23 +587,23 @@
     opacity: 1 !important;
   }
   .emojik.selected {
-    box-shadow: 0 0 0 1px #323843, 0 0 0 3px #7289da !important;
+    box-shadow: 0 0 0 1px var(--bg-3), 0 0 0 3px var(--ac-0) !important;
   }
   .overlay ._2ouPw,
   .overlay ._21ltg,
   .overlay > .KeLEe {
-    background-color: var(--bg-3) !important;
     border-bottom: 1px solid var(--bg-5) !important;
+    background-color: var(--bg-3) !important;
   }
   .overlay ._1kEVs {
     background-color: transparent !important;
   }
   .overlay [data-animate-modal-popup] {
-    border: 1px solid #444d5c;
+    border: 1px solid var(--bg-5);
     border-radius: var(--r-menus) !important;
   }
   .overlay [data-animate-modal-popup] .copyable-area > header {
-    border-bottom: 1px solid #444d5c;
+    border-bottom: 1px solid var(--bg-5);
   }
   ._1KWct {
     border-color: var(--bg-5) !important;
@@ -615,11 +613,11 @@
     background-color: var(--modal-backdrop) !important;
   }
   [data-animate-status-v3-modal-background = 'true'] > div {
-    background-color: #1f232a !important;
+    background-color: var(--bg-1) !important;
   }
   [data-animate-status-v3-modal-background = 'true'] > div > div:nth-child(1) {
-    background-color: #282d37 !important;
-    border-right: 1px solid #444d5c;
+    background-color: var(--bg-2) !important;
+    border-right: 1px solid var(--bg-5);
     border-radius: var(--r-menus) 0 0 var(--r-menus) !important;
   }
   @media (min-width: 1441px) {
@@ -635,7 +633,7 @@
     background-color: var(--ac-0) !important;
   }
   [data-icon = 'status-v3-unread'] [fill = '#009588'] {
-    fill: #7289da !important;
+    fill: var(--ac-0) !important;
   }
   .overlay._3Os9f {
     background-color: var(--modal-backdrop) !important;
@@ -649,38 +647,38 @@
     fill: var(--fg-1) !important;
   }
   [id *= 'startup'] {
-    background-color: #1c2026 !important;
+    background-color: var(--bg-0) !important;
   }
   progress {
-    background-color: #282d37 !important;
+    background-color: var(--bg-2) !important;
   }
   progress[value]::-moz-progress-bar {
-    background-color: #7289da !important;
+    background-color: var(--ac-0) !important;
   }
   ::-moz-progress-bar {
-    background-color: #3b4250 !important;
+    background-color: var(--bg-4) !important;
   }
   ::-webkit-progress-bar {
-    background-color: #3b4250 !important;
+    background-color: var(--bg-4) !important;
   }
   ::-webkit-progress-value {
-    background-color: #7289da !important;
+    background-color: var(--ac-0) !important;
   }
   .landing-wrapper::before {
-    background-color: #282d37 !important;
+    background-color: var(--bg-2) !important;
   }
   .landing-header {
     position: relative;
   }
   .landing-header path[fill ^= '#FFF'] {
-    fill: #7289da;
+    fill: var(--ac-0);
   }
   .landing-header path[fill ^= '#00E'] {
-    fill: #1f232a;
+    fill: var(--bg-1);
   }
   .landing-header div {
     text-transform: unset;
-    color: #eee !important;
+    color: var(--fg-1) !important;
   }
   .landing-header::after {
     font-size: 14px;
@@ -696,25 +694,25 @@
   }
   .landing-window:not(#z) {
     border-radius: 4px;
-    background-color: #1f232a !important;
-    box-shadow: 0 0 1px #444d5c;
+    background-color: var(--bg-1) !important;
+    box-shadow: 0 0 1px var(--bg-5);
   }
   .landing-main a[href] {
-    color: #7289da !important;
+    color: var(--ac-0) !important;
   }
   .landing-main label,
   .landing-main ._2yUXW {
-    color: #d1d1d1 !important;
+    color: var(--fg-3) !important;
   }
   .landing-main .landing-title {
-    color: #eee !important;
+    color: var(--fg-1) !important;
   }
   .landing-main rect[fill ^= '#f2f'],
   .landing-main rect[fill ^= '#F2F'] {
-    fill: #444d5c;
+    fill: var(--bg-5);
   }
   .landing-main path[fill ^= '#818'] {
-    fill: #7289da;
+    fill: var(--ac-0);
   }
   .landing-main div[data-ref] {
     border-radius: 0 !important;
@@ -724,11 +722,11 @@
   }
   .landing-main div[data-ref] [role='button'] {
     color: #fff !important;
-    background-color: #7289da !important;
+    background-color: var(--ac-0) !important;
   }
   .landing-main div[data-ref]._2BIlf {
-    outline: 4px solid #7289da;
-    box-shadow: 0 0 0 4px #7289da;
+    outline: 4px solid var(--ac-0);
+    box-shadow: 0 0 0 4px var(--ac-0);
   }
   .landing-main + ._3pdvT {
     background-color: transparent !important;
@@ -741,11 +739,11 @@
   }
   .landing-main ._3ybl8 {
     color: #fff !important;
-    background-color: #7289da !important;
+    background-color: var(--ac-0) !important;
     box-shadow: bsh;
   }
   .landing-main ._3ybl8::before {
-    border-bottom-color: #7289da !important;
+    border-bottom-color: var(--ac-0) !important;
   }
   #app > div::after {
     top: var(--bg-blur-s);
@@ -766,14 +764,34 @@
     border: 1px solid var(--bg-4);
     border-radius: var(--r-menus) !important;
   }
+  #app > div > span > ._2I2_W {
+    border-radius: var(--r-menus) !important;
+  }
+  #app > div > span > ._2I2_W > ._3G19M {
+    border: 1px solid var(--bg-5) !important;
+    border-radius: var(--r-menus) !important;
+  }
+  #app > div #side > header button:not([data-animate-menu-icons-item]) [data-icon],
+  #app > div #main > div + header button:not([data-animate-menu-icons-item]) [data-icon],
+  #app > div #main > footer > .copyable-area button:not([data-animate-menu-icons-item]) [data-icon],
+  #app > div #side > header [role = 'button'] [data-icon],
+  #app > div #main > div + header [role = 'button'] [data-icon],
+  #app > div #main > footer > .copyable-area [role = 'button'] [data-icon] {
+    transition: fill-opacity 0.3s ease !important;
+  }
+  #app > div #side > header button:not([data-animate-menu-icons-item]):not(._3QjfB):hover [data-icon],
+  #app > div #main > div + header button:not([data-animate-menu-icons-item]):not(._3QjfB):hover [data-icon],
+  #app > div #main > footer > .copyable-area button:not([data-animate-menu-icons-item]):not(._3QjfB):hover [data-icon],
+  #app > div #side > header [role = 'button']:not(._3QjfB):hover [data-icon],
+  #app > div #main > div + header [role = 'button']:not(._3QjfB):hover [data-icon],
+  #app > div #main > footer > .copyable-area [role = 'button']:not(._3QjfB):hover [data-icon] {
+    fill-opacity: 0.6 !important;
+  }
   #app > div > [tabindex] {
-    background-color: #1f232a !important;
+    background-color: var(--bg-1) !important;
   }
   @media (min-width: 1441px) {
     #app > div > [tabindex] {
-      border-radius: var(--r-menus) !important;
-      border: 1px solid #444d5c !important;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.145);
       border-radius: var(--r-menus) !important;
       border: 1px solid var(--bg-5) !important;
       box-shadow: var(--bshadow) !important;
@@ -789,7 +807,7 @@
   }
   #app > div > [tabindex] .gQzdc,
   #app > div > [tabindex] ._3qx7_ {
-    border-bottom: 1px solid #444d5c !important;
+    border-bottom: 1px solid var(--bg-5) !important;
   }
   #app > div > [tabindex] .gQzdc::after,
   #app > div > [tabindex] ._3qx7_::after {
@@ -803,19 +821,19 @@
     border-radius: var(--r-inputs) !important;
   }
   #app > div > [tabindex] #side > header {
-    border-bottom: 1px solid #444d5c !important;
+    border-bottom: 1px solid var(--bg-5) !important;
   }
   #app > div > [tabindex] #side > header + span > div {
-    border-bottom: 1px solid #444d5c !important;
+    border-bottom: 1px solid var(--bg-5) !important;
   }
   #app > div > [tabindex] #side > header + span > div [data-icon = 'x'] svg path {
-    fill: #8f8f8f;
+    fill: var(--fg-5);
   }
   #app > div > [tabindex] ._14VS3 > ._1V8rX {
-    border-left: 1px solid #444d5c !important;
+    border-left: 1px solid var(--bg-5) !important;
   }
   #app > div > [tabindex] ._14VS3 > ._1V8rX .copyable-area > header {
-    border-bottom: 1px solid #444d5c !important;
+    border-bottom: 1px solid var(--bg-5) !important;
   }
   ._2Bps4 {
     box-shadow: 0 0 0 1px var(--bg-4) !important;
@@ -824,7 +842,7 @@
   ._2TZYF {
     height: 59px !important;
     justify-content: center !important;
-    border-bottom: 1px solid #444d5c !important;
+    border-bottom: 1px solid var(--bg-5) !important;
   }
   ._1fiOp > [data-animate-drawer-title],
   ._2TZYF > [data-animate-drawer-title] {
@@ -838,7 +856,7 @@
   }
   #main > header {
     border-right: none !important;
-    border-bottom: 1px solid !important;
+    border-bottom: 1px solid var(--bg-5) !important;
     border-color: var(--bg-5) !important;
   }
   #main > header::after {
@@ -940,7 +958,7 @@
       min-width: 350px !important;
     }
     .two > :nth-child(2) > :nth-child(1) [style][tabindex] {
-      border-right: 1px solid #444d5c !important;
+      border-right: 1px solid var(--bg-5) !important;
     }
     .three > div:nth-child(2) > div:nth-child(2) {
       flex: 0 0 calc(100% - 30% - 80px) !important;
@@ -985,7 +1003,7 @@
       margin: 0;
     }
     #side .eJ0yJ ._1582E .m61XR ._31gEB {
-      border: 4px solid #282d37;
+      border: 4px solid var(--bg-2);
     }
     #side .eJ0yJ ._1582E .m61XR > span {
       display: flex !important;
@@ -1018,8 +1036,8 @@
       z-index: 101;
       position: absolute;
       margin: -2px 0 0 -75px;
-      border: 3px solid #282d37;
-      background-color: #1f232a !important;
+      border: 3px solid var(--bg-2);
+      background-color: var(--bg-1) !important;
       border-radius: 50%;
     }
     #side .eJ0yJ .zFnXi > span > svg {
@@ -1029,11 +1047,11 @@
     }
     #side .eJ0yJ._13opk ._31gEB,
     #side .eJ0yJ._13opk .zFnXi {
-      border-color: #3b4250 !important;
+      border-color: var(--bg-4) !important;
     }
     #side .eJ0yJ:hover:not(._13opk) ._31gEB,
     #side .eJ0yJ:hover:not(._13opk) .zFnXi {
-      border-color: #323843 !important;
+      border-color: var(--bg-3) !important;
     }
     #side ._2kHpK {
       min-width: 80px !important;
