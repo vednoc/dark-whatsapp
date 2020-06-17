@@ -274,7 +274,7 @@ ac5 = var(--ac-5)
         /// Custom emoji opacity.
         --emoji-o: emoji_o
 
-        /// Feat -> Custom app background.
+        /// Custom app background.
         image_path  = 'https://raw.githubusercontent.com/'
         image_path += 'vednoc/dark-whatsapp/master/images/bg-blur'
         if ( app_image == bg-high ) {
@@ -297,7 +297,7 @@ ac5 = var(--ac-5)
         --bg-pos:     bg_pos
         --bg-rep:     bg_rep
 
-        /// Feat -> Custom chat background.
+        /// Custom chat background.
         --chat-image: chat_image
         --chat-bg-o:  chat_bg_o
         --chat-bg-i:  chat_bg_i
@@ -305,7 +305,7 @@ ac5 = var(--ac-5)
         --chat-bg-p:  chat_bg_p
         --chat-bg-r:  chat_bg_r
 
-        /// Feat -> Override incoming message bubble colors.
+        /// Override incoming message bubble colors.
         if (ow_imsg) {
             --msg-in-0:     msg-in-0 i
             --msg-in-0-rgb: to_rgb(msg-in-0)
@@ -318,7 +318,7 @@ ac5 = var(--ac-5)
             --msg-in-1-rgb: var(--bg-3-rgb)
         }
 
-        /// Feat -> Override outgoing message bubble colors.
+        /// Override outgoing message bubble colors.
         if (ow_omsg) {
             --msg-out-0:     msg-out-0 i
             --msg-out-0-rgb: to_rgb(msg-out-0)
@@ -857,7 +857,7 @@ ac5 = var(--ac-5)
                 }
             }
 
-            /// Theme colors.
+            /// Scrollbar colors.
             @supports (scrollbar-width: thin) {
                 scrollbar-color: ac3 #88888810 i
             }
@@ -872,10 +872,12 @@ ac5 = var(--ac-5)
     ._1BjNO[style] {
         /// Global/shared contacts.
         &, /._1S7ke { c: 0 0 bg5 }
+
         /// Avatars/images/new group/shared contacts.
         &, > img, /._18cLH, /._3_Hvt, /._2H1bg, /._1S7ke {
             rad: var(--r-avatars) i
         }
+
         /// Tweak default-user icons.
         if ( radius-a != '50%' ) {
             /[style *= 'height: 26px'],
@@ -933,7 +935,7 @@ ac5 = var(--ac-5)
             }
         }
 
-        /// -> Fix media selection.
+        /// Fix media selection.
         /._1KWct { c: 0 bg5 bg3 }
 
         /// Status area modal.
@@ -985,7 +987,7 @@ ac5 = var(--ac-5)
         }
     }
 
-    // Loading.
+    // Loading page.
     [id *= 'startup'] {
         c: 0 0 bg0
 
