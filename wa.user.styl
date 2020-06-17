@@ -1123,9 +1123,7 @@ ac5 = var(--ac-5)
         #main > footer > .copyable-area {
             button:not([data-animate-menu-icons-item]), [role = 'button'] {
                 [data-icon] { transition: fill-opacity 0.3s ease i }
-                &:not(._3QjfB):hover {
-                    [data-icon] { fill-opacity: 0.6 i }
-                }
+                &:not(._3QjfB):hover [data-icon] { fill-opacity: 0.6 i }
             }
         }
     }
@@ -1198,9 +1196,7 @@ ac5 = var(--ac-5)
             }
 
             /// Remove shadows from drawer sections.
-            /._2Bps4 {
-                box-shadow: 0 0 0 1px bg4 i
-            }
+            /._2Bps4 { box-shadow: 0 0 0 1px bg4 i }
         }
     }
 
@@ -1242,15 +1238,16 @@ ac5 = var(--ac-5)
         /// Feat -> Blur contacts.
         if (chat_b_c) {
             [style *= '0s; height'] {
+                /// Remove odd shadow.
                 > [aria-selected = 'true'] {
                     > div::after { display: none i }
                 }
+
+                /// Do the blur.
                 > :not([aria-selected = 'true']) {
                     overflow: hidden i
                     > div { transition: background, filter 300ms ease-in-out i }
-                    &:not(:hover) > div {
-                        filter: blur(6px)
-                    }
+                    &:not(:hover) > div { filter: blur(6px) }
                     &._1f1zm, &:hover { filter: blur(0px) }
                 }
             }
@@ -1297,9 +1294,7 @@ ac5 = var(--ac-5)
         }
 
         /// Fix context menu background for stickers.
-        .-AOZp ._2oA-- + div[style] {
-            c: 0 0 bg4
-        }
+        .-AOZp ._2oA-- + div[style] { c: 0 0 bg4 }
 
         /// Fix down arrow icon color for context menus.
         [data-js-context-icon = 'true'] { c: fg3 }
