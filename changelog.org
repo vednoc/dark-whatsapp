@@ -1,6 +1,17 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.14.0 [2020-06-18 Thu]
+Hotfix for the ~2.2025.6~ update that added new color variables.
+
+*** Added
+- Ported options for RTL messages (Thanks [[https://github.com/E-RELevant][Erel]]!)
+- New color variables ([[https://github.com/vednoc/dark-whatsapp/issues/167][#167]])
+
+*** Improved
+- Color variables for various areas (Thanks [[https://github.com/E-RELevant][Erel]]!)
+- Refactored old logic and short one-line styles
+
 ** 2.13.0 [2020-06-16 Tue]
 Refactoring codebase for the sake of consistency.
 
