@@ -63,6 +63,9 @@
 @var text     chat_bg_p  'Chat background image position' top left
 @var text     chat_bg_r  'Chat background image repeat' repeat
 
+@var checkbox rtl_header 'RTL: Remove empty message header' 1
+@var checkbox rtl_format 'RTL: Fix formatting for message content' 1
+
 
 @var text     divider    '⚠‼ IMPORTANT: Everything below is BROKEN' ''WIP''
 
@@ -75,9 +78,6 @@
     'Hide "Allow notifications"  ': 'notifications ',
     'Hide all                    ': 'hide          ',
 }
-
-@var checkbox rtl_header 'RTL: Remove empty message header' 1
-@var checkbox rtl_format 'RTL: Fix formatting for message content' 1
 
 @var select   chat_m_t   'Message tails style' {
     'Default  *': 'default ',
@@ -1490,6 +1490,43 @@ ac5 = var(--ac-5)
                 }
                 /// I _think_ I understand why this works!
                 ._2kHpK { min-width: 80px i }
+            }
+        }
+    }
+    
+    // Main -> Chat message bubbles.
+    .message {
+        /// Feat -> Fixes for RTL layout. @upstream
+        if (rtl_header) {
+            &-in, &-out {
+                .selectable-text.invisible-space[dir = 'rtl'],
+                /// Some links have TWO empty headers.
+                a.selectable-text[href],
+                /// Embedded links are special snowflakes, too.
+                .eRacY[dir = 'ltr'] > [dir = 'ltr'] {
+                    &::before { content: unset i }
+                }
+            }
+        }
+        if (rtl_format) {
+            &-in, &-out {
+                [data-pre-plain-text] > [dir = 'rtl'] {
+                    if (!rtl_header) { padding-top: 0.8rem i }
+                    padding-bottom: 0.8rem i
+                }
+                .selectable-text.invisible-space[dir = 'rtl'] {
+                    > span[class] { display: unset i }
+                    @supports (-moz-user-select: none) {
+                        &::before { content: unset i }
+                    }
+                }
+                /// Apparently messages with images/videos are treated like
+                /// special snowflakes, so this resets their timestamps.
+                [style *= 'width'], .video-thumb {
+                    + div > .eRacY[dir = 'rtl'] { padding-bottom: 0.8rem i }
+                }
+                /// Remove whitespace for links.
+                .message-text-link::after { content: unset i }
             }
         }
     }
