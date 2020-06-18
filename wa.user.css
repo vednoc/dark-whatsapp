@@ -6,15 +6,15 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      2.13.0
+@version      2.14.0
 @license      MIT
 ==/UserStyle== */
 
 @-moz-document domain('web.whatsapp.com') {
   :root:not(#z),
   .dark:not(#z) {
-    --version: 'Dark-WhatsApp 2.13.0 — June 16th, 2020';
-    --message: 'Towards v3 of DWA! Continuing the trend of porting old features to the latest update; check the changelog tosee what is new!';
+    --version: 'Dark-WhatsApp 2.14.0 — June 18th, 2020';
+    --message: 'Towards v3 of DWA! Updated to `v2.2025.6` of WhatsApp Web and fixed options for broken RTL messages; check the changelog to see what is new!';
     --changes: '\A\A https://github.com/vednoc/dark-whatsapp';
     --ui-font: 'font_name', Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif !important;
     --r-menus: 4px;
@@ -47,6 +47,8 @@
     --msg-out-0-rgb: var(--ac-4-rgb);
     --msg-out-1: var(--ac-5);
     --msg-out-1-rgb: var(--ac-5-rgb);
+    --gray-30: var(--bg-5);
+    --gray-30-rgb: var(--bg-5-rgb);
     --teal: var(--ac-0);
     --teal-rgb: var(--ac-0-rgb);
     --teal-light: var(--ac-1);
@@ -77,8 +79,8 @@
     --audio-track-outgoing-rgb: var(--fg-4-rgb);
     --avatar-background: var(--bg-1);
     --avatar-background-rgb: var(--bg-1-rgb);
-    --avatar-border: var(--fg-3);
-    --avatar-border-rgb: var(--fg-3-rgb);
+    --avatar-border: var(--bg-3);
+    --avatar-border-rgb: var(--bg-3-rgb);
     --avatar-placeholder-background: var(--bg-5);
     --avatar-placeholder-background-rgb: var(--bg-5-rgb);
     --avatar-placeholder-primary: var(--fg-3);
@@ -169,18 +171,22 @@
     --compose-background-rgb: var(--bg-1-rgb);
     --compose-background-focused: #203946;
     --compose-background-focused-rgb: 32, 57, 70;
+    --compose-border: var(--bg-5);
+    --compose-border-rgb: var(--bg-5-rgb);
     --compose-border-focused: #274656;
     --compose-border-focused-rgb: 39, 70, 86;
     --compose-panel-background: var(--bg-3);
     --compose-panel-background-rgb: var(--bg-3-rgb);
+    --compose-primary: var(--fg-1);
+    --compose-primary-rgb: var(--fg-1-rgb);
     --conversation-panel-background: var(--bg-1);
     --conversation-panel-background-rgb: var(--bg-1-rgb);
     --conversation-panel-border: var(--bg-5);
     --conversation-panel-border-rgb: var(--fg-3-rgb);
     --danger: var(--red);
     --danger-rgb: var(--red-rgb);
-    --drawer-background: var(--bg-3);
-    --drawer-background-rgb: var(--bg-3-rgb);
+    --drawer-background: var(--bg-1);
+    --drawer-background-rgb: var(--bg-1-rgb);
     --drawer-background-deep: var(--bg-0);
     --drawer-background-deep-rgb: var(--bg-0-rgb);
     --drawer-gallery-background: var(--bg-1);
@@ -237,6 +243,8 @@
     --intro-background-rgb: var(--bg-1-rgb);
     --intro-border: var(--ac-3);
     --intro-border-rgb: var(--ac-3-rgb);
+    --intro-secondary: var(--fg-3);
+    --intro-secondary-rgb: var(--fg-3-rgb);
     --inverse: #f1f1f2;
     --inverse-rgb: var(--fg-3-rgb);
     --labels-icon: rgba(241,241,242,0.4);
@@ -265,6 +273,8 @@
     --message-background-deep-rgb: var(--bg-0-rgb);
     --message-placeholder-icon: rgba(204,204,204,0.302);
     --message-placeholder-icon-rgb: 204, 204, 204;
+    --message-primary: var(--fg-1);
+    --message-primary-rgb: var(--fg-1-rgb);
     --message-selection-highlight: rgba(var(--ac-0-rgb), 0.1);
     --message-selection-highlight-rgb: var(--ac-0-rgb);
     --modal-backdrop: rgba(var(--bg-0-rgb), 0.95);
@@ -341,6 +351,10 @@
     --product-thumb-background-rgb: var(--bg-3-rgb);
     --product-thumb-background-deeper: #2b3e49;
     --product-thumb-background-deeper-rgb: 43.232, 61.76, 72.568;
+    --progress-background: var(--bg-2);
+    --progress-background-rgb: var(--bg-2-rgb);
+    --progress-primary: var(--ac-0);
+    --progress-primary-rgb: var(--ac-0);
     --ptt-blue: var(--blue);
     --ptt-blue-rgb: var(--blue-rgb);
     --ptt-button-cancel: var(--red);
@@ -359,6 +373,8 @@
     --quick-action-button-background-rgb: var(--bg-4-rgb);
     --rich-text-panel-background: var(--bg-3);
     --rich-text-panel-background-rgb: var(--bg-3-rgb);
+    --search-input-background: var(--bg-3);
+    --search-input-background-rgb: var(--bg-3-rgb);
     --secondary: var(--fg-3);
     --secondary-rgb: var(--fg-3-rgb);
     --secondary-light: var(--fg-2);
@@ -379,6 +395,8 @@
     --spinner-incoming-rgb: var(--fg-5-rgb);
     --spinner-outgoing: var(--ac-5);
     --spinner-outgoing-rgb: var(--ac-5-rgb);
+    --startup-background: var(--bg-0);
+    --startup-background-rgb: var(--bg-0-rgb);
     --status-background: var(--bg-1);
     --status-background-rgb: var(--bg-1-rgb);
     --status-background-hover: var(--bg-2);
@@ -838,6 +856,12 @@
   ._2Bps4 {
     box-shadow: 0 0 0 1px var(--bg-4) !important;
   }
+  span[class][data-icon = 'checkbox-round-checked'] [fill = '#00BFA5'] {
+    fill: var(--ac-0);
+  }
+  span[class][data-icon = 'checkbox-round-checked'] [fill = '#FFF'] {
+    fill: #fff;
+  }
   ._1fiOp,
   ._2TZYF {
     height: 59px !important;
@@ -1056,6 +1080,38 @@
     #side ._2kHpK {
       min-width: 80px !important;
     }
+}
+  .message-in .selectable-text.invisible-space[dir = 'rtl']::before,
+  .message-out .selectable-text.invisible-space[dir = 'rtl']::before,
+  .message-in a.selectable-text[href]::before,
+  .message-out a.selectable-text[href]::before,
+  .message-in .eRacY[dir = 'ltr'] > [dir = 'ltr']::before,
+  .message-out .eRacY[dir = 'ltr'] > [dir = 'ltr']::before {
+    content: unset !important;
+  }
+  .message-in [data-pre-plain-text] > [dir = 'rtl'],
+  .message-out [data-pre-plain-text] > [dir = 'rtl'] {
+    padding-bottom: 0.8rem !important;
+  }
+  .message-in .selectable-text.invisible-space[dir = 'rtl'] > span[class],
+  .message-out .selectable-text.invisible-space[dir = 'rtl'] > span[class] {
+    display: unset !important;
+  }
+  @supports (-moz-user-select: none) {
+    .message-in .selectable-text.invisible-space[dir = 'rtl']::before,
+    .message-out .selectable-text.invisible-space[dir = 'rtl']::before {
+      content: unset !important;
+    }
+  }
+  .message-in [style *= 'width'] + div > .eRacY[dir = 'rtl'],
+  .message-out [style *= 'width'] + div > .eRacY[dir = 'rtl'],
+  .message-in .video-thumb + div > .eRacY[dir = 'rtl'],
+  .message-out .video-thumb + div > .eRacY[dir = 'rtl'] {
+    padding-bottom: 0.8rem !important;
+  }
+  .message-in .message-text-link::after,
+  .message-out .message-text-link::after {
+    content: unset !important;
   }
   @keyframes pulse {
     40% {
