@@ -14,6 +14,7 @@
 @var color    next_bg    '[Dev]: Base background color ' #1f232a
 @var color    next_fg    '[Dev]: Base foreground color ' #eeeeee
 @var color    next_ac    '[Dev]: Base accent color     ' #7289da
+@var range    next_bg_a  '[Dev]: Adjust tones for background color' [0, -25, 25, 0.1, '%']
 @var checkbox ow_imsg    'Override incoming message bubble color' 0
 @var color    next_imsg  '[Dev]: Incoming message bubble color' #16191e
 @var checkbox ow_omsg    'Override outgoing message bubble color' 0
@@ -171,6 +172,7 @@ i  = !important
 _d = darken
 _l = lighten
 BG = next_bg
+BA = next_bg_a
 FG = next_fg
 AC = next_ac
 IM = next_imsg
@@ -180,7 +182,7 @@ OM = next_omsg
 /// TODO: Needs more polish.
 if(dark(BG)) {
     a1 =  10%; a2 =  20%; a3 =  30%; a4 =  78%; a5 =  88%;
-    b1 =  10%; b2 = -05%; b3 = -10%; b4 = -15%; b5 = -20%;
+    b1 = (BA + 10); b2 = (BA - 5); b3 = (BA - 10); b4 = (BA - 15); b5 = (BA - 20)
     f1 = -10%; f2 =  06%; f3 =  12%; f4 =  24%; f5 =  40%;
 } else {
     a1 =  10%; a2 =  15%; a3 =  30%; a4 =  60%; a5 =  70%;
