@@ -141,10 +141,17 @@ c(x, y = 0, z = 0, xi = 1, yi = 1, zi = 1) {
 
 // V3 check.
 if ( v3 == 1 ) {
+
 // Raw RGB mixin.
 /// Convert HEX to raw rrr-ggg-bbb format.
 to_rgb(input) {
     unquote(slice(s('%s', rgba(input, 0)), 5, -3))
+}
+
+// Raw RGBA mixin.
+/// Combine `*-rgb` vars and alpha value.
+to_rgba(input, alpha) {
+    unquote(s('rgba(var(--%s-rgb), %s)', unquote(input), alpha))
 }
 
 // Convert to SVG-friendly colors.
@@ -546,7 +553,7 @@ ac5 = var(--ac-5)
         --location-cluster-background-rgb: var(--bg-1-rgb) //16,29,36;
         --media-editor-control: #1c313f;
         --media-editor-control-rgb: 28,49,63;
-        --media-viewer-background: s('rgba(var(--bg-1-rgb), 0.95)') //#101d24fa;
+        --media-viewer-background: to_rgba('bg-1', 0.80) //#101d24fa;
         --media-viewer-background-rgb: var(--bg-1-rgb) //16,29,36;
         --media-viewer-button-background: var(--bg-3) //#1c282f;
         --media-viewer-button-background-rgb: var(--bg-3-rgb) //28,40,47;
@@ -560,9 +567,9 @@ ac5 = var(--ac-5)
         --message-placeholder-icon-rgb: 204,204,204;
         --message-primary: var(--fg-1) //#f1f1f2f2;
         --message-primary-rgb: var(--fg-1-rgb) //241,241,242;
-        --message-selection-highlight: s('rgba(var(--ac-0-rgb), 0.1)') //#f1f1f20d;
+        --message-selection-highlight: to_rgba('ac-0', 0.1) //#f1f1f20d;
         --message-selection-highlight-rgb: var(--ac-0-rgb) //241,241,242;
-        --modal-backdrop: s('rgba(var(--bg-0-rgb), 0.95)') //#080e12d9;
+        --modal-backdrop: to_rgba('bg-1', 0.70) //#080e12d9;
         --modal-backdrop-rgb: var(--bg-0-rgb) //8,14,18;
         --modal-backdrop-solid: var(--bg-0) //#1c282f;
         --modal-backdrop-solid-rgb: var(--bg-0-rgb) //28,40,47;
@@ -1296,7 +1303,7 @@ ac5 = var(--ac-5)
         }
 
         /// Tweak text shadow.
-        ._1E1g0 { text-shadow: 0 1px 0 s('rgba(var(--fg-3-rgb), 0.2)') }
+        ._1E1g0 { text-shadow: 0 1px 0 to_rgba('fg-3', 0.2) }
 
         /// Tweak 'unread messages' alert.
         ._9WQEN { border: none i }
@@ -1305,7 +1312,7 @@ ac5 = var(--ac-5)
         [class *= 'message-'][data-id] {
             /// Exclude stickers.
             > span + div:not(.urabC) > div {
-                box-shadow: 0 1px 0 s('rgba(var(--shadow-rgb), 0.33)') i
+                box-shadow: 0 1px 0 to_rgba('shadow', 0.33) i
             }
         }
 
@@ -1320,7 +1327,7 @@ ac5 = var(--ac-5)
             /// Images.
             &._3yTyY, &._2CHFo {
                 padding: 2px 4px i
-                background-color: s('rgba(var(--bg-1-rgb), 0.7)') i
+                background-color: to_rgba('bg-1', 0.7) i
                 rad: 5px i
             }
 
@@ -1329,7 +1336,7 @@ ac5 = var(--ac-5)
                 /// Length/Timestamp.
                 .len7M, + ._2DfqO {
                     padding: 2px 4px i
-                    background-color: s('rgba(var(--bg-1-rgb), 0.7)') i
+                    background-color: to_rgba('bg-1', 0.7) i
                     rad: 5px i
                 }
 
