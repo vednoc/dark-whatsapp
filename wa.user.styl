@@ -659,7 +659,7 @@ ac5 = var(--ac-5)
         --ptt-green-rgb: var(--green) //9,210,97;
         --ptt-message-blue: var(--blue) //#68bbe4;
         --ptt-message-blue-rgb: var(--blue-rgb) //104,187,228;
-        --quick-action-button: s(rgba'(var(--fg-3), 0.5') //#f1f1f280;
+        --quick-action-button: to_rgba('fg-3', 0.5) //#f1f1f280;
         --quick-action-button-rgb: var(--fg-3-rgb) //241,241,242;
         --quick-action-button-background: var(--bg-4) //#080e1299;
         --quick-action-button-background-rgb: var(--bg-4-rgb) //8,14,18;
@@ -705,7 +705,7 @@ ac5 = var(--ac-5)
         --suspicious-background-rgb: 239,105,122;
         --system-message-background: var(--ac-5) //#1e2a30;
         --system-message-background-rgb: var(--ac-5-rgb) //30,42,48;
-        --system-message-text: s(rgba'(var(--fg-1), 0.87') //#f1f1f2de;
+        --system-message-text: to_rgba('fg-1', 0.87) //#f1f1f2de;
         --system-message-text-rgb: 241,241,242;
         --teal-hover: #00b7a1;
         --teal-hover-rgb: 0,183,161;
@@ -715,15 +715,15 @@ ac5 = var(--ac-5)
         --thumb-border-active-rgb: var(--bg-2-rgb) //117,120,122;
         --thumb-border-viewer-active: var(--fg-3) //#75787a;
         --thumb-border-viewer-active-rgb: var(--fg-3-rgb) //117,120,122;
-        --toast-background: s(rgba'(var(--bg-3), 0.96') //#080e12f5;
+        --toast-background: to_rgba('bg-3', 0.96) //#080e12f5;
         --toast-background-rgb: var(--bg-3-rgb) //8,14,18;
-        --tooltip-background: s('rgba(var(--bg-4-rgb), 0.85)') //#595959d9;
+        --tooltip-background: to_rgba('bg-4', 0.85) //#595959d9;
         --tooltip-background-rgb: var(--bg-4) //89.25,89.25,89.25;
         --typing: var(--ac-0) //#00af9c;
         --typing-rgb: var(--ac-0-rgb) //0,175,156;
         --unread-background: var(--bg-3) //#1c282f;
         --unread-background-rgb: var(--bg-3-rgb) //28,40,47;
-        --unread-bar-background: s('rgba(var(--bg-0-rgb), 0.7)') //#080e124d;
+        --unread-bar-background: to_rgba('bg-0', 0.7) //#080e124d;
         --unread-bar-background-rgb: var(--bg-0-rgb) //8,14,18;
         --unread-marker-background: var(--ac-0) //#00af9c;
         --unread-marker-background-rgb: var(--ac-0-rgb) //0,175,156;
@@ -1293,13 +1293,13 @@ ac5 = var(--ac-5)
 
         /// System messages.
         ._1E1g0 {
-            border: 1px solid s('rgba(var(--fg-3-rgb), 0.2)')
+            border: 1px solid to_rgba('--fg-3', 0.2)
             /// Tweak text shadow.
-            text-shadow: 0 1px 0 s('rgba(var(--fg-3-rgb), 0.2)')
+            text-shadow: 0 1px 0 to_rgba('--fg-3', 0.2)
         }
 
         /// End-to-end encryption notification.
-        ._2n04H { border: 1px solid s('rgba(var(--notification-e2e-text-rgb), 0.3)') }
+        ._2n04H { border: 1px solid to_rgba('--notification-e2e-text', 0.3) }
 
         /// Feat -> Custom chat background.
         /[data-asset-chat-background-light] {
