@@ -1289,6 +1289,16 @@ ac5 = var(--ac-5)
             &::after { content: unset i }
         }
 
+        /// System messages.
+        ._1E1g0 {
+            border: 1px solid s('rgba(var(--fg-3-rgb), 0.2)')
+            /// Tweak text shadow.
+            text-shadow: 0 1px 0 s('rgba(var(--fg-3-rgb), 0.2)')
+        }
+
+        /// End-to-end encryption notification.
+        ._2n04H { border: 1px solid s('rgba(var(--notification-e2e-text-rgb), 0.3)') }
+
         /// Feat -> Custom chat background.
         /[data-asset-chat-background-light] {
             filter: invert(var(--chat-bg-i)) opacity(var(--chat-bg-o))
