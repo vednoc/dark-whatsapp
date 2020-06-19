@@ -864,12 +864,25 @@ ac5 = var(--ac-5)
         /// Settings -> Tweaks for 'Set Chat Wallpaper' area. #149
         /[style *= 'd-color: rgb(237\, 233\, 228)'] {
             position: relative
+            c: 0 0 bg3
+
+            /// Override selected wallpaper.
+            --blue-light: bg5
+            --inverse: bg5
+
+            /// Add pseudo text.
             &::before {
                 content: 'Use this with Dark-WhatsApp'
                 position: absolute
                 font-size: 15px
                 width: 100%
-                c: black
+                c: fg1
+            }
+
+            /// Expand default chat wallpaper.
+            &:first-child {
+                &, &::after { width: calc(3 * 82px + 30px) i }
+                span { font-size: 0 i }
             }
         }
 
