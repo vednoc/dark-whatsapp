@@ -577,8 +577,8 @@ ac5 = var(--ac-5)
         --modal-backdrop-solid-rgb: var(--bg-0-rgb) //28,40,47;
         --modal-background: var(--bg-2) //#364147;
         --modal-background-rgb: var(--bg-2-rgb) //54,65,71;
-        --notification-biz-background: var(--bg-3) //#1c282f;
-        --notification-biz-background-rgb: var(--bg-3-rgb) //28,40,47;
+        --notification-biz-background: var(--bg-0) //#1c282f;
+        --notification-biz-background-rgb: var(--bg-0-rgb) //28,40,47;
         --notification-biz-text: #55fad9;
         --notification-biz-text-rgb: 85,250,217;
         --notification-e2e-background: var(--bg-0) //#1c282f;
@@ -1324,13 +1324,17 @@ ac5 = var(--ac-5)
 
         /// System messages.
         ._1E1g0 {
-            border: 1px solid to_rgba('fg-3', 0.2)
-            /// Tweak text shadow.
-            text-shadow: 0 1px 0 to_rgba('fg-3', 0.2)
-        }
+            border: 1px solid to_rgba('fg-1', 0.3)
 
-        /// End-to-end encryption notification.
-        ._2n04H { border: 1px solid to_rgba('notification-e2e-text', 0.3) }
+            /// Tweak text shadow.
+            text-shadow: 0 1px 0 to_rgba('fg-1', 0.3)
+
+            /// End-to-end encryption message.
+            &._2n04H { border: 1px solid to_rgba('notification-e2e-text', 0.3) }
+
+            /// Bussiness account message.
+            &._2nH_- { border: 1px solid to_rgba('notification-biz-text', 0.3) }
+        }
 
         /// Loading previous messages.
         ._2J60S { border: 1px solid bg5 }
