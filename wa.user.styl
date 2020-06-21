@@ -11,6 +11,12 @@
 @preprocessor stylus
 
 @var checkbox v3         '[Dev]: Enable v3 mode        ' 1
+
+@var select   theme      'Base color-scheme toggle' {
+    'Custom colors   *': 'custom',
+    'Dark blue (old)  ': 'old',
+    'Dark gray (new)  ': 'new',
+}
 @var color    next_bg    '[Dev]: Base background color ' #1f232a
 @var color    next_fg    '[Dev]: Base foreground color ' #eeeeee
 @var color    next_ac    '[Dev]: Base accent color     ' #7289da
@@ -104,12 +110,6 @@
 
 @var checkbox ss_mode    '[Dev]: Screenshot mode' 0
 
-@var select   theme      'Color-scheme' {
-    'Dark blue (old) *': 'old',
-    'Dark gray (new)  ': 'new',
-    'Custom colors    ': 'custom',
-}
-
 @var color    _dark      'Color: Primary background   ' #1f232a
 @var color    _darken    'Color: Highlight background ' #252A33
 @var color    darker     'Color: Secondary background ' #333943
@@ -165,15 +165,27 @@ rad() { border-radius: arguments }
 /// Remove browser prefixes.
 vendors = official
 
+/// Feat -> Base color-scheme toggle. #32
+if (theme == 'custom') {
+    BG = next_bg
+    FG = next_fg
+    AC = next_ac
+} else if (theme == 'old') {
+    BG = #1f232a
+    FG = #eeeeee
+    AC = #7289da
+} else if (theme == 'new') {
+    BG = #292929
+    FG = #e6e6e6
+    AC = #d47d3f
+}
+
 /// Helper variables.
 t  = transparent
 i  = !important
 _d = darken
 _l = lighten
-BG = next_bg
 BA = next_bg_a
-FG = next_fg
-AC = next_ac
 IM = next_imsg
 OM = next_omsg
 
