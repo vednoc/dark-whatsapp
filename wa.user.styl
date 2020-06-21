@@ -67,18 +67,17 @@
 @var checkbox rtl_header 'RTL: Remove empty message header' 1
 @var checkbox rtl_format 'RTL: Fix formatting for message content' 1
 
+@var select   alerts     'Alerts' {
+    'Show all                   *': 'show          ',
+    'Hide "Allow notifications"  ': 'notifications ',
+    'Hide all                    ': 'hide          ',
+}
 
 @var text     divider    '⚠‼ IMPORTANT: Everything below is BROKEN' ''WIP''
 
 @var checkbox chat_b_img 'Enable blurred images/videos' 0
 @var text     chat_b_in  'Images/videos hover-on delay' 0.4s
 @var text     chat_b_out 'Images/videos hover-off delay' 0.2s
-
-@var select   alerts     'Alerts' {
-    'Show all                   *': 'show          ',
-    'Hide "Allow notifications"  ': 'notifications ',
-    'Hide all                    ': 'hide          ',
-}
 
 @var select   chat_m_t   'Message tails style' {
     'Default  *': 'default ',
@@ -1234,10 +1233,17 @@ ac5 = var(--ac-5)
 
                 /// Alerts.
                 + span > div {
-                    border-bottom: 1px solid bg5 i
-
                     /// Close icon for 'low battery' state.
                     [data-icon = 'x'] svg path { fill: fg5 }
+
+                    /// Feat -> Alerts.
+                    if (alerts == 'hide') {
+                        & > div { display: none i }
+                    } else if (alerts == 'notifications') {
+                        & > ._1evad { display: none i }
+                    } else {
+                        border-bottom: 1px solid bg5 i
+                    }
                 }
             }
         }
