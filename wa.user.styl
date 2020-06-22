@@ -1247,10 +1247,11 @@ ac5 = var(--ac-5)
                     /// Feat -> Alerts.
                     if (alerts == 'hide') {
                         & > div { display: none i }
-                    } else if (alerts == 'notifications') {
-                        & > ._1evad { display: none i }
                     } else {
                         border-bottom: 1px solid bg5 i
+                        if (alerts == 'notifications') {
+                            & > ._1evad { display: none i }
+                        }
                     }
                 }
             }
@@ -1634,7 +1635,7 @@ ac5 = var(--ac-5)
             }
         }
     }
-    
+
     // Main -> Chat message bubbles.
     .message {
         /// Feat -> Fixes for RTL layout. @upstream
