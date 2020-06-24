@@ -619,8 +619,8 @@ ac5 = var(--ac-5)
         --panel-background-deep-rgb: var(--bg-2-rgb) //22,32,38;
         --panel-background-deeper: var(--bg-3) //#1a252c;
         --panel-background-deeper-rgb: var(--bg-3-rgb) //26,37,44;
-        --panel-background-hover: #1b272e;
-        --panel-background-hover-rgb: 27,39,46;
+        --panel-background-hover: var(--bg-4) //#1b272e;
+        --panel-background-hover-rgb: var(--bg-4-rgb) //27,39,46;
         --panel-background-lighter: var(--bg-3) //#1a252c;
         --panel-background-lighter-rgb: var(--bg-3-rgb) //26,37,44;
         --panel-header-background: var(--bg-3) //#222e35;
@@ -1433,8 +1433,15 @@ ac5 = var(--ac-5)
 
             /// Popover border.
             .velocity-animating,
+            div[style $= 'translateY(0%);'],
             div[style $= 'translateY(0px);'] {
                 box-shadow: 0 -1px 0 bg5 i
+            }
+
+            /// Emoji quick-picker.
+            [data-list-scroll-container] {
+                border-bottom: 1px solid bg5 i
+                box-shadow: 0 -1px bg5 i
             }
 
             /// Chat -> Select messages.
@@ -1444,10 +1451,7 @@ ac5 = var(--ac-5)
             }
 
             /// Emoji group selection.
-            ._3eShu {
-                border-top: 1px solid bg5 i
-                border-bottom: 1px solid bg5 i
-            }
+            ._3eShu { border-bottom: 1px solid bg5 i }
 
             /// Feat -> Input border radius.
             ._3uMse { rad: var(--r-inputs) i }
