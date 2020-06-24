@@ -1164,6 +1164,11 @@ ac5 = var(--ac-5)
             if (fullscreen) { content: none i }
         }
 
+        /// Remove top border from the first Links/Docs message.
+        /div, /span {
+         div:first-child > .aGjYp::before { content: none }
+        }
+
         /// Feat -> Input border radius.
         ._3xpD_ { rad: var(--r-inputs) i }
 
