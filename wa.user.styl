@@ -1205,24 +1205,23 @@ ac5 = var(--ac-5)
         c: 0 0 bg1
 
         @media (min-width: 1441px) {
-            /// Feat -> Custom app & status width.
-            &, /._11ARv, /._2x-Yl {
-                width: calc(100% - 38px) i
-                max-width: var(--app-width) i
-            }
-
             /// Feat -> Fullscreen mode.
             if (fullscreen) {
-                &, /[data-animate-status-v3-modal-background] > div {
+                &, /[data-animate-status-v3-modal-background] > div:first-child {
                     width: 100% i
                     max-width: 100% i
                     height: 100% i
                     top: unset i
                 }
             } else {
-                rad: var(--r-menus) i
-                border: 1px solid bg5 i
-                box-shadow: var(--bshadow) i
+                /// Feat -> Custom width for app/status areas.
+                &, /[data-animate-status-v3-modal-background] > div:first-child {
+                    width: calc(100% - 38px) i
+                    max-width: var(--app-width) i
+                    rad: var(--r-menus) i
+                    border: 1px solid bg5 i
+                    box-shadow: var(--bshadow) i
+                }
             }
         }
 
