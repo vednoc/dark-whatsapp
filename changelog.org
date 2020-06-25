@@ -1,6 +1,31 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.15.0 [2020-06-25 Thu]
+Porting more features, fixing more bugs, and improving more things.
+
+*** Added
+- A new option to adjust generated tones for =background= color
+  + Still testing things; might be removed later on
+- Ported and improved alerts option
+- Ported theme colors for replies and group members option
+- Ported old color-scheme menu
+  + =Custom= is the new default, and is using same colors as =old= option
+- A new =to_rgba= mixin to fix issues with Stylus-lang's built-in =rgba= function
+
+*** Improved
+- Theme colors for many color variables
+- System messages now have borders around them
+- The look for default wallpaper in 'set chat wallpaper' area under settings
+- Made gray chat wallpaper use dark background colors to avoid conflicts
+- Borders for elements in chat footer/compose area
+
+*** Fixed
+- Custom background images are no longer removed in native dark mode
+- Alignment for spinners inside of search bars
+- Removed top borders from docs/links/starred messages
+- Custom app/status width now plays well with =fullscreen mode=
+
 ** 2.14.0 [2020-06-18 Thu]
 Hotfix for the ~2.2025.6~ update that added new color variables.
 
