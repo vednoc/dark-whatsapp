@@ -1714,7 +1714,10 @@ ac5 = var(--ac-5)
 
     // Main -> Chat message bubbles.
     .message {
-        /// Feat -> Fixes for RTL layout. @upstream
+        md = ''
+        ts = ''
+
+        /// Feat -> Fixes for RTL message header. @upstream
         if (rtl_header) {
             &-in, &-out {
                 .selectable-text.invisible-space[dir = 'rtl'],
@@ -1726,6 +1729,8 @@ ac5 = var(--ac-5)
                 }
             }
         }
+
+        /// Feat -> Fixes for RTL message content. @upstream
         if (rtl_format) {
             &-in, &-out {
                 [data-pre-plain-text] > [dir = 'rtl'] {
