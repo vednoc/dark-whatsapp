@@ -1717,6 +1717,44 @@ ac5 = var(--ac-5)
         md = ''
         ts = ''
 
+        /// Feat -> Message tails.
+        if (chat_m_t == 'fb-like') {
+            _o = 16px
+            _m = (16px - 2px)
+            _i = 6px
+
+            /// Feat -> Left message bubble position.
+            if (chat_left == 'start') {
+                left_top = _o _o _o _i i
+                left_mid = _i _o _o _i i
+                left_med = _i _m _m _i i
+                left_end = _i _o _o _o i
+            } else {
+                left_top = _o _o _i _o i
+                left_mid = _o _i _i _o i
+                left_med = _m _i _i _m i
+                left_end = _o _i _o _o i
+            }
+
+            /// Feat -> Right message bubble position.
+            if (chat_right == 'end') {
+                right_top = _o _o _i _o i
+                right_mid = _o _i _i _o i
+                right_med = _m _i _i _m i
+                right_end = _o _i _o _o i
+            } else {
+                right_top = _o _o _o _i i
+                right_mid = _i _o _o _i i
+                right_med = _i _m _m _i i
+                right_end = _i _o _o _o i
+            }
+
+            /// Helpers.
+            bubble = '._28DtS'
+            system = '._2qhWD'
+
+        }
+
         /// Feat -> Fixes for RTL message header. @upstream
         if (rtl_header) {
             &-in, &-out {
