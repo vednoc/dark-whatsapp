@@ -1761,7 +1761,8 @@ ac5 = var(--ac-5)
                 [data-icon *= 'tail-'] { display: none i }
 
                 /// Single message | Groups -> Sticker sender.
-                &:not({ bubble }) { > div > div, { sticker } { rad: _o i }}
+                &:not({ bubble }) > div > div { rad: _o i }
+                &:not({ bubble }) { sticker } { rad: _o i }
 
                 /// Fix rounded corners for forward button.
                 &:not(#z) { forward }:not(#z) { rad: _o i }
@@ -1773,7 +1774,7 @@ ac5 = var(--ac-5)
                 &, ../-out, /{ system } {
                     &:not({ bubble }) + .message-in{ bubble } {
                         // c: 0 0 #ff55550a
-                        { md }, > div > div, { sticker } { rad: left_top }
+                        > div > div, { md }, { sticker } { rad: left_top }
                         /// Media context menu.
                         ._20EE3 { rad: 0 _m 0 0 i }
                     }
@@ -1787,7 +1788,7 @@ ac5 = var(--ac-5)
                 /// Last message.
                 &{ bubble } + .message-in:not({ bubble }) {
                     // c: 0 0 #5555ff0a
-                    { md }, > div > div, { sticker } { rad: left_end }
+                    > div > div, { md }, { sticker } { rad: left_end }
                 }
             }
 
@@ -1797,7 +1798,7 @@ ac5 = var(--ac-5)
                 &, ../-in, /{ system } {
                     &:not({ bubble }) + .message-out{ bubble } {
                         // c: 0 0 #ff55551a;
-                        { md }, > div > div { rad: right_top }
+                        > div > div, { md } { rad: right_top }
                         /// Media context menu.
                         ._20EE3 { rad: 0 _m 0 0 i }
                     }
@@ -1811,7 +1812,7 @@ ac5 = var(--ac-5)
                 /// Last message.
                 &{ bubble } + .message-out:not({ bubble }) {
                     // c: 0 0 #5555ff1a;
-                    { md }, > div > div { rad: right_end }
+                    > div > div, { md } { rad: right_end }
                 }
             }
         }
