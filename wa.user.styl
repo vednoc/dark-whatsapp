@@ -1766,6 +1766,30 @@ ac5 = var(--ac-5)
                 /// Fix rounded corners for forward button.
                 &:not(#z) { forward }:not(#z) { rad: _o i }
             }
+
+            /// Incoming messages.
+            &-in {
+                /// First message -> In/Out/System messages.
+                &, ../-out, /{ system } {
+                    &:not({ bubble }) + .message-in{ bubble } {
+                        // c: 0 0 #ff55550a
+                        { md }, > div > div, { sticker } { rad: left_top }
+                        /// Media context menu.
+                        ._20EE3 { rad: 0 _m 0 0 i }
+                    }
+                }
+                /// Messages in between.
+                &{ bubble } + { bubble }:not(#z) {
+                    // c: 0 0 #55ff550a
+                    { md } { rad: left_med }
+                    > div > div, { sticker } { rad: left_mid }
+                }
+                /// Last message.
+                &{ bubble } + .message-in:not({ bubble }) {
+                    // c: 0 0 #5555ff0a
+                    { md }, > div > div, { sticker } { rad: left_end }
+                }
+            }
         }
 
         /// Feat -> Fixes for RTL message header. @upstream
