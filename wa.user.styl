@@ -1750,9 +1750,22 @@ ac5 = var(--ac-5)
             }
 
             /// Helpers.
-            bubble = '._28DtS'
-            system = '._2qhWD'
+            bubble  = '._28DtS'
+            system  = '._2qhWD'
+            sticker = '._3ToB1'
+            forward = '._29g--'
 
+            /// Shared styles.
+            &-in, &-out {
+                /// Remove tails.
+                [data-icon *= 'tail-'] { display: none i }
+
+                /// Single message | Groups -> Sticker sender.
+                &:not({ bubble }) { > div > div, { sticker } { rad: _o i }}
+
+                /// Fix rounded corners for forward button.
+                &:not(#z) { forward }:not(#z) { rad: _o i }
+            }
         }
 
         /// Feat -> Fixes for RTL message header. @upstream
