@@ -1790,6 +1790,30 @@ ac5 = var(--ac-5)
                     { md }, > div > div, { sticker } { rad: left_end }
                 }
             }
+
+            /// Outgoing messages.
+            &-out {
+                /// First message -> In/Out/System messages.
+                &, ../-in, /{ system } {
+                    &:not({ bubble }) + .message-out{ bubble } {
+                        // c: 0 0 #ff55551a;
+                        { md }, > div > div { rad: right_top }
+                        /// Media context menu.
+                        ._20EE3 { rad: 0 _m 0 0 i }
+                    }
+                }
+                /// Messages in between.
+                &{ bubble } + { bubble } {
+                    // c: 0 0 #55ff551a;
+                    { md } { rad: right_med }
+                    > div > div { rad: right_mid }
+                }
+                /// Last message.
+                &{ bubble } + .message-out:not({ bubble }) {
+                    // c: 0 0 #5555ff1a;
+                    { md }, > div > div { rad: right_end }
+                }
+            }
         }
 
         /// Feat -> Fixes for RTL message header. @upstream
