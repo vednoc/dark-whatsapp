@@ -6,15 +6,15 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      2.15.0
+@version      2.16.0
 @license      MIT
 ==/UserStyle== */
 
 @-moz-document domain('web.whatsapp.com') {
   :root:not(#z),
   .dark:not(#z) {
-    --version: 'Dark-WhatsApp Lite 2.15.0 — June 25th, 2020';
-    --message: 'Towards v3 of DWA! Porting more features, and improving more things; check the changelog to see what is new!';
+    --version: 'Dark-WhatsApp Lite 2.16.0 — July 1st, 2020';
+    --message: 'Towards v3 of DWA! Updating to `2.2027.9` of WhatsApp Web; check the changelog to see what is new!';
     --changes: '\A\A https://github.com/vednoc/dark-whatsapp';
     --ui-font: 'font_name', Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif !important;
     --r-menus: 4px;
@@ -65,6 +65,10 @@
     --app-background-rgb: var(--bg-0-rgb);
     --app-background-deeper: var(--bg-0);
     --app-background-deeper-rgb: var(--bg-0-rgb);
+    --attach-media-drop-border: var(--fg-3);
+    --attach-media-drop-border-rgb: var(--fg-3-rgb);
+    --attach-media-drop-overlay: var(--bg-2);
+    --attach-media-drop-overlay-rgb: var(--bg-2-rgb);
     --audio-progress-incoming: var(--green);
     --audio-progress-incoming-rgb: var(--green-rgb);
     --audio-progress-outgoing: var(--ac-2);
@@ -109,6 +113,8 @@
     --bubble-meta-icon-rgb: var(--fg-3-rgb);
     --butterbar-battery-background: #57272b;
     --butterbar-battery-background-rgb: 87,39,43;
+    --butterbar-battery-icon: var(--red);
+    --butterbar-battery-icon-rgb: var(--red-rgb);
     --butterbar-battery-primary: var(--fg-0);
     --butterbar-battery-primary-rgb: var(--fg-0-rgb);
     --butterbar-battery-secondary: var(--fg-4);
@@ -123,12 +129,16 @@
     --butterbar-default-background-rgb: 33,66,92;
     --butterbar-icon: var(--fg-1);
     --butterbar-icon-rgb: var(--fg-1-rgb);
+    --butterbar-notification-icon: var(--blue);
+    --butterbar-notification-icon-rgb: var(--blue-rgb);
     --butterbar-primary: var(--fg-0);
     --butterbar-primary-rgb: var(--fg-0-rgb);
     --butterbar-secondary: var(--fg-4);
     --butterbar-secondary-rgb: var(--fg-4-rgb);
     --butterbar-update-background: var(--ac-0);
     --butterbar-update-background-rgb: var(--ac-0-rgb);
+    --butterbar-update-icon: var(--green);
+    --butterbar-update-icon-rgb: var(--green-rgb);
     --button-alternative: var(--ac-1);
     --button-alternative-rgb: var(--ac-1-rgb);
     --button-alternative-background: var(--bg-3);
@@ -137,6 +147,8 @@
     --button-background-disabled-rgb: var(--bg-2-rgb);
     --button-bubble: var(--ac-0);
     --button-bubble-rgb: var(--ac-0-rgb);
+    --button-plain-background: var(--bg-4);
+    --button-plain-background-rgb: var(--bg-4-rgb);
     --button-primary: var(--white);
     --button-primary-rgb: var(--white-rgb);
     --button-primary-background: var(--ac-0);
@@ -177,6 +189,18 @@
     --compose-border-focused-rgb: var(--bg-5-rgb);
     --compose-panel-background: var(--bg-3);
     --compose-panel-background-rgb: var(--bg-3-rgb);
+    --compose-input-background-focused: var(--bg-0);
+    --compose-input-background-focused-rgb: var(--bg-0-rgb);
+    --compose-input-background: var(--bg-1);
+    --compose-input-background-rgb: var(--bg-1-rgb);
+    --compose-input-border: var(--bg-5);
+    --compose-input-border-rgb: var(--bg-5-rgb);
+    --compose-input-border-focused: var(--bg-5);
+    --compose-input-border-focused-rgb: var(--bg-5-rgb);
+    --compose-panel-background: var(--bg-3);
+    --compose-panel-background-rgb: var(--bg-3-rgb);
+    --compose-panel-background-hover: var(--ac-0);
+    --compose-panel-background-hover-rgb: var(--ac-0-rgb);
     --compose-primary: var(--fg-1);
     --compose-primary-rgb: var(--fg-1-rgb);
     --conversation-panel-background: var(--bg-1);
@@ -191,6 +215,10 @@
     --drawer-background-deep-rgb: var(--bg-0-rgb);
     --drawer-gallery-background: var(--bg-1);
     --drawer-gallery-background-rgb: var(--bg-1-rgb);
+    --drawer-gallery-background-active: var(--bg-0);
+    --drawer-gallery-background-active-rgb: var(--bg-0-rgb);
+    --drawer-gallery-background-hover: var(--bg-0);
+    --drawer-gallery-background-hover-rgb: var(--bg-0-rgb);
     --drawer-header-title: var(--fg-1);
     --drawer-header-title-rgb: var(--fg-1-rgb);
     --drawer-section-background: var(--bg-2);
@@ -323,6 +351,8 @@
     --panel-header-background-rgb: var(--bg-3-rgb);
     --panel-header-icon: var(--fg-3);
     --panel-header-icon-rgb: var(--fg-3-rgb);
+    --panel-input-background: var(--bg-2);
+    --panel-input-background-rgb: var(--bg-2-rgb);
     --panel-primary: var(--fg-3);
     --panel-primary-rgb: var(--fg-3-rgb);
     --payment-amount: #00a593;
@@ -345,6 +375,8 @@
     --primary-strong-rgb: var(--fg-1-rgb);
     --primary-stronger: var(--fg-0);
     --primary-stronger-rgb: var(--fg-0-rgb);
+    --primary-strongest: var(--fg-0);
+    --primary-strongest-rgb: var(--fg-0-rgb);
     --primary-title: var(--fg-2);
     --primary-title-rgb: var(--fg-2-rgb);
     --product-thumb-background: var(--bg-3);
@@ -373,6 +405,8 @@
     --quick-action-button-background-rgb: var(--bg-4-rgb);
     --rich-text-panel-background: var(--bg-3);
     --rich-text-panel-background-rgb: var(--bg-3-rgb);
+    --search-container-background: var(--bg-2);
+    --search-container-background-rgb: var(--bg-2-rgb);
     --search-input-background: var(--bg-3);
     --search-input-background-rgb: var(--bg-3-rgb);
     --secondary: var(--fg-3);
@@ -528,6 +562,7 @@
   html > body ._11dpe button:nth-child(3) {
     color: var(--fg-4) !important;
   }
+  html > body [data-asset-intro-image-dark],
   html > body [data-asset-intro-image-light] {
     max-width: 200px;
     max-height: 200px;
@@ -535,13 +570,16 @@
     transition: opacity 0.6s ease;
     border-radius: 0 !important;
   }
+  html > body [data-asset-intro-image-dark] + div h1,
   html > body [data-asset-intro-image-light] + div h1 {
     color: var(--fg-3) !important;
   }
+  html > body [data-asset-intro-image-dark] + div h1 + div[class],
   html > body [data-asset-intro-image-light] + div h1 + div[class] {
     font-size: 0 !important;
     color: var(--fg-1) !important;
   }
+  html > body [data-asset-intro-image-dark] + div h1 + div[class]::before,
   html > body [data-asset-intro-image-light] + div h1 + div[class]::before {
     display: block;
     font-size: 16px;
@@ -549,6 +587,7 @@
     white-space: pre-wrap;
     content: var(--message) var(--changes);
   }
+  html > body [data-asset-intro-image-dark] + div h1 + div[class]::after,
   html > body [data-asset-intro-image-light] + div h1 + div[class]::after {
     display: block;
     font-size: 16px;
@@ -620,6 +659,12 @@
   ._1S7ke,
   ._2SNSv {
     border-radius: var(--r-avatars) !important;
+  }
+  .Ao0On {
+    background-color: var(--bg-5) !important;
+  }
+  ._1g1ui > ._1ByLM {
+    margin-left: unset !important;
   }
   .emojik {
     transition: transform 0.15s ease !important;
@@ -989,7 +1034,6 @@
   #main > footer ._3uMse {
     border-radius: var(--r-inputs) !important;
   }
-  @media screen and (max-height: 500px) {
   :not(#z) .color-0 {
     color: #268bd2 !important;
   }
@@ -1150,6 +1194,7 @@
     background-color: #dc322f !important;
     filter: hue-rotate(40deg);
   }
+  @media screen and (max-height: 500px) {
     #app > div > [tabindex] {
       min-height: auto;
     }
@@ -1289,7 +1334,7 @@
     #side ._2kHpK {
       min-width: 80px !important;
     }
-}
+  }
   .message-in .selectable-text.invisible-space[dir = 'rtl']::before,
   .message-out .selectable-text.invisible-space[dir = 'rtl']::before,
   .message-in a.selectable-text[href]::before,
