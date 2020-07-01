@@ -368,6 +368,10 @@ ac5 = var(--ac-5)
         --app-background-rgb: var(--bg-0-rgb) //8,14,18;
         --app-background-deeper: var(--bg-0) //#080e12;
         --app-background-deeper-rgb: var(--bg-0-rgb) //8,14,18;
+        --attach-media-drop-border: var(--fg-3) //#f1f1f233;
+        --attach-media-drop-border-rgb: var(--fg-3-rgb) //241,241,242;
+        --attach-media-drop-overlay: var(--bg-2) //#383d3f4d;
+        --attach-media-drop-overlay-rgb: var(--bg-2-rgb) //55.76,60.6,63.24;
         --audio-progress-incoming: var(--green) //#3bb463;
         --audio-progress-incoming-rgb: var(--green-rgb) //59,180,99;
         --audio-progress-outgoing: var(--ac-2) //#5f8884;
@@ -412,6 +416,8 @@ ac5 = var(--ac-5)
         --bubble-meta-icon-rgb: var(--fg-3-rgb) //241,241,242;
         --butterbar-battery-background: mix(BG, red, 70%) //#e05b52;
         --butterbar-battery-background-rgb: to_rgb(mix(BG, red, 70%)) //224,91,82;
+        --butterbar-battery-icon: var(--red) //#f5d6d7;
+        --butterbar-battery-icon-rgb: var(--red-rgb) //245,214,215;
         --butterbar-battery-primary: var(--fg-0) //#f1f1f2f5;
         --butterbar-battery-primary-rgb: var(--fg-0-rgb) //241,241,242;
         --butterbar-battery-secondary: var(--fg-4) //#f1f1f2cc;
@@ -426,12 +432,16 @@ ac5 = var(--ac-5)
         --butterbar-default-background-rgb: to_rgb(mix(BG, blue, 70%)) //51,153,204;
         --butterbar-icon: var(--fg-1) //#f1f1f2cc;
         --butterbar-icon-rgb: var(--fg-1-rgb) //241,241,242;
+        --butterbar-notification-icon: var(--blue) //#8eb2be;
+        --butterbar-notification-icon-rgb: var(--blue-rgb) //142,178,190;
         --butterbar-primary: var(--fg-0) //#f1f1f2f5;
         --butterbar-primary-rgb: var(--fg-0-rgb) //241,241,242;
         --butterbar-secondary: var(--fg-4) //#f1f1f2d9;
         --butterbar-secondary-rgb: var(--fg-4-rgb) //241,241,242;
         --butterbar-update-background: var(--ac-0) //#00af9c;
         --butterbar-update-background-rgb: var(--ac-0-rgb) //0,175,156;
+        --butterbar-update-icon: var(--green) //#8eafaa;
+        --butterbar-update-icon-rgb: var(--green-rgb) //142,175,170;
         --button-alternative: var(--ac-1) //#68bbe4;
         --button-alternative-rgb: var(--ac-1-rgb) //104,187,228;
         --button-alternative-background: var(--bg-3) //#222e35;
@@ -440,6 +450,8 @@ ac5 = var(--ac-5)
         --button-background-disabled-rgb: var(--bg-2-rgb) //37,49,55;
         --button-bubble: var(--ac-0) //#00af9cb3;
         --button-bubble-rgb: var(--ac-0-rgb) //0,175,156;
+        --button-plain-background: var(--bg-4) //#2f3437;
+        --button-plain-background-rgb: var(--bg-4-rgb) //47.1,51.86667,54.9;
         --button-primary: var(--white) //#101d24;
         --button-primary-rgb: var(--white-rgb) //16,29,36;
         --button-primary-background: var(--ac-0) //#00af9c;
@@ -470,6 +482,7 @@ ac5 = var(--ac-5)
         --checkbox-background-rgb: var(--ac-0-rgb) //0,175,156;
         --checkbox-mark: var(--white) //#101d24;
         --checkbox-mark-rgb: var(--white-rgb) //16,29,36;
+        /// Old compose variables. TODO: Remove in the next update.
         --compose-background: var(--bg-1) //#101d24;
         --compose-background-rgb: var(--bg-1-rgb) //16,29,36;
         --compose-background-focused: var(--bg-0) //#203946;
@@ -480,6 +493,19 @@ ac5 = var(--ac-5)
         --compose-border-focused-rgb: var(--bg-5-rgb) //39,70,86;
         --compose-panel-background: var(--bg-3) //#222e35;
         --compose-panel-background-rgb: var(--bg-3-rgb) //34,46,53;
+        /// New compose variables.
+        --compose-input-background-focused: var(--bg-0) //#3f5560;
+        --compose-input-background-focused-rgb: var(--bg-0-rgb) //63,85,96;
+        --compose-input-background: var(--bg-1) //#33383b;
+        --compose-input-background-rgb: var(--bg-1-rgb) //51.22296,56.04619,58.67704;
+        --compose-input-border: var(--bg-5) //#33383b;
+        --compose-input-border-rgb: var(--bg-5-rgb) //51.22296,56.04619,58.67704;
+        --compose-input-border-focused: var(--bg-5) //#415a67;
+        --compose-input-border-focused-rgb: var(--bg-5-rgb) //65,90,103;
+        --compose-panel-background: var(--bg-3) //#1e2428;
+        --compose-panel-background-rgb: var(--bg-3-rgb) //29.591,36.36026,40.309;
+        --compose-panel-background-hover: var(--ac-0) //#151e23;
+        --compose-panel-background-hover-rgb: var(--ac-0-rgb) //21,30,35;
         --compose-primary: var(--fg-1) //#f1f1f2;
         --compose-primary-rgb: var(--fg-1-rgb) //241,241,242;
         --conversation-panel-background: var(--bg-1) //#0b1419;
@@ -494,6 +520,10 @@ ac5 = var(--ac-5)
         --drawer-background-deep-rgb: var(--bg-0-rgb) //8,14,18;
         --drawer-gallery-background: var(--bg-1) //#101d24;
         --drawer-gallery-background-rgb: var(--bg-1-rgb) //16,29,36;
+        --drawer-gallery-background-active: var(--bg-0) //#0d1418;
+        --drawer-gallery-background-active-rgb: var(--bg-0-rgb) //13.12731,19.91681,23.57269;
+        --drawer-gallery-background-hover: var(--bg-0) //#0d1418;
+        --drawer-gallery-background-hover-rgb: var(--bg-0-rgb) //13.12731,19.91681,23.57269;
         --drawer-header-title: var(--fg-1) //#d6d8d9;
         --drawer-header-title-rgb: var(--fg-1-rgb) //214,216,217;
         --drawer-section-background: var(--bg-2) //#101d24;
@@ -626,6 +656,8 @@ ac5 = var(--ac-5)
         --panel-header-background-rgb: var(--bg-3-rgb) //34,46,53;
         --panel-header-icon: var(--fg-3) //#9ea3a6;
         --panel-header-icon-rgb: var(--fg-3-rgb) //158,163,166;
+        --panel-input-background: var(--bg-2) //#262d31;
+        --panel-input-background-rgb: var(--bg-2-rgb) //38.35,44.85526,48.65;
         --panel-primary: var(--fg-3) //#f1f1f259;
         --panel-primary-rgb: var(--fg-3-rgb) //241,241,242;
         --payment-amount: #00a593;
@@ -648,6 +680,8 @@ ac5 = var(--ac-5)
         --primary-strong-rgb: var(--fg-1-rgb) //212,213,215;
         --primary-stronger: var(--fg-0) //#f1f1f2de;
         --primary-stronger-rgb: var(--fg-0-rgb) //241,241,242;
+        --primary-strongest: var(--fg-0) //#fff;
+        --primary-strongest-rgb: var(--fg-0-rgb) //255,255,255;
         --primary-title: var(--fg-2) //#d4d5d7f7;
         --primary-title-rgb: var(--fg-2-rgb) //212,213,215;
         --product-thumb-background: var(--bg-3) //#1c282f;
@@ -676,6 +710,8 @@ ac5 = var(--ac-5)
         --quick-action-button-background-rgb: var(--bg-4-rgb) //8,14,18;
         --rich-text-panel-background: var(--bg-3) //#1c282f;
         --rich-text-panel-background-rgb: var(--bg-3-rgb) //28,40,47;
+        --search-container-background: var(--bg-2) //#131c21;
+        --search-container-background-rgb: var(--bg-2-rgb) //18.6,28.22,33.4;
         --search-input-background: var(--bg-3) //#2a2f32;
         --search-input-background-rgb: var(--bg-3-rgb) //41.6,47.46667,50.4;
         --secondary: var(--fg-3) //#f1f1f299;
