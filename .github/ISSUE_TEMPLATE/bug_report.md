@@ -16,7 +16,7 @@ addressed.
 -->
 
 - **Browser**:
-- **WhatsApp version**:
+- **WhatsApp Web version**:
 - **Dark-WhatsApp version**:
 - **Additional context**:
 - **Screenshot**:
