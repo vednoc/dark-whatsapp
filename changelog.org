@@ -1,6 +1,23 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.16.0 [2020-07-01 Wed]
+Hotfix for the ~2.2027.9~ update.
+
+WhatsApp is (finally) releasing their native dark mode with this update. I made
+it so that Dark-WhatsApp overrides native dark mode colors as well in [[https://github.com/vednoc/dark-whatsapp/commit/f0c1f7af4d2acdc37a5fd944d79c02f158735f6d][#f0c1f7a]].
+I'm also happy to report that all of our [[https://github.com/vednoc/dark-whatsapp/wiki/Configuration][custom features]] are working properly!
+
+*** Added
+- New color variables ([[https://github.com/vednoc/dark-whatsapp/issues/171][#171]])
+
+*** Improved
+- Invert colors range for bg/chat images has been increased from 10 to 100 steps
+
+*** Fixed
+- Invert colors option for chat image resetting on every update ([[https://github.com/vednoc/dark-whatsapp/issues/169][#169]])
+- Missing DWA intro tweaks in dark mode
+
 ** 2.15.0 [2020-06-25 Thu]
 Porting more features, fixing more bugs, and improving more things.
 
