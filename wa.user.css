@@ -6,15 +6,15 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      2.16.0
+@version      2.16.1
 @license      MIT
 ==/UserStyle== */
 
 @-moz-document domain('web.whatsapp.com') {
   :root:not(#z),
   .dark:not(#z) {
-    --version: 'Dark-WhatsApp Lite 2.16.0 — July 1st, 2020';
-    --message: 'Towards v3 of DWA! Updating to `2.2027.9` of WhatsApp Web; check the changelog to see what is new!';
+    --version: 'Dark-WhatsApp Lite 2.16.1 — July 3rd, 2020';
+    --message: 'Towards v3 of DWA! Updating to `2.2027.10` of WhatsApp Web; check the changelog to see what is new!';
     --changes: '\A\A https://github.com/vednoc/dark-whatsapp';
     --ui-font: 'font_name', Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif !important;
     --r-menus: 4px;
@@ -718,6 +718,13 @@
       border-radius: var(--r-menus) !important;
     }
   }
+  ._2yhFa {
+    margin: auto;
+    padding: 5px 8px 8px;
+    min-width: 150px;
+    border-radius: var(--r-inputs);
+    background-color: rgba(var(--bg-1-rgb), 0.5);
+  }
   [data-icon = 'status-v3-unread'] [fill = '#009588'] {
     fill: var(--ac-0) !important;
   }
@@ -751,7 +758,7 @@
     background-color: var(--ac-0) !important;
   }
   .landing-wrapper::before {
-    background-color: var(--bg-2) !important;
+    content: unset !important;
   }
   .landing-header {
     position: relative;
@@ -840,8 +847,8 @@
     width: unset;
     filter: blur(var(--bg-blur)) opacity(var(--bg-opacity)) invert(var(--bg-invert)) hue-rotate(var(--bg-hue));
     background-color: transparent !important;
-    background-image: var(--bg-image) !important;
     background-position: var(--bg-pos) !important;
+    background-image: var(--bg-image) !important;
     background-repeat: var(--bg-rep) !important;
     background-size: var(--bg-size) !important;
     content: '' !important;
@@ -973,12 +980,13 @@
   #main ._2J60S {
     border: 1px solid var(--bg-5);
   }
+  [data-asset-chat-background-dark],
   [data-asset-chat-background-light] {
     filter: invert(var(--chat-bg-i)) opacity(var(--chat-bg-o));
+    background-image: var(--chat-image) !important;
     background-position: var(--chat-bg-p) !important;
     background-repeat: var(--chat-bg-r) !important;
     background-size: var(--chat-bg-s) !important;
-    background: var(--chat-image) !important;
     opacity: 1 !important;
   }
   #main ._1E1g0 {
@@ -1033,6 +1041,9 @@
   }
   #main > footer ._3uMse {
     border-radius: var(--r-inputs) !important;
+  }
+  .dark ._8Uqu5 ._3dtfX .m61XR {
+    color: var(--secondary-stronger) !important;
   }
   :not(#z) .color-0 {
     color: #268bd2 !important;
