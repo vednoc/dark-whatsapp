@@ -1,6 +1,18 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.16.1 [2020-07-03 Fri]
+Hotfix for the ~2.2027.10~ update.
+
+*** Improved
+- Custom options for =custom chat bg image= now work properly
+- Landing page now shows custom background image
+
+*** Fixed
+- Unread message timestamp now has proper colors in dark mode
+- Custom chat background now works properly in native dark mode
+- Removed stripe background from the landing page
+
 ** 2.16.0 [2020-07-01 Wed]
 Hotfix for the ~2.2027.9~ update.
 
