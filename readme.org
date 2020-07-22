@@ -4,7 +4,7 @@
 
 * Dark-WhatsApp (né onyx)
 Complete dark mode implementation for [[https://web.whatsapp.com][WhatsApp Web]] with many improvements and
-wide range of customizable options.
+customizable options.
 
 [[https://github.com/vednoc/dark-whatsapp/tags][https://img.shields.io/github/tag/vednoc/dark-whatsapp.svg?label=version&style=flat]]
 [[https://github.com/vednoc/dark-whatsapp/stargazers][https://img.shields.io/github/stars/vednoc/dark-whatsapp.svg?style=flat]]
@@ -16,7 +16,7 @@ wide range of customizable options.
 #+HTML: <img src="https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/images/preview.png" width="100%"/>
 
 /Version 2.1.0 with [[https://github.com/rsms/inter/][Inter]] as the custom font, hidden notification alerts, and/
-/enabled custom message bubble colors. Check [[https://github.com/vednoc/dark-whatsapp/wiki/Configuration][configuration]] page on our project/
+/enabled custom message bubble colors. Check [[https://github.com/vednoc/dark-whatsapp/wiki/Configuration][configuration page]] on our project/
 /wiki to get started customizing your Dark-WhatsApp./
 
 #+HTML: </div>
@@ -46,7 +46,7 @@ You have to install [[https://add0n.com/stylus.html][Stylus]] and then click on 
 See [[https://github.com/vednoc/dark-whatsapp/wiki/Installation][installation page]].
 
 ** Getting Started
-If you have a question, make sure to check [[https://github.com/vednoc/dark-whatsapp/wiki/FAQ][FAQ page]] first in order to see if has
+If you have a question, make sure to see [[https://github.com/vednoc/dark-whatsapp/wiki/FAQ][FAQ page]] first in order to see if has
 already been answered.
 
 To learn more about using this theme and customizing it for your personal use,
@@ -58,8 +58,10 @@ Any contribution is greatly appreciated.
 If you'd like to contribute code, please make sure to read the [[https://github.com/vednoc/dark-whatsapp/blob/master/contributing.org][contribution
 guidelines]].
 
-If you really like the project and would like to tip me for my work, then you
-can buy me a coffee over at [[https://ko-fi.com/vednoc][ko-fi]] or support me over at [[https://liberapay.com/vednoc][LiberaPay]].
+If you really like this project and would like to tip me for my work, then you
+can:
+- Buy me a coffee over at [[https://ko-fi.com/vednoc][ko-fi]]
+- Support me over at [[https://liberapay.com/vednoc][LiberaPay]]
 
 ** Credits
 This project wouldn't be possible without:
@@ -70,9 +72,9 @@ This project wouldn't be possible without:
 
 Similar open-source projects:
 - [[https://github.com/Barina/Dark-Telegram][Barina/Dark-Telegram]] - Port of Dark-WhatsApp to Telegram
-- [[https://github.com/dcferreira/franz-themes][dcferreira/franz-themes]] - Port of v2 CSS for Ferdi/Franz (desktop apps)
-- [[https://github.com/obvionaoe/dark][obvionaoe/dark]] - Port of v2 CSS for Ferdi/Franz/Rambox (desktop apps)
-- [[https://github.com/amanharwara/altus][amanharwara/altus]] - Port of v1 CSS for Altus (desktop app)
+- [[https://github.com/dcferreira/franz-themes][dcferreira/franz-themes]] - Port to Ferdi/Franz (desktop apps)
+- [[https://github.com/obvionaoe/dark][obvionaoe/dark]] - Port to Ferdi/Franz/Rambox (desktop apps)
+- [[https://github.com/amanharwara/altus][amanharwara/altus]] - Port to Altus (desktop app)
 
 ** License
 Code released under the [[license][MIT]] license.
