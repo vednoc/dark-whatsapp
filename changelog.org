@@ -1,6 +1,20 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.16.2 [2020-07-22 Wed]
+Small maintenance update for ~2.2029.4~ update.
+
+*** Docs
+- Added missing item in /fixed/ section for previous update
+- Updated info in the project readme
+
+*** Improved
+- Tweaks for image/video timestamps are now visible globally
+
+*** Fixed
+- Removed double borders for right drawer
+- Added missing border for emoji/gif/sticker drawer
+
 ** 2.16.1 [2020-07-03 Fri]
 Hotfix for the ~2.2027.10~ update.
 
@@ -9,6 +23,7 @@ Hotfix for the ~2.2027.10~ update.
 - Landing page now shows custom background image
 
 *** Fixed
+- Colors for contact info/timestamp bubble in status area
 - Unread message timestamp now has proper colors in dark mode
 - Custom chat background now works properly in native dark mode
 - Removed stripe background from the landing page
