@@ -1317,6 +1317,8 @@ ac5 = var(--ac-5)
 
         /// Right -> Drawer divider.
         ._14VS3 > ._1V8rX {
+            border-left: 1px solid bg5 i
+
             /// Drawer header.
             if (app_c_h) {
                 .copyable-area > header {
@@ -1326,10 +1328,12 @@ ac5 = var(--ac-5)
 
             /// Remove shadows from drawer sections.
             /._2Bps4 { box-shadow: 0 0 0 1px bg4 i }
-        }
 
-        /// Main -> Emoji/gif/sticker menu divider. @upstream
-        ._1WWP0 { box-shadow: 1px 0 0 bg5 i }
+            /// Remove native dark mode dividers.
+            /.dark .three {
+                ._2vJ01, ._2-aNW { border-right: none i }
+            }
+        }
     }
 
     // Global -> Icons.
@@ -1391,6 +1395,7 @@ ac5 = var(--ac-5)
         /// Reset header.
         > header {
             border-bottom: 1px solid bg5 i
+            border-right: none i
             c: 0 bg5
 
             /// Hide borders.
