@@ -1,6 +1,13 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.16.3 [2020-07-24 Fri]
+Hotfix for previous release.
+
+*** Fixed
+- Remove double borders from 'unknown contact' alert
+- More consistent chat dividers in native dark mode
+
 ** 2.16.2 [2020-07-22 Wed]
 Small maintenance update for ~2.2029.4~ update.
 
