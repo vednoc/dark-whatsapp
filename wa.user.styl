@@ -986,13 +986,8 @@ ac5 = var(--ac-5)
         /._1g1ui > ._1ByLM { margin-left: unset i }
 
         /// Tweak default-user icons.
-        if ( radius-a != '50%' ) {
-            /[style *= 'height: 26px'],
-            /[style *= 'height: 40px'],
-            /[style *= 'height: 49px'],
-            /[style *= 'height: 55px'],
-            /[style *= 'height: 82px'],
-            /[style *= 'height: 200px'] {
+        if (radius-a != '50%') {
+            /[style *= 'width:'][style *= 'height:'] {
                 [data-icon = 'default-user'] svg {
                     margin-top: -4px i
                     transform: scale(0.7) i
