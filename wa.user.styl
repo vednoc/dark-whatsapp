@@ -129,8 +129,8 @@
 ==/UserStyle== */
 
 // Color mixin.
-/// All colors: `c: fg bd bg;`
-/// Only border-color: `c: 0 bd;`
+/// All colors: `c: fg bd bg`
+/// Only border-color: `c: 0 bd`
 c(x, y = 0, z = 0, xi = 1, yi = 1, zi = 1) {
     i = !important;
     if x is a 'call' or x is a 'rgba' {            color: xi is 0? x : x i }
@@ -229,7 +229,7 @@ ac_hash = {
     '-4': mix(_d(BG, -4), AC, a4),
     '-5': mix(_d(BG, -4), AC, a5),
 }
-msg-in = {
+msg-in  = {
     '-0':    IM,
     '-1': _d(IM, in_msg_quote),
 }
@@ -821,9 +821,11 @@ ac5 = var(--ac-5)
         --shadow:     sh
         --bshadow:    0 2px 4px var(--shadow)
 
-        /// Theme intro image.
+        /// Theme intro colors.
         svg_bg = to_svg(bg-1)
         svg_ac = to_svg(ac-0)
+
+        /// Theme intro image.
         _1  = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' "
         _1 += "height='256' width='256'><g stroke='"
         _2  = "'><path d='M128.4901 30.8659a95.4375 95.4375 0 00-95.4375 95.4375"
@@ -846,7 +848,7 @@ ac5 = var(--ac-5)
         --intro-image: _i
     }
 
-    /// Animation for typing indicator.
+    /// Animation for 'typing...' indicator.
     @keyframes pulse {
         40% { opacity: 0 }
         80% { opacity: 1 }
@@ -1487,7 +1489,7 @@ ac5 = var(--ac-5)
                 box-shadow: 0 -1px 0 bg5 i
             }
 
-            /// Someone who's not in your contacts footer -> remove double top-border
+            /// Remove double-border from an unknown contact.
             ._2k-2Z { border-top: none }
 
             /// Emoji quick-picker.
