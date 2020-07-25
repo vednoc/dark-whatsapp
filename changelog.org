@@ -1,6 +1,20 @@
 #+STARTUP: nofold
 
 * Changelog
+** 2.16.4 [2020-07-25 Sat]
+Small update to refine a few necessary things.
+
+*** Docs
+- Revised code comments
+
+*** Improved
+- Add more contrast for foreground colors in color generator
+- Increased DWA logo from =200px= to =240px=
+
+*** Fixed
+- Use proper background color for mentions menu ([[https://github.com/vednoc/dark-whatsapp/issues/174][#174]])
+- Refactored and improved styles for rounded =default-user= icons
+
 ** 2.16.3 [2020-07-24 Fri]
 Hotfix for previous release.
 
