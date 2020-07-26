@@ -1232,16 +1232,6 @@ ac5 = var(--ac-5)
                 rad: var(--r-menus) i
             }
         }
-
-        /// Hover animation for icons.
-        #side > header,
-        #main > div + header,
-        #main > footer > .copyable-area {
-            button:not([data-animate-menu-icons-item]), [role = 'button'] {
-                [data-icon] { transition: fill-opacity 0.3s ease i }
-                &:not(._3QjfB):hover [data-icon] { fill-opacity: 0.6 i }
-            }
-        }
     }
 
     // Shared app styles.
@@ -1332,11 +1322,21 @@ ac5 = var(--ac-5)
 
     // Global -> Icons.
     span[class] {
-
         /// Right -> Contact/group selected media drawer.
         &[data-icon = 'checkbox-round-checked'] {
             [fill = '#00BFA5'] { fill: ac0 }
             [fill = '#FFF'] { fill: white }
+        }
+
+        /// Hover animation for icons.
+        /#side > header,
+        /#main > div + header,
+        /#main > footer > .copyable-area,
+        /.copyable-area > header {
+            button:not([data-animate-menu-icons-item]), [role = 'button'] {
+                [data-icon] { transition: fill-opacity 0.3s ease i }
+                &:not(._3QjfB):hover [data-icon] { fill-opacity: 0.6 i }
+            }
         }
     }
 
