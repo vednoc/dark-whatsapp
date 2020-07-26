@@ -1005,14 +1005,14 @@ ac5 = var(--ac-5)
         }
 
         /// Hovered/focused states.
-        &:hover:not(.selected), &:focus {
+        &:hover:not(.selected):not(:focus) {
             transform: scale(1.2)
             box-shadow: none i
             opacity: 1 i
         }
 
         /// Selected state. #148
-        &.selected { box-shadow: 0 0 0 1px bg3, 0 0 0 3px ac0 i }
+        &.selected, &:focus { box-shadow: 0 0 0 1px bg3, 0 0 0 3px ac0 i }
     }
 
     // Modals.
