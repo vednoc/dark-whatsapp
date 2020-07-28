@@ -1797,6 +1797,9 @@ ac5 = var(--ac-5)
                     // c: 0 0 #5555ff0a
                     > div > div, { md }, { sticker } { rad: left_end }
                 }
+
+                /// Feat -> Incoming message bubble position.
+                if (chat_left == end) { align-items: flex-end i }
             }
 
             /// Outgoing messages.
@@ -1824,6 +1827,9 @@ ac5 = var(--ac-5)
                     // c: 0 0 #5555ff1a;
                     > div > div, { md } { rad: right_end }
                 }
+
+                /// Feat -> Outgoing message bubble position.
+                if (chat_right == start) { align-items: flex-start i }
             }
         }
 
