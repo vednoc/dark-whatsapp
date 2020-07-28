@@ -83,18 +83,19 @@
 @var checkbox bubble_in  'Swap sides for incoming message bubbles' 0
 @var checkbox bubble_out 'Swap sides for outgoing message bubbles' 0
 
+@var select   tail_style 'Style for message bubble tails' {
+    'Default  *': 'default ',
+    'Minimal   ': 'minimal ',
+    'Rounded   ': 'rounded ',
+    'Facebook  ': 'fb-like ',
+}
+
 @var text     divider    '⚠‼ IMPORTANT: Everything below is BROKEN' ''WIP''
 
 @var checkbox chat_b_img 'Enable blurred images/videos' 0
 @var text     chat_b_in  'Images/videos hover-on delay' 0.4s
 @var text     chat_b_out 'Images/videos hover-off delay' 0.2s
 
-@var select   chat_m_t   'Message tails style' {
-    'Default  *': 'default ',
-    'Minimal   ': 'minimal ',
-    'Rounded   ': 'rounded ',
-    'Facebook  ': 'fb-like ',
-}
 @var checkbox emoji_b    'Decrease height of big emojis for fb-like tails style' 1
 
 @var checkbox chat_b_l   'Custom background for left message bubble' 0
@@ -1717,7 +1718,7 @@ ac5 = var(--ac-5)
         ts = ''
 
         /// Feat -> Message tails.
-        if (chat_m_t == 'fb-like') {
+        if (tail_style == 'fb-like') {
             _o = 16px
             _m = (16px - 2px)
             _i = 6px
@@ -1826,6 +1827,17 @@ ac5 = var(--ac-5)
 
                 /// Feat -> Outgoing message bubble position.
                 if (bubble_out) { align-items: flex-start i }
+            }
+        } else if (tail_style == 'rounded' || tail_style == 'minimal') {
+            &-in, &-out {
+                [data-icon *= 'tail'] {
+                    display: none i
+                    if (tail_style == 'rounded') {
+                        /// 1:    First message
+                        /// 2, 3: Sticker senders
+                        + div { &, /._3ToB1, /._1nrJA { rad: 7.5px i }}
+                    }
+                }
             }
         }
 
