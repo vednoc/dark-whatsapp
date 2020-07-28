@@ -80,6 +80,9 @@
 
 @var checkbox c_g_c      'Theme colors for replies and group members' 1
 
+@var checkbox bubble_in  'Swap sides for incoming message bubbles' 0
+@var checkbox bubble_out 'Swap sides for outgoing message bubbles' 0
+
 @var text     divider    '⚠‼ IMPORTANT: Everything below is BROKEN' ''WIP''
 
 @var checkbox chat_b_img 'Enable blurred images/videos' 0
@@ -94,16 +97,9 @@
 }
 @var checkbox emoji_b    'Decrease height of big emojis for fb-like tails style' 1
 
-@var select   chat_left  'Left message bubble position' {
-    'Left side  *': 'start ',
-    'Right side  ': 'end   ',
-}
 @var checkbox chat_b_l   'Custom background for left message bubble' 0
 @var color    b_l_bg     'Left message bubble color' #3c434f
-@var select   chat_right 'Right message bubble position' {
-    'Left side   ': 'start ',
-    'Right side *': 'end   ',
-}
+
 @var checkbox chat_b_r   'Custom background for right message bubble' 0
 @var color    b_r_bg     'Right message bubble color' #333a47
 
@@ -1726,8 +1722,8 @@ ac5 = var(--ac-5)
             _m = (16px - 2px)
             _i = 6px
 
-            /// Feat -> Left message bubble position.
-            if (chat_left == 'start') {
+            /// Feat -> Incoming message bubble position.
+            if (!bubble_in) {
                 left_top = _o _o _o _i i
                 left_mid = _i _o _o _i i
                 left_med = _i _m _m _i i
@@ -1739,8 +1735,8 @@ ac5 = var(--ac-5)
                 left_end = _o _i _o _o i
             }
 
-            /// Feat -> Right message bubble position.
-            if (chat_right == 'end') {
+            /// Feat -> Outgoing message bubble position.
+            if (!bubble_out) {
                 right_top = _o _o _i _o i
                 right_mid = _o _i _i _o i
                 right_med = _m _i _i _m i
@@ -1799,7 +1795,7 @@ ac5 = var(--ac-5)
                 }
 
                 /// Feat -> Incoming message bubble position.
-                if (chat_left == end) { align-items: flex-end i }
+                if (bubble_in) { align-items: flex-end i }
             }
 
             /// Outgoing messages.
@@ -1829,7 +1825,7 @@ ac5 = var(--ac-5)
                 }
 
                 /// Feat -> Outgoing message bubble position.
-                if (chat_right == start) { align-items: flex-start i }
+                if (bubble_out) { align-items: flex-start i }
             }
         }
 
