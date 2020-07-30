@@ -1452,7 +1452,7 @@ ac5 = var(--ac-5)
             &._3yTyY, &._2CHFo {
                 padding: 2px 4px i
                 background-color: to_rgba('bg-1', 0.7) i
-                rad: 5px i
+                rad: (tail_style == 'fb-like') ? 16px i : 5px i
             }
 
             /// Videos.
@@ -1461,7 +1461,7 @@ ac5 = var(--ac-5)
                 .len7M, + ._2DfqO {
                     padding: 2px 4px i
                     background-color: to_rgba('bg-1', 0.7) i
-                    rad: 5px i
+                    rad: (tail_style == 'fb-like') ? 16px i : 5px i
                 }
 
                 /// Timestamps in grouped media.
@@ -1715,7 +1715,10 @@ ac5 = var(--ac-5)
         /// 3, 4, 5: Reply, Gif, Document
         /// 6, 7:    Grouped image/video
         md = '._1t3gq, .SjSeX, ._2iML2, ._15rLL, ._3_4_I, .Yik3W, .va0ao'
-        ts = ''
+        /// 1:   Messages
+        /// 2:   Videos
+        /// 3-5: Images/gifs/stickers
+        ts = '.VGBA3, .video-thumb + div, ._3yTyY, ._2CHFo, ._1nrJA'
 
         /// Feat -> Message tails.
         if (tail_style == 'fb-like') {
@@ -1772,6 +1775,9 @@ ac5 = var(--ac-5)
 
                 /// Fix rounded corners for videos/images in grouped media.
                 ._3sKvP:not(#z) { .va0ao, .Yik3W { rad: _o i }}
+
+                /// Rounded timestamps.
+                { ts } { rad: 18px i }
             }
 
             /// Incoming messages.
