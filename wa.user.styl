@@ -89,6 +89,7 @@
     'Rounded   ': 'rounded ',
     'Facebook  ': 'fb-like ',
 }
+@var checkbox fb_compact 'Collapse messages when `fb-like` tail style and `RTL` tweaks are enabled' 1
 
 @var text     divider    '⚠‼ IMPORTANT: Everything below is BROKEN' ''WIP''
 
@@ -1883,6 +1884,49 @@ ac5 = var(--ac-5)
                 }
                 /// Remove whitespace for links.
                 .message-text-link::after { content: unset i }
+            }
+        }
+
+        /// Feat -> Collapse messages for `fb-like` tail style and `RTL` tweaks.
+        if (fb_compact && rtl_header && tail_style == 'fb-like') {
+            rtl = '.eRacY[dir = "rtl"]'
+            ltr = '._2oWZe'
+
+            &-in, &-out {
+                /// LTR whitespace.
+                { ltr } {
+                    display: block i
+                    padding-top: 0.8rem
+                }
+
+                /// RTL whitespace.
+                { rtl } {
+                    position: relative
+                    padding-bottom: 0.8rem i
+                }
+
+                /// Hide timemstamps.
+                &._28DtS {
+                    // c: 0 0 #ff555508
+                    { rtl }, { ltr } { transition: padding 0.2s ease i }
+                    { ts } { transition: opacity 0.2s ease i }
+
+                    /// Collapse messages.
+                    > div:not(:hover) {
+                        { ts } { opacity: 0 i }
+                        { rtl } { padding-bottom: 0rem i }
+                        { ltr } { padding-top: 0rem i }
+                    }
+
+                    /// Expand 'hover' area.
+                    ../ > div::before {
+                        content: '' i
+                        position: absolute i
+                        top: 0; right: -20px; bottom: 0; left: -20px;
+                        // ../../../-in > div::before { c: 0 0 #55ff5520 }
+                        // ../../../-out > div::before { c: 0 0 #5555ff20 }
+                    }
+                }
             }
         }
     }
