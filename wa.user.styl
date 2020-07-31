@@ -90,14 +90,13 @@
     'Facebook  ': 'fb-like ',
 }
 @var checkbox fb_compact 'Collapse messages when `fb-like` tail style and `RTL` tweaks are enabled' 1
+@var checkbox emoji_b    'Decrease height of big emojis for `fb-like` tail style' 1
 
 @var text     divider    '⚠‼ IMPORTANT: Everything below is BROKEN' ''WIP''
 
 @var checkbox chat_b_img 'Enable blurred images/videos' 0
 @var text     chat_b_in  'Images/videos hover-on delay' 0.4s
 @var text     chat_b_out 'Images/videos hover-off delay' 0.2s
-
-@var checkbox emoji_b    'Decrease height of big emojis for fb-like tails style' 1
 
 @var checkbox chat_b_l   'Custom background for left message bubble' 0
 @var color    b_l_bg     'Left message bubble color' #3c434f
@@ -1787,6 +1786,20 @@ ac5 = var(--ac-5)
 
                 /// Rounded timestamps.
                 { ts } { rad: 18px i }
+
+                /// Feat -> Smaller big emojis. Big emojis..
+                if (emoji_b) {
+                    ._20sYJ {
+                        margin: 0 i
+                        padding-top: 2px i
+
+                        /// Reset emojis.
+                        span {
+                            margin: 0
+                            > img { width: 20px i; height: @width }
+                        }
+                    }
+                }
             }
 
             /// Incoming messages.
