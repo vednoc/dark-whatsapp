@@ -90,7 +90,7 @@
     'Facebook  ': 'fb-like ',
 }
 @var checkbox fb_compact 'Collapse messages when `fb-like` tail style and `RTL` tweaks are enabled' 1
-@var checkbox emoji_b    'Decrease height of big emojis for `fb-like` tail style' 1
+@var checkbox emoji_b    'Decrease height of big emojis when `fb-like` tail style and `RTL` tweaks are acctive' 1
 
 @var text     divider    '⚠‼ IMPORTANT: Everything below is BROKEN' ''WIP''
 
@@ -1786,20 +1786,6 @@ ac5 = var(--ac-5)
 
                 /// Rounded timestamps.
                 { ts } { rad: 18px i }
-
-                /// Feat -> Smaller big emojis. Big emojis..
-                if (emoji_b) {
-                    ._20sYJ {
-                        margin: 0 i
-                        padding-top: 2px i
-
-                        /// Reset emojis.
-                        span {
-                            margin: 0
-                            > img { width: 20px i; height: @width }
-                        }
-                    }
-                }
             }
 
             /// Incoming messages.
@@ -1912,6 +1898,7 @@ ac5 = var(--ac-5)
         if (fb_compact && rtl_header && tail_style == 'fb-like') {
             rtl = '.eRacY[dir = "rtl"]'
             ltr = '._2oWZe'
+            big = '._20sYJ'
 
             &-in, &-out {
                 /// LTR whitespace.
@@ -1921,7 +1908,7 @@ ac5 = var(--ac-5)
                 }
 
                 /// RTL whitespace.
-                { rtl } {
+                { rtl }, { big } {
                     position: relative
                     padding-bottom: 0.8rem i
                 }
@@ -1929,13 +1916,13 @@ ac5 = var(--ac-5)
                 /// Hide timemstamps.
                 &._28DtS {
                     // c: 0 0 #ff555508
-                    { rtl }, { ltr } { transition: padding 0.2s ease i }
+                    { rtl }, { ltr }, { big } { transition: padding 0.2s ease i }
                     { ts } { transition: opacity 0.2s ease i }
 
                     /// Collapse messages.
                     > div:not(:hover) {
                         { ts } { opacity: 0 i }
-                        { rtl } { padding-bottom: 0rem i }
+                        { rtl }, { big } { padding-bottom: 0rem i }
                         { ltr } { padding-top: 0rem i }
                     }
 
@@ -1946,6 +1933,21 @@ ac5 = var(--ac-5)
                         top: 0; right: -20px; bottom: 0; left: -20px;
                         // ../../../-in > div::before { c: 0 0 #55ff5520 }
                         // ../../../-out > div::before { c: 0 0 #5555ff20 }
+                    }
+                }
+
+                /// Feat -> Decrease height of big emojis.
+                if (emoji_b) {
+                    { big } {
+                        margin: 0 i
+                        padding-top: 2px i
+                        z-index: 0 i
+
+                        /// Reset emojis.
+                        span {
+                            margin: 0
+                            > img { width: 20px i; height: @width }
+                        }
                     }
                 }
             }
