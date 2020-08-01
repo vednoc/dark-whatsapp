@@ -283,6 +283,10 @@ ac5 = var(--ac-5)
         --c-m-hover: app_c_m_h
         --c-m-delay: app_c_m_d
 
+        /// Blurred images/videos.
+        --blur-in   : chat_b_in;
+        --blur-out  : chat_b_out;
+
         /// Custom app width.
         --app-width: app_width
 
@@ -1468,6 +1472,38 @@ ac5 = var(--ac-5)
                 &._3EMsd + ._2DfqO {
                     right: 5px i
                     bottom: 3px i
+                }
+            }
+        }
+
+        /// Feat -> Blur images/videos.
+        if (chat_b_img) {
+            /[class *= 'message-'] [style *= 'height'] {
+                img {
+                    transition: 0.5s ease
+                    transition-delay: var(--blur-out)
+                    filter: blur(16px) grayscale(100%)
+
+                    &:hover {
+                        transition-delay: var(--blur-in)
+                        filter: none i
+                    }
+                }
+
+                /// Reset blur for avatars in audio messages.
+                &[style *= 'width'] > img._2goTk { filter: none i }
+            }
+
+            /[class *= 'message-'] .video-thumb {
+                [style *= "data:image"] {
+                    transition: 0.5s ease
+                    transition-delay: var(--blur-out)
+                    filter: blur(16px) grayscale(100%)
+                }
+
+                &:hover [style *= "data:image"] {
+                    transition-delay: var(--blur-in)
+                    filter: none i
                 }
             }
         }
