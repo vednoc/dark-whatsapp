@@ -1328,6 +1328,9 @@ ac5 = var(--ac-5)
             [fill = '#FFF'] { fill: white }
         }
 
+        /// Chat -> Context menu arrows.
+        &[data-icon = 'down-context'] { c: fg0 }
+
         /// Hover animation for icons.
         /#side > header,
         /#main > div + header,
@@ -1442,9 +1445,6 @@ ac5 = var(--ac-5)
 
         /// Fix context menu background for stickers.
         .-AOZp ._2oA-- + div[style] { c: 0 0 bg4 }
-
-        /// Fix down arrow icon color for context menus.
-        [data-js-context-icon = 'true'] { c: fg3 }
 
         /// Add background to media message timestamps.
         /[style *= 'width'][style *= 'height'] + div {
