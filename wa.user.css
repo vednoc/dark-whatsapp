@@ -6,15 +6,15 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      2.16.4
+@version      3.0.0-rc.1
 @license      MIT
 ==/UserStyle== */
 
 @-moz-document domain('web.whatsapp.com') {
   :root:not(#z),
   .dark:not(#z) {
-    --version: 'Dark-WhatsApp Lite 2.16.4 — July 25th, 2020';
-    --message: 'Towards v3 of DWA! Updating to `2.2029.4` of WhatsApp Web; check the changelog to see what is new!';
+    --version: 'Dark-WhatsApp 3.0.0-rc.1 — August 1st, 2020';
+    --message: 'The v3 is almost here! It will be released in a week from now. This update is here to let you know about upcoming changes – see the changelog for more info. ';
     --changes: '\A\A https://github.com/vednoc/dark-whatsapp';
     --ui-font: 'font_name', Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif !important;
     --r-menus: 4px;
@@ -22,6 +22,8 @@
     --r-avatars: 50%;
     --c-m-hover: 0.6s;
     --c-m-delay: 1.2s;
+    --blur-in: 0.4s;
+    --blur-out: 0.2s;
     --app-width: 1396px;
     --emoji-o: 0.8;
     --bg-image: url("https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/images/bg-blur-high.jpg");
@@ -121,14 +123,14 @@
     --butterbar-battery-secondary-rgb: var(--fg-4-rgb);
     --butterbar-connection-background: #504b24;
     --butterbar-connection-background-rgb: 80,75,36;
-    --butterbar-connection-primary: var(--bg-3);
-    --butterbar-connection-primary-rgb: var(--bg-3-rgb);
-    --butterbar-connection-secondary: var(--bg-3);
-    --butterbar-connection-secondary-rgb: var(--bg-3-rgb);
+    --butterbar-connection-primary: var(--fg-0);
+    --butterbar-connection-primary-rgb: var(--fg-0-rgb);
+    --butterbar-connection-secondary: var(--fg-4);
+    --butterbar-connection-secondary-rgb: var(--fg-4-rgb);
     --butterbar-default-background: #21425c;
     --butterbar-default-background-rgb: 33,66,92;
-    --butterbar-icon: var(--fg-1);
-    --butterbar-icon-rgb: var(--fg-1-rgb);
+    --butterbar-icon: var(--bg-2);
+    --butterbar-icon-rgb: var(--bg-2-rgb);
     --butterbar-notification-icon: var(--blue);
     --butterbar-notification-icon-rgb: var(--blue-rgb);
     --butterbar-primary: var(--fg-0);
@@ -672,13 +674,13 @@
   .emojik:not(:hover):not(:focus):not(.selected) {
     filter: opacity(var(--emoji-o));
   }
-  .emojik:hover:not(.selected),
-  .emojik:focus {
+  .emojik:hover:not(.selected):not(:focus) {
     transform: scale(1.2);
     box-shadow: none !important;
     opacity: 1 !important;
   }
-  .emojik.selected {
+  .emojik.selected,
+  .emojik:focus {
     box-shadow: 0 0 0 1px var(--bg-3), 0 0 0 3px var(--ac-0) !important;
   }
   .overlay ._2ouPw,
@@ -872,26 +874,10 @@
     border: 1px solid var(--bg-5) !important;
     border-radius: var(--r-menus) !important;
   }
-  #app > div #side > header button:not([data-animate-menu-icons-item]) [data-icon],
-  #app > div #main > div + header button:not([data-animate-menu-icons-item]) [data-icon],
-  #app > div #main > footer > .copyable-area button:not([data-animate-menu-icons-item]) [data-icon],
-  #app > div #side > header [role = 'button'] [data-icon],
-  #app > div #main > div + header [role = 'button'] [data-icon],
-  #app > div #main > footer > .copyable-area [role = 'button'] [data-icon] {
-    transition: fill-opacity 0.3s ease !important;
-  }
-  #app > div #side > header button:not([data-animate-menu-icons-item]):not(._3QjfB):hover [data-icon],
-  #app > div #main > div + header button:not([data-animate-menu-icons-item]):not(._3QjfB):hover [data-icon],
-  #app > div #main > footer > .copyable-area button:not([data-animate-menu-icons-item]):not(._3QjfB):hover [data-icon],
-  #app > div #side > header [role = 'button']:not(._3QjfB):hover [data-icon],
-  #app > div #main > div + header [role = 'button']:not(._3QjfB):hover [data-icon],
-  #app > div #main > footer > .copyable-area [role = 'button']:not(._3QjfB):hover [data-icon] {
-    fill-opacity: 0.6 !important;
-  }
   #app > div > [tabindex] {
     background-color: var(--bg-1) !important;
   }
-  @media (min-width: 1441px) {
+@media (min-width: 1441px) {
     #app > div > [tabindex],
     [data-animate-status-v3-modal-background] > div:first-child {
       width: calc(100% - 38px) !important;
@@ -946,6 +932,29 @@
   }
   span[class][data-icon = 'checkbox-round-checked'] [fill = '#FFF'] {
     fill: #fff;
+  }
+  span[class][data-icon = 'down-context'] {
+    color: var(--fg-0) !important;
+  }
+  #side > header button:not([data-animate-menu-icons-item]) [data-icon],
+  #main > div + header button:not([data-animate-menu-icons-item]) [data-icon],
+  #main > footer > .copyable-area button:not([data-animate-menu-icons-item]) [data-icon],
+  .copyable-area > header button:not([data-animate-menu-icons-item]) [data-icon],
+  #side > header [role = 'button'] [data-icon],
+  #main > div + header [role = 'button'] [data-icon],
+  #main > footer > .copyable-area [role = 'button'] [data-icon],
+  .copyable-area > header [role = 'button'] [data-icon] {
+    transition: fill-opacity 0.3s ease !important;
+  }
+  #side > header button:not([data-animate-menu-icons-item]):not(._3QjfB):hover [data-icon],
+  #main > div + header button:not([data-animate-menu-icons-item]):not(._3QjfB):hover [data-icon],
+  #main > footer > .copyable-area button:not([data-animate-menu-icons-item]):not(._3QjfB):hover [data-icon],
+  .copyable-area > header button:not([data-animate-menu-icons-item]):not(._3QjfB):hover [data-icon],
+  #side > header [role = 'button']:not(._3QjfB):hover [data-icon],
+  #main > div + header [role = 'button']:not(._3QjfB):hover [data-icon],
+  #main > footer > .copyable-area [role = 'button']:not(._3QjfB):hover [data-icon],
+  .copyable-area > header [role = 'button']:not(._3QjfB):hover [data-icon] {
+    fill-opacity: 0.6 !important;
   }
   ._1fiOp,
   ._2TZYF {
@@ -1005,9 +1014,6 @@
   #main .-AOZp ._2oA-- + div[style] {
     background-color: var(--bg-4) !important;
   }
-  #main [data-js-context-icon = 'true'] {
-    color: var(--fg-3) !important;
-  }
   [style *= 'width'][style *= 'height'] + div._3yTyY,
   [style *= 'width'][style *= 'height'] + div._2CHFo {
     padding: 2px 4px !important;
@@ -1034,6 +1040,10 @@
   }
   #main > footer ._2k-2Z {
     border-top: none;
+  }
+  #main > footer ._3ge3i {
+    border-top: 1px solid var(--bg-5) !important;
+    border-left: 1px solid var(--bg-5) !important;
   }
   #main > footer [data-list-scroll-container] {
     border-bottom: 1px solid var(--bg-5) !important;
@@ -1102,10 +1112,6 @@
   }
   :not(#z) .color-14 {
     color: #df4b16 !important;
-    filter: hue-rotate(20deg);
-  }
-  :not(#z) .color-15 {
-    color: #e5c512 !important;
     filter: hue-rotate(20deg);
   }
   :not(#z) .color-15 {
@@ -1182,10 +1188,6 @@
   }
   :not(#z) .bg-color-14 {
     background-color: #df4b16 !important;
-    filter: hue-rotate(20deg);
-  }
-  :not(#z) .bg-color-15 {
-    background-color: #e5c512 !important;
     filter: hue-rotate(20deg);
   }
   :not(#z) .bg-color-15 {

@@ -6,7 +6,7 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.styl
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      2.16.4
+@version      3.0.0-rc.1
 @license      MIT
 @preprocessor stylus
 
@@ -250,10 +250,10 @@ ac5 = var(--ac-5)
 @-moz-document domain('web.whatsapp.com') {
     :root:not(#z), .dark:not(#z) {
         /// Userstyle info and announcements.
-        --version: 'Dark-WhatsApp 2.16.4 — July 25th, 2020';
-        --message: 'Towards v3 of DWA! Updating to `2.2029.4` of WhatsApp ' + \
-                   'Web; check the changelog to see what is new!';
-        --changes: '\A\A https://github.com/vednoc/dark-whatsapp';
+        --version: 'Dark-WhatsApp 3.0.0-rc.1 — August 1st, 2020'
+        --message: 'The v3 is almost here! It will be released in a week ' + \
+                   'from now. This update is here to let you know about ' + \
+                   'upcoming changes – see the changelog for more info. '
 
         /// Custom UI font.
         --ui-font: ui_font, Segoe UI, Helvetica Neue, Helvetica, Lucida Grande,
@@ -269,8 +269,8 @@ ac5 = var(--ac-5)
         --c-m-delay: app_c_m_d
 
         /// Blurred images/videos.
-        --blur-in   : chat_b_in;
-        --blur-out  : chat_b_out;
+        --blur-in:  chat_b_in
+        --blur-out: chat_b_out
 
         /// Custom app width.
         --app-width: app_width
