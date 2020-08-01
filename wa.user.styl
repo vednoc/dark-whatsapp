@@ -80,30 +80,27 @@
 
 @var checkbox c_g_c      'Theme colors for replies and group members' 1
 
+@var checkbox bubble_in  'Swap sides for incoming message bubbles' 0
+@var checkbox bubble_out 'Swap sides for outgoing message bubbles' 0
+
+@var select   tail_style 'Style for message bubble tails' {
+    'Default  *': 'default ',
+    'Minimal   ': 'minimal ',
+    'Rounded   ': 'rounded ',
+    'Facebook  ': 'fb-like ',
+}
+@var checkbox fb_compact 'Collapse messages when `fb-like` tail style and `RTL` tweaks are enabled' 1
+@var checkbox emoji_b    'Decrease height of big emojis when `fb-like` tail style and `RTL` tweaks are acctive' 1
+
 @var text     divider    '⚠‼ IMPORTANT: Everything below is BROKEN' ''WIP''
 
 @var checkbox chat_b_img 'Enable blurred images/videos' 0
 @var text     chat_b_in  'Images/videos hover-on delay' 0.4s
 @var text     chat_b_out 'Images/videos hover-off delay' 0.2s
 
-@var select   chat_m_t   'Message tails style' {
-    'Default  *': 'default ',
-    'Minimal   ': 'minimal ',
-    'Rounded   ': 'rounded ',
-    'Facebook  ': 'fb-like ',
-}
-@var checkbox emoji_b    'Decrease height of big emojis for fb-like tails style' 1
-
-@var select   chat_left  'Left message bubble position' {
-    'Left side  *': 'start ',
-    'Right side  ': 'end   ',
-}
 @var checkbox chat_b_l   'Custom background for left message bubble' 0
 @var color    b_l_bg     'Left message bubble color' #3c434f
-@var select   chat_right 'Right message bubble position' {
-    'Left side   ': 'start ',
-    'Right side *': 'end   ',
-}
+
 @var checkbox chat_b_r   'Custom background for right message bubble' 0
 @var color    b_r_bg     'Right message bubble color' #333a47
 
@@ -1455,7 +1452,7 @@ ac5 = var(--ac-5)
             &._3yTyY, &._2CHFo {
                 padding: 2px 4px i
                 background-color: to_rgba('bg-1', 0.7) i
-                rad: 5px i
+                rad: (tail_style == 'fb-like') ? 16px i : 5px i
             }
 
             /// Videos.
@@ -1464,7 +1461,7 @@ ac5 = var(--ac-5)
                 .len7M, + ._2DfqO {
                     padding: 2px 4px i
                     background-color: to_rgba('bg-1', 0.7) i
-                    rad: 5px i
+                    rad: (tail_style == 'fb-like') ? 16px i : 5px i
                 }
 
                 /// Timestamps in grouped media.
@@ -1714,7 +1711,154 @@ ac5 = var(--ac-5)
 
     // Main -> Chat message bubbles.
     .message {
-        /// Feat -> Fixes for RTL layout. @upstream
+        /// 1, 2:    External video/link
+        /// 3, 4, 5: Reply, Gif, Document
+        /// 6, 7:    Grouped image/video
+        md = '._1t3gq, .SjSeX, ._2iML2, ._15rLL, ._3_4_I, .Yik3W, .va0ao'
+        /// 1:   Messages
+        /// 2:   Videos
+        /// 3-5: Images/gifs/stickers
+        ts = '.VGBA3, .video-thumb + ._2DfqO, ._3yTyY, ._2CHFo, ._1nrJA'
+
+        /// Feat -> Message tails.
+        if (tail_style == 'fb-like') {
+            _o = 16px
+            _m = (16px - 2px)
+            _i = 6px
+
+            /// Feat -> Incoming message bubble position.
+            if (!bubble_in) {
+                left_top = _o _o _o _i i
+                left_mid = _i _o _o _i i
+                left_med = _i _m _m _i i
+                left_end = _i _o _o _o i
+            } else {
+                left_top = _o _o _i _o i
+                left_mid = _o _i _i _o i
+                left_med = _m _i _i _m i
+                left_end = _o _i _o _o i
+            }
+
+            /// Feat -> Outgoing message bubble position.
+            if (!bubble_out) {
+                right_top = _o _o _i _o i
+                right_mid = _o _i _i _o i
+                right_med = _m _i _i _m i
+                right_end = _o _i _o _o i
+            } else {
+                right_top = _o _o _o _i i
+                right_mid = _i _o _o _i i
+                right_med = _i _m _m _i i
+                right_end = _i _o _o _o i
+            }
+
+            /// Helpers.
+            bubble  = '._28DtS'
+            system  = '._2qhWD, ._9WQEN'
+            sticker = '._3ToB1'
+            forward = '._29g--'
+
+            /// Shared styles.
+            &-in, &-out {
+                /// Remove tails.
+                [data-icon *= 'tail-'] { display: none i }
+
+                /// Single message | Groups -> Sticker sender.
+                &:not({ bubble }) > div > div { rad: _o i }
+                &:not({ bubble }) { sticker } { rad: _o i }
+
+                /// Fix rounded corners for single message.
+                &:not({ bubble }) { md } { rad: _o i }
+
+                /// Fix rounded corners for forward button.
+                &:not(#z) { forward }:not(#z) { rad: _o i }
+
+                /// Fix rounded corners for videos/images in grouped media.
+                &:not(#z) ._269XL._3sKvP.wQZ0F { .va0ao, .Yik3W { rad: _o i }}
+
+                /// Increase padding-right for bubbles.
+                &:not(.serpP) ._274yw {
+                    padding-right: 9px i
+
+                    /// Fix margin for replies.
+                    ._3AFCK { margin-right: -6px }
+                }
+
+                /// Rounded timestamps.
+                { ts } { rad: 18px i }
+            }
+
+            /// Incoming messages.
+            &-in {
+                ._1ohds { border-top-right-radius: _m i }
+                /// First message -> In/Out/System messages.
+                &, ../-out, /{ system } {
+                    &:not({ bubble }) + .message-in{ bubble } {
+                        // c: 0 0 #ff55550a
+                        > div > div, { md }, { sticker } { rad: left_top }
+                        /// Media context menu.
+                        ._20EE3 { rad: 0 _m 0 0 i }
+                    }
+                }
+                /// Messages in between.
+                &{ bubble } + { bubble }:not(#z) {
+                    // c: 0 0 #55ff550a
+                    { md } { rad: left_med }
+                    > div > div, { sticker } { rad: left_mid }
+                }
+                /// Last message.
+                &{ bubble } + .message-in:not({ bubble }) {
+                    // c: 0 0 #5555ff0a
+                    > div > div, { md }, { sticker } { rad: left_end }
+                }
+
+                /// Feat -> Incoming message bubble position.
+                if (bubble_in) { align-items: flex-end i }
+            }
+
+            /// Outgoing messages.
+            &-out {
+                ._1ohds { border-top-right-radius: _o i }
+                /// First message -> In/Out/System messages.
+                &, ../-in, /{ system } {
+                    &:not({ bubble }) + .message-out{ bubble } {
+                        // c: 0 0 #ff55551a;
+                        > div > div, { md } { rad: right_top }
+                        /// Media context menu.
+                        ._20EE3 { rad: 0 _m 0 0 i }
+                    }
+                }
+                /// Messages in between.
+                &{ bubble } + { bubble } {
+                    // c: 0 0 #55ff551a;
+                    { md } { rad: right_med }
+                    > div > div { rad: right_mid }
+                    /// Context menu.
+                    ._1ohds { border-top-right-radius: _i i }
+                }
+                /// Last message.
+                &{ bubble } + .message-out:not({ bubble }) {
+                    // c: 0 0 #5555ff1a;
+                    > div > div, { md } { rad: right_end }
+                }
+
+                /// Feat -> Outgoing message bubble position.
+                if (bubble_out) { align-items: flex-start i }
+            }
+        } else if (tail_style == 'rounded' || tail_style == 'minimal') {
+            &-in, &-out {
+                [data-icon *= 'tail'] {
+                    display: none i
+                    if (tail_style == 'rounded') {
+                        /// 1:    First message
+                        /// 2, 3: Sticker senders
+                        + div { &, /._3ToB1, /._1nrJA { rad: 7.5px i }}
+                    }
+                }
+            }
+        }
+
+        /// Feat -> Fixes for RTL message header. @upstream
         if (rtl_header) {
             &-in, &-out {
                 .selectable-text.invisible-space[dir = 'rtl'],
@@ -1726,6 +1870,8 @@ ac5 = var(--ac-5)
                 }
             }
         }
+
+        /// Feat -> Fixes for RTL message content. @upstream
         if (rtl_format) {
             &-in, &-out {
                 [data-pre-plain-text] > [dir = 'rtl'] {
@@ -1745,6 +1891,65 @@ ac5 = var(--ac-5)
                 }
                 /// Remove whitespace for links.
                 .message-text-link::after { content: unset i }
+            }
+        }
+
+        /// Feat -> Collapse messages for `fb-like` tail style and `RTL` tweaks.
+        if (fb_compact && rtl_header && tail_style == 'fb-like') {
+            rtl = '.eRacY[dir = "rtl"]'
+            ltr = '._2oWZe'
+            big = '._20sYJ'
+
+            &-in, &-out {
+                /// LTR whitespace.
+                { ltr } {
+                    display: block i
+                    padding-top: 0.8rem
+                }
+
+                /// RTL whitespace.
+                { rtl }, { big } {
+                    position: relative
+                    padding-bottom: 0.8rem i
+                }
+
+                /// Hide timemstamps.
+                &._28DtS {
+                    // c: 0 0 #ff555508
+                    { rtl }, { ltr }, { big } { transition: padding 0.2s ease i }
+                    { ts } { transition: opacity 0.2s ease i }
+
+                    /// Collapse messages.
+                    > div:not(:hover) {
+                        { ts } { opacity: 0 i }
+                        { rtl }, { big } { padding-bottom: 0rem i }
+                        { ltr } { padding-top: 0rem i }
+                    }
+
+                    /// Expand 'hover' area.
+                    ../ > div::before {
+                        content: '' i
+                        position: absolute i
+                        top: 0; right: -20px; bottom: 0; left: -20px;
+                        // ../../../-in > div::before { c: 0 0 #55ff5520 }
+                        // ../../../-out > div::before { c: 0 0 #5555ff20 }
+                    }
+                }
+
+                /// Feat -> Decrease height of big emojis.
+                if (emoji_b) {
+                    { big } {
+                        margin: 0 i
+                        padding-top: 2px i
+                        z-index: 0 i
+
+                        /// Reset emojis.
+                        span {
+                            margin: 0
+                            > img { width: 20px i; height: @width }
+                        }
+                    }
+                }
             }
         }
     }
