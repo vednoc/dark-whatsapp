@@ -1,6 +1,31 @@
 #+STARTUP: nofold
 
 * Changelog
+** 3.0.0-rc.1 [2020-08-01 Sat]
+This is the first pre-release of ~v3~ that ports the remaining of missing features
+and improves/fixed some of the leftover bugs.
+
+In a week time, I'll publish the ~v3.0.0~ that will break some custom options for
+the sake of more consistant naming scheme, so keep in mind that you'll have to
+re-do your customizations in the configuration menu once the update it lands.
+
+If there are some bugs with recently ported options, do let me know!
+
+*** Added
+- Ported all variants for 'tail styles' option
+- Ported all extra tweaks for =fb-like= tail style
+- Ported options for incoming/outgoing message bubble sides
+- Ported options for 'blurred images/videos' feature
+
+*** Improved
+- Compile time is roughly cut in half after removing ~v2~ code
+- Better hover/focus states for emojis
+- Added more contrast to 'down-context' icon
+
+*** Fixed
+- 'Only admins can send messages' now has proper borders
+- Proper colors for 'x not connected' notification alert
+
 ** 2.16.4 [2020-07-25 Sat]
 Small update to refine a few necessary things.
 
