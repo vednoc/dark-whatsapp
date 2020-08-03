@@ -15,20 +15,20 @@
     'Dark blue (old)  ': 'old',
     'Dark gray (new)  ': 'new',
 }
-@var color    next_bg    '[Dev]: Base background color ' #1f232a
-@var color    next_fg    '[Dev]: Base foreground color ' #eeeeee
-@var color    next_ac    '[Dev]: Base accent color     ' #7289da
-@var range    next_bg_a  '[Dev]: Adjust tones for background color' [0, -25, 25, 0.1, '%']
+@var color    next_bg    'Base background color ' #1f232a
+@var color    next_fg    'Base foreground color ' #eeeeee
+@var color    next_ac    'Base accent color     ' #7289da
+@var range    next_bg_a  'Adjust tones for background color' [0, -25, 25, 0.1, '%']
 @var checkbox ow_imsg    'Override incoming message bubble color' 0
-@var color    next_imsg  '[Dev]: Incoming message bubble color' #16191e
+@var color    next_imsg  'Incoming message bubble color' #16191e
 @var checkbox ow_omsg    'Override outgoing message bubble color' 0
-@var color    next_omsg  '[Dev]: Outgoing message bubble color' #3b4250
+@var color    next_omsg  'Outgoing message bubble color' #3b4250
 
-@var text     ui_font    'Custom UI font' ''font_name''
-@var text     radius-g   'Custom rounded corners for menus' 4px
-@var text     radius-i   'Custom rounded corners for input area' 24px
-@var range    radius-a   'Custom rounded corners for avatars' [50, 0, 50, 1, '%']
-@var text     app_width  'Custom width for chat app' 1396px
+@var text     ui_font    'UI font' ''font_name''
+@var text     radius-g   'Rounded corners for menus' 4px
+@var text     radius-i   'Rounded corners for input area' 24px
+@var range    radius-a   'Rounded corners for avatars' [50, 0, 50, 1, '%']
+@var text     app_width  'App width' 1396px
 @var checkbox fullscreen 'Enable fullscreen mode' 0
 @var checkbox app_c_m    'Enable compact mode' 1
 @var text     app_c_m_w  'Compact mode breakpoint' 720px
@@ -43,7 +43,7 @@
     'Hide all                    ': 'hide          ',
 }
 
-@var select   app_image  'Custom app background' {
+@var select   app_image  'App background' {
     'Theme image with 12px blur   *': 'bg-high ',
     'Theme image with 6px blur     ': 'bg-low  ',
     'Theme image without blur      ': 'bg-none ',
@@ -52,7 +52,7 @@
     'None                          ': 'none    ',
 }
 
-@var text     image_url  'Custom background image link' url('https://images.unsplash.com/photo-1434569117012-ce134ee1a088?fit=crop&w=1280&h=720&q=80')
+@var text     image_url  'Background image link' url('https://images.unsplash.com/photo-1434569117012-ce134ee1a088?fit=crop&w=1280&h=720&q=80')
 @var range    bg_opacity 'Background image opacity' [0.4, 0.0, 1, 0.01]
 @var range    bg_blur    'Background image blur size' [0, 0, 50, 1, 'px']
 @var range    bg_hue     'Background image hue' [320, 0, 360, 1, 'deg']
@@ -61,12 +61,12 @@
 @var text     bg_pos     'Background image position' center
 @var text     bg_rep     'Background image repeat' no-repeat
 
-@var range    emoji_o    'Emoji default opacity' [0.8, 0.0, 1, 0.01]
+@var range    emoji_o    'Emojis opacity' [0.8, 0.0, 1, 0.01]
 
 @var checkbox ff_scroll  'Thin scrollbars in Firefox' 1
 
 @var checkbox chat_bg    'Enable chat background image' 1
-@var text     chat_image 'Custom image for chat' url('https://web.whatsapp.com/img/bg-chat-tile_9e8a2898faedb7db9bf5638405cf81ae.png')
+@var text     chat_image 'Chat background image link' url('https://web.whatsapp.com/img/bg-chat-tile_9e8a2898faedb7db9bf5638405cf81ae.png')
 @var range    chat_bg_o  'Chat background image opacity' [0.15, 0.0, 1, 0.01]
 @var range    chat_bg_iv 'Chat background image inverted colors' [0.6, 0.0, 1, 0.01]
 @var text     chat_bg_s  'Chat background image size' initial
