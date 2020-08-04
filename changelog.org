@@ -1,6 +1,19 @@
 #+STARTUP: nofold
 
 * Changelog
+** 3.0.0-rc.2 [2020-08-04 Tue]
+This is the second pre-release of ~v3~ that resolves a few small bugs and improves
+descriptions for UserCSS options.
+
+*** Docs
+- Fixed typos in the changelog
+- Updated descriptions for some UserCSS options
+- Added missing link to the project home on intro pane
+
+*** Fixed
+- Tweaked text color for nicknames in groups
+- Added missing border for footer in various modals
+
 ** 3.0.0-rc.1 [2020-08-01 Sat]
 This is the first pre-release of ~v3~ that ports the remaining of missing features
 and improves/fixes some of the leftover bugs.
