@@ -6,14 +6,14 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      3.0.0-rc.1
+@version      3.0.0-rc.2
 @license      MIT
 ==/UserStyle== */
 
 @-moz-document domain('web.whatsapp.com') {
   :root:not(#z),
   .dark:not(#z) {
-    --version: 'Dark-WhatsApp 3.0.0-rc.1 — August 1st, 2020';
+    --version: 'Dark-WhatsApp Lite 3.0.0-rc.2 — August 4th, 2020';
     --message: 'The v3 is almost here! It will be released in a week from now. This update is here to let you know about upcoming changes – see the changelog for more info. ';
     --changes: '\A\A https://github.com/vednoc/dark-whatsapp';
     --ui-font: 'font_name', Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif !important;
@@ -699,6 +699,10 @@
   .overlay [data-animate-modal-popup] .copyable-area > header {
     border-bottom: 1px solid var(--bg-5);
   }
+  .overlay [data-animate-modal-popup] .copyable-area > span [style *= 'translateY'],
+  .overlay [data-animate-modal-popup] .copyable-area ._30pU5 {
+    border-top: 1px solid var(--bg-5);
+  }
   ._1KWct {
     border-color: var(--bg-5) !important;
     background-color: var(--bg-3) !important;
@@ -1061,6 +1065,9 @@
   }
   .dark ._8Uqu5 ._3dtfX .m61XR {
     color: var(--secondary-stronger) !important;
+  }
+  [class *= ' color-'] > span:nth-child(2) {
+    color: var(--fg-3) !important;
   }
   :not(#z) .color-0 {
     color: #268bd2 !important;
