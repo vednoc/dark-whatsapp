@@ -1018,8 +1018,11 @@ ac5 = var(--ac-5)
             border: 1px solid bg5
             rad: var(--r-menus) i
 
-            .copyable-area > header {
-                border-bottom: 1px solid bg5
+            .copyable-area {
+                > header { border-bottom: 1px solid bg5 }
+                > span [style *= 'translateY'], ._30pU5 {
+                    border-top: 1px solid bg5
+                }
             }
         }
 
