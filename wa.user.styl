@@ -1762,7 +1762,8 @@ ac5 = var(--ac-5)
         /// 1, 2:    External video/link
         /// 3, 4, 5: Reply, Gif, Document
         /// 6, 7:    Grouped image/video
-        md = '._1t3gq, .SjSeX, ._2iML2, ._15rLL, ._3_4_I, .Yik3W, .va0ao'
+        /// 8:       Google Maps
+        md = '._1t3gq, .SjSeX, ._2iML2, ._15rLL, ._3_4_I, .Yik3W, .va0ao, ._3B7f_'
         /// 1:   Messages
         /// 2:   Videos
         /// 3-5: Images/gifs/stickers
@@ -1823,6 +1824,11 @@ ac5 = var(--ac-5)
 
                 /// Fix rounded corners for videos/images in grouped media.
                 &:not(#z) ._269XL._3sKvP.wQZ0F { .va0ao, .Yik3W { rad: _o i }}
+
+                /// Fix rounded corners for alerts in Google Maps messages.
+                /// NOTE: Hard-coded; adding more logic for this makes no sense.
+                .YQVY1 { rad: _o _o 0 0 i }
+                ._4Dkba { rad: 0 0 _o _o i }
 
                 /// Increase padding-right for bubbles.
                 &:not(.serpP) ._274yw {
