@@ -21,25 +21,25 @@
 @var range    next_bg_a  'Adjust tones for background color' [0, -25, 25, 0.1, '%']
 
 @var text     ui_font    'UI font' ''font_name''
-@var text     radius-g   'Rounded corners for menus' 4px
-@var text     radius-i   'Rounded corners for input area' 24px
-@var range    radius-a   'Rounded corners for avatars' [50, 0, 50, 1, '%']
-
 @var text     app_width  'App width' 1396px
+
 @var checkbox fullscreen 'Fullscreen mode' 0
 @var checkbox app_c_m    'Compact mode' 1
 @var text     app_c_m_w  'Compact mode breakpoint' 720px
 @var text     app_c_m_h  'Compact mode hover-on delay' 0.6s
 @var text     app_c_m_d  'Compact mode hover-off delay' 1.2s
-@var checkbox app_c_h    'Consistent drawer headers' 1
+
 @var select   alerts     'Alerts' {
     'Show all                   *': 'show          ',
     'Hide "Allow notifications"  ': 'notifications ',
     'Hide all                    ': 'hide          ',
 }
-
+@var checkbox app_c_h    'Consistent drawer headers' 1
 @var checkbox ff_scroll  'Thin scrollbars in Firefox' 1
-@var checkbox c_g_c      'Theme colors for replies and group members' 1
+
+@var text     radius-g   'Rounded corners for menus' 4px
+@var text     radius-i   'Rounded corners for input area' 24px
+@var range    radius-a   'Rounded corners for avatars' [50, 0, 50, 1, '%']
 
 @var select   app_image  'App background' {
     'Theme image with 12px blur   *': 'bg-high ',
@@ -49,33 +49,14 @@
     'Default background            ': 'default ',
     'None                          ': 'none    ',
 }
-
-@var text     image_url  'Background image link' url('https://images.unsplash.com/photo-1434569117012-ce134ee1a088?fit=crop&w=1280&h=720&q=80')
-@var range    bg_opacity 'Background image opacity' [0.4, 0.0, 1, 0.01]
-@var range    bg_blur    'Background image blur size' [0, 0, 50, 1, 'px']
-@var range    bg_hue     'Background image hue' [320, 0, 360, 1, 'deg']
-@var range    bg_invert  'Background image invert colors' [0, 0.0, 1, 0.01]
-@var text     bg_size    'Background image size' cover
-@var text     bg_pos     'Background image position' center
-@var text     bg_rep     'Background image repeat' no-repeat
-
-@var checkbox chat_bg    'Chat background image' 1
-@var text     chat_image 'Chat background image link' url('https://web.whatsapp.com/img/bg-chat-tile_9e8a2898faedb7db9bf5638405cf81ae.png')
-@var range    chat_bg_o  'Chat background image opacity' [0.15, 0.0, 1, 0.01]
-@var range    chat_bg_iv 'Chat background image inverted colors' [0.6, 0.0, 1, 0.01]
-@var text     chat_bg_s  'Chat background image size' initial
-@var text     chat_bg_p  'Chat background image position' top left
-@var text     chat_bg_r  'Chat background image repeat' repeat
-
-@var checkbox ow_imsg    'Override incoming message bubble color' 0
-@var color    next_imsg  'Incoming message bubble color' #16191e
-@var checkbox bubble_in  'Swap sides for incoming message bubbles' 0
-@var checkbox ow_omsg    'Override outgoing message bubble color' 0
-@var color    next_omsg  'Outgoing message bubble color' #3b4250
-@var checkbox bubble_out 'Swap sides for outgoing message bubbles' 0
-
-@var checkbox rtl_header 'RTL: Remove empty message header' 1
-@var checkbox rtl_format 'RTL: Fix formatting for message content' 1
+@var text     image_url  'App background image link' url('https://images.unsplash.com/photo-1434569117012-ce134ee1a088?fit=crop&w=1280&h=720&q=80')
+@var range    bg_opacity 'App background image opacity' [0.4, 0.0, 1, 0.01]
+@var range    bg_blur    'App background image blur size' [0, 0, 50, 1, 'px']
+@var range    bg_hue     'App background image hue' [320, 0, 360, 1, 'deg']
+@var range    bg_invert  'App background image invert colors' [0, 0.0, 1, 0.01]
+@var text     bg_size    'App background image size' cover
+@var text     bg_pos     'App background image position' center
+@var text     bg_rep     'App background image repeat' no-repeat
 
 @var select   tail_style 'Style for message bubble tails' {
     'Default  *': 'default ',
@@ -87,10 +68,28 @@
 @var checkbox emoji_b    'Decrease height of big emojis when `fb-like` tail style and `RTL` tweaks are acctive' 1
 @var range    emoji_o    'Emojis opacity' [0.8, 0.0, 1, 0.01]
 
+@var checkbox ow_imsg    'Override incoming message bubble color' 0
+@var color    next_imsg  'Incoming message bubble color' #16191e
+@var checkbox bubble_in  'Swap sides for incoming message bubbles' 0
+@var checkbox ow_omsg    'Override outgoing message bubble color' 0
+@var color    next_omsg  'Outgoing message bubble color' #3b4250
+@var checkbox bubble_out 'Swap sides for outgoing message bubbles' 0
+
+@var checkbox rtl_header 'RTL: Remove empty message header' 1
+@var checkbox rtl_format 'RTL: Fix formatting for message content' 1
+
 @var checkbox chat_b_c   'Blurred contacts' 0
 @var checkbox chat_b_img 'Blurred images/videos' 0
-@var text     chat_b_in  'Images/videos hover-on delay' 0.4s
-@var text     chat_b_out 'Images/videos hover-off delay' 0.2s
+@var text     chat_b_in  'Blurred images/videos hover-on delay' 0.4s
+@var text     chat_b_out 'Blurred images/videos hover-off delay' 0.2s
+
+@var checkbox chat_bg    'Chat background image' 1
+@var text     chat_image 'Chat background image link' url('https://web.whatsapp.com/img/bg-chat-tile_9e8a2898faedb7db9bf5638405cf81ae.png')
+@var range    chat_bg_o  'Chat background image opacity' [0.15, 0.0, 1, 0.01]
+@var range    chat_bg_iv 'Chat background image inverted colors' [0.6, 0.0, 1, 0.01]
+@var text     chat_bg_s  'Chat background image size' initial
+@var text     chat_bg_p  'Chat background image position' top left
+@var text     chat_bg_r  'Chat background image repeat' repeat
 
 @var color    _dark      'Color: Primary background   ' #1f232a
 @var color    _darken    'Color: Highlight background ' #252A33
@@ -109,6 +108,8 @@
 @var color    white      'Color: White                ' #ffffff
 @var color    sh         'Color: Shadow light         ' #00000025
 @var color    sh-h       'Color: Shadow heavy         ' #00000035
+
+@var checkbox c_g_c      'Theme colors for replies and group members' 1
 ==/UserStyle== */
 
 // Color mixin.
