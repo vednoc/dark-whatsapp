@@ -1,6 +1,19 @@
 #+STARTUP: nofold
 
 * Changelog
+** 3.0.0-rc.3 [2020-08-08 Sat]
+I've decided to delay full-release until next week because there are more ideas
+that need to be implemented first.
+
+This pre-release adds dark mode to Google Maps integration, and improves more
+descriptions for UserCSS options.
+
+*** Docs
+- Improved descriptions for more UserCSS options
+
+*** Fixed
+- Added dark mode to Google Maps integration
+
 ** 3.0.0-rc.2 [2020-08-04 Tue]
 This is the second pre-release of ~v3~ that resolves a few small bugs and improves
 descriptions for UserCSS options.
