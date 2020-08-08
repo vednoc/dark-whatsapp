@@ -6,15 +6,15 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      3.0.0-rc.2
+@version      3.0.0-rc.3
 @license      MIT
 ==/UserStyle== */
 
 @-moz-document domain('web.whatsapp.com') {
   :root:not(#z),
   .dark:not(#z) {
-    --version: 'Dark-WhatsApp Lite 3.0.0-rc.2 — August 4th, 2020';
-    --message: 'The v3 is almost here! It will be released in a week from now. This update is here to let you know about upcoming changes – see the changelog for more info. ';
+    --version: 'Dark-WhatsApp Lite 3.0.0-rc.3 — August 8th, 2020';
+    --message: 'The v3 is almost here! Delaying the full-release until next week – see the changelog for more info. ';
     --changes: '\A\A https://github.com/vednoc/dark-whatsapp';
     --ui-font: 'font_name', Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif !important;
     --r-menus: 4px;
@@ -281,12 +281,12 @@
     --labels-icon-rgb: var(--fg-3-rgb);
     --link: var(--ac-0);
     --link-rgb: var(--ac-0-rgb);
-    --live-location-footer-background: var(--bg-1);
-    --live-location-footer-background-rgb: var(--bg-1-rgb);
-    --live-location-glow: rgba(37,211,102,0.302);
-    --live-location-glow-rgb: 37, 211, 102;
-    --live-location-glow-stale: rgba(255,0,31,0.302);
-    --live-location-glow-stale-rgb: 255, 0, 31;
+    --live-location-footer-background: rgba(var(--bg-2-rgb), 0.5);
+    --live-location-footer-background-rgb: var(--bg-2-rgb);
+    --live-location-glow: rgba(var(--ac-1-rgb), 0.5);
+    --live-location-glow-rgb: var(--ac-1-rgb);
+    --live-location-glow-stale: rgba(var(--red-rgb), 0.5);
+    --live-location-glow-stale-rgb: var(--red-rgb);
     --location-cluster-background: var(--bg-1);
     --location-cluster-background-rgb: var(--bg-1-rgb);
     --media-editor-control: #1c313f;
@@ -1034,6 +1034,14 @@
     right: 5px !important;
     bottom: 3px !important;
   }
+  [style *= 'height'][data-plain-text *= 'maps.google.com'] + div[class] > [role] {
+    padding: 2px 4px !important;
+    background-color: rgba(var(--bg-1-rgb), 0.7) !important;
+    border-radius: 5px !important;
+  }
+  .a221_ {
+    background-color: rgba(var(--bg-4-rgb), 0.5) !important;
+  }
   #main> header ~ div[style *= 'height: 0px'] {
     border-top: 1px solid var(--bg-5) !important;
   }
@@ -1062,6 +1070,9 @@
   }
   #main > footer ._3uMse {
     border-radius: var(--r-inputs) !important;
+  }
+  #main img[src *= 'maps.googleapis.com'] {
+    filter: invert(0.8) hue-rotate(180deg) !important;
   }
   .dark ._8Uqu5 ._3dtfX .m61XR {
     color: var(--secondary-stronger) !important;
@@ -1393,6 +1404,39 @@
   .message-in .message-text-link::after,
   .message-out .message-text-link::after {
     content: unset !important;
+  }
+  .gm-style img[src *= 'images/google'],
+  .gm-style img[src *= 'maps.googleapis.com'],
+  .gm-style img[style *= 'width: 256px'][style *= 'height: 256px'] {
+    filter: invert(0.8) hue-rotate(180deg) !important;
+  }
+  .gm-style img[src *= 'com/pp?'],
+  .gm-style [style *= 'height: 40px; width: 40px'] {
+    border-radius: 50% !important;
+  }
+  ._3UG7w:not(#z) > div[style] {
+    background-color: transparent !important;
+  }
+  .gm-style [controlwidth = '40'] * {
+    filter: invert(0.9) !important;
+  }
+  .gm-style [controlwidth = '40'] * [style *= 'd-color: rgb(255, 255, 255)'] {
+    background-color: #000 !important;
+  }
+  .gm-style [style *= 'd-color: rgb(245, 245, 245)'] {
+    background-color: var(--bg-4) !important;
+  }
+  .gm-style [style *= ' color: rgb(68, 68, 68)'] {
+    color: var(--fg-3) !important;
+  }
+  .gm-style .BPkae {
+    border-top-color: var(--modal-background) !important;
+  }
+  .gm-style ._2T2Fj {
+    background-color: var(--ac-1) !important;
+  }
+  .VK7yK {
+    box-shadow: 0 -1px var(--bg-5) !important;
   }
   @keyframes pulse {
     40% {
