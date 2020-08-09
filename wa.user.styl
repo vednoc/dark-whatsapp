@@ -1229,17 +1229,15 @@ ac5 = var(--ac-5)
         c: 0 0 bg1
 
         @media (min-width: 1441px) {
-            /// Feat -> Fullscreen mode.
-            if (fullscreen) {
-                &, /[data-animate-status-v3-modal-background] > div:first-child {
+            &, /[data-animate-status-v3-modal-background] > div:first-child {
+                /// Feat -> Fullscreen mode.
+                if (fullscreen) {
                     width: 100% i
                     max-width: 100% i
                     height: 100% i
                     top: unset i
-                }
-            } else {
-                /// Feat -> Custom width for app/status areas.
-                &, /[data-animate-status-v3-modal-background] > div:first-child {
+                } else {
+                    /// Feat -> App width.
                     width: calc(100% - 38px) i
                     max-width: var(--app-width) i
                     rad: var(--r-menus) i
