@@ -1173,6 +1173,11 @@ ac5 = var(--ac-5)
     // App background/misc styles.
     #app > div {
         &::after {
+            /// Remove app background in fullscreen mode or low-res screens.
+            @media screen and (min-width: 1441px) {
+                content: (fullscreen || app_image == 'none') ? unset i : '' i
+            }
+
             /// Feat -> App background.
             if (app_image != 'none' && app_image != 'default') {
                 s = var(--bg-blur-s)
@@ -1188,15 +1193,9 @@ ac5 = var(--ac-5)
                 background-repeat: var(--bg-rep) i
                 background-size: var(--bg-size) i
                 background-color: transparent i
-                content: '' i
             } else if (app_image == 'default') {
-                content: '' i
                 c: 0 0 bg1
-            } else {
-                display: none
             }
-            /// Remove image in fullscreen mode.
-            if (fullscreen) { content: none i }
         }
 
         /// Right -> Remove top border from the first Links/Docs message.
