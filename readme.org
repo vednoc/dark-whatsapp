@@ -6,7 +6,7 @@
 Complete dark mode implementation for [[https://web.whatsapp.com][WhatsApp Web]] with many improvements and
 customizable options.
 
-[[https://github.com/vednoc/dark-whatsapp/tags][https://img.shields.io/github/tag/vednoc/dark-whatsapp.svg?label=version&style=flat]]
+[[https://github.com/vednoc/dark-whatsapp/blob/master/changelog.org][https://img.shields.io/github/v/tag/vednoc/dark-whatsapp.svg?label=version&style=flat]]
 [[https://github.com/vednoc/dark-whatsapp/stargazers][https://img.shields.io/github/stars/vednoc/dark-whatsapp.svg?style=flat]]
 [[https://github.com/vednoc/dark-whatsapp/network][https://img.shields.io/github/forks/vednoc/dark-whatsapp.svg?color=007ec6&style=flat]]
 [[https://github.com/vednoc/dark-whatsapp/wiki][https://img.shields.io/badge/docs-on%20GitHub-007ec6.svg?&style=flat]]
