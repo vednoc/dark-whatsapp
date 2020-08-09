@@ -1172,9 +1172,9 @@ ac5 = var(--ac-5)
 
     // App background/misc styles.
     #app > div {
-        // Feat -> App background.
         &::after {
-            if ( app_image != none && app_image != default ) {
+            /// Feat -> App background.
+            if (app_image != 'none' && app_image != 'default') {
                 s = var(--bg-blur-s)
                 b = blur(var(--bg-blur))
                 o = opacity(var(--bg-opacity))
@@ -1183,13 +1183,13 @@ ac5 = var(--ac-5)
                 top: s; right: s; bottom: s; left: s;
                 height: unset; width: unset;
                 filter: b o t h
-                background-color: transparent i
                 background-position: var(--bg-pos) i
                 background-image: var(--bg-image) i
                 background-repeat: var(--bg-rep) i
                 background-size: var(--bg-size) i
+                background-color: transparent i
                 content: '' i
-            } else if ( app_image == default ) {
+            } else if (app_image == 'default') {
                 content: '' i
                 c: 0 0 bg1
             } else {
