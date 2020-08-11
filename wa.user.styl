@@ -136,7 +136,7 @@ to_rgba(input, alpha) {
 
 // Convert to SVG-friendly colors.
 to_svg(input) {
-    s('\%23%s', unquote(substr(s('%s', input), 1, 6)));
+    s('\%23%s', unquote(substr(s('%s', input), 1, 6)))
 }
 
 // Rounded corners.
@@ -1618,8 +1618,10 @@ ac5 = var(--ac-5)
             @media screen and (max-width: 648px) { min-width: auto }
             // > div *:hover { box-shadow: inset 0 0 0 1px crimson i }
         }
+
         /// Compact mode.
         @media screen and (max-width: app_c_m_w) {
+            /// Shared drawer styles.
             .two, .three {
                 /// Left -> Settings/Contacts.
                 > div:nth-child(3) {
@@ -1628,25 +1630,30 @@ ac5 = var(--ac-5)
                     &:hover, &:focus-within { flex: 0 0 30% i }
                 }
             }
+
+            /// Tweaks for two open drawers.
             .two {
                 /// Reset upload preview.
                 >  div:nth-child(2) > div:nth-child(2) {
                     flex: 0 0 calc(100% - 80px) i
                     margin-left: calc(-30% + 80px)
                 }
+
                 /// Expand contacts.
                 > div:nth-child(3) {
                     min-width: 1px i
                     transition: 0.3s ease i
                     transition-delay: var(--c-m-delay) i
-                    /// All left panes should be the same width.
+
+                    /// All left drawers should be the same width.
                     &:hover {
                         min-width: 349px i
                         transition-delay: var(--c-m-hover) i
                         flex: 0 0 30% i
                     }
                 }
-                /// Settings/Starred/Archived panes.
+
+                /// Settings/Starred/Archived drawers.
                 > :nth-child(2) > :nth-child(1) {
                     z-index: 201 i
                     flex: 0 0 30% i
@@ -1654,42 +1661,53 @@ ac5 = var(--ac-5)
                     [style][tabindex] { border-right: 1px solid bg5 i }
                 }
             }
+
+            /// Tweaks for three open drawers.
             .three {
                 /// Reset upload preview.
                 > div:nth-child(2) > div:nth-child(2) {
                     flex: 0 0 calc(100% - 30% - 80px) i
                     margin-left: calc(-30% + 80px)
                 }
+
                 /// Reset chat when info is open.
                 > div:nth-child(4) {
                     flex: 0 0 calc(100% - 30% - 80px) i
                 }
-                /// Do not expand left pane when right pane is open.
+
+                /// Do not expand left drawer when right drawer is open.
                 > div:nth-child(3):hover { flex: 0 0 80px i }
-                /// Tweaks for left and right panes.
+
+                /// Tweaks for left and right drawers.
                 ._14VS3, ._1xXdX {
                     flex: 0 0 30% i
                     c: 0 t
                 }
             }
+
             /// Fix search bar width.
             ._3qx7_:not(._3fVV4) label { padding: 0px }
+
             /// Contacts.
             #side {
                 /// Fix header width.
                 > header {
                     min-width: 240px
-                    /// Hide notifications.
+
+                    /// Remove notifications completely.
                     + span { display: none }
                 }
+
                 /// Items.
                 .eJ0yJ {
                     /// Add whitespace to hide message content.
                     > div:last-child { padding-left: 5px i }
+
                     /// Reverse message content.
                     ._1582E {
                         position: relative
                         flex-direction: row-reverse i
+
                         /// Remove margin from status wrapper.
                         .m61XR {
                             z-index: 999 i
@@ -1699,23 +1717,28 @@ ac5 = var(--ac-5)
                             bottom: -6px
                             rad: 50%
                             ._15G96 { margin: 0 }
-                            /// Unread messages indicator.
+
+                            /// Unread indicator.
                             ._31gEB { border: 4px solid bg2 }
                         }
+
                         /// Reverse message and icons.
                         .m61XR > span {
                             display: flex i
                             flex-direction: row-reverse i
                         }
-                        /// Remove chevron icon and all status icons.
+
+                        /// Remove chevron and all status icons.
                         ._38QnI, .ZKn2B > *:not(._31gEB) { display: none }
                     }
-                    /// Typing indicator status.
+
+                    /// 'Typing...' status indicator.
                     /._616fG {
                         overflow: unset i
                         margin-top: -8px i
                         margin-left: 0px i
                         position: absolute i
+
                         &::before {
                             content: '' i
                             z-index: 1 i
@@ -1729,6 +1752,7 @@ ac5 = var(--ac-5)
                             animation: 2s pulse infinite i
                         }
                     }
+
                     /// Message status.
                     .zFnXi {
                         padding: 1.5px
@@ -1738,6 +1762,7 @@ ac5 = var(--ac-5)
                         border: 3px solid bg2
                         c: 0 0 bg1
                         rad: 50%
+
                         /// Make SVG smaller.
                         > span > svg {
                             padding: 2px
@@ -1745,10 +1770,12 @@ ac5 = var(--ac-5)
                             width: 14px i
                         }
                     }
+
                     /// Active states.
                     &._13opk { ._31gEB, .zFnXi { c: 0 bg4 }}
                     &:hover:not(._13opk) { ._31gEB, .zFnXi { c: 0 bg3 }}
                 }
+
                 /// I _think_ I understand why this works!
                 ._2kHpK { min-width: 80px i }
             }
@@ -1874,7 +1901,7 @@ ac5 = var(--ac-5)
                 /// First message -> In/Out/System messages.
                 &, ../-in, /{ system } {
                     &:not({ bubble }) + .message-out{ bubble } {
-                        // c: 0 0 #ff55551a;
+                        // c: 0 0 #ff55551a
                         > div > div, { md } { rad: right_top }
                         /// Media context menu.
                         ._20EE3 { rad: 0 _m 0 0 i }
@@ -1882,7 +1909,7 @@ ac5 = var(--ac-5)
                 }
                 /// Messages in between.
                 &{ bubble } + { bubble } {
-                    // c: 0 0 #55ff551a;
+                    // c: 0 0 #55ff551a
                     { md } { rad: right_med }
                     > div > div { rad: right_mid }
                     /// Context menu.
@@ -1890,7 +1917,7 @@ ac5 = var(--ac-5)
                 }
                 /// Last message.
                 &{ bubble } + .message-out:not({ bubble }) {
-                    // c: 0 0 #5555ff1a;
+                    // c: 0 0 #5555ff1a
                     > div > div, { md } { rad: right_end }
                 }
 
