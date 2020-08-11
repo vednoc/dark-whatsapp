@@ -569,7 +569,7 @@ ac5 = var(--ac-5)
         --labels-icon-rgb: var(--fg-3-rgb) //241,241,242;
         --link: var(--ac-0) //#68bbe4;
         --link-rgb: var(--ac-0-rgb) //104,187,228;
-        --live-location-footer-background: to_rgba('bg-2', 0.5) //#101d24e6;
+        --live-location-footer-background: var(--bg-2) //#101d24e6;
         --live-location-footer-background-rgb: var(--bg-2-rgb) //16,29,36;
         --live-location-glow: to_rgba('ac-1', 0.5) //#25d3664d;
         --live-location-glow-rgb: var(--ac-1-rgb) //37,211,102;
@@ -2040,7 +2040,7 @@ ac5 = var(--ac-5)
             &[src *= 'images/google']
             &[src *= 'maps.googleapis.com'],
             &[style *= 'width: 256px'][style *= 'height: 256px'] {
-                filter: invert(0.8) hue-rotate(180deg) i
+                filter: invert(0.8) hue-rotate(180deg) contrast(120%) i
             }
 
             /// Reset avatars.
@@ -2057,7 +2057,7 @@ ac5 = var(--ac-5)
         /// Map controls.
         [controlwidth = '40'] * {
             filter: invert(0.9) i
-            [style *= 'd-color: rgb(255\, 255\, 255)'] { c: 0 0 black }
+            [style *= 'd-color: rgb(255\, 255\, 255)'] { c: 0 0 bg0 }
         }
 
         /// Map copyright/ToS.
