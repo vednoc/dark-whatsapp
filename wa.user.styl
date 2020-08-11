@@ -254,7 +254,7 @@ ac5 = var(--ac-5)
                    'next week – see the changelog for more info. '
         --changes: '\A\A https://github.com/vednoc/dark-whatsapp'
 
-        /// Custom UI font.
+        /// UI font.
         --ui-font: ui_font, Segoe UI, Helvetica Neue, Helvetica, Lucida Grande,
                    Arial, Ubuntu, Cantarell, Fira Sans, sans-serif i
 
@@ -271,22 +271,22 @@ ac5 = var(--ac-5)
         --blur-in:  chat_b_in
         --blur-out: chat_b_out
 
-        /// Custom app width.
+        /// App width.
         --app-width: app_width
 
-        /// Custom emoji opacity.
+        /// Default emoji opacity.
         --emoji-o: emoji_o
 
-        /// Custom app background.
+        /// App background.
         image_path  = 'https://raw.githubusercontent.com/'
         image_path += 'vednoc/dark-whatsapp/master/images/bg-blur'
-        if ( app_image == bg-high ) {
+        if (app_image == 'bg-high') {
             --bg-image: url(image_path + '-high.jpg')
-        } else if ( app_image == bg-low ) {
+        } else if (app_image == 'bg-low') {
             --bg-image: url(image_path + '-low.jpg')
-        } else if ( app_image == bg-none ) {
+        } else if (app_image == 'bg-none') {
             --bg-image: url(image_path + '-none.jpg')
-        } else if ( app_image == custom ) {
+        } else if (app_image == 'custom') {
             --bg-image: image_url
         } else {
             --bg-image: none
@@ -300,7 +300,7 @@ ac5 = var(--ac-5)
         --bg-pos:     bg_pos
         --bg-rep:     bg_rep
 
-        /// Custom chat background.
+        /// Chat background.
         --chat-image: chat_image
         --chat-bg-o:  chat_bg_o
         --chat-bg-i:  chat_bg_iv
@@ -833,7 +833,7 @@ ac5 = var(--ac-5)
         --intro-image: _i
     }
 
-    /// Animation for 'typing...' indicator.
+    // Animation for 'Typing...' indicator.
     @keyframes pulse {
         40% { opacity: 0 }
         80% { opacity: 1 }
@@ -1333,7 +1333,7 @@ ac5 = var(--ac-5)
         }
     }
 
-    /// Feat -> Consistent drawer headers.
+    // Feat -> Consistent drawer headers.
     if(app_c_h) {
         ._1fiOp, ._2TZYF {
             height: 59px i
@@ -1356,7 +1356,7 @@ ac5 = var(--ac-5)
         }
     }
 
-    /// Sidebar.
+    // Sidebar.
     #side {
         /// Feat -> Blur contacts.
         if (chat_b_c) {
@@ -1560,7 +1560,7 @@ ac5 = var(--ac-5)
         /[class *= ' color-'] > span:nth-child(2) { c: fg3 }
     }
 
-    /// Feat -> Colors for replies and group members.
+    // Feat -> Colors for replies and group members.
     if (c_g_c) {
         :not(#z) .color {
             &-0  { c: blue }
@@ -2033,7 +2033,7 @@ ac5 = var(--ac-5)
         }
     }
 
-    /// Right -> Maps.
+    // Right -> Maps.
     .gm-style {
         img {
             /// 1: Logo; 2: Full map; 3: Map tiles.
