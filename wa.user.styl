@@ -35,7 +35,6 @@
     'Hide all                    ': 'hide          ',
 }
 @var checkbox app_c_h    'Consistent drawer headers' 1
-@var checkbox ff_scroll  'Thin scrollbars in Firefox' 1
 
 @var text     radius-g   'Rounded corners for menus' 4px
 @var text     radius-i   'Rounded corners for input area' 24px
@@ -938,16 +937,9 @@ ac5 = var(--ac-5)
 
         /// Global -> Scrollbar styles.
         /\*{
-            /// Feat -> Thin scrollbar in Firefox.
-            if (ff_scroll) {
-                @supports (scrollbar-width: thin) {
-                    scrollbar-width: thin i
-                }
-            }
-
             /// Scrollbar colors.
             @supports (scrollbar-width: thin) {
-                scrollbar-color: ac3 #88888810 i
+                scrollbar-color: ac3 var(--shadow) i
             }
             &::-webkit-scrollbar {
                 &-thumb { c: 0 0 ac-3 i }
