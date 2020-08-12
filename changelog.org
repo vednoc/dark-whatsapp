@@ -1,6 +1,24 @@
 #+STARTUP: nofold
 
 * Changelog
+** 3.0.0-rc.4 [2020-08-12 Sat]
+This pre-release has a ton of refactoring centered around logic and code style,
+and a few small improvements as well as bug fixes around =fb-like= tail style.
+
+*** Docs
+- Revised code comments
+
+*** Improved
+- Lots of refactoring around logic and code style
+- App background element is now completely removed on low-res screens
+- Added hover animation to icons for 'select messages' mode in chat
+- Added hover animation to toolbar icons in media viewer
+- Small contrast improvements for Google Maps feature
+
+*** Fixed
+- Removed styles for thin scrollbars and 'loading results' spinner
+- Removed whitespace hack for disabled big emojis in =fb-like= tails
+
 ** 3.0.0-rc.3 [2020-08-08 Sat]
 I've decided to delay full-release until next week because there are more ideas
 that need to be implemented first.
