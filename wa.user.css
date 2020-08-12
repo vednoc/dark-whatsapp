@@ -6,14 +6,14 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      3.0.0-rc.3
+@version      3.0.0-rc.4
 @license      MIT
 ==/UserStyle== */
 
 @-moz-document domain('web.whatsapp.com') {
   :root:not(#z),
   .dark:not(#z) {
-    --version: 'Dark-WhatsApp Lite 3.0.0-rc.3 — August 8th, 2020';
+    --version: 'Dark-WhatsApp Lite 3.0.0-rc.4 — August 12th, 2020';
     --message: 'The v3 is almost here! Delaying the full-release until next week – see the changelog for more info. ';
     --changes: '\A\A https://github.com/vednoc/dark-whatsapp';
     --ui-font: 'font_name', Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif !important;
@@ -281,7 +281,7 @@
     --labels-icon-rgb: var(--fg-3-rgb);
     --link: var(--ac-0);
     --link-rgb: var(--ac-0-rgb);
-    --live-location-footer-background: rgba(var(--bg-2-rgb), 0.5);
+    --live-location-footer-background: var(--bg-2);
     --live-location-footer-background-rgb: var(--bg-2-rgb);
     --live-location-glow: rgba(var(--ac-1-rgb), 0.5);
     --live-location-glow-rgb: var(--ac-1-rgb);
@@ -635,12 +635,7 @@
   }
   @supports (scrollbar-width: thin) {
     * {
-      scrollbar-width: thin !important;
-    }
-  }
-  @supports (scrollbar-width: thin) {
-    * {
-      scrollbar-color: var(--ac-3) rgba(136,136,136,0.063) !important;
+      scrollbar-color: var(--ac-3) var(--shadow) !important;
     }
   }
   *::-webkit-scrollbar-thumb {
@@ -852,12 +847,16 @@
     height: unset;
     width: unset;
     filter: blur(var(--bg-blur)) opacity(var(--bg-opacity)) invert(var(--bg-invert)) hue-rotate(var(--bg-hue));
-    background-color: transparent !important;
     background-position: var(--bg-pos) !important;
     background-image: var(--bg-image) !important;
     background-repeat: var(--bg-rep) !important;
     background-size: var(--bg-size) !important;
-    content: '' !important;
+    background-color: transparent !important;
+  }
+  @media screen and (min-width: 1441px) {
+    #app > div::after {
+      content: '' !important;
+    }
   }
   div div:first-child > .aGjYp::before,
   span div:first-child > .aGjYp::before {
@@ -881,7 +880,7 @@
   #app > div > [tabindex] {
     background-color: var(--bg-1) !important;
   }
-@media (min-width: 1441px) {
+  @media (min-width: 1441px) {
     #app > div > [tabindex],
     [data-animate-status-v3-modal-background] > div:first-child {
       width: calc(100% - 38px) !important;
@@ -901,10 +900,6 @@
   #app > div > [tabindex] .gQzdc::after,
   #app > div > [tabindex] ._3qx7_::after {
     display: none !important;
-  }
-  #app > div > [tabindex] .gQzdc ._1pp2N,
-  #app > div > [tabindex] ._3qx7_ ._1pp2N {
-    padding-right: 5px;
   }
   ._1yO24 {
     animation: none !important;
@@ -943,20 +938,28 @@
   #side > header button:not([data-animate-menu-icons-item]) [data-icon],
   #main > div + header button:not([data-animate-menu-icons-item]) [data-icon],
   #main > footer > .copyable-area button:not([data-animate-menu-icons-item]) [data-icon],
+  #main > footer + span:not([class]) > div button:not([data-animate-menu-icons-item]) [data-icon],
+  .overlay > div:first-child button:not([data-animate-menu-icons-item]) [data-icon],
   .copyable-area > header button:not([data-animate-menu-icons-item]) [data-icon],
   #side > header [role = 'button'] [data-icon],
   #main > div + header [role = 'button'] [data-icon],
   #main > footer > .copyable-area [role = 'button'] [data-icon],
+  #main > footer + span:not([class]) > div [role = 'button'] [data-icon],
+  .overlay > div:first-child [role = 'button'] [data-icon],
   .copyable-area > header [role = 'button'] [data-icon] {
     transition: fill-opacity 0.3s ease !important;
   }
   #side > header button:not([data-animate-menu-icons-item]):not(._3QjfB):hover [data-icon],
   #main > div + header button:not([data-animate-menu-icons-item]):not(._3QjfB):hover [data-icon],
   #main > footer > .copyable-area button:not([data-animate-menu-icons-item]):not(._3QjfB):hover [data-icon],
+  #main > footer + span:not([class]) > div button:not([data-animate-menu-icons-item]):not(._3QjfB):hover [data-icon],
+  .overlay > div:first-child button:not([data-animate-menu-icons-item]):not(._3QjfB):hover [data-icon],
   .copyable-area > header button:not([data-animate-menu-icons-item]):not(._3QjfB):hover [data-icon],
   #side > header [role = 'button']:not(._3QjfB):hover [data-icon],
   #main > div + header [role = 'button']:not(._3QjfB):hover [data-icon],
   #main > footer > .copyable-area [role = 'button']:not(._3QjfB):hover [data-icon],
+  #main > footer + span:not([class]) > div [role = 'button']:not(._3QjfB):hover [data-icon],
+  .overlay > div:first-child [role = 'button']:not(._3QjfB):hover [data-icon],
   .copyable-area > header [role = 'button']:not(._3QjfB):hover [data-icon] {
     fill-opacity: 0.6 !important;
   }
@@ -1408,7 +1411,7 @@
   .gm-style img[src *= 'images/google'],
   .gm-style img[src *= 'maps.googleapis.com'],
   .gm-style img[style *= 'width: 256px'][style *= 'height: 256px'] {
-    filter: invert(0.8) hue-rotate(180deg) !important;
+    filter: invert(0.8) hue-rotate(180deg) contrast(120%) !important;
   }
   .gm-style img[src *= 'com/pp?'],
   .gm-style [style *= 'height: 40px; width: 40px'] {
@@ -1421,7 +1424,7 @@
     filter: invert(0.9) !important;
   }
   .gm-style [controlwidth = '40'] * [style *= 'd-color: rgb(255, 255, 255)'] {
-    background-color: #000 !important;
+    background-color: var(--bg-0) !important;
   }
   .gm-style [style *= 'd-color: rgb(245, 245, 245)'] {
     background-color: var(--bg-4) !important;
