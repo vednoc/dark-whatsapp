@@ -161,68 +161,73 @@ if (theme == 'custom') {
 /// Helpers.
 t  = transparent
 i  = !important
-_d = darken
-_l = lighten
 BA = next_bg_a
 IM = next_imsg
 OM = next_omsg
 
 // Color generator.
-/// TODO: Needs more polish.
-if (dark(BG)) {
-    a1 =  10; a2 =  20; a3 =  30; a4 =  78; a5 =  88;
-    b1 = (BA + 10); b2 = (BA - 5); b3 = (BA - 10); b4 = (BA - 15); b5 = (BA - 20)
-    f1 = -10%; f2 =  10%; f3 =  20%; f4 =  30%; f5 =  40%; /// TODO: Fix in next update.
-} else {
-    a1 =  10; a2 =  15; a3 =  30; a4 =  60; a5 =  70;
-    b1 = -10; b2 =  08; b3 =  16; b4 =  24; b5 =  32;
-    f1 = -05; f2 = -10; f3 = -15; f4 = -20; f5 = -30;
-}
+/// NOTE: Fix the scope to avoid conflicts.
+/{
+    /// Generator rules.
+    if (dark(BG)) {
+        a1 =  10; a2 =  20; a3 =  30; a4 =  82; a5 =  92;
+        b1 = (BA + 10); b2 = (BA - 5); b3 = (BA - 10); b4 = (BA - 15); b5 = (BA - 20)
+        f1 = -10%; f2 =  10%; f3 =  20%; f4 =  30%; f5 =  40%; /// TODO: Fix in next update.
+    } else {
+        a1 =  10; a2 =  15; a3 =  30; a4 =  60; a5 =  70;
+        b1 = -10; b2 =  08; b3 =  16; b4 =  24; b5 =  32;
+        f1 = -05; f2 = -10; f3 = -15; f4 = -20; f5 = -30;
+    }
 
-// Feat -> Custom colors for message bubble.
-in_msg_quote  = dark(IM) ? -10% : 25%
-out_msg_quote = dark(OM) ? -10% : 25%
+    /// Feat -> Colors for message bubble.
+    ig_quote = dark(IM) ? -10% : 25%
+    og_quote = dark(OM) ? -10% : 25%
 
-// Generate tones for base colors.
-bg_hash = {
-    '-0': _d(BG, b1),
-    '-1': _d(BG, 0%),
-    '-2': _d(BG, b2),
-    '-3': _d(BG, b3),
-    '-4': _d(BG, b4),
-    '-5': _d(BG, b5),
-}
-fg_hash = {
-    '-0': _d(FG, f1),
-    '-1': _d(FG, 0%),
-    '-2': _d(FG, f2),
-    '-3': _d(FG, f3),
-    '-4': _d(FG, f4),
-    '-5': _d(FG, f5),
-}
-ac_hash = {
-    '-0':                 AC,
-    '-1': mix(_d(BG, -4), AC, a1),
-    '-2': mix(_d(BG, -4), AC, a2),
-    '-3': mix(_d(BG, -4), AC, a3),
-    '-4': mix(_d(BG, -4), AC, a4),
-    '-5': mix(_d(BG, -4), AC, a5),
-}
-msg-in  = {
-    '-0':    IM,
-    '-1': _d(IM, in_msg_quote),
-}
-msg-out = {
-    '-0':    OM,
-    '-1': _d(OM, out_msg_quote),
-}
+    /// Generate tones for base colors.
+    hash_bg = {
+        '-0': darken(BG, b1),
+        '-1': darken(BG, 0%),
+        '-2': darken(BG, b2),
+        '-3': darken(BG, b3),
+        '-4': darken(BG, b4),
+        '-5': darken(BG, b5),
+    }
 
-// Generate stylus-lang variables.
-define('bg'      + key, val) for key, val in bg_hash
-define('fg'      + key, val) for key, val in fg_hash
-define('ac'      + key, val) for key, val in ac_hash
-define('msg-out' + key, val) for key, val in msg-out
-define('msg-in'  + key, val) for key, val in msg-in
+    hash_fg = {
+        '-0': darken(FG, f1),
+        '-1': darken(FG, 0%),
+        '-2': darken(FG, f2),
+        '-3': darken(FG, f3),
+        '-4': darken(FG, f4),
+        '-5': darken(FG, f5),
+    }
+
+    hash_ac = {
+        '-0':                     AC,
+        '-1': mix(darken(BG, -4), AC, a1),
+        '-2': mix(darken(BG, -4), AC, a2),
+        '-3': mix(darken(BG, -4), AC, a3),
+        '-4': mix(darken(BG, -4), AC, a4),
+        '-5': mix(darken(BG, -4), AC, a5),
+    }
+
+    hash_ig = {
+        '-0':        IM,
+        '-1': darken(IM, ig_quote),
+    }
+
+    hash_og = {
+        '-0':        OM,
+        '-1': darken(OM, og_quote),
+    }
+
+    /// Expose generated colors; generate Stylus-lang variables.
+    define('bg' + key, val, global) for key, val in hash_bg
+    define('fg' + key, val, global) for key, val in hash_fg
+    define('ac' + key, val, global) for key, val in hash_ac
+    define('og' + key, val, global) for key, val in hash_og
+    define('ig' + key, val, global) for key, val in hash_ig
+}
 
 // Stylus-lang helpers for CSS variables.
 bg0 = var(--bg-0)
@@ -308,10 +313,10 @@ ac5 = var(--ac-5)
 
         /// Override incoming message bubble colors.
         if (ow_imsg) {
-            --msg-in-0:     msg-in-0 i
-            --msg-in-0-rgb: to_rgb(msg-in-0)
-            --msg-in-1:     msg-in-1 i
-            --msg-in-1-rgb: to_rgb(msg-in-1)
+            --msg-in-0:     ig-0 i
+            --msg-in-0-rgb: to_rgb(ig-0)
+            --msg-in-1:     ig-1 i
+            --msg-in-1-rgb: to_rgb(ig-1)
         } else {
             --msg-in-0:     var(--bg-4)
             --msg-in-0-rgb: var(--bg-4-rgb)
@@ -321,10 +326,10 @@ ac5 = var(--ac-5)
 
         /// Override outgoing message bubble colors.
         if (ow_omsg) {
-            --msg-out-0:     msg-out-0 i
-            --msg-out-0-rgb: to_rgb(msg-out-0)
-            --msg-out-1:     msg-out-1 i
-            --msg-out-1-rgb: to_rgb(msg-out-1)
+            --msg-out-0:     og-0 i
+            --msg-out-0-rgb: to_rgb(og-0)
+            --msg-out-1:     og-1 i
+            --msg-out-1-rgb: to_rgb(og-1)
         } else {
             --msg-out-0:     var(--ac-4)
             --msg-out-0-rgb: var(--ac-4-rgb)
