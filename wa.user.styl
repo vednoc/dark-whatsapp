@@ -186,54 +186,52 @@ OM = next_omsg
     og_quote = dark(OM) ? -10% : 25%
 
     /// Generate tones for base colors.
-    _bg = {
-        '0': darken(BG, b1),
-        '1': darken(BG, 0%),
-        '2': darken(BG, b2),
-        '3': darken(BG, b3),
-        '4': darken(BG, b4),
-        '5': darken(BG, b5),
-    }
-
-    _fg = {
-        '0': darken(FG, f1),
-        '1': darken(FG, 0%),
-        '2': darken(FG, f2),
-        '3': darken(FG, f3),
-        '4': darken(FG, f4),
-        '5': darken(FG, f5),
-    }
-
-    _ac = {
-        '0':                     AC,
-        '1': mix(darken(BG, -4), AC, a1),
-        '2': mix(darken(BG, -4), AC, a2),
-        '3': mix(darken(BG, -4), AC, a3),
-        '4': mix(darken(BG, -4), AC, a4),
-        '5': mix(darken(BG, -4), AC, a5),
-    }
-
-    _ig = {
-        '0':        IM,
-        '1': darken(IM, ig_quote),
-    }
-
-    _og = {
-        '0':        OM,
-        '1': darken(OM, og_quote),
+    C = {
+        bg: {
+            '0': darken(BG, b1),
+            '1': darken(BG, 0%),
+            '2': darken(BG, b2),
+            '3': darken(BG, b3),
+            '4': darken(BG, b4),
+            '5': darken(BG, b5),
+        },
+        fg: {
+            '0': darken(FG, f1),
+            '1': darken(FG, 0%),
+            '2': darken(FG, f2),
+            '3': darken(FG, f3),
+            '4': darken(FG, f4),
+            '5': darken(FG, f5),
+        },
+        ac: {
+            '0':                     AC,
+            '1': mix(darken(BG, -4), AC, a1),
+            '2': mix(darken(BG, -4), AC, a2),
+            '3': mix(darken(BG, -4), AC, a3),
+            '4': mix(darken(BG, -4), AC, a4),
+            '5': mix(darken(BG, -4), AC, a5),
+        },
+        ig: {
+            '0':        IM,
+            '1': darken(IM, ig_quote),
+        },
+        og: {
+            '0':        OM,
+            '1': darken(OM, og_quote),
+        },
     }
 
     /// Generate Stylus-lang variables.
-    define('bg-' + key, val, g) for key, val in _bg
-    define('fg-' + key, val, g) for key, val in _fg
-    define('ac-' + key, val, g) for key, val in _ac
-    define('og-' + key, val, g) for key, val in _og
-    define('ig-' + key, val, g) for key, val in _ig
+    define('bg-' + key, val, g) for key, val in C.bg
+    define('fg-' + key, val, g) for key, val in C.fg
+    define('ac-' + key, val, g) for key, val in C.ac
+    define('og-' + key, val, g) for key, val in C.og
+    define('ig-' + key, val, g) for key, val in C.ig
 
     // Generate Stylus-lang helpers for CSS variables.
-    define('bg' + key, s('var(--bg-%s)', unquote(key)), g) for key, val in _bg
-    define('fg' + key, s('var(--fg-%s)', unquote(key)), g) for key, val in _fg
-    define('ac' + key, s('var(--ac-%s)', unquote(key)), g) for key, val in _ac
+    define('bg' + key, s('var(--bg-%s)', unquote(key)), g) for key, val in C.bg
+    define('fg' + key, s('var(--fg-%s)', unquote(key)), g) for key, val in C.fg
+    define('ac' + key, s('var(--ac-%s)', unquote(key)), g) for key, val in C.ac
 }
 
 @-moz-document domain('web.whatsapp.com') {
