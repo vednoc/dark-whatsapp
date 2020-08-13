@@ -19,6 +19,8 @@
 @var color    next_fg    'Base foreground color ' #eeeeee
 @var color    next_ac    'Base accent color     ' #7289da
 @var range    next_bg_a  'Adjust tones for background color' [0, -25, 25, 0.1, '%']
+@var range    next_fg_a  'Adjust tones for foreground color' [0, -25, 25, 0.1, '%']
+@var range    next_ac_a  'Adjust tones for accent color    ' [0,   0, 25,   1, '%']
 
 @var text     ui_font    'UI font' ''font_name''
 @var text     app_width  'App width' 1396px
@@ -162,6 +164,8 @@ if (theme == 'custom') {
 t  = transparent
 i  = !important
 BA = next_bg_a
+FA = next_fg_a
+AA = next_ac_a
 IM = next_imsg
 OM = next_omsg
 
@@ -172,9 +176,9 @@ OM = next_omsg
 
     /// Generator rules.
     if (dark(BG)) {
-        a1 =  10; a2 =  20; a3 =  30; a4 =  82; a5 =  92;
-        b1 = (BA + 10); b2 = (BA - 5); b3 = (BA - 10); b4 = (BA - 15); b5 = (BA - 20)
-        f1 = -10%; f2 =  10%; f3 =  20%; f4 =  30%; f5 =  40%; /// TODO: Fix in next update.
+        a1 = (AA + 10); a2 = (AA + 20); a3 = (AA + 30); a4 = (AA + 65); a5 = (AA + 75)
+        b1 = (BA + 10); b2 = (BA - 05); b3 = (BA - 10); b4 = (BA - 15); b5 = (BA - 20)
+        f1 = (FA - 10); f2 = (FA + 10); f3 = (FA + 20); f4 = (FA + 30); f5 = (FA + 40)
     } else {
         a1 =  10; a2 =  15; a3 =  30; a4 =  60; a5 =  70;
         b1 = -10; b2 =  08; b3 =  16; b4 =  24; b5 =  32;
@@ -205,11 +209,11 @@ OM = next_omsg
         },
         ac: {
             '0':                     AC,
-            '1': mix(darken(BG, -4), AC, a1),
-            '2': mix(darken(BG, -4), AC, a2),
-            '3': mix(darken(BG, -4), AC, a3),
-            '4': mix(darken(BG, -4), AC, a4),
-            '5': mix(darken(BG, -4), AC, a5),
+            '1': mix(darken(BG, 40%), AC, a1),
+            '2': mix(darken(BG, 40%), AC, a2),
+            '3': mix(darken(BG, 40%), AC, a3),
+            '4': mix(darken(BG, 40%), AC, a4),
+            '5': mix(darken(BG, 40%), AC, a5),
         },
         ig: {
             '0':        IM,
