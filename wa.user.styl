@@ -115,9 +115,9 @@
 /// All colors: `c: fg bd bg`
 /// Only border-color: `c: 0 bd`
 c(x, y = 0, z = 0, xi = 1, yi = 1, zi = 1) {
-    if x is a 'call' or x is a 'rgba' {            color: xi is 0? x : x i }
-    if y is a 'call' or y is a 'rgba' {     border-color: yi is 0? y : y i }
-    if z is a 'call' or z is a 'rgba' { background-color: zi is 0? z : z i }
+    if x != 0 && x != '_' {            color: xi is 0? x : x i }
+    if y != 0 && y != '_' {     border-color: yi is 0? y : y i }
+    if z != 0 && z != '_' { background-color: zi is 0? z : z i }
 }
 
 // Raw RGB mixin.
@@ -168,6 +168,8 @@ OM = next_omsg
 // Color generator.
 /// NOTE: Fix the scope to avoid conflicts.
 /{
+    g = global
+
     /// Generator rules.
     if (dark(BG)) {
         a1 =  10; a2 =  20; a3 =  30; a4 =  82; a5 =  92;
@@ -184,70 +186,55 @@ OM = next_omsg
     og_quote = dark(OM) ? -10% : 25%
 
     /// Generate tones for base colors.
-    hash_bg = {
-        '-0': darken(BG, b1),
-        '-1': darken(BG, 0%),
-        '-2': darken(BG, b2),
-        '-3': darken(BG, b3),
-        '-4': darken(BG, b4),
-        '-5': darken(BG, b5),
+    _bg = {
+        '0': darken(BG, b1),
+        '1': darken(BG, 0%),
+        '2': darken(BG, b2),
+        '3': darken(BG, b3),
+        '4': darken(BG, b4),
+        '5': darken(BG, b5),
     }
 
-    hash_fg = {
-        '-0': darken(FG, f1),
-        '-1': darken(FG, 0%),
-        '-2': darken(FG, f2),
-        '-3': darken(FG, f3),
-        '-4': darken(FG, f4),
-        '-5': darken(FG, f5),
+    _fg = {
+        '0': darken(FG, f1),
+        '1': darken(FG, 0%),
+        '2': darken(FG, f2),
+        '3': darken(FG, f3),
+        '4': darken(FG, f4),
+        '5': darken(FG, f5),
     }
 
-    hash_ac = {
-        '-0':                     AC,
-        '-1': mix(darken(BG, -4), AC, a1),
-        '-2': mix(darken(BG, -4), AC, a2),
-        '-3': mix(darken(BG, -4), AC, a3),
-        '-4': mix(darken(BG, -4), AC, a4),
-        '-5': mix(darken(BG, -4), AC, a5),
+    _ac = {
+        '0':                     AC,
+        '1': mix(darken(BG, -4), AC, a1),
+        '2': mix(darken(BG, -4), AC, a2),
+        '3': mix(darken(BG, -4), AC, a3),
+        '4': mix(darken(BG, -4), AC, a4),
+        '5': mix(darken(BG, -4), AC, a5),
     }
 
-    hash_ig = {
-        '-0':        IM,
-        '-1': darken(IM, ig_quote),
+    _ig = {
+        '0':        IM,
+        '1': darken(IM, ig_quote),
     }
 
-    hash_og = {
-        '-0':        OM,
-        '-1': darken(OM, og_quote),
+    _og = {
+        '0':        OM,
+        '1': darken(OM, og_quote),
     }
 
-    /// Expose generated colors; generate Stylus-lang variables.
-    define('bg' + key, val, global) for key, val in hash_bg
-    define('fg' + key, val, global) for key, val in hash_fg
-    define('ac' + key, val, global) for key, val in hash_ac
-    define('og' + key, val, global) for key, val in hash_og
-    define('ig' + key, val, global) for key, val in hash_ig
+    /// Generate Stylus-lang variables.
+    define('bg-' + key, val, g) for key, val in _bg
+    define('fg-' + key, val, g) for key, val in _fg
+    define('ac-' + key, val, g) for key, val in _ac
+    define('og-' + key, val, g) for key, val in _og
+    define('ig-' + key, val, g) for key, val in _ig
+
+    // Generate Stylus-lang helpers for CSS variables.
+    define('bg' + key, s('var(--bg-%s)', unquote(key)), g) for key, val in _bg
+    define('fg' + key, s('var(--fg-%s)', unquote(key)), g) for key, val in _fg
+    define('ac' + key, s('var(--ac-%s)', unquote(key)), g) for key, val in _ac
 }
-
-// Stylus-lang helpers for CSS variables.
-bg0 = var(--bg-0)
-bg1 = var(--bg-1)
-bg2 = var(--bg-2)
-bg3 = var(--bg-3)
-bg4 = var(--bg-4)
-bg5 = var(--bg-5)
-fg0 = var(--fg-0)
-fg1 = var(--fg-1)
-fg2 = var(--fg-2)
-fg3 = var(--fg-3)
-fg4 = var(--fg-4)
-fg5 = var(--fg-5)
-ac0 = var(--ac-0)
-ac1 = var(--ac-1)
-ac2 = var(--ac-2)
-ac3 = var(--ac-3)
-ac4 = var(--ac-4)
-ac5 = var(--ac-5)
 
 @-moz-document domain('web.whatsapp.com') {
     :root:not(#z), .dark:not(#z) {
@@ -787,16 +774,16 @@ ac5 = var(--ac-5)
         --win32-title-primary: #fff;
         --win32-title-primary-rgb: 255,255,255;
 
-        /// DWA color variables.
+        /// Generate DWA color variables.
         for _v in (bg fg ac) {
             for _i in 0..5 {
-                var_key = '--' + _v + '-' + _i
+                key = s('--%s-%s', _v, _i)
                 /// Escape `\` for `*-0` vars.
-                var_val = _v + \- + _i
+                val = _v + \- + _i
 
                 /// Generate CSS variables.
-                { var_key }: var_val i
-                { var_key + '-rgb' }: to_rgb(var_val)
+                { key }: val i
+                { key + '-rgb' }: to_rgb(val)
             }
         }
 
