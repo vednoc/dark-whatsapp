@@ -109,8 +109,6 @@
 @var color    white      'Color: White                ' #ffffff
 @var color    sh         'Color: Shadow light         ' #00000025
 @var color    sh-h       'Color: Shadow heavy         ' #00000035
-
-@var checkbox c_g_c      'Theme colors for replies and group members' 1
 ==/UserStyle== */
 
 // Color mixin.
@@ -1549,10 +1547,8 @@ OM = next_omsg
 
         /// Groups -> Fix opacity for nicknames.
         /[class *= ' color-'] > span:nth-child(2) { c: fg3 }
-    }
 
-    // Feat -> Colors for replies and group members.
-    if (c_g_c) {
+        /// Feat -> Colors for replies and group members.
         :not(#z) .color {
             &-0  { c: blue }
             &-1  { c: cyan }
