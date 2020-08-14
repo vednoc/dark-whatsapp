@@ -1,7 +1,23 @@
 #+STARTUP: nofold
 
 * Changelog
-** 3.0.0-rc.4 [2020-08-12 Sat]
+** 3.0.0-rc.5 [2020-08-14 Fri]
+Added missing colors from the last two WhatsApp updates, refactored a lot of
+logic for color generator, and fixed a few things that broke in new update.
+
+*** Added
+- New color variables from last two updates
+- New options to adjust generated tones for /foreground/ and /accent/ colors
+
+*** Improved
+- Lots of improvements for color generator
+
+*** Fixed
+- Colors for floating emoji picker
+- Removed redundant colors option for replies/group members
+- Updated selectors for default option in 'set chat wallpaper' area
+
+** 3.0.0-rc.4 [2020-08-12 Wed]
 This pre-release has a ton of refactoring centered around logic and code style,
 and a few small improvements as well as bug fixes around =fb-like= tail style.
 
