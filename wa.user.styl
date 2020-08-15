@@ -115,9 +115,9 @@
 /// All colors: `c: fg1 bg5 bg1`
 /// Only border-color: `c: 0 bg5`
 c(x, y = 0, z = 0, xi = 1, yi = 1, zi = 1) {
-    if x != 0 && x != '_' {            color: xi is 0? x : x i }
-    if y != 0 && y != '_' {     border-color: yi is 0? y : y i }
-    if z != 0 && z != '_' { background-color: zi is 0? z : z i }
+    if x != 0 && x != '_' {            color: xi is 0 ? x : x i }
+    if y != 0 && y != '_' {     border-color: yi is 0 ? y : y i }
+    if z != 0 && z != '_' { background-color: zi is 0 ? z : z i }
 }
 
 // Raw RGB mixin.
@@ -206,7 +206,7 @@ OM = next_omsg
             '5': darken(FG, f5),
         },
         ac: {
-            '0':                     AC,
+            '0':                      AC,
             '1': mix(darken(BG, 40%), AC, a1),
             '2': mix(darken(BG, 40%), AC, a2),
             '3': mix(darken(BG, 40%), AC, a3),
@@ -300,30 +300,16 @@ OM = next_omsg
         --chat-bg-r:  chat_bg_r
 
         /// Override incoming message bubble colors.
-        if (ow_imsg) {
-            --msg-in-0:     ig-0 i
-            --msg-in-0-rgb: to_rgb(ig-0)
-            --msg-in-1:     ig-1 i
-            --msg-in-1-rgb: to_rgb(ig-1)
-        } else {
-            --msg-in-0:     var(--bg-4)
-            --msg-in-0-rgb: var(--bg-4-rgb)
-            --msg-in-1:     var(--bg-3)
-            --msg-in-1-rgb: var(--bg-3-rgb)
-        }
+        --msg-in-0:     (ow_imsg) ? ig-0         : var(--bg-4)
+        --msg-in-0-rgb: (ow_imsg) ? to_rgb(ig-0) : var(--bg-4-rgb)
+        --msg-in-1:     (ow_imsg) ? ig-1         : var(--bg-e)
+        --msg-in-1-rgb: (ow_imsg) ? to_rgb(ig-1) : var(--bg-3-rgb)
 
         /// Override outgoing message bubble colors.
-        if (ow_omsg) {
-            --msg-out-0:     og-0 i
-            --msg-out-0-rgb: to_rgb(og-0)
-            --msg-out-1:     og-1 i
-            --msg-out-1-rgb: to_rgb(og-1)
-        } else {
-            --msg-out-0:     var(--ac-4)
-            --msg-out-0-rgb: var(--ac-4-rgb)
-            --msg-out-1:     var(--ac-5)
-            --msg-out-1-rgb: var(--ac-5-rgb)
-        }
+        --msg-out-0:     (ow_omsg) ? og-0         : var(--ac-4)
+        --msg-out-0-rgb: (ow_omsg) ? to_rgb(og-0) : var(--ac-4-rgb)
+        --msg-out-1:     (ow_omsg) ? og-1         : var(--ac-5)
+        --msg-out-1-rgb: (ow_omsg) ? to_rgb(og-1) : var(--ac-5-rgb)
 
         /// WA variables.
         --gray-30: var(--bg-5) //#f7f7f7;
@@ -1555,7 +1541,7 @@ OM = next_omsg
         /[class *= ' color-'] > span:nth-child(2) { c: fg3 }
 
         /// Feat -> Colors for replies and group members.
-        :not(#z) .color {
+        .color {
             &-0  { c: blue }
             &-1  { c: cyan }
             &-2  { c: green }
@@ -1578,7 +1564,7 @@ OM = next_omsg
             &-19 { c: magenta; filter: hue-rotate(40deg) }
             &-20 { c: red; filter: hue-rotate(40deg) }
         }
-        :not(#z) .bg-color {
+        .bg-color {
             &-0  { c: 0 0 blue }
             &-1  { c: 0 0 cyan }
             &-2  { c: 0 0 green }
