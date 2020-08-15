@@ -1777,6 +1777,9 @@ OM = next_omsg
         /// 2:   Videos
         /// 3-5: Images/gifs/stickers
         ts = '.VGBA3, .video-thumb + ._2DfqO, ._3yTyY, ._2CHFo, ._1nrJA'
+        /// Big emojis.
+        big = '._20sYJ'
+
 
         /// Feat -> Message tails.
         if (tail_style == 'fb-like') {
@@ -1961,7 +1964,6 @@ OM = next_omsg
         if (rtl_format && tail_style == 'fb-like') {
             rtl = '.eRacY[dir = "rtl"]'
             ltr = '._2oWZe'
-            big = '._20sYJ'
 
             &-in, &-out {
                 /// LTR whitespace.
@@ -1998,12 +2000,22 @@ OM = next_omsg
                         // ../../../-out > div::before { c: 0 0 #5555ff20 }
                     }
                 }
+
+                /// Remove whitespace for default big emojis.
+                if (emoji_b == 'default') {
+                    { big } {
+                        margin: 0 i
+                        padding-top: 2px i
+                        z-index: 0 i
+
+                        /// Reset emojis.
+                        span { margin: 0 i }
+                    }
+                }
             }
         }
 
         &-in, &-out {
-            big = '._20sYJ'
-
             /// Feat -> Reduce size of big emojis.
             if (emoji_b == 'medium') {
                 size = 36px
@@ -2013,7 +2025,7 @@ OM = next_omsg
                 size = 20px
             }
 
-            /// Apply to all options except the default one.
+            /// Apply to all emoji options except the default one.
             if (emoji_b != 'default') {
                 { big } {
                     margin: 0 i
@@ -2022,7 +2034,7 @@ OM = next_omsg
 
                     /// Add whitespace to avoid timestmap collision.
                     if (tail_style != 'fb-like') {
-                        padding-right: 74px i
+                        padding-bottom: 0.8rem i
                     }
 
                     /// Reset emojis.
@@ -2032,7 +2044,7 @@ OM = next_omsg
                     }
                 }
             } else {
-                { big } { padding-bottom: 0 i }
+                { big } { padding-bottom: 0 }
             }
         }
     }
