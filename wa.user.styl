@@ -10,6 +10,12 @@
 @license      MIT
 @preprocessor stylus
 
+@var select   emoji_b    'Reduce big emoji size' {
+    'Default *': 'default ',
+    'Medium   ': 'medium  ',
+    'Normal   ': 'normal  ',
+    'Small    ': 'small   ',
+}
 @var select   theme      'Base color-scheme toggle' {
     'Custom colors   *': 'custom',
     'Dark blue (old)  ': 'old',
@@ -66,7 +72,6 @@
     'Facebook  ': 'fb-like ',
 }
 @var checkbox fb_compact 'Collapse messages when `fb-like` tail style and `RTL` tweaks are enabled' 1
-@var checkbox emoji_b    'Decrease height of big emojis when `fb-like` tail style and `RTL` tweaks are acctive' 1
 @var range    emoji_o    'Emojis opacity' [0.8, 0.0, 1, 0.01]
 
 @var checkbox ow_imsg    'Override incoming message bubble color' 0
@@ -1993,23 +1998,41 @@ OM = next_omsg
                         // ../../../-out > div::before { c: 0 0 #5555ff20 }
                     }
                 }
+            }
+        }
 
-                /// Feat -> Decrease height of big emojis.
-                if (emoji_b) {
-                    { big } {
-                        margin: 0 i
-                        padding-top: 2px i
-                        z-index: 0 i
+        &-in, &-out {
+            big = '._20sYJ'
 
-                        /// Reset emojis.
-                        span {
-                            margin: 0
-                            > img { width: 20px i; height: @width }
-                        }
+            /// Feat -> Reduce size of big emojis.
+            if (emoji_b == 'medium') {
+                size = 36px
+            } else if (emoji_b == 'normal') {
+                size = 28px
+            } else if (emoji_b == 'small') {
+                size = 20px
+            }
+
+            /// Apply to all options except the default one.
+            if (emoji_b != 'default') {
+                { big } {
+                    margin: 0 i
+                    padding-top: 2px i
+                    z-index: 0 i
+
+                    /// Add whitespace to avoid timestmap collision.
+                    if (tail_style != 'fb-like') {
+                        padding-right: 74px i
                     }
-                } else {
-                    { big } { padding-bottom: 0 i }
+
+                    /// Reset emojis.
+                    span {
+                        margin: 0 i
+                        > img { width: size i; height: @width }
+                    }
                 }
+            } else {
+                { big } { padding-bottom: 0 i }
             }
         }
     }
