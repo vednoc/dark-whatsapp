@@ -18,9 +18,9 @@
 @var color    next_bg    'Base background color ' #1f232a
 @var color    next_fg    'Base foreground color ' #eeeeee
 @var color    next_ac    'Base accent color     ' #7289da
-@var range    next_bg_a  'Adjust tones for background color' [0, -25, 25, 0.1, '%']
-@var range    next_fg_a  'Adjust tones for foreground color' [0, -25, 25, 0.1, '%']
-@var range    next_ac_a  'Adjust tones for accent color    ' [0,   0, 25,   1, '%']
+@var range    next_bg_a  'Adjust background color tones' [0, -25, 25, 0.1, '%']
+@var range    next_fg_a  'Adjust foreground color tones' [0, -25, 25, 0.1, '%']
+@var range    next_ac_a  'Adjust accent color tones    ' [0,   0, 25,   1, '%']
 
 @var text     ui_font    'UI font' ''font_name''
 @var text     app_width  'App width' 1396px
@@ -112,8 +112,8 @@
 ==/UserStyle== */
 
 // Color mixin.
-/// All colors: `c: fg bd bg`
-/// Only border-color: `c: 0 bd`
+/// All colors: `c: fg1 bg5 bg1`
+/// Only border-color: `c: 0 bg5`
 c(x, y = 0, z = 0, xi = 1, yi = 1, zi = 1) {
     if x != 0 && x != '_' {            color: xi is 0? x : x i }
     if y != 0 && y != '_' {     border-color: yi is 0? y : y i }
@@ -132,12 +132,12 @@ to_rgba(input, alpha) {
     unquote(s('rgba(var(--%s-rgb), %s)', unquote(input), alpha))
 }
 
-// Convert to SVG-friendly colors.
+// SVG-friendly colors mixin.
 to_svg(input) {
     s('\%23%s', unquote(substr(s('%s', input), 1, 6)))
 }
 
-// Rounded corners.
+// Rounded corners mixin.
 rad() { border-radius: arguments }
 
 /// Remove old browser prefixes.
@@ -168,11 +168,11 @@ IM = next_imsg
 OM = next_omsg
 
 // Color generator.
-/// NOTE: Fix the scope to avoid conflicts.
+/// NOTE: Scope the variables to avoid potential conflicts.
 /{
     g = global
 
-    /// Generator rules.
+    /// Color generator rules.
     if (dark(BG)) {
         a1 = (AA + 10); a2 = (AA + 20); a3 = (AA + 30); a4 = (AA + 65); a5 = (AA + 75)
         b1 = (BA + 10); b2 = (BA - 05); b3 = (BA - 10); b4 = (BA - 15); b5 = (BA - 20)
@@ -183,7 +183,7 @@ OM = next_omsg
         f1 = (FA - 05); f2 = (FA - 10); f3 = (FA - 15); f4 = (FA - 20); f5 = (FA - 30)
     }
 
-    /// Feat -> Colors for message bubble.
+    /// Feat -> Colors for message bubbles.
     ig_quote = dark(IM) ? -10% : 25%
     og_quote = dark(OM) ? -10% : 25%
 
@@ -230,7 +230,7 @@ OM = next_omsg
     define('og-' + key, val, g) for key, val in C.og
     define('ig-' + key, val, g) for key, val in C.ig
 
-    // Generate Stylus-lang helpers for CSS variables.
+    /// Generate Stylus-lang helpers for CSS variables.
     define('bg' + key, s('var(--bg-%s)', unquote(key)), g) for key, val in C.bg
     define('fg' + key, s('var(--fg-%s)', unquote(key)), g) for key, val in C.fg
     define('ac' + key, s('var(--ac-%s)', unquote(key)), g) for key, val in C.ac
