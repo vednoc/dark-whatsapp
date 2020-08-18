@@ -1702,6 +1702,12 @@ OM = next_omsg
                             rad: 50%
                             ._15G96 { margin: 0 }
 
+                            /// Fix RTL layout.
+                            /[dir = 'RTL'] & {
+                                left: unset i
+                                right: -77px i
+                            }
+
                             /// Unread indicator.
                             ._31gEB { border: 4px solid bg2 }
                         }
@@ -1734,6 +1740,9 @@ OM = next_omsg
                             rad: var(--r-avatars) i
                             box-shadow: inset 0 0 0 3px green i
                             animation: 2s pulse infinite i
+
+                            /// Fix RTL layout.
+                            /[dir = 'RTL'] & { left: 62px i }
                         }
                     }
 
@@ -1746,6 +1755,9 @@ OM = next_omsg
                         border: 3px solid bg2
                         c: 0 0 bg1
                         rad: 50%
+
+                        /// Fix RTL layout.
+                        /[dir = 'RTL'] & { margin-right: -35px i }
 
                         /// Make SVG smaller.
                         > span > svg {
