@@ -10,12 +10,6 @@
 @license      MIT
 @preprocessor stylus
 
-@var select   emoji_b    'Reduce big emoji size' {
-    'Default *': 'default ',
-    'Medium   ': 'medium  ',
-    'Normal   ': 'normal  ',
-    'Small    ': 'small   ',
-}
 @var select   theme      'Base color-scheme toggle' {
     'Custom colors   *': 'custom',
     'Dark blue (old)  ': 'old',
@@ -72,7 +66,14 @@
     'Facebook  ': 'fb-like ',
 }
 @var checkbox fb_compact 'Collapse messages when `fb-like` tail style and `RTL` tweaks are enabled' 1
+
 @var range    emoji_o    'Emojis opacity' [0.8, 0.0, 1, 0.01]
+@var select   emoji_b    'Reduce big emoji size' {
+    'Default *': 'default ',
+    'Medium   ': 'medium  ',
+    'Normal   ': 'normal  ',
+    'Small    ': 'small   ',
+}
 
 @var checkbox ow_imsg    'Override incoming message bubble color' 0
 @var color    next_imsg  'Incoming message bubble color' #16191e
@@ -307,7 +308,7 @@ OM = next_omsg
         /// Override incoming message bubble colors.
         --msg-in-0:     (ow_imsg) ? ig-0         : var(--bg-4)
         --msg-in-0-rgb: (ow_imsg) ? to_rgb(ig-0) : var(--bg-4-rgb)
-        --msg-in-1:     (ow_imsg) ? ig-1         : var(--bg-e)
+        --msg-in-1:     (ow_imsg) ? ig-1         : var(--bg-3)
         --msg-in-1-rgb: (ow_imsg) ? to_rgb(ig-1) : var(--bg-3-rgb)
 
         /// Override outgoing message bubble colors.
