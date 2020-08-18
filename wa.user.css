@@ -6,14 +6,14 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      3.0.0-rc.5
+@version      3.0.0-rc.6
 @license      MIT
 ==/UserStyle== */
 
 @-moz-document domain('web.whatsapp.com') {
   :root:not(#z),
   .dark:not(#z) {
-    --version: 'Dark-WhatsApp Lite 3.0.0-rc.5 — August 14th, 2020';
+    --version: 'Dark-WhatsApp Lite 3.0.0-rc.6 — August 18th, 2020';
     --message: 'The v3 is almost here! Updated to `v2.2033.7` of WhatsApp. Delaying the full-release until next week or the week after – see the changelog for more info. ';
     --changes: '\A\A https://github.com/vednoc/dark-whatsapp';
     --ui-font: 'font_name', Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif !important;
@@ -525,12 +525,12 @@
     --fg-5-rgb: 143,143,143;
     --ac-0: #7289da !important;
     --ac-0-rgb: 114,137,218;
-    --ac-1: #687dc6 !important;
-    --ac-1-rgb: 104,125,198;
-    --ac-2: #5f71b3 !important;
-    --ac-2-rgb: 95,113,179;
-    --ac-3: #5566a0 !important;
-    --ac-3-rgb: 85,102,160;
+    --ac-1: #6377bd !important;
+    --ac-1-rgb: 99,119,189;
+    --ac-2: #5566a0 !important;
+    --ac-2-rgb: 85,102,160;
+    --ac-3: #475483 !important;
+    --ac-3-rgb: 71,84,131;
     --ac-4: #343d5c !important;
     --ac-4-rgb: 52,61,92;
     --ac-5: #2a3249 !important;
@@ -650,7 +650,7 @@
     }
   }
   *::-webkit-scrollbar-thumb {
-    background-color: #5566a0 !important;
+    background-color: #475483 !important;
   }
   *::-webkit-scrollbar-track {
     background-color: var(--shadow) !important;
@@ -1096,155 +1096,155 @@
   [class *= ' color-'] > span:nth-child(2) {
     color: var(--fg-3) !important;
   }
-  #main :not(#z) .color-0 {
+  #main .color-0 {
     color: #268bd2 !important;
   }
-  #main :not(#z) .color-1 {
+  #main .color-1 {
     color: #2aa198 !important;
   }
-  #main :not(#z) .color-2 {
+  #main .color-2 {
     color: #859900 !important;
   }
-  #main :not(#z) .color-3 {
+  #main .color-3 {
     color: #6c71c4 !important;
   }
-  #main :not(#z) .color-4 {
+  #main .color-4 {
     color: #f33682 !important;
   }
-  #main :not(#z) .color-5 {
+  #main .color-5 {
     color: #dc322f !important;
   }
-  #main :not(#z) .color-6 {
+  #main .color-6 {
     color: #df4b16 !important;
   }
-  #main :not(#z) .color-7 {
+  #main .color-7 {
     color: #e5c512 !important;
   }
-  #main :not(#z) .color-8 {
+  #main .color-8 {
     color: #268bd2 !important;
     filter: hue-rotate(20deg);
   }
-  #main :not(#z) .color-9 {
+  #main .color-9 {
     color: #2aa198 !important;
     filter: hue-rotate(20deg);
   }
-  #main :not(#z) .color-10 {
+  #main .color-10 {
     color: #859900 !important;
     filter: hue-rotate(20deg);
   }
-  #main :not(#z) .color-11 {
+  #main .color-11 {
     color: #6c71c4 !important;
     filter: hue-rotate(20deg);
   }
-  #main :not(#z) .color-12 {
+  #main .color-12 {
     color: #f33682 !important;
     filter: hue-rotate(20deg);
   }
-  #main :not(#z) .color-13 {
+  #main .color-13 {
     color: #dc322f !important;
     filter: hue-rotate(20deg);
   }
-  #main :not(#z) .color-14 {
+  #main .color-14 {
     color: #df4b16 !important;
     filter: hue-rotate(20deg);
   }
-  #main :not(#z) .color-15 {
+  #main .color-15 {
     color: #268bd2 !important;
     filter: hue-rotate(40deg);
   }
-  #main :not(#z) .color-16 {
+  #main .color-16 {
     color: #2aa198 !important;
     filter: hue-rotate(40deg);
   }
-  #main :not(#z) .color-17 {
+  #main .color-17 {
     color: #859900 !important;
     filter: hue-rotate(40deg);
   }
-  #main :not(#z) .color-18 {
+  #main .color-18 {
     color: #6c71c4 !important;
     filter: hue-rotate(40deg);
   }
-  #main :not(#z) .color-19 {
+  #main .color-19 {
     color: #f33682 !important;
     filter: hue-rotate(40deg);
   }
-  #main :not(#z) .color-20 {
+  #main .color-20 {
     color: #dc322f !important;
     filter: hue-rotate(40deg);
   }
-  #main :not(#z) .bg-color-0 {
+  #main .bg-color-0 {
     background-color: #268bd2 !important;
   }
-  #main :not(#z) .bg-color-1 {
+  #main .bg-color-1 {
     background-color: #2aa198 !important;
   }
-  #main :not(#z) .bg-color-2 {
+  #main .bg-color-2 {
     background-color: #859900 !important;
   }
-  #main :not(#z) .bg-color-3 {
+  #main .bg-color-3 {
     background-color: #6c71c4 !important;
   }
-  #main :not(#z) .bg-color-4 {
+  #main .bg-color-4 {
     background-color: #f33682 !important;
   }
-  #main :not(#z) .bg-color-5 {
+  #main .bg-color-5 {
     background-color: #dc322f !important;
   }
-  #main :not(#z) .bg-color-6 {
+  #main .bg-color-6 {
     background-color: #df4b16 !important;
   }
-  #main :not(#z) .bg-color-7 {
+  #main .bg-color-7 {
     background-color: #e5c512 !important;
   }
-  #main :not(#z) .bg-color-8 {
+  #main .bg-color-8 {
     background-color: #268bd2 !important;
     filter: hue-rotate(20deg);
   }
-  #main :not(#z) .bg-color-9 {
+  #main .bg-color-9 {
     background-color: #2aa198 !important;
     filter: hue-rotate(20deg);
   }
-  #main :not(#z) .bg-color-10 {
+  #main .bg-color-10 {
     background-color: #859900 !important;
     filter: hue-rotate(20deg);
   }
-  #main :not(#z) .bg-color-11 {
+  #main .bg-color-11 {
     background-color: #6c71c4 !important;
     filter: hue-rotate(20deg);
   }
-  #main :not(#z) .bg-color-12 {
+  #main .bg-color-12 {
     background-color: #f33682 !important;
     filter: hue-rotate(20deg);
   }
-  #main :not(#z) .bg-color-13 {
+  #main .bg-color-13 {
     background-color: #dc322f !important;
     filter: hue-rotate(20deg);
   }
-  #main :not(#z) .bg-color-14 {
+  #main .bg-color-14 {
     background-color: #df4b16 !important;
     filter: hue-rotate(20deg);
   }
-  #main :not(#z) .bg-color-15 {
+  #main .bg-color-15 {
     background-color: #268bd2 !important;
     filter: hue-rotate(40deg);
   }
-  #main :not(#z) .bg-color-16 {
+  #main .bg-color-16 {
     background-color: #2aa198 !important;
     filter: hue-rotate(40deg);
   }
-  #main :not(#z) .bg-color-17 {
+  #main .bg-color-17 {
     background-color: #859900 !important;
     filter: hue-rotate(40deg);
   }
-  #main :not(#z) .bg-color-18 {
+  #main .bg-color-18 {
     background-color: #6c71c4 !important;
     filter: hue-rotate(40deg);
   }
-  #main :not(#z) .bg-color-19 {
+  #main .bg-color-19 {
     background-color: #f33682 !important;
     filter: hue-rotate(40deg);
   }
-  #main :not(#z) .bg-color-20 {
+  #main .bg-color-20 {
     background-color: #dc322f !important;
     filter: hue-rotate(40deg);
   }
@@ -1334,6 +1334,10 @@
     #side .eJ0yJ ._1582E .m61XR ._15G96 {
       margin: 0;
     }
+    [dir = 'RTL'] #side .eJ0yJ ._1582E .m61XR {
+      left: unset !important;
+      right: -77px !important;
+    }
     #side .eJ0yJ ._1582E .m61XR ._31gEB {
       border: 4px solid var(--bg-2);
     }
@@ -1363,6 +1367,9 @@
       box-shadow: inset 0 0 0 3px #859900 !important;
       animation: 2s pulse infinite !important;
     }
+    [dir = 'RTL'] ._616fG::before {
+      left: 62px !important;
+    }
     #side .eJ0yJ .zFnXi {
       padding: 1.5px;
       z-index: 101;
@@ -1371,6 +1378,9 @@
       border: 3px solid var(--bg-2);
       background-color: var(--bg-1) !important;
       border-radius: 50%;
+    }
+    [dir = 'RTL'] #side .eJ0yJ .zFnXi {
+      margin-right: -35px !important;
     }
     #side .eJ0yJ .zFnXi > span > svg {
       padding: 2px;
@@ -1420,6 +1430,14 @@
   .message-in .message-text-link::after,
   .message-out .message-text-link::after {
     content: unset !important;
+  }
+  .message-in ._20sYJ,
+  .message-out ._20sYJ {
+    padding-bottom: 0;
+  }
+  .message-in > div:nth-child(2),
+  .message-out > div:nth-child(2) {
+    min-width: 56px;
   }
   .gm-style img[src *= 'images/google'],
   .gm-style img[src *= 'maps.googleapis.com'],
