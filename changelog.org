@@ -1,6 +1,22 @@
 #+STARTUP: nofold
 
 * Changelog
+** 3.0.0-rc.6 [2020-08-18 Tue]
+Added an option to set size of big emojis, fixed compact mode indicators in RTL
+mode, and a lot more logic and code style refactoring.
+
+*** Added
+- An option to choose the size of big emojis
+  - Uses WhatsApp's native values by default
+
+*** Improved
+- More logic and code style refactoring
+- Increased =min-width= for message bubbles to avoid small issues
+- Better contrast for =ac1–ac3= accent color variables
+
+*** Fixed
+- Compact mode indicators now have proper positions in RTL UI ([[https://github.com/vednoc/dark-whatsapp/issues/175][#175]])
+
 ** 3.0.0-rc.5 [2020-08-14 Fri]
 Added missing colors from the last two WhatsApp updates, refactored a lot of
 logic for color generator, and fixed a few things that broke in new update.
