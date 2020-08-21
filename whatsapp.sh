@@ -8,6 +8,22 @@
     exit 1
 }
 
+while getopts "cfh:" option; do
+    case $option in
+        c) echo "Compiling..."
+            # TODO: Implement =compile= function.
+            ;;
+
+        f) echo "Converting..."
+            convert
+            ;;
+
+        *) echo "Usage..."
+            # TODO: Implement =usage= function.
+            ;;
+    esac
+done
+
 convert() {
     input="wa.user.css"
     output="darkmode.css"
