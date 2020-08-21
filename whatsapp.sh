@@ -8,12 +8,12 @@
     exit 1
 }
 
-echo 'Converting...'
+convert() {
+    input="wa.user.css"
+    output="darkmode.css"
 
-input="wa.user.css"
-output="darkmode.css"
+    sed -n '/:root/,$p' $input | sed 's/^\ \ //; $d' > $output
 
-sed -n '/:root/,$p' $input | sed 's/^\ \ //; $d' > $output
-
-[ -e $output ] && echo "Done! $output is ready." \
-               || echo 'File not found!' >&2
+    [ -e $output ] && echo "Done! $output is ready." \
+                   || echo 'File not found!' >&2
+}
