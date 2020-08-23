@@ -8,6 +8,16 @@
     exit 1
 }
 
+convert() {
+    input="wa.user.css"
+    output="darkmode.css"
+
+    sed -n '/:root/,$p' $input | sed 's/^\ \ //; $d' > $output
+
+    [ -e $output ] && echo "Done! $output is ready." \
+                   || echo 'File not found!' >&2
+}
+
 while getopts "cfh:" option; do
     case $option in
         c) echo "Compiling..."
@@ -24,12 +34,5 @@ while getopts "cfh:" option; do
     esac
 done
 
-convert() {
-    input="wa.user.css"
-    output="darkmode.css"
 
-    sed -n '/:root/,$p' $input | sed 's/^\ \ //; $d' > $output
 
-    [ -e $output ] && echo "Done! $output is ready." \
-                   || echo 'File not found!' >&2
-}
