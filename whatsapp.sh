@@ -9,6 +9,8 @@
 }
 
 convert() {
+    echo "Converting..."
+
     input="wa.user.css"
     output="darkmode.css"
 
@@ -18,15 +20,13 @@ convert() {
                    || echo 'File not found!' >&2
 }
 
-while getopts "cfh:" option; do
+while getopts "cfh" option; do
     case $option in
         c) echo "Compiling..."
             # TODO: Implement =compile= function.
             ;;
 
-        f) echo "Converting..."
-            convert
-            ;;
+        "f") CONVERT=1 ;;
 
         *) echo "Usage..."
             # TODO: Implement =usage= function.
@@ -34,5 +34,4 @@ while getopts "cfh:" option; do
     esac
 done
 
-
-
+[ -n "${CONVERT+x}" ] && convert
