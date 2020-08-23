@@ -8,6 +8,23 @@
     exit 1
 }
 
+help() {
+    echo "\
+Dark-WhatsApp helper script.
+
+Usage:
+    sh whatsapp.sh [-cfh]
+
+Options:
+    -c      Compile custom ~wa.user.styl~ userstyle.
+    -f      Convert ~wa.user.css~ to ~darkmode.css~.
+    -h      Print help and exit.
+
+Project repository:
+    https://github.com/vednoc/dark-whatsapp
+"
+}
+
 convert() {
     echo "Converting..."
 
@@ -28,10 +45,9 @@ while getopts "cfh" option; do
 
         "f") CONVERT=1 ;;
 
-        *) echo "Usage..."
-            # TODO: Implement =usage= function.
-            ;;
+        "h") HELP=1 ;;
     esac
 done
 
+[ -n "${HELP+x}" ] && help
 [ -n "${CONVERT+x}" ] && convert
