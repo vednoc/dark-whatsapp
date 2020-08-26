@@ -67,7 +67,7 @@
 }
 @var checkbox fb_compact 'Collapse messages for `fb-like` tail style' 1
 
-@var range    emoji_o    'Emojis opacity' [0.8, 0.0, 1, 0.01]
+@var range    emoji_o    'Emoji opacity' [0.8, 0.0, 1, 0.01]
 @var select   emoji_b    'Reduce big emoji size' {
     'Default *': 'default ',
     'Medium   ': 'medium  ',
@@ -271,7 +271,7 @@ OM = next_omsg
         /// App width.
         --app-width: app_width
 
-        /// Default emoji opacity.
+        /// Emoji opacity.
         --emoji-o: emoji_o
 
         /// App background.
@@ -1146,7 +1146,7 @@ OM = next_omsg
         }
     }
 
-    // App background/misc styles.
+    // Various app styles.
     #app > div {
         &::after {
             /// Remove app background in fullscreen mode or low-res screens.
@@ -1203,7 +1203,7 @@ OM = next_omsg
         }
     }
 
-    // Shared app styles.
+    // Shared app drawer styles.
     #app > div > [tabindex] {
         c: 0 0 bg1
 
