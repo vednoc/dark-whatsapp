@@ -65,7 +65,7 @@
     'Rounded   ': 'rounded ',
     'Facebook  ': 'fb-like ',
 }
-@var checkbox fb_compact 'Collapse messages when `fb-like` tail style and `RTL` tweaks are enabled' 1
+@var checkbox fb_compact 'Collapse messages for `fb-like` tail style' 1
 
 @var range    emoji_o    'Emojis opacity' [0.8, 0.0, 1, 0.01]
 @var select   emoji_b    'Reduce big emoji size' {
@@ -1973,8 +1973,8 @@ OM = next_omsg
             }
         }
 
-        /// Feat -> Collapse messages for `fb-like` tail style and `RTL` tweaks.
-        if (rtl_format && tail_style == 'fb-like') {
+        /// Feat -> Collapse messages for `fb-like` tail style.
+        if (fb_compact && tail_style == 'fb-like') {
             rtl = '.eRacY[dir = "rtl"]'
             ltr = '._2oWZe'
 
