@@ -941,6 +941,11 @@ OM = next_omsg
                 &-track { c: 0 0 var(--shadow) i }
             }
         }
+
+        /// Loading page.
+        /// NOTE: Keep it because there are two `startup` states; one of them
+        /// is *not* styled by default, so it leads to white background flash.
+        /[id *= 'startup'] { c: 0 0 bg0 }
     }
 
     // Feat -> Rounded corners for avatars.
@@ -1067,22 +1072,6 @@ OM = next_omsg
 
                 /// Uniform look with other modals. @upstream
                 --white-rgb: var(--fg-2-rgb)
-            }
-        }
-    }
-
-    // Loading page.
-    [id *= 'startup'] {
-        c: 0 0 bg0
-
-        /// Progress bar.
-        /progress {
-            c: 0 0 bg2
-            &[value]::-moz-progress-bar { c: 0 0 ac0 }
-            /::-moz-progress-bar { c: 0 0 bg4 }
-            /::-webkit-progress {
-                &-bar { c: 0 0 bg4 }
-                &-value { c: 0 0 ac0 }
             }
         }
     }
