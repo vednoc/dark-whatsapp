@@ -946,6 +946,18 @@ OM = next_omsg
         /// NOTE: Keep it because there are two `startup` states; one of them
         /// is *not* styled by default, so it leads to white background flash.
         /[id *= 'startup'] { c: 0 0 bg0 }
+
+        /// Progress bars.
+        /// NOTE: There is still flashing of unstyled content. Sigh.
+        /progress {
+            c: 0 0 bg2
+            &[value]::-moz-progress-bar { c: 0 0 ac0 }
+            /::-moz-progress-bar { c: 0 0 bg4 }
+            /::-webkit-progress {
+                &-bar { c: 0 0 bg4 }
+                &-value { c: 0 0 ac0 }
+            }
+        }
     }
 
     // Feat -> Rounded corners for avatars.
