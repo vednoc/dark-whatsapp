@@ -6,16 +6,16 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      3.0.0-rc.6
+@version      3.0.0-rc.7
 @license      MIT
 ==/UserStyle== */
 
 @-moz-document domain('web.whatsapp.com') {
   :root:not(#z),
   .dark:not(#z) {
-    --version: 'Dark-WhatsApp Lite 3.0.0-rc.6 — August 18th, 2020';
-    --message: 'The v3 is almost here! Updated to `v2.2033.7` of WhatsApp. Delaying the full-release until next week or the week after – see the changelog for more info. ';
-    --changes: '\A\A https://github.com/vednoc/dark-whatsapp';
+    --version: 'Dark-WhatsApp Lite 3.0.0-rc.7 — August 27th, 2020';
+    --message: 'The v3 is almost here! Updated to `v2.2035.12` of WhatsApp. \A\A I began working on an alternative to userstyles.org called userstyles.world. It is in very early stages, but I decided to spread the word to hear about what people think – see the changelog for more info. ';
+    --changes: '\A\A Visit the site at: https://userstyles.world\A\A https://github.com/vednoc/dark-whatsapp\A\A P.S. CSS can not add links, only fake/pseudo text.';
     --ui-font: 'font_name', Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif !important;
     --r-menus: 4px;
     --r-inputs: 24px;
@@ -531,10 +531,10 @@
     --ac-2-rgb: 85,102,160;
     --ac-3: #475483 !important;
     --ac-3-rgb: 71,84,131;
-    --ac-4: #343d5c !important;
-    --ac-4-rgb: 52,61,92;
-    --ac-5: #2a3249 !important;
-    --ac-5-rgb: 42,50,73;
+    --ac-4: #2f3756 !important;
+    --ac-4-rgb: 47,55,86;
+    --ac-5: #282f46 !important;
+    --ac-5-rgb: 40,47,70;
     --white: #fff;
     --white-rgb: 255,255,255;
     --red: #dc322f;
@@ -550,7 +550,7 @@
     --t: transparent;
     --shadow: rgba(0,0,0,0.145);
     --bshadow: 0 2px 4px var(--shadow);
-    --intro-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='256' width='256'><g stroke='\%237289da'><path d='M128.4901 30.8659a95.4375 95.4375 0 00-95.4375 95.4375 95.4375 95.4375 0 0014.168 50.0332L35.6698 221.276l44.7989-12.498a95.4375 95.4375 0 0048.0214 12.9629 95.4375 95.4375 0 0095.4375-95.4375 95.4375 95.4375 0 00-95.4375-95.4375z' fill='\%231f232a' fill-rule='evenodd' stroke-width='18' stroke-linecap='square'/><path d='M97.8104 79.8463c-4.9671.0406-13.5028 2.0796-17.7812 14.8946-6.8318 20.4631 12.5737 43.3028 27.2438 57.4735 14.7975 14.2938 43.1559 26.507 58.0098 21.08 20.5566-8.9065 15.2475-22.9479 15.2475-22.9479l-22.9727-11.0878s-2.062-1.206-3.4146.5737c-1.0042 1.3213-9.4409 11.3755-9.4409 11.3755s-1.449 1.668-3.827.7402c-5.7574-2.2462-14.2018-7.4856-18.5314-10.7795-6.8875-5.2399-12.957-13.0846-16.9473-19.668-1.2556-2.5597.6953-4.709.6953-4.709s6.0303-8.2629 7.0176-9.5566c1.0068-1.3194.2539-3.3633.2539-3.3633l-10.539-23.2285s-2.0334-.8212-5.0138-.7969z' fill='\%237289da' stroke-linejoin='round'/></g></svg>");
+    --intro-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='256' width='256'><g stroke='\%237289da'><path d='M128.4901 30.8659a95.4375 95.4375 0 00-95.4375 95.4375 95.4375 95.4375 0 0014.168 50.0332L35.6698 221.276l44.7989-12.498a95.4375 95.4375 0 0048.0214 12.9629 95.4375 95.4375 0 0095.4375-95.4375 95.4375 95.4375 0 00-95.4375-95.4375z' fill='\%23282d37' fill-rule='evenodd' stroke-width='18' stroke-linecap='square'/><path d='M97.8104 79.8463c-4.9671.0406-13.5028 2.0796-17.7812 14.8946-6.8318 20.4631 12.5737 43.3028 27.2438 57.4735 14.7975 14.2938 43.1559 26.507 58.0098 21.08 20.5566-8.9065 15.2475-22.9479 15.2475-22.9479l-22.9727-11.0878s-2.062-1.206-3.4146.5737c-1.0042 1.3213-9.4409 11.3755-9.4409 11.3755s-1.449 1.668-3.827.7402c-5.7574-2.2462-14.2018-7.4856-18.5314-10.7795-6.8875-5.2399-12.957-13.0846-16.9473-19.668-1.2556-2.5597.6953-4.709.6953-4.709s6.0303-8.2629 7.0176-9.5566c1.0068-1.3194.2539-3.3633.2539-3.3633l-10.539-23.2285s-2.0334-.8212-5.0138-.7969z' fill='\%237289da' stroke-linejoin='round'/></g></svg>");
   }
   html > body {
     background-image: none !important;
@@ -655,6 +655,24 @@
   *::-webkit-scrollbar-track {
     background-color: var(--shadow) !important;
   }
+  [id *= 'startup'] {
+    background-color: var(--bg-0) !important;
+  }
+  progress {
+    background-color: var(--bg-2) !important;
+  }
+  progress[value]::-moz-progress-bar {
+    background-color: var(--ac-0) !important;
+  }
+  ::-moz-progress-bar {
+    background-color: var(--bg-4) !important;
+  }
+  ::-webkit-progress-bar {
+    background-color: var(--bg-4) !important;
+  }
+  ::-webkit-progress-value {
+    background-color: var(--ac-0) !important;
+  }
   ._1BjNO[style],
   ._1S7ke {
     background-color: var(--bg-5) !important;
@@ -750,24 +768,6 @@
   }
   .overlay._3Os9f [data-animate-modal-popup] [data-icon = 'back'] path {
     fill: var(--fg-1) !important;
-  }
-  [id *= 'startup'] {
-    background-color: var(--bg-0) !important;
-  }
-  progress {
-    background-color: var(--bg-2) !important;
-  }
-  progress[value]::-moz-progress-bar {
-    background-color: var(--ac-0) !important;
-  }
-  ::-moz-progress-bar {
-    background-color: var(--bg-4) !important;
-  }
-  ::-webkit-progress-bar {
-    background-color: var(--bg-4) !important;
-  }
-  ::-webkit-progress-value {
-    background-color: var(--ac-0) !important;
   }
   .landing-wrapper::before {
     content: unset !important;
