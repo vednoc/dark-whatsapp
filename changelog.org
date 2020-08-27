@@ -1,6 +1,32 @@
 #+STARTUP: nofold
 
 * Changelog
+** 3.0.0-rc.7 [2020-08-27 Thu]
+Not many changes in this release; just updating styles to WhatsApp `v2.2035.12`
+update, and adding an announcement for my new project --- [[https://userstyles.world/][UserStyles.World]] ---
+that I've launched a few days ago as an alternative to =userstyles.org=, which has
+been quite unusable for many months now.
+
+If you'd like to contribute to development of USW, do check out the GitHub
+[[https://github.com/vednoc/userstyles.world][project repository]]. If you're a userstyle creator, there's a section on
+[[https://github.com/openstyles/stylus/wiki/UserCSS-authors][OpenStyles/Stylus Wiki]] in regards to writing UserCSS userstyles that will allow
+you to host them on GitHub/GitLab or elsewhere. The process is pretty easy and
+well documented, but I'll be adding something simpler to USW at some point.
+
+There is just a handful of userstyles added at the moment since I'm a one-man
+team (at the time of writing), and other priorities on the list take a lot of my
+time to research and implement. Here's a short [[https://github.com/vednoc/userstyles.world/issues/1][Roadmap]] to keep track of ideas.
+
+*** Docs
+- Revised code comments
+
+*** Improved
+- Switched to a different logo background color for theme intro image
+- Updated color generation rules of ac4–5 variables for outgoing message bubbles
+
+*** Fixed
+- Updated logic for collapsed messages when =fb-like= tails are active
+
 ** 3.0.0-rc.6 [2020-08-18 Tue]
 Added an option to set size of big emojis, fixed compact mode indicators in RTL
 mode, and a lot more logic and code style refactoring.
