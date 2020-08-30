@@ -25,6 +25,18 @@ Project repository:
 "
 }
 
+compile() {
+    echo "Compiling..."
+
+    temp="meta.styl"
+    input="wa.user.styl"
+    output="wa.custom.css"
+
+    sed -n '/@-/,$p; 1i @import("metadata.styl");' $input > $temp
+
+    stylus $temp -o $output
+}
+
 convert() {
     echo "Converting..."
 
@@ -39,9 +51,7 @@ convert() {
 
 while getopts "cfh" option; do
     case $option in
-        c) echo "Compiling..."
-            # TODO: Implement =compile= function.
-            ;;
+        "c") COMPILE=1 ;;
 
         "f") CONVERT=1 ;;
 
@@ -50,4 +60,5 @@ while getopts "cfh" option; do
 done
 
 [ -n "${HELP+x}" ] && help
+[ -n "${COMPILE+x}" ] && compile
 [ -n "${CONVERT+x}" ] && convert
