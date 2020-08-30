@@ -30,13 +30,13 @@ compile() {
 
     temp="meta.styl"
     input="wa.user.styl"
-    output="wa.custom.css"
+    output="custom.user.css"
 
     sed -n '/@-/,$p; 1i @import("metadata.styl");' $input > $temp
 
     if command -v stylus >/dev/null; then
         stylus $temp -o $output
-        # TODO: Cleanup after compiling.
+        rm $temp
     elif ! command -v npm >/dev/null; then
         echo "You're missing ~npm~ and ~Node.js~ libraries." >&2
     else
@@ -47,7 +47,12 @@ compile() {
 convert() {
     echo "Converting..."
 
-    input="wa.user.css"
+    if [ -n "${COMPILE+x}" ]; then
+        input="custom.user.css"
+    else
+        input="wa.user.css"
+    fi
+
     output="darkmode.css"
 
     sed -n '/:root/,$p' $input | sed 's/^\ \ //; $d' > $output
