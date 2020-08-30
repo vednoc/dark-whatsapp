@@ -1,10 +1,9 @@
 #!/usr/bin/env sh
-
-# Basic tool to convert `wa.user.css` to `darkmode.css` to
-# be then used with Ferdi/Franz/etc.
+# Dark-WhatsApp helper script.
+# Part of `https://github.com/vednoc/dark-whatsapp` project.
 
 [ $# -eq 0 ] && {
-    echo "Invalid arguments. Usage: $0 -h" >&2
+    echo "Invalid arguments. Usage: sh $0 -h" >&2
     exit 1
 }
 
@@ -65,17 +64,14 @@ convert() {
     sed -n '/:root/,$p' $input | sed 's/^\ \ //; $d' > $output
 
     [ -e $output ] && echo "Done! $output is ready." \
-                   || echo 'File not found!' >&2
+                   || echo "File not found!" >&2
 }
 
 while getopts "rcfh" option; do
-    case $option in
+    case "$option" in
         "r") REMOVE=1 ;;
-
         "c") COMPILE=1 ;;
-
         "f") CONVERT=1 ;;
-
         "h") HELP=1 ;;
     esac
 done
