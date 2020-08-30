@@ -34,7 +34,14 @@ compile() {
 
     sed -n '/@-/,$p; 1i @import("metadata.styl");' $input > $temp
 
-    stylus $temp -o $output
+    if command -v stylus >/dev/null; then
+        stylus $temp -o $output
+        # TODO: Cleanup after compiling.
+    elif ! command -v npm >/dev/null; then
+        echo "You're missing ~npm~ and ~Node.js~ libraries." >&2
+    else
+        echo "Missing ~stylus~ executable in your \$PATH." >&2
+    fi
 }
 
 convert() {
