@@ -29,7 +29,7 @@ Documentation:
 remove() {
     echo "Removing files..."
 
-    rm darkmode.css custom.user.css
+    rm temp.styl darkmode.css custom.user.css
 }
 
 compile() {
@@ -81,6 +81,6 @@ while getopts "rcfh" option; do
 done
 
 [ -n "${HELP+x}" ] && help
-[ -n "${REMOVE+x}" ] && reset
+[ -n "${REMOVE+x}" ] && remove
 [ -n "${COMPILE+x}" ] && compile
 [ -n "${CONVERT+x}" ] && convert
