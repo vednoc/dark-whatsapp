@@ -34,11 +34,11 @@ remove() {
 compile() {
     echo "Compiling..."
 
-    temp="meta.styl"
+    temp="temp.styl"
     input="wa.user.styl"
     output="custom.user.css"
 
-    sed -n '/@-/,$p; 1i @import("metadata.styl");' $input > $temp
+    sed -n '/^\/\//,$p; 1i @import("metadata.styl");' $input > $temp
 
     if command -v stylus >/dev/null; then
         stylus $temp -o $output
