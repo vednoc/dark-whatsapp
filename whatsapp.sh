@@ -2,9 +2,8 @@
 # Dark-WhatsApp helper script.
 # Part of `https://github.com/vednoc/dark-whatsapp` project.
 
-[ $# -eq 0 ] && {
-    echo "Invalid arguments. Usage: sh $0 -h" >&2
-    exit 1
+usage() {
+    echo "Invalid arguments. See help with: $0 -h" >&2
 }
 
 help() {
@@ -67,12 +66,15 @@ convert() {
                    || echo "File not found!" >&2
 }
 
+[ $# -eq 0 ] && usage
+
 while getopts "rcfh" option; do
     case "$option" in
         "r") REMOVE=1 ;;
         "c") COMPILE=1 ;;
         "f") CONVERT=1 ;;
         "h") HELP=1 ;;
+        "*") usage ;;
     esac
 done
 
