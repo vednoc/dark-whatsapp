@@ -5,28 +5,194 @@
 @homepageURL  https://github.com/vednoc/dark-whatsapp
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      3.0.0-rc.6
+@version      3.0.0-rc.7
 @license      MIT
 ==/UserStyle== */
 
+/*!
+ * This is a custom-compiled version of DWA.
+ * Documentation for options is available on project wiki's ~Configuration~ page:
+ * https://github.com/vednoc/dark-whatsapp/wiki/Configuration
+ */
 
 // Base color-scheme toggle.
-/// Options: 'custom', 'old', 'new'
-theme = 'custom'
+/// Options: 'custom' --- same as old option, but you can change base colors
+///          'old'    --- dark blue colors
+///          'new     --- dark gray colors
+theme = 'old'
 
-// Base Background/Foreground/Accent colors for 'custom' theme option.
+// Base Background/Foreground/Accent colors for custom ~theme~ option.
 next_bg = #1f232a
 next_fg = #eeeeee
 next_ac = #7289da
 
 // Adjust generated tones for Background/Foreground/Accent colors.
-/// Options: bg range from -25 to 25, step by 0.1, 0% default value
-///          fg range from -25 to 25, step by 0.1, 0% default value
-///          ac range from   0 to 25, step by   1, 0% default value
+/// Options: bg --- -25%--25%, step by 0.1, 0% default value
+///          fg --- -25%--25%, step by 0.1, 0% default value
+///          ac ---   0%--25%, step by   1, 0% default value
 next_bg_a = 0%
 next_fg_a = 0%
 next_ac_a = 0%
 
-BG = next_bg
-FG = next_fg
-AC = next_ac
+// UI font.
+ui_font = 'font_name'
+
+// App width.
+app_width = 1396px
+
+// Fullscreen mode.
+fullscreen = 0
+
+// Compact mode.
+app_c_m = 1
+
+// Compact mode breakpoint.
+app_c_m_w = 720px
+
+// Compact mode hover-on delay.
+app_c_m_h = 0.6s
+
+// Compact mode hover-off delay.
+app_c_m_d = 1.2s
+
+// Notification alerts.
+/// Options: show          --- Show all notifications
+///          hide          --- Hide all notifications
+///          notifications --- Hide only notifications
+alerts = 'show'
+
+// Consistent drawer headers.
+app_c_h = 1
+
+/// Rounded corners for various menus.
+radius-g = 4px
+
+/// Rounded corners for input bar.
+radius-i = 24px
+
+// Rounded corners for avatars.
+/// Options: 0--50%, step by 1, 50% default value
+radius-a = 50%
+
+// App background.
+/// Options: 'bg-high' --- Theme image with 12px blur
+///          'bg-low'  --- Theme image with 6px blur
+///          'bg-none' --- Theme image without blur
+///          'custom'  --- Custom background image
+///          'default' --- Default stripe background
+///          'none'    --- No background image
+app_image = 'bg-high'
+
+// Custom app background image.
+image_url = url('https://images.unsplash.com/photo-1434569117012-ce134ee1a088?fit=crop&w=1280&h=720&q=80')
+
+// App background image opacity.
+/// Options: 0--1, step by 0.1, 0.4 default value
+bg_opacity = 0.4
+
+// App background image blur.
+/// Options: 0--50px, step by 1, 0px default value
+bg_blur = 0px
+
+// App background image hue.
+/// Options: 0--360deg, step by 1, 320deg default value
+bg_hue = 320deg
+
+// App background image inverted colors.
+/// Options: 0--1, step by 0.1, 0 default value
+bg_invert = 0
+
+// App background image size.
+bg_size = cover
+
+// App background image position.
+bg_pos = center
+
+// App background image repetition.
+bg_rep = no-repeat
+
+// Message tails.
+/// Options: 'default', 'minimal', 'rounded', 'fb-like'
+tail_style = 'default'
+
+// Collapse messages when `fb-like` tail style is enabled.
+fb_compact = 1
+
+// Emoji non-hover opacity.
+/// Options: 0--1, step by 0.1, 0.8 default value
+emoji_o = 0.8
+
+// Reduce big emoji size.
+/// Options: 'default', 'medium', 'normal', 'small'
+emoji_b = 'default'
+
+// Override incoming message bubble color.
+ow_imsg = 0
+
+// Incoming message bubble color.
+next_imsg = #16191e
+
+// Swap side for incoming message bubble.
+bubble_in = 0
+
+// Override outgoing message bubble color.
+ow_omsg = 0
+
+// Outgoing message bubble color.
+next_omsg = #3b4250
+
+// Swap side for incoming message bubble.
+bubble_out = 0
+
+// Remove empty message headers for RTL messages.
+rtl_header = 1
+
+// Fix formatting for RTL messages.
+rtl_format = 1
+
+// Blur contacts drawer.
+chat_b_c = 0
+
+// Blur chat images/videos and other media.
+chat_b_img = 0
+
+// Blurred media hover-on delay.
+chat_b_in = 0.4s
+
+// Blurred media hover-off delay.
+chat_b_out = 0.2s
+
+// Chat background image.
+chat_bg = 1
+
+// Custom chat background image.
+chat_image = url('https://web.whatsapp.com/img/bg-chat-tile_9e8a2898faedb7db9bf5638405cf81ae.png')
+
+// Chat background image opacity.
+/// Options: 0--1, step by 0.01, 0.15 default value
+chat_bg_o = 0.15
+
+// Chat background image inverted colors.
+/// Options: 0--1, step by 0.01, 0.6 default value
+chat_bg_iv = 0.6
+
+// Chat background image size.
+chat_bg_s = initial
+
+// Chat background image position.
+chat_bg_p = top left
+
+// Chat background image repetition.
+chat_bg_r = repeat
+
+// Override various theme colors.
+yellow  = #e5c512
+orange  = #df4b16
+red     = #dc322f
+magenta = #f33682
+violet  = #6c71c4
+blue    = #268bd2
+cyan    = #2aa198
+green   = #859900
+white   = #ffffff
+sh      = #00000025
