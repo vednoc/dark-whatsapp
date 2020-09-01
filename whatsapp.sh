@@ -6,6 +6,10 @@ usage() {
     echo "Invalid arguments. See help with: $0 -h" >&2
 }
 
+short_help() {
+    help | tail -n +2
+}
+
 help() {
     echo "\
 Dark-WhatsApp helper script.
@@ -68,19 +72,18 @@ convert() {
                    || echo "File not found!" >&2
 }
 
-[ $# -eq 0 ] && usage
+[ $# -eq 0 ] && { echo "No arguments given"; short_help; }
 
 while getopts "rcfh" option; do
     case "$option" in
-        "r") REMOVE=1 ;;
+        "r") REMOVE=1  ;;
         "c") COMPILE=1 ;;
         "f") CONVERT=1 ;;
-        "h") HELP=1 ;;
-        "*") usage ;;
+        "h") help      ;;
+        *) short_help  ;;
     esac
 done
 
-[ -n "${HELP+x}" ] && help
-[ -n "${REMOVE+x}" ] && remove
+[ -n "${REMOVE+x}"  ] && remove
 [ -n "${COMPILE+x}" ] && compile
 [ -n "${CONVERT+x}" ] && convert
