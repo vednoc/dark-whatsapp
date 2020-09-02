@@ -17,10 +17,6 @@
 ## Documentation:
 ##    \033[0;34m https://github.com/vednoc/dark-whatsapp/wiki \033[0m
 
-usage() {
-    echo "Invalid arguments. See help with: $0 -h" >&2
-}
-
 short_help() {
     help | tail -n +2
 }
