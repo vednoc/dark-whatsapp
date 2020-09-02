@@ -83,6 +83,7 @@ while getopts "rcfh" option; do
     esac
 done
 
+# Functions need to run in this order, therefore they are not called in getopts.
 [ -n "${REMOVE+x}"  ] && remove
 [ -n "${COMPILE+x}" ] && compile
 [ -n "${CONVERT+x}" ] && convert
