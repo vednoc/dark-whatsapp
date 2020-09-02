@@ -21,6 +21,7 @@
 @var range    next_bg_a  'Adjust background color tones' [0, -25, 25, 0.1, '%']
 @var range    next_fg_a  'Adjust foreground color tones' [0, -25, 25, 0.1, '%']
 @var range    next_ac_a  'Adjust accent color tones    ' [0,   0, 25,   1, '%']
+@var range    next_sc_a  'Adjust syntax color tones    ' [0,   0, 25,   1, '%']
 
 @var text     ui_font    'UI font' ''font_name''
 @var text     app_width  'App width' 1396px
@@ -117,11 +118,13 @@
 @var color    sh-h       'Color: Shadow heavy         ' #00000035
 
 @var color    _red       'Color: Red                  ' #dc322f
-@var color    _green     'Color: Green                ' #859900
+@var color    _orange    'Color: Orange               ' #df4b16
 @var color    _yellow    'Color: Yellow               ' #e5c512
-@var color    _blue      'Color: Blue                 ' #268bd2
-@var color    _violet    'Color: Violet               ' #6c71c4
+@var color    _green     'Color: Green                ' #859900
 @var color    _cyan      'Color: Cyan                 ' #2aa198
+@var color    _blue      'Color: Blue                 ' #268bd2
+@var color    _magenta   'Color: Magenta              ' #f33682
+@var color    _violet    'Color: Violet               ' #6c71c4
 ==/UserStyle== */
 
 // Color mixin.
@@ -177,6 +180,7 @@ i  = !important
 BA = next_bg_a
 FA = next_fg_a
 AA = next_ac_a
+SA = next_sc_a
 IM = next_imsg
 OM = next_omsg
 
@@ -188,10 +192,12 @@ OM = next_omsg
     /// Color generator rules.
     if (dark(BG)) {
         a1 = (AA + 15); a2 = (AA + 30); a3 = (AA + 45); a4 = (AA + 65); a5 = (AA + 75)
+        s1 = (SA + 15); s2 = (SA + 30); s3 = (SA + 45); s4 = (SA + 65); s5 = (SA + 75)
         b1 = (BA + 10); b2 = (BA - 05); b3 = (BA - 10); b4 = (BA - 15); b5 = (BA - 20)
         f1 = (FA - 10); f2 = (FA + 10); f3 = (FA + 20); f4 = (FA + 30); f5 = (FA + 40)
     } else {
         a1 = (AA + 15); a2 = (AA + 30); a3 = (AA + 45); a4 = (AA + 65); a5 = (AA + 75)
+        s1 = (SA + 15); s2 = (SA + 30); s3 = (SA + 45); s4 = (SA + 65); s5 = (SA + 75)
         b1 = (BA - 10); b2 = (BA + 08); b3 = (BA + 16); b4 = (BA + 24); b5 = (BA + 32)
         f1 = (FA - 05); f2 = (FA - 10); f3 = (FA - 15); f4 = (FA - 20); f5 = (FA - 30)
     }
@@ -236,51 +242,67 @@ OM = next_omsg
         },
         b1: {
             '0': mix(darken(BG,  0%), _red, 0%)
-            '1': mix(darken(BG, 20%), _red, a1)
-            '2': mix(darken(BG, 20%), _red, a2)
-            '3': mix(darken(BG, 20%), _red, a3)
-            '4': mix(darken(BG, 40%), _red, a4)
-            '5': mix(darken(BG, 40%), _red, a5)
+            '1': mix(darken(BG, 20%), _red, s1)
+            '2': mix(darken(BG, 20%), _red, s2)
+            '3': mix(darken(BG, 20%), _red, s3)
+            '4': mix(darken(BG, 40%), _red, s4)
+            '5': mix(darken(BG, 40%), _red, s5)
         },
         b2: {
-            '0': mix(darken(BG,  0%), _green, 0%)
-            '1': mix(darken(BG, 20%), _green, a1)
-            '2': mix(darken(BG, 20%), _green, a2)
-            '3': mix(darken(BG, 20%), _green, a3)
-            '4': mix(darken(BG, 40%), _green, a4)
-            '5': mix(darken(BG, 40%), _green, a5)
+            '0': mix(darken(BG,  0%), _orange, 0%)
+            '1': mix(darken(BG, 20%), _orange, s1)
+            '2': mix(darken(BG, 20%), _orange, s2)
+            '3': mix(darken(BG, 20%), _orange, s3)
+            '4': mix(darken(BG, 40%), _orange, s4)
+            '5': mix(darken(BG, 40%), _orange, s5)
         },
         b3: {
             '0': mix(darken(BG,  0%), _yellow, 0%)
-            '1': mix(darken(BG, 20%), _yellow, a1)
-            '2': mix(darken(BG, 20%), _yellow, a2)
-            '3': mix(darken(BG, 20%), _yellow, a3)
-            '4': mix(darken(BG, 40%), _yellow, a4)
-            '5': mix(darken(BG, 40%), _yellow, a5)
+            '1': mix(darken(BG, 20%), _yellow, s1)
+            '2': mix(darken(BG, 20%), _yellow, s2)
+            '3': mix(darken(BG, 20%), _yellow, s3)
+            '4': mix(darken(BG, 40%), _yellow, s4)
+            '5': mix(darken(BG, 40%), _yellow, s5)
         },
         b4: {
-            '0': mix(darken(BG,  0%), _blue, 0%)
-            '1': mix(darken(BG, 20%), _blue, a1)
-            '2': mix(darken(BG, 20%), _blue, a2)
-            '3': mix(darken(BG, 20%), _blue, a3)
-            '4': mix(darken(BG, 40%), _blue, a4)
-            '5': mix(darken(BG, 40%), _blue, a5)
+            '0': mix(darken(BG,  0%), _green, 0%)
+            '1': mix(darken(BG, 20%), _green, s1)
+            '2': mix(darken(BG, 20%), _green, s2)
+            '3': mix(darken(BG, 20%), _green, s3)
+            '4': mix(darken(BG, 40%), _green, s4)
+            '5': mix(darken(BG, 40%), _green, s5)
         },
         b5: {
-            '0': mix(darken(BG,  0%), _violet, 0%)
-            '1': mix(darken(BG, 20%), _violet, a1)
-            '2': mix(darken(BG, 20%), _violet, a2)
-            '3': mix(darken(BG, 20%), _violet, a3)
-            '4': mix(darken(BG, 40%), _violet, a4)
-            '5': mix(darken(BG, 40%), _violet, a5)
+            '0': mix(darken(BG,  0%), _cyan, 0%)
+            '1': mix(darken(BG, 20%), _cyan, s1)
+            '2': mix(darken(BG, 20%), _cyan, s2)
+            '3': mix(darken(BG, 20%), _cyan, s3)
+            '4': mix(darken(BG, 40%), _cyan, s4)
+            '5': mix(darken(BG, 40%), _cyan, s5)
         },
         b6: {
-            '0': mix(darken(BG,  0%), _cyan, 0%)
-            '1': mix(darken(BG, 20%), _cyan, a1)
-            '2': mix(darken(BG, 20%), _cyan, a2)
-            '3': mix(darken(BG, 20%), _cyan, a3)
-            '4': mix(darken(BG, 40%), _cyan, a4)
-            '5': mix(darken(BG, 40%), _cyan, a5)
+            '0': mix(darken(BG,  0%), _blue, 0%)
+            '1': mix(darken(BG, 20%), _blue, s1)
+            '2': mix(darken(BG, 20%), _blue, s2)
+            '3': mix(darken(BG, 20%), _blue, s3)
+            '4': mix(darken(BG, 40%), _blue, s4)
+            '5': mix(darken(BG, 40%), _blue, s5)
+        },
+        b7: {
+            '0': mix(darken(BG,  0%), _magenta, 0%)
+            '1': mix(darken(BG, 20%), _magenta, s1)
+            '2': mix(darken(BG, 20%), _magenta, s2)
+            '3': mix(darken(BG, 20%), _magenta, s3)
+            '4': mix(darken(BG, 40%), _magenta, s4)
+            '5': mix(darken(BG, 40%), _magenta, s5)
+        },
+        b8: {
+            '0': mix(darken(BG,  0%), _violet, 0%)
+            '1': mix(darken(BG, 20%), _violet, s1)
+            '2': mix(darken(BG, 20%), _violet, s2)
+            '3': mix(darken(BG, 20%), _violet, s3)
+            '4': mix(darken(BG, 40%), _violet, s4)
+            '5': mix(darken(BG, 40%), _violet, s5)
         }
     }
 
@@ -296,6 +318,8 @@ OM = next_omsg
     define('b4-' + key, val, g) for key, val in C.b4
     define('b5-' + key, val, g) for key, val in C.b5
     define('b6-' + key, val, g) for key, val in C.b6
+    define('b7-' + key, val, g) for key, val in C.b7
+    define('b8-' + key, val, g) for key, val in C.b8
 
     /// Generate Stylus-lang helpers for CSS variables.
     define('bg' + key, s('var(--bg-%s)', unquote(key)), g) for key, val in C.bg
@@ -307,6 +331,8 @@ OM = next_omsg
     define('b4' + key, s('var(--b4-%s)', unquote(key)), g) for key, val in C.b4
     define('b5' + key, s('var(--b5-%s)', unquote(key)), g) for key, val in C.b5
     define('b6' + key, s('var(--b6-%s)', unquote(key)), g) for key, val in C.b6
+    define('b7' + key, s('var(--b7-%s)', unquote(key)), g) for key, val in C.b7
+    define('b8' + key, s('var(--b8-%s)', unquote(key)), g) for key, val in C.b8
 }
 
 @-moz-document domain('web.whatsapp.com') {
@@ -413,14 +439,14 @@ OM = next_omsg
         --attach-media-drop-border-rgb: var(--fg-3-rgb) //241,241,242;
         --attach-media-drop-overlay: var(--bg-2) //#383d3f4d;
         --attach-media-drop-overlay-rgb: var(--bg-2-rgb) //55.76,60.6,63.24;
-        --audio-progress-incoming: var(--b2-0) //#3bb463;
-        --audio-progress-incoming-rgb: var(--b2-0-rgb) //59,180,99;
+        --audio-progress-incoming: var(--b4-0) //#3bb463;
+        --audio-progress-incoming-rgb: var(--b4-0-rgb) //59,180,99;
         --audio-progress-outgoing: var(--ac-2) //#5f8884;
         --audio-progress-outgoing-rgb: var(--ac-2-rgb) //95,136,132;
-        --audio-progress-played-incoming: var(--b4-0) //#5ba0c3;
-        --audio-progress-played-incoming-rgb: var(--b4-0-rgb) //91,160,195;
-        --audio-progress-played-outgoing: var(--b4-0) //#55a5c5;
-        --audio-progress-played-outgoing-rgb: var(--b4-0-rgb) //85,165,197;
+        --audio-progress-played-incoming: var(--b6-0) //#5ba0c3;
+        --audio-progress-played-incoming-rgb: var(--b6-0-rgb) //91,160,195;
+        --audio-progress-played-outgoing: var(--b6-0) //#55a5c5;
+        --audio-progress-played-outgoing-rgb: var(--b6-0-rgb) //85,165,197;
         --audio-track-incoming: var(--fg-4) //#374248;
         --audio-track-incoming-rgb: var(--fg-4-rgb) //55,66,72;
         --audio-track-outgoing: var(--fg-4) //#1d5852;
@@ -469,20 +495,20 @@ OM = next_omsg
         --butterbar-connection-primary-rgb: var(--fg-0-rgb) //28,40,47;
         --butterbar-connection-secondary: var(--fg-4) //#1c282fd9;
         --butterbar-connection-secondary-rgb: var(--fg-4-rgb) //28,40,47;
-        --butterbar-default-background: var(--b4-3) //#39c;
-        --butterbar-default-background-rgb: var(--b4-3) //51,153,204;
+        --butterbar-default-background: var(--b6-3) //#39c;
+        --butterbar-default-background-rgb: var(--b6-3) //51,153,204;
         --butterbar-icon: var(--b3-2) //#f1f1f2cc;
         --butterbar-icon-rgb: var(--b3-2-rgb) //241,241,242;
-        --butterbar-notification-icon: var(--b4-0) //#8eb2be;
-        --butterbar-notification-icon-rgb: var(--b4-0-rgb) //142,178,190;
+        --butterbar-notification-icon: var(--b6-0) //#8eb2be;
+        --butterbar-notification-icon-rgb: var(--b6-0-rgb) //142,178,190;
         --butterbar-primary: var(--fg-0) //#f1f1f2f5;
         --butterbar-primary-rgb: var(--fg-0-rgb) //241,241,242;
         --butterbar-secondary: var(--fg-4) //#f1f1f2d9;
         --butterbar-secondary-rgb: var(--fg-4-rgb) //241,241,242;
-        --butterbar-update-background: var(--b2-4) //#00af9c;
-        --butterbar-update-background-rgb: var(--b2-4-rgb) //0,175,156;
-        --butterbar-update-icon: var(--b2-0) //#8eafaa;
-        --butterbar-update-icon-rgb: var(--b2-0-rgb) //142,175,170;
+        --butterbar-update-background: var(--b4-4) //#00af9c;
+        --butterbar-update-background-rgb: var(--b4-4-rgb) //0,175,156;
+        --butterbar-update-icon: var(--b4-0) //#8eafaa;
+        --butterbar-update-icon-rgb: var(--b4-0-rgb) //142,175,170;
         --button-alternative: var(--ac-1) //#68bbe4;
         --button-alternative-rgb: var(--ac-1-rgb) //104,187,228;
         --button-alternative-background: var(--bg-3) //#222e35;
@@ -657,10 +683,10 @@ OM = next_omsg
         --modal-backdrop-solid-rgb: var(--bg-0-rgb) //28,40,47;
         --modal-background: var(--bg-2) //#364147;
         --modal-background-rgb: var(--bg-2-rgb) //54,65,71;
-        --notification-biz-background: var(--b6-5) //#1c282f;
-        --notification-biz-background-rgb: var(--b6-5-rgb) //28,40,47;
-        --notification-biz-text: var(--b6-0) //#55fad9;
-        --notification-biz-text-rgb: var(--b6-0-rgb) //85,250,217;
+        --notification-biz-background: var(--b5-5) //#1c282f;
+        --notification-biz-background-rgb: var(--b5-5-rgb) //28,40,47;
+        --notification-biz-text: var(--b5-0) //#55fad9;
+        --notification-biz-text-rgb: var(--b5-0-rgb) //85,250,217;
         --notification-e2e-background: var(--b3-5) //#1c282f;
         --notification-e2e-background-rgb: var(--b3-5-rgb) //28,40,47;
         --notification-e2e-icon: var(--b3-1) //#fad964;
@@ -737,18 +763,18 @@ OM = next_omsg
         --progress-background-rgb: var(--bg-2-rgb) //41.6,47.46667,50.4;
         --progress-primary: var(--ac-0) //#0c897c;
         --progress-primary-rgb: var(--ac-0) //12,137,124;
-        --ptt-blue: var(--b4-0) //#4fc3f7;
-        --ptt-blue-rgb: var(--b4-0-rgb) //79,195,247;
+        --ptt-blue: var(--b6-0) //#4fc3f7;
+        --ptt-blue-rgb: var(--b6-0-rgb) //79,195,247;
         --ptt-button-cancel: var(--b1-0) //#e53935cc;
         --ptt-button-cancel-rgb: var(--b1-0-rgb) //229,57,53;
-        --ptt-button-send: var(--b2-0) //#09d261cc;
-        --ptt-button-send-rgb: var(--b2-0-rgb) //9,210,97;
+        --ptt-button-send: var(--b4-0) //#09d261cc;
+        --ptt-button-send-rgb: var(--b4-0-rgb) //9,210,97;
         --ptt-gray: var(--fg-4) //#f1f1f266;
         --ptt-gray-rgb: var(--fg-4-rgb) //241,241,242;
-        --ptt-green: var(---b2-0) //#09d261;
-        --ptt-green-rgb: var(--b2-rgb) //9,210,97;
-        --ptt-message-blue: var(--b4-0) //#68bbe4;
-        --ptt-message-blue-rgb: var(--b4-0-rgb) //104,187,228;
+        --ptt-green: var(---b4-0) //#09d261;
+        --ptt-green-rgb: var(--b4-rgb) //9,210,97;
+        --ptt-message-blue: var(--b6-0) //#68bbe4;
+        --ptt-message-blue-rgb: var(--b6-0-rgb) //104,187,228;
         --quick-action-button: to_rgba('fg-3', 0.5) //#f1f1f280;
         --quick-action-button-rgb: var(--fg-3-rgb) //241,241,242;
         --quick-action-button-background: var(--bg-4) //#080e1299;
@@ -795,8 +821,8 @@ OM = next_omsg
         --success-rgb: var(--ac-0-rgb) //0,175,156;
         --suspicious-background: #ef697acc;
         --suspicious-background-rgb: 239,105,122;
-        --system-message-background: var(--b4-4) //#1e2a30;
-        --system-message-background-rgb: var(--b4-4-rgb) //30,42,48;
+        --system-message-background: var(--b6-4) //#1e2a30;
+        --system-message-background-rgb: var(--b6-4-rgb) //30,42,48;
         --system-message-text: to_rgba('fg-1', 0.87) //#f1f1f2de;
         --system-message-text-rgb: var(--fg-1-rgb) //241,241,242;
         --teal-hover: #00b7a1;
@@ -843,7 +869,7 @@ OM = next_omsg
         --win32-title-primary-rgb: 255,255,255;
 
         /// Generate DWA color variables.
-        for _v in (bg fg ac b1 b2 b3 b4 b5 b6) {
+        for _v in (bg fg ac b1 b2 b3 b4 b5 b6 b7 b8) {
             for _i in 0..5 {
                 key = s('--%s-%s', _v, _i)
                 /// Escape `\` for `*-0` vars.
@@ -1453,13 +1479,13 @@ OM = next_omsg
 
         /// System messages.
         ._1E1g0 {
-            border: 1px solid var(--b4-3)
+            border: 1px solid b63
 
             /// Tweak text shadow.
             text-shadow: 0 1px 0 to_rgba('fg-1', 0.3)
 
             /// End-to-end encryption message.
-            &._2n04H { border: 1px solid var(--b3-4) }
+            &._2n04H { border: 1px solid b34 }
 
             /// Bussiness account message.
             &._2nH_- { border: 1px solid to_rgba('notification-biz-text', 0.3) }
@@ -1621,53 +1647,12 @@ OM = next_omsg
         /// Groups -> Fix opacity for nicknames.
         /[class *= ' color-'] > span:nth-child(2) { c: fg3 }
 
-        /// Feat -> Colors for replies and group members.
-        .color {
-            &-0  { c: b40 }
-            &-1  { c: b60 }
-            &-2  { c: b20 }
-            &-3  { c: b50 }
-            &-4  { c: b51 }
-            &-5  { c: b10 }
-            &-6  { c: b30 }
-            &-7  { c: b31 }
-            &-8  { c: b41 }
-            &-9  { c: b61 }
-            &-10 { c: b21 }
-            &-11 { c: b52 }
-            &-12 { c: b42 }
-            &-13 { c: b11 }
-            &-14 { c: b32 }
-            &-15 { c: b22 }
-            &-16 { c: b62 }
-            &-17 { c: b12 }
-            &-18 { c: ac0 }
-            &-19 { c: ac1 }
-            &-20 { c: ac2 }
-        }
-
-        .bg-color {
-            &-0  { c: 0 0 b40 }
-            &-1  { c: 0 0 b60 }
-            &-2  { c: 0 0 b20 }
-            &-3  { c: 0 0 b50 }
-            &-4  { c: 0 0 b51 }
-            &-5  { c: 0 0 b10 }
-            &-6  { c: 0 0 b30 }
-            &-7  { c: 0 0 b31 }
-            &-8  { c: 0 0 b41 }
-            &-9  { c: 0 0 b61 }
-            &-10 { c: 0 0 b21 }
-            &-11 { c: 0 0 b52 }
-            &-12 { c: 0 0 b42 }
-            &-13 { c: 0 0 b11 }
-            &-14 { c: 0 0 b32 }
-            &-15 { c: 0 0 b22 }
-            &-16 { c: 0 0 b62 }
-            &-17 { c: 0 0 b12 }
-            &-18 { c: 0 0 ac0 }
-            &-19 { c: 0 0 ac1 }
-            &-20 { c: 0 0 ac2 }
+        /// Theme colors for replies and member nicknames.
+        for k, v in 0..20 {
+            key = (k < 8) ? k + 1 : (k < 15) ? k + 1 - 8 : k + 1 - 15
+            val = (k < 8) ?     0 : (k < 15) ?         1 :          2
+            .color-{ k } { c: s('var(--b%s-%s)', key, val) }
+            .bg-color-{ k } { c: 0 0 s('var(--b%s-%s)', key, val) }
         }
     }
 
