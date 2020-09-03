@@ -15,15 +15,15 @@ customizable options.
 
 #+HTML: <img src="https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/images/preview.png" width="100%"/>
 
-/Version 2.1.0 with [[https://github.com/rsms/inter/][Inter]] as the custom font, hidden notification alerts, and/
-/enabled custom message bubble colors. Check [[https://github.com/vednoc/dark-whatsapp/wiki/Configuration][configuration page]] on our project/
-/wiki to get started customizing your Dark-WhatsApp./
+/Version 3.0.0 with [[https://github.com/rsms/inter/][Inter]] as the custom font, and hidden notification alerts.
+Check [[https://github.com/vednoc/dark-whatsapp/wiki/Configuration][Configuration page]] on project/ wiki to get started customizing your
+Dark-WhatsApp.
 
 #+HTML: </div>
 
 ** Features
 - Complete dark mode implementation
-- Fully customizable colors (light/dark color-schemes fully supported)
+- Fully customizable base colors (light/dark color-schemes fully supported)
 - Private mode where contacts and/or chat images are blurred by default
 - Compact mode for small resolutions (more of a hack; works well though)
 - Custom compact mode breakpoint and option to disable compact mode
