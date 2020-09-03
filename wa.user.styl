@@ -107,8 +107,8 @@
 @var color    _blue      'Base blue color             ' #82aaff
 @var color    _magenta   'Base magenta color          ' #c792ea
 @var color    _violet    'Base violet color           ' #9a91ea
-@var color    white      'White color                 ' #ffffff
-@var color    sh         'Shadow color                ' #00000025
+@var color    _white     'White color                 ' #ffffff
+@var color    _sh        'Shadow color                ' #00000025
 ==/UserStyle== */
 
 // Color mixin.
@@ -121,9 +121,13 @@ c(x, y = 0, z = 0, xi = 1, yi = 1, zi = 1) {
 }
 
 // Raw RGB mixin.
-/// Convert HEX to raw rrr-ggg-bbb format.
-to_rgb(input) {
-    unquote(slice(s('%s', rgba(input, 0)), 5, -3))
+/// Convert RGBA (if t = 1) or HEX to raw rrr-ggg-bbb format.
+to_rgb(input, t = 0) {
+    if (t) {
+        unquote(substr(join(',', slice(split(',', s('%s', input)), 0, -1)), 5))
+    } else {
+        unquote(slice(s('%s', rgba(input, 0)), 5, -3))
+    }
 }
 
 // Raw RGBA mixin.
@@ -793,10 +797,10 @@ OM = next_omsg
         --secondary-lighter-rgb: var(--fg-3-rgb) //241,241,242;
         --secondary-stronger: var(--fg-3) //#f1f1f2cc;
         --secondary-stronger-rgb: var(--fg-3-rgb) //241,241,242;
-        --shadow: var(--bg-0) //#000;
-        --shadow-rgb: var(--bg-0-rgb) //0,0,0;
-        --shadow-light: var(--bg-0) //#00000014;
-        --shadow-light-rgb: var(--bg-0-rgb) //0,0,0;
+        --shadow: var(--sh) //#000;
+        --shadow-rgb: var(--sh-rgb) //0,0,0;
+        --shadow-light: var(--sh) //#00000014;
+        --shadow-light-rgb: var(--sh-rgb) //0,0,0;
         --spinner-default: var(--fg-3) //#75787a;
         --spinner-default-rgb: var(--fg-3-rgb) //117,120,122;
         --spinner-highlight: var(--ac-0) //#00af9c;
@@ -881,12 +885,13 @@ OM = next_omsg
             }
         }
 
-        /// TODO: Improve secondary colors.
-        --white:      white
-        --white-rgb:  to_rgb(white)
+        /// Misc colors.
+        --white:      _white
+        --white-rgb:  to_rgb(_white)
+        --sh:         _sh
+        --sh-rgb:     to_rgb(_sh, 1) i
         --t:          transparent
-        --shadow:     sh
-        --bshadow:    0 2px 4px var(--shadow)
+        --bshadow:    0 4px 8px 2px var(--shadow)
 
         /// Theme intro colors.
         svg_bg = to_svg(bg-2)
@@ -1320,7 +1325,7 @@ OM = next_omsg
                     max-width: var(--app-width) i
                     rad: var(--r-menus) i
                     border: 1px solid bg5 i
-                    box-shadow: var(--bshadow) i
+                    box-shadow: 0 2px 6px sh i
                 }
             }
         }
