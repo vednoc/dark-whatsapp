@@ -15,33 +15,34 @@
     'Dark blue (old)  ': 'old',
     'Dark gray (new)  ': 'new',
 }
-@var color    next_bg    'Base background color ' #1f232a
-@var color    next_fg    'Base foreground color ' #eeeeee
-@var color    next_ac    'Base accent color     ' #7289da
-@var range    next_bg_a  'Adjust background color tones' [0, -25, 25, 0.1, '%']
-@var range    next_fg_a  'Adjust foreground color tones' [0, -25, 25, 0.1, '%']
-@var range    next_ac_a  'Adjust accent color tones    ' [0,   0, 25,   1, '%']
-@var range    next_sc_a  'Adjust syntax color tones    ' [0,   0, 25,   1, '%']
+
+@var color    _bg        'Base background color        ' #1f232a
+@var color    _fg        'Base foreground color        ' #eeeeee
+@var color    _ac        'Base accent color            ' #7289da
+@var range    _bg_a      'Adjust background color tones' [0, -25, 25, 0.1, '%']
+@var range    _fg_a      'Adjust foreground color tones' [0, -25, 25, 0.1, '%']
+@var range    _ac_a      'Adjust accent color tones    ' [0,   0, 25,   1, '%']
+@var range    _sc_a      'Adjust syntax color tones    ' [0,   0, 25,   1, '%']
 
 @var text     ui_font    'UI font' ''font_name''
 @var text     app_width  'App width' 1396px
-
 @var checkbox fullscreen 'Fullscreen mode' 0
-@var checkbox app_c_m    'Compact mode' 1
-@var text     app_c_m_w  'Compact mode breakpoint' 720px
-@var text     app_c_m_h  'Compact mode hover-on delay' 0.6s
-@var text     app_c_m_d  'Compact mode hover-off delay' 1.2s
 
-@var select   alerts     'Alerts' {
+@var checkbox compact    'Compact mode' 1
+@var text     compact_mw 'Compact mode breakpoint' 720px
+@var text     compact_hi 'Compact mode hover-on delay' 0.6s
+@var text     compact_ho 'Compact mode hover-off delay' 1.2s
+
+@var select   app_alerts 'Alerts' {
     'Show all                   *': 'show          ',
     'Hide "Allow notifications"  ': 'notifications ',
     'Hide all                    ': 'hide          ',
 }
-@var checkbox app_c_h    'Consistent drawer headers' 1
+@var checkbox app_header 'Consistent drawer headers' 1
 
-@var text     radius-g   'Rounded corners for menus' 4px
-@var text     radius-i   'Rounded corners for input area' 24px
-@var range    radius-a   'Rounded corners for avatars' [50, 0, 50, 1, '%']
+@var text     radius_m   'Rounded corners for menus' 4px
+@var text     radius_i   'Rounded corners for input area' 24px
+@var range    radius_a   'Rounded corners for avatars' [50, 0, 50, 1, '%']
 
 @var select   app_image  'App background' {
     'Theme image with 12px blur   *': 'bg-high ',
@@ -77,19 +78,19 @@
 }
 
 @var checkbox ow_imsg    'Override incoming message bubble color' 0
-@var color    next_imsg  'Incoming message bubble color' #16191e
+@var color    _imsg  'Incoming message bubble color' #16191e
 @var checkbox bubble_in  'Swap sides for incoming message bubbles' 0
 @var checkbox ow_omsg    'Override outgoing message bubble color' 0
-@var color    next_omsg  'Outgoing message bubble color' #3b4250
+@var color    _omsg  'Outgoing message bubble color' #3b4250
 @var checkbox bubble_out 'Swap sides for outgoing message bubbles' 0
 
 @var checkbox rtl_header 'RTL: Remove empty message header' 1
 @var checkbox rtl_format 'RTL: Fix formatting for message content' 1
 
 @var checkbox chat_b_c   'Blurred contacts' 0
-@var checkbox chat_b_img 'Blurred images/videos' 0
-@var text     chat_b_in  'Blurred images/videos hover-on delay' 0.4s
-@var text     chat_b_out 'Blurred images/videos hover-off delay' 0.2s
+@var checkbox chat_b_img 'Blurred media' 0
+@var text     chat_b_in  'Blurred media hover-on delay' 0.4s
+@var text     chat_b_out 'Blurred media hover-off delay' 0.2s
 
 @var checkbox chat_bg    'Chat background image' 1
 @var text     chat_image 'Chat background image link' url('https://web.whatsapp.com/img/bg-chat-tile_9e8a2898faedb7db9bf5638405cf81ae.png')
@@ -149,9 +150,9 @@ vendors = official
 
 /// Feat -> Base color-scheme toggle. #32
 if (theme == 'custom') {
-    BG       = next_bg
-    FG       = next_fg
-    AC       = next_ac
+    BG       = _bg
+    FG       = _fg
+    AC       = _ac
 } else if (theme == 'old') {
     BG       = #1f232a
     FG       = #eeeeee
@@ -181,12 +182,12 @@ if (theme == 'custom') {
 /// Helpers.
 t  = transparent
 i  = !important
-BA = next_bg_a
-FA = next_fg_a
-AA = next_ac_a
-SA = next_sc_a
-IM = next_imsg
-OM = next_omsg
+BA = _bg_a
+FA = _fg_a
+AA = _ac_a
+SA = _sc_a
+IM = _imsg
+OM = _omsg
 
 // Color generator.
 /// NOTE: Scope the variables to avoid potential conflicts.
@@ -357,15 +358,15 @@ OM = next_omsg
                    Arial, Ubuntu, Cantarell, Fira Sans, sans-serif i
 
         /// Rounded corners.
-        --r-menus:   radius-g
-        --r-inputs:  radius-i
-        --r-avatars: radius-a
+        --r-menus:   radius_m
+        --r-inputs:  radius_i
+        --r-avatars: radius_a
 
         /// Compact mode.
-        --c-m-hover: app_c_m_h
-        --c-m-delay: app_c_m_d
+        --c-m-hover: compact_hi
+        --c-m-delay: compact_ho
 
-        /// Blurred images/videos.
+        /// Blurred media.
         --blur-in:  chat_b_in
         --blur-out: chat_b_out
 
@@ -1069,7 +1070,7 @@ OM = next_omsg
         /._1g1ui > ._1ByLM { margin-left: unset i }
 
         /// Tweak default-user icons.
-        if (radius-a != '50%') {
+        if (radius_a != '50%') {
             /[style *= 'width:'][style *= 'height:'] {
                 [data-icon = 'default-user'] svg {
                     margin-top: -4px i
@@ -1353,9 +1354,9 @@ OM = next_omsg
                     [data-icon = 'x'] svg path { fill: fg5 }
 
                     /// Feat -> Alerts.
-                    if (alerts == 'hide') {
+                    if (app_alerts == 'hide') {
                         & > div { display: none i }
-                    } else if (alerts == 'notifications') {
+                    } else if (app_alerts == 'notifications') {
                         & > div {
                             border-bottom: 1px solid bg5 i
                             &._1evad { display: none i }
@@ -1372,7 +1373,7 @@ OM = next_omsg
             border-left: 1px solid bg5 i
 
             /// Drawer header.
-            if (app_c_h) {
+            if (app_header) {
                 .copyable-area > header {
                     border-bottom: 1px solid bg5 i
                 }
@@ -1417,7 +1418,7 @@ OM = next_omsg
     }
 
     // Feat -> Consistent drawer headers.
-    if (app_c_h) {
+    if (app_header) {
         ._1fiOp, ._2TZYF {
             height: 59px i
             justify-content: center i
@@ -1557,7 +1558,7 @@ OM = next_omsg
             }
         }
 
-        /// Feat -> Blur images/videos.
+        /// Feat -> Blur media.
         if (chat_b_img) {
             /[class *= 'message-'] [style *= 'height'] {
                 img {
@@ -1652,7 +1653,7 @@ OM = next_omsg
     }
 
     // Feat -> Compact mode.
-    if (app_c_m) {
+    if (compact) {
         /// Reset height/width if there is an overflow.
         #app > div > [tabindex] {
             @media screen and (max-height: 500px) { min-height: auto }
@@ -1661,7 +1662,7 @@ OM = next_omsg
         }
 
         /// Compact mode.
-        @media screen and (max-width: app_c_m_w) {
+        @media screen and (max-width: compact_mw) {
             /// Shared drawer styles.
             .two, .three {
                 /// Left -> Settings/Contacts.

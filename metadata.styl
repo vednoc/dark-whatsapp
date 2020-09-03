@@ -22,17 +22,19 @@
 theme = 'old'
 
 // Base Background/Foreground/Accent colors for custom ~theme~ option.
-next_bg = #1f232a
-next_fg = #eeeeee
-next_ac = #7289da
+_bg = #1f232a
+_fg = #eeeeee
+_ac = #7289da
 
 // Adjust generated tones for Background/Foreground/Accent colors.
-/// Options: bg --- -25%--25%, step by 0.1, 0% default value
-///          fg --- -25%--25%, step by 0.1, 0% default value
-///          ac ---   0%--25%, step by   1, 0% default value
-next_bg_a = 0%
-next_fg_a = 0%
-next_ac_a = 0%
+/// Options: bg --- -25--25%, step by 0.1, 0% default value
+///          fg --- -25--25%, step by 0.1, 0% default value
+///          ac ---   0--25%, step by   1, 0% default value
+///          sc ---   0--25%, step by   1, 0% default value
+_bg_a = 0%
+_fg_a = 0%
+_ac_a = 0%
+_sc_a = 0%
 
 // UI font.
 ui_font = 'font_name'
@@ -44,35 +46,35 @@ app_width = 1396px
 fullscreen = 0
 
 // Compact mode.
-app_c_m = 1
+compact = 1
 
 // Compact mode breakpoint.
-app_c_m_w = 720px
+compact_mw = 720px
 
 // Compact mode hover-on delay.
-app_c_m_h = 0.6s
+compact_hi = 0.6s
 
 // Compact mode hover-off delay.
-app_c_m_d = 1.2s
+compact_ho = 1.2s
 
 // Notification alerts.
 /// Options: show          --- Show all notifications
 ///          hide          --- Hide all notifications
 ///          notifications --- Hide only notifications
-alerts = 'show'
+app_alerts = 'show'
 
 // Consistent drawer headers.
-app_c_h = 1
+app_header = 1
 
 /// Rounded corners for various menus.
-radius-g = 4px
+radius_m = 4px
 
 /// Rounded corners for input bar.
-radius-i = 24px
+radius_i = 24px
 
 // Rounded corners for avatars.
 /// Options: 0--50%, step by 1, 50% default value
-radius-a = 50%
+radius_a = 50%
 
 // App background.
 /// Options: 'bg-high' --- Theme image with 12px blur
@@ -130,7 +132,7 @@ emoji_b = 'default'
 ow_imsg = 0
 
 // Incoming message bubble color.
-next_imsg = #16191e
+_imsg = #16191e
 
 // Swap side for incoming message bubble.
 bubble_in = 0
@@ -139,7 +141,7 @@ bubble_in = 0
 ow_omsg = 0
 
 // Outgoing message bubble color.
-next_omsg = #3b4250
+_omsg = #3b4250
 
 // Swap side for incoming message bubble.
 bubble_out = 0
@@ -186,13 +188,13 @@ chat_bg_p = top left
 chat_bg_r = repeat
 
 // Override various theme colors.
-yellow  = #e5c512
-orange  = #df4b16
-red     = #dc322f
-magenta = #f33682
-violet  = #6c71c4
-blue    = #268bd2
-cyan    = #2aa198
-green   = #859900
-white   = #ffffff
-sh      = #00000025
+_yellow  = #e5c512
+_orange  = #df4b16
+_red     = #dc322f
+_magenta = #f33682
+_violet  = #6c71c4
+_blue    = #268bd2
+_cyan    = #2aa198
+_green   = #859900
+_white   = #ffffff
+_sh      = #00000025
