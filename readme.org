@@ -17,23 +17,21 @@ customizable options.
 
 /Version 3.0.0 with [[https://github.com/rsms/inter/][Inter]] as the custom font, and hidden notification alerts.
 Check [[https://github.com/vednoc/dark-whatsapp/wiki/Configuration][Configuration page]] on project/ wiki to get started customizing your
-Dark-WhatsApp.
+Dark-WhatsApp. See more examples in the [[https://github.com/vednoc/dark-whatsapp/issues/178][Screenshot thread]].
 
 #+HTML: </div>
 
 ** Features
-- Complete dark mode implementation
-- Fully customizable base colors (light/dark color-schemes fully supported)
-- Private mode where contacts and/or chat images are blurred by default
-- Compact mode for small resolutions (more of a hack; works well though)
-- Custom compact mode breakpoint and option to disable compact mode
-- Fullscreen mode if you prefer not wasting any space
-- Custom background images for app/chat background
-- Options to set custom bubble colors and align their positions
-- Custom emoji opacity and transparent emoji images
-- Light/dark/no chat area doodles
-- Various styles for message tails
-- Custom chat window width
+- Complete dark mode — utilizing WhatsApp's native CSS variables
+- Customizable base colors — light/dark color-schemes are fully supported
+- Private mode — blurring contacts and/or chat media until you hover over them
+- Compact mode for small resolutions (optional, very hacky; works well though)
+- Fullscreen mode — if you prefer not wasting any available space
+- Custom background options for app/chat background images
+- Custom message bubble colors and/or their positions
+- Custom emoji opacity and unified big emoji sizes
+- Various styles and options for message tails
+- Custom chat window width, UI font, and more!
 
 Visit [[https://github.com/vednoc/dark-whatsapp/wiki/Configuration][configuration page]] to see the full list of features and how to use them.
 
@@ -43,11 +41,12 @@ You have to install [[https://add0n.com/stylus.html][Stylus]] and then click on 
 [[https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.styl][https://img.shields.io/badge/Install%20directly%20with-Stylus-116b59.svg]]
 
 *** Other ways to install this userstyle
-See [[https://github.com/vednoc/dark-whatsapp/wiki/Installation][installation page]].
+For userstyle managers other than Stylus or a custom-compiled version, see
+[[https://github.com/vednoc/dark-whatsapp/wiki/Installation][installation page]].
 
 ** Getting Started
-If you have a question, make sure to see [[https://github.com/vednoc/dark-whatsapp/wiki/FAQ][FAQ page]] first in order to see if has
-already been answered.
+If you have a question, make sure to see [[https://github.com/vednoc/dark-whatsapp/wiki/FAQ][FAQ page]] first in order to see if your
+question has already been answered.
 
 To learn more about using this theme and customizing it for your personal use,
 visit the [[https://github.com/vednoc/dark-whatsapp/wiki/Configuration][configuration page]].
