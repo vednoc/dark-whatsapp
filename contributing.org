@@ -6,47 +6,52 @@
 - [[#how-to-report-style-issues][How to Report Style Issues]]
   - [[#i-dont-know-css][I don't know CSS]]
   - [[#i-know-both-css--github][I know both CSS & GitHub]]
-    - [[#style-guide][Style Guide]]
+    - [[#duplicate-the-style-or-create-a-companion-style][Duplicate the style or create a "companion style"]]
+      - [[#duplicate-the-style][Duplicate the style]]
+      - [[#create-a-companion-style][Create a "companion style"]]
 - [[#getting-started][Getting Started]]
-  - [[#build--test][Build & test]]
+  - [[#style-guide][Style guide]]
+  - [[#contributing-code][Contributing code]]
+  - [[#testing-changes-of-a-local-userstyle][Testing changes of a local userstyle]]
 
 * Getting Involved
+There are a number of ways to get involved with the development of
+Dark-WhatsApp.
 
-There are a number of ways to get involved with the development of this Dark
-WhatsApp theme. Even if you've never contributed to an Open Source project
-before, we're always looking for help identifying missing styles or other
-issues.
+Even if you've never contributed to an Open Source project before, we're always
+looking for help identifying missing styles or other issues.
 
 * How to Report Style Issues
-
 ** I don't know CSS
-
 If you don't know CSS very well and have found a missing style, please include
 as much as possible of following information when opening an issue:
 
 - Screenshot of the problem
 - Include the element(s) in the console if at all possible
   - To select an element, target it with your mouse then right-click and choose
-    "Inspect Element"
+    "Inspect Element", otherwise press `Ctrl + Shift + C` and select it with
+    your left mouse click
   - Copy the HTML if at all possible
 
 ** I know both CSS & GitHub
-
 - *Recommended:* [[#duplicate-the-style][duplicate]] the style or [[#create-a-companion-style][create a "companion style"]]
 - Follow the [[#style-guide][style guide]] below
 - Make any needed changes, then send us a pull request
 - Please include a URL to the page (if public)
 
 *** Duplicate the style or create a "companion style"
+When a userstyle is installed from a page, Stylus stores the url of that page
+internally along with the CSS style.
 
-When a userstyle is installed from a page, Stylus stores the url of that page internally along with the CSS style.
-
-If that userstyle is then modified or even renamed, it will still maintain the original install location, but all automatic updates of the modified userstyle will be blocked. A manual update of that userstyle is required to update, but be warned that an update *will overwrite* all changes, i.e. *all modifications will be lost*!
+If that userstyle is then modified or even renamed, it will still maintain the
+original install location, but all automatic updates of the modified userstyle
+will be blocked to preserve local changes. A manual update of that userstyle is
+required to update, but be warned that an update *will overwrite* all changes,
+i.e. *all modifications will be lost*!
 
 To get around this, either duplicate it or create a "companion style".
 
 **** Duplicate the style
-
 The easiest way is to copy and paste the source code into a new, *local* style.
 
 1. Copy the style
@@ -59,11 +64,10 @@ The easiest way is to copy and paste the source code into a new, *local* style.
     - Give the style a name, then save.
 
 **** Create a "companion style"
-
 Please refer to the [[https://github.com/openstyles/stylus/wiki/Writing-styles#making-a-companion-style][Stylus' Writing Styles page]] [[https://user-images.githubusercontent.com/136959/44433186-de548e80-a56a-11e8-8947-d3331bd6d7a1.png]] for more details.
 
-*** Style Guide
-
+* Getting Started
+** Style guide
 - Limit to the [[https://en.wikipedia.org/wiki/Indentation_style#Variant:_BSD_KNF][K&R (KNF variation style)]] [[https://user-images.githubusercontent.com/136959/44433186-de548e80-a56a-11e8-8947-d3331bd6d7a1.png]], and *TAB SPACE INDENTATION* (not more,
   and not less than 4 spaces).
   - Use [[https://editorconfig.org/][EditorConfig]] [[https://user-images.githubusercontent.com/136959/44433186-de548e80-a56a-11e8-8947-d3331bd6d7a1.png]] plugin for your editor if at all possible, and let it take
@@ -115,13 +119,15 @@ Please refer to the [[https://github.com/openstyles/stylus/wiki/Writing-styles#m
 - Use the provided mixins and variables
 
   You can find more about them at the top of the =wa.user.styl= file. Also, use
-  [[http://stylus-lang.com/][stylus-lang documentation]] [[https://user-images.githubusercontent.com/136959/44433186-de548e80-a56a-11e8-8947-d3331bd6d7a1.png]] to get familar with stylus-lang syntax and features.
+  [[http://stylus-lang.com/][stylus-lang documentation]]
+  [[https://user-images.githubusercontent.com/136959/44433186-de548e80-a56a-11e8-8947-d3331bd6d7a1.png]]
+  to get familar with Stylus-lang syntax and features.
 
   #+BEGIN_SRC css
   /* good */
   element { c: #eee 0 #333 }
   /* best */
-  element { c: fg 0 bg }
+  element { c: fg1 0 bg1 }
   /* bad */
   element {
     color: #eee,
@@ -132,31 +138,35 @@ Please refer to the [[https://github.com/openstyles/stylus/wiki/Writing-styles#m
 - Try to wrap lines at around 80 characters.
 - This style does not have a size limit, but:
   - If possible, reduce any added selectors. Remember that the style likely has
-    an =!important= flag to override default styling, so a selector starting
-    from the body isn't always necessary.
+    an =!important= flag to override default styling, so a selector starting from
+    the body isn't always necessary.
   - If your CSS definition already exists within the style, do not add it again!
     Add your selector to the existing definition.
 - Insert any new CSS selectors in any available slot before the style
   definition, or on a new line as needed.
-- If you want to add a new userstyle variable, please open an issue and discuss
-  it with us first.
+- If you want to add a new userstyle variable/feature, please open an issue and
+  discuss it with us first.
 - Don't include version bumps with your contribution, all releases are handled
   internally.
 - If your pull request (PR) fixes an open issue or replaces another PR, include
-  fixes/closes =#issue-number= in your commit message title. [[https://help.github.com/en/articles/closing-issues-using-keywords][Read more on this]] [[https://user-images.githubusercontent.com/136959/44433186-de548e80-a56a-11e8-8947-d3331bd6d7a1.png]]
-* Getting Started
+  fixes/closes =#issue-number= in your commit message title. [[https://help.github.com/en/articles/closing-issues-using-keywords][Read more on this]]
+  [[https://user-images.githubusercontent.com/136959/44433186-de548e80-a56a-11e8-8947-d3331bd6d7a1.png]]
+
+** Contributing code
 - [[https://user-images.githubusercontent.com/20738487/72159480-1c06c100-33c5-11ea-91d1-7a67c1dd7ae5.png]]
   [[https://github.com/vednoc/dark-whatsapp/archive/master.zip][Download]],
   [[https://user-images.githubusercontent.com/20738487/72159479-1c06c100-33c5-11ea-9ce4-c3d17110348a.png]]
-  [[https://github.com/vednoc/dark-whatsapp/fork][fork]], or clone this repository.
-- Make the changes to the [[https://github.com/vednoc/dark-whatsapp/blob/master/wa.user.styl][wa.user.styl]] file.
-** Build & test
-- Create & change into a new branch of your local Dark-WhatsApp repository.
+  [[https://github.com/vednoc/dark-whatsapp/fork][fork]], or clone this repository
+- Create and change into a new branch of your local Dark-WhatsApp repository
+- Make the changes in the [[https://github.com/vednoc/dark-whatsapp/blob/master/wa.user.styl][wa.user.styl]] file and verify that they fix the issue
+- Push the changes to your branch
+  + Make sure that your changes address only a *single* issue. Don't combine
+    multiple fixes for unrelated issues into a single pull request.
+- Submit a PR
+
+** Testing changes of a local userstyle
 - Open the =wa.user.styl= file in your browser, and make sure to have "live
-  preview" checked for testing.
-- Once you are satisfied with the changes
-  - You can commit the changes of the =wa.user.styl= file to your fork's branch.
-  - Push the changes to your branch, then submit a pull request.
-  - Make sure your changes address only a single issue. Don't combine all the
-    things into a single PR.
-- And thanks again for contributing!
+  preview" checked for testing
+  - If you're using a Chromium-based browser, go to /extensions/, open /details/ for
+    Stylus, and enable "Allow access to file URLs".
+- Make some changes then save the file, and Stylus will do its magic
