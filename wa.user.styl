@@ -1629,6 +1629,11 @@ OM = _omsg
 
             /// Feat -> Input border radius.
             ._3uMse { rad: var(--r-inputs) i }
+
+            /// Fix 'attach' button alignment in compact mode. @upstream
+            [data-state] + div {
+                @media screen and (max-width: 720px) { margin-top: 3px i }
+            }
         }
 
         /// Fix styles for Google Maps.
