@@ -76,6 +76,7 @@
     'Normal   ': 'normal  ',
     'Small    ': 'small   ',
 }
+@var checkbox emoji_ani  'Animate emojis' 1
 
 @var checkbox ow_imsg    'Override incoming message bubble color' 0
 @var color    _imsg  'Incoming message bubble color' #16191e
@@ -930,6 +931,22 @@ OM = _omsg
     @keyframes pulse {
         40% { opacity: 0 }
         80% { opacity: 1 }
+    }
+
+    // Feat -> Animate emojis.
+    if(emoji_ani) {
+        @keyframes heartPulse {
+          0%   { transform: scale(.9) }
+          50%  { transform: scale(1)  }
+          100% { transform: scale(.9) }
+        }
+
+        @keyframes kiss {
+          0%   { transform: scale(.7) }
+          50%  { transform: scale(.8)  }
+          80%  { transform: scale(1) rotate(-30deg)  }
+          100% { transform: scale(.7) }
+        }
     }
 
     // Global styles.
@@ -2129,6 +2146,18 @@ OM = _omsg
 
             /// Increase minimum width for message bubbles.
             > div:nth-child(2) { min-width: 56px }
+
+            /// Feat -> Animate emojis.
+            if(emoji_ani) {
+                /// Heart Suit emoji, Red Heart emoji.
+                img[src*='97-64'], img[src*='200-64'] {
+                    animation: heartPulse 1s infinite
+                }
+                /// Kiss emoji.
+                img[src*='1564-64'] {
+                    animation: kiss 1s infinite
+                }
+            }
         }
     }
 
