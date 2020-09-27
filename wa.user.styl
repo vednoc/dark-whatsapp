@@ -2149,13 +2149,14 @@ OM = _omsg
 
             /// Feat -> Animate emojis.
             if (emoji_ani) {
-                /// Heart Suit emoji, Red Heart emoji.
-                img[src*='97-64'], img[src*='200-64'] {
-                    animation: heartPulse 1s infinite
-                }
-                /// Kiss emoji.
-                img[src*='1564-64'] {
-                    animation: kiss 1s infinite
+                img[src $= '-64.png'] {
+                    /// ♥️, ❤️
+                    &[alt = '♥️'],
+                    &[alt = '❤️'] {
+                        animation: heartPulse 1s infinite
+                    }
+                    /// 💋
+                    &[alt = '💋'] { animation: kiss 1s infinite }
                 }
             }
         }
