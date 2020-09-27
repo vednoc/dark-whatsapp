@@ -934,7 +934,7 @@ OM = _omsg
     }
 
     // Feat -> Animate emojis.
-    if(emoji_ani) {
+    if (emoji_ani) {
         @keyframes heartPulse {
           0%   { transform: scale(.9) }
           50%  { transform: scale(1)  }
@@ -943,8 +943,8 @@ OM = _omsg
 
         @keyframes kiss {
           0%   { transform: scale(.7) }
-          50%  { transform: scale(.8)  }
-          80%  { transform: scale(1) rotate(-30deg)  }
+          50%  { transform: scale(.8) }
+          80%  { transform: scale(1) rotate(-30deg) }
           100% { transform: scale(.7) }
         }
     }
@@ -2148,7 +2148,7 @@ OM = _omsg
             > div:nth-child(2) { min-width: 56px }
 
             /// Feat -> Animate emojis.
-            if(emoji_ani) {
+            if (emoji_ani) {
                 /// Heart Suit emoji, Red Heart emoji.
                 img[src*='97-64'], img[src*='200-64'] {
                     animation: heartPulse 1s infinite
