@@ -1,6 +1,24 @@
 #+STARTUP: nofold
 
 * Changelog
+** 3.1.0 [2020-10-02 Fri]
+Adding one new feature and fixing a few bugs.
+
+*** Docs
+- Updated info in contributing file
+- Updated info in project readme
+
+*** Added
+- Animated chat emojis when sent in the chat (Added by Erel in [[https://github.com/vednoc/dark-whatsapp/pull/180][#180]])
+  + Enabled by default.
+  + Works when sent as a single — big — emoji. E.g.: ❤️
+  + Currently enabled for following emojis: 🤩, 😍, ☺️,❣️, ♥️, ❤️, 💋
+- Added pale variants of some color variables
+
+*** Fixed
+- Updated attach menu icon alignment in compact mode
+- Removed extra whitespace below the link in RTL layout
+
 ** 3.0.0 [2020-09-03 Thu]
 The =v3= release is here! It took around 3 months to get here, and a ton of work.
 
