@@ -6,14 +6,14 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      3.0.0
+@version      3.1.0
 @license      MIT
 ==/UserStyle== */
 
 @-moz-document domain('web.whatsapp.com') {
   :root:not(#z),
   .dark:not(#z) {
-    --version: 'Dark-WhatsApp 3.0.0 — September 3rd, 2020';
+    --version: 'Dark-WhatsApp 3.1.0 — October 2nd, 2020';
     --message: 'The v3 is here! 🎉 I wrote a blog post about it here: https://vednoc.me/blog/next-gen-of-dark-whatsapp \A\AI started working on an alternative to USo, currently in very early stages: https://userstyles.world 👀  \A\ARead more about v3, as always, in the project changelog:';
     --changes: '\A https://github.com/vednoc/dark-whatsapp\A\A\AP.S. CSS can not add links, only fake/pseudo text.';
     --ui-font: 'font_name', Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif !important;
@@ -53,6 +53,12 @@
     --gray-30-rgb: var(--bg-5-rgb);
     --gray-700: var(--fg-4);
     --gray-700-rgb: var(--fg-4-rgb);
+    --pale-blue-green: var(--b6-4);
+    --pale-blue-green-rgb: var(--b6-4-rgb);
+    --pale-green: var(--b4-4);
+    --pale-green-rgb: var(--b4-4-rgb);
+    --pale-yellow: var(--b3-4);
+    --pale-yellow-rgb: var(--b3-4-rgb);
     --teal: var(--ac-0);
     --teal-rgb: var(--ac-0-rgb);
     --teal-light: var(--ac-1);
@@ -638,6 +644,31 @@
     --t: transparent;
     --bshadow: 0 4px 8px 2px var(--shadow);
     --intro-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='256' width='256'><g stroke='\%237289da'><path d='M128.4901 30.8659a95.4375 95.4375 0 00-95.4375 95.4375 95.4375 95.4375 0 0014.168 50.0332L35.6698 221.276l44.7989-12.498a95.4375 95.4375 0 0048.0214 12.9629 95.4375 95.4375 0 0095.4375-95.4375 95.4375 95.4375 0 00-95.4375-95.4375z' fill='\%23282d37' fill-rule='evenodd' stroke-width='18' stroke-linecap='square'/><path d='M97.8104 79.8463c-4.9671.0406-13.5028 2.0796-17.7812 14.8946-6.8318 20.4631 12.5737 43.3028 27.2438 57.4735 14.7975 14.2938 43.1559 26.507 58.0098 21.08 20.5566-8.9065 15.2475-22.9479 15.2475-22.9479l-22.9727-11.0878s-2.062-1.206-3.4146.5737c-1.0042 1.3213-9.4409 11.3755-9.4409 11.3755s-1.449 1.668-3.827.7402c-5.7574-2.2462-14.2018-7.4856-18.5314-10.7795-6.8875-5.2399-12.957-13.0846-16.9473-19.668-1.2556-2.5597.6953-4.709.6953-4.709s6.0303-8.2629 7.0176-9.5566c1.0068-1.3194.2539-3.3633.2539-3.3633l-10.539-23.2285s-2.0334-.8212-5.0138-.7969z' fill='\%237289da' stroke-linejoin='round'/></g></svg>");
+  }
+  @keyframes heartPulse {
+    0% {
+      transform: scale(0.9);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0.9);
+    }
+  }
+  @keyframes kiss {
+    0% {
+      transform: scale(0.7);
+    }
+    50% {
+      transform: scale(0.8);
+    }
+    80% {
+      transform: scale(1) rotate(-30deg);
+    }
+    100% {
+      transform: scale(0.7);
+    }
   }
   html > body {
     background-image: none !important;
@@ -1468,7 +1499,13 @@
   .message-in a.selectable-text[href]::before,
   .message-out a.selectable-text[href]::before,
   .message-in .eRacY[dir = 'ltr'] > [dir = 'ltr']::before,
-  .message-out .eRacY[dir = 'ltr'] > [dir = 'ltr']::before {
+  .message-out .eRacY[dir = 'ltr'] > [dir = 'ltr']::before,
+  .message-in .selectable-text.invisible-space[dir = 'rtl']::after,
+  .message-out .selectable-text.invisible-space[dir = 'rtl']::after,
+  .message-in a.selectable-text[href]::after,
+  .message-out a.selectable-text[href]::after,
+  .message-in .eRacY[dir = 'ltr'] > [dir = 'ltr']::after,
+  .message-out .eRacY[dir = 'ltr'] > [dir = 'ltr']::after {
     content: unset !important;
   }
   .message-in [data-pre-plain-text] > [dir = 'rtl'],
@@ -1502,6 +1539,24 @@
   .message-in > div:nth-child(2),
   .message-out > div:nth-child(2) {
     min-width: 56px;
+  }
+  .message-in img[src $= '-64.png'][alt = '🤩'],
+  .message-out img[src $= '-64.png'][alt = '🤩'],
+  .message-in img[src $= '-64.png'][alt = '😍'],
+  .message-out img[src $= '-64.png'][alt = '😍'],
+  .message-in img[src $= '-64.png'][alt = '☺️'],
+  .message-out img[src $= '-64.png'][alt = '☺️'],
+  .message-in img[src $= '-64.png'][alt = '❣️'],
+  .message-out img[src $= '-64.png'][alt = '❣️'],
+  .message-in img[src $= '-64.png'][alt = '♥️'],
+  .message-out img[src $= '-64.png'][alt = '♥️'],
+  .message-in img[src $= '-64.png'][alt = '❤️'],
+  .message-out img[src $= '-64.png'][alt = '❤️'] {
+    animation: heartPulse 1s infinite;
+  }
+  .message-in img[src $= '-64.png'][alt = '💋'],
+  .message-out img[src $= '-64.png'][alt = '💋'] {
+    animation: kiss 1s infinite;
   }
   .gm-style img[src *= 'images/google'],
   .gm-style img[src *= 'maps.googleapis.com'],
