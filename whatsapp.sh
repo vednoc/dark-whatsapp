@@ -59,7 +59,9 @@ compile() {
 convert() {
     echo "Converting..."
 
-    if [ -n "${COMPILE+x}" ]; then
+    if [ -n "${USERCSS+x}" ]; then
+        input="wa.user.css"
+    elif [ -n "${COMPILE+x}" ]; then
         input="custom.user.css"
     else
         input="wa.user.css"
