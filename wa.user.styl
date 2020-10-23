@@ -1147,10 +1147,16 @@ OM = _omsg
 
             .copyable-area {
                 > header { border-bottom: 1px solid bg5 }
-                > span [style *= 'translateY'], ._30pU5 {
+                > span [style *= 'translateY']:not([tabindex]), ._30pU5 {
                     border-top: 1px solid bg5
                 }
             }
+        }
+
+        /// Groups -> Search participants.
+        header + div[tabindex] + div div[style] {
+            --background-default: bg1
+            --background-default-hover: bg2
         }
 
         /// Fix media selection.
@@ -1452,8 +1458,17 @@ OM = _omsg
                     // _2daZc
                 }
             }
-        }
 
+            /// Right -> Invite to group.
+            > div:nth-child(3) {
+                header + div {
+                    > div:first-child, div[role='button'] {
+                        --background-default: bg1
+                        --background-default-hover: bg2
+                    }
+                }
+            }
+        }
     }
 
     // Global -> Icons.
