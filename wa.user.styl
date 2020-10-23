@@ -1409,6 +1409,44 @@ OM = _omsg
                 ._2vJ01, ._2-aNW { border-right: none i }
             }
         }
+
+        /// Floating drawers.
+        > div:nth-child(2) {
+            /// Left -> Archived contacts.
+            > div:nth-child(1) {
+                > span[class] * {
+                    // c: 0 0 red
+                    [role][aria-selected='false'] > div {
+                        c: 0 0 bg1
+                        &:hover { c: 0 0 bg2 }
+                    }
+                }
+            }
+
+            /// Left -> Settings -> Help.
+            > div:nth-child(1) {
+                .copyable-text ~ div[role='button'] {
+                    --background-default: var(--bg-1)
+                    --background-default-hover: var(--bg-2)
+                }
+            }
+
+            /// Left/Right -> Starred messages.
+            > div:nth-child(1),
+            > div:nth-child(3) {
+                // c: 0 0 blue
+                header + div > span > div > div {
+                    --drawer-gallery-background-hover: var(--bg-2)
+                    --border-panel: b11
+                    /// Always show top border.
+                    &::before { c: 0 0 bg3 }
+                    /// Do not hide bottom border.
+                    &::after { c: 0 0 t }
+                    // _2daZc
+                }
+            }
+        }
+
     }
 
     // Global -> Icons.
