@@ -1,6 +1,30 @@
 #+STARTUP: nofold
 
 * Changelog
+** 3.2.0 [2020-10-26 Mon]
+Adding options to set custom animated emojis, improving the build tool, adding
+new color variables, and making overall experience more consistent.
+
+*** Build
+- Added an option to print compiled userstyle to standard output
+- Fixed a bug when using =-cuf= options together that would produce an empty file
+- Added checking for file's existance before deleting them for =-r= option
+
+*** Added
+- Two new options to set custom emojis for Kiss and Pulse emoji animations
+  + These bring more customization to 'animated emojis' option.
+  + On detailed how-to-use, see my writeup in the commit [[https://github.com/vednoc/dark-whatsapp/commit/ee200fbd91fc4210e561e8bc7c9189e16a08ff38][#ee200fb]].
+- More remapping for color variables
+
+*** Improved
+- More color consistency in floating drawers and groups
+- Added better formatting for 'typing...' animation
+
+*** Fixed
+- Removed recently updated =min-height= overflow in compact mode
+- Updated icon color for 'Phone not connected' alert
+- Tweaked new styles for items in wallpapers area
+
 ** 3.1.0 [2020-10-02 Fri]
 Adding one new feature and fixing a few bugs.
 
