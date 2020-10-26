@@ -938,9 +938,11 @@ OM = _omsg
     }
 
     // Animation for 'Typing...' indicator.
-    @keyframes pulse {
-        40% { opacity: 0 }
-        80% { opacity: 1 }
+    if (compact_mode) {
+        @keyframes aBorder {
+            40% { opacity: 0 }
+            80% { opacity: 1 }
+        }
     }
 
     // Feat -> Animate emojis.
@@ -1882,7 +1884,7 @@ OM = _omsg
                             width: 53px i
                             rad: var(--r-avatars) i
                             box-shadow: inset 0 0 0 3px b40 i
-                            animation: 2s pulse infinite i
+                            animation: 2s aBorder infinite i
 
                             /// Fix RTL layout.
                             /[dir = 'RTL'] & { left: 62px i }
