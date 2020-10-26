@@ -76,7 +76,9 @@
     'Normal   ': 'normal  ',
     'Small    ': 'small   ',
 }
-@var checkbox emoji_ani  'Animate emojis' 1
+@var checkbox emoji_a    'Animate emojis' 1
+@var text     emoji_k    'Emojis with kiss animation' "'💋'"
+@var text     emoji_p    'Emojis with pulse animation' "'🤩' '😍' '☺️' '❣️' '♥️' '❤️'"
 
 @var checkbox ow_imsg    'Override incoming message bubble color' 0
 @var color    _imsg  'Incoming message bubble color' #16191e
@@ -943,13 +945,13 @@ OM = _omsg
 
     // Feat -> Animate emojis.
     if (emoji_ani) {
-        @keyframes heartPulse {
+        @keyframes aPulse {
           0%   { transform: scale(.9) }
           50%  { transform: scale(1)  }
           100% { transform: scale(.9) }
         }
 
-        @keyframes kiss {
+        @keyframes aKiss {
           0%   { transform: scale(.7) }
           50%  { transform: scale(.8) }
           80%  { transform: scale(1) rotate(-30deg) }
@@ -2202,21 +2204,24 @@ OM = _omsg
 
             /// Increase minimum width for message bubbles.
             > div:nth-child(2) { min-width: 56px }
+        }
 
-            /// Feat -> Animate emojis.
-            if (emoji_ani) {
-                img[src $= '-64.png'] {
-                    /// 🤩, 😍, ☺️,❣️, ♥️, ❤️
-                    &[alt = '🤩'],
-                    &[alt = '😍'],
-                    &[alt = '☺️'],
-                    &[alt = '❣️'],
-                    &[alt = '♥️'],
-                    &[alt = '❤️'] {
-                        animation: heartPulse 1s infinite
+        /// Feat -> Animate emojis.
+        if (emoji_ani) {
+            emoji_k = (emoji_k == '') ? () : emoji_k
+            emoji_p = (emoji_p == '') ? () : emoji_p
+
+            /// Generate Kiss/Pulse emoji styles.
+            /[class*='message-'] img[src$='-64.png'] {
+                for emoji in emoji_k {
+                    &[alt={ '%s' % emoji }] {
+                        +cache('aKiss') { animation: aKiss 1s infinite }
                     }
-                    /// 💋
-                    &[alt = '💋'] { animation: kiss 1s infinite }
+                }
+                for emoji in emoji_p {
+                    &[alt={ '%s' % emoji }] {
+                        +cache('aPulse') { animation: aPulse 1s infinite }
+                    }
                 }
             }
         }
