@@ -6,14 +6,14 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      3.1.0
+@version      3.2.0
 @license      MIT
 ==/UserStyle== */
 
 @-moz-document domain('web.whatsapp.com') {
   :root:not(#z),
   .dark:not(#z) {
-    --version: 'Dark-WhatsApp 3.1.0 — October 2nd, 2020';
+    --version: 'Dark-WhatsApp 3.2.0 — October 26th, 2020';
     --message: 'The v3 is here! 🎉 I wrote a blog post about it here: https://vednoc.me/blog/next-gen-of-dark-whatsapp \A\AI started working on an alternative to USo, currently in very early stages: https://userstyles.world 👀  \A\ARead more about v3, as always, in the project changelog:';
     --changes: '\A https://github.com/vednoc/dark-whatsapp\A\A\AP.S. CSS can not add links, only fake/pseudo text.';
     --ui-font: 'font_name', Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif !important;
@@ -137,8 +137,8 @@
     --butterbar-connection-secondary-rgb: var(--fg-4-rgb);
     --butterbar-default-background: var(--b6-4);
     --butterbar-default-background-rgb: var(--b6-4);
-    --butterbar-icon: var(--b3-2);
-    --butterbar-icon-rgb: var(--b3-2-rgb);
+    --butterbar-icon: var(--b3-0);
+    --butterbar-icon-rgb: var(--b3-0-rgb);
     --butterbar-notification-icon: var(--b6-0);
     --butterbar-notification-icon-rgb: var(--b6-0-rgb);
     --butterbar-primary: var(--fg-0);
@@ -281,9 +281,11 @@
     --intro-background-rgb: var(--bg-1-rgb);
     --intro-border: var(--ac-3);
     --intro-border-rgb: var(--ac-3-rgb);
+    --intro-logo: var(--fg-3);
+    --intro-logo-rgb: var(--fg-3-rgb);
     --intro-secondary: var(--fg-3);
     --intro-secondary-rgb: var(--fg-3-rgb);
-    --inverse: #f1f1f2;
+    --inverse: var(--fg-0);
     --inverse-rgb: var(--fg-0-rgb);
     --labels-icon: rgba(241,241,242,0.4);
     --labels-icon-rgb: var(--fg-3-rgb);
@@ -445,6 +447,8 @@
     --spinner-outgoing-rgb: var(--ac-5-rgb);
     --startup-background: var(--bg-0);
     --startup-background-rgb: var(--bg-0-rgb);
+    --startup-icon: var(--fg-3);
+    --startup-icon-rgb: var(--fg-3-rgb);
     --status-background: var(--bg-1);
     --status-background-rgb: var(--bg-1-rgb);
     --status-background-hover: var(--bg-2);
@@ -503,8 +507,12 @@
     --voip-reject-background-rgb: 229, 75, 64;
     --wallpaper-background: var(--bg-1);
     --wallpaper-background-rgb: var(--bg-1-rgb);
-    --win32-title-primary: #fff;
-    --win32-title-primary-rgb: 255, 255, 255;
+    --wallpaper-thumb-border-active: var(--bg-5);
+    --wallpaper-thumb-border-active-rgb: var(--bg-5-rgb);
+    --wallpaper-thumb-border-hover: var(--bg-4);
+    --wallpaper-thumb-border-hover-rgb: var(--bg-4-rgb);
+    --win32-title-primary: var(--fg-1);
+    --win32-title-primary-rgb: var(--fg-1-rgb);
     --bg-0: #1c2026 !important;
     --bg-0-rgb: 28,32,38;
     --bg-1: #1f232a !important;
@@ -645,7 +653,15 @@
     --bshadow: 0 4px 8px 2px var(--shadow);
     --intro-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='256' width='256'><g stroke='\%237289da'><path d='M128.4901 30.8659a95.4375 95.4375 0 00-95.4375 95.4375 95.4375 95.4375 0 0014.168 50.0332L35.6698 221.276l44.7989-12.498a95.4375 95.4375 0 0048.0214 12.9629 95.4375 95.4375 0 0095.4375-95.4375 95.4375 95.4375 0 00-95.4375-95.4375z' fill='\%23282d37' fill-rule='evenodd' stroke-width='18' stroke-linecap='square'/><path d='M97.8104 79.8463c-4.9671.0406-13.5028 2.0796-17.7812 14.8946-6.8318 20.4631 12.5737 43.3028 27.2438 57.4735 14.7975 14.2938 43.1559 26.507 58.0098 21.08 20.5566-8.9065 15.2475-22.9479 15.2475-22.9479l-22.9727-11.0878s-2.062-1.206-3.4146.5737c-1.0042 1.3213-9.4409 11.3755-9.4409 11.3755s-1.449 1.668-3.827.7402c-5.7574-2.2462-14.2018-7.4856-18.5314-10.7795-6.8875-5.2399-12.957-13.0846-16.9473-19.668-1.2556-2.5597.6953-4.709.6953-4.709s6.0303-8.2629 7.0176-9.5566c1.0068-1.3194.2539-3.3633.2539-3.3633l-10.539-23.2285s-2.0334-.8212-5.0138-.7969z' fill='\%237289da' stroke-linejoin='round'/></g></svg>");
   }
-  @keyframes heartPulse {
+  @keyframes aBorder {
+    40% {
+      opacity: 0;
+    }
+    80% {
+      opacity: 1;
+    }
+  }
+  @keyframes aPulse {
     0% {
       transform: scale(0.9);
     }
@@ -656,7 +672,7 @@
       transform: scale(0.9);
     }
   }
-  @keyframes kiss {
+  @keyframes aKiss {
     0% {
       transform: scale(0.7);
     }
@@ -742,8 +758,8 @@
     height: 100%;
     width: 100%;
   }
-  ._3lqL6:first-child {
-    border: 4px solid var(--bg-3) !important;
+  ._3lqL6:first-child:not(._1rIeG) {
+    border: 4px solid var(--bg-2) !important;
   }
   ._3lqL6:first-child,
   ._3lqL6:first-child::after {
@@ -759,8 +775,7 @@
   [style *= 'rgb(222, 227, 233)'],
   [style *= 'rgb(217, 218, 222)'],
   [style *= 'rgb(192, 193, 196)'] {
-    border: 4px solid var(--bg-3) !important;
-    background-color: var(--bg-1) !important;
+    background-color: var(--bg-2) !important;
   }
   @supports (scrollbar-width: thin) {
     * {
@@ -841,9 +856,13 @@
   .overlay [data-animate-modal-popup] .copyable-area > header {
     border-bottom: 1px solid var(--bg-5);
   }
-  .overlay [data-animate-modal-popup] .copyable-area > span [style *= 'translateY'],
+  .overlay [data-animate-modal-popup] .copyable-area > span [style *= 'translateY']:not([tabindex]),
   .overlay [data-animate-modal-popup] .copyable-area ._30pU5 {
     border-top: 1px solid var(--bg-5);
+  }
+  .overlay header + div[tabindex] + div div[style] {
+    --background-default: var(--bg-1);
+    --background-default-hover: var(--bg-2);
   }
   ._1KWct {
     border-color: var(--bg-5) !important;
@@ -1056,6 +1075,34 @@
   .dark .three ._2vJ01,
   .dark .three ._2-aNW {
     border-right: none !important;
+  }
+  #app > div > [tabindex] > div:nth-child(2) > div:nth-child(1) > span[class] * [role][aria-selected='false'] > div {
+    background-color: var(--bg-1) !important;
+  }
+  #app > div > [tabindex] > div:nth-child(2) > div:nth-child(1) > span[class] * [role][aria-selected='false'] > div:hover {
+    background-color: var(--bg-2) !important;
+  }
+  #app > div > [tabindex] > div:nth-child(2) > div:nth-child(1) .copyable-text ~ div[role='button'] {
+    --background-default: var(--bg-1);
+    --background-default-hover: var(--bg-2);
+  }
+  #app > div > [tabindex] > div:nth-child(2) > div:nth-child(1) header + div > span > div > div,
+  #app > div > [tabindex] > div:nth-child(2) > div:nth-child(3) header + div > span > div > div {
+    --drawer-gallery-background-hover: var(--bg-2);
+    --border-panel: var(--b1-1);
+  }
+  #app > div > [tabindex] > div:nth-child(2) > div:nth-child(1) header + div > span > div > div::before,
+  #app > div > [tabindex] > div:nth-child(2) > div:nth-child(3) header + div > span > div > div::before {
+    background-color: var(--bg-3) !important;
+  }
+  #app > div > [tabindex] > div:nth-child(2) > div:nth-child(1) header + div > span > div > div::after,
+  #app > div > [tabindex] > div:nth-child(2) > div:nth-child(3) header + div > span > div > div::after {
+    background-color: transparent !important;
+  }
+  #app > div > [tabindex] > div:nth-child(2) > div:nth-child(3) header + div > div:first-child.HsWVk,
+  #app > div > [tabindex] > div:nth-child(2) > div:nth-child(3) header + div > div[role='button'] {
+    --background-default: var(--bg-1);
+    --background-default-hover: var(--bg-2);
   }
   span[class][data-icon = 'checkbox-round-checked'] [fill = '#00BFA5'] {
     fill: var(--ac-0);
@@ -1343,7 +1390,7 @@
   #main .bg-color-20 {
     background-color: var(--b6-2) !important;
   }
-  @media screen and (max-height: 500px) {
+  @media screen and (max-height: 648px) {
     #app > div > [tabindex] {
       min-height: auto;
     }
@@ -1460,7 +1507,7 @@
       width: 53px !important;
       border-radius: var(--r-avatars) !important;
       box-shadow: inset 0 0 0 3px var(--b4-0) !important;
-      animation: 2s pulse infinite !important;
+      animation: 2s aBorder infinite !important;
     }
     [dir = 'RTL'] ._616fG::before {
       left: 62px !important;
@@ -1540,23 +1587,16 @@
   .message-out > div:nth-child(2) {
     min-width: 56px;
   }
-  .message-in img[src $= '-64.png'][alt = '🤩'],
-  .message-out img[src $= '-64.png'][alt = '🤩'],
-  .message-in img[src $= '-64.png'][alt = '😍'],
-  .message-out img[src $= '-64.png'][alt = '😍'],
-  .message-in img[src $= '-64.png'][alt = '☺️'],
-  .message-out img[src $= '-64.png'][alt = '☺️'],
-  .message-in img[src $= '-64.png'][alt = '❣️'],
-  .message-out img[src $= '-64.png'][alt = '❣️'],
-  .message-in img[src $= '-64.png'][alt = '♥️'],
-  .message-out img[src $= '-64.png'][alt = '♥️'],
-  .message-in img[src $= '-64.png'][alt = '❤️'],
-  .message-out img[src $= '-64.png'][alt = '❤️'] {
-    animation: heartPulse 1s infinite;
+  [class*='message-'] img[src$='-64.png'][alt='💋'] {
+    animation: aKiss 1s infinite;
   }
-  .message-in img[src $= '-64.png'][alt = '💋'],
-  .message-out img[src $= '-64.png'][alt = '💋'] {
-    animation: kiss 1s infinite;
+  [class*='message-'] img[src$='-64.png'][alt='🤩'],
+  [class*='message-'] img[src$='-64.png'][alt='😍'],
+  [class*='message-'] img[src$='-64.png'][alt='☺️'],
+  [class*='message-'] img[src$='-64.png'][alt='❣️'],
+  [class*='message-'] img[src$='-64.png'][alt='♥️'],
+  [class*='message-'] img[src$='-64.png'][alt='❤️'] {
+    animation: aPulse 1s infinite;
   }
   .gm-style img[src *= 'images/google'],
   .gm-style img[src *= 'maps.googleapis.com'],
@@ -1590,13 +1630,5 @@
   }
   .VK7yK {
     box-shadow: 0 -1px var(--bg-5) !important;
-  }
-  @keyframes pulse {
-    40% {
-      opacity: 0;
-    }
-    80% {
-      opacity: 1;
-    }
   }
 }
