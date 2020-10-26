@@ -1,6 +1,13 @@
 #+STARTUP: nofold
 
 * Changelog
+** 3.2.1 [2020-10-26 Mon]
+Fixing a regression from the previous release.
+
+*** Fixed
+- Updated mismatched keys for 'animate emojis' option
+  + Toggling animated emojis on and off now works as intended.
+
 ** 3.2.0 [2020-10-26 Mon]
 Adding options to set custom animated emojis, improving the build tool, adding
 new color variables, and making overall experience more consistent.
