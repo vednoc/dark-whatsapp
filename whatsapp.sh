@@ -40,10 +40,20 @@ print() {
     cat $input
 }
 
+remove_if_exists() {
+    if [ -f "$1" ]; then
+        rm "$1"
+    fi
+}
+
 remove() {
     echo "Removing files..."
 
-    rm temp.styl darkmode.css custom.user.css
+    remove_if_exists temp.styl
+    remove_if_exists darkmode.css
+    remove_if_exists custom.user.css
+
+    echo "Done!"
 }
 
 compile() {
