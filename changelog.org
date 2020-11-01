@@ -1,6 +1,22 @@
 #+STARTUP: nofold
 
 * Changelog
+** 3.3.0 [2020-11-01 Sun]
+
+*** Documentation
+- Added preview gif for custom emoji animations in =v3.2.0= release
+
+*** Added
+- New overrides for 'seen message icon color' ([[https://github.com/vednoc/dark-whatsapp/issues/181][#181]])
+  + Works the same way as overrides for message bubble colors.
+  + Quick preview:
+
+    [[https://user-images.githubusercontent.com/18245694/97802421-8a15c080-1c43-11eb-876e-d19c43283538.png]]
+
+*** Fixed
+- Removed =!important= from generated variables
+  + It makes no difference when it's used there.
+
 ** 3.2.1 [2020-10-26 Mon]
 Fixing a regression from the previous release.
 
@@ -21,6 +37,9 @@ new color variables, and making overall experience more consistent.
 - Two new options to set custom emojis for Kiss and Pulse emoji animations
   + These bring more customization to 'animated emojis' option.
   + On detailed how-to-use, see my writeup in the commit [[https://github.com/vednoc/dark-whatsapp/commit/ee200fbd91fc4210e561e8bc7c9189e16a08ff38][#ee200fb]].
+  + Quick preview:
+
+    [[https://user-images.githubusercontent.com/18245694/97813538-23b39100-1c89-11eb-9434-4e45bfd43cea.gif]]
 - More remapping for color variables
 
 *** Improved
