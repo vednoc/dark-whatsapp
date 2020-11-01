@@ -80,6 +80,9 @@
 @var text     emoji_k    'Emojis with kiss animation' "'💋'"
 @var text     emoji_p    'Emojis with pulse animation' "'🤩' '😍' '☺️' '❣️' '♥️' '❤️'"
 
+@var checkbox ow_ack     'Override seen message icon color' 0
+@var color    _ack       'Seen message icon color' #ff6666
+
 @var checkbox ow_imsg    'Override incoming message bubble color' 0
 @var color    _imsg  'Incoming message bubble color' #16191e
 @var checkbox bubble_in  'Swap sides for incoming message bubbles' 0
@@ -421,6 +424,10 @@ OM = _omsg
         --msg-out-1:     (ow_omsg) ? og-1         : var(--ac-5)
         --msg-out-1-rgb: (ow_omsg) ? to_rgb(og-1) : var(--ac-5-rgb)
 
+        /// Override seen message icon color.
+        --msg-ack:     (ow_ack) ? _ack         : var(--ac-0)
+        --msg-ack-rgb: (ow_ack) ? to_rgb(_ack) : var(--ac-0-rgb)
+
         /// WA variables.
         --gray-30: var(--bg-5) //#f7f7f7;
         --gray-30-rgb: var(--bg-5-rgb) //247,247,247;
@@ -628,8 +635,8 @@ OM = _omsg
         --highlight-rgb: var(--ac-0-rgb) //0,175,156;
         --icon: var(--fg-3) //#80868b;
         --icon-rgb: var(--fg-3-rgb) //128,134,139;
-        --icon-ack: var(--ac-0) //#34b7f1;
-        --icon-ack-rgb: var(--ac-0-rgb) //52,183,241;
+        --icon-ack: var(--msg-ack) //#34b7f1;
+        --icon-ack-rgb: var(--msg-ack-rgb) //52,183,241;
         --icon-disabled: var(--fg-5) //#3c464c;
         --icon-disabled-rgb: var(--fg-5-rgb) //60,70,76;
         --icon-fixed: var(--fg-3) //#80868b;
