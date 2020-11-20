@@ -989,7 +989,8 @@ OM = _omsg
         }
 
         /// Intro image.
-        [data-asset-intro-image-dark], [data-asset-intro-image-light] {
+        [data-asset-intro-image-dark],
+        [data-asset-intro-image-light] {
             max-width: 240px
             max-height: 240px
             background-image: var(--intro-image)
@@ -1159,6 +1160,7 @@ OM = _omsg
 
         /// Add borders.
         [data-animate-modal-popup] {
+            box-shadow: var(--bshadow) i
             border: 1px solid bg5
             rad: var(--r-menus) i
 
@@ -1569,11 +1571,8 @@ OM = _omsg
         /// Reset header.
         > header {
             border-bottom: 1px solid bg5 i
-            border-right: none i
+            box-shadow: none i
             c: 0 bg5
-
-            /// Hide borders.
-            &::after { content: unset i }
         }
 
         /// System messages.
@@ -1588,10 +1587,11 @@ OM = _omsg
         }
 
         /// Loading previous messages.
-        ._2J60S { border: 1px solid bg5 }
+        ._3bfj9 { border: 1px solid bg5 }
 
         /// Feat -> Custom chat background.
-        /[data-asset-chat-background-dark], /[data-asset-chat-background-light] {
+        /[data-asset-chat-background-dark],
+        /[data-asset-chat-background-light] {
             filter: invert(var(--chat-bg-i)) opacity(var(--chat-bg-o))
             background-image: var(--chat-image) i
             background-position: var(--chat-bg-p) i
