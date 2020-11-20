@@ -1945,7 +1945,7 @@ OM = _omsg
         /// 3-5: Images/gifs/stickers
         ts = '.VGBA3, .video-thumb + ._2DfqO, ._3yTyY, ._2CHFo, ._1nrJA'
         /// Big emojis.
-        big = '._20sYJ'
+        big = '._3B8qp'
 
 
         /// Feat -> Message tails.
@@ -2207,7 +2207,11 @@ OM = _omsg
                     /// Reset emojis.
                     span {
                         margin: 0 i
-                        > img { width: size i; height: @width }
+                        /// All emojis / Heart emoji.
+                        > img, ../ div > img {
+                            width: size i
+                            height: size i
+                        }
                     }
                 }
             } else {
