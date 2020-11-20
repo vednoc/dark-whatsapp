@@ -1096,20 +1096,22 @@ OM = _omsg
     }
 
     // Feat -> Rounded corners for avatars.
-    ._1BjNO[style] {
+    ._1l12d[style] {
         /// Global/shared contacts.
-        &, /._1S7ke { c: 0 0 bg5 }
+        &, /._3PdFH { c: 0 0 bg5 }
 
         /// Avatars/images/new group/shared contacts/contact avatar.
-        &, > img, /._18cLH, /._3_Hvt, /._2H1bg, /._1S7ke, /._2SNSv {
+        &, > img, /._3I3b7, /._3PdFH, /._1huBh, /._3JaPz {
             rad: var(--r-avatars) i
         }
 
         /// Add rounded corners to the default group SVG avatar.
-        /.Ao0On { c: 0 0 bg5 }
+        /._3JaPz { c: 0 0 bg5 }
 
-        /// Fix 'new group' bottom divider to hide drawer background-color.
-        /._1g1ui > ._1ByLM { margin-left: unset i }
+        /// Fix 'New group' bottom divider to hide drawer background-color.
+        /[data-list-scroll-offset] > div:first-child > div:last-child {
+            margin-left: 0 i
+        }
 
         /// Tweak default-user icons.
         if (radius_a != '50%') {
