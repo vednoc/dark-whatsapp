@@ -1825,10 +1825,12 @@ OM = _omsg
             }
 
             /// Fix search bar width.
-            ._3qx7_:not(._3fVV4) label { padding: 0px }
+            ._22PcK:not(._30SFc) label { padding: 0px }
 
             /// Contacts.
             #side {
+                status = '._-68As'
+                unread = '.VOr2j'
                 /// Fix header width.
                 > header {
                     min-width: 240px
@@ -1838,47 +1840,53 @@ OM = _omsg
                 }
 
                 /// Items.
-                .eJ0yJ {
-                    /// Add whitespace to hide message content.
-                    > div:last-child { padding-left: 5px i }
+                ._1C6Zl {
+                    // c: 0 0 #f111
+
+                    /// Remove whitespace from icons.
+                    ._2Q3SY { margin: 0 i }
 
                     /// Reverse message content.
-                    ._1582E {
+                    ._7W_3c {
                         position: relative
                         flex-direction: row-reverse i
 
                         /// Remove margin from status wrapper.
-                        .m61XR {
+                        ._2gsiG {
                             z-index: 999 i
                             margin-left: 0 i
-                            position: absolute
-                            left: -41px
-                            bottom: -6px
+                            position: fixed
+                            left: 39px
+                            bottom: 6px
                             rad: 50%
-                            ._15G96 { margin: 0 }
 
                             /// Fix RTL layout.
                             /[dir = 'RTL'] & {
                                 left: unset i
-                                right: -77px i
+                                right: 36px i
                             }
 
                             /// Unread indicator.
-                            ._31gEB { border: 4px solid bg2 }
+                            { unread } {
+                                border: 4px solid bg2
+                                left: 20px i
+                            }
                         }
 
                         /// Reverse message and icons.
-                        .m61XR > span {
+                        ._2gsiG > span {
                             display: flex i
                             flex-direction: row-reverse i
                         }
 
-                        /// Remove chevron and all status icons.
-                        ._38QnI, .ZKn2B > *:not(._31gEB) { display: none }
+                        /// Remove chevron, pinned, and all status icons.
+                        .tRtcW, ._2SPs9, [data-icon]:not([data-icon*='status-']) {
+                            display: none
+                        }
                     }
 
                     /// 'Typing...' status indicator.
-                    /._616fG {
+                    /._2NMQ2 {
                         overflow: unset i
                         margin-top: -8px i
                         margin-left: 0px i
@@ -1889,7 +1897,7 @@ OM = _omsg
                             z-index: 1 i
                             position: absolute i
                             top: -31px i
-                            left: -71px i
+                            left: -66px i
                             height: 53px i
                             width: 53px i
                             rad: var(--r-avatars) i
@@ -1897,17 +1905,17 @@ OM = _omsg
                             animation: 2s aBorder infinite i
 
                             /// Fix RTL layout.
-                            /[dir = 'RTL'] & { left: 62px i }
+                            /[dir = 'RTL'] & { left: 63px i }
                         }
                     }
 
                     /// Message status.
-                    .zFnXi {
+                    { status } {
                         padding: 1.5px
                         z-index: 101
                         position: absolute
-                        margin: -2px 0 0 -75px
-                        border: 3px solid bg2
+                        margin: -1px 0 0 -38px
+                        border: 4px solid bg2
                         c: 0 0 bg1
                         rad: 50%
 
@@ -1922,9 +1930,14 @@ OM = _omsg
                         }
                     }
 
-                    /// Active states.
-                    &._13opk { ._31gEB, .zFnXi { c: 0 bg4 }}
-                    &:hover:not(._13opk) { ._31gEB, .zFnXi { c: 0 bg3 }}
+                }
+
+                /// Hover/Active states.
+                [aria-selected='false'] > div:hover {
+                    { unread }, { status } { c: 0 bg3 }
+                }
+                [aria-selected='true'] > div {
+                    { unread }, { status } { c: 0 bg4 }
                 }
 
                 /// I _think_ I understand why this works!
