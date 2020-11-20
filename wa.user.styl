@@ -1658,7 +1658,7 @@ OM = _omsg
         /// Feat -> Blur media.
         if (chat_b_img) {
             /[class *= 'message-'] [style *= 'height'] {
-                img {
+                img:not([src*='/pp?']) {
                     transition: 0.5s ease
                     transition-delay: var(--blur-out)
                     filter: blur(16px) grayscale(100%)
