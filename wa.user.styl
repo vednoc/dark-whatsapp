@@ -1147,12 +1147,14 @@ OM = _omsg
     // Modals.
     .overlay {
         /// Media/Avatar viewers have different headers. @upstream
-        ._2ouPw, ._21ltg, > .KeLEe {
-            border-bottom: 1px solid bg5 i
-            c: 0 0 bg3
+        /[data-animate-media-viewer] {
+            > div:first-child, ../ ._2CDVd {
+                border-bottom: 1px solid bg5 i
+                c: 0 0 bg2
+            }
 
             /// Fix header onflicts.
-            ../ ._1kEVs { c: 0 0 t }
+            ../ ._3Pwfx { c: 0 0 t }
         }
 
         /// Add borders.
@@ -1175,7 +1177,7 @@ OM = _omsg
         }
 
         /// Fix media selection.
-        /._1KWct { c: 0 bg5 bg3 }
+        /._17JJa { c: 0 bg5 bg2 }
 
         /// Status area modal.
         /[data-animate-status-v3-modal-background = 'true'] {
