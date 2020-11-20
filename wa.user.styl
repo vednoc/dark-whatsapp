@@ -1573,11 +1573,15 @@ OM = _omsg
             border-bottom: 1px solid bg5 i
             box-shadow: none i
             c: 0 bg5
+
+            /// Remove border in light mode.
+            &::after { content: unset }
         }
 
         /// System messages.
         .KpuSa {
             border: 1px solid b63
+            text-shadow: none i
 
             /// End-to-end encryption message.
             &._1N_HH { border: 1px solid b34 }
@@ -1586,8 +1590,8 @@ OM = _omsg
             &._1C8gB { border: 1px solid b54 }
         }
 
-        /// Loading previous messages.
-        ._3bfj9 { border: 1px solid bg5 }
+        /// Loading previous messages / Jump to new messages.
+        ._3bfj9, ._3DmTD { border: 1px solid bg5 }
 
         /// Feat -> Custom chat background.
         /[data-asset-chat-background-dark],
@@ -1604,13 +1608,13 @@ OM = _omsg
         }
 
         /// Tweak 'unread messages' alert.
-        ._9WQEN { border: none i }
+        .XFAMv { border: none i }
 
         /// Tweak box-shadow for message bubbles.
         [class *= 'message-'][data-id] {
             /// Exclude stickers.
-            > span + div:not(.urabC) > div {
-                box-shadow: 0 1px 0 to_rgba('shadow', 0.33) i
+            > span + div:not(._31W3v) > div {
+                box-shadow: 0 1px 0 to_rgba('shadow', 0.2) i
             }
         }
 
