@@ -1514,24 +1514,24 @@ OM = _omsg
     }
 
     // Feat -> Consistent drawer headers.
-    if (app_header) {
-        ._1fiOp, ._2TZYF {
+    .copyable-area header[class] {
+        if (app_header) {
             height: 59px i
             justify-content: center i
             border-bottom: 1px solid bg5 i
 
             /// Reset left drawer inner item.
-            > [data-animate-drawer-title] { height: unset i }
+            > [data-animate-drawer-title] {
+                height: unset i
 
-            /// Reset header text.
-            ._3vTfY {
-                margin-top: 1px i
-                font-size: 18px i
-                font-weight: normal i
+                /// Reset header text.
+                > div:nth-child(2) {
+                    margin-top: 1px i
+                    font-size: 18px i
+                    font-weight: normal i
+                }
             }
-        }
-    } else {
-        ._1fiOp, ._2TZYF {
+        } else {
             --panel-background-colored: bg4 i
         }
     }
