@@ -1333,23 +1333,25 @@ OM = _omsg
 
         /// Right -> Remove top border from the first Links/Docs message.
         /div, /span {
-            div:first-child > .aGjYp::before { content: none }
+            div:first-child > .U7SeD::before { content: none }
         }
 
         /// Feat -> Input border radius.
         ._3xpD_ { rad: var(--r-inputs) i }
 
         /// Dropdowns -> Chat/Header.
-        > span > div, ._2s_eZ {
+        > span > div, ._3nLE_ {
             &[style ^= 'transform-origin:'][tabindex] {
+                box-shadow: var(--bshadow) i
                 border: 1px solid bg4
                 rad: var(--r-menus) i
             }
         }
 
         /// Floating emoji picker.
-        > span > ._3f317 {
+        > span > ._3nLE_ {
             border: 1px solid bg5 i
+            box-shadow: var(--bshadow) i
 
             > [data-animate-dropdown-nib] {
                 border-bottom: 1px solid bg5
@@ -1501,7 +1503,7 @@ OM = _omsg
         &[data-icon] path[fill = '#FFBC00'] { fill: bg3 i }
 
         /// Chat -> Context menu arrows.
-        &[data-icon = 'down-context'] { c: fg0 }
+        &[data-icon = 'down-context'] { c: fg3 }
 
         /// Hover animation for icons.
         /#side > header,
