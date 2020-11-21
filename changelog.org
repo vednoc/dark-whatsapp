@@ -1,7 +1,26 @@
 #+STARTUP: nofold
 
 * Changelog
+** 3.4.0 [2020-11-21 Sat]
+Hotfix release for ~2.2047.11~ update.
+
+*** Docs
+- Added summary for =v3.3.0= release
+- Revised code comments
+
+*** Improvements
+- Compact mode and Facebook-style tails should work slightly better than before
+  + These two options were the ones that received small yet necessary rewrites.
+- Slowed down custom emoji animations (from =1.0s= to =1.5s=)
+
+*** Fixed
+- Pretty much /everything/
+  + All class selectors had to be replaced with new ones.
+  + Some features had to be slightly rewritten.
+  + A small checklist was made in [[https://github.com/vednoc/dark-whatsapp/issues/182][#182]].
+
 ** 3.3.0 [2020-11-01 Sun]
+Adding one new option and tidying up code.
 
 *** Documentation
 - Added preview gif for custom emoji animations in =v3.2.0= release
