@@ -1619,7 +1619,7 @@ OM = _omsg
         }
 
         /// Fix context menu background for stickers.
-        .-AOZp ._2oA-- + div[style] { c: 0 0 bg4 }
+        ._1qGcR + div[style] { c: 0 0 bg4 }
 
         /// Add background to media message timestamps.
         /[style *= 'width'][style *= 'height'] + div {
@@ -1655,7 +1655,7 @@ OM = _omsg
                 }
 
                 /// Live location overlay.
-                /.a221_ { background-color: to_rgba('bg-4', 0.5) i }
+                /.fMR4l { background-color: to_rgba('bg-4', 0.5) i }
             }
         }
 
@@ -1705,11 +1705,14 @@ OM = _omsg
                 box-shadow: 0 -1px 0 bg5 i
             }
 
-            /// Remove double-border from an unknown contact.
-            ._2k-2Z { border-top: none }
+            /// Fix borders an unknown contact.
+            ._1Q5Gk {
+                border-top: none
+                border-bottom: 1px solid bg5
+            }
 
             /// Groups -> Only admins can send messages.
-            ._3ge3i {
+            ._2K2iM {
                 border-top: 1px solid bg5 i
                 border-left: @border-top
             }
@@ -1721,13 +1724,10 @@ OM = _omsg
             }
 
             /// Chat -> Select messages.
-            + span > ._2pAWd {
+            + span > .yVipa {
                 border-top: 1px solid bg5 i
                 border-left: 1px solid bg5 i
             }
-
-            /// Emoji group selection.
-            ._3eShu { border-bottom: 1px solid bg5 i }
 
             /// Feat -> Input border radius.
             .DuUXI { rad: var(--r-inputs) i }
@@ -1739,7 +1739,7 @@ OM = _omsg
         }
 
         /// Fix unread messages in dark mode. @upstream
-        /.dark ._8Uqu5 ._3dtfX .m61XR { c: var(--secondary-stronger) }
+        /.dark .vwouH ._1c_mC ._2gsiG { c: var(--secondary-stronger) }
 
         /// Groups -> Fix opacity for nicknames.
         /[class *= ' color-'] > span:nth-child(2) { c: fg3 }
