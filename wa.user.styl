@@ -1611,8 +1611,8 @@ OM = _omsg
 
         /// Add background to media message timestamps.
         /[style *= 'width'][style *= 'height'] + div {
-            /// Images.
-            &._3yTyY, &._2CHFo {
+            /// Images/gifs.
+            &._1yXJw, &._2QpTA {
                 padding: 2px 4px i
                 background-color: to_rgba('bg-1', 0.7) i
                 rad: (tail_style == 'fb-like') ? 16px i : 5px i
@@ -1621,14 +1621,14 @@ OM = _omsg
             /// Videos.
             /.video-thumb {
                 /// Length/Timestamp.
-                .len7M, + ._2DfqO {
+                ._1rd4q, + ._3phU6 {
                     padding: 2px 4px i
                     background-color: to_rgba('bg-1', 0.7) i
                     rad: (tail_style == 'fb-like') ? 16px i : 5px i
                 }
 
                 /// Timestamps in grouped media.
-                &._3EMsd + ._2DfqO {
+                &._3V2jl + ._3phU6 {
                     right: 5px i
                     bottom: 3px i
                 }
@@ -1949,12 +1949,11 @@ OM = _omsg
         /// 8:       Google Maps
         md = '._1d7uX, ._WnqL, .i8New, .QnPmY, ._20adz, ._1mTER, .-xSc5, ._1VzZY'
         /// 1:   Messages
-        /// 2:   Videos
+        /// 2:   Video timestamp/length
         /// 3-5: Images/gifs/stickers
-        ts = '.VGBA3, .video-thumb + ._2DfqO, ._3yTyY, ._2CHFo, ._1nrJA'
+        ts = '._1nOME, .video-thumb + ._3phU6, ._1rd4q, ._1yXJw, ._2QpTA, ._2zab4'
         /// Big emojis.
         big = '._3B8qp'
-
 
         /// Feat -> Message tails.
         if (tail_style == 'fb-like') {
@@ -2152,7 +2151,7 @@ OM = _omsg
                 }
 
                 /// Hide timemstamps.
-                &._28DtS {
+                &{ bubble } {
                     // c: 0 0 #ff555508
                     { rtl }, { ltr }, { big } { transition: padding 0.2s ease i }
                     { ts } { transition: opacity 0.2s ease i }
