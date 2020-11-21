@@ -1835,6 +1835,7 @@ OM = _omsg
             #side {
                 status = '._-68As'
                 unread = '.VOr2j'
+
                 /// Fix header width.
                 > header {
                     min-width: 240px
@@ -1917,14 +1918,17 @@ OM = _omsg
                     { status } {
                         padding: 1.5px
                         z-index: 101
-                        position: absolute
-                        margin: -1px 0 0 -38px
+                        position: fixed
+                        left: 38px
                         border: 4px solid bg2
                         c: 0 0 bg1
                         rad: 50%
 
                         /// Fix RTL layout.
-                        /[dir = 'RTL'] & { margin-right: -35px i }
+                        /[dir = 'RTL'] & {
+                            left: unset i
+                            right: 42px i
+                        }
 
                         /// Make SVG smaller.
                         > span > svg {
@@ -1933,7 +1937,6 @@ OM = _omsg
                             width: 14px i
                         }
                     }
-
                 }
 
                 /// Hover/Active states.
