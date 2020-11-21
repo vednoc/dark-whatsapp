@@ -1416,22 +1416,15 @@ OM = _omsg
         }
 
         /// Right -> Drawer divider.
-        ._14VS3 > ._1V8rX {
+        &.three > div:nth-child(2) > div:nth-child(3) {
             border-left: 1px solid bg5 i
 
-            /// Drawer header.
-            if (app_header) {
-                .copyable-area > header {
-                    border-bottom: 1px solid bg5 i
-                }
-            }
-
             /// Remove shadows from drawer sections.
-            /._2Bps4 { box-shadow: 0 0 0 1px bg4 i }
+            /._32vnm { box-shadow: 0 0 0 1px bg4 i }
 
             /// Remove native dark mode dividers.
             /.dark .three {
-                ._2vJ01, ._2-aNW { border-right: none i }
+                #main > *, ._26MUt { border-right: none i }
             }
         }
 
@@ -1467,14 +1460,13 @@ OM = _omsg
                     &::before { c: 0 0 bg3 }
                     /// Do not hide bottom border.
                     &::after { c: 0 0 t }
-                    // _2daZc
                 }
             }
 
             /// Right -> Invite to group.
             > div:nth-child(3) {
                 header + div {
-                    > div:first-child.HsWVk, // Invite link wrapper.
+                    > div:first-child.wJ21F, // Invite link wrapper.
                     > div[role='button'] {
                         --background-default: bg1
                         --background-default-hover: bg2
