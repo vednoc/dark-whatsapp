@@ -1,6 +1,20 @@
 #+STARTUP: nofold
 
 * Changelog
+** 3.5.0 [2020-12-10 Thu]
+Adding one new option and updating selectors for ~2.2049.8~ update.
+
+*** Added
+ - Profile pictures can now be hidden with a new option ([[https://github.com/vednoc/dark-whatsapp/issues/183][#183]])
+   + Disabled by default.
+   + Quick preview:
+
+     [[https://user-images.githubusercontent.com/18245694/101796690-7ba3aa00-3b09-11eb-9e4e-115fec492f54.png]]
+
+*** Fixed
+- Resolved a conflict with hover state of items in forward message modal
+- Updated selector for external links when Facebook-style tails are enabled
+
 ** 3.4.0 [2020-11-21 Sat]
 Hotfix release for ~2.2047.11~ update.
 
