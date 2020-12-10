@@ -95,6 +95,7 @@
 @var checkbox rtl_header 'RTL: Remove empty message header' 1
 @var checkbox rtl_format 'RTL: Fix formatting for message content' 1
 
+@var checkbox chat_h_p_p 'Hide profile pictures' 0
 @var checkbox chat_b_c   'Blurred contacts' 0
 @var checkbox chat_b_img 'Blurred media' 0
 @var text     chat_b_in  'Blurred media hover-on delay' 0.4s
@@ -1066,6 +1067,11 @@ OM = _omsg
                 &-thumb { c: 0 0 ac2 }
                 &-track { c: 0 0 var(--shadow) }
             }
+        }
+
+        /// Feat -> Hide profile pictures.
+        if (chat_h_p_p) {
+            /img[src*='whatsapp.com/pp?'] { display: none i }
         }
 
         /// Loading page.
