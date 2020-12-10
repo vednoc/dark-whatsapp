@@ -6,15 +6,15 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      3.4.0
+@version      3.5.0
 @license      MIT
 ==/UserStyle== */
 
 @-moz-document domain('web.whatsapp.com') {
   :root:not(#z),
   .dark:not(#z) {
-    --version: '🌚 Dark-WhatsApp Lite 3.4.0 — November 21st, 2020';
-    --message: 'The v3 is here! 🎉 I wrote a blog post about it here: https://vednoc.me/blog/next-gen-of-dark-whatsapp \A\AI started working on an alternative to USo, currently in very early stages: https://userstyles.world 👀 \A\AMore about v3.4.0 update, as always, in the changelog:';
+    --version: '🌚 Dark-WhatsApp Lite 3.5.0 — December 10th, 2020';
+    --message: 'The v3 is here! 🎉 I wrote a blog post about it here: https://vednoc.me/blog/next-gen-of-dark-whatsapp \A\AI started working on an alternative to USo, currently in very early stages: https://userstyles.world 👀 \A\AMore about v3.5.0 update, as always, in the changelog:';
     --changes: '\A https://github.com/vednoc/dark-whatsapp\A\A\AP.S. CSS can not add links, only fake/pseudo text.';
     --ui-font: 'font_name', Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif;
     --r-menus: 4px;
@@ -838,7 +838,7 @@
     border-bottom: 1px solid var(--bg-5) !important;
     background-color: var(--bg-2) !important;
   }
-  .overlay ._3Pwfx {
+  .overlay ._3Pwfx._2jw57 {
     background-color: transparent !important;
   }
   .overlay [data-animate-modal-popup] {
