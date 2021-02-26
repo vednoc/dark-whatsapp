@@ -6,7 +6,7 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.styl
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      3.5.0
+@version      3.6.0
 @license      MIT
 @preprocessor stylus
 
@@ -353,16 +353,21 @@ OM = _omsg
 }
 
 @-moz-document domain('web.whatsapp.com') {
+    $top  = "Hi there! Since I quit WA a while ago, and also been busy working "
+    $top += "on a rewrite for UserStyles.world (as a replacement for USo), I am"
+    $top += " looking for someone to help maintainin DWA."
+    $top += "\A\ALink to USw: https://userstyles.world 👀 \A\A"
+    $top += "More about v3.6.0 update, as always, in the changelog:"
+    $btm  = "\A https://github.com/vednoc/dark-whatsapp\A\A\A"
+    $btm += "P.S. CSS can not add links, only fake/pseudo text."
+
     :root:not(#z), .dark:not(#z) {
+        // --zzz: (ow_sys_msg) ? sys_msg_bg : var(--b6-4) //#1e2a30;
+        // --zzz-rgb: (ow_sys_msg) ? to_rgb(sys_msg_bg) : var(--b6-4-rgb) //30,42,48;
         /// Userstyle info and announcements.
-        --version: '🌚 Dark-WhatsApp 3.5.0 — December 10th, 2020'
-        --message: 'The v3 is here! 🎉 I wrote a blog post about it here: ' + \
-                   'https://vednoc.me/blog/next-gen-of-dark-whatsapp \A\A' + \
-                   'I started working on an alternative to USo, currently' + \
-                   ' in very early stages: https://userstyles.world 👀 \A\A' + \
-                   'More about v3.5.0 update, as always, in the changelog:'
-        --changes: '\A https://github.com/vednoc/dark-whatsapp\A\A\A' + \
-                   'P.S. CSS can not add links, only fake/pseudo text.'
+        --version: '🌚 Dark-WhatsApp v3.6.0 — February 26th, 2021'
+        --message: $top
+        --changes: $btm
 
         /// UI font.
         --ui-font: ui_font, Segoe UI, Helvetica Neue, Helvetica, Lucida Grande,
