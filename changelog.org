@@ -1,6 +1,18 @@
 #+STARTUP: nofold
 
 * Changelog
+** 3.6.0 [2021-02-26 Fri]
+Adding one new option and updating selectors for ~2.2106.5~ update.
+
+*** Added
+- Background color for system messages in chat can now be overriden
+
+*** Fixed
+- Updated a ton of broken selectors from the latest update. Known issues:
+  + Compact mode is very usable, but it has broken selectors for badges
+    - Tracked in issue [[https://github.com/vednoc/dark-whatsapp/issues/186][#186]].
+  + Fb-like tails, message positions, and perhaps some other options are broken. Will probably be fixed in the next update.
+
 ** 3.5.0 [2020-12-10 Thu]
 Adding one new option and updating selectors for ~2.2049.8~ update.
 
