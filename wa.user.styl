@@ -84,6 +84,9 @@
 @var checkbox ow_ack     'Override seen message icon color' 0
 @var color    _ack       'Seen message icon color' #ff6666
 
+@var checkbox ow_sys_msg 'Override system message background color' 0
+@var color    sys_msg_bg 'System message background color' #364462
+
 @var checkbox ow_imsg    'Override incoming message bubble color' 0
 @var color    _imsg  'Incoming message bubble color' #16191e
 @var checkbox bubble_in  'Swap sides for incoming message bubbles' 0
@@ -838,8 +841,8 @@ OM = _omsg
         --success-rgb: var(--ac-0-rgb) //0,175,156;
         --suspicious-background: #ef697acc;
         --suspicious-background-rgb: 239,105,122;
-        --system-message-background: var(--b6-4) //#1e2a30;
-        --system-message-background-rgb: var(--b6-4-rgb) //30,42,48;
+        --system-message-background: (ow_sys_msg) ? sys_msg_bg : var(--b6-4) //#1e2a30;
+        --system-message-background-rgb: (ow_sys_msg) ? to_rgb(sys_msg_bg) : var(--b6-4-rgb) //30,42,48;
         --system-message-text: to_rgba('fg-1', 0.87) //#f1f1f2de;
         --system-message-text-rgb: var(--fg-1-rgb) //241,241,242;
         --teal-hover: #00b7a1;
@@ -1568,7 +1571,8 @@ OM = _omsg
 
         /// System messages.
         ._2kR4B {
-            border: 1px solid b63
+            $c = (ow_sys_msg) ? darken(sys_msg_bg, -10%) : b63
+            border: 1px solid $c
             text-shadow: none i
 
             /// End-to-end encryption message.
