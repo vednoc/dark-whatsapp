@@ -1827,8 +1827,8 @@ OM = _omsg
 
             /// Contacts.
             #side {
-                status = '._-68As'
-                unread = '.VOr2j'
+                status = '._1Tnge'
+                unread = '._38M1B'
 
                 /// Fix header width.
                 > header {
@@ -1842,17 +1842,18 @@ OM = _omsg
                 }
 
                 /// Items.
-                ._1C6Zl {
+                .TbtXF {
                     /// Remove whitespace from icons.
                     ._2Q3SY { margin: 0 i }
 
                     /// Reverse message content.
-                    ._7W_3c {
+                    ._1SjZ2 {
                         position: relative
                         flex-direction: row-reverse i
+                        // border: 1px solid blue
 
                         /// Remove margin from status wrapper.
-                        ._2gsiG {
+                        > ._15smv {
                             z-index: 999 i
                             margin-left: 0 i
                             position: fixed
@@ -1874,13 +1875,16 @@ OM = _omsg
                         }
 
                         /// Reverse message and icons.
-                        ._2gsiG > span {
+                        ._15smv > span {
                             display: flex i
                             flex-direction: row-reverse i
                         }
 
-                        /// Remove chevron, pinned, and all status icons.
-                        .tRtcW, ._2SPs9, [data-icon]:not([data-icon*='status-']) {
+                        /// Remove pinned, shared contact, chevron, and all other status icons.
+                        ._3EhXO,
+                        .status-vcard,
+                        span:nth-child(3) > div, // Removes animation.
+                        [data-icon]:not([data-icon*='status-']):not([data-icon*='disappearing']) {
                             display: none
                         }
                     }
