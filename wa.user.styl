@@ -1825,9 +1825,6 @@ OM = _omsg
                 }
             }
 
-            /// Fix search bar width.
-            ._22PcK:not(._30SFc) label { padding: 0px }
-
             /// Contacts.
             #side {
                 status = '._-68As'
@@ -1839,6 +1836,9 @@ OM = _omsg
 
                     /// Remove notifications completely.
                     + span { display: none }
+
+                    /// Fix search bar width.
+                    + span + div:not(:focus-within) label { padding: 0px }
                 }
 
                 /// Items.
