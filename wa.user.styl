@@ -1829,6 +1829,7 @@ OM = _omsg
             #side {
                 status = '._1Tnge'
                 unread = '._38M1B'
+                ephemeral = '._2jC5S'
 
                 /// Fix header width.
                 > header {
@@ -1839,6 +1840,13 @@ OM = _omsg
 
                     /// Fix search bar width.
                     + span + div:not(:focus-within) label { padding: 0px }
+                }
+
+                /// Ephemeral icon.
+                { ephemeral } {
+                    z-index: 101
+                    right: 0px i
+                    bottom: -1px i
                 }
 
                 /// Items.
@@ -1916,7 +1924,7 @@ OM = _omsg
                     /// Message status.
                     { status } {
                         padding: 1.5px
-                        z-index: 101
+                        z-index: 102
                         position: fixed
                         left: 38px
                         border: 4px solid bg2
