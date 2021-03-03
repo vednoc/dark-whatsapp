@@ -1829,6 +1829,7 @@ OM = _omsg
             #side {
                 status = '._1Tnge'
                 unread = '._38M1B'
+                typing = 'span[title*="…"]'
                 ephemeral = '._2jC5S'
 
                 /// Fix header width.
@@ -1847,6 +1848,30 @@ OM = _omsg
                     z-index: 101
                     right: 0px i
                     bottom: -1px i
+                }
+
+                /// 'Typing...' status indicator.
+                { typing } {
+                    overflow: unset i
+                    margin-top: -8px i
+                    margin-left: 0px i
+                    position: absolute i
+
+                    &::before {
+                        content: '' i
+                        z-index: 1 i
+                        position: absolute i
+                        top: -31px i
+                        left: -66px i
+                        height: 53px i
+                        width: 53px i
+                        rad: var(--r-avatars) i
+                        box-shadow: inset 0 0 0 3px b40 i
+                        animation: 2s aBorder infinite i
+
+                        /// Fix RTL layout.
+                        /[dir = 'RTL'] & { left: 63px i }
+                    }
                 }
 
                 /// Items.
@@ -1894,30 +1919,6 @@ OM = _omsg
                         span:nth-child(3) > div, // Removes animation.
                         [data-icon]:not([data-icon*='status-']):not([data-icon*='disappearing']) {
                             display: none
-                        }
-                    }
-
-                    /// 'Typing...' status indicator.
-                    /._2NMQ2 {
-                        overflow: unset i
-                        margin-top: -8px i
-                        margin-left: 0px i
-                        position: absolute i
-
-                        &::before {
-                            content: '' i
-                            z-index: 1 i
-                            position: absolute i
-                            top: -31px i
-                            left: -66px i
-                            height: 53px i
-                            width: 53px i
-                            rad: var(--r-avatars) i
-                            box-shadow: inset 0 0 0 3px b40 i
-                            animation: 2s aBorder infinite i
-
-                            /// Fix RTL layout.
-                            /[dir = 'RTL'] & { left: 63px i }
                         }
                     }
 
