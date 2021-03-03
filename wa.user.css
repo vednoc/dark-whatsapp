@@ -6,15 +6,15 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://raw.githubusercontent.com/vednoc/dark-whatsapp/master/wa.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      3.6.0
+@version      3.6.1
 @license      MIT
 ==/UserStyle== */
 
 @-moz-document domain('web.whatsapp.com') {
   :root:not(#z),
   .dark:not(#z) {
-    --version: '🌚 Dark-WhatsApp v3.6.0 — February 26th, 2021';
-    --message: 'Hi there! Since I quit WA a while ago, and also been busy working on a rewrite for UserStyles.world (as a replacement for USo), I am looking for someone to help maintainin DWA.\A\ALink to USw: https://userstyles.world 👀 \A\AMore about v3.6.0 update, as always, in the changelog:';
+    --version: '🌚 Dark-WhatsApp v3.6.1 — March 3rd, 2021';
+    --message: 'Hi there! Since I quit WA a while ago, and also been busy working on a rewrite for UserStyles.world (as a replacement for USo), I am looking for someone to help maintainin DWA.\A\ALink to USw: https://userstyles.world 👀 \A\AMore about v3.6.1 update, as always, in the changelog:';
     --changes: '\A https://github.com/vednoc/dark-whatsapp\A\A\AP.S. CSS can not add links, only fake/pseudo text.';
     --ui-font: 'font_name', Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif;
     --r-menus: 4px;
@@ -1435,59 +1435,27 @@
     .three > div:nth-child(3):hover {
       flex: 0 0 80px !important;
     }
-    .three ._14VS3,
-    .three ._1xXdX {
-      flex: 0 0 30% !important;
-      border-color: transparent !important;
-    }
-    ._22PcK:not(._30SFc) label {
-      padding: 0px;
-    }
     #side > header {
       min-width: 240px;
     }
     #side > header + span {
       display: none;
     }
-    #side ._1C6Zl ._2Q3SY {
-      margin: 0 !important;
+    #side > header + span + div:not(:focus-within) label {
+      padding: 0px;
     }
-    #side ._1C6Zl ._7W_3c {
-      position: relative;
-      flex-direction: row-reverse !important;
+    #side ._2jC5S {
+      z-index: 101;
+      right: 0px !important;
+      bottom: -1px !important;
     }
-    #side ._1C6Zl ._7W_3c ._2gsiG {
-      z-index: 999 !important;
-      margin-left: 0 !important;
-      position: fixed;
-      left: 39px;
-      bottom: 6px;
-      border-radius: 50%;
-    }
-    [dir = 'RTL'] #side ._1C6Zl ._7W_3c ._2gsiG {
-      left: unset !important;
-      right: 36px !important;
-    }
-    #side ._1C6Zl ._7W_3c ._2gsiG .VOr2j {
-      border: 4px solid var(--bg-2);
-      left: 20px !important;
-    }
-    #side ._1C6Zl ._7W_3c ._2gsiG > span {
-      display: flex !important;
-      flex-direction: row-reverse !important;
-    }
-    #side ._1C6Zl ._7W_3c .tRtcW,
-    #side ._1C6Zl ._7W_3c ._2SPs9,
-    #side ._1C6Zl ._7W_3c [data-icon]:not([data-icon*='status-']) {
-      display: none;
-    }
-    ._2NMQ2 {
+    #side span[title*="…"] {
       overflow: unset !important;
       margin-top: -8px !important;
       margin-left: 0px !important;
       position: absolute !important;
     }
-    ._2NMQ2::before {
+    #side span[title*="…"]::before {
       content: '' !important;
       z-index: 1 !important;
       position: absolute !important;
@@ -1499,39 +1467,69 @@
       box-shadow: inset 0 0 0 3px var(--b4-0) !important;
       animation: 2s aBorder infinite !important;
     }
-    [dir = 'RTL'] ._2NMQ2::before {
+    [dir = 'RTL'] #side span[title*="…"]::before {
       left: 63px !important;
     }
-    #side ._1C6Zl ._-68As {
+    #side .TbtXF ._2Q3SY {
+      margin: 0 !important;
+    }
+    #side .TbtXF ._1SjZ2 {
+      position: relative;
+      flex-direction: row-reverse !important;
+    }
+    #side .TbtXF ._1SjZ2 > ._15smv {
+      z-index: 999 !important;
+      margin-left: 0 !important;
+      position: fixed;
+      left: 39px;
+      bottom: 6px;
+      border-radius: 50%;
+    }
+    [dir = 'RTL'] #side .TbtXF ._1SjZ2 > ._15smv {
+      left: unset !important;
+      right: 36px !important;
+    }
+    #side .TbtXF ._1SjZ2 > ._15smv ._38M1B {
+      border: 4px solid var(--bg-2);
+      left: 20px !important;
+    }
+    #side .TbtXF ._1SjZ2 ._15smv > span {
+      display: flex !important;
+      flex-direction: row-reverse !important;
+    }
+    #side .TbtXF ._1SjZ2 ._3EhXO,
+    #side .TbtXF ._1SjZ2 .status-vcard,
+    #side .TbtXF ._1SjZ2 span:nth-child(3) > div,
+    #side .TbtXF ._1SjZ2 [data-icon]:not([data-icon*='status-']):not([data-icon*='disappearing']) {
+      display: none;
+    }
+    #side .TbtXF ._1Tnge {
       padding: 1.5px;
-      z-index: 101;
+      z-index: 102;
       position: fixed;
       left: 38px;
       border: 4px solid var(--bg-2);
       background-color: var(--bg-1) !important;
       border-radius: 50%;
     }
-    [dir = 'RTL'] #side ._1C6Zl ._-68As {
+    [dir = 'RTL'] #side .TbtXF ._1Tnge {
       left: unset !important;
       right: 42px !important;
     }
-    #side ._1C6Zl ._-68As > span > svg {
+    #side .TbtXF ._1Tnge > span > svg {
       padding: 2px;
       height: 14px !important;
       width: 14px !important;
     }
-    #side [aria-selected='false'] > div:hover .VOr2j,
-    #side [aria-selected='false'] > div:hover ._-68As {
+    #side [aria-selected='false'] > div:hover ._38M1B,
+    #side [aria-selected='false'] > div:hover ._1Tnge {
       border-color: var(--bg-3) !important;
     }
-    #side [aria-selected='true'] > div .VOr2j,
-    #side [aria-selected='true'] > div ._-68As {
+    #side [aria-selected='true'] > div ._38M1B,
+    #side [aria-selected='true'] > div ._1Tnge {
       border-color: var(--bg-4) !important;
     }
-    #side ._2kHpK {
-      min-width: 80px !important;
-    }
-  }
+}
   .message-in .selectable-text.invisible-space[dir = 'rtl']::before,
   .message-out .selectable-text.invisible-space[dir = 'rtl']::before,
   .message-in a.selectable-text[href]::before,
