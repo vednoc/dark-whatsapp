@@ -2238,6 +2238,10 @@ OM = _omsg
             > div:nth-child(2) { min-width: 56px }
         }
 
+        /// Feat -> Swap message bubble positions.
+        if (bubble_in) { &-in { align-items: flex-end i }}
+        if (bubble_out) { &-out { align-items: flex-start i }}
+
         /// Feat -> Animate emojis.
         if (emoji_a) {
             emoji_k = (emoji_k == '') ? () : emoji_k
