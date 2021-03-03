@@ -1,6 +1,25 @@
 #+STARTUP: nofold
 
 * Changelog
+** 3.6.1 [2021-03-03 Wed]
+As mentioned in the announcement note in the previous release, I'm looking for
+someone to help maintain this userstyle. This is one of the last, if not the
+very last update that I'll be doing. I've been working on this userstyle since
+2017 and it's time to pass the torch to someone else.
+
+If you're interested, you can reach out to me on GitHub, on GitLab, via e-mail,
+via Discord, or via Matrix.
+
+Thank you for understanding.
+
+*** Added
+- Message bubble sides can now be swapped outside of =fb-like= tails option
+
+*** Fixed
+- Updated broken selectors for compact mode ([[https://github.com/vednoc/dark-whatsapp/issues/186][#186]])
+  + Made just a few of them more resistant to future updates.
+- Updated selector for hiding "Allow Notifications" alert
+
 ** 3.6.0 [2021-02-26 Fri]
 Adding one new option and updating selectors for ~2.2106.5~ update.
 
