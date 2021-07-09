@@ -1157,13 +1157,13 @@ OM = _omsg
     .overlay {
         /// Media/Avatar viewers have different headers. @upstream
         /[data-animate-media-viewer] {
-            > div:first-child, ../ ._3ZxL8 {
+            > div:first-child, ../ > div:first-child {
                 border-bottom: 1px solid bg5 i
                 c: 0 0 bg2
             }
 
-            /// Fix header conflicts.
-            ../ ._2Z4DV._3nJaS { c: 0 0 t }
+            /// Fix avatar header.
+            ../ [data-testid='cell-frame-container'] { c: 0 0 t }
         }
 
         /// Add borders.
@@ -1186,8 +1186,8 @@ OM = _omsg
             --background-default-hover: bg2
         }
 
-        /// Fix media selection.
-        /._1O9tq { c: 0 bg5 bg2 }
+        /// Fix media selection footer.
+        /._1XWMx { c: 0 bg5 bg2 }
 
         /// Status area modal.
         /[data-animate-status-v3-modal-background = 'true'] {
@@ -1228,7 +1228,7 @@ OM = _omsg
         }
 
         /// 'Allow notifications' modal.
-        &._3pCPi._1814Z {
+        &._2B4d4._1hMip.tm2tP {
             c: 0 0 var(--modal-backdrop)
             [data-animate-modal-popup] {
                 padding: 16px i
