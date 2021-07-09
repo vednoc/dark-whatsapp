@@ -1025,27 +1025,28 @@ OM = _omsg
         }
 
         /// Settings -> Tweaks for 'Set Chat Wallpaper' area. #149
-        /._1wlMU {
+        /.Iwkc0 {
             position: relative
 
             /// Override selected wallpaper.
             --blue-light: ac3
             --inverse: ac3
 
-            /// Add pseudo text.
-            &::before {
-                content: ''
-                filter: invert(var(--chat-bg-i)) opacity(var(--chat-bg-o))
-                background: var(--chat-image) i
-                position: absolute
-                height: 100%
-                width: 100%
-            }
-
             /// Expand default chat wallpaper.
             &:first-child {
-                &:not(._2ILMM) { border: 4px solid bg2 i }
-                &, &::after { width: calc(3 * 82px + 30px) i }
+                &, &::after { width: calc(100% + 8px) }
+
+                /// Add chat image.
+                &::before {
+                    content: ''
+                    filter: invert(var(--chat-bg-i)) opacity(var(--chat-bg-o))
+                    background: var(--chat-image) i
+                    position: absolute
+                    height: 100%
+                    width: 100%
+                }
+
+                /// Add pseudo text.
                 span {
                     font-size: 0 i
                     &::before {
@@ -1053,13 +1054,6 @@ OM = _omsg
                         font-size: 16px i
                     }
                 }
-            }
-
-            /// Override light gray wallpapers.
-            /[style *= 'rgb(222\, 227\, 233)'],
-            /[style *= 'rgb(217\, 218\, 222)'],
-            /[style *= 'rgb(192\, 193\, 196)'] {
-                c: 0 0 bg2
             }
         }
 
