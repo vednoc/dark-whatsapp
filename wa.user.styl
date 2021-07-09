@@ -1083,7 +1083,13 @@ OM = _omsg
         /// Loading page.
         /// NOTE: Keep it because there are two `startup` states; one of them
         /// is *not* styled by default, so it leads to white background flash.
-        /[id *= 'startup'] { c: 0 0 bg0 }
+        /[id*='startup'] {
+            c: 0 0 bg0
+            .graphic::after {
+                opacity: 0.6 i
+                background: linear-gradient(to right, bg0 0%, bg0 33%, t 44%, t 55%, bg0 66%, bg0 100%) i
+            }
+        }
 
         /// Progress bars.
         /// NOTE: There is still flashing of unstyled content. Sigh.
