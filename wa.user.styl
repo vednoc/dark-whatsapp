@@ -1576,20 +1576,14 @@ OM = _omsg
         }
 
         /// System messages.
-        ._2kR4B {
+        .EtBAv {
             $c = (ow_sys_msg) ? darken(sys_msg_bg, -10%) : b63
             border: 1px solid $c
             text-shadow: none i
 
             /// End-to-end encryption message.
-            &._1KcEQ { border: 1px solid b34 }
-
-            /// Bussiness account message.
-            &._3nwTJ { border: 1px solid b54 }
+            &._1p8Qv { border: 1px solid b34 }
         }
-
-        /// Loading previous messages / Jump to new messages.
-        ._3M4BR, ._2wFt8 { border: 1px solid bg5 }
 
         /// Feat -> Custom chat background.
         /[data-asset-chat-background-dark],
@@ -1606,7 +1600,7 @@ OM = _omsg
         }
 
         /// Tweak 'unread messages' alert.
-        ._2WwJ0 { border: none i }
+        ._5ML0C { border: none i }
 
         /// Tweak box-shadow for message bubbles.
         [class *= 'message-'][data-id] {
@@ -1617,12 +1611,12 @@ OM = _omsg
         }
 
         /// Fix context menu background for stickers.
-        .QhSbI + div[style] { c: 0 0 bg4 }
+        [data-js-context-icon] + div[style] { c: 0 0 bg4 }
 
         /// Add background to media message timestamps.
         /[style *= 'width'][style *= 'height'] + div {
             /// Images/gifs.
-            &._1yXJw, &._2QpTA {
+            &._2AKAp, &.zE8pI {
                 padding: 2px 4px i
                 background-color: to_rgba('bg-1', 0.7) i
                 rad: (tail_style == 'fb-like') ? 16px i : 5px i
@@ -1704,13 +1698,13 @@ OM = _omsg
             }
 
             /// Fix borders an unknown contact.
-            ._1Q5Gk {
+            ._3ImlL {
                 border-top: none
                 border-bottom: 1px solid bg5
             }
 
             /// Groups -> Only admins can send messages.
-            ._2K2iM {
+            ._31enr {
                 border-top: 1px solid bg5 i
                 border-left: @border-top
             }
@@ -1722,7 +1716,7 @@ OM = _omsg
             }
 
             /// Chat -> Select messages.
-            + span > ._2ngbn {
+            + span > .OVz7E {
                 border-top: 1px solid bg5 i
                 border-left: 1px solid bg5 i
             }
@@ -1737,7 +1731,7 @@ OM = _omsg
         }
 
         /// Fix unread messages in dark mode. @upstream
-        /.dark ._1V5O7 ._2pkLM ._15smv { c: var(--secondary-stronger) }
+        /.dark ._3C4Vf ._3vPI2 ._1i_wG { c: var(--secondary-stronger) }
 
         /// Groups -> Fix opacity for nicknames.
         /[class *= ' color-'] > span:nth-child(2) { c: fg3 }
