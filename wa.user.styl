@@ -1866,6 +1866,7 @@ OM = _omsg
                     /// Status indicator.
                     { status } {
                         left: 44px
+                        z-index: 9999
                         position: fixed
                         margin-top: 4px
                         border: 2px solid bg2 i
@@ -1874,6 +1875,7 @@ OM = _omsg
                     /// Unread indicator.
                     { unread } {
                         left: 44px
+                        z-index: 9999
                         position: fixed
                         margin-top: 4px
                         padding: 3px i
@@ -1899,7 +1901,8 @@ OM = _omsg
 
                 /// Hover/Active states.
                 &:not(#z) [aria-selected='false'] > div:hover {
-                    { unread }, { status } { c: 0 bg3 bg5 }
+                    { unread }, { status } { c: 0 bg3 }
+                    { unread } { c: 0 0 bg5 }
                 }
                 &:not(#z) [aria-selected='true'] > div {
                     { unread }, { status } { c: 0 bg4 bg1 }
