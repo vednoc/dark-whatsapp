@@ -1,6 +1,42 @@
 #+STARTUP: nofold
 
 * Changelog
+** 3.7.0 [2021-07-09 Fri]
+This is a maintenance release to fix the latest update as well as simplify
+styles for a number of features. The code should be more maintainable than
+before, especially for Dark-WhatsApp's most unique feature: the compact mode.
+
+Also, UserStyles.world has been rewritten a while ago. If you're experienced
+with Go programming language (and/or HTML/CSS/TS/JS), [[https://github.com/userstyles-world/userstyles.world][check out the source code]].
+Stylus =v1.5.18= (now in beta) allows you to browse as well as upload your styles
+directly to USw with ease. We're looking for feedback to make that process, as
+well as the website, even better. Check it out here:
+
+🌟 https://userstyles.world 🌟
+
+Notice: I didn't test /all/ the available features, but I can say with certainty
+that Facebook-style message tails no longer work (since 3.6.x release) and RTL
+fixes have been implemented by WA. If some other feature stopped working, open
+an issue and I'll have a look at it. The support for the aforementioned
+functionality has been dropped due to amount of code that is required for
+maintenance, but it's not removed yet.
+
+*** Added
+- Changed the =@updateURL= fields of both userstyles to use UserStyle.world's API
+  + This will allow me to have an insight in basic statistics in order to see to
+    what extent DWA is being used and whether it should be maintained or not.
+    GitHub's insights are pretty much useless, so this will help greatly.
+
+*** Improvements
+- Rewrote =compact mode= from the scratch. It's as simple as it gets
+- Switched to other types of selectors other than hard-coded class selectors
+  + I would like to do it for more elements, but unfortunately it is what it is.
+
+*** Fixed
+- Updated selectors for pretty much everything
+- Updated rounded corners for avatars ([[https://github.com/vednoc/dark-whatsapp/pull/189][#189]])
+- Added proper text color to attach menu tooltips ([[https://github.com/vednoc/dark-whatsapp/pull/188][#188]], [[https://github.com/vednoc/dark-whatsapp/pull/190][#190]])
+
 ** 3.6.1 [2021-03-03 Wed]
 As mentioned in the announcement note in the previous release, I'm looking for
 someone to help maintain this userstyle. This is one of the last, if not the
