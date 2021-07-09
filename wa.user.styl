@@ -1605,7 +1605,7 @@ OM = _omsg
         /// Tweak box-shadow for message bubbles.
         [class *= 'message-'][data-id] {
             /// Exclude stickers.
-            > span + div:not(._3nuWB) > div {
+            > span + div:not(._1S-gg) > div {
                 box-shadow: 0 1px 0 to_rgba('shadow', 0.2) i
             }
         }
@@ -1801,13 +1801,13 @@ OM = _omsg
             .three {
                 /// Reset upload preview.
                 > div:nth-child(2) > div:nth-child(2) {
-                    flex: 0 0 calc(100% - 30% - 80px) i
-                    margin-left: calc(-30% + 80px)
+                    flex: 0 0 calc(100% - 30% - 110px) i
+                    margin-left: calc(-30% + 150px)
                 }
 
                 /// Reset chat when info is open.
                 > div:nth-child(4) {
-                    flex: 0 0 calc(100% - 30% - 80px) i
+                    flex: 0 0 calc(100% - 30% - 110px) i
                 }
 
                 /// Do not expand left drawer when right drawer is open.
@@ -1816,10 +1816,9 @@ OM = _omsg
 
             /// Contacts.
             #side {
-                status = '._1Tnge'
-                unread = '._38M1B'
+                status = '._23LrM'
+                unread = '._2qo4q'
                 typing = 'span[title*="…"]'
-                ephemeral = '._2jC5S'
 
                 /// Fix header width.
                 > header {
@@ -1832,13 +1831,6 @@ OM = _omsg
                     + span + div:not(:focus-within) label { padding: 0px }
                 }
 
-                /// Ephemeral icon.
-                { ephemeral } {
-                    z-index: 101
-                    right: 0px i
-                    bottom: -1px i
-                }
-
                 /// 'Typing...' status indicator.
                 { typing } {
                     overflow: unset i
@@ -1848,7 +1840,6 @@ OM = _omsg
 
                     &::before {
                         content: '' i
-                        z-index: 1 i
                         position: absolute i
                         top: -31px i
                         left: -66px i
@@ -1863,85 +1854,55 @@ OM = _omsg
                     }
                 }
 
-                /// Items.
-                .TbtXF {
-                    /// Remove whitespace from icons.
-                    ._2Q3SY { margin: 0 i }
+                /// Move icons to start.
+                n = 'nth-child(2)'
+                [data-testid='cell-frame-container'] > div:{ n } > div:{ n } {
+                    position: relative
+                    flex-direction: row-reverse
 
-                    /// Reverse message content.
-                    ._1SjZ2 {
-                        position: relative
-                        flex-direction: row-reverse i
-                        // border: 1px solid blue
+                    /// Remove margins.
+                    [role='gridcell'] { margin: 0 i }
 
-                        /// Remove margin from status wrapper.
-                        > ._15smv {
-                            z-index: 999 i
-                            margin-left: 0 i
-                            position: fixed
-                            left: 39px
-                            bottom: 6px
-                            rad: 50%
+                    /// Status indicator.
+                    { status } {
+                        left: 44px
+                        position: fixed
+                        margin-top: 4px
+                        border: 2px solid bg2 i
+                    }
 
-                            /// Fix RTL layout.
-                            /[dir = 'RTL'] & {
-                                left: unset i
-                                right: 36px i
-                            }
+                    /// Unread indicator.
+                    { unread } {
+                        left: 44px
+                        position: fixed
+                        margin-top: 4px
+                        padding: 3px i
+                        border: 2px solid bg2 i
+                        c: 0 0 bg4
+                        rad: 50%
 
-                            /// Unread indicator.
-                            { unread } {
-                                border: 4px solid bg2
-                                left: 20px i
-                            }
-                        }
-
-                        /// Reverse message and icons.
-                        ._15smv > span {
-                            display: flex i
-                            flex-direction: row-reverse i
-                        }
-
-                        /// Remove pinned, shared contact, chevron, and all other status icons.
-                        ._3EhXO,
-                        .status-vcard,
-                        span:nth-child(3) > div, // Removes animation.
-                        [data-icon]:not([data-icon*='status-']):not([data-icon*='disappearing']) {
-                            display: none
+                        /// Make the icon smaller.
+                        svg {
+                            width: 14px
+                            height: 14px
                         }
                     }
 
-                    /// Message status.
-                    { status } {
-                        padding: 1.5px
-                        z-index: 102
-                        position: fixed
-                        left: 38px
-                        border: 4px solid bg2
-                        c: 0 0 bg1
-                        rad: 50%
-
-                        /// Fix RTL layout.
-                        /[dir = 'RTL'] & {
-                            left: unset i
-                            right: 42px i
-                        }
-
-                        /// Make SVG smaller.
-                        > span > svg {
-                            padding: 2px
-                            height: 14px i
-                            width: 14px i
-                        }
+                    /// Remove elements.
+                    ._2XH9R, // icon wrapper
+                    .status-vcard, // more icons
+                    button[aria-hidden] // context menu
+                    [data-icon]:not([data-icon*='status-']):not([data-icon*='disappearing']) {
+                        display: none
                     }
                 }
 
                 /// Hover/Active states.
-                [aria-selected='false'] > div:hover {
-                    { unread }, { status } { c: 0 bg3 }
+                &:not(#z) [aria-selected='false'] > div:hover {
+                    { unread }, { status } { c: 0 bg3 bg5 }
                 }
-                [aria-selected='true'] > div {
-                    { unread }, { status } { c: 0 bg4 }
+                &:not(#z) [aria-selected='true'] > div {
+                    { unread }, { status } { c: 0 bg4 bg1 }
                 }
             }
         }
