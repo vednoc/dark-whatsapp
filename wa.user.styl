@@ -1238,7 +1238,8 @@ OM = _omsg
 
     // Login page.
     .landing {
-        &-wrapper::before { content: unset i }
+        &-title { c: fg1 }
+        &-wrapper-before { c: 0 0 bg1 }
         &-header {
             position: relative
 
@@ -1268,25 +1269,17 @@ OM = _omsg
         }
 
         &-main {
-            a[href] { c: ac0 }
-            label, ._38sqg { c: fg3 }
-            .landing-title { c: fg1 }
-            rect[fill ^= '#f2f'], rect[fill ^= '#F2F'] { fill: bg5 }
-            path[fill ^= '#818'] { fill: ac0 }
+            a { c: ac0 }
+            label { c: fg3 }
+            [fill^='#f2f' i] { fill: bg5 }
+            [fill^='#818' i] { fill: fg1 }
 
             /// QR code.
             div[data-ref] {
-                rad: 0 i
                 filter: contrast(150%)
                 outline: 4px solid #fff
                 box-shadow: 0 0 0 4px #fff
                 [role='button'] { c: white 0 ac0 }
-
-                /// Change white border when inactive.
-                &._2UwZ_.n4LVt {
-                    outline: 4px solid ac0
-                    box-shadow: 0 0 0 4px ac0
-                }
             }
 
             /// Video tutorial.
