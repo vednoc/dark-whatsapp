@@ -352,20 +352,16 @@ OM = _omsg
     define('b8' + key, s('var(--b8-%s)', unquote(key)), g) for key, val in C.b8
 }
 
-@-moz-document domain('web.whatsapp.com') {
-    $top  = "Still looking for someone to help maintain DWA. Also, I have been "
-    $top += "working on a new website to browse and share userstyles. "
-    $top += "Consider giving it a try:\A\A"
-    $top += "🌟 https://userstyles.world 🌟"
-    $top += "\A\AMore info, as always, is in the project changelog:"
-    $btm  = "\A https://github.com/vednoc/dark-whatsapp\A\A\A"
-    $btm += "P.S. CSS can not add links, only fake/pseudo text."
+msg  = "Still looking for someone to help maintain Dark-WhatsApp. I will try "
+msg += "to maintain it until a big breaking update. Also, check out my other "
+msg += "project related to userstyles:\A\A 🌟 https://userstyles.world 🌟\A\A "
+msg += "Changelog: https://github.com/vednoc/dark-whatsapp\A"
+msg += "P.S. CSS can not create clickable links."
 
+@-moz-document domain('web.whatsapp.com') {
     :root:not(#z), .dark:not(#z) {
-        /// Userstyle info and announcements.
         --version: '🌚 Dark-WhatsApp v3.7.0 — July 9th, 2021'
-        --message: $top
-        --changes: $btm
+        /// Userstyle info.
 
         /// UI font.
         --ui-font: ui_font, Segoe UI, Helvetica Neue, Helvetica, Lucida Grande,
@@ -1021,34 +1017,24 @@ OM = _omsg
             background-image: var(--intro-image)
             transition: opacity 0.6s ease
             rad: 0 i
+        }
 
-            /// Title.
-            + div h1 { c: fg0 }
+        /// Intro -> Version.
+        [data-testid="intro-title"] {
+            font-size: 0px i
+            &::before {
+                content: var(--version)
+                font-size: 1.5rem
+            }
+        }
 
-            /// Custom text.
-            + div h1 + div[class] {
-                font-size: 0 i
-                c: fg1
-
-                /// Announcements.
-                &::before {
-                    display: block
-                    font-size: 16px
-                    margin-bottom: -16px
-                    white-space: pre-wrap
-                    content: var(--message) var(--changes)
-                }
-
-                /// Version.
-                &::after {
-                    display: block
-                    font-size: 16px
-                    margin-top: 16px
-                    padding-top: 24px
-                    margin-bottom: -16px
-                    content: var(--version)
-                    border-top: 1px solid bg4 i
-                }
+        /// Intro -> Announcements.
+        [data-testid="intro-text"] {
+            font-size: 0px i
+            &::before {
+                content: msg
+                white-space: pre-wrap
+                font-size: 0.875rem
             }
         }
 
