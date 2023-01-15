@@ -1221,18 +1221,10 @@ OM = _omsg
         }
 
         /// 'Allow notifications' modal.
-        &._2B4d4._1hMip.tm2tP {
+        /[data-testid="confirm-popup"] {
             c: 0 0 var(--modal-backdrop)
-            [data-animate-modal-popup] {
-                padding: 16px i
-                c: 0 0 bg1
-
-                /// Fix icon color.
-                [data-icon = 'back'] path { fill: fg1 i }
-
-                /// Uniform look with other modals. @upstream
-                --white-rgb: var(--fg-2-rgb)
-            }
+            /// Use a proper foreground color.
+            [data-animate-modal-popup] { --white-rgb: var(--fg-1-rgb) }
         }
     }
 
