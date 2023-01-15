@@ -1,6 +1,10 @@
 #+STARTUP: nofold
 
 * Changelog
+** 3.7.1 [2023-01-15 Sat]
+Another maintenance release that fixes a bunch of things in different areas. If
+you find bugs, please report them to our issue tracker.
+
 ** 3.7.0 [2021-07-09 Fri]
 This is a maintenance release to fix the latest update as well as simplify
 styles for a number of features. The code should be more maintainable than
