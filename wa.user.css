@@ -6,16 +6,14 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://userstyles.world/api/style/253.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      3.7.0
+@version      3.7.1
 @license      MIT
 ==/UserStyle== */
 
 @-moz-document domain('web.whatsapp.com') {
   :root:not(#z),
   .dark:not(#z) {
-    --version: '🌚 Dark-WhatsApp v3.7.0 — July 9th, 2021';
-    --message: 'Still looking for someone to help maintain DWA. Also, I have been working on a new website to browse and share userstyles. Consider giving it a try:\A\A🌟 https://userstyles.world 🌟\A\AMore info, as always, is in the project changelog:';
-    --changes: '\A https://github.com/vednoc/dark-whatsapp\A\A\AP.S. CSS can not add links, only fake/pseudo text.';
+    --version: '🌚 Dark-WhatsApp Lite v3.7.1 — January 15th, 2023';
     --ui-font: 'font_name', Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif;
     --r-menus: 4px;
     --r-inputs: 24px;
@@ -187,6 +185,8 @@
     --chat-marker-admin-border-rgb: var(--ac-0-rgb);
     --chat-marker-border: var(--fg-3);
     --chat-marker-border-rgb: var(--fg-3-rgb);
+    --chat-meta: var(--fg-3);
+    --chat-meta-rgb: var(--fg-3-rgb);
     --chatlist-icon: var(--fg-5);
     --chatlist-icon-rgb: var(--fg-5-rgb);
     --checkbox-background: var(--ac-0);
@@ -415,6 +415,10 @@
     --quick-action-button-rgb: var(--fg-3-rgb);
     --quick-action-button-background: var(--bg-4);
     --quick-action-button-background-rgb: var(--bg-4-rgb);
+    --round-entry-point-background-color: var(--bg-4);
+    --round-entry-point-background-color-rgb: var(--bg-4-rgb);
+    --quoted-message-text: var(--fg-2);
+    --quoted-message-text-rgb: var(--fg-2-rgb);
     --rich-text-panel-background: var(--bg-3);
     --rich-text-panel-background-rgb: var(--bg-3-rgb);
     --search-container-background: var(--bg-2);
@@ -467,6 +471,8 @@
     --teal-hover-rgb: var(--ac-0-rgb);
     --teal-pale: var(--ac-3);
     --teal-pale-rgb: var(--ac-3-rgb);
+    --text-muted: var(--fg-4);
+    --text-muted-rgb: var(--fg-4-rgb);
     --thumb-border-active: var(--bg-2);
     --thumb-border-active-rgb: var(--bg-2-rgb);
     --thumb-border-active-new-media-editor: var(--fg-4);
@@ -485,6 +491,8 @@
     --unread-background-rgb: var(--bg-3-rgb);
     --unread-bar-background: rgba(var(--bg-0-rgb), 0.7);
     --unread-bar-background-rgb: var(--bg-0-rgb);
+    --unread-timestamp: var(--ac-0);
+    --unread-timestamp-rgb: var(--ac-0-rgb);
     --unread-marker-background: var(--ac-0);
     --unread-marker-background-rgb: var(--ac-0-rgb);
     --unread-marker-text: var(--white);
@@ -511,6 +519,20 @@
     --wallpaper-thumb-border-hover-rgb: var(--bg-4-rgb);
     --win32-title-primary: var(--fg-1);
     --win32-title-primary-rgb: var(--fg-1-rgb);
+    --reactions-tray-background: var(--bg-3);
+    --reactions-tray-background-rgb: var(--bg-3-rgb);
+    --reactions-tray-active-round-background: var(--bg-5);
+    --reactions-tray-active-round-background-rgb: var(--bg-5-rgb);
+    --reactions-picker-bg: var(--bg-4);
+    --reactions-picker-bg-rgb: var(--bg-4-rgb);
+    --svg-gray-button: var(--fg-3);
+    --svg-gray-button-rgb: var(--fg-3-rgb);
+    --text-primary-strong: var(--fg-1);
+    --text-primary-strong-rgb: var(--fg-1-rgb);
+    --text-secondary-lighter: var(--fg-2);
+    --text-secondary-lighter-rgb: var(--fg-2-rgb);
+    --text-medium-emphasis: var(--fg-3);
+    --text-medium-emphasis-rgb: var(--fg-3-rgb);
     --bg-0: #1c2026;
     --bg-0-rgb: 28,32,38;
     --bg-1: #1f232a;
@@ -708,40 +730,27 @@
   html > body ._1Ftww button:nth-child(3) {
     color: var(--fg-4) !important;
   }
-  html > body [data-asset-intro-image-dark],
-  html > body [data-asset-intro-image-light] {
-    max-width: 240px;
-    max-height: 240px;
+  html > body [data-testid^="intro-md-beta-logo-"] {
+    padding: 8rem;
     background-image: var(--intro-image);
-    transition: opacity 0.6s ease;
-    border-radius: 0 !important;
   }
-  html > body [data-asset-intro-image-dark] + div h1,
-  html > body [data-asset-intro-image-light] + div h1 {
-    color: var(--fg-0) !important;
+  html > body [data-testid^="intro-md-beta-logo-"] > svg {
+    display: none;
   }
-  html > body [data-asset-intro-image-dark] + div h1 + div[class],
-  html > body [data-asset-intro-image-light] + div h1 + div[class] {
-    font-size: 0 !important;
-    color: var(--fg-1) !important;
+  html > body [data-testid="intro-title"] {
+    font-size: 0px !important;
   }
-  html > body [data-asset-intro-image-dark] + div h1 + div[class]::before,
-  html > body [data-asset-intro-image-light] + div h1 + div[class]::before {
-    display: block;
-    font-size: 16px;
-    margin-bottom: -16px;
-    white-space: pre-wrap;
-    content: var(--message) var(--changes);
-  }
-  html > body [data-asset-intro-image-dark] + div h1 + div[class]::after,
-  html > body [data-asset-intro-image-light] + div h1 + div[class]::after {
-    display: block;
-    font-size: 16px;
-    margin-top: 16px;
-    padding-top: 24px;
-    margin-bottom: -16px;
+  html > body [data-testid="intro-title"]::before {
     content: var(--version);
-    border-top: 1px solid var(--bg-4) !important;
+    font-size: 1.5rem;
+  }
+  html > body [data-testid="intro-text"] {
+    font-size: 0px !important;
+  }
+  html > body [data-testid="intro-text"]::before {
+    content: 'Still looking for someone to help maintain Dark-WhatsApp. I will try to maintain it until a big breaking update. Also, check out my other project related to userstyles:\A\A 🌟 https://userstyles.world 🌟\A\A Changelog: https://github.com/vednoc/dark-whatsapp\AP.S. CSS can not create clickable links.';
+    white-space: pre-wrap;
+    font-size: 0.875rem;
   }
   .Iwkc0 {
     position: relative;
@@ -884,19 +893,17 @@
   [data-icon = 'status-v3-unread'] [fill = '#009588'] {
     fill: var(--ac-0) !important;
   }
-  .overlay._2B4d4._1hMip.tm2tP {
+  [data-testid="confirm-popup"] {
     background-color: var(--modal-backdrop) !important;
   }
-  .overlay._2B4d4._1hMip.tm2tP [data-animate-modal-popup] {
-    padding: 16px !important;
+  [data-testid="confirm-popup"] [data-animate-modal-popup] {
+    --white-rgb: var(--fg-1-rgb);
+  }
+  .landing-title {
+    color: var(--fg-1) !important;
+  }
+  .landing-wrapper-before {
     background-color: var(--bg-1) !important;
-    --white-rgb: var(--fg-2-rgb);
-  }
-  .overlay._2B4d4._1hMip.tm2tP [data-animate-modal-popup] [data-icon = 'back'] path {
-    fill: var(--fg-1) !important;
-  }
-  .landing-wrapper::before {
-    content: unset !important;
   }
   .landing-header {
     position: relative;
@@ -928,25 +935,19 @@
     background-color: var(--bg-1) !important;
     box-shadow: 0 0 1px var(--bg-5);
   }
-  .landing-main a[href] {
+  .landing-main a {
     color: var(--ac-0) !important;
   }
-  .landing-main label,
-  .landing-main ._38sqg {
+  .landing-main label {
     color: var(--fg-3) !important;
   }
-  .landing-main .landing-title {
-    color: var(--fg-1) !important;
-  }
-  .landing-main rect[fill ^= '#f2f'],
-  .landing-main rect[fill ^= '#F2F'] {
+  .landing-main [fill^='#f2f'i] {
     fill: var(--bg-5);
   }
-  .landing-main path[fill ^= '#818'] {
-    fill: var(--ac-0);
+  .landing-main [fill^='#818'i] {
+    fill: var(--fg-1);
   }
   .landing-main div[data-ref] {
-    border-radius: 0 !important;
     filter: contrast(150%);
     outline: 4px solid #fff;
     box-shadow: 0 0 0 4px #fff;
@@ -954,10 +955,6 @@
   .landing-main div[data-ref] [role='button'] {
     color: #fff !important;
     background-color: var(--ac-0) !important;
-  }
-  .landing-main div[data-ref]._2UwZ_.n4LVt {
-    outline: 4px solid var(--ac-0);
-    box-shadow: 0 0 0 4px var(--ac-0);
   }
   .landing-main + div {
     background-color: transparent !important;
@@ -1037,33 +1034,30 @@
   #app > div > [tabindex]::after {
     content: unset !important;
   }
-  ._3yWey {
+  [data-testid="chat-list-search-container"] {
     background-color: var(--bg-2) !important;
     border-bottom: 1px solid var(--bg-5) !important;
   }
-  ._3yWey label {
+  [data-testid="chat-list-search-container"] > div {
     border-radius: var(--r-inputs) !important;
     box-shadow: inset 0 0 0 1px var(--bg-4);
   }
-  ._3yWey::after {
-    display: none !important;
-  }
-  ._3yWey:focus-within {
+  [data-testid="chat-list-search-container"]:focus-within {
     box-shadow: var(--bshadow);
   }
-  #app > div > [tabindex] #side > header {
+  #app > div > [tabindex] [data-testid="chatlist-header"] {
     border-bottom: 1px solid var(--bg-5) !important;
   }
-  #app > div > [tabindex] #side > header + span > div {
+  #app > div > [tabindex] [data-testid="chatlist-header"] + span > div {
     border-bottom: 1px solid var(--bg-5) !important;
   }
-  #app > div > [tabindex] #side > header + span > div [data-icon = 'x'] svg path {
+  #app > div > [tabindex] [data-testid="chatlist-header"] + span > div [data-icon = 'x'] svg path {
     fill: var(--fg-5);
   }
-  #app > div > [tabindex].three > div:nth-child(2) > div:nth-child(3) {
+  #app > div > [tabindex].three > [data-testid="drawer-right"] {
     border-left: 1px solid var(--bg-5) !important;
   }
-  #app > div > [tabindex].three > div:nth-child(2) > div:nth-child(3) section > div {
+  #app > div > [tabindex].three > [data-testid="drawer-right"] section > div {
     box-shadow: 0 0 0 1px var(--bg-4) !important;
   }
   .dark .three #main > *,
@@ -1178,9 +1172,6 @@
   #main ._5ML0C {
     border: none !important;
   }
-  #main [class *= 'message-'][data-id] > span + div:not(._1S-gg) > div {
-    box-shadow: 0 1px 0 rgba(var(--shadow-rgb), 0.2) !important;
-  }
   #main [data-js-context-icon] + div[style] {
     background-color: var(--bg-4) !important;
   }
@@ -1237,9 +1228,6 @@
   }
   #main img[src *= 'maps.googleapis.com'] {
     filter: invert(0.8) hue-rotate(180deg) !important;
-  }
-  .dark ._3C4Vf ._3vPI2 ._1i_wG {
-    color: var(--secondary-stronger) !important;
   }
   [class *= ' color-'] > span:nth-child(2) {
     color: var(--fg-3) !important;
@@ -1415,23 +1403,29 @@
       border-right: 1px solid var(--bg-5) !important;
     }
     .three > div:nth-child(2) > div:nth-child(2) {
-      flex: 0 0 calc(100% - 30% - 110px) !important;
-      margin-left: calc(-30% + 150px);
+      flex: 0 0 calc(100% - 30% - 81px) !important;
+      margin-left: calc(-30% + 80px);
     }
-    .three > div:nth-child(4) {
-      flex: 0 0 calc(100% - 30% - 110px) !important;
-    }
-    .three > div:nth-child(3):hover {
+    .three > div:nth-child(3) {
+      max-width: 80px !important;
       flex: 0 0 80px !important;
     }
-    #side > header {
-      min-width: 240px;
+    [data-testid="chatlist-header"] {
+      display: flex;
+      justify-content: start;
+      min-height: 59px;
     }
-    #side > header + span {
+    [data-testid="chatlist-header"]:not(:focus-within) {
+      overflow: hidden;
+    }
+    [data-testid="chatlist-header"] > div:nth-child(2) {
+      margin-left: 1rem;
+    }
+    [data-testid="chatlist-header"] + span {
       display: none;
     }
-    #side > header + span + div:not(:focus-within) label {
-      padding: 0px;
+    [data-testid="chatlist-header"] + span + div:not(:focus-within) [data-testid="chat-list-search-container"] > div {
+      min-width: 60px;
     }
     #side span[title*="…"] {
       overflow: unset !important;
@@ -1460,14 +1454,14 @@
     #side [data-testid='cell-frame-container'] > div:nth-child(2) > div:nth-child(2) [role='gridcell'] {
       margin: 0 !important;
     }
-    #side [data-testid='cell-frame-container'] > div:nth-child(2) > div:nth-child(2) ._23LrM {
+    #side [data-testid='cell-frame-container'] > div:nth-child(2) > div:nth-child(2) [data-testid="icon-unread-count"] {
       left: 44px;
       z-index: 9999;
       position: fixed;
       margin-top: 4px;
       border: 2px solid var(--bg-2) !important;
     }
-    #side [data-testid='cell-frame-container'] > div:nth-child(2) > div:nth-child(2) ._2qo4q {
+    #side [data-testid='cell-frame-container'] > div:nth-child(2) > div:nth-child(2) [data-testid^="status-"] {
       left: 44px;
       z-index: 9999;
       position: fixed;
@@ -1477,27 +1471,32 @@
       background-color: var(--bg-4) !important;
       border-radius: 50%;
     }
-    #side [data-testid='cell-frame-container'] > div:nth-child(2) > div:nth-child(2) ._2qo4q svg {
+    #side [data-testid='cell-frame-container'] > div:nth-child(2) > div:nth-child(2) [data-testid^="status-"] svg {
       width: 14px;
       height: 14px;
     }
-    #side [data-testid='cell-frame-container'] > div:nth-child(2) > div:nth-child(2) ._2XH9R,
     #side [data-testid='cell-frame-container'] > div:nth-child(2) > div:nth-child(2) .status-vcard,
     #side [data-testid='cell-frame-container'] > div:nth-child(2) > div:nth-child(2) button[aria-hidden],
     #side [data-testid='cell-frame-container'] > div:nth-child(2) > div:nth-child(2) [data-icon]:not([data-icon*='status-']):not([data-icon*='disappearing']) {
       display: none;
     }
-    #side:not(#z) [aria-selected='false'] > div:hover ._2qo4q,
-    #side:not(#z) [aria-selected='false'] > div:hover ._23LrM {
+    #side:not(#z) [aria-selected='false'] > div:hover [data-testid="icon-unread-count"],
+    #side:not(#z) [aria-selected='false'] > div:hover [data-testid^="status-"] {
       border-color: var(--bg-3) !important;
     }
-    #side:not(#z) [aria-selected='false'] > div:hover ._2qo4q {
+    #side:not(#z) [aria-selected='false'] > div:hover [data-testid^="status-"] {
       background-color: var(--bg-5) !important;
     }
-    #side:not(#z) [aria-selected='true'] > div ._2qo4q,
-    #side:not(#z) [aria-selected='true'] > div ._23LrM {
+    #side:not(#z) [aria-selected='true'] > div [data-testid="icon-unread-count"],
+    #side:not(#z) [aria-selected='true'] > div [data-testid^="status-"] {
       border-color: var(--bg-4) !important;
       background-color: var(--bg-1) !important;
+    }
+    #side > #pane-side {
+      overflow-x: hidden !important;
+    }
+    [data-testid="chatlist-e2e-message"] {
+      display: none;
     }
   }
   .message-in .selectable-text.invisible-space[dir = 'rtl']::before,
