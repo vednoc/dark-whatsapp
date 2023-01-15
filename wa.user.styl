@@ -1398,31 +1398,29 @@ OM = _omsg
             &:focus-within { box-shadow: var(--bshadow) }
         }
 
-        /// Left -> Resets.
-        #side {
-            > header {
-                border-bottom: 1px solid bg5 i
+        /// Left -> Reset header/alerts.
+        [data-testid="chatlist-header"] {
+            border-bottom: 1px solid bg5 i
 
-                /// Alerts.
-                + span > div {
-                    /// Close icon for 'low battery' state.
-                    [data-icon = 'x'] svg path { fill: fg5 }
+            /// Alerts.
+            + span > div {
+                /// Close icon for 'low battery' state.
+                [data-icon = 'x'] svg path { fill: fg5 }
 
-                    /// Feat -> Alerts.
-                    if (app_alerts == 'hide') {
-                        > div { display: none i }
-                    } else if (app_alerts == 'notifications') {
-                        > div { border-bottom: 1px solid bg5 i }
-                        > div._2C_7j { display: none i }
-                    } else {
-                        border-bottom: 1px solid bg5 i
-                    }
+                /// Feat -> Alerts.
+                if (app_alerts == 'hide') {
+                    > div { display: none i }
+                } else if (app_alerts == 'notifications') {
+                    > div { border-bottom: 1px solid bg5 i }
+                    > div._2C_7j { display: none i }
+                } else {
+                    border-bottom: 1px solid bg5 i
                 }
             }
         }
 
         /// Right -> Drawer divider.
-        &.three > div:nth-child(2) > div:nth-child(3) {
+        &.three > [data-testid="drawer-right"] {
             border-left: 1px solid bg5 i
 
             /// Remove shadows from drawer sections.
