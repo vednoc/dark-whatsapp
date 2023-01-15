@@ -1591,14 +1591,6 @@ OM = _omsg
         /// Tweak 'unread messages' alert.
         ._5ML0C { border: none i }
 
-        /// Tweak box-shadow for message bubbles.
-        [class *= 'message-'][data-id] {
-            /// Exclude stickers.
-            > span + div:not(._1S-gg) > div {
-                box-shadow: 0 1px 0 to_rgba('shadow', 0.2) i
-            }
-        }
-
         /// Fix context menu background for stickers.
         [data-js-context-icon] + div[style] { c: 0 0 bg4 }
 
@@ -1718,9 +1710,6 @@ OM = _omsg
         img[src *= 'maps.googleapis.com'] {
             filter: invert(0.8) hue-rotate(180deg) i
         }
-
-        /// Fix unread messages in dark mode. @upstream
-        /.dark ._3C4Vf ._3vPI2 ._1i_wG { c: var(--secondary-stronger) }
 
         /// Groups -> Fix opacity for nicknames.
         /[class *= ' color-'] > span:nth-child(2) { c: fg3 }
