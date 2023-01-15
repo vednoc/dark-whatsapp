@@ -1793,37 +1793,47 @@ OM = _omsg
 
             /// Tweaks for three open drawers.
             .three {
-                /// Reset upload preview.
+                /// Reset upload preview drawer.
                 > div:nth-child(2) > div:nth-child(2) {
-                    flex: 0 0 calc(100% - 30% - 110px) i
-                    margin-left: calc(-30% + 150px)
-                }
-
-                /// Reset chat when info is open.
-                > div:nth-child(4) {
-                    flex: 0 0 calc(100% - 30% - 110px) i
+                    flex: 0 0 calc(100% - 30% - 81px) i
+                    margin-left: calc(-30% + 80px)
                 }
 
                 /// Do not expand left drawer when right drawer is open.
-                > div:nth-child(3):hover { flex: 0 0 80px i }
+                > div:nth-child(3) {
+                    max-width: 80px i
+                    flex: 0 0 80px i
+                }
+            }
+
+            /// Fix left header.
+            [data-testid="chatlist-header"] {
+                display: flex
+                justify-content: start
+                min-height: 59px
+
+                // Workaround for dropdown menus.
+                &:not(:focus-within) { overflow: hidden }
+
+                // Separate header buttons.
+                > div:nth-child(2) { margin-left: 1rem }
+
+                /// Remove notifications.
+                + span { display: none }
+
+                /// Fix search bar width.
+                + span + div:not(:focus-within) {
+                    [data-testid="chat-list-search-container"] > div {
+                        min-width: 60px
+                    }
+                }
             }
 
             /// Contacts.
             #side {
-                status = '._23LrM'
-                unread = '._2qo4q'
+                unread = '[data-testid="icon-unread-count"]'
+                status = '[data-testid^="status-"]'
                 typing = 'span[title*="…"]'
-
-                /// Fix header width.
-                > header {
-                    min-width: 240px
-
-                    /// Remove notifications completely.
-                    + span { display: none }
-
-                    /// Fix search bar width.
-                    + span + div:not(:focus-within) label { padding: 0px }
-                }
 
                 /// 'Typing...' status indicator.
                 { typing } {
@@ -1857,8 +1867,8 @@ OM = _omsg
                     /// Remove margins.
                     [role='gridcell'] { margin: 0 i }
 
-                    /// Status indicator.
-                    { status } {
+                    /// Unread indicator.
+                    { unread } {
                         left: 44px
                         z-index: 9999
                         position: fixed
@@ -1866,8 +1876,8 @@ OM = _omsg
                         border: 2px solid bg2 i
                     }
 
-                    /// Unread indicator.
-                    { unread } {
+                    /// Status indicator.
+                    { status } {
                         left: 44px
                         z-index: 9999
                         position: fixed
@@ -1885,9 +1895,8 @@ OM = _omsg
                     }
 
                     /// Remove elements.
-                    ._2XH9R, // icon wrapper
                     .status-vcard, // more icons
-                    button[aria-hidden] // context menu
+                    button[aria-hidden], // context menu
                     [data-icon]:not([data-icon*='status-']):not([data-icon*='disappearing']) {
                         display: none
                     }
@@ -1896,12 +1905,18 @@ OM = _omsg
                 /// Hover/Active states.
                 &:not(#z) [aria-selected='false'] > div:hover {
                     { unread }, { status } { c: 0 bg3 }
-                    { unread } { c: 0 0 bg5 }
+                    { status } { c: 0 0 bg5 }
                 }
                 &:not(#z) [aria-selected='true'] > div {
                     { unread }, { status } { c: 0 bg4 bg1 }
                 }
+
+                // Hide horizontal overflow.
+                > #pane-side { overflow-x: hidden i }
             }
+
+            // Remove E2E notice.
+            [data-testid="chatlist-e2e-message"] { display: none }
         }
     }
 
