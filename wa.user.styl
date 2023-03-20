@@ -1115,7 +1115,7 @@ msg += "P.S. CSS can not create clickable links."
         &, /._3PdFH { c: 0 0 bg5 }
 
         /// Avatars/images/new group/contact avatar/your avatar.
-        &, > img, /._3g4Pn, /._1jLYl, /._1PAkz {
+        &, > img, /img.o2zu3hjb, /._1jLYl, /._1PAkz {
             rad: var(--r-avatars) i
         }
 
@@ -1124,12 +1124,13 @@ msg += "P.S. CSS can not create clickable links."
             margin-left: 0 i
         }
 
-        /// Tweak default-user icons.
+        /// Tweak default icons.
         if (radius_a != '50%') {
             /[style *= 'width:'][style *= 'height:'] {
-                [data-icon = 'default-user'] svg {
-                    margin-top: -4px i
-                    transform: scale(0.7) i
+                [data-icon = 'default-user'] svg,
+                [data-icon = 'default-group'] svg {
+                    background-color: bg5
+                    border-radius: var(--r-avatars) i
                 }
             }
         }
