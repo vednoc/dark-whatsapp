@@ -1737,7 +1737,7 @@ msg += "P.S. CSS can not create clickable links."
             /// Shared drawer styles.
             .two, .three {
                 /// Left -> Settings/Contacts.
-                > div:nth-child(3) {
+                > div:nth-child(4) {
                     flex: 0 0 80px i
                     transition: 0.2s ease
                     &:hover, &:focus-within { flex: 0 0 30% i }
@@ -1747,13 +1747,13 @@ msg += "P.S. CSS can not create clickable links."
             /// Tweaks for two open drawers.
             .two {
                 /// Reset upload preview.
-                >  div:nth-child(2) > div:nth-child(2) {
+                >  div:nth-child(3) > div:nth-child(2) {
                     flex: 0 0 calc(100% - 80px) i
                     margin-left: calc(-30% + 80px)
                 }
 
                 /// Expand contacts.
-                > div:nth-child(3) {
+                > div:nth-child(4) {
                     min-width: 1px i
                     transition: 0.3s ease i
                     transition-delay: var(--c-m-delay) i
@@ -1767,7 +1767,7 @@ msg += "P.S. CSS can not create clickable links."
                 }
 
                 /// Settings/Starred/Archived drawers.
-                > :nth-child(2) > :nth-child(1) {
+                > :nth-child(3) > :nth-child(1) {
                     z-index: 201 i
                     flex: 0 0 30% i
                     min-width: 350px i
@@ -1778,13 +1778,13 @@ msg += "P.S. CSS can not create clickable links."
             /// Tweaks for three open drawers.
             .three {
                 /// Reset upload preview drawer.
-                > div:nth-child(2) > div:nth-child(2) {
+                > div:nth-child(3) > div:nth-child(2) {
                     flex: 0 0 calc(100% - 30% - 81px) i
                     margin-left: calc(-30% + 80px)
                 }
 
                 /// Do not expand left drawer when right drawer is open.
-                > div:nth-child(3) {
+                > div:nth-child(4) {
                     max-width: 80px i
                     flex: 0 0 80px i
                 }
