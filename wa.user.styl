@@ -1388,23 +1388,24 @@ msg += "P.S. CSS can not create clickable links."
             &:focus-within { box-shadow: var(--bshadow) }
         }
 
-        /// Left -> Reset header/alerts.
+        /// Left -> Reset header.
         [data-testid="chatlist-header"] {
             border-bottom: 1px solid bg5 i
+        }
 
-            /// Alerts.
-            + span > div {
-                /// Close icon for 'low battery' state.
-                [data-icon = 'x'] svg path { fill: fg5 }
+        /// Left -> Tweak alerts.
+        [data-testid='chat-butterbar'] {
+            border-bottom: 1px solid bg5 i
 
-                /// Feat -> Alerts.
-                if (app_alerts == 'hide') {
-                    > div { display: none i }
-                } else if (app_alerts == 'notifications') {
-                    > div { border-bottom: 1px solid bg5 i }
-                    > div._2C_7j { display: none i }
-                } else {
-                    border-bottom: 1px solid bg5 i
+            /// Close icon for 'low battery' state.
+            [data-icon = 'x'] svg path { fill: fg5 }
+
+            // Feat -> Hide alerts.
+            if (app_alerts == 'hide') {
+                display: none i
+            } else if (app_alerts == 'notifications') {
+                &:has([data-icon='alert-notification']) {
+                    display: none i
                 }
             }
         }
