@@ -6,14 +6,14 @@
 @supportURL   https://github.com/vednoc/dark-whatsapp/issues
 @updateURL    https://userstyles.world/api/style/253.user.css
 @author       vednoc <vednoc@pm.me> (https://github.com/vednoc)
-@version      3.7.1
+@version      3.7.2
 @license      MIT
 ==/UserStyle== */
 
 @-moz-document domain('web.whatsapp.com') {
   :root:not(#z),
   .dark:not(#z) {
-    --version: '🌚 Dark-WhatsApp Lite v3.7.1 — January 15th, 2023';
+    --version: '🌚 Dark-WhatsApp Lite v3.7.2 — March 31st, 2023';
     --ui-font: 'font_name', Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif;
     --r-menus: 4px;
     --r-inputs: 24px;
@@ -809,16 +809,15 @@
   ::-webkit-progress-value {
     background-color: var(--ac-0) !important;
   }
-  ._3GlyB[style],
+  ._3g4Pn[style],
   ._3PdFH {
     background-color: var(--bg-5) !important;
   }
-  ._3GlyB[style],
-  ._3GlyB[style] > img,
-  ._3GlyB,
-  ._8hzr9,
-  ._1TGpC,
-  .gDU26 {
+  ._3g4Pn[style],
+  ._3g4Pn[style] > img,
+  img.o2zu3hjb,
+  ._1jLYl,
+  ._1PAkz {
     border-radius: var(--r-avatars) !important;
   }
   [data-list-scroll-offset] > div:first-child > div:last-child {
@@ -1048,10 +1047,10 @@
   #app > div > [tabindex] [data-testid="chatlist-header"] {
     border-bottom: 1px solid var(--bg-5) !important;
   }
-  #app > div > [tabindex] [data-testid="chatlist-header"] + span > div {
+  #app > div > [tabindex] [data-testid='chat-butterbar'] {
     border-bottom: 1px solid var(--bg-5) !important;
   }
-  #app > div > [tabindex] [data-testid="chatlist-header"] + span > div [data-icon = 'x'] svg path {
+  #app > div > [tabindex] [data-testid='chat-butterbar'] [data-icon = 'x'] svg path {
     fill: var(--fg-5);
   }
   #app > div > [tabindex].three > [data-testid="drawer-right"] {
@@ -1369,44 +1368,44 @@
     }
   }
   @media screen and (max-width: 720px) {
-    .two > div:nth-child(3),
-    .three > div:nth-child(3) {
+    .two > div:nth-child(4),
+    .three > div:nth-child(4) {
       flex: 0 0 80px !important;
       transition: 0.2s ease;
     }
-    .two > div:nth-child(3):hover,
-    .three > div:nth-child(3):hover,
-    .two > div:nth-child(3):focus-within,
-    .three > div:nth-child(3):focus-within {
+    .two > div:nth-child(4):hover,
+    .three > div:nth-child(4):hover,
+    .two > div:nth-child(4):focus-within,
+    .three > div:nth-child(4):focus-within {
       flex: 0 0 30% !important;
     }
-    .two > div:nth-child(2) > div:nth-child(2) {
+    .two > div:nth-child(3) > div:nth-child(2) {
       flex: 0 0 calc(100% - 80px) !important;
       margin-left: calc(-30% + 80px);
     }
-    .two > div:nth-child(3) {
+    .two > div:nth-child(4) {
       min-width: 1px !important;
       transition: 0.3s ease !important;
       transition-delay: var(--c-m-delay) !important;
     }
-    .two > div:nth-child(3):hover {
+    .two > div:nth-child(4):hover {
       min-width: 349px !important;
       transition-delay: var(--c-m-hover) !important;
       flex: 0 0 30% !important;
     }
-    .two > :nth-child(2) > :nth-child(1) {
+    .two > :nth-child(3) > :nth-child(1) {
       z-index: 201 !important;
       flex: 0 0 30% !important;
       min-width: 350px !important;
     }
-    .two > :nth-child(2) > :nth-child(1) [style][tabindex] {
+    .two > :nth-child(3) > :nth-child(1) [style][tabindex] {
       border-right: 1px solid var(--bg-5) !important;
     }
-    .three > div:nth-child(2) > div:nth-child(2) {
+    .three > div:nth-child(3) > div:nth-child(2) {
       flex: 0 0 calc(100% - 30% - 81px) !important;
       margin-left: calc(-30% + 80px);
     }
-    .three > div:nth-child(3) {
+    .three > div:nth-child(4) {
       max-width: 80px !important;
       flex: 0 0 80px !important;
     }
@@ -1499,56 +1498,15 @@
       display: none;
     }
   }
-  .message-in .selectable-text.invisible-space[dir = 'rtl']::before,
-  .message-out .selectable-text.invisible-space[dir = 'rtl']::before,
-  .message-in a.selectable-text[href]::before,
-  .message-out a.selectable-text[href]::before,
-  .message-in ._1VzZY[dir = 'ltr'] > [dir = 'ltr']::before,
-  .message-out ._1VzZY[dir = 'ltr'] > [dir = 'ltr']::before,
-  .message-in .selectable-text.invisible-space[dir = 'rtl']::after,
-  .message-out .selectable-text.invisible-space[dir = 'rtl']::after,
-  .message-in a.selectable-text[href]::after,
-  .message-out a.selectable-text[href]::after,
-  .message-in ._1VzZY[dir = 'ltr'] > [dir = 'ltr']::after,
-  .message-out ._1VzZY[dir = 'ltr'] > [dir = 'ltr']::after {
-    content: unset !important;
-  }
-  .message-in .selectable-text.invisible-space[dir = 'rtl'] > span[class],
-  .message-out .selectable-text.invisible-space[dir = 'rtl'] > span[class] {
-    display: unset !important;
-  }
-  @supports (-moz-user-select: none) {
-    .message-in .selectable-text.invisible-space[dir = 'rtl']::before,
-    .message-out .selectable-text.invisible-space[dir = 'rtl']::before {
-      content: unset !important;
-    }
-  }
-  .message-in [style *= 'width'] + div > ._1VzZY[dir = 'rtl'],
-  .message-out [style *= 'width'] + div > ._1VzZY[dir = 'rtl'],
-  .message-in .video-thumb + div > ._1VzZY[dir = 'rtl'],
-  .message-out .video-thumb + div > ._1VzZY[dir = 'rtl'] {
-    padding-bottom: 0.8rem !important;
-  }
-  .message-in .message-text-link::after,
-  .message-out .message-text-link::after {
-    content: unset !important;
-  }
-  .message-in ._3B8qp,
-  .message-out ._3B8qp {
-    padding-bottom: 0;
-  }
-  .message-in > div:nth-child(2),
-  .message-out > div:nth-child(2) {
-    min-width: 56px;
+  .message-in .copyable-text.selectable-text:has([src^='/img'][src$='-40.png']),
+  .message-out .copyable-text.selectable-text:has([src^='/img'][src$='-40.png']),
+  .message-in .copyable-text.selectable-text:has([src^='/img'][src$='-64.png']),
+  .message-out .copyable-text.selectable-text:has([src^='/img'][src$='-64.png']) {
+    margin: 0 57px 0 0 !important;
   }
   [class*='message-'] img[src$='-64.png'][alt='💋'] {
     animation: aKiss 1.5s infinite;
   }
-  [class*='message-'] img[src$='-64.png'][alt='🤩'],
-  [class*='message-'] img[src$='-64.png'][alt='😍'],
-  [class*='message-'] img[src$='-64.png'][alt='☺️'],
-  [class*='message-'] img[src$='-64.png'][alt='❣️'],
-  [class*='message-'] img[src$='-64.png'][alt='♥️'],
   [class*='message-'] img[src$='-64.png'][alt='❤️'] {
     animation: aPulse 1.5s infinite;
   }
