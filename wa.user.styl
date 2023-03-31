@@ -66,9 +66,7 @@
     'Default  *': 'default ',
     'Minimal   ': 'minimal ',
     'Rounded   ': 'rounded ',
-    'Facebook  ': 'fb-like ',
 }
-@var checkbox fb_compact 'Collapse messages for `fb-like` tail style' 1
 
 @var range    emoji_o    'Emoji opacity' [0.8, 0.0, 1, 0.01]
 @var select   emoji_b    'Reduce big emoji size' {
@@ -94,9 +92,6 @@
 @var checkbox ow_omsg    'Override outgoing message bubble color' 0
 @var color    _omsg  'Outgoing message bubble color' #3b4250
 @var checkbox bubble_out 'Swap sides for outgoing message bubbles' 0
-
-@var checkbox rtl_header 'RTL: Remove empty message header' 1
-@var checkbox rtl_format 'RTL: Fix formatting for message content' 1
 
 @var checkbox chat_h_p_p 'Hide profile pictures' 0
 @var checkbox chat_b_c   'Blurred contacts' 0
@@ -1600,7 +1595,7 @@ msg += "P.S. CSS can not create clickable links."
             &._2AKAp, &.zE8pI {
                 padding: 2px 4px i
                 background-color: to_rgba('bg-1', 0.7) i
-                rad: (tail_style == 'fb-like') ? 16px i : 5px i
+                rad: 5px i
             }
 
             /// Videos.
@@ -1609,7 +1604,7 @@ msg += "P.S. CSS can not create clickable links."
                 ._1rd4q, + ._3phU6 {
                     padding: 2px 4px i
                     background-color: to_rgba('bg-1', 0.7) i
-                    rad: (tail_style == 'fb-like') ? 16px i : 5px i
+                    rad: 5px i
                 }
 
                 /// Timestamps in grouped media.
@@ -1624,7 +1619,7 @@ msg += "P.S. CSS can not create clickable links."
                 + div[class] > [role] {
                     padding: 2px 4px i
                     background-color: to_rgba('bg-1', 0.7) i
-                    rad: (tail_style == 'fb-like') ? 16px i : 5px i
+                    rad: 5px i
                 }
 
                 /// Live location overlay.
@@ -1906,148 +1901,12 @@ msg += "P.S. CSS can not create clickable links."
 
     // Main -> Chat message bubbles.
     .message {
-        /// 1, 2:    External video/link
-        /// 3, 4, 5: Reply, Gif, Document
-        /// 6, 7:    (Grouped) images/videos
-        /// 8:       Google Maps
-        md = '._1d7uX, ._3JHdl, .i8New, .QnPmY, ._20adz, ._1mTER, .-xSc5, ._1VzZY'
-        /// 1:   Messages
-        /// 2:   Video timestamp/length
-        /// 3-5: Images/gifs/stickers
-        ts = '._1nOME, .video-thumb + ._3phU6, ._1rd4q, ._1yXJw, ._2QpTA, ._2zab4'
         /// Big emojis.
         big = '._3B8qp'
 
-        /// Feat -> Message tails.
-        if (tail_style == 'fb-like') {
-            _o = 16px
-            _m = (16px - 2px)
-            _i = 6px
-
-            /// Feat -> Incoming message bubble position.
-            if (!bubble_in) {
-                left_top = _o _o _o _i i
-                left_mid = _i _o _o _i i
-                left_med = _i _m _m _i i
-                left_end = _i _o _o _o i
-            } else {
-                left_top = _o _o _i _o i
-                left_mid = _o _i _i _o i
-                left_med = _m _i _i _m i
-                left_end = _o _i _o _o i
-            }
-
-            /// Feat -> Outgoing message bubble position.
-            if (!bubble_out) {
-                right_top = _o _o _i _o i
-                right_mid = _o _i _i _o i
-                right_med = _m _i _i _m i
-                right_end = _o _i _o _o i
-            } else {
-                right_top = _o _o _o _i i
-                right_mid = _i _o _o _i i
-                right_med = _i _m _m _i i
-                right_end = _i _o _o _o i
-            }
-
-            /// Helpers.
-            bubble  = '._2rBI0'
-            system  = '._3ASsl, .XFAMv'
-            sticker = '._2JswF'
-            forward = '._1ubAk'
-            context = '._2_CMk'
-
-            /// Shared styles.
-            &-in, &-out {
-                /// Remove tails.
-                [data-icon *= 'tail-'] { display: none i }
-
-                /// Single message | Groups -> Sticker sender.
-                &:not({ bubble }) > div > div { rad: _o i }
-                &:not({ bubble }) { sticker } { rad: _o i }
-
-                /// Fix rounded corners for single message.
-                &:not({ bubble }) { md } { rad: _o i }
-
-                /// Fix rounded corners for forward button.
-                &:not(#z) { forward }:not(#z) { rad: _o i }
-
-                /// Fix rounded corners for images/videos in grouped media.
-                &:not(#z) ._3dejV._2XJpe._7M8i6 { ._1mTER, .-xSc5 { rad: _o i }}
-
-                /// Fix rounded corners for alerts in Google Maps messages.
-                /// NOTE: Hard-coded; adding more logic for this makes no sense.
-                .SpdXA { rad: _o _o 0 0 i }
-                .fMR4l { rad: 0 0 _o _o i }
-
-                /// Increase padding-right for bubbles.
-                &:not(._2FNAC) ._1dB-m {
-                    padding-right: 9px i
-
-                    /// Fix margin for replies.
-                    ._3fs13 { margin-right: -6px }
-                }
-
-                /// Rounded timestamps.
-                { ts } { rad: 18px i }
-            }
-
-            /// Incoming messages.
-            &-in {
-                { context } { border-top-right-radius: _m i }
-                /// First message -> In/Out/System messages.
-                &, ../-out, /{ system } {
-                    &:not({ bubble }) + .message-in{ bubble } {
-                        // c: 0 0 #ff55550a
-                        > div > div, { md }, { sticker } { rad: left_top }
-                    }
-                }
-                /// Messages in between.
-                &{ bubble } + { bubble }:not(#z) {
-                    // c: 0 0 #55ff550a
-                    { md } { rad: left_med }
-                    > div > div, { sticker } { rad: left_mid }
-                    { context } { border-top-right-radius: _i i }
-                }
-                /// Last message.
-                &{ bubble } + .message-in:not({ bubble }) {
-                    // c: 0 0 #5555ff0a
-                    > div > div, { md }, { sticker } { rad: left_end }
-                }
-
-                /// Feat -> Incoming message bubble position.
-                if (bubble_in) { align-items: flex-end i }
-            }
-
-            /// Outgoing messages.
-            &-out {
-                { context } { border-top-right-radius: _o i }
-                /// First message -> In/Out/System messages.
-                &, ../-in, /{ system } {
-                    &:not({ bubble }) + .message-out{ bubble } {
-                        // c: 0 0 #ff55551a
-                        > div > div, { md } { rad: right_top }
-                    }
-                }
-                /// Messages in between.
-                &{ bubble } + { bubble } {
-                    // c: 0 0 #55ff551a
-                    { md } { rad: right_med }
-                    > div > div { rad: right_mid }
-                    { context } { border-top-right-radius: _i i }
-                }
-                /// Last message.
-                &{ bubble } + .message-out:not({ bubble }) {
-                    // c: 0 0 #5555ff1a
-                    > div > div, { md } { rad: right_end }
-                    { context } { border-top-right-radius: _i i }
-                }
-
-                /// Feat -> Outgoing message bubble position.
-                if (bubble_out) { align-items: flex-start i }
-            }
-        } else if (tail_style == 'rounded' || tail_style == 'minimal') {
-            &-in, &-out {
+        &-in, &-out {
+            /// Feat -> Message tails.
+            if (tail_style == 'rounded' || tail_style == 'minimal') {
                 [data-icon *= 'tail'] {
                     display: none i
                     if (tail_style == 'rounded') {
@@ -2057,100 +1916,7 @@ msg += "P.S. CSS can not create clickable links."
                     }
                 }
             }
-        }
 
-        /// Feat -> Fixes for RTL message header. @upstream
-        if (rtl_header) {
-            &-in, &-out {
-                .selectable-text.invisible-space[dir = 'rtl'],
-                /// Some links have TWO empty headers.
-                a.selectable-text[href],
-                /// Embedded links are special snowflakes, too.
-                ._1VzZY[dir = 'ltr'] > [dir = 'ltr'] {
-                    &::before, &::after { content: unset i }
-                }
-            }
-        }
-
-        /// Feat -> Fixes for RTL message content. @upstream
-        if (rtl_format) {
-            &-in, &-out {
-                [data-pre-plain-text] > [dir = 'rtl'] {
-                    if (!rtl_header) { padding-top: 0.8rem i }
-                }
-                .selectable-text.invisible-space[dir = 'rtl'] {
-                    > span[class] { display: unset i }
-                    @supports (-moz-user-select: none) {
-                        &::before { content: unset i }
-                    }
-                }
-                /// Apparently messages with images/videos are treated like
-                /// special snowflakes, so this resets their timestamps.
-                [style *= 'width'], .video-thumb {
-                    + div > ._1VzZY[dir = 'rtl'] { padding-bottom: 0.8rem i }
-                }
-                /// Remove whitespace for links.
-                .message-text-link::after { content: unset i }
-            }
-        }
-
-        /// Feat -> Collapse messages for `fb-like` tail style.
-        if (fb_compact && tail_style == 'fb-like') {
-            rtl = '._1wlJG[dir = "rtl"]'
-            ltr = '._3ysB9'
-
-            &-in, &-out {
-                /// LTR whitespace.
-                { ltr } {
-                    display: block i
-                    padding-top: 0.8rem
-                }
-
-                /// RTL whitespace.
-                { rtl }, { big } {
-                    position: relative
-                    padding-bottom: 0.8rem i
-                    > ._3ysB9 { padding-top: 0 i }
-                }
-
-                /// Hide timestamps.
-                &{ bubble } {
-                    // c: 0 0 #ff555508
-                    { rtl }, { ltr }, { big } { transition: padding 0.2s ease i }
-                    { ts } { transition: opacity 0.2s ease i }
-
-                    /// Collapse messages.
-                    > div:not(:hover) {
-                        { ts } { opacity: 0 i }
-                        { rtl }, { big } { padding-bottom: 0rem i }
-                        { ltr } { padding-top: 0rem i }
-                    }
-
-                    /// Expand 'hover' area.
-                    ../ > div::before {
-                        content: '' i
-                        position: absolute i
-                        top: 0; right: -20px; bottom: 0; left: -20px;
-                        // ../../../-in > div::before { c: 0 0 #55ff5520 }
-                        // ../../../-out > div::before { c: 0 0 #5555ff20 }
-                    }
-                }
-
-                /// Remove whitespace for default big emojis.
-                if (emoji_b == 'default') {
-                    { big } {
-                        margin: 0 i
-                        padding-top: 2px i
-                        z-index: 0 i
-
-                        /// Reset emojis.
-                        span { margin: 0 i }
-                    }
-                }
-            }
-        }
-
-        &-in, &-out {
             /// Feat -> Reduce size of big emojis.
             if (emoji_b == 'medium') {
                 size = 36px
@@ -2166,11 +1932,6 @@ msg += "P.S. CSS can not create clickable links."
                     margin: 0 i
                     padding-top: 2px i
                     z-index: 0 i
-
-                    /// Add whitespace to avoid timestamp collision.
-                    if (tail_style = 'fb-like') {
-                        padding-bottom: 0.8rem i
-                    }
 
                     /// Reset emojis.
                     span {
