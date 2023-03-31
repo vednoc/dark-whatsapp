@@ -1,7 +1,17 @@
 #+STARTUP: nofold
 
 * Changelog
-** 3.7.1 [2023-01-15 Sat]
+** 3.7.2 [2023-03-31 Fri]
+Yet another maintenance release to fix compact mode, rounded avatars, alerts,
+big emoji size, and message tails features.  Starting from alerts and going
+onwards, code is now much simpler and resistant to updates that only change
+selectors, so it should last for a long time.
+
+*** Fixed
+- Updated selectors for rounded avatars (#196, #198)
+- Updated selectors for compact mode (#200, #201)
+
+** 3.7.1 [2023-01-15 Sun]
 Another maintenance release that fixes a bunch of things in different areas. If
 you find bugs, please report them to our issue tracker.
 
