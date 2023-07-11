@@ -525,6 +525,7 @@
     --reactions-tray-active-round-background-rgb: var(--bg-5-rgb);
     --reactions-picker-bg: var(--bg-4);
     --reactions-picker-bg-rgb: var(--bg-4-rgb);
+    --reactions-panel-background-color: var(--bg-3)
     --svg-gray-button: var(--fg-3);
     --svg-gray-button-rgb: var(--fg-3-rgb);
     --text-primary-strong: var(--fg-1);
