@@ -64,7 +64,7 @@ can:
 
 ** Credits
 This project wouldn't be possible without:
-- [[https://github.com/E-RELevant][E-RELevant]] for making wiki pages, testing and reporting/fixing bugs
+- [[https://github.com/erelado][erelado]] for making wiki pages, testing and reporting/fixing bugs
 - [[https://github.com/StylishThemes/][StylishThemes]] team for inspiration and documentation templates
 - [[https://unsplash.com/@totem_phillip][Phillip Sauerbeck]] for the gorgeous [[https://unsplash.com/photos/Tmk0MkQVwwA][background image]]
 - Everyone that helped with [[https://github.com/vednoc/dark-whatsapp/issues][issues]] and/or [[https://github.com/vednoc/dark-whatsapp/pulls][code]]
