@@ -1626,7 +1626,7 @@ msg += "P.S. CSS can not create clickable links."
         /// Feat -> Blur media.
         if (chat_b_img) {
             /[class *= 'message-'] [style *= 'height'] {
-                img:not([src*='/pp?']) {
+                img:not([src*='/pp?']):not([class*='emoji']){
                     transition: 0.5s ease
                     transition-delay: var(--blur-out)
                     filter: blur(16px) grayscale(100%)
